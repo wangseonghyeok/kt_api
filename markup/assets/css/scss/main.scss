@@ -48,19 +48,19 @@
         }
         &-controller {
             display: flex;
-            .swiper-pagination {
-                position: static;
-                width: fit-content;
-                text-align: left;
-                font-size: 14px;
-                color: var(--gray666);
-                line-height: 24px;
-                margin-right: 16px;
-                &-current {
-                    font-weight: 700;
-                    color: var(--black);
-                }
-            }
+            // .swiper-pagination {
+            //     position: static;
+            //     width: fit-content;
+            //     text-align: left;
+            //     font-size: 14px;
+            //     color: var(--gray666);
+            //     line-height: 24px;
+            //     margin-right: 16px;
+            //     &-current {
+            //         font-weight: 700;
+            //         color: var(--black);
+            //     }
+            // }
             [class^='swiper-button'] {
                 position: static;
                 margin: 0;
