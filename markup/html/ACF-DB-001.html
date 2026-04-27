@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!--  contents -->
+            <div class="sidebar" id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!--  breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >마이페이지</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html">고객지원</a></li>
+                                                <li><a href="ACF-DB-001.html" aria-current="true">마이페이지</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >대시보드</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-DB-001.html" aria-current="true">대시보드</a></li>
+                                                <li><a href="ACF-MB-001.html">메시지함</a></li>
+                                                <li><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                                <li><a href="ACF-PA-001.html">회원정보</a></li>
+                                                <li><a href="ACF-CA-001.html">기업(기관) 정보</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>마이페이지</h2>
+                        </div>
+                        <article class="container">
+                            <nav class="lnb">
+                                <ul>
+                                    <li class="dashboard">
+                                        <a href="ACF-DB-001.html" aria-current="true">대시보드</a>
+                                    </li>
+                                    <li class="message"><a href="ACF-MB-001.html">메시지함</a></li>
+                                    <li class="inquiry"><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                    <li class="user-info"><a href="ACF-PA-001.html">회원정보</a></li>
+                                    <li class="company-info"><a href="ACF-CA-001.html">기업(기관) 정보</a></li>
+                                </ul>
+                            </nav>
+                            <div class="content-box">
+                                <div class="mypage-set">
+                                    <div class="profile-set dbd-user">
+                                        <div class="head">
+                                            <p class="name">
+                                                홍길동 님
+                                                <i class="badge-line navy">개인회원</i>
+                                            </p>
+                                            <div class="l-right">
+                                                <p>최근 접속 <span>2023-12-07 18:04</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="cont">
+                                            <dl class="email">
+                                                <dt><span class="blind">이메일</span></dt>
+                                                <dd>gildong@email.com</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mypage-set">
+                                    <div class="head">
+                                        <h3>최근 메세지</h3>
+                                        <div class="l-right">
+                                            <a class="btn-arr" href="ACF-MB-001.html">전체보기</a>
+                                        </div>
+                                    </div>
+                                    <div class="msg-recent">
+                                        <dl>
+                                            <dt>테스트랩 이용신청이 승인 되었습니다.</dt>
+                                            <dd>2023-12-07 18:04</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="mypage-set">
+                                    <div class="head">
+                                        <h3>최근 문의 내역</h3>
+                                        <div class="l-right">
+                                            <a class="btn-arr" href="ACF-MA-001.html">전체보기</a>
+                                        </div>
+                                    </div>
+                                    <div class="tbl-wrap">
+                                        <div class="tbl-grid bbs-dashboard-recent" id="bbs-recent" role="table">
+                                            <ul class="tbl-grid__head" role="rowgroup">
+                                                <li role="row">
+                                                    <div class="filter" role="columnheader">
+                                                        <p>분류</p>
+                                                    </div>
+                                                    <div class="subject" role="columnheader">
+                                                        <p>문의 제목</p>
+                                                    </div>
+                                                    <div class="date" role="columnheader">
+                                                        <p>등록일</p>
+                                                    </div>
+                                                    <div class="date" role="columnheader">
+                                                        <p>답변일</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="tbl-grid__body" role="rowgroup">
+                                                <li role="row">
+                                                    <div class="filter" role="cell">
+                                                        <p>API 가이드</p>
+                                                    </div>
+                                                    <div class="subject" role="cell">
+                                                        <a href="ACF-MA-002.html"
+                                                            >현재 사이트에 게시된 API 가이드는 모두 최신버전인가요?</a
+                                                        >
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                </li>
+                                                <li role="row">
+                                                    <div class="filter" role="cell">
+                                                        <p>API 가이드</p>
+                                                    </div>
+                                                    <div class="subject" role="cell">
+                                                        <a href="ACF-MA-002.html"
+                                                            >현재 사이트에 게시된 API 가이드는 모두 최신버전인가요?</a
+                                                        >
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                </li>
+                                                <li role="row">
+                                                    <div class="filter" role="cell">
+                                                        <p>API 가이드</p>
+                                                    </div>
+                                                    <div class="subject" role="cell">
+                                                        <a href="ACF-MA-002.html"
+                                                            >현재 사이트에 게시된 API 가이드는 모두 최신버전인가요?</a
+                                                        >
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                    <div class="date" role="cell">
+                                                        <p>2023-12-07</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- 내역 없는 경우 -->
+                                            <!-- <div class="tbl-grid__none" role="rowgroup">
+                                            <p>문의내역이 없습니다.</p>
+                                        </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!--  contents -->
+            <div class="sidebar" id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!--  breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >마이페이지</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html">고객지원</a></li>
+                                                <li><a href="ACF-DB-001.html" aria-current="true">마이페이지</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >나의 서비스</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-DB-001.html">대시보드</a></li>
+                                                <li><a href="ACF-MB-001.html">메시지함</a></li>
+                                                <li><a href="ACF-MS-001.html" aria-current="true">나의 서비스</a></li>
+                                                <li><a href="ACF-TR-001.html">테스트랩 신청현황</a></li>
+                                                <li><a href="ACF-SM-001.html">통합전자서명모듈</a></li>
+                                                <li><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                                <li><a href="ACF-PA-001.html">회원정보</a></li>
+                                                <li><a href="ACF-CA-001.html">기업(기관) 정보</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>마이페이지</h2>
+                        </div>
+                        <article class="container">
+                            <nav class="lnb">
+                                <ul>
+                                    <li class="dashboard"><a href="ACF-DB-001.html">대시보드</a></li>
+                                    <li class="message"><a href="ACF-MB-001.html">메시지함</a></li>
+                                    <li class="myservice">
+                                        <a href="ACF-MS-001.html" aria-current="true">나의 서비스</a>
+                                    </li>
+                                    <li class="testlab"><a href="ACF-TR-001.html">테스트랩 신청현황</a></li>
+                                    <li class="signature"><a href="ACF-SM-001.html">통합전자서명모듈</a></li>
+                                    <li class="inquiry"><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                    <li class="user-info"><a href="ACF-PA-001.html">회원정보</a></li>
+                                    <li class="company-info"><a href="ACF-CA-001.html">기업(기관) 정보</a></li>
+                                </ul>
+                            </nav>
+                            <div class="content-box">
+                                <div class="subtitle-box">
+                                    <h3>운영키 다운로드 팝업</h3>
+                                </div>
+                                <!-- 개발 X : 퍼블리싱 확인을 위한 화면 호출 스크립트-->
+                                <button
+                                    class="btn-bg blue"
+                                    type="button"
+                                    aria-haspopup="dialog"
+                                    aria-controls="popupDownloadOperateKey"
+                                    onclick="ui.modal(this)"
+                                >
+                                    팝업 호출
+                                </button>
+                                <!-- // 개발 X : 퍼블리싱 확인을 위한 화면 호출 스크립트-->
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+        <!-- 팝업 : 운영키 다운로드 -->
+        <div class="popup" id="popupDownloadOperateKey" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            <div class="popup__inner w640">
+                <div class="popup__head">
+                    <h3 id="popupTit">운영키 다운로드</h3>
+                    <button class="popup__close" type="button">
+                        <span class="blind">팝업닫기</span>
+                    </button>
+                </div>
+                <div class="field-area">
+                    <div class="cont">
+                        <dl>
+                            <dt>
+                                <label for="operator">인증사업자</label>
+                            </dt>
+                            <dd>
+                                <!-- 에러텍스트 노출 시 .input-set에 .error 추가 -->
+                                <div class="input-set">
+                                    <select id="operator" name="name">
+                                        <option value="value">선택하세요</option>
+                                        <option selected="selected">카카오</option>
+                                        <option>네이버</option>
+                                    </select>
+                                    <p class="valid">인증사업자를 선택해 주세요.</p>
+                                </div>
+                                <ul class="list-states">
+                                    <li><em>상태</em>승인완료</li>
+                                </ul>
+                                <div class="buttons">
+                                    <!-- 비활성화 disabled 속성 추가 -->
+                                    <button class="btn-line xs">테스트키 다운로드</button>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="button-wrap">
+                    <button class="btn-line popup__close" type="button">닫기</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

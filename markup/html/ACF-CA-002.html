@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!--  contents -->
+            <div class="sidebar" id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!--  breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >마이페이지</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html">고객지원</a></li>
+                                                <li><a href="ACF-DB-001.html" aria-current="true">마이페이지</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >기업(기관) 정보</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-DB-001.html">대시보드</a></li>
+                                                <li><a href="ACF-MB-001.html">메시지함</a></li>
+                                                <li><a href="ACF-MS-001.html">나의 서비스</a></li>
+                                                <li><a href="ACF-TR-001.html">테스트랩 신청현황</a></li>
+                                                <li><a href="ACF-SM-001.html">통합전자서명모듈</a></li>
+                                                <li><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                                <li><a href="ACF-PA-001.html">회원정보</a></li>
+                                                <li>
+                                                    <a href="ACF-CA-001.html" aria-current="true">기업(기관) 정보</a>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>마이페이지</h2>
+                        </div>
+                        <article class="container">
+                            <nav class="lnb">
+                                <ul>
+                                    <li class="dashboard"><a href="ACF-DB-001.html">대시보드</a></li>
+                                    <li class="message"><a href="ACF-MB-001.html">메시지함</a></li>
+                                    <li class="myservice"><a href="ACF-MS-001.html">나의 서비스</a></li>
+                                    <li class="testlab"><a href="ACF-TR-001.html">테스트랩 신청현황</a></li>
+                                    <li class="signature"><a href="ACF-SM-001.html">통합전자서명모듈</a></li>
+                                    <li class="inquiry"><a href="ACF-MA-001.html">나의 문의내역</a></li>
+                                    <li class="user-info"><a href="ACF-PA-001.html">회원정보</a></li>
+                                    <li class="company-info">
+                                        <a href="ACF-CA-001.html" aria-current="true">기업(기관) 정보</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="content-box">
+                                <div class="subtitle-box">
+                                    <h3>기업(기관) 정보 수정</h3>
+                                </div>
+                                <form action="action">
+                                    <div class="field-area">
+                                        <div class="head"></div>
+                                        <div class="cont">
+                                            <dl>
+                                                <dt class="required">
+                                                    <label for="serviceCompany">기업(기관)명</label>
+                                                </dt>
+                                                <dd>
+                                                    <div class="input-set">
+                                                        <input
+                                                            type="text"
+                                                            readonly
+                                                            id="serviceCompany"
+                                                            placeholder="기업명을 입력하세요"
+                                                            value="(주)한국기업"
+                                                        />
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt class="required">
+                                                    <label for="serviceName">사업자(기관)등록번호</label>
+                                                </dt>
+                                                <dd>
+                                                    <div class="input-set">
+                                                        <input
+                                                            type="text"
+                                                            readonly
+                                                            id="serviceName"
+                                                            placeholder="등록번호를 입력하세요"
+                                                            value="000-00-00000"
+                                                        />
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt class="required">
+                                                    <label for="fileUpload">사업자(기관)등록증</label>
+                                                </dt>
+                                                <dd class="upload-img">
+                                                    <input
+                                                        type="file"
+                                                        id="fileUpload"
+                                                        class="blind"
+                                                        disabled
+                                                        onchange="addFile(this)"
+                                                        accept="image/gif,image/jpeg,image/png"
+                                                    />
+                                                    <label for="fileUpload" class="btn-upload">파일첨부</label>
+                                                    <p class="desc-text __hide">이미지 파일만 첨부하실 수 있습니다.</p>
+                                                    <!-- id 할당하여 추가/삭제 -->
+                                                    <ul class="upload-list">
+                                                        <li id="file1702527471846" class="file-item">
+                                                            <p class="name">sample.png</p>
+                                                            <a
+                                                                class="delete-btn"
+                                                                href="javascript:preventDefault()"
+                                                                onclick="deleteFile(1702527471846);"
+                                                                ><span class="blind">삭제</span></a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt class="required">
+                                                    <label for="serviceTypes">기업(기관)구분</label>
+                                                </dt>
+                                                <dd class="long">
+                                                    <!--  에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                    <div class="input-set">
+                                                        <select id="serviceTypes" name="name">
+                                                            <option value="value" selected="selected">
+                                                                선택하세요
+                                                            </option>
+                                                            <option value="value">이용기관</option>
+                                                            <option value="value">기술개발사</option>
+                                                        </select>
+                                                        <p class="valid">기업(기관)구분을 선택해 주세요.</p>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt class="required">
+                                                    <label for="serviceLocation">소재지</label>
+                                                </dt>
+                                                <dd class="long">
+                                                    <!--  에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                    <div class="input-set error">
+                                                        <input
+                                                            type="text"
+                                                            id="serviceLocation"
+                                                            placeholder="소재지를 입력하세요"
+                                                        />
+                                                        <p class="valid">소재지를 입력해 주세요.</p>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    <label for="serviceSite">웹사이트 주소</label>
+                                                </dt>
+                                                <dd class="long">
+                                                    <!--  에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                    <div class="input-set">
+                                                        <input type="text" id="serviceSite" placeholder="https://" />
+                                                        <p class="valid">
+                                                            웹사이트주소를 입력해 주세요. 웹사이트주소 형식이 올바르지
+                                                            않습니다.
+                                                        </p>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="ACF-DB-002.html" class="btn-line md">취소</a>
+                                        <a href="ACF-DB-002.html" class="btn-bg blue md">등록</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+@media (hover: hover) and (pointer: fine) {
+    #contents {
+        &.login {
+            .account-box {
+                &.find,
+                &.signup {
+                    ul {
+                        li {
+                            &:hover {
+                                a {
+                                    box-shadow: 5px 5px 40px 0 rgba(0, 0, 0, 0.1);
+                                    &:before {
+                                        @include pseudo;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        border: 2px solid var(--blue);
+                                        border-radius: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

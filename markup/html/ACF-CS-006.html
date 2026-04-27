@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!-- contents -->
+            <div id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!-- breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap="data-dropdown_wrap">
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg="data-dropdown_trg"
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >고객지원</a
+                                        >
+                                        <div data-dropdown_menu="data-dropdown_menu">
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html" aria-current="true">고객지원</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap="data-dropdown_wrap">
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg="data-dropdown_trg"
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >1:1 문의</a
+                                        >
+                                        <div data-dropdown_menu="data-dropdown_menu">
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CS-001.html">알림센터</a></li>
+                                                <li><a href="ACF-CS-003.html">FAQ</a></li>
+                                                <li><a href="ACF-CS-004.html">자료실</a></li>
+                                                <li><a href="ACF-CS-006.html" aria-current="true">1:1 문의</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>1:1 문의</h2>
+                        </div>
+                        <div class="content-box">
+                            <div class="field-area inquiry">
+                                <form action="">
+                                    <div class="head">
+                                        <p><span>*</span>필수 입력항목</p>
+                                    </div>
+                                    <div class="cont">
+                                        <dl>
+                                            <dt class="required"><label for="requirySort">분류</label></dt>
+                                            <dd class="sort">
+                                                <select name="" id="requirySort">
+                                                    <option value="" selected>선택하세요</option>
+                                                    <option value="">서비스 이용</option>
+                                                    <option value="">API 가이드</option>
+                                                    <option value="">테스트랩 이용</option>
+                                                    <option value="">기타</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required"><label for="inquirySubject">문의 제목</label></dt>
+                                            <dd>
+                                                <input
+                                                    type="text"
+                                                    id="inquirySubject"
+                                                    placeholder="제목을 입력하세요"
+                                                />
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required"><label for="inquiryDetail">문의 내용</label></dt>
+                                            <dd>
+                                                <textarea
+                                                    name=""
+                                                    id="inquiryDetail"
+                                                    cols="30"
+                                                    rows="10"
+                                                    placeholder="문의 내용을 입력하세요"
+                                                ></textarea>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><label for="fileUpload">파일첨부</label></dt>
+                                            <dd class="upload-img">
+                                                <input
+                                                    type="file"
+                                                    id="fileUpload"
+                                                    class="blind"
+                                                    onchange="addFile(this)"
+                                                    disabled
+                                                    accept="image/gif,image/jpeg,image/png"
+                                                />
+                                                <label for="fileUpload" class="btn-upload">파일첨부</label>
+                                                <p class="desc-text __hide">이미지 파일만 첨부하실 수 있습니다.</p>
+                                                <!-- id 할당하여 추가/삭제 -->
+                                                <ul class="upload-list">
+                                                    <li id="file1702527471846" class="file-item">
+                                                        <p class="name">sample.png</p>
+                                                        <a
+                                                            class="delete-btn"
+                                                            href="javascript:preventDefault()"
+                                                            onclick="deleteFile(1702527471846);"
+                                                            ><span class="blind">삭제</span></a
+                                                        >
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="ACF-MA-002.html" class="btn-bg blue md">등록</a>
+                                        <a href="ACF-MA-002.html" class="btn-line md">취소</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

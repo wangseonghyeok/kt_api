@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+        />
+        <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1" />
+        <title>코딩 리스트</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .coding_wrap {
+                overflow: hidden;
+                height: 100%;
+            }
+
+            .coding_wrap .left {
+                float: left;
+                width: 360px;
+                height: 100%;
+            }
+
+            .coding_wrap .right {
+                float: left;
+                width: calc(100% - 360px);
+                height: 100%;
+            }
+
+            .coding_wrap .right .inner {
+                width: 390px;
+                height: 680px;
+                margin: 0 auto;
+            }
+
+            .coding_wrap iframe {
+                width: 100%;
+                height: 100%;
+            }
+
+            @media all and (max-width: 800px) {
+                .coding_wrap .left {
+                    width: 100%;
+                }
+
+                .coding_wrap .right {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="coding_wrap">
+            <div class="left">
+                <iframe
+                    src="./_coding_list/coding_list_left.html"
+                    frameborder="0"
+                    name="menuframe"
+                    id="leftFrame"
+                ></iframe>
+            </div>
+            <div class="right">
+                <!-- PC용 -->
+                <iframe src="./index.html" frameborder="0" name="mainframe" id="rightFrame"></iframe>
+                <!-- 프로젝트 상황에 맞게 링크 수정 -->
+                <!--// PC용 -->
+
+                <!-- 모바일용 -->
+                <!-- <div class="inner">
+				<iframe src="./index.html" frameborder="0" name="mainframe" id="rightFrame"></iframe>
+			</div> -->
+                <!--// 모바일용 -->
+            </div>
+        </div>
+        <script>
+            $(document).ready(() => {
+                setTimeout(() => {
+                    if ($(window).width() < 800) {
+                        targetChange();
+                    }
+                }, 1000);
+            });
+            $(window).resize(() => {
+                if ($(window).width() < 800) {
+                    targetChange();
+                } else {
+                    $('#leftFrame').contents().find('.done').attr('target', 'mainframe');
+                }
+            });
+            function targetChange() {
+                $('#leftFrame').contents().find('.done').attr('target', '_blank');
+            }
+        </script>
+    </body>
+</html>

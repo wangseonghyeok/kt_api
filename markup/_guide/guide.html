@@ -1,0 +1,2721 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="./../assets/css/lib/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./../assets/css/lib/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="./../assets/css/common.min.css" />
+    <link rel="stylesheet" type="text/css" href="./../assets/css/contents.min.css" />
+    <script src="./../assets/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="./../assets/js/lib/jquery-ui.js"></script>
+    <script src="./../assets/js/lib/swiper.min.js"></script>
+    <script src="./../assets/js/common.js"></script>
+    <title>퍼블리싱 가이드</title>
+
+    <style>
+        html {
+            font-size: 10px !important;
+            scroll-behavior: smooth;
+        }
+
+        .wrap {
+            padding-top: 0;
+            background: transparent;
+        }
+
+        .guide_h1 {
+            margin-bottom: 30px;
+            padding: 25px 0;
+            background: #000;
+            color: #fff;
+            font-weight: 700;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .guide_h2 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .guide_h2:before {
+            content: '※ ';
+        }
+
+        .guide_h3 {
+            padding: 30px 0 10px 0;
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .guide_h4 {
+            padding: 15px 0 8px 0;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .guide_h4:before {
+            content: '＊'
+        }
+
+        .guide_txt {
+            padding-left: 15px;
+            line-height: 22px;
+        }
+
+        .guide_wrap {
+            position: relative;
+            margin: 20px 0;
+            width: 100%;
+            min-width: 1240px;
+        }
+
+        .guide_wrap:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .guide_left_wrap {
+            position: fixed;
+            top: 106px;
+            left: 0;
+            width: 200px;
+            font-size: 14px;
+            z-index: 10;
+            background: #fff;
+        }
+
+        .guide_left_wrap ul {
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .guide_left_wrap ul li {
+            border-top: 1px solid #dddddd;
+        }
+
+        .guide_left_wrap ul li a {
+            display: block;
+            padding: 15px 10px;
+        }
+
+        .guide_left_wrap ul li.on a {
+            color: #ef3f3e;
+            font-weight: bold;
+        }
+
+        .guide_left_wrap ul li:hover a {
+            font-weight: bold;
+        }
+
+        .guide_right_wrap {
+            float: left;
+            padding-left: 260px;
+            padding-bottom: 50px;
+            width: calc(100% - 60px);
+
+        }
+
+        .guide_right_wrap .guide_tit_area {
+            margin-bottom: 20px;
+            padding: 10px 0 20px 0;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .guide_right_wrap .guide_tit_area .guide_h2 {
+            font-size: 30px;
+        }
+
+        .guide-section+.guide-section {
+            margin-top: 50px;
+        }
+
+        .guide_box {
+            position: relative;
+            padding: 15px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        .guide_box .layout {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, .4);
+        }
+
+        .guide_box .layout+pre {
+            margin-top: 30px;
+        }
+
+        .guide_list {
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .guide_list>li {
+            line-height: 1.4em;
+        }
+
+        .guide_list>li:before {
+            content: '·';
+            margin-right: 5px;
+        }
+
+        .guide_list+.guide_box {
+            margin-top: 20px;
+        }
+
+        div.highlight {
+            margin: 15px 0;
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            overflow: hidden;
+            border-radius: 4px 4px 4px 4px;
+        }
+
+        div.highlight pre {
+            width: 100%;
+            max-height: 350px;
+            overflow: auto;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            clear: both;
+            border-radius: 0;
+            border: none;
+        }
+
+        /* tabs */
+        div.highlight ul.tabs {
+            overflow: hidden;
+            padding: 5px 0 5px 0;
+            margin: 0;
+            list-style: none;
+            border-bottom: 1px solid #E0E0E0;
+            width: 100%;
+            position: relative;
+        }
+
+        div.highlight ul.tabs li {
+            padding: 0;
+            margin: 0 5px;
+            float: left;
+            background: none;
+            border-bottom: 1px dashed #CCC;
+            line-height: 1.0em;
+            color: #CCC;
+            cursor: pointer;
+        }
+
+        div.highlight ul.tabs li.active {
+            border-bottom: none;
+            cursor: default;
+        }
+
+        /* pre */
+        div.highlight pre.code ol {
+            margin: 0;
+            padding: 0 0 0 45px;
+            background: #e7e5dc;
+        }
+
+        div.highlight pre.code ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.highlight pre.code ol li,
+        div.highlight pre.code ul li {
+            padding: 0 0 0 5px;
+            border-left: 3px solid #CCC;
+            background: #F8F8F8;
+        }
+
+        div.highlight pre.code ul li {
+            border-left: none;
+        }
+
+        div.highlight pre.code ol li.even,
+        div.highlight pre.code ul li.even {
+            background-color: #FFFFFF;
+        }
+
+        div.highlight pre.source {
+            display: none;
+            padding: 0 0 0 5px;
+        }
+
+        /* highligting */
+        pre {
+            font-family: '맑은 고딕', 'malgun gothic';
+            font-size: 12px;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        pre+pre {
+            margin-top: 30px;
+        }
+
+        pre:after {
+            display: inline-block;
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            padding: 5px 10px;
+            /* border-top-left-radius: 5px; */
+            /* border-bottom-right-radius: 5px; */
+            font-weight: 600;
+        }
+
+        pre[lang=html]:after {
+            content: 'html';
+            background: #b0d3f3;
+        }
+
+        pre[lang=css]:after {
+            content: 'css';
+            background: #ffda6e;
+        }
+
+        pre[lang=js]:after {
+            content: 'js';
+            background: #b6daa0;
+        }
+
+        pre.code .str {
+            color: #0d0;
+        }
+
+        pre.code .var {
+            color: #d00;
+        }
+
+        pre.code .kwd,
+        pre.code .kwd span {
+            color: #070;
+        }
+
+        pre.code .com,
+        pre.code .com span {
+            color: #008;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        pre.code .typ {
+            color: #606;
+        }
+
+        pre.code .lit {
+            color: #066;
+        }
+
+        pre.code .pun {
+            color: #660;
+        }
+
+        pre.code .pln {
+            color: #000;
+        }
+
+        pre.code .tag {
+            color: #008;
+            font-weight: bold;
+        }
+
+        pre.code .atn {
+            color: #606;
+        }
+
+        pre.code .atv {
+            color: #080;
+        }
+
+        pre.code .dec {
+            color: #606;
+        }
+
+        pre.code .fnc,
+        pre.code .fnc span {
+            color: #00b;
+        }
+
+        /* css */
+        .css pre.code .kwd,
+        .css pre.code .kwd span {
+            color: #008;
+            font-weight: bold;
+        }
+
+        /* php */
+        .php pre.code .str,
+        .php pre.code .str span {
+            color: #0d0;
+        }
+
+        .php pre.code .var,
+        .php pre.code .var span {
+            color: #b00;
+        }
+
+        ;
+
+        .php pre.code .com,
+        .php pre.code .com span {
+            color: #008;
+            font-style: italic;
+            font-weight: normal;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // $('pre.code').highlight({ source: 1, zebra: 1, indent: 'space', list: 'ol' });
+
+            $(".guide_left_wrap > ul > li").click(function () {
+                $(this).addClass("on").siblings().removeClass("on");
+            });
+
+            var sectionCount = $(".guide-section").length;
+            var sectionAry = new Array();
+            for (var i = 0; i < sectionCount; i++) {
+                sectionAry[i] = $(".guide-section").eq(i).offset().top;
+            };
+
+            $(window).scroll(function () {
+                for (let i = 0; i < sectionCount; i++) {
+                    if ($(window).scrollTop() + 20 >= sectionAry[i] && $(window).scrollTop() < sectionAry[i + 1]) {
+                        $(".guide_left_wrap > ul > li").eq(i).addClass('on').siblings('li').removeClass('on')
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 class="guide_h1">퍼블리싱 가이드</h1>
+
+        <div class="guide_wrap">
+            <div class="guide_left_wrap">
+                <ul>
+                    <li class="on"><a href="#guideDefault">기본가이드</a></li>
+                    <li><a href="#guideFont">폰트</a></li>
+                    <li><a href="#guideLayout">레이아웃</a></li>
+                    <li><a href="#guideButton">버튼</a></li>
+                    <li><a href="#guideBadge">뱃지</a></li>
+                    <li><a href="#guideInput">입력 폼 요소</a></li>
+                    <li><a href="#guideBreadcrumb">브레드크럼</a></li>
+                    <li><a href="#guidePagination">pagination</a></li>
+                    <li><a href="#guideAccordion">아코디언</a></li>
+                    <li><a href="#guideTab">탭 메뉴</a></li>
+                    <li><a href="#guideTable">테이블</a></li>
+                    <li><a href="#guidePop">팝업</a></li>
+                    <li><a href="/coding_list.html" target="_blank">코딩리스트 바로가기</a></li>
+                </ul>
+            </div>
+
+            <div class="guide_right_wrap">
+                <div class="guide-section" id="guideDefault">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">기본 가이드</h2>
+                    </div>
+
+                    <h3 class="guide_h3">1. HTML</h3>
+                    <h4 class="guide_h4">Document Type Definition : HTML5 / Charset : utf-8로 표기한다.</h4>
+                    <h4 class="guide_h4">각 언어별 html태그에 Language Attribute를 반드시 표기한다.</h4>
+                    <h4 class="guide_h4">브라우저는 Chrome을 기준으로 하되 MS edge / firefox 를 필수 브라우저로, IE10 이상을 옵션 브라우저로 수용할 수 있는
+                        웹표준 코딩을 기본으로
+                        한다.</h4>
+                    <h4 class="guide_h4">웹접근성을 준수하여 작업한다. (OpenWAX, W3C markup Validation 사용)</h4>
+                    <h4 class="guide_h4">화면모드는 1920x1080을 기준으로 한다.</h4>
+                    <h4 class="guide_h4">요소와 속성은 소문자로 표기되어야 하며, 모든 태그는 종료 태그를 갖는다.</h4>
+                    <h4 class="guide_h4">속성 "값"은 항상 따옴표로 감싸주어야 한다.</h4>
+                    <h3 class="guide_h3">2. 폴더구조</h3>
+                    <h4 class="guide_h4">CSS</h4>
+                    <ul class="guide_list">
+                        <li>/assets/css : css 파일 폴더 (style.min.css 위치)</li>
+                        <li>/assets/css/lib : 라이브러리, 플러그인 css</li>
+                    </ul>
+                    <h4 class="guide_h4">폰트</h4>
+                    <ul class="guide_list">
+                        <li>/assets/fonts : 폰트 폴더</li>
+                    </ul>
+                    <h4 class="guide_h4">이미지</h4>
+                    <ul class="guide_list">
+                        <li>/assets/img/common : 공통 이미지 폴더</li>
+                        <li>/assets/img/main : 메인 페이지 이미지 폴더</li>
+                        <li>/assets/img/contents : 공통, 메인 페이지 이미지를 제외한 나머지 콘텐츠 페이지 사용 이미지 폴더</li>
+                        <li>/assets/img/email : 메일 폼 이미지 폴더</li>
+                        <li>/assets/img/favicon : 파비콘 및 SEO 이미지</li>
+                    </ul>
+                    <h4 class="guide_h4">JS</h4>
+                    <ul class="guide_list">
+                        <li>/assets/js : 자바스크립트 파일 폴더 (common.js 위치)</li>
+                        <li>/assets/js/lib : 라이브러리, 플러그인 js</li>
+                    </ul>
+                    <h3 class="guide_h3">3. 이미지</h3>
+                    <h4 class="guide_h4">신규제작 이미지 네이밍은 다음과 같이 정의한다.
+                        <br>ex) 성격_카테고리/연상영문네임_번호.jpg (ico_notice_01.jpg)
+                    </h4>
+                    <h4 class="guide_h4">
+                        PC화면모드에서의 이미지와 모바일 화면모드에서의 이미지가 동일할 경우 이미지는 2x scale로 생성하고,
+                        상이할 경우 PC 이미지는 1x 사이즈로, 모바일 이미지는 2x로 생성한다.
+                    </h4>
+                    <ul class="guide_list">
+                        <li>이미지 : img_</li>
+                        <li>백그라운드 : bg_</li>
+                        <li>아이콘 : ico_</li>
+                    </ul>
+                    <h3 class="guide_h3">4. CSS</h3>
+                    <h4 class="guide_h4">charset="UTF-8"</h4>
+                    <h4 class="guide_h4">클래스명은 kebab case로, 아이디명은 camel case로 작성한다. <br>
+                        ex) .main-login, #mainLogin
+                    </h4>
+                    <h4 class="guide_h4">반응형 웹사이트이며 1024px 기준으로 PC와 Mobile UI로 나뉜다.</h4>
+                    <h4 class="guide_h4">상대경로를 사용한다.</h4>
+                    <h4 class="guide_h4">단위는 %/vh/vw로 적용하는 요소 외에는 pc는 px, 1024 이하 해상도는 rem으로 사용한다.</h4>
+                    <h4 class="guide_h4">색상 변수</h4>
+                    <div class="guide_box">
+                        <pre class="code" lang="css">
+        :root {
+            --white: #{$white};
+            --grayf7f8fb: #{$grayf7f8fb};
+            --grayf8: #{$grayf8};
+            --grayf1: #{$grayf1};
+            --gray666: #{$gray666};
+            --gray76: #{$gray76};
+            --gray888: #{$gray888};
+            --grayeee: #{$grayeee};
+            --graye8: #{$graye8};
+            --graye5: #{$graye5};
+            --grayccc: #{$grayccc};
+            --grayddd: #{$grayddd};
+            --grayaaa: #{$grayaaa};
+            --black: #{$black};
+            --green: #{$green};
+            --greenDark: #{$greenDark};
+            --navy: #{$navy};
+            --navyLight: #{$navyLight};
+            --blue: #{$blue};
+            --red: #{$red};
+        }</pre>
+                    </div>
+                    <h4 class="guide_h4">font-weight 변수</h4>
+                    <div class="guide_box">
+                        <pre class="code" lang="css">
+        :root {
+            --fw-Bold: #{$fw-Bold};
+            --fw-SemiBold: #{$fw-SemiBold};
+            --fw-Regular: #{$fw-Regular};
+            --fw-Light: #{$fw-Light};
+        }</pre>
+                    </div>
+                    <h4 class="guide_h4">breakpoint</h4>
+                    <div class="guide_box">
+                        <pre class="code" lang="css">
+        @media all and (max-width: 1480px){}
+        @media all and (max-width: 1400px){}
+        @media all and (max-width: 1300px){}
+        @media all and (max-width: 1240px){}
+        @media all and (max-width: 1180px){}
+        @media all and (min-width: 1024px){}
+        @media all and (max-width: 1023px){}
+        @media all and (max-width: 767px){}
+        @media all and (max-width: 639px){}
+        @media all and (max-width: 479px){}
+        @media all and (max-width: 359px){}
+        @media all and (max-width: 319px){}</pre>
+                    </div>
+                    <h3 class="guide_h3">5. JS</h3>
+                    <h4 class="guide_h4">공통기능 외 페이지별 기능은 해당 페이지 html 내에 script로 삽입. (캘린더 관련 script는 별도 파일)</h4>
+                    <ul class="guide_list">
+                        <li>/assets/js/common.js : 공통 기능</li>
+                        <li>/assets/js/calendar.js : 테스트랩 신청 캘린더 script</li>
+                        <li>/assets/js/lib/jquery-3.6.0.min.js : Jquery 라이브러리</li>
+                        <li>/assets/js/lib/swiper.min.js : swiper slide 플러그인</li>
+                        <li>/assets/js/lib/jquery-ui.js : datepicker등 jquery ui 플러그인</li>
+                        <li>/assets/js/lib/index.global.min.js : Fullcalendar 플러그인</li>
+                    </ul>
+                </div>
+
+                <div class="guide-section" id="guideFont">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">폰트</h2>
+                    </div>
+
+                    <h3 class="guide_h3">1. 기본 폰트 셋팅 (html font-size: 62.5%;)</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="CSS">
+        html {
+            font-size: 62.5%;
+            letter-spacing: -0.4px;
+        }</pre>
+                    </div>
+                    <h3 class="guide_h3">2. font-face import</h3>
+                    <h4 class="guide_h4">기본 (Pretendard)</h4>
+                    <div class="guide_box">
+                        <pre class="code" lang="CSS">
+        @font-face {
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Pretendard Bold'), url('/assets/fonts/Pretendard-Bold.woff2') format('woff2'),
+            url('/assets/fonts/Pretendard-Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Pretendard SemiBold'), url('/assets/fonts/Pretendard-SemiBold.woff2') format('woff2'),
+            url('/assets/fonts/Pretendard-SemiBold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Pretendard Regular'), url('/assets/fonts/Pretendard-Regular.woff2') format('woff2'),
+            url('/assets/fonts/Pretendard-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Pretendard Light'), url('/assets/fonts/Pretendard-Light.woff2') format('woff2'),
+            url('/assets/fonts/Pretendard-Light.woff') format('woff');
+        }</pre>
+                    </div>
+                    <h4 class="guide_h4">기타 (NanumSquareNeo)</h4>
+                    <div class="guide_box">
+                        <pre class="code" lang="CSS">
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: local('NanumSquareNeo Extra Bold'), url('/assets/fonts/NanumSquareNeo-extrabold.woff2') format('woff2'),
+            url('/assets/fonts/NanumSquareNeo-extrabold.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('NanumSquareNeo Bold'), url('/assets/fonts/NanumSquareNeo-bold.woff2') format('woff2'),
+            url('/assets/fonts/NanumSquareNeo-bold.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local('NanumSquareNeo Regular'), url('/assets/fonts/NanumSquareNeo-regular.woff2') format('woff2'),
+            url('/assets/fonts/NanumSquareNeo-regular.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('NanumSquareNeo Light'), url('/assets/fonts/NanumSquareNeo-light.woff2') format('woff2'),
+            url('/assets/fonts/NanumSquareNeo-light.woff') format('woff');
+        }</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideLayout">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">레이아웃</h2>
+                    </div>
+                    <h3 class="guide_h3">1. 기본 레이아웃</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="html">
+
+        < div id="wrap">
+            < header id="header">
+                < a title="홈으로">메인으로< /a>
+                < nav class="gnb" id="navigation">PC 메뉴< /nav>
+                < div class="l-right">
+                    < ul class="user-menu">개인화 메뉴< /ul>
+                    < div class="menu-wrap">모바일 메뉴< /div>
+                < /div>
+            < /header>
+            < div id="contents">메인 콘텐츠</>
+            < footer id="footer">푸터</>
+        < /div></pre>
+                    </div>
+                    <h3 class="guide_h3">2. PC 화면만 있는 경우</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="html">
+
+        < div id="wrap" <span class="var">class="pc-only"</span>>
+            < header id="header">
+                < a title="홈으로">메인으로< /a>
+                < nav class="gnb" id="navigation">PC 메뉴< /nav>
+                < div class="l-right">
+                    < ul class="user-menu">개인화 메뉴< /ul>
+                    < div class="menu-wrap">모바일 메뉴< /div>
+                < /div>
+            < /header>
+            < div id="contents">콘텐츠< /div>
+            < footer id="footer">푸터< /footer>
+        < /div></pre>
+                    </div>
+                    <h3 class="guide_h3">3. 로그인, 회원가입</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="html">
+
+        < div id="wrap" class="pc-only">
+            < header id="header">
+                < a title="홈으로">메인으로< /a>
+                < nav class="gnb" id="navigation">PC 메뉴< /nav>
+                < div class="l-right">
+                < ul class="user-menu">개인화 메뉴< /ul>
+                < div class="menu-wrap">모바일 메뉴< /div>
+                < /div>
+            < /header>
+            < div id="contents" <span class="var">class="login"</span>>로그인 화면< /div>
+            < footer id="footer">푸터< /footer>
+        < /div></pre>
+                    </div>
+                    <h3 class="guide_h3">4. 서브 페이지</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="html">
+
+        < div id="wrap" class="pc-only">
+            < header id="header">
+                < a title="홈으로">메인으로< /a>
+                < nav class="gnb" id="navigation">PC 메뉴< /nav>
+                < div class="l-right">
+                    < ul class="user-menu">개인화 메뉴< /ul>
+                    < div class="menu-wrap">모바일 메뉴< /div>
+                < /div>
+            < /header>
+            < div id="contents">
+                <span class="var">< section class=“sub”></span>
+                서브 콘텐츠
+                < /section>
+            < /div>
+            < footer id="footer">푸터< /footer>
+        < /div></pre>
+                    </div>
+                    <h3 class="guide_h3">5. 서브 페이지 - 사이드바 있는 경우</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="html">
+
+        < div id="wrap" class="pc-only">
+            < header id="header">
+                < a title="홈으로">메인으로< /a>
+                < nav class="gnb" id="navigation">PC 메뉴< /nav>
+                < div class="l-right">
+                    < ul class="user-menu">개인화 메뉴< /ul>
+                    < div class="menu-wrap">모바일 메뉴< /div>
+                < /div>
+            < /header>
+            < div <span class="var">class="sidebar"</span> id="contents">
+                < section class=“sub”>
+                서브 콘텐츠
+                < /section>
+            < /div>
+            < footer id="footer">푸터< /footer>
+        < /div></pre>
+                    </div>
+                </div>
+
+                <div class=" guide-section" id="guideButton">
+                    <style>
+                        #guideButton .layout button+button,
+                        a+button,
+                        button+a a {
+                            margin-top: 10px
+                        }
+                    </style>
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">버튼</h2>
+                    </div>
+
+                    <h3 class="guide_h3">1. 형태별 정의</h3>
+                    <ul class="guide_list">
+                        <li>크게는 btn-bg, btn-line 두가지 타입으로 나뉨.</li>
+                        <li>btn-bg 버튼에 색상, 모양별 클래스 추가함으로서 변형</li>
+                    </ul>
+                    <h4 class="guide_h4">기본</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue">btn-bg blue</button>
+                            <button type="button" class="btn-line">btn-line</button>
+                            <button type="button" class="btn-bg navy  square">btn-bg navy square</button>
+                            <button type="button" class="btn-underline" style="display: block;">btn-underline</button>
+                            <!-- display: block 임시로 추가 -->
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue">btn-bg blue< /button>
+        < button type="button" class="btn-line">btn-line< /button>
+        < button type="button" class="btn-bg navy  square">btn-bg navy square< /button>
+        < button type="button" class="btn-underline">btn-underline< /button>
+</pre>
+                    </div>
+                    <h4 class="guide_h4">아이콘 추가</h4>
+                    <ul class="guide_list">
+                        <li>버튼에 아이콘이 있는 경우 i태그 추가하여 클래스 추가
+                            (ex. .btn-bg.blue.sm > i.plus)
+                        </li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <a class="btn-bg blue sm" href="javascript:;"><i class="plus"></i>btn-bg blue sm >
+                                i.plus</a>
+                            <button type="button" class="btn-line xs"><i class="modify"></i>btn-line xs >
+                                i.modify</button>
+                            <button type="button" class="btn-line white xs"><i class="modify"></i>btn-line white xs >
+                                i.modify</button>
+                            <button type="button" class="btn-bg red xs"><i class="delete"></i>btn-bg red xs >
+                                i.delete</button>
+                            <button type="button" class="btn-line xs"><i class="delete"></i>btn-line xs >
+                                i.delete</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+    < a class="btn-bg blue sm" href="javascript:;">< i class="plus">< /i>btn-bg blue sm > i.plus< /a>
+    < button type="button" class="btn-line xs">< i class="modify">< /i>btn-line xs > i.modify< /button>
+    < button type="button" class="btn-line white xs">< i class="modify">< /i>btn-line white xs > i.modify< /button>
+    < button type="button" class="btn-bg red xs">< i class="delete">< /i>btn-bg red xs > i.delete< /button>
+    < button type="button" class="btn-line xs">< i class="delete">< /i>btn-line xs > i.delete< /button></pre>
+                    </div>
+                    <h4 class="guide_h4">비활성화 상태</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue" disabled>btn-bg blue</button>
+                            <button type="button" class="btn-line" disabled>btn-line</button>
+                            <button type="button" class="btn-bg navy square" disabled>btn-bg navy square</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue" disabled>btn-bg blue< /button>
+        < button type="button" class="btn-line" disabled>btn-line< /button>
+        < button type="button" class="btn-bg navy square" disabled>btn-bg navy square< /button>
+</pre>
+                    </div>
+                    <h3 class="guide_h3">2. 색상별 정의</h3>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue">btn-bg blue</button>
+                            <button type="button" class="btn-bg navy">btn-bg navy</button>
+                            <button type="button" class="btn-bg red">btn-bg red</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue">btn-bg blue< /button>
+        < button type="button" class="btn-bg navy">btn-bg navy< /button>
+        < button type="button" class="btn-bg red">btn-bg red< /button>
+</pre>
+                    </div>
+                    <h3 class="guide_h3">3. 크기별 정의</h3>
+                    <h4 class="guide_h4">기본 사이즈</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue">btn-bg blue</button>
+                            <button type="button" class="btn-line">btn-line</button>
+                            <button type="button" class="btn-bg navy  square">btn-bg navy square</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue">btn-bg blue< /button>
+        < button type="button" class="btn-line">btn-line< /button>
+        < button type="button" class="btn-bg navy  square">btn-bg navy square< /button>
+</pre>
+                    </div>
+                    <h4 class="guide_h4">가로 사이즈 full</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue full">btn-bg blue full</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue full">btn-bg blue full< /button>
+</pre>
+                    </div>
+                    <h4 class="guide_h4">medium 사이즈</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue md">btn-bg blue md</button>
+                            <!-- display: block 임시 지정 -->
+                            <button type="button" class="btn-line md" style="display: block">btn-line md</button>
+                            <button type="button" class="btn-bg navy md square">btn-bg navy md
+                                square</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue md">btn-bg blue md< /button>
+        < button type="button" class="btn-line md">btn-line md< /button>
+        < button type="button" class="btn-bg navy md square">btn-bg navy md square< /button></pre>
+                    </div>
+                    <h4 class="guide_h4">small 사이즈</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue sm">btn-bg blue sm</button>
+                            <!-- display: block 임시 지정 -->
+                            <button type="button" class="btn-line sm" style="display: block;">btn-line sm</button>
+                            <button type="button" class="btn-bg navy sm square">btn-bg navy sm square</button>
+
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue sm">btn-bg blue sm< /button>
+        < button type="button" class="btn-line sm">btn-line sm< /button>
+        < button type="button" class="btn-bg navy sm square">btn-bg navy sm square< /button></pre>
+                    </div>
+                    <h4 class="guide_h4">extra small 사이즈</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <button type="button" class="btn-bg blue xs">btn-bg blue xs</button>
+                            <!-- display: block 임시 적용 -->
+                            <button type="button" class="btn-line xs" style="display: block;">btn-line xs</button>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < button type="button" class="btn-bg blue xs">btn-bg blue xs< /button>
+        < button type="button" class="btn-line xs">btn-line xs< /button></pre>
+                    </div>
+                    <h3 class="guide_h3">4. 버튼 CSS</h3>
+                    <div class="guide_box">
+                        <pre class="code" lang="CSS">
+
+        a,button { display: inline-block; vertical-align: top; }
+        a:active,button:active { opacity: 0.8; }
+        a[class^='btn'],button[class^='btn'] { border-radius: 28px; display: inline-block; font-size: 18px;  font-weight: 600; height: 56px; line-height: 54px; min-width: 200px; padding: 0 20px; text-align: center; }
+        a[class^='btn'] > i,button[class^='btn'] > i { background-position: 50%; background-repeat: no-repeat;  display: inline-block; margin-right: 4px; vertical-align: text-top; }
+        a[class^='btn'] > i.more,button[class^='btn'] > i.more { margin-left: 2px; margin-right: 0; }
+        a[class^='btn'] > i.key,button[class^='btn'] > i.key { background-image: url(../img/common/ ico_btn_key_white.png); }
+        a[class^='btn'][class*='-line'],button[class^='btn'][class*='-line'] { border: 1px solid var(--grayaaa);  color: var(--gray666); }
+        a[class^='btn'][class*='-line'].white,button[class^='btn'][class*='-line'].white {border-color: hsla(0, 0%, 100%, 0.5); color: var(--white);}
+        a[class^='btn'][class*='-line'].white > i.modify,button[class^='btn'][class*='-line'].white > i.modify {background-image: url(../img/common/ico_btn_modify_white.png);}
+        a[class^='btn'][class*='-line'] > i.modify,button[class^='btn'][class*='-line'] > i.modify {background-image: url(../img/common/ico_btn_modify_gray.png);}
+        a[class^='btn'][class*='-line'] > i.delete,button[class^='btn'][class*='-line'] > i.delete {background-image: url(../img/common/ico_btn_delete_gray.png);}
+        a[class^='btn'][class*='-line'] > i.more,button[class^='btn'][class*='-line'] > i.more {background-image: url(../img/common/ico_arr_down_1616.png);}
+        a[class^='btn'][class*='-line'] > i.minus,button[class^='btn'][class*='-line'] > i.minus {background-image: url(../img/common/ico_btn_minus.png);}
+        a[class^='btn'][class*='-line'] > i.key,button[class^='btn'][class*='-line'] > i.key {background-image: url(../img/common/ico_btn_key_generate.png);}
+        a[class^='btn'][class*='-line'].disabled,a[class^='btn'][class*='-line']:disabled,button[class^='btn'][class*='-line'].disabled,button[class^='btn'][class*='-line']:disabled{background-color: var(--grayf8); opacity: 0.5; pointer-events: none;}
+        a[class^='btn'][class*='-bg'],button[class^='btn'][class*='-bg'] {color: var(--white);}
+        a[class^='btn'][class*='-bg'].blue,button[class^='btn'][class*='-bg'].blue {background: var(--blue);}
+        a[class^='btn'][class*='-bg'].navy,button[class^='btn'][class*='-bg'].navy {background: var(--navy);}
+        a[class^='btn'][class*='-bg'].navyLight,button[class^='btn'][class*='-bg'].navyLight {background: var(--navyLight);}
+        a[class^='btn'][class*='-bg'].red,button[class^='btn'][class*='-bg'].red {background: var(--red);}
+        a[class^='btn'][class*='-bg'] > i.delete,button[class^='btn'][class*='-bg'] > i.delete {background-image: url(../img/common/ico_btn_delete_white.png);}
+        a[class^='btn'][class*='-bg'] > i.plus,button[class^='btn'][class*='-bg'] > i.plus {background-image: url(../img/common/ico_btn_plus.png);}
+        a[class^='btn'][class*='-bg'].disabled,a[class^='btn'][class*='-bg']:disabled,button[class^='btn'][class*='-bg'].disabled,button[class^='btn'][class*='-bg']:disabled {opacity: 0.5; pointer-events: none;}
+        a[class^='btn'][class*='-underline'],button[class^='btn'][class*='-underline'] {border-radius: 0; color: var(--gray888); font-size: 14px; font-weight: 600; height: auto; line-height: 1; min-width: auto; padding: 0; text-decoration: underline; width: auto;}
+        a[class^='btn'][class*='-underline'].blue,button[class^='btn'][class*='-underline'].blue {color: var(--blue);}
+        a[class^='btn'][class*='-link'],button[class^='btn'][class*='-link'] {border-radius: 0; color: var(--blue); font-size: 16px; font-weight: 400; height: auto; line-height: 1; min-width: auto; padding: 0; text-decoration: underline; width: auto;}
+        a[class^='btn'][class*='-arr'],button[class^='btn'][class*='-arr'] {border-radius: 0; color: var(--gray888); font-size: 14px; font-weight: 600; height: auto; line-height: 1; min-width: 0; padding: 0 18px 0 0; position: relative;}
+        a[class^='btn'][class*='-arr']:after,button[class^='btn'][class*='-arr']:after {background: url(../img/common/ico_btn_arrow.png) 50% no-repeat; background-size: 16px 16px; content: ''; display: block; height: 16px; margin-top: -8px; position: absolute; right: 0; top: 50%; width: 16px;}
+        a[class^='btn'].square,button[class^='btn'].square {border-radius: 8px;}
+        a[class^='btn'].full,button[class^='btn'].full {width: 100%;}
+        a[class^='btn'].md,button[class^='btn'].md {font-size: 16px; height: 48px; line-height: 47px; min-width: 160px;}
+        a[class^='btn'].md > i,button[class^='btn'].md > i {background-size: 16px 16px; height: 16px; width: 16px;}
+        a[class^='btn'].sm,button[class^='btn'].sm {font-size: 14px; height: 40px; line-height: 39px; min-width: 100px;}
+        a[class^='btn'].sm > i,button[class^='btn'].sm > i {background-size: 16px 16px; height: 16px; width: 16px;}
+        a[class^='btn'].xs,button[class^='btn'].xs {font-size: 14px; font-weight: 400; height: 28px; line-height: 27px; min-width: 48px; padding: 0 12px;}
+        a[class^='btn'].xs > i,button[class^='btn'].xs > i {background-size: 16px 16px; height: 16px; width: 16px;}</pre>
+                    </div>
+                    <h3 class="guide_h3">* .button-wrap이 부모요소인 경우 중앙 정렬
+                    </h3>
+                    <ul class="guide_list">
+                        <li>.button-wrap에 .right 추가 시 우측 정렬</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout" style="width: 680px;">
+                            <div class="button-wrap" style="margin-top: 0;">
+                                <a class="btn-line md">취소</a>
+                                <a class="btn-bg blue md">등록</a>
+                            </div>
+                        </div>
+                        <div class="layout" style="width: 680px;">
+                            <div class="button-wrap right" style="margin-top: 0;">
+                                <a class="btn-line md">취소</a>
+                                <a class="btn-bg blue md">등록</a>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="button-wrap">
+            < a class="btn-line md">취소< /a>
+            < a class="btn-bg blue md">등록< /a>
+        < /div>
+
+        < div class="button-wrap <span class="var">right</span>">
+            < a class="btn-line md">취소< /a>
+            < a class="btn-bg blue md">등록< /a>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        .button-wrap { -webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: center; -ms-flex-pack: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: center; margin-top: 40px; }
+        .button-wrap.right {  -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+        .button-wrap a + a, .button-wrap a + button, .button-wrap button + a, .button-wrap button + button {margin-left: 8px;}
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideBadge">
+                    <style>
+                        .badge-line,
+                        .badge-bg {
+                            margin-bottom: 10px;
+                        }
+                    </style>
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">뱃지</h2>
+                    </div>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <i class="badge-line white">badge-line white</i><br>
+                            <i class="badge-line blue">badge-line blue</i><br>
+                            <i class="badge-bg green">badge-bg green</i><br>
+                            <i class="badge-bg navy">badge-bg navy</i>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < i class="badge-line white">badge-line white< /i>
+        < i class="badge-line blue">badge-line blue< /i>
+        < i class="badge-bg green">badge-bg green< /i>
+        < i class="badge-bg navy">badge-bg navy< /i>
+</pre>
+                        <pre class="code" lang="css">
+
+        [class^='badge'] { border-radius: 4px; display: inline-block; font-size: 13px; font-weight: var(--fw-SemiBold); height: 25px; line-height: 24px; padding: 0 8px; text-align: center; }
+        [class^='badge'][class*='-line'] { border-style: solid; border-width: 1px; }
+        [class^='badge'][class*='-line'].blue { border-color: var(--blue); color: var(--blue); }
+        [class^='badge'][class*='-line'].navy { border-color: var(--navy); color: var(--navy); }
+        [class^='badge'][class*='-line'].white { border-color: var(--white); color: var(--white); }
+        [class^='badge'][class*='-bg'] { border: none; }
+        [class^='badge'][class*='-bg'].green { background: #eef5e0; color: var(--greenDark); }
+        [class^='badge'][class*='-bg'].navy { background: var(--grayf7f8fb); color: var(--navyLight); }
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideInput">
+                    <style>
+                        label:has(input[type=checkbox])+label:has(input[type=checkbox]) {
+                            margin-top: 10px;
+                        }
+
+                        label.datepicker input,
+                        .input-search input[type=text] {
+                            margin-top: 0;
+                        }
+
+                        input[type=text],
+                        input[type=number],
+                        input[type=password]+input[type=text],
+                        input[type=number],
+                        input[type=password] {
+                            margin-top: 10px;
+                        }
+                    </style>
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">입력 폼 요소</h2>
+                    </div>
+                    <h3 class="guide_h3">1. 체크박스</h3>
+
+                    <div class="guide_box">
+                        <div class="layout">
+                            <label for="checkExample">
+                                <input type="checkbox" id="checkExample" role="checkbox" />
+                                <span>체크박스 예시(default)</span>
+                            </label>
+                            <label for="checkExample2"><input type="checkbox" checked id="checkExample2"
+                                    role="checkbox" /><span>
+                                    체크박스 예시(checked)
+                                </span>
+                            </label>
+                            <label for="checkExample3"><input type="checkbox" id="checkExample3" role="checkbox"
+                                    disabled /><span>
+                                    체크박스 예시(disabled)
+                                </span>
+                            </label>
+                            <label for="checkExample4"><input type="checkbox" checked id="checkExample4" role="checkbox"
+                                    checked disabled /><span>체크박스 예시(checked+disabled) </span>
+                            </label>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < label for="checkExample">
+            < input type="checkbox" id="checkExample" role="checkbox" />
+            < span>체크박스 예시(default)< /span>
+        < /label>
+        < label for="checkExample2">
+            < input type="checkbox" checked id="checkExample2" role="checkbox" />
+            < span>체크박스 예시(checked)< /span>
+        < /label>
+        < label for="checkExample3">
+            < input type="checkbox" id="checkExample3" role="checkbox" disabled />
+            < span>체크박스 예시(disabled)< /span>
+        < /label>
+        < label for="checkExample4">
+            < input type="checkbox" checked id="checkExample4" role="checkbox" checked disabled /> < span>체크박스 예시(checked+disabled) < /span>
+        < /label></pre>
+                        <pre class="code" lang="CSS">
+
+        input[type='checkbox'] { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: url(../img/common/ico_checkbox.png) 50% no-repeat; background-size: 24px 24px; cursor: pointer; height: 24px; vertical-align: middle; width: 24px; }
+        input[type='checkbox']:checked { background-image: url(../img/common/ ico_checkbox_checked.png); }
+        input[type='checkbox']:checked:disabled { background-image: url(../img/common/ico_checkbox_checked_disabled.png); }
+        input[type='checkbox']:disabled { background-image: url(../img/common/ico_checkbox_disabled.png); }</pre>
+                    </div>
+                    <h3 class="guide_h3">2. 텍스트필드</h3>
+                    <h4 class="guide_h4">input[type="text"], input[type="password"], input[type="number"]</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <input type="text" placeholder="텍스트 입력">
+                            <input type="text" value="입력 상태">
+                            <input type="text" placeholder="비활성화 상태" disabled>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < input type="text" placeholder="텍스트 입력">
+        < input type="text" value="입력 상태">
+        < input type="text" placeholder="비활성화 상태" disabled>
+</pre>
+                        <pre class="code" lang="css">
+
+        input[type='number'], input[type='password'], input[type='text'] { background: var(--white); border: 1px solid var(--grayccc); border-radius: 8px; color: var(--black); font-size: 16px; height: 48px; padding: 18px 16px; }
+        input[type='number']::-webkit-input-placeholder, input[type='password ::-webkit-input-placeholder, input[type='text']::-webkit-input-placeholder { color: var(--gray666); }
+        input[type='number']::-moz-placeholder, input[type='password ::-moz-placeholder, input[type='text']::-moz-placeholder { color: var(--gray666); }
+        input[type='number']:-ms-input-placeholder, input[type='password :-ms-input-placeholder, input[type='text']:-ms-input-placeholder { color: var(--gray666); }
+        input[type='number']::-ms-input-placeholder, input[type='password ::-ms-input-placeholder, input[type='text']::-ms-input-placeholder { color: var(--gray666); }
+        input[type='number']::placeholder, input[type='password']::placeholder, input[type='text']::placeholder { color: var(--gray666); }
+        input[type='number']:focus, input[type='password']:focus, input[type='text']:focus { border-color: var(--blue); outline: none; }
+        input[type='number']:disabled, input[type='password']:disabled, input[type='text']:disabled { background: var(--grayf1); border-color: var(--grayccc); color: var(--gray666); }
+        input[type='number']:-moz-read-only, input[type='password']:-moz-read-only, input[type='text']:-moz-read-only { background: var(--grayf8); border-color: var(--grayccc); outline: none; pointer-events: none; }
+        input[type='number']:read-only, input[type='password']:read-only, input[type='text']:read-only { background: var(--grayf8); border-color: var(--grayccc); outline: none; pointer-events: none; }
+</pre>
+                    </div>
+                    <h4 class="guide_h4">validation 체크 메세지 노출</h4>
+                    <ul class="guide_list">
+                        <li>.input-set에 .error 추가 시 에러메세지 노출</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <div class="error input-set">
+                                <input type="text" placeholder="error" />
+                                <p class="valid">Validation 체크 메세지</p>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="error input-set">
+            < input type="text" placeholder="error" />
+            < p class="valid">Validation 체크 메세지< /p>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        .input-set.error input[type='number'], .input-set.error input[type='password'], .input-set.error input[type='text'], .input-set.error select { border-color: var(--red); }
+        .input-set.error p.valid { color: var(--red); display: block; font-size: 14px; margin-top: 8px; text-align: left; }
+        .input-set.error p.valid:before { background: url(../img/common/ico_error.png) 50% no-repeat; background-size: 16px 16px; content: ''; display: inline-block; height: 16px; margin-bottom: 2px; margin-right: 4px; vertical-align: middle; width: 16px; }
+        .input-set.error p.type02 { border-top: 1px solid var(--grayddd); margin: 0; padding: 16px 0; width: 100%; }
+        .input-set.error p.type03 { margin: 0 0 20px; }
+        .input-set p.valid { display: none; }
+        .input-set p.alert { color: var(--gray666); font-size: 14px; margin-top: 8px; text-align: left; }
+</pre>
+                    </div>
+                    <h4 class="guide_h4">검색어 입력창</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <div class="input-search">
+                                <label for="inputSearchExample" class="blind">검색어 입력</label>
+                                <input type="text" placeholder="검색어 입력" id="inputSearchExample" />
+                                <button><span class="blind">검색</span></button>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="input-search">
+            < label for="inputSearchExample" class="blind">검색어 입력< /label>
+            < input type="text" placeholder="검색어 입력" id="inputSearchExample" />
+            < button>< span class="blind">검색< /span>< /button>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        .input-search { position: relative; width: 300px; }
+        .input-search input { padding-right: 40px; width: 100%; }
+        .input-search > button { background: url(../img/common/ico_search_btn.png); background-size: 24px 24px; height: 24px; margin-top: -12px; position: absolute; right: 16px; top: 50%; width: 24px; }</pre>
+                    </div>
+                    <h4 class="guide_h4">textarea</h4>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < textarea name="" id="" cols="30" rows="10">< /textarea>
+</pre>
+                        <pre class="code" lang="css">
+
+        textarea { border: 1px solid var(--grayccc); border-radius: 8px; color: var(--gray666); font-size: 16px; line-height: 24px; padding: 16px; width: 100%; }
+        textarea:focus { border: 1px solid var(--blue); outline: none; }
+</pre>
+                    </div>
+                    <h4 class="guide_h4">Datepicker</h4>
+                    <ul class="guide_list">
+                        <li>별도 script 추가되어야 함</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <label class="datepicker" for="inputDatepicker">
+                                <input id="inputDatepicker" type="text" readonly="readonly" value="날짜를 선택하세요." />
+                            </label>
+                            <script>
+                                $(() => {
+                                    $('#inputDatepicker').datepicker({
+                                        dateFormat: 'yy-mm-dd',
+                                        prevText: '이전 달',
+                                        nextText: '다음 달',
+                                        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                                        monthNameShort: [
+                                            '1월',
+                                            '2월',
+                                            '3월',
+                                            '4월',
+                                            '5월',
+                                            '6월',
+                                            '7월',
+                                            '8월',
+                                            '9월',
+                                            '10월',
+                                            '11월',
+                                            '12월',
+                                        ],
+                                        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                                        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                                        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                                        yearSuffix: '년',
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < label class="datepicker" for="inputDatepicker">
+            < input id="inputDatepicker" type="text" readonly="readonly" value="날짜를 선택하세요." />
+        < /label>
+</pre>
+                        <pre class="code" lang="css">
+
+        .ui-datepicker { font-size: 16px; }
+        .datepicker { height: 48px; padding: 0; position: relative; width: 300px; }
+        .datepicker:after { background: url(../img/common/ico_datepicker.png) 50% no-repeat; background-size: 24px 24px; content: ''; display: block; height: 24px; position: absolute; right: 16px; top: 12px; width: 24px; }
+        .datepicker input:-moz-read-only { background-color: var(--white); }
+        .datepicker input:read-only { background-color: var(--white); 
+        }
+</pre>
+                        <pre class="code" lang="js">
+
+        $(() => {
+            $('#inputDatepicker').datepicker({
+                dateFormat: 'yy-mm-dd',
+                prevText: '이전 달',
+                nextText: '다음 달',
+                monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월',   '8월', '9월', '10월', '11월', '12월'],
+                monthNameShort: [
+                    '1월',
+                    '2월',
+                    '3월',
+                    '4월',
+                    '5월',
+                    '6월',
+                    '7월',
+                    '8월',
+                    '9월',
+                    '10월',
+                    '11월',
+                    '12월',
+                ],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                yearSuffix: '년',
+            });
+        });
+    </pre>
+                    </div>
+
+                    <h3 class="guide_h3">3. 셀렉트박스</h3>
+
+                    <div class="guide_box">
+                        <div class="layout">
+                            <label for="comboBox" class="blind">셀렉트박스</label>
+                            <select name="" id="comboBox">
+                                <option value="" selected>전체</option>
+                                <option value="">옵션1</option>
+                                <option value="">옵션2</option>
+                            </select>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < label for="comboBox" class="blind">셀렉트박스< /label>
+        < select name="" id="comboBox">
+            < option value="" selected>전체< /option>
+            < option value="">옵션1< /option>
+            < option value="">옵션2< /option>
+        < /select>
+</pre>
+                        <pre class="code" lang="CSS">
+
+        select { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url(../img/common/ico_arr_accordion_down.png); background-position: calc(100% - 16px) 50%; background-repeat: no-repeat; background-size: 24px 24px; 
+            border: 1px solid var(--grayccc);  border-radius: 8px; -webkit-box-sizing: border-box; box-sizing: border-box; color: var(--gray666); font-size: 16px; height: 48px; line-height: 1; padding-left: 16px; vertical-align: top; width: 160px;}
+        select[readonly] { background-color: var(--grayf8); border: 1px solid var (--grayccc); color: var(--black); outline: none; pointer-events: none;}
+        select:focus { border: 1px solid var(--blue); outline: none;}
+</pre>
+                    </div>
+                    <h3 class="guide_h3">4. 파일 첨부</h3>
+                    <ul class="guide_list">
+                        <li>파일 갯수 1개 등록 기준으로 스크립트 작성되어 있음.</li>
+                        <li>input[type="file"]에 multiple 속성 있을 경우 1개 이상 등록 가능</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <div class="upload-img">
+                                <input type="file" id="fileUpload" class="blind" disabled onchange="addFile(this)"
+                                    accept="" />
+                                <label for="fileUpload" class="btn-upload">파일첨부</label>
+                                <!-- 메세지 노출시 해당 .__hide 제거  -->
+                                <p class="desc-text __hide">파일을 첨부해 주세요.</p>
+                                <!-- id 할당하여 추가/삭제 -->
+                                <ul class="upload-list">
+                                    <li id="file1702527471846" class="file-item">
+                                        <p class="name">sample.png</p>
+                                        <a class="delete-btn" href="javascript:preventDefault()"
+                                            onclick="deleteFile(1702527471846);"><span class="blind">삭제</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="upload-img">
+            < input type="file" id="fileUpload" class="blind" disabled onchange="addFile(this)" accept="" />
+            < label for="fileUpload" class="btn-upload">파일첨부< /label>
+            < !-- 메세지 노출시 해당 .__hide 제거  -- >
+            < p class="desc-text __hide">파일을 첨부해 주세요.< /p>
+            < !-- id 할당하여 추가/삭제 -- >
+            < ul class="upload-list">
+                < li id="file1702527471846" class="file-item">
+                    < p class="name">sample.png< /p>
+                    < a class="delete-btn" href="javascript:preventDefault()" onclick="deleteFile(1702527471846);">< span
+                            class="blind">삭제< /span>< /a>
+                < /li>
+            < /ul>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        .upload-img { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; }
+        .upload-img input[type='file']:disabled + label { opacity: 0.5; pointer-events: none; }
+        .upload-img .btn-upload { background: var(--navyLight); border-radius: 8px; color: var(--white); display: block; font-size: 14px; font-weight: 600; height: 48px; height: 100%; line-height: 48px; min-width: auto; padding: 0; text-align: center; width: 80px; }
+        .upload-img .btn-upload.line { background-color: #fff; border: 1px solid var(--grayaaa); border-radius: 14px; color: var(--gray666); height: 28px; line-height: 26px; margin-left: 12px; width: 86px; }
+        .upload-img p { color: var(--gray666); font-size: 14px; }
+        .upload-img p > a { text-decoration: underline; }
+        .upload-img p.__hide, .upload-img p.__hide > a { display: none; }
+        .upload-img .desc-text { margin-left: 19px; }
+        .upload-img .upload-list { margin-left: 19px; }
+        .upload-img .upload-list, .upload-img .upload-list > li { display: -webkit-box; display: -ms-flexbox; display: flex; }
+        .upload-img .upload-list > li.key p { color: var(--black); }
+        .upload-img .upload-list > li .delete-btn { background: url(../img/common/ico_deleteBtn. png) 50% no-repeat; background-size: 24px 24px; border-radius: 50%; display: inline-block; height: 24px; margin-left: 8px; width: 24px; }
+        .upload-img .upload-list > li + li { margin-left: 10px; }
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideBreadcrumb">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">
+                            브레드크럼
+                        </h2>
+                    </div>
+                    <ul class="guide_list">
+                        <li>aria-current="true" 속성으로 리스트 내 항목 select</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout" style="width: 680px;">
+                            <div class="breadcrumb">
+                                <ul>
+                                    <li class="home">
+                                        <a href="" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                    </li>
+                                    <li>
+                                        <div data-dropdown_wrap>
+                                            <a href="javascript:;" data-dropdown_trg role="combobox"
+                                                aria-haspopup="true" aria-selected="true" aria-expanded="false">depth1
+                                                선택항목</a>
+                                            <div data-dropdown_menu>
+                                                <ol role="listbox">
+                                                    <li><a href="javascript:;" aria-current="true">depth1 메뉴</a></li>
+                                                    <li><a href="javascript:;">depth1 메뉴</a></li>
+                                                    <li><a href="javascript:;">depth1 메뉴</a></li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div data-dropdown_wrap>
+                                            <a href="javascript:;" data-dropdown_trg role="combobox"
+                                                aria-haspopup="true" aria-selected="true" aria-expanded="false">depth2
+                                                선택항목</a>
+                                            <div data-dropdown_menu>
+                                                <ol role="listbox">
+                                                    <li><a href="javascript:;" aria-current="true">depth2 메뉴</a></li>
+                                                    <li><a href="javascript:;">depth2 메뉴</a></li>
+                                                    <li><a href="javascript:;">depth2 메뉴</a></li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="breadcrumb">
+            < ul>
+                < li class="home">
+                    < a href="" aria-label="홈으로">< span class="blind">홈으로< /span>< /a>
+                < /li>
+                < li>
+                    < div data-dropdown_wrap>
+                        < a href="javascript:;" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="true" aria-expanded="false">depth1 선택항목< /a>
+                        < div data-dropdown_menu>
+                            < ol role="listbox">
+                                < li>< a href="javascript:;" aria-current="true">depth1 메뉴< /a>< /li>
+                                < li>< a href="javascript:;">depth1 메뉴< /a>< /li>
+                                < li>< a href="javascript:;">depth1 메뉴< /a>< /li>
+                            < /ol>
+                        < /div>
+                    < /div>
+                < /li>
+                < li>
+                    < div data-dropdown_wrap>
+                        < a href="javascript:;" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="true" aria-expanded="false">depth2 선택항목< /a>
+                        < div data-dropdown_menu>
+                            < ol role="listbox">
+                                < li>< a href="javascript:;" aria-current="true">depth2 메뉴< /a>< /li>
+                                < li>< a href="javascript:;">depth2 메뉴< /a>< /li>
+                                < li>< a href="javascript:;">depth2 메뉴< /a>< /li>
+                            < /ol>
+                        < /div>
+                    < /div>
+                < /li>
+            < /ul>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        .breadcrumb > ul { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; }
+        .breadcrumb > ul > li { position: relative; }
+        .breadcrumb > ul > li.home a { background: url(../img/common/ico_breadcrumb_home.png) 50% no-repeat; background-size: 24px 24px; height: 24px; width: 24px; }
+        .breadcrumb > ul > li + li { margin-left: 33px; }
+        .breadcrumb > ul > li + li:before { background: var(--grayddd); content: ''; display: block; height: 12px; left: -16px; margin-top: -6px; position: absolute; top: 50%; width: 1px; }
+        .breadcrumb > ul > li a { color: var(--gray666); font-size: 16px; line-height: 1; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg] { line-height: 24px; padding-right: 24px; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg]:after { background: url(../img/common/ico_breadcrumb_down.png) 50% no-repeat; background-size: 16px 16px; border-radius: 50%; content: ''; display: block; height: 16px; margin-top: -8px; position: absolute; right: 0; top: 50%; width: 16px;}
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg].__open { color: var(--black); }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg].__open:after { background-image: url(../img/common/ico_breadcrumb_up.png); }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg].__open +  [data-dropdown_menu] { max-height: 400px; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_trg].__open +  [data-dropdown_menu] > ol { height: 100%; overflow: auto; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_menu] { left:  -15px; width: 180px; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_menu] > ol { background: var(--white); border: 1px solid var(--blue); border-radius: 5px; padding: 8px 0; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_menu] > ol > li >  a { display: block; padding: 12px 16px; word-break: keep-all; }
+        .breadcrumb > ul > li [data-dropdown_wrap] [data-dropdown_menu] > ol > li >  [aria-current='true'] { background: var(--grayf7f8fb); color: var(--black); font-weight: 600; line-height: 1.2;}
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guidePagination">
+                    <style>
+                        [data-pagination] {
+                            margin-top: 0;
+                        }
+                    </style>
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">Pagination</h2>
+                    </div>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <nav data-pagination aria-label="pagination">
+                                <a href="javascript:;" class="first" aria-label="처음페이지로"><span
+                                        class="blind">처음페이지로</span></a>
+                                <a href="javascript:;" class="prev" aria-label="이전페이지로"><span
+                                        class="blind">이전페이지로</span></a>
+                                <ul role="navigation">
+                                    <li>
+                                        <a href="javascript:;" aria-current="true">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">5</a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:;" class="next" aria-label="다음페이지로"><span
+                                        class="blind">다음페이지로</span></a>
+                                <a href="javascript:;" class="last" aria-label="마지막페이지로"><span
+                                        class="blind">마지막페이지로</span></a>
+                            </nav>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < nav data-pagination aria-label="pagination">
+            < a href="javascript:;" class="first" aria-label="처음페이지로">
+                < span class="blind">처음페이지로< /span>
+            < /a>
+            < a href="javascript:;" class="prev" aria-label="이전페이지로">
+                < span class="blind">이전페이지로< /span>
+            < /a>
+            < ul role="navigation">
+                < li>
+                    < a href="javascript:;" aria-current="true">1< /a>
+                < /li>
+                < li>
+                    < a href="javascript:;">2< /a>
+                < /li>
+                < li>
+                    < a href="javascript:;">3< /a>
+                < /li>
+                < li>
+                    < a href="javascript:;">4< /a>
+                < /li>
+                < li>
+                    < a href="javascript:;">5< /a>
+                < /li>
+            < /ul>
+            < a href="javascript:;" class="next" aria-label="다음페이지로">
+                < span class="blind">다음페이지로< /span>
+            < /a>
+            < a href="javascript:;" class="last" aria-label="마지막페이지로">
+                < span class="blind">마지막페이지로< /span>
+            < /a>
+        < /nav>
+</pre>
+                        <pre class="code" lang="css">
+
+        [data-pagination] {-webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: center; -ms-flex-pack: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: center; margin-top: 40px; }
+        [data-pagination] > a { background-position: 50%; background-repeat: no-repeat; background-size: 16px 16px; height: 40px; width: 40px; }
+        [data-pagination] > a + a { margin-left: 4px; }
+        [data-pagination] > a.first { background-image: url(../img/common/ico_pagination_first.png); }
+        [data-pagination] > a.prev { background-image: url(../img/common/ico_pagination_prev.png); }
+        [data-pagination] > a.next { background-image: url(../img/common/ico_pagination_next.png); }
+        [data-pagination] > a.last { background-image: url(../img/common/ico_pagination_last.png); }
+        [data-pagination] > ul { -webkit-box-pack: center; -ms-flex-pack: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: center; margin: 0 16px; }
+        [data-pagination] > ul li + li { margin-left: 6px; }
+        [data-pagination] > ul li a { background: var(--white); border: 1px solid var(--grayddd); border-radius: 4px; color: var(--gray666); font-size: 16px; height: 40px; line-height: 40px; text-align: center; width: 40px; }
+        [data-pagination] > ul li a[aria-current] { background: var(--blue); border-color: var(--blue); color: var(--white); font-weight: 600; }
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideAccordion">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">아코디언</h2>
+                    </div>
+                    <div class="guide_box">
+                        <div class="layout" style="width: 100%;">
+                            <div data-accordion>
+                                <ul>
+                                    <li data-accordion_trg>
+                                        <button aria-expanded="false" aria-controls="data-accordion1">
+                                            <em>기능적합성 점검</em>
+                                            <span>기능적합성 점검은 무엇입니까?</span>
+                                        </button>
+                                    </li>
+                                    <li id="data-accordion1" data-accordion_cont aria-hidden="true">
+                                        아코디언 내용입니다.1
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li data-accordion_trg>
+                                        <button aria-expanded="false" aria-controls="data-accordion2">
+                                            <em>기능적합성 점검</em>
+                                            <span>기능적합성 점검은 무엇입니까?</span>
+                                        </button>
+                                    </li>
+                                    <li id="data-accordion2" data-accordion_cont aria-hidden="true">
+                                        아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                                        내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                                        내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                                        내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                                        내용입니다.2
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li data-accordion_trg>
+                                        <button aria-expanded="false" aria-controls="data-accordion3">
+                                            <em>기능적합성 점검</em>
+                                            <span>기능적합성 점검은 무엇입니까?</span>
+                                        </button>
+                                    </li>
+                                    <li id="data-accordion3" data-accordion_cont aria-hidden="true">
+                                        아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                                        내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                                        내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                                        내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                                        내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                                        내용입니다.3아코디언 내용입니다.3
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+        < div data-accordion>
+            < ul>
+                < li data-accordion_trg>
+                    < button aria-expanded="false" aria-controls="data-accordion1">
+                        < em>기능적합성 점검< /em>
+                        < span>기능적합성 점검은 무엇입니까?< /span>
+                    < /button>
+                < /li>
+                < li id="data-accordion1" data-accordion_cont aria-hidden="true">
+                    아코디언 내용입니다.1
+                < /li>
+            < /ul>
+            < ul>
+                < li data-accordion_trg>
+                    < button aria-expanded="false" aria-controls="data-accordion2">
+                        < em>기능적합성 점검< /em>
+                        < span>기능적합성 점검은 무엇입니까?< /span>
+                    < /button>
+                < /li>
+                < li id="data-accordion2" data-accordion_cont aria-hidden="true">
+                    아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                    내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                    내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                    내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언 내용입니다.2아코디언
+                    내용입니다.2
+                < /li>
+            < /ul>
+            < ul>
+                < li data-accordion_trg>
+                    < button aria-expanded="false" aria-controls="data-accordion3">
+                        < em>기능적합성 점검< /em>
+                        < span>기능적합성 점검은 무엇입니까?< /span>
+                    < /button>
+                < /li>
+                < li id="data-accordion3" data-accordion_cont aria-hidden="true">
+                    아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                    내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                    내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                    내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                    내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언 내용입니다.3아코디언
+                    내용입니다.3아코디언 내용입니다.3
+                < /li>
+            < /ul>
+        < /div>
+                        </pre>
+                        <pre class="code" lang="css">
+        [data-accordion].__none { background-position: 50% 10.4rem; background-size: 4.8rem 4.8rem; height: 30rem; padding-top: 17.6rem;}
+        [data-accordion].__none > p {font-size: 1.6rem;}
+        [data-accordion] [data-accordion_trg] > button {-webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-align: start; -ms-flex-align: start; -webkit-box-pack: center; -ms-flex-pack: center; align-items: flex-start; -ms-flex-direction: column; flex-direction: column; justify-content: center; min-height: 9rem; padding: 2rem 3rem 2rem 3.6rem;}
+        [data-accordion] [data-accordion_trg] > button:before { background-size: 2.4rem 2.4rem; height: 2.4rem; left: 0; top: 24px; -webkit-transform: none; transform: none; width: 2.4rem; }
+        [data-accordion] [data-accordion_trg] > button:after {background-size: 2.4rem 2.4rem; height: 2.4rem; right: 0; width: 2.4rem; }
+        [data-accordion] [data-accordion_trg] > button > em, [data-accordion] [data-accordion_trg] > button > span { width: 100%; }
+        [data-accordion] [data-accordion_trg] > button > em { font-size: 1.4rem; margin-bottom: 0.8rem; }
+        [data-accordion] [data-accordion_trg] > button > span { font-size: 1.6rem; padding: 0; }
+        [data-accordion] [data-accordion_cont] { font-size: 1.6rem; line-height: 2.4rem; padding: 2.4rem; }
+        [data-accordion] [data-accordion_cont]:before { background-size: 2.4rem 2.4rem; height: 2.4rem; left: 0; margin-bottom: 1.4rem; position: relative; top: 0; width: 2.4rem; }</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideTab">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">탭 메뉴</h2>
+                    </div>
+                    <h3 class="guide_h3">1. 기본 탭 메뉴</h3>
+                    <ul class="guide_list">
+                        <li>type에 상관 없이 1024 이하 해상도에서는 드롭다운으로 변경됨.</li>
+                        <li>type01의 경우 링크 이동에 쓰인 tab이라 a 태그로 되어있음. 페이지 내에서 active on/off 되어야 할 경우 button 태그로 변경 필요</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout" style="width: 100%;">
+                            <div data-tab_wrap>
+                                <button class="tab-drop-btn" aria-controls="tab01">기업등록</button>
+                                <nav id="tab01">
+                                    <ol data-tab_list role="tablist" class="type02">
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="true" aria-current="true"
+                                                tabindex="0">
+                                                기업등록
+                                            </a>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="false" tabindex="0">서비스
+                                                등록</a>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                                                통합전자서명모듈 다운로드
+                                            </a>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                                                서비스 테스트 신청
+                                            </a>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                                                테스트랩 이용
+                                            </a>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                                                서비스 운영 시작
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div data-tab_wrap style="margin-top: 20px;">
+                                <button class="tab-drop-btn" aria-controls="tab01">전체</button>
+                                <nav id="tab01">
+                                    <ol data-tab_list role="tablist" class="type01">
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="true" aria-current="true" tabindex="0">
+                                                전체
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">기업등록</button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">API 가이드</button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">
+                                                기능적합성 점검
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">
+                                                보안취약점 점검
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">
+                                                성능 및 부하 평가
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0">기타</button>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < !-- type01 -- >
+        < div data-tab_wrap>
+            < button class="tab-drop-btn" aria-controls="tab01">기업등록< /button>
+            < nav id="tab01">
+                < ol data-tab_list role="tablist" class="type02">
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="true" aria-current="true" tabindex="0">
+                            기업등록
+                        < /a>
+                    < /li>
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="false" tabindex="0">서비스
+                            등록< /a>
+                    < /li>
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                            통합전자서명모듈 다운로드
+                        < /a>
+                    < /li>
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                            서비스 테스트 신청
+                        < /a>
+                    < /li>
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                            테스트랩 이용
+                        < /a>
+                    < /li>
+                    < li data-tab_btn>
+                        < a href="javascript:;" role="tab" aria-selected="false" tabindex="0">
+                            서비스 운영 시작
+                        < /a>
+                    < /li>
+                < /ol>
+            < /nav>
+        < /div>
+        
+        < !-- type02 -->
+        < div data-tab_wrap style="margin-top: 20px;">
+            < button class="tab-drop-btn" aria-controls="tab01">전체< /button>
+            < nav id="tab01">
+                < ol data-tab_list role="tablist" class="type01">
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="true" aria-current="true" tabindex="0">
+                            전체
+                        < /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">기업등록< /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">API 가이드< /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">
+                            기능적합성 점검
+                        < /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">
+                            보안취약점 점검
+                        < /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">
+                            성능 및 부하 평가
+                        < /button>
+                    < /li>
+                    < li data-tab_btn>
+                        < button role="tab" aria-selected="false" tabindex="0">기타< /button>
+                    < /li>
+                < /ol>
+            < /nav>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+
+        // 공통
+        [data-tab_wrap] .tab-drop-btn { display: none; }
+        [data-tab_wrap] [data-tab_list] { -webkit-box-pack: justify; -ms-flex-pack: justify; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: space-between; }
+        [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+        [data-tab_wrap] [data-tab_list] [data-tab_btn] > a[aria-selected='true'],
+        [data-tab_wrap] [data-tab_list] [data-tab_btn] > button[aria-selected='true'] { font-weight: 600; }
+        .popup, [data-tab_wrap] [data-tab_container] [data-tab_content][hidden] { display: none; }
+
+        // 공통 media query
+        @media (max-width: 1023px){
+            [data-tab_wrap] + .subtitle-box { margin-top: 4rem; }
+            [data-tab_wrap] .tab-drop-btn { border: 1px solid var(--navyLight); border-radius: 0.8rem; display: block; height: 4.2rem; position: relative; width: 100%; }
+            [data-tab_wrap] .tab-drop-btn:after { background: url(../img/common/ico_arr_accordion_down.png) 50% no-repeat; background-size: 2.4rem 2.4rem; content: ''; display: block; height: 2.4rem; position: absolute; right: 1.6rem; top: 50%; -webkit-transform: translateY(-50%); 
+            transform: translateY(-50%); width: 2.4rem;}
+            [data-tab_wrap] .tab-drop-btn.__show:after { background-image: url(../img/common/ ico_arr_accordion_up.png); }
+            [data-tab_wrap] .tab-drop-btn.__show + nav [data-tab_list] { border: 1px solid var(--navyLight); max-height: 14rem; overflow-x: hidden; overflow-y: auto; z-index: 2; }
+            [data-tab_wrap] nav { position: relative; }
+            [data-tab_wrap] a, [data-tab_wrap] button { background-color: var(--white); color: var(--gray666); font-size: 1.4rem; letter-spacing: -0.42px; line-height: 1.14; padding: 0.9rem 1.6rem; text-align: left; width: 100%; }
+            [data-tab_wrap] [data-tab_list] { -webkit-box-orient: vertical; -webkit-box-direction: normal; background: var(--white); border-radius: 0.8rem; -ms-flex-direction: column; flex-direction: column; max-height: 0; overflow: hidden; position: absolute; top: 0; width: 100%; }
+            [data-tab_wrap] [data-tab_list] button:first-child { padding-top: 0.5rem; }
+            [data-tab_wrap] [data-tab_list] button:last-child { padding-bottom: 0.5rem; }
+        }
+
+        // type01
+        @media (min-width: 1024px){
+            #wrap:not(.pc-only) [data-tab_wrap] + .subtitle-box { margin-top: 60px; }
+            #wrap:not(.pc-only) [data-tab_wrap] .tab-drop-btn { display: none; }
+            #wrap:not(.pc-only) [data-tab_wrap] nav { position: relative; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list] { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type01 [data-tab_btn] > button { background-color: var(--white); border: 1px solid var(--grayddd); border-radius: 22px; color: var(--gray666); font-size: 16px; height: 40px; margin: 0 5px; padding: 10px 20px 11px; width: auto; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type01 [data-tab_btn] [aria-current='true'] { background-color: var(--navyLight); border-color: var(--navyLight); color: var(--white); font-weight: 600; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] { height: 56px; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] + [data-tab_btn] > a { border-left: none; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn]:first-of-type > a { border-radius: 10px 0 0 10px; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn]:last-of-type > a { border-radius: 0 10px 10px 0; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] > a { border: 1px solid var(--grayddd); color: var(--gray666); font-size: 16px; line-height: 55px; text-align: center; width: 100%; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] [aria-current='true'] {
+            background-color: var(--blue); background: var(--blue) url(../img/contents/bg_mypage_dashboard.png) right 10% bottom no-repeat; background-size: 60px 56px; border-color: var(--blue); color: var(--white); font-weight: 600; }
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list] [data-pagination] > ul li a { font-size: 16px; }
+        }
+
+        // type02
+        [data-tab_wrap] .tab-drop-btn { display: none; }
+        [data-tab_wrap] [data-tab_list] { -webkit-box-pack: justify; -ms-flex-pack: justify; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: space-between; }
+        [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+        [data-tab_wrap] [data-tab_list] [data-tab_btn] > a[aria-selected='true'], [data-tab_wrap] [data-tab_list] [data-tab_btn] > button[aria-selected='true'] { font-weight: 600; }
+
+        // type02 media query 
+        @media (max-width: 1240px){
+            #wrap:not(.pc-only) [data-tab_wrap] [data-tab_list].type02 [data-tab_btn] { -webkit-box-flex: 1; -ms-flex: auto; flex: auto; }
+        }
+</pre>
+                    </div>
+                    <h3 class="guide_h3">2. 탭 메뉴 + 아코디언 sorting</h3>
+                    <ul class="guide_list">
+                        <li>탭 메뉴 + accordion filter 기능 추가 시 data-tab_wrap에 .__connect 추가 한 후 data-tab_btn>button에
+                            aria-controls="컨트롤할 영역의 data-sort값"</li>
+                    </ul>
+                    <div class="guide_box">
+                        <div class="layout" style="width: 100%;">
+                            <div data-tab_wrap class="__connect">
+                                <button class="tab-drop-btn" aria-controls="tab01">전체</button>
+                                <nav id="tab01">
+                                    <ol data-tab_list role="tablist" class="type01">
+                                        <li data-tab_btn>
+                                            <!-- 전체 버튼 있을 경우 aria-controls에 all 추가 -->
+                                            <button role="tab" aria-selected="true" aria-current="true" tabindex="0"
+                                                aria-controls="all">
+                                                전체
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0" aria-controls="tab1">
+                                                메뉴1
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0" aria-controls="tab2">
+                                                메뉴2
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0" aria-controls="tab3">
+                                                메뉴3
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn>
+                                            <button role="tab" aria-selected="false" tabindex="0" aria-controls="tab4">
+                                                메뉴4
+                                            </button>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div class="data-accordion-area">
+                                <div data-accordion>
+                                    <!-- [data-sort]값으로 aria-controls의 값 추가 -->
+                                    <ul data-sort="tab1">
+                                        <li data-accordion_trg>
+                                            <button aria-expanded="false" aria-controls="data-filter-accordion1">
+                                                <span>메뉴1의 타이틀입니다.</span>
+                                            </button>
+                                        </li>
+                                        <li id="data-filter-accordion1" data-accordion_cont aria-hidden="true">메뉴1의
+                                            내용입니다.메뉴1의
+                                            내용입니다.메뉴1의 내용입니다.메뉴1의 내용입니다.
+                                        </li>
+                                    </ul>
+                                    <ul data-sort="tab2">
+                                        <li data-accordion_trg>
+                                            <button aria-expanded="false" aria-controls="data-filter-accordion2">
+                                                <span>메뉴2의 타이틀입니다.</span>
+                                            </button>
+                                        </li>
+                                        <li id="data-filter-accordion2" data-accordion_cont aria-hidden="true">메뉴2의
+                                            내용입니다.메뉴2의의
+                                            내용입니다.메뉴2의 내용입니다.메뉴2의 내용입니다.
+                                        </li>
+                                    </ul>
+                                    <ul data-sort="tab3">
+                                        <li data-accordion_trg>
+                                            <button aria-expanded="false" aria-controls="data-filter-accordion3">
+                                                <span>메뉴3의 타이틀입니다.</span>
+                                            </button>
+                                        </li>
+                                        <li id="data-filter-accordion3" data-accordion_cont aria-hidden="true">메뉴3
+                                            내용입니다.메뉴3
+                                            내용입니다.메뉴3 내용입니다.메뉴3 내용입니다.
+                                        </li>
+                                    </ul>
+                                    <ul data-sort="tab4">
+                                        <li data-accordion_trg>
+                                            <button aria-expanded="false" aria-controls="data-filter-accordion4">
+                                                <span>메뉴4의 타이틀입니다.</span>
+                                            </button>
+                                        </li>
+                                        <li id="data-filter-accordion4" data-accordion_cont aria-hidden="true">메뉴4
+                                            내용입니다.메뉴4
+                                            내용입니다.메뉴4내용입니다.메뉴4내용입니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+< div data-tab_wrap <span class="var">class="__connect"</span>>
+    < button class="tab-drop-btn" aria-controls="tab01">전체</>
+    < nav id="tab01">
+        < ol data-tab_list role="tablist" class="type01">
+            < li data-tab_btn>
+                < !-- 전체 버튼 있을 경우 aria-controls에 all 추가 -->
+                < button role="tab" aria-selected="true" aria-current="true" tabindex="0" <span class="var">aria-controls="all"</span>>
+                    전체
+                < /button>
+            < /li>
+            < li data-tab_btn>
+                < button role="tab" aria-selected="false" tabindex="0" <span class="var">aria-controls="tab1"</span>>
+                    메뉴1
+                < /button>
+            < /li>
+            < li data-tab_btn>
+                < button role="tab" aria-selected="false" tabindex="0" aria-controls="tab2">
+                    메뉴2
+                < /button>
+            < /li>
+            < li data-tab_btn>
+                < button role="tab" aria-selected="false" tabindex="0" aria-controls="tab3">
+                    메뉴3
+                < /button>
+            < /li>
+            < li data-tab_btn>
+                < button role="tab" aria-selected="false" tabindex="0" aria-controls="tab4">
+                    메뉴4
+                < /button>
+            < /li>
+        < /ol>
+    < /nav>
+< /div>
+< div class="data-accordion-area">
+    < div data-accordion>
+        < !-- [data-sort]값으로 aria-controls의 값 추가 -->
+        < ul <span class="var">data-sort="tab1"</span>>
+            < li data-accordion_trg>
+                < button aria-expanded="false" aria-controls="data-filter-accordion1">
+                    < span>메뉴1의 타이틀입니다.< /span>
+                < /button>
+            < /li>
+            < li id="data-filter-accordion1" data-accordion_cont aria-hidden="true">메뉴1의
+                내용입니다.메뉴1의
+                내용입니다.메뉴1의 내용입니다.메뉴1의 내용입니다.
+            < /li>
+        < /ul>
+        < ul data-sort="tab2">
+            < li data-accordion_trg>
+                < button aria-expanded="false" aria-controls="data-filter-accordion2">
+                    < span>메뉴2의 타이틀입니다.< /span>
+                < /button>
+            < /li>
+            < li id="data-filter-accordion2" data-accordion_cont aria-hidden="true">메뉴2의
+                내용입니다.메뉴2의의
+                내용입니다.메뉴2의 내용입니다.메뉴2의 내용입니다.
+            < /li>
+        < /ul>
+        < ul data-sort="tab3">
+            < li data-accordion_trg>
+                < button aria-expanded="false" aria-controls="data-filter-accordion3">
+                    < span>메뉴3의 타이틀입니다.< /span>
+                < /button>
+            < /li>
+            < li id="data-filter-accordion3" data-accordion_cont aria-hidden="true">메뉴3
+                내용입니다.메뉴3
+                내용입니다.메뉴3 내용입니다.메뉴3 내용입니다.
+            < /li>
+        < /ul>
+        < ul data-sort="tab4">
+            < li data-accordion_trg>
+                < button aria-expanded="false" aria-controls="data-filter-accordion4">
+                    < span>메뉴4의 타이틀입니다.< /span>
+                < /button>
+            < /li>
+            < li id="data-filter-accordion4" data-accordion_cont aria-hidden="true">메뉴4
+                내용입니다.메뉴4
+                내용입니다.메뉴4내용입니다.메뉴4내용입니다.
+            < /li>
+        < /ul>
+    < /div>
+< /div>
+</pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guideTable">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">테이블</h2>
+                    </div>
+                    <h3 class="guide_h3">1. 검색결과 있음</h3>
+
+                    <div class="guide_box">
+                        <div class="layout" style="width: 100%;">
+                            <div class="tbl-wrap">
+                                <div class="title">
+                                    <p class="count">총 <em>123</em>건</p>
+                                </div>
+                                <div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                                    <ul class="tbl-grid__head" role="rowgroup">
+                                        <li role="row">
+                                            <div class="num hide" role="columnheader">
+                                                <p>번호</p>
+                                            </div>
+                                            <div class="filter" role="columnheader">
+                                                <p>구분</p>
+                                            </div>
+                                            <div class="subject" role="columnheader">
+                                                <p>제목</p>
+                                            </div>
+                                            <div class="attach" role="columnheader">
+                                                <p>첨부파일</p>
+                                            </div>
+                                            <div class="date" role="columnheader">
+                                                <p>등록일</p>
+                                            </div>
+                                            <div class="views" role="columnheader">
+                                                <p>조회수</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="tbl-grid__body" role="rowgroup">
+                                        <!-- 공지일 경우 li.에 .notice 추가 -->
+                                        <li class="notice" role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>보도자료</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <!-- 공지일 경우 -->
+                                                <span class="badge noti">공지</span>
+                                                <a href="javascript:;">한국인터넷진흥원 원장 모집 공고</a>
+                                            </div>
+                                            <div class="attach" role="cell">
+                                                <!-- 첨부파일의 경우 i.download 추가-->
+                                                <i class="download">
+                                                    <span class="blind">첨부파일</span>
+                                                </i>
+                                            </div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>공지사항</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">전자문서산업 실태조사 통계 이용자 만족도 조사</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>언론스크랩</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">KISA, 지역사회 환경보호를 위한 환경 캠페인 추진</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="tbl-wrap">
+            < div class="title">
+                < p class="count">총 < em>123< /em>건< /p>
+            < /div>
+            < div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                < ul class="tbl-grid__head" role="rowgroup">
+                    < li role="row">
+                        < div class="num hide" role="columnheader">
+                            < p>번호< /p>
+                        < /div>
+                        < div class="filter" role="columnheader">
+                            < p>구분< /p>
+                        < /div>
+                        < div class="subject" role="columnheader">
+                            < p>제목< /p>
+                        < /div>
+                        < div class="attach" role="columnheader">
+                            < p>첨부파일< /p>
+                        < /div>
+                        < div class="date" role="columnheader">
+                            < p>등록일< /p>
+                        < /div>
+                        < div class="views" role="columnheader">
+                            < p>조회수< /p>
+                        < /div>
+                    < /li>
+                < /ul>
+                < ul class="tbl-grid__body" role="rowgroup">
+                    < !-- 공지일 경우 li.에 .notice 추가 -- >
+                    < li class="notice" role="row">
+                        < div class="hide num" role="cell">
+                            < p>3< /p>
+                        < /div>
+                        < div class="filter" role="cell">
+                            < p>보도자료< /p>
+                        < /div>
+                        < div class="subject" role="cell">
+                            < !-- 공지일 경우 -- >
+                            < span class="badge noti">공지< /span>
+                            < a href="javascript:;">한국인터넷진흥원 원장 모집 공고< /a>
+                        < /div>
+                        < div class="attach" role="cell">
+                        < !-- 첨부파일의 경우 i.download 추가-- >
+                            < i class="download">
+                                < span class="blind">첨부파일< /span>
+                            < /i>
+                        < /div>
+                        < div class="date" role="cell">
+                            < p>2023-12-07< /p>
+                        < /div>
+                        < div class="views" role="cell">
+                            < p>22< /p>
+                        < /div>
+                    < /li>
+                    < li role="row">
+                        < div class="hide num" role="cell">
+                            < p>2< /p>
+                        < /div>
+                        < div class="filter" role="cell">
+                            < p>공지사항< /p>
+                        < /div>
+                        < div class="subject" role="cell">
+                            < a href="javascript:;">전자문서산업 실태조사 통계 이용자 만족도 조사</>
+                        < /div>
+                        < div class="attach" role="cell">< /div>
+                        < div class="date" role="cell">
+                            < p>2023-12-07< /p>
+                        < /div>
+                        < div class="views" role="cell">
+                            < p>22< /p>
+                        < /div>
+                    < /li>
+                    < li role="row">
+                        < div class="hide num" role="cell">
+                            < p>1< /p>
+                        < /div>
+                        < div class="filter" role="cell">
+                            < p>언론스크랩< /p>
+                        < /div>
+                        < div class="subject" role="cell">
+                            < a href="javascript:;">KISA, 지역사회 환경보호를 위한 환경 캠페인 추진< /a>
+                        < /div>
+                        < div class="attach" role="cell">< /div>
+                        < div class="date" role="cell">
+                            < p>2023-12-07< /p>
+                        < /div>
+                        < div class="views" role="cell">
+                            < p>22< /p>
+                        < /div>
+                    < /li>
+                < /ul>
+            < /div>
+        < /div>
+</pre>
+                        <pre class="code" lang="CSS">
+
+        .tbl-wrap { position: relative; }
+        .tbl-wrap + .tbl-wrap { margin-top: 86px; }
+        .tbl-wrap > .title { -webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: justify; -ms-flex-pack: justify; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: space-between; margin-bottom: 24px; }
+        .tbl-wrap > .title > p { color: #666; font-size: 14px; }
+        .tbl-wrap > .title > p.tit { color: #222; font-size: 24px; font-weight: 600; }
+        .tbl-wrap > .title > p.tit > span { color: #666; display: inline-block; font-size: 14px; font-weight: var(--fw-Regular); margin-left: 8px; vertical-align: middle; }
+        .tbl-wrap > .title > p.count { color: #666; font-size: 14px; }
+        .tbl-wrap > .title > p.count > em { color: #222; font-weight: var(--fw-SemiBold); }
+        .tbl-wrap > .title > p.unit { color: #666; font-size: 14px; }
+        .tbl-wrap > .title > .btn-bg.blue { float: right; margin-top: -20px; min-width: auto; }
+        .tbl-grid { border-top: 2px solid #222; }
+        .tbl-grid__head > li { background-color: var(--white); border-bottom: 1px solid var(--grayddd); display: table; min-height: 60px; width: 100%; }
+        .tbl-grid__head > li > * {-ms-flex-item-align: center;  -ms-grid-row-align: center; align-self: center; }
+        .tbl-grid__head > li > div { display: table-cell; padding: 0 16px; text-align: center; vertical-align: middle; }
+        .tbl-grid__head > li > div > p { color: var(--black); font-size: 18px; font-weight: var(--fw-Regular); margin-top: 0; }
+        .tbl-grid__body > li { background-color: var(--white); border-bottom: 1px solid var(--grayddd); display: table; min-height: 9rem; padding: 24px 0; width: 100%; }
+        .tbl-grid__body > li > * { -ms-flex-item-align: center; -ms-grid-row-align: center; align-self: center; }
+        .tbl-grid__body > li > div { display: table-cell; padding: 0 16px; text-align: center; vertical-align: middle; }
+        .tbl-grid__body > li > div > p { color: #666; font-size: 18px; }
+        .tbl-grid__body > li > div > p > span { font-size: 14px; }
+        .tbl-grid__body > li > div > a { color: #222; font-size: 18px; }
+        .tbl-grid__body > li > div.left { text-align: left; }
+        .tbl-grid__body > li > div.title { padding-left: 50px; }
+        .tbl-grid__body > li > div.title > p { color: #222; font-weight: 600; }
+        .tbl-grid__body > li > div.subject { text-align: left; }
+        .tbl-grid__body > li > div.subject a { display: inline-block; font-weight: var(--fw-SemiBold); width: 100%; }
+        .tbl-grid__body > li > div.subject .noti { background-color: #3570b4; border-radius: 14px; -webkit-box-sizing: border-box; box-sizing: border-box; color: var(--white); font-size: 14px; font-weight: 400; margin-right: 16px; padding: 0 0.25em; width: 48px;}
+        .tbl-grid__body > li > div.subject .noti + a { width: calc(100% - 70px); }
+        .tbl-grid__body > li > div.attach .download { background: url(../img/common/ico_attach.png) 50% no-repeat; background-size: 32px 32px; display: inline-block; height: 32px; min-width: auto; vertical-align: middle; width: 32px; }
+        .tbl-grid__none { background: url(../img/common/ico_result_none.png) 50% 104px no-repeat; background-size: 48px 48px; border-bottom: 1px solid var(--grayddd); height: 300px; padding-top: 176px; text-align: center; }
+        .tbl-grid__none > p { color: var(--gray666); font-size: 18px; }
+        .tbl-grid__narrow .tbl-grid__body > li > div, .tbl-grid__narrow .tbl-grid__head > li >  div { padding: 0 8px; }
+        .tbl-grid__narrow .tbl-grid__body > li > div > p, .tbl-grid__narrow .tbl-grid__head > li > div > p { font-size: 16px; }
+        .tbl-grid__narrow .tbl-grid__head > li { min-height: 40px; }
+        .tbl-grid__narrow .tbl-grid__body > li { min-height: 70px; padding: 16px 0; }
+        .tbl-grid__narrow .tbl-grid__body > li > div > a { font-size: 16px; }
+        .tbl-grid__narrow .tbl-grid__body > li > div > .btn-line { font-size: 14px; }
+        .tbl-list { border-top: 2px solid #222; width: 100%; }
+        .head + .tbl-list { margin-top: 25px; }
+        .tbl-list table { width: 100%; }
+        .tbl-list td, .tbl-list th { border-bottom: 1px solid var(--graye8); font-size: 16px; font-weight: 400; letter-spacing: -0.48px; line-height: 1.63; min-height: 67px; padding-bottom: 20px; padding-top: 20px; text-align: left; }
+        .tbl-list th { color: #666; }
+        .tbl-list td { color: #222; }
+        .tbl-list td .btn-link { margin-top: 5px; }
+        .tbl-list span.url { text-decoration: underline; }
+</pre>
+                    </div>
+
+                    <h3 class="guide_h3">2. 검색결과 없음</h3>
+
+                    <div class="guide_box">
+                        <div class="layout" style="width: 100%;">
+                            <div class="tbl-wrap">
+                                <div class="title">
+                                    <p class="count">총 <em>0</em>건</p>
+                                </div>
+                                <div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                                    <ul class="tbl-grid__head" role="rowgroup">
+                                        <li role="row">
+                                            <div class="num hide" role="columnheader">
+                                                <p>번호</p>
+                                            </div>
+                                            <div class="filter" role="columnheader">
+                                                <p>구분</p>
+                                            </div>
+                                            <div class="subject" role="columnheader">
+                                                <p>제목</p>
+                                            </div>
+                                            <div class="attach" role="columnheader">
+                                                <p>첨부파일</p>
+                                            </div>
+                                            <div class="date" role="columnheader">
+                                                <p>등록일</p>
+                                            </div>
+                                            <div class="views" role="columnheader">
+                                                <p>조회수</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="tbl-grid__none" role="rowgroup">
+                                        <p>검색결과가 없습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < div class="tbl-wrap">
+            < div class="title">
+                < p class="count">총 < em>0< /em>건< /p>
+            < /div>
+            < div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                < ul class="tbl-grid__head" role="rowgroup">
+                    < li role="row">
+                        < div class="num hide" role="columnheader">
+                            < p>번호< /p>
+                        < /div>
+                        < div class="filter" role="columnheader">
+                            < p>구분< /p>
+                        < /div>
+                        < div class="subject" role="columnheader">
+                            < p>제목< /p>
+                        < /div>
+                        < div class="attach" role="columnheader">
+                            < p>첨부파일< /p>
+                        < /div>
+                        < div class="date" role="columnheader">
+                            < p>등록일< /p>
+                        < /div>
+                        < div class="views" role="columnheader">
+                            < p>조회수< /p>
+                        < /div>
+                    < /li>
+                < /ul>
+                < div class="tbl-grid__none" role="rowgroup">
+                    < p>검색결과가 없습니다.< /p>
+                < /div>
+            < /div>
+        < /div>
+</pre>
+                        <pre class="code" lang="CSS">
+
+        .tbl-grid__none { background: url(../img/common/ico_result_none.png) 50% 104px no-repeat; background-size: 48px 48px; border-bottom: 1px solid var(--grayddd); height: 300px; padding-top: 176px; text-align: center; }
+        .tbl-grid__none > p { color: var(--gray666); font-size: 18px; }
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="guide-section" id="guidePop">
+                    <div class="guide_tit_area">
+                        <h2 class="guide_h2">팝업</h2>
+                    </div>
+                    <ul class="guide_list">
+                        <li>.popup에 ID 부여</li>
+                        <li>열고자 하는 팝업을 호출시키는 요소(버튼 등)에 aria-controls="popup ID" 속성 추가</li>
+                        <li>팝업 호출 요소에 onclick event로 ui.modal(this) 추가</li>
+                        <li>팝업창 내부 닫기 버튼에 .popup__close 추가</li>
+                        <li>기본 사이즈 w400, w500, w640, w1000 클래스 추가. 그 외 사이즈는 부여한 ID 별로 css 추가</li>
+                    </ul>
+                    <h3 class="guide_h3">1. 기본 팝업</h3>
+                    <div class="guide_box">
+                        <div class="layout">
+                            <h4 class="guide_h4">호출 요소</h4>
+                            <button type="button" aria-haspopup="dialog" aria-controls="popupAlertExample"
+                                class="btn-bg blue" onclick="ui.modal(this)" aria-controls="popupAlertExample">
+                                Alert 팝업 (버튼 1개)
+                            </button>
+                            <button type="button" aria-haspopup="dialog" aria-controls="popupConfirmExample"
+                                class="btn-bg blue" onclick="ui.modal(this)">
+                                Confirm 팝업 (버튼 2개)
+                            </button>
+                            <button type="button" aria-haspopup="dialog" aria-controls="popupW640" class="btn-bg blue"
+                                onclick="ui.modal(this)">
+                                640px 팝업
+                            </button>
+                            <button type="button" aria-haspopup="dialog" aria-controls="popupW1000" class="btn-bg blue"
+                                onclick="ui.modal(this)">
+                                1000px 팝업
+                            </button>
+                            <button type="button" aria-haspopup="dialog" aria-controls="popupNotice" class="btn-bg blue"
+                                onclick="ui.modal(this)">
+                                메인 공지 팝업
+                            </button>
+
+                            <!-- Alert 팝업 -->
+                            <div class="popup" id="popupAlertExample" role="dialog" aria-modal="true"
+                                aria-labelledby="popupTit">
+                                <div class="popup__inner w400">
+                                    <div class="popup__head">
+                                        <h2 class="blind" id="popupTit">팝업 타이틀(미노출)</h2>
+                                    </div>
+                                    <div class="popup__body">
+                                        <p class="message">Alert 메세지</p>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <button type="button" class="btn-bg blue popup__close"
+                                            aria-label="닫기">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Confirm 팝업 -->
+                            <div class="popup" id="popupConfirmExample" role="dialog" aria-modal="true"
+                                aria-labelledby="popupTit">
+                                <div class="popup__inner w400">
+                                    <div class="popup__head">
+                                        <h2 class="blind" id="popupTit">팝업 타이틀(미노출)</h2>
+                                    </div>
+                                    <div class="popup__body">
+                                        <p class="message">
+                                            메세지 입니다. <br> 메세지 입니다.
+                                        </p>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <button type="button" class="btn-line popup__close">취소</button>
+                                        <button type="button" class="btn-bg blue" onclick="">삭제</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 640 팝업 -->
+                            <div class="popup" id="popupW640" role="dialog" aria-modal="true"
+                                aria-labelledby="popupTit">
+                                <div class="popup__inner w640">
+                                    <div class="popup__head">
+                                        <h3 id="popupTit">팝업 타이틀</h3>
+                                        <button class="popup-close popup__close" type="button">
+                                            <span class="blind">팝업닫기</span>
+                                        </button>
+                                    </div>
+                                    <div class="popup__body">
+                                        <p class="message">팝업 내용입니다 입니다.</p>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <button type="button" class="btn-line popup__close">취소</button>
+                                        <button type="button" class="btn-bg blue" onclick="">신청</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 1000 팝업 -->
+                            <div class="popup" id="popupW1000" role="dialog" aria-modal="true"
+                                aria-labelledby="popupTit">
+                                <div class="popup__inner w1000">
+                                    <div class="popup__head">
+                                        <h3 id="popupTit">테스트 결과 리포트</h3>
+                                        <button class="popup__close" type="button">
+                                            <span class="blind">팝업닫기</span>
+                                        </button>
+                                    </div>
+                                    <div class="test-service-info">
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt>서비스명</dt>
+                                                    <dd>한국기업서비스 000</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>점검항목</dt>
+                                                    <dd>보안취약점, 기능적합성, 성능테스트</dd>
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>이용기관명</dt>
+                                                    <dd>(주)한국기업</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>테스트 일시</dt>
+                                                    <dd>2023-12-15 12:00 ~ 14:00</dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="test-service-report">
+                                        <div class="popup-title">
+                                            <div class="l-left">
+                                                <h3>결과 리포트</h3>
+                                                <label for="reportResult" class="blind">리포트 분류</label>
+                                                <select name="" id="reportResult">
+                                                    <option value="" seleted>보안취약점</option>
+                                                    <option value="">기능적합성</option>
+                                                    <option value="">성능테스트</option>
+                                                </select>
+                                            </div>
+                                            <div class="l-right">
+                                                <button class="download" type="button" download>다운로드</button>
+                                                <button class="print" type="button">인쇄</button>
+                                            </div>
+                                        </div>
+                                        <div class="view">리포트 포맷 구성 수급 필요</div>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <button class="btn-bg blue popup__close" type="button">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 공지 팝업 -->
+                            <div class="popup img" id="popupNotice" role="dialog" aria-modal="true"
+                                aria-labelledby="popupTit">
+                                <div class="popup__inner">
+                                    <div class="popup__head">
+                                        <h3 id="popupTit">팝업명 표시</h3>
+                                        <button class="popup__close" type="button" onclick="popClose(this)">
+                                            <span class="blind">팝업닫기</span>
+                                        </button>
+                                    </div>
+                                    <div class="popup__body">
+                                        <img src="" alt="공지 이미지" />
+                                    </div>
+                                    <div class="popup__foot">
+                                        <label for="checkboxNotShowAgain">
+                                            <input type="checkbox" id="checkboxNotShowAgain" role="checkbox" />
+                                            <span>오늘 하루 열지않기</span>
+                                        </label>
+                                        <button type="button" class="popup__close" onclick="popClose(this)">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="code" lang="html">
+
+        < !-- Alert 팝업 -- >
+        < div class="popup" id="호출시킬 팝업 ID" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            < div class="popup__inner w400">
+                < div class="popup__head">
+                    < h2 class="blind" id="popupTit">타이틀(미노출)< /h2>
+                < /div>
+                < div class="popup__body">
+                    < p class="message">메세지< /p>
+                < /div>
+                < div class="button-wrap">
+                    < button type="button" class="btn-bg blue popup__close" aria-label="닫기">확인< /button>
+                < /div>
+            < /div>
+        < /div>
+
+        < !-- Confirm 팝업 -- >
+        < div class="popup" id="popupConfirmExample" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            < div class="popup__inner w400">
+                < div class="popup__head">
+                    < h2 class="blind" id="popupTit">팝업 타이틀(미노출)< /h2>
+                < /div>
+                < div class="popup__body">
+                    < p class="message">
+                        메세지 입니다. < br> 메세지 입니다.
+                    < /p>
+                < /div>
+                < div class="button-wrap">
+                    < button type="button" class="btn-line popup__close">취소< /button>
+                    < button type="button" class="btn-bg blue" onclick="">삭제< /button>
+                < /div>
+            < /div>
+        < /div>
+
+        < !-- 640 팝업 -- >
+        < div class="popup" id="popupW640" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            < div class="popup__inner w640">
+                < div class="popup__head">
+                    < h3 id="popupTit">팝업 타이틀< /h3>
+                    < button class="popup-close popup__close" type="button">
+                        < span class="blind">팝업 닫기< /span>
+                    < /button>
+                < /div>
+                < div class="popup__body">
+                    < p class="message">팝업 내용입니다 입니다.< /p>
+                < /div>
+                < div class="button-wrap">
+                    < button type="button" class="btn-line popup__close">취소< /button>
+                    < button type="button" class="btn-bg blue" onclick="">신청< /button>
+                < /div>
+            < /div>
+        < /div>  
+
+        < !-- 1000 팝업 -- >
+        < div class="popup" id="popupW1000" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            < div class="popup__inner w1000">
+                < div class="popup__head">
+                    < h3 id="popupTit">테스트 결과 리포트< /h3>
+                    < button class="popup__close" type="button">
+                        < span class="blind">팝업닫기< /span>
+                    < /button>
+                < /div>
+                < div class="test-service-info">
+                    < ul>
+                        < li>
+                            < dl>
+                                < dt>서비스명< /dt>
+                                < dd>한국기업서비스 000< /dd>
+                            < /dl>
+                            < dl>
+                                < dt>점검항목< /dt>
+                                < dd>보안취약점, 기능적합성, 성능테스트< /dd>
+                            < /dl>
+                        < /li>
+                        < li>
+                            < dl>
+                                < dt>이용기관명< /dt>
+                                < dd>(주)한국기업< /dd>
+                            < /dl>
+                            < dl>
+                                < dt>테스트 일시< /dt>
+                                < dd>2023-12-15 12:00 ~ 14:00< /dd>
+                            < /dl>
+                        < /li>
+                    < /ul>
+                < /div>
+                < div class="test-service-report">
+                    < div class="popup-title">
+                        < div class="l-left">
+                            < h3>결과 리포트< /h3>
+                            < label for="reportResult" class="blind">리포트 분류< /label>
+                            < select name="" id="reportResult">
+                                < option value="" seleted>보안취약점< /option>
+                                < option value="">기능적합성< /option>
+                                < option value="">성능테스트< /option>
+                            < /select>
+                        < /div>
+                        < div class="l-right">
+                            < button class="download" type="button" download>다운로드< /button>
+                            < button class="print" type="button">인쇄< /button>
+                        < /div>
+                    < /div>
+                    < div class="view">리포트 포맷 구성 수급 필요< /div>
+                < /div>
+                < div class="button-wrap">
+                    < button class="btn-bg blue popup__close" type="button">닫기< /button>
+                < /div>
+            < /div>
+        < /div>
+        
+        < !-- 공지 팝업 -- >
+        < div class="popup img" id="popupNotice" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+            < div class="popup__inner">
+                < div class="popup__head">
+                    < h3 id="popupTit">팝업명 표시< /h3>
+                    < button class="popup__close" type="button" onclick="popClose(this)">
+                        < span class="blind">팝업닫기< /span>
+                    < /button>
+                < /div>
+                < div class="popup__body">
+                    < img src="" alt="공지 이미지" />
+                < /div>
+                < div class="popup__foot">
+                    < label for="checkboxNotShowAgain">
+                        < input type="checkbox" id="checkboxNotShowAgain" role="checkbox" />
+                        < span>오늘 하루 열지않기< /span>
+                    < /label>
+                    < button type="button" class="popup__close" onclick="popClose(this)">닫기< /button>
+                < /div>
+            < /div>
+        < /div>
+</pre>
+                        <pre class="code" lang="css">
+        // 팝업 공통
+        .popup {display: none}
+        .popup { background: rgba(0, 0, 0, 0.5); bottom: 0; left: 0; position: fixed; right: 0; top: 0; z-index: 101; }
+        .popup .popup__inner { background: var(--white); border-radius: 12px; left: 50%; padding: 40px 40px 30px; position: absolute; text-align: center; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+        .popup .popup__inner.w400 { width: 400px; }
+        .popup .popup__inner.w500 { width: 500px; }
+        .popup .popup__inner.w640 { width: 640px; }
+        .popup .popup__inner.w1000 { width: 1000px; }
+        .popup .popup__inner:not(.w400) .button-wrap a, .popup .popup__inner:not(.w400) . button-wrap button { font-size: 16px; height: 48px; line-height: 48px; min-width: 160px; }
+        .popup .popup__inner p.message { font-size: 16px; }
+        .popup .popup__inner .button-wrap { margin-top: 24px; }
+        .popup .popup__inner .button-wrap a, .popup .popup__inner .button-wrap button { font-size: 14px; height: 40px; line-height: 40px; min-width: 100px; }
+        .popup .popup__head { -webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: justify; -ms-flex-pack: justify; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: space-between; margin-bottom: 16px; }
+        .popup .popup__head h3 { color: #222; font-size: 22px; font-weight: 600; letter-spacing: -0.66px; line-height: 1.18; text-align: left; }
+        .popup .popup__head + .field-area { border-top: 2px solid var(--black); }
+        .popup .popup__head .popup__close { background: url(../img/common/ico_close.png) 50%  no-repeat; background-size: 32px 32px; height: 32px; width: 32px; }
+        .popup .popup-title { -webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: justify; -ms-flex-pack: justify; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; justify-content: space-between; margin-bottom: 16px; }
+        .popup .popup-title h3 { color: #222; font-size: 22px; font-weight: 600; letter-spacing: -0.66px; line-height: 1.18; text-align: left; }
+        .popup .popup-title + .field-area { border-top: 2px solid var(--black); }
+        .popup .popup-close { background: url(../img/common/ico_close.png) 50% no-repeat; background-size: 32px 32px; height: 32px; width: 32px; }
+        .popup.img .popup__inner { padding: 0; width: 500px; }
+        .popup.img .popup__head { border-bottom: 1px solid #e1e1e1; height: 64px; margin-bottom: 0; padding: 0 16px; }
+        .popup.img .popup__head h3 { font-size: 18px; }
+        .popup.img .popup__body {max-height: 500px; overflow-x: hidden; overflow-y: auto; }
+        .popup.img .popup__foot { -webkit-box-align: center; -ms-flex-align: center; -webkit-box-pack: justify; -ms-flex-pack: justify; align-items: center; border-top: 1px solid #e1e1e1; display: -webkit-box; display: -ms-flexbox; display: flex; height: 56px; justify-content: space-between; padding: 0 16px; }
+        .popup.img .popup__foot > button { font-size: 16px; }
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#include file="./html/include/_popup_alert.html"-->
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!-- contents -->
+            <div id="contents" class="login">
+                <section>
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2>비밀번호 재설정</h2>
+                        </div>
+                        <div class="account-box">
+                            <form action="">
+                                <em class="gray-box">영문자, 숫자, 특수문자 포함 9~20자리를 입력해 주세요. </em>
+                                <!-- 에러메세지 노출 시 input-set 에 .error 추가 및 p.valid 추가 -->
+                                <div class="input-set error">
+                                    <label for="loginInputPW" class="blind">신규 비밀번호 입력 </label>
+                                    <input
+                                        id="loginInputPW"
+                                        type="text"
+                                        placeholder="신규 비밀번호 입력
+                                "
+                                    />
+                                    <p class="valid">비밀번호를 입력해 주세요.</p>
+                                </div>
+                                <div class="input-set">
+                                    <label for="loginInputPWNew" class="blind">신규 비밀번호 재입력 </label>
+                                    <input id="loginInputPWNew" type="text" placeholder="신규 비밀번호 재입력" />
+                                    <p class="valid">신규 비밀번호 재입력</p>
+                                </div>
+                                <div class="button-box flex">
+                                    <a href="ACF-LI-001.html" type="button" class="btn-line">취소</a>
+                                    <a href="ACF-LI-001.html" type="button" class="btn-bg blue">확인</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

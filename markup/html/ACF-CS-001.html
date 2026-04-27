@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <!--  contents -->
+            <div id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!--  breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >고객지원</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html" aria-current="true">고객지원</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >알림센터</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CS-001.html" aria-current="true">알림센터</a></li>
+                                                <li><a href="ACF-CS-003.html">FAQ</a></li>
+                                                <li><a href="ACF-CS-004.html">자료실</a></li>
+                                                <li><a href="ACF-CS-006.html">1:1 문의</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>알림센터</h2>
+                        </div>
+                        <div class="content-box">
+                            <div data-tab_wrap>
+                                <button class="tab-drop-btn" aria-controls="tab01">전체</button>
+                                <nav id="tab01">
+                                    <ol data-tab_list="data-tab_list" role="tablist" class="type01">
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="true" aria-current="true" tabindex="0">
+                                                전체
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">공지사항</button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">보도자료</button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">언론스크랩</button>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div class="search-area">
+                                <div class="input-search">
+                                    <label class="blind" for="inputSearchExample">검색어 입력</label>
+                                    <input type="text" placeholder="검색어 입력" id="inputSearchExample" />
+                                    <button><span class="blind">검색</span></button>
+                                </div>
+                            </div>
+                            <div class="tbl-wrap">
+                                <div class="title">
+                                    <p class="count">총 <em>123</em>건</p>
+                                </div>
+                                <div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                                    <ul class="tbl-grid__head" role="rowgroup">
+                                        <li role="row">
+                                            <div class="num hide" role="columnheader">
+                                                <p>번호</p>
+                                            </div>
+                                            <div class="filter" role="columnheader">
+                                                <p>구분</p>
+                                            </div>
+                                            <div class="subject" role="columnheader">
+                                                <p>제목</p>
+                                            </div>
+                                            <div class="attach" role="columnheader">
+                                                <p>첨부파일</p>
+                                            </div>
+                                            <div class="date" role="columnheader">
+                                                <p>등록일</p>
+                                            </div>
+                                            <div class="views" role="columnheader">
+                                                <p>조회수</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="tbl-grid__body" role="rowgroup">
+                                        <li class="notice" role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>10</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>공지사항</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <span class="badge noti">공지</span
+                                                ><a href="ACF-CS-002.html"
+                                                    >KISA, 지역사회 환경보호를 위한 환경 캠페인 추진</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell">
+                                                <i class="download">
+                                                    <span class="blind">첨부파일</span>
+                                                </i>
+                                            </div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li class="notice" role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>9</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>공지사항</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <span class="badge noti">공지</span
+                                                ><a href="ACF-CS-002.html"
+                                                    >2024년 중소기업 SW개발보안 진단 서비스 수요조사 실시 안내</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell">
+                                                <i class="download">
+                                                    <span class="blind">첨부파일</span>
+                                                </i>
+                                            </div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>8</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>언론스크랩</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">2023 신기술 보안 지원사업 성과공유회 개최</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>7</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>보도자료</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">전자문서산업 실태조사 통계 이용자 만족도 조사</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>6</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>언론스크랩</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;"
+                                                    >「K-시큐리티 얼라이언스」 추진을 위한 의견수렴 참여기업
+                                                    모집(~12.15)</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>5</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>보도자료</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">한국인터넷진흥원 원장 모집 공고</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>4</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>공지사항</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;"
+                                                    >KISA, 지역사회 환경보호를 위한 환경 캠페인 추진</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>3</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>보도자료</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;"
+                                                    >2024년 중소기업 SW개발보안 진단 서비스 수요조사 실시 안내</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>2</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>공지사항</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;">전자문서산업 실태조사 통계 이용자 만족도 조사</a>
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                        <li role="row">
+                                            <div class="hide num" role="cell">
+                                                <p>1</p>
+                                            </div>
+                                            <div class="filter" role="cell">
+                                                <p>언론스크랩</p>
+                                            </div>
+                                            <div class="subject" role="cell">
+                                                <a href="javascript:;"
+                                                    >KISA, 지역사회 환경보호를 위한 환경 캠페인 추진</a
+                                                >
+                                            </div>
+                                            <div class="attach" role="cell"></div>
+                                            <div class="date" role="cell">
+                                                <p>2023-12-07</p>
+                                            </div>
+                                            <div class="views" role="cell">
+                                                <p>22</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--#include file="./include/_pagination.html"-->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

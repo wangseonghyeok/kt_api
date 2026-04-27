@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!-- contents -->
+            <div id="contents" class="login">
+                <section>
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2>로그인</h2>
+                        </div>
+                        <div class="account-box">
+                            <form action="">
+                                <!-- 에러메세지 노출 시 input-set에 error 클래스 추가 -->
+                                <div class="input-set">
+                                    <label for="loginInputId" class="blind">아이디(이메일주소)</label>
+                                    <input id="loginInputId" type="text" placeholder="아이디(이메일 주소)" />
+                                    <p class="valid">아이디를 입력해 주세요.</p>
+                                </div>
+                                <!-- 에러메세지 노출 시 input-set에 error 클래스 추가 -->
+                                <div class="input-set error">
+                                    <label for="loginInputPW" class="blind">비밀번호</label>
+                                    <input id="loginInputPW" type="password" placeholder="비밀번호" />
+                                    <p class="valid">비밀번호를 입력해 주세요.</p>
+                                </div>
+                                <div class="input-set">
+                                    <label for="savaId">
+                                        <input type="checkbox" id="savaId" role="checkbox" checked />
+                                        <span>아이디 저장</span></label
+                                    >
+                                </div>
+                                <div class="button-box">
+                                    <a href="ACF-DB-001.html" type="button" class="btn-bg blue full">로그인</a>
+                                    <p class="or">또는</p>
+                                    <a href="ACF-DB-001.html" type="button" class="btn-bg navy login full">간편인증</a>
+                                    <div class="bottom">
+                                        <a href="ACF-SU-001.html">회원가입</a>
+                                        <ul>
+                                            <li><a href="ACF-LI-002.html">아이디 찾기</a></li>
+                                            <li><a href="ACF-LI-006.html">비밀번호 찾기</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

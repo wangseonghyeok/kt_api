@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+// =======================================
+// Font Settings
+// =======================================
+
+// rem 단위 계산을 위한 html 사이즈 리셋
+$html-fz: 10px;
+
+// 본문(paragraph) 사이즈
+$body-fz: 10px;
+
+// 본문(paragraph) 기본 컬러
+$base-color: #222;
+
+// 기본 행간 비율
+$line-height: 1.4;
+
+// 본문 행간 비율
+$base-line: $body-fz * 1.4;
+
+// 적용 웹 폰트
+$font-family-ko: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+$font-family-en: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+
+// vw 계산용 기준 viewport 사이즈
+$vw-viewport: 720px !default;
+
+// font weight
+$fw-Bold: 700;
+$fw-SemiBold: 600;
+$fw-Regular: 400;
+$fw-Light: 300;
+
+// color 변수
+$white: #fff;
+$black: #222;
+$grayf7f8fb: #f7f8fb;
+$grayf8: #f8f8f8;
+$grayf1: #f1f1f1;
+$gray666: #666;
+$gray76: #767676;
+$gray888: #888;
+$grayeee: #eee;
+$graye8: #e8e8e8;
+$graye5: #e5e5e5;
+$grayddd: #ddd;
+$grayccc: #ccc;
+$grayaaa: #aaa;
+$green: #6b9d00;
+$greenDark: #61801e;
+$navy: #263344;
+$navyLight: #536175;
+$blue: #3570b4;
+$red: #d4333a;
+
+:root {
+    --fw-Bold: #{$fw-Bold};
+    --fw-SemiBold: #{$fw-SemiBold};
+    --fw-Regular: #{$fw-Regular};
+    --fw-Light: #{$fw-Light};
+    --white: #{$white};
+    --grayf7f8fb: #{$grayf7f8fb};
+    --grayf8: #{$grayf8};
+    --grayf1: #{$grayf1};
+    --gray666: #{$gray666};
+    --gray76: #{$gray76};
+    --gray888: #{$gray888};
+    --grayeee: #{$grayeee};
+    --graye8: #{$graye8};
+    --graye5: #{$graye5};
+    --grayccc: #{$grayccc};
+    --grayddd: #{$grayddd};
+    --grayaaa: #{$grayaaa};
+    --black: #{$black};
+    --green: #{$green};
+    --greenDark: #{$greenDark};
+    --navy: #{$navy};
+    --navyLight: #{$navyLight};
+    --blue: #{$blue};
+    --red: #{$red};
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap" class="pc-only">
+            <!-- 20240110 pc-only 추가 -->
+            <!--#include file="./include/_header.html"-->
+            <!-- contents -->
+            <div id="contents" class="login">
+                <section>
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2>회원가입</h2>
+                        </div>
+                        <div class="account-box signup">
+                            <form action="">
+                                <ol class="steps">
+                                    <li class="__complete">
+                                        <i>1</i>
+                                        약관동의
+                                    </li>
+                                    <li class="__complete">
+                                        <i>2</i>
+                                        본인인증
+                                    </li>
+                                    <li class="__on">
+                                        <i>3</i>
+                                        회원정보 입력
+                                    </li>
+                                    <li>
+                                        <i>4</i>
+                                        이메일 인증
+                                    </li>
+                                </ol>
+                                <div class="field-area">
+                                    <div class="head">
+                                        <h3>회원정보</h3>
+                                        <p><span>*</span>필수 입력항목</p>
+                                    </div>
+                                    <div class="cont">
+                                        <dl>
+                                            <dt class="required">
+                                                <label for="signupName"> 이름 </label>
+                                            </dt>
+                                            <dd>
+                                                <input
+                                                    type="text"
+                                                    id="signupName"
+                                                    placeholder="이름"
+                                                    value="홍길동"
+                                                    readonly
+                                                />
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required">
+                                                <label for="phoneNumField01"> 휴대폰 번호 </label>
+                                            </dt>
+                                            <dd class="num">
+                                                <select name="" id="phoneNumField01" readonly>
+                                                    <option value="" selected>010</option>
+                                                </select>
+                                                <span>-</span>
+                                                <label for="phoneNumField02" class="blind">번호 중간 4자리 입력</label>
+                                                <input type="number" id="phoneNumField02" readonly value="1234" />
+                                                <span>-</span>
+                                                <label for="phoneNumField03" class="blind"
+                                                    >번호 마지막 4자리 입력</label
+                                                >
+                                                <input type="number" id="phoneNumField03" readonly value="5647" />
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required">
+                                                <label for="emailId">아이디(이메일 주소)</label>
+                                            </dt>
+                                            <dd class="email">
+                                                <!-- 에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                <div class="input-set error">
+                                                    <input type="text" value="kisa1234" id="emailId" />
+                                                    <span>@</span>
+                                                    <label for="emailPlatform" class="blind">이메일 형식</label>
+                                                    <input type="text" value="gmail.com" id="emailPlatform" />
+                                                    <label class="blind" for="selectEmailPlatform"
+                                                        >이메일 형식 선택</label
+                                                    >
+                                                    <select name="" id="selectEmailPlatform">
+                                                        <option value="" selected>직접입력</option>
+                                                        <option value="">naver.com</option>
+                                                        <option value="">kakao.com</option>
+                                                        <option value="">gmail.com</option>
+                                                        <option value="">daum.net</option>
+                                                    </select>
+                                                    <p class="valid">아이디(이메일주소)를 입력해 주세요.</p>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required"><label for="signUpPassword">비밀번호</label></dt>
+                                            <dd>
+                                                <!-- 에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                <div class="input-set error">
+                                                    <input
+                                                        type="password"
+                                                        id="signUpPassword"
+                                                        placeholder="비밀번호 입력"
+                                                    />
+                                                    <p class="valid">비밀번호를 입력해 주세요.</p>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt class="required">
+                                                <label for="signUpPasswordRe">비밀번호 확인</label>
+                                            </dt>
+                                            <dd>
+                                                <!-- 에러 메세지 노출 시 input-set에 error 클래스 추가 및 p.valid 추가 -->
+                                                <div class="input-set error">
+                                                    <input
+                                                        type="password"
+                                                        id="signUpPasswordRe"
+                                                        placeholder="비밀번호 재입력"
+                                                    />
+                                                    <p class="valid">비밀번호를 입력해 주세요.</p>
+                                                    <p class="alert">
+                                                        영문자, 숫자, 특수문자 포함 9~20자리를 입력해 주세요.
+                                                    </p>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="button-box">
+                                    <a href="ACF-SU-004.html" type="button" class="btn-bg blue">이메일 인증요청</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

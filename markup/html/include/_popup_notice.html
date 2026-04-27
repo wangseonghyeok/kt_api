@@ -1,0 +1,22 @@
+<!-- 공지 팝업 -->
+
+<div class="popup img" id="popupNotice" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+    <div class="popup__inner">
+        <div class="popup__head">
+            <h3 id="popupTit">팝업명 표시</h3>
+            <button class="popup__close" type="button" onclick="popClose(this)">
+                <span class="blind">팝업닫기</span>
+            </button>
+        </div>
+        <div class="popup__body">
+            <img src="" alt="공지 이미지" />
+        </div>
+        <div class="popup__foot">
+            <label for="checkboxNotShowAgain">
+                <input type="checkbox" id="checkboxNotShowAgain" role="checkbox" />
+                <span>오늘 하루 열지않기</span>
+            </label>
+            <button type="button" class="popup__close" onclick="popClose(this)">닫기</button>
+        </div>
+    </div>
+</div>

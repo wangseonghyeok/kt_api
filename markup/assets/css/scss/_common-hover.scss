@@ -1,0 +1,46 @@
+@media (hover: hover) and (pointer: fine) {
+    #header {
+        &.__hover {
+            max-height: 150px;
+            box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.05);
+            &:after {
+                display: block;
+            }
+        }
+        .gnb {
+            .depth2 {
+                ul {
+                    > li {
+                        &:hover {
+                            > a {
+                                color: var(--blue);
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .l-right {
+            .user-menu {
+                > li {
+                    &[data-dropdown_wrap] {
+                        [data-dropdown_menu] {
+                            > ol {
+                                > li {
+                                    &:hover {
+                                        > a {
+                                            background: var(--grayf7f8fb);
+                                            color: var(--black);
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

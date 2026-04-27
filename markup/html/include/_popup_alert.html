@@ -1,0 +1,53 @@
+<!-- Alert 팝업 -->
+<div class="popup" id="popupAlertExample" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+    <div class="popup__inner w400">
+        <div class="popup__head">
+            <h2 class="blind" id="popupTit">알림</h2>
+        </div>
+        <div class="popup__body">
+            <p class="message">아이디 또는 비밀번호가 일치하지 않습니다.</p>
+        </div>
+        <div class="button-wrap">
+            <button type="button" class="btn-bg blue popup__close" aria-label="닫기">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm 팝업 -->
+<div class="popup" id="popupConfirmExample" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+    <div class="popup__inner w400">
+        <div class="popup__head">
+            <h2 class="blind" id="popupTit">알림</h2>
+        </div>
+        <div class="popup__body">
+            <p class="message">
+                삭제 시 복구할 수 없습니다. <br />
+                삭제 하시겠습니까?
+            </p>
+        </div>
+
+        <div class="button-wrap">
+            <button type="button" class="btn-line popup__close">취소</button>
+            <button type="button" class="btn-bg blue" onclick="">삭제</button>
+        </div>
+    </div>
+</div>
+
+<!-- 640 팝업 -->
+<div class="popup" id="popupRequest" role="dialog" aria-modal="true" aria-labelledby="popupTit">
+    <div class="popup__inner w640">
+        <div class="popup__head">
+            <h3 id="popupTit">서비스 테스트 신청</h3>
+            <button class="popup-close popup__close" type="button">
+                <span class="blind">팝업닫기</span>
+            </button>
+        </div>
+        <div class="popup__body">
+            <p class="message">팝업 내용</p>
+        </div>
+        <div class="button-wrap">
+            <button type="button" class="btn-line popup__close">취소</button>
+            <button type="button" class="btn-bg blue" onclick="">신청</button>
+        </div>
+    </div>
+</div>

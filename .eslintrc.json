@@ -1,0 +1,74 @@
+{
+    "env": {
+        "browser": true,
+        "node": true, // 에러 방지 위해 browser, node 둘다 true
+        "es6": true,
+        // "es2021": true,
+        "jquery": true,
+        "commonjs": true
+        // "$": true
+    },
+    "globals": {
+        "$": true,
+        "_": true,
+        "Swiper": true,
+        "isMobile": true,
+        "AOS": true,
+        "gsap": true,
+        "scrollTrigger": true,
+        "bodyLock": true,
+        "bodyUnlock": true,
+        "popOpen": true,
+        "ui": true
+    },
+    "extends": ["eslint:recommended", "airbnb-base", "prettier"], //airbnb-base 포맷 사용
+    // "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["html"],
+    "rules": {
+        // "off" or 0 - turn the rule off
+        // "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
+        // "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+        "no-script-url": 0,
+        "no-unused-vars": "off",
+        "no-console": "warn",
+        "no-plusplus": "off",
+        "no-use-before-define": "warn",
+        // "properties": "never",
+        // "no-shadow": "off",
+        "vars-on-top": "off",
+        // "no-underscore-dangle": "off", // var _foo;
+        // "comma-dangle": "off",
+        "func-names": "off", // setTimeout(function () {}, 0);
+        "prefer-template": "off",
+        // "no-nested-ternary": "off",
+        "max-classes-per-file": "off",
+        // "consistent-return": "off",
+        // "no-restricted-syntax": ["off", "ForOfStatement"], // disallow specified syntax(ex. WithStatement)
+        "prefer-arrow-callback": "warn", // Require using arrow functions for callbacks
+        // "require-await": "error",
+        "arrow-parens": ["error", "as-needed"], // a => {}
+        "no-param-reassign": ["error", { "props": false }]
+        // "no-unused-expressions": [
+        //     "off",
+        //     {
+        //         "allowTernary": true, // a || b
+        //         "allowShortCircuit": true, // a ? b : 0
+        //         "allowTaggedTemplates": true
+        //     }
+        // ]
+        //"import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        // "max-len": [
+        //     "error",
+        //     {
+        //         "code": 120,
+        //         "ignoreComments": true,
+        //         "ignoreStrings": true,
+        //         "ignoreTemplateLiterals": true
+        //     }
+        // ]
+    }
+}

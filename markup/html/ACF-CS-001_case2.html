@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <!--#include file="./include/_skip_navi.html"-->
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <!--  contents -->
+            <div id="contents">
+                <section class="sub">
+                    <div class="inner">
+                        <!--  breadcrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a href="ACF-HM-001.html" aria-label="홈으로"><span class="blind">홈으로</span></a>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >고객지원</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CI-001.html">센터소개</a></li>
+                                                <li><a href="ACF-DA-001.html">전자서명이란</a></li>
+                                                <li><a href="ACF-UI-001.html">이용안내</a></li>
+                                                <li><a href="ACF-AI-001.html">API 가이드</a></li>
+                                                <li><a href="ACF-TL-001.html">테스트랩</a></li>
+                                                <li><a href="ACF-CS-001.html" aria-current="true">고객지원</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-dropdown_wrap>
+                                        <a
+                                            href="javascript:;"
+                                            data-dropdown_trg
+                                            role="combobox"
+                                            aria-haspopup="true"
+                                            aria-selected="true"
+                                            aria-expanded="false"
+                                            >알림센터</a
+                                        >
+                                        <div data-dropdown_menu>
+                                            <ol role="listbox">
+                                                <li><a href="ACF-CS-001.html" aria-current="true">알림센터</a></li>
+                                                <li><a href="ACF-CS-003.html">FAQ</a></li>
+                                                <li><a href="ACF-CS-004.html">자료실</a></li>
+                                                <li><a href="ACF-CS-006.html">1:1 문의</a></li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="title-box">
+                            <h2>알림센터</h2>
+                        </div>
+                        <div class="content-box">
+                            <div data-tab_wrap>
+                                <button class="tab-drop-btn" aria-controls="tab01">전체</button>
+                                <nav id="tab01">
+                                    <ol data-tab_list="data-tab_list" role="tablist" class="type01">
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="true" aria-current="true" tabindex="0">
+                                                전체
+                                            </button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">공지사항</button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">보도자료</button>
+                                        </li>
+                                        <li data-tab_btn="data-tab_btn">
+                                            <button role="tab" aria-selected="false" tabindex="0">언론스크랩</button>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div class="search-area">
+                                <div class="input-search">
+                                    <label class="blind" for="inputSearchExample">검색어 입력</label>
+                                    <input type="text" placeholder="검색어 입력" id="inputSearchExample" />
+                                    <button type><span class="blind">검색</span></button>
+                                </div>
+                            </div>
+                            <div class="tbl-wrap">
+                                <div class="title">
+                                    <p class="count">총 <em>0</em>건</p>
+                                </div>
+                                <div class="tbl-grid bbs-notice" id="bbs-list" role="table">
+                                    <ul class="tbl-grid__head" role="rowgroup">
+                                        <li role="row">
+                                            <div class="num hide" role="columnheader">
+                                                <p>번호</p>
+                                            </div>
+                                            <div class="filter" role="columnheader">
+                                                <p>구분</p>
+                                            </div>
+                                            <div class="subject" role="columnheader">
+                                                <p>제목</p>
+                                            </div>
+                                            <div class="attach" role="columnheader">
+                                                <p>첨부파일</p>
+                                            </div>
+                                            <div class="date" role="columnheader">
+                                                <p>등록일</p>
+                                            </div>
+                                            <div class="views" role="columnheader">
+                                                <p>조회수</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="tbl-grid__none" role="rowgroup">
+                                        <p>검색결과가 없습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <style>
+		/* reset */
+		html, body {font-family:Dotum, "돋음", Arial, serif; font-size:100%; width:100%; height:100%; }
+		html, body, h1, h2, h3, h4, h5, h6, p, div, th, td, table, pre, code, select, form, fieldset, legend, input, address, ol, ul, li, dl, dt, dd, img, textarea, blockquote {margin:0; padding:0;}
+		table {border-collapse:collapse;}
+		li {list-style:none;}
+		button {overflow:visible; cursor:pointer;}
+		img, fieldset {border:0;}
+		img, input, button, select, textarea { vertical-align:middle;}
+		hr {display:none;}
+		caption {overflow:hidden; visibility:hidden; position:absolute; left:-9999px; top:0; width:0; height:0; font-size:0;}
+		em, address {font-style:normal;}
+		a:link, a:visited, a:hover, a:active {text-decoration:none; color:#555; }
+
+		body {color:#7a7a7a; line-height:18px;}
+		.coding-wrap h1 {padding:10px 0; font-size:16px; color:#fff; line-height:28px; text-align:center; background-color:#0f228b; overflow-y: auto;}
+		.coding-wrap h2 {padding:10px 5px 10px 15px; border:1px solid #dfdfdf; background:#f8f5f6;}
+
+		.coding-wrap table{ width: 100%;}
+		.coding-wrap table .empty{ text-align: center; width: 30px; }
+		.coding-wrap table td{ font-size: 12px; border-color: rgb(236, 230, 230); position: relative;}
+		.coding-wrap table h2{ font-size: 12px; padding: 2px 6px; display: block; }
+		.coding-wrap table h2 a:link{  display: block !important; }
+
+		.coding-wrap table tr.node a:after{ content: "-"; position: absolute; right: 20px; }
+		.coding-wrap table tr.node.plus a:after{ content: "+"; }
+
+		.coding-wrap table tr.node[data-step="1"] { background: transparent; }
+		.coding-wrap table tr.node[data-step="2"] { background: #f5f7fa; }
+		.coding-wrap table tr.node[data-step="3"] { background: #f0f3f6; }
+		.coding-wrap table tr.node[data-step="4"] { background: #dfe3e6; }
+		.coding-wrap table tr.node[data-step="5"] { background: #8c9ba5; }
+
+		.coding-wrap table tbody a:link{ padding: 4px 0px; display: inline-block; font-weight: 400; position: relative; }
+		.coding-wrap table tbody .new_window{ margin-left: 10px; font-size: 10px; }
+		.coding-wrap table tbody tr:hover{ font-size: 14px;  background-color: #e4f1f4; font-weight: 800;}
+
+		.coding-wrap table .comment{ position: absolute; right: 10px; color: #555; font-weight:400; max-width: 50%; height: 24px; overflow: hidden; border: 1px solid #aaa;  background: #fff; display: none; top: 0; }/** 코멘트 영역 */
+		.coding-wrap table .comment.on{ display: block; font-size: 12px; }
+		.coding-wrap table dl{ text-align: left; padding: 10px;}
+		.coding-wrap table dt{ font-weight: 600; font-size: 12px; }
+		.coding-wrap table dl>*{ display: inline-block; padding: 0px 4px; }
+
+		.coding-wrap table tbody tr.off{ display: none; }
+		.coding-wrap table tbody tr.clicked{ background-color: #e4f1f4; }
+
+		.coding-wrap table .child-node:before{ content: ""; }
+		.coding-wrap table .link-node:before{ content: "ㆍ"; }
+
+		.coding-wrap .done{color:#c3524a !important;} /* 완료 */
+		.coding-wrap .confirm{color:#5cac49 !important;} /* 컨펌 */
+		.coding-wrap .modify{color:#1391dd !important;} /* 수정 */
+		.coding-wrap .ing{color:#b19702 !important;} /* 진행중 */
+		.coding-wrap .etc{color:#ff7a2f !important;} /* 기타 */
+		.coding-wrap .wait{color:#b1a5a5 !important;}/* 대기 */
+		.coding-wrap .hold{color:#5cac49 !important;}/* 홀드 */
+		.coding-wrap .del{color:#999 !important; text-decoration: line-through; cursor: default; pointer-events: none;}/* 삭제 */
+    </style>
+    <script type="text/javascript">
+		var storage = null;		//sessionStorage
+		var toggleFunc = null;	//클릭시 호출되는 함수
+		var topShow = null;		//전체열기, 전체닫기
+		var tableBody = null;	//append 할 태그
+		var clickFunc = null;	//링크를 클릭했을 경우
+
+		var getAjax = function (url, cb) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.send();
+			xhr.onreadystatechange = function (e) {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if(xhr.status === 200) {
+						cb.call(this)
+					} else {
+						alert('Error!');
+					}
+				}
+			};
+		}
+		getAjax('../_coding_list/coding_list.json', function () {
+			try{
+				var dataset = JSON.parse(this.responseText);			//data
+
+				//카테고리의 총 갯수
+				var dataCount = function (data) {
+					if(!dataCount.dataCount) dataCount.dataCount = 0;
+					for(var key in data){
+						++dataCount.dataCount;
+						var temp = data[key];
+						if(toString.call(temp).toLowerCase().indexOf('array') == -1){//object
+							dataCount(temp);
+						}
+					}
+					return {
+						dataCount: dataCount.dataCount
+					}
+				}
+				var storageCount = function () {
+					var si = localStorage;
+					var count = 0;
+					for(var key in si){
+						var temp = si[key];
+						if(typeof temp != 'function' && key.indexOf('list_') > -1){
+							++count;
+						}
+					}
+					return count;
+				}
+				try{
+					var tCount = dataCount(dataset.links).dataCount;
+					var storageCount = storageCount();
+					if(tCount != storageCount) localStorage.clear();
+				}catch(e){
+					console.log(e)
+				}
+
+				getAjax('../_coding_list/coding_list.js', function () {
+					eval(this.responseText);							//실행함수들
+					new Codinglist();
+
+					//코딩 리스트 프레임셋 너비값 설정
+					var resizeFrameSet = function () {
+						var evt = window.addEventListener || window.attachEvent;
+						var cols = window.top.document.body;
+						var frameWidth = function () {
+							var menuFrame = window.top.frames['menuframe'].document.body.scrollWidth;
+							var mainFrame = window.top.frames['mainframe'].document.body.scrollWidth;
+							window.sessionStorage.setItem('cols', menuFrame+','+mainFrame);
+						}
+						try{
+							evt('resize', frameWidth);
+						}catch(e){}
+						if(window.sessionStorage.getItem('cols')){
+							var _cols = window.sessionStorage.getItem('cols');
+							cols.setAttribute('cols', _cols);
+						}
+					}();
+				});
+			}catch(e){
+				alert(e);
+			}
+		});
+	</script>
+</head>
+<body>
+    <div class="coding-wrap">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <thead id="table_head">
+                <tr>
+                    <td colspan="99">
+                        <h1 id="project_title">title</h1>
+                        <dl>
+                            <dt>색상별 상태정보: </dt>
+                            <dd class="done">완료</dd>
+                            <dd class="confirm">컨펌대기</dd>
+                            <dd class="modify">수정</dd>
+                            <dd class="ing">진행중</dd>
+                            <dd class="etc">기타</dd>
+                            <dd class="wait">대기</dd>
+							<dd class="hold">홀드</dd>
+							<dd class="del">삭제</dd>
+                        </dl>
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+                <tr id="0" class=""><td class="row_0" colspan="3"><h2><a href="#" onclick="show(event, this)">회원 - 1</a></h2></td></tr>
+                <tr id="1" class="0"><td class="row_0 empty">┖</td><td class="row_1" colspan="2"><h2><a href="#" onclick="show(event, this)">가입 - 1</a></h2></td></tr>
+                <tr class="0 1 on"><td class="row_0 empty">&nbsp;</td><td class="row_1 empty">┖</td><td class="ing"><a href="#">인증-1</a></td></tr>
+                <tr class="0 1 on"><td class="row_0 empty">&nbsp;</td><td class="row_1 empty">┖</td><td class="done"><a href="#">인증-2</a></td></tr>
+                <tr class="0 1 on"><td class="row_0 empty">&nbsp;</td><td class="row_1 empty">┖</td><td class="modi"><a href="#">인증-2</a></td></tr>
+            </tbody>
+            <tfoot class="table_foot">
+                <tr>
+                    <td colspan="99"><h1>&nbsp;</h1></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
