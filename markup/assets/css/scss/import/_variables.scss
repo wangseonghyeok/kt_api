@@ -31,16 +31,24 @@ $vw-viewport: 720px !default;
 // font weight
 $fw-Bold: 700;
 $fw-SemiBold: 600;
+$fw-Medium: 500;
 $fw-Regular: 400;
 $fw-Light: 300;
 
+// line
+$graye9eaee: #e9eaee;
+
 // color 변수
+
+$gray55885d: #55585d;
+$primaryGreen: #00a39c;
+$black191a1c: #191a1c;
 $white: #fff;
 $black: #222;
+$gray666: #666;
 $grayf7f8fb: #f7f8fb;
 $grayf8: #f8f8f8;
 $grayf1: #f1f1f1;
-$gray666: #666;
 $gray76: #767676;
 $gray888: #888;
 $grayeee: #eee;
@@ -57,9 +65,15 @@ $blue: #3570b4;
 $red: #d4333a;
 
 :root {
+    --graye9eaee: #{$graye9eaee};
+    --gray55885d: #{$gray55885d};
+    --primaryGreen: #{$primaryGreen};
+    --black191a1c: #{$black191a1c};
+
     --fw-Bold: #{$fw-Bold};
     --fw-SemiBold: #{$fw-SemiBold};
     --fw-Regular: #{$fw-Regular};
+    --fw-Medium: #{$fw-Medium};
     --fw-Light: #{$fw-Light};
     --white: #{$white};
     --grayf7f8fb: #{$grayf7f8fb};

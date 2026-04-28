@@ -1,17 +1,18 @@
-@media (hover: hover) and (pointer: fine) {
-    .main-notice {
-        .card-list {
-            li {
-                &:hover {
-                    > a {
-                        transform: translateY(-20px);
-                        border-color: var(--green);
-                        &:after {
-                            background-image: url('/assets/img/main/ico_main_notice_card_arrow_hover.png');
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// @media (hover: hover) and (pointer: fine) {
+//     .main-notice {
+//         .card-list {
+//             li {
+//                 &:hover {
+//                     > a {
+//                         transform: translateY(-20px);
+//                         border-color: var(--green);
+//                         &:after {
+//                             background-image: url('/assets/img/main/ico_main_notice_card_arrow_hover.png');
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// //

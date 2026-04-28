@@ -399,42 +399,31 @@ const ui = {
         // gnb hover
         (() => {
             const header = document.getElementById('header');
-            const gnbMenu = document.querySelectorAll('.gnb > ul > li');
+            const gnbWrap = document.querySelector('.gnb > ul');
+            const depth2List = document.querySelectorAll('.gnb .depth2');
 
-            const headerOpen = e => {
+            const headerOpen = () => {
                 header.classList.add('__hover');
-                document.querySelectorAll('.gnb .depth2').forEach(d => d.classList.remove('__show'));
-                e.target.nextElementSibling.classList.add('__show');
+
+                depth2List.forEach(depth2 => {
+                    depth2.classList.add('__show');
+                });
             };
 
-            if (document.querySelector('.gnb > ul')) {
-                document
-                    .querySelector('.gnb > ul')
-                    .addEventListener('mouseenter', () => header.classList.add('__hover'));
-                document.querySelector('#header').addEventListener('mouseleave', () => {
-                    header.classList.remove('__hover');
-                    document.querySelectorAll('.gnb .depth2').forEach(d => d.classList.remove('__show'));
-                });
+            const headerClose = () => {
+                header.classList.remove('__hover');
 
-                gnbMenu.forEach(li => {
-                    const btn = li.querySelector('button');
-                    btn.addEventListener('mouseenter', headerOpen);
-                    btn.addEventListener('focus', headerOpen);
+                depth2List.forEach(depth2 => {
+                    depth2.classList.remove('__show');
                 });
+            };
 
-                // gnb에서 shift, tab 키로 뒤로 이동 시 이전 탭 마지막 항목 선택
-                $('.gnb > ul > li > button').keydown(e => {
-                    if (e.shiftKey && e.keyCode === 9) {
-                        const prevLi = e.target.parentElement.previousElementSibling;
-                        const btn = prevLi.querySelector('button');
-                        const lastLink = prevLi.querySelector('.depth2  ul  li:last-child a');
-                        if (lastLink) {
-                            setTimeout(() => {
-                                btn.blur();
-                                lastLink.focus();
-                            }, 1);
-                        }
-                    }
+            if (gnbWrap) {
+                gnbWrap.addEventListener('mouseenter', headerOpen);
+                header.addEventListener('mouseleave', headerClose);
+
+                gnbWrap.querySelectorAll('a').forEach(a => {
+                    a.addEventListener('focus', headerOpen);
                 });
             }
         })();

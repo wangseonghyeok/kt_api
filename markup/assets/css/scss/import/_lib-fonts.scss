@@ -28,6 +28,14 @@
 @font-face {
     font-family: 'Pretendard';
     font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard Medium'), url('/assets/fonts/Pretendard-Medium.woff2') format('woff2'),
+        url('/assets/fonts/Pretendard-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: local('Pretendard Regular'), url('/assets/fonts/Pretendard-Regular.woff2') format('woff2'),
@@ -41,38 +49,4 @@
     font-display: swap;
     src: local('Pretendard Light'), url('/assets/fonts/Pretendard-Light.woff2') format('woff2'),
         url('/assets/fonts/Pretendard-Light.woff') format('woff');
-}
-
-/* NanumSquareNeo */
-@font-face {
-    font-family: 'NanumSquareNeo';
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: local('NanumSquareNeo Extra Bold'), url('/assets/fonts/NanumSquareNeo-extrabold.woff2') format('woff2'),
-        url('/assets/fonts/NanumSquareNeo-extrabold.woff') format('woff');
-}
-@font-face {
-    font-family: 'NanumSquareNeo';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: local('NanumSquareNeo Bold'), url('/assets/fonts/NanumSquareNeo-bold.woff2') format('woff2'),
-        url('/assets/fonts/NanumSquareNeo-bold.woff') format('woff');
-}
-@font-face {
-    font-family: 'NanumSquareNeo';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: local('NanumSquareNeo Regular'), url('/assets/fonts/NanumSquareNeo-regular.woff2') format('woff2'),
-        url('/assets/fonts/NanumSquareNeo-regular.woff') format('woff');
-}
-@font-face {
-    font-family: 'NanumSquareNeo';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('NanumSquareNeo Light'), url('/assets/fonts/NanumSquareNeo-light.woff2') format('woff2'),
-        url('/assets/fonts/NanumSquareNeo-light.woff') format('woff');
 }
