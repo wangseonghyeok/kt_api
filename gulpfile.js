@@ -181,7 +181,7 @@ function server() {
         server: {
             baseDir: paths.build,
             index: '/coding_list.html',
-            // index: '/ACF-HM-001.html',
+            // index: '/Ma-001.html',
         },
         port: 3000,
     });

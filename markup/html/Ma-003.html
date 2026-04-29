@@ -23,9 +23,11 @@
                                     <a href="#" class="kt-text-link is-disabled">더보기</a>
                                 </div>
                                 <p class="kt-count"><strong>0</strong><span>건</span></p>
-                                <ul class="kt-meta-list is-empty">
+                                <ul class="kt-meta-list kt-meta-list--two is-empty">
                                     <li><span>API</span><strong>0</strong></li>
+                                    <li class="kt-meta-list__divider" aria-hidden="true"></li>
                                     <li><span>OUATH</span><strong>0</strong></li>
+                                    <li class="kt-meta-list__divider" aria-hidden="true"></li>
                                     <li><span>MCP</span><strong>0</strong></li>
                                 </ul>
                             </article>
@@ -37,6 +39,7 @@
                                 <p class="kt-count"><strong>0</strong><span>건</span></p>
                                 <ul class="kt-meta-list is-empty">
                                     <li><span>성공율</span><strong>00.0%</strong></li>
+                                    <li class="kt-meta-list__divider" aria-hidden="true"></li>
                                     <li><span>평균응답시간</span><strong>0ms</strong></li>
                                 </ul>
                             </article>
@@ -48,7 +51,9 @@
                                 <p class="kt-count"><strong>0</strong><span>건</span></p>
                                 <ul class="kt-meta-list is-empty">
                                     <li><span>Api key</span><strong>0</strong></li>
+                                    <li class="kt-meta-list__divider" aria-hidden="true"></li>
                                     <li><span>PRD ip</span><strong>0</strong></li>
+                                    <li class="kt-meta-list__divider" aria-hidden="true"></li>
                                     <li><span>상용전환</span><strong>0</strong></li>
                                 </ul>
                             </article>
@@ -80,7 +85,12 @@
                                     class="kt-empty__icon kt-empty__icon--warning"
                                 />
                                 <p>아직 생성된 워크스페이스가 없습니다.</p>
-                                <button type="button">워크스페이스 생성하기</button>
+                                <button
+                                    type="button"
+                                    class="kt-btn kt-btn--tertiary kt-btn--md kt-dashboard-btn kt-dashboard-btn--transparent"
+                                >
+                                    워크스페이스 생성하기
+                                </button>
                             </div>
                         </div>
                     </section>
@@ -94,7 +104,7 @@
                             <article class="kt-alert-card">
                                 <div class="kt-alert-head kt-alert-head--pending is-empty">
                                     <h3><span class="kt-alert-icon kt-alert-icon--pending"></span>승인대기</h3>
-                                    <strong>0건</strong>
+                                    <strong><em>0</em><span>건</span></strong>
                                 </div>
                                 <div class="kt-empty kt-empty--alert">
                                     <img
@@ -109,7 +119,7 @@
                             <article class="kt-alert-card">
                                 <div class="kt-alert-head kt-alert-head--danger is-empty">
                                     <h3><span class="kt-alert-icon kt-alert-icon--expiring"></span>만료임박</h3>
-                                    <strong>0건</strong>
+                                    <strong><em>0</em><span>건</span></strong>
                                 </div>
                                 <div class="kt-empty kt-empty--alert">
                                     <img
@@ -124,7 +134,7 @@
                             <article class="kt-alert-card">
                                 <div class="kt-alert-head kt-alert-head--expired is-empty">
                                     <h3><span class="kt-alert-icon kt-alert-icon--expired"></span>만료됨</h3>
-                                    <strong>0건</strong>
+                                    <strong><em>0</em><span>건</span></strong>
                                 </div>
                                 <div class="kt-empty kt-empty--alert">
                                     <img

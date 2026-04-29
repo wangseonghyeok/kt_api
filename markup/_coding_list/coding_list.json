@@ -11,118 +11,12 @@
     },
     "links": {
         "공통": {
-            "공통 컴포넌트": ["/components.html", "mainframe", "완료", "Select, Checkbox, Grid, Tab, Button, Badge, Input, Chart"],
-            "공통 요소": ["/element.html", "mainframe", "완료", ""],
-            "팝업": ["/temp_popup.html", "mainframe", "완료", ""]
+            "공통 컴포넌트": ["/components.html", "mainframe", "완료", "Select, Checkbox, Grid, Tab, Button, Badge, Input, Chart"]
         },
-        "Home": {
-            "[ACF-HM-001] Home": ["/ACF-HM-001.html", "mainframe", "완료", ""]
-        },
-        "로그인":{
-            "[ACF-LI-001] 로그인": ["/ACF-LI-001.html", "mainframe", "완료", ""],
-            "[ACF-LI-002] 아이디 찾기": ["/ACF-LI-002.html", "mainframe", "완료", ""],
-            "[ACF-LI-003] 아이디 찾기 &gt; 이름/휴대폰번호로 찾기": ["/ACF-LI-003.html", "mainframe", "완료", ""],
-            "[ACF-LI-004] 아이디 찾기 &gt; 결과 &gt; 일치 ID 있음": ["/ACF-LI-004.html", "mainframe", "완료", ""],
-            "[ACF-LI-005] 아이디 찾기 &gt; 결과 &gt; 일치 ID 없음": ["/ACF-LI-005.html", "mainframe", "완료", ""],
-            "[ACF-LI-006] 비밀번호 찾기": ["/ACF-LI-006.html", "mainframe", "완료", ""],
-            "[ACF-LI-007] 비밀번호 찾기 &gt; 이메일/휴대폰번호로 찾기": ["/ACF-LI-007.html", "mainframe", "완료", ""],
-            "[ACF-LI-008] 비밀번호 찾기 &gt; 일치 정보 없음": ["/ACF-LI-008.html", "mainframe", "완료", ""],
-            "[ACF-LI-009] 비밀번호 재설정": ["/ACF-LI-009.html", "mainframe", "완료", ""]
-        },
-        "회원가입" : {
-            "[ACF-SU-001] 약관동의": ["/ACF-SU-001.html", "mainframe", "완료", ""],
-            "[ACF-SU-002] 본인인증": ["/ACF-SU-002.html", "mainframe", "완료", ""],
-            "[ACF-SU-003] 회원정보 입력": ["/ACF-SU-003.html", "mainframe", "완료", ""],
-            "[ACF-SU-004] 이메일 인증": ["/ACF-SU-004.html", "mainframe", "완료", ""],
-            "[ACF-SU-005] 이메일 인증 완료(회원가입 완료)": ["/ACF-SU-005.html", "mainframe", "완료", ""],
-            "[ACF-SU-006] 이메일 인증 미완료": ["/ACF-SU-006.html", "mainframe", "완료", ""]
-        },
-        "센터소개" : {
-            "[ACF-CI-001] 디지털인증확산센터 소개": ["/ACF-CI-001.html", "mainframe", "홀드", ""],
-            "[ACF-CI-002] 조직구성ᆞ역할": ["/ACF-CI-002.html", "mainframe", "홀드", ""],
-            "[ACF-CI-003] 참여기관": ["/ACF-CI-003.html", "mainframe", "홀드", ""],
-            "[ACF-CI-004] 오시는 길": ["/ACF-CI-004.html", "mainframe", "완료", ""]
-        },
-        "전자서명이란" : {
-            "[ACF-DA-001] 전자서명인증서 개념": ["/ACF-DA-001.html", "mainframe", "홀드", ""],
-            "[ACF-DA-002] 전자서명인증서의 필요": ["/ACF-DA-002.html", "mainframe", "홀드", ""],
-            "[ACF-DA-003] 사용 용도": ["/ACF-DA-003.html", "mainframe", "홀드", ""]
-        },
-        "이용안내" : {
-            "[ACF-UI-001] 전자서명인증서 구성도": ["/ACF-UI-001.html", "mainframe", "홀드", ""],
-            "[ACF-UI-002] 이용방법 및 절차 &gt; 기업등록": ["/ACF-UI-002.html", "mainframe", "완료", ""],
-            "[ACF-UI-003] 이용방법 및 절차 &gt; 서비스 등록": ["/ACF-UI-003.html", "mainframe", "완료", ""],
-            "[ACF-UI-004] 이용방법 및 절차 &gt; 통합전자서명모듈 다운로드": ["/ACF-UI-004.html", "mainframe", "완료", ""],
-            "[ACF-UI-005] 이용방법 및 절차 &gt; 서비스 이용 신청": ["/ACF-UI-005.html", "mainframe", "완료", ""],
-            "[ACF-UI-006] 이용방법 및 절차 &gt; 테스트랩 이용": ["/ACF-UI-006.html", "mainframe", "완료", ""],
-            "[ACF-UI-007] 이용방법 및 절차 &gt; 서비스 운영 시작": ["/ACF-UI-007.html", "mainframe", "완료", ""]
-        },
-        "API 가이드": {
-            "[ACF-AI-001] API 소개": ["/ACF-AI-001.html", "mainframe", "홀드", ""],
-            "[ACF-AI-002] API 가이드 &gt; 분류별 API 규격 안내": ["/ACF-AI-002.html", "mainframe", "홀드", ""]
-        },
-        "테스트랩": {
-            "[ACF-TL-001] 테스트랩 이용안내": ["/ACF-TL-001.html", "mainframe", "홀드", ""],
-            "[ACF-TL-002] 테스트랩 이용신청/수정": ["/ACF-TL-002.html", "mainframe", "완료", ""],
-            "[ACF-TL-003] 테스트랩 신청서 작성/수정": ["/ACF-TL-003.html", "mainframe", "완료", ""]
-        },
-        "고객지원":{
-            "[ACF-CS-001] 알림센터 &gt; 공통 목록": ["/ACF-CS-001.html", "mainframe", "완료", ""],
-            "[ACF-CS-001_case2] 알림센터 &gt; 공통 목록 - 검색결과 없음": ["/ACF-CS-001_case2.html", "mainframe", "완료", ""],
-            "[ACF-CS-002] 알림센터 &gt; 공통 목록 &gt; 공통 상세": ["/ACF-CS-002.html", "mainframe", "완료", ""],
-            "[ACF-CS-002_case2] 알림센터 &gt; 공통 목록 &gt; 공통 상세 - 첨부파일 없음": ["/ACF-CS-002_case2.html", "mainframe", "완료", ""],
-            "[ACF-CS-003] FAQ": ["/ACF-CS-003.html", "mainframe", "수정", ""],
-            "[ACF-CS-003_case2] FAQ - 검색결과 없음": ["/ACF-CS-003_case2.html", "mainframe", "완료", ""],
-            "[ACF-CS-004] 자료실 &gt; 목록": ["/ACF-CS-004.html", "mainframe", "완료", ""],
-            "[ACF-CS-004_case2] 자료실 &gt; 목록 - 검색결과 없음": ["/ACF-CS-004_case2.html", "mainframe", "완료", ""],
-            "[ACF-CS-005] 자료실 &gt; 상세": ["/ACF-CS-005.html", "mainframe", "완료", ""],
-            "[ACF-CS-005_case2] 자료실 &gt; 상세 - 첨부파일 없음": ["/ACF-CS-005_case2.html", "mainframe", "완료", ""],
-            "[ACF-CS-006] 1:1 문의": ["/ACF-CS-006.html", "mainframe", "완료", ""],
-            "[ACF-CS-007] 평가 확인": ["/ACF-CS-007.html", "mainframe", "완료", ""]
-        },
-        "마이페이지":{ 
-            "[ACF-DB-001] 대시보드(개인회원)": ["/ACF-DB-001.html", "mainframe", "완료", ""],
-            "[ACF-DB-002] 대시보드(기업회원)": ["/ACF-DB-002.html", "mainframe", "완료", ""],
-            "[ACF-MB-001] 메세지함": ["/ACF-MB-001.html", "mainframe", "완료", ""],
-            "[ACF-MS-001] 나의 서비스 &gt; 목록": ["/ACF-MS-001.html", "mainframe", "완료", ""],
-            "[ACF-MS-002] 나의 서비스 &gt; 등록/수정": ["/ACF-MS-002.html", "mainframe", "완료", ""],
-            "[ACF-MS-003] 나의 서비스 &gt; 상세": ["/ACF-MS-003.html", "mainframe", "완료", ""],
-            "[ACF-MS-004] 나의 서비스 &gt; 상세 &gt; 서비스 테스트 신청/변경(팝업)": ["/ACF-MS-004.html", "mainframe", "완료", ""],
-            "[ACF-MS-005] 나의 서비스 &gt; 상세 &gt; 서비스 운영 신청/변경(팝업)": ["/ACF-MS-005.html", "mainframe", "완료", ""],
-            "[ACF-MS-006] 나의 서비스 &gt; 상세 &gt; 테스트키 다운로드(팝업)": ["/ACF-MS-006.html", "mainframe", "완료", ""],
-            "[ACF-MS-007] 나의 서비스 &gt; 상세 &gt; 운영키 다운로드(팝업)": ["/ACF-MS-007.html", "mainframe", "완료", ""],
-            "[ACF-TR-001] 테스트랩 신청 현황": ["/ACF-TR-001.html", "mainframe", "완료", ""],
-            "[ACF-TR-002] 테스트랩 신청 결과 리포트(팝업)": ["/ACF-TR-002.html", "mainframe", "완료", ""],
-            "[ACF-TR-003] 테스트랩 신청 반려사유(팝업)": ["/ACF-TR-003.html", "mainframe", "완료", ""],
-            "[ACF-SM-001] 통합전자서명모듈(신청 전)": ["/ACF-SM-001.html", "mainframe", "완료", ""],
-            "[ACF-SM-002] 통합전자서명모듈(승인 대기)": ["/ACF-SM-002.html", "mainframe", "완료", ""],
-            "[ACF-SM-003] 통합전자서명모듈(승인 완료)": ["/ACF-SM-003.html", "mainframe", "완료", ""],
-            "[ACF-SM-004] 통합전자서명모듈(승인 반려)": ["/ACF-SM-004.html", "mainframe", "완료", ""],
-            "[ACF-MA-001] 나의 문의내역 &gt; 목록": ["/ACF-MA-001.html", "mainframe", "완료", ""],
-            "[ACF-MA-002] 나의 문의내역 &gt; 상세": ["/ACF-MA-002.html", "mainframe", "완료", ""],
-            "[ACF-CA-001] 기업(기관)정보 &gt; 조회": ["/ACF-CA-001.html", "mainframe", "완료", ""],
-            "[ACF-CA-002] 기업(기관)정보 &gt; 수정": ["/ACF-CA-002.html", "mainframe", "완료", ""],
-            "[ACF-PA-001] 회원정보 &gt; 조회": ["/ACF-PA-001.html", "mainframe", "완료", ""],
-            "[ACF-PA-002] 회원정보 &gt; 비밀번호 변경": ["/ACF-PA-002.html", "mainframe", "완료", ""],
-            "[ACF-PA-003] 회원정보 &gt; 회원탈퇴 완료": ["/ACF-PA-003.html", "mainframe", "완료", ""],
-            "[ACF-CR-001] 기업(기관)등록 &gt; 등록": ["/ACF-CR-001.html", "mainframe", "완료", ""],
-            "[ACF-CR-002] 기업(기관)등록 &gt; 약관동의": ["/ACF-CR-002.html", "mainframe", "완료", ""]
-        },
-        "자동발송 이메일": {
-            "[EM-001] 회원가입 인증": ["/EM-001.html", "mainframe", "완료", ""],
-            "[EM-002] 회원가입 완료": ["/EM-002.html", "mainframe", "완료", ""],
-            "[EM-003] 기업(기관) 등록 승인": ["/EM-003.html", "mainframe", "완료", ""],
-            "[EM-004] 기업(기관) 등록 반려": ["/EM-004.html", "mainframe", "완료", ""],
-            "[EM-005] 회원 탈퇴 정상 처리": ["/EM-005.html", "mainframe", "완료", ""],
-            "[EM-006] 통합전자서명모듈 사용신청 승인": ["/EM-006.html", "mainframe", "완료", ""],
-            "[EM-007] 통합전자서명모듈 사용신청 반려": ["/EM-007.html", "mainframe", "완료", ""],
-            "[EM-008] 테스트 이용신청 승인": ["/EM-008.html", "mainframe", "완료", ""],
-            "[EM-009] 테스트 이용신청 반려": ["/EM-009.html", "mainframe", "완료", ""],
-            "[EM-010] 서비스 운영신청 승인": ["/EM-010.html", "mainframe", "완료", ""],
-            "[EM-011] 서비스 운영신청 반려": ["/EM-011.html", "mainframe", "완료", ""],
-            "[EM-012] 테스트랩 이용신청 승인": ["/EM-012.html", "mainframe", "완료", ""],
-            "[EM-013] 테스트랩 이용신청 반려": ["/EM-013.html", "mainframe", "완료", ""],
-            "[EM-014] 문의글 답변": ["/EM-014.html", "mainframe", "완료", ""]
+        "Main": {
+            "[Ma-001] Main (로그인 전)": ["/Ma-001.html", "mainframe", "완료", ""],
+            "[Ma-002] Main (로그인 후)": ["/Ma-002.html", "mainframe", "완료", ""],     
+            "[Ma-003] Main (로그인 후) 데이터 없음": ["/Ma-003.html", "mainframe", "완료", ""]
         }
     }
 }

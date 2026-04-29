@@ -381,6 +381,27 @@ const ui = {
             });
         });
 
+        document.querySelectorAll('.kt-input-field, .kt-password').forEach(field => {
+            const input = field.querySelector('input');
+            const clearButton = field.querySelector('[data-clear_input]');
+
+            if (!input || !clearButton) {
+                return;
+            }
+
+            const syncClearButton = () => {
+                const hasValue = input.value.trim().length > 0;
+
+                field.classList.toggle('has-value', hasValue);
+                clearButton.hidden = !hasValue;
+                clearButton.setAttribute('aria-hidden', String(!hasValue));
+                clearButton.tabIndex = hasValue ? 0 : -1;
+            };
+
+            input.addEventListener('input', syncClearButton);
+            syncClearButton();
+        });
+
         document.querySelectorAll('[data-search_field]').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');

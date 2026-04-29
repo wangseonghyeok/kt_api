@@ -118,7 +118,7 @@ var Codinglist = function () {
     });
 
     var pastLink = storage.get('clicked');
-    pastLink = (pastLink ? pastLink: '../ACF-HM-001.html'); // 프로젝트 상황에 맞게 수정
+    pastLink = (pastLink ? pastLink: '../Ma-001.html'); // 프로젝트 상황에 맞게 수정
     // pastLink = (pastLink ? pastLink: '../index.html'); // 프로젝트 상황에 맞게 수정
     if(parent['mainframe']) parent['mainframe'].location = pastLink;
   }
