@@ -171,7 +171,7 @@ const ui = {
             const CalwinY = winY * 3;
 
             const hideDropMenu = () => {
-                dropTrg.className = '';
+                dropTrg.classList.remove('__open', '__up', '__down');
                 dropTrg.setAttribute('aria-selected', false);
                 dropTrg.setAttribute('aria-expanded', false);
             };
@@ -266,15 +266,16 @@ const ui = {
     },
     tab: () => {
         $('[data-tab_wrap]').each(function () {
-            const panels = $(this).find('[role="tabpanel"]');
-            const btn = $(this).find('[data-tab_btn]>button');
-            const tabDropBtn = $(this).find('.tab-drop-btn');
-            const selectText = $(this).find('[aria-selected="true"]').text();
+            const tabWrap = $(this);
+            const panels = tabWrap.find('[role="tabpanel"]');
+            const btn = tabWrap.find('[data-tab_btn]>button');
+            const tabDropBtn = tabWrap.find('.tab-drop-btn');
+            const selectText = tabWrap.find('[aria-selected="true"]').text();
             tabDropBtn.text(selectText);
 
             btn.on('click', el => {
-                $('[data-tab_wrap] [data-tab_btn] > button').attr('aria-selected', 'false');
-                $('[data-tab_wrap] [data-tab_btn] > button').removeAttr('aria-current');
+                btn.attr('aria-selected', 'false');
+                btn.removeAttr('aria-current');
                 $(el.target).closest('nav').prev().text(el.target.innerText);
                 $(el.target).attr('aria-selected', 'true');
                 $(el.target).attr('aria-current', 'true');
@@ -312,6 +313,198 @@ const ui = {
                     console.log(btnCtrl);
                 });
             }
+        });
+    },
+    component: () => {
+        document.querySelectorAll('.kt-dropdown--check').forEach(drop => {
+            const trigger = drop.querySelector('[data-dropdown_trg]');
+            const items = drop.querySelectorAll('input[type="checkbox"]');
+            const defaultText = trigger.dataset.placeholder || trigger.textContent.trim();
+
+            const syncLabel = () => {
+                const selected = Array.from(items)
+                    .filter(item => item.checked)
+                    .map(item => {
+                        const label = item.closest('label');
+                        const labelText = label.querySelector('span');
+
+                        return (labelText ? labelText.textContent : label.textContent).trim();
+                    })
+                    .filter(Boolean);
+
+                trigger.textContent = selected.length ? selected.join(', ') : defaultText;
+            };
+
+            items.forEach(item => {
+                item.addEventListener('change', syncLabel);
+            });
+            syncLabel();
+        });
+
+        document.querySelectorAll('[data-password_toggle]').forEach(button => {
+            const inputId = button.getAttribute('aria-controls');
+            const input =
+                (inputId && document.getElementById(inputId)) || button.closest('.kt-password')?.querySelector('input');
+            const icon = button.querySelector('img');
+            const showIcon = button.dataset.iconShow;
+            const hideIcon = button.dataset.iconHide;
+
+            if (!input) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                const willShow = input.type === 'password';
+
+                input.type = willShow ? 'text' : 'password';
+                button.setAttribute('aria-pressed', String(willShow));
+                button.setAttribute('aria-label', willShow ? '비밀번호 숨기기' : '비밀번호 보기');
+
+                if (icon && showIcon && hideIcon) {
+                    icon.src = willShow ? hideIcon : showIcon;
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-clear_input]').forEach(button => {
+            const inputId = button.getAttribute('aria-controls');
+            const input = inputId && document.getElementById(inputId);
+
+            if (!input) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                input.value = '';
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+                input.focus();
+            });
+        });
+
+        document.querySelectorAll('[data-search_field]').forEach(field => {
+            const input = field.querySelector('input');
+            const clearButton = field.querySelector('[data-clear_input]');
+
+            if (!input) {
+                return;
+            }
+
+            const syncClearButton = () => {
+                const hasValue = input.value.trim().length > 0;
+
+                field.classList.toggle('has-value', hasValue);
+
+                if (clearButton) {
+                    clearButton.hidden = !hasValue;
+                    clearButton.setAttribute('aria-hidden', String(!hasValue));
+                    clearButton.tabIndex = hasValue ? 0 : -1;
+                }
+            };
+
+            input.addEventListener('input', syncClearButton);
+            syncClearButton();
+        });
+
+        const closePrompt = prompt => {
+            prompt.classList.remove('is-open');
+            prompt.querySelectorAll('[data-prompt_trg]').forEach(trigger => {
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        };
+
+        const closeOtherPrompts = current => {
+            document.querySelectorAll('[data-prompt].is-open').forEach(prompt => {
+                if (prompt !== current) {
+                    closePrompt(prompt);
+                }
+            });
+        };
+
+        document.querySelectorAll('[data-prompt]').forEach(prompt => {
+            const triggers = prompt.querySelectorAll('[data-prompt_trg]');
+            const menu = prompt.querySelector('[data-prompt_menu]');
+            const input = prompt.querySelector('input[data-prompt_trg]');
+            const options = menu ? menu.querySelectorAll('[role="option"]') : [];
+
+            if (!menu || !triggers.length) {
+                return;
+            }
+
+            const openPrompt = () => {
+                closeOtherPrompts(prompt);
+                prompt.classList.add('is-open');
+                triggers.forEach(trigger => {
+                    trigger.setAttribute('aria-expanded', 'true');
+                });
+            };
+
+            const selectOption = option => {
+                const value = option.querySelector('strong')?.textContent.trim() || option.textContent.trim();
+
+                options.forEach(item => {
+                    item.classList.remove('is-selected');
+                    item.setAttribute('aria-selected', 'false');
+                });
+                option.classList.add('is-selected');
+                option.setAttribute('aria-selected', 'true');
+
+                if (input && value) {
+                    input.value = value;
+                }
+
+                closePrompt(prompt);
+            };
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', event => {
+                    event.stopPropagation();
+
+                    if (prompt.classList.contains('is-open') && trigger.tagName !== 'INPUT') {
+                        closePrompt(prompt);
+                    } else {
+                        openPrompt();
+                    }
+                });
+
+                trigger.addEventListener('focus', openPrompt);
+                trigger.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') {
+                        closePrompt(prompt);
+                    }
+
+                    if (event.key === 'ArrowDown' && options.length) {
+                        event.preventDefault();
+                        openPrompt();
+                        options[0].focus();
+                    }
+                });
+            });
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    selectOption(option);
+                });
+
+                option.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        selectOption(option);
+                    }
+
+                    if (event.key === 'Escape') {
+                        closePrompt(prompt);
+                        input?.focus();
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('click', event => {
+            document.querySelectorAll('[data-prompt].is-open').forEach(prompt => {
+                if (!prompt.contains(event.target)) {
+                    closePrompt(prompt);
+                }
+            });
         });
     },
     // modal 팝업 동작 및 접근성
@@ -481,6 +674,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.dropdown();
     ui.accordion();
     ui.pagination();
+    ui.component();
     ui.init();
 });
 

@@ -11,6 +11,7 @@
     },
     "links": {
         "공통": {
+            "공통 컴포넌트": ["/components.html", "mainframe", "완료", "Select, Checkbox, Grid, Tab, Button, Badge, Input, Chart"],
             "공통 요소": ["/element.html", "mainframe", "완료", ""],
             "팝업": ["/temp_popup.html", "mainframe", "완료", ""]
         },
