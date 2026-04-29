@@ -2807,6 +2807,11 @@ html {
     }
 }
 
+.kt-input-field__clear[hidden],
+.kt-password__clear[hidden] {
+    display: none;
+}
+
 .kt-search-field {
     position: relative;
     width: 100%;

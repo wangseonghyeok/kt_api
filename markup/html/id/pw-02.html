@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+        <meta http-equiv="X-UA-compatible" content="IE=edge" />
+        <meta name="author" content="KT API Link" />
+        <link rel="stylesheet" type="text/css" href="../../assets/css/lib/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="../../assets/css/lib/swiper.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../assets/css/common.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../assets/css/contents.min.css" />
+        <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+        <script src="../../assets/js/lib/jquery-ui.js"></script>
+        <script src="../../assets/js/lib/swiper.min.js"></script>
+        <script src="../../assets/js/common.js"></script>
+        <title>KT API Link</title>
+    </head>
+
+    <body class="kt-auth-page">
+        <div id="wrap">
+            <main id="contents" class="kt-auth-main">
+                <section class="kt-auth-modal" aria-labelledby="authTitle">
+                    <header class="kt-auth-header">
+                        <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </header>
+                    <div class="kt-auth-content">
+                        <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
+                            <a href="pw-01.html" class="is-active">아이디 찾기</a>
+                            <a href="pw-04.html">비밀번호 찾기</a>
+                        </nav>
+                        <div class="kt-auth-panel">
+                            <div class="kt-auth-center">
+                                <span class="kt-auth-center__icon kt-auth-center__icon--mail" aria-hidden="true"></span>
+                                <h2>인증번호 입력</h2>
+                                <p>이메일로 발송된 인증번호를 입력해 주세요.</p>
+                            </div>
+                            <form class="kt-auth-form">
+                                <div class="kt-auth-field kt-auth-verify">
+                                    <label for="findCode">인증번호 <span class="is-required">*</span></label>
+                                    <input type="text" id="findCode" class="kt-input" value="123456" inputmode="numeric" />
+                                    <span class="kt-auth-verify__side">
+                                        <span class="kt-auth-timer">02:23</span>
+                                        <button type="button" class="kt-auth-resend">재전송</button>
+                                    </span>
+                                    <p class="kt-auth-helper kt-auth-helper--complete">인증 번호가 확인되었습니다.</p>
+                                </div>
+                            </form>
+                            <div class="kt-auth-actions">
+                                <div class="kt-auth-button-row">
+                                    <a href="pw-01.html" class="kt-auth-button kt-auth-button--secondary">이전</a>
+                                    <a href="pw-03.html" class="kt-auth-button">이메일 확인</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

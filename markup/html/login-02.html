@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+        <meta http-equiv="X-UA-compatible" content="IE=edge" />
+        <meta name="author" content="KT API Link" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
+        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
+        <script src="../assets/js/lib/jquery-ui.js"></script>
+        <script src="../assets/js/lib/swiper.min.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <title>KT API Link</title>
+    </head>
+
+    <body class="kt-auth-page">
+        <div id="wrap">
+            <main id="contents" class="kt-auth-main">
+                <section class="kt-auth-modal kt-auth-modal--scroll" aria-labelledby="authTitle">
+                    <header class="kt-auth-header">
+                        <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </header>
+                    <div class="kt-auth-content">
+                        <div class="kt-auth-top">
+                            <nav class="kt-auth-tabs" aria-label="로그인 메뉴">
+                                <a href="login-01.html" class="is-active">로그인</a>
+                                <a href="signup-01.html">회원가입</a>
+                            </nav>
+                            <ol class="kt-auth-step" aria-label="로그인 단계">
+                                <li class="kt-auth-step__item is-current"><span class="kt-auth-step__num">01</span><span>인증</span></li>
+                                <li class="kt-auth-step__line" aria-hidden="true"></li>
+                                <li class="kt-auth-step__item"><span class="kt-auth-step__num">02</span><span>OTP 인증</span></li>
+                            </ol>
+                            <div>
+                                <h2 class="kt-auth-section-title">인증 방식 선택</h2>
+                                <div class="kt-auth-methods">
+                                    <a href="login-01.html" class="kt-auth-method"><i class="kt-auth-icon--kt"></i><strong>Entra ID</strong><span>Kt 직원</span></a>
+                                    <a href="login-02.html" class="kt-auth-method is-active"><i class="kt-auth-icon--shield"></i><strong>LDAP</strong><span>사내 임직원</span></a>
+                                    <a href="login-03.html" class="kt-auth-method"><i class="kt-auth-icon--users"></i><strong>ID/PWD</strong><span>일반 개발자</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kt-auth-panel">
+                            <form class="kt-auth-form">
+                                <div class="kt-auth-field">
+                                    <label for="ldapId">사번 <span class="is-required">*</span></label>
+                                    <span class="kt-input-field">
+                                        <input type="text" id="ldapId" class="kt-input" placeholder="사번을 입력해 주세요" />
+                                        <span class="kt-input-field__actions">
+                                            <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="ldapId" aria-label="입력값 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="kt-auth-field">
+                                    <label for="ldapPw">비밀번호 <span class="is-required">*</span></label>
+                                    <span class="kt-password">
+                                        <input type="password" id="ldapPw" class="kt-input" placeholder="비밀번호를 입력해 주세요" />
+                                        <span class="kt-password__actions">
+                                            <button type="button" class="kt-password__clear" data-clear_input aria-controls="ldapPw" aria-label="비밀번호 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                            <button type="button" class="kt-password__toggle" data-password_toggle aria-controls="ldapPw" aria-label="비밀번호 보기" data-icon-show="../assets/img/components/ico_eye.svg" data-icon-hide="../assets/img/components/ico_eye_off.svg"><img src="../assets/img/components/ico_eye_off.svg" alt="" /></button>
+                                        </span>
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="kt-auth-actions">
+                                <button type="button" class="kt-auth-button is-disabled" disabled>LDAP으로 로그인</button>
+                                <div class="kt-auth-text-links kt-auth-text-links--small">
+                                    <a href="id/pw-01.html">아이디/비밀번호 찾기</a>
+                                </div>
+                                <div class="kt-auth-note">
+                                    <ul class="kt-auth-note-list">
+                                        <li>사번과 사내 비밀번호는 사내 인트라넷 계정과 동일합니다.</li>
+                                        <li>비밀번호 변경 및 계정 문의는 IT 서비스데스크로 연락하세요.</li>
+                                        <li>5회 오류 시 계정이 잠기며 해제는 IT 서비스데스크에 요청하세요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="kt-auth-scrollbar" aria-hidden="true"></span>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+        <meta http-equiv="X-UA-compatible" content="IE=edge" />
+        <meta name="author" content="KT API Link" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
+        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
+        <script src="../assets/js/lib/jquery-ui.js"></script>
+        <script src="../assets/js/lib/swiper.min.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <title>KT API Link</title>
+    </head>
+
+    <body class="kt-auth-page">
+        <div id="wrap">
+            <main id="contents" class="kt-auth-main">
+                <section class="kt-auth-modal" aria-labelledby="authTitle">
+                    <header class="kt-auth-header">
+                        <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </header>
+                    <div class="kt-auth-content">
+                        <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
+                            <a href="pw-01.html">아이디 찾기</a>
+                            <a href="pw-04.html" class="is-active">비밀번호 찾기</a>
+                        </nav>
+                        <div class="kt-auth-panel">
+                            <div class="kt-auth-center">
+                                <span class="kt-auth-center__icon kt-auth-center__icon--reset" aria-hidden="true"></span>
+                                <h2>비밀번호 재설정</h2>
+                                <p>새로운 비밀번호를 입력해 주세요.</p>
+                            </div>
+                            <form class="kt-auth-form">
+                                <div class="kt-auth-field">
+                                    <label for="newPw">새 비밀번호 <span class="is-required">*</span></label>
+                                    <span class="kt-password">
+                                        <input type="password" id="newPw" class="kt-input" placeholder="비밀번호를 입력해 주세요" />
+                                        <span class="kt-password__actions">
+                                            <button type="button" class="kt-password__clear" data-clear_input aria-controls="newPw" aria-label="비밀번호 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                            <button type="button" class="kt-password__toggle" data-password_toggle aria-controls="newPw" aria-label="비밀번호 보기" data-icon-show="../assets/img/components/ico_eye.svg" data-icon-hide="../assets/img/components/ico_eye_off.svg"><img src="../assets/img/components/ico_eye.svg" alt="" /></button>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="kt-auth-field">
+                                    <label for="newPwConfirm">새 비밀번호 확인 <span class="is-required">*</span></label>
+                                    <span class="kt-password">
+                                        <input type="password" id="newPwConfirm" class="kt-input" placeholder="비밀번호를 한 번 더 입력해 주세요" />
+                                        <span class="kt-password__actions">
+                                            <button type="button" class="kt-password__clear" data-clear_input aria-controls="newPwConfirm" aria-label="비밀번호 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                            <button type="button" class="kt-password__toggle" data-password_toggle aria-controls="newPwConfirm" aria-label="비밀번호 보기" data-icon-show="../assets/img/components/ico_eye.svg" data-icon-hide="../assets/img/components/ico_eye_off.svg"><img src="../assets/img/components/ico_eye.svg" alt="" /></button>
+                                        </span>
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="kt-auth-note">
+                                <ul class="kt-auth-note-list">
+                                    <li>영문, 숫자, 특수문자를 조합하여 8자 이상 입력해 주세요.</li>
+                                    <li>이전에 사용한 비밀번호와 동일하게 설정할 수 없습니다.</li>
+                                </ul>
+                            </div>
+                            <div class="kt-auth-actions">
+                                <div class="kt-auth-button-row">
+                                    <a href="pw-07.html" class="kt-auth-button">비밀번호 변경 완료</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
+
