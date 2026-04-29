@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap" class="kt-dashboard-wrap">
+            <!--#include file="./include/_header.html"-->
+            <div id="contents" class="kt-dashboard-main">
+                <div class="kt-shell">
+                    <section class="kt-overview" aria-label="사용 현황">
+                        <div class="kt-greeting">
+                            <p>안녕하세요, <strong>홍길동</strong> 님</p>
+                            <span class="kt-chip kt-chip--dark">LDAP</span>
+                        </div>
+
+                        <div class="kt-summary-grid">
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>내 워크스페이스</h2>
+                                    <a href="#" class="kt-text-link">더보기</a>
+                                </div>
+                                <p class="kt-count"><strong>8</strong><span>건</span></p>
+                                <ul class="kt-meta-list">
+                                    <li><span>API</span><strong>6</strong></li>
+                                    <li><span>OUATH</span><strong>1</strong></li>
+                                    <li><span>MCP</span><strong>1</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>이번 달 API 호출</h2>
+                                </div>
+                                <p class="kt-count"><strong>12,847</strong><span>건</span></p>
+                                <ul class="kt-meta-list kt-meta-list--green">
+                                    <li><span>성공율</span><strong>97.5%</strong></li>
+                                    <li><span>평균응답시간</span><strong>142ms</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>승인대기</h2>
+                                </div>
+                                <p class="kt-count"><strong>3</strong><span>건</span></p>
+                                <ul class="kt-meta-list kt-meta-list--blue">
+                                    <li><span>Api key</span><strong>1</strong></li>
+                                    <li><span>PRD ip</span><strong>1</strong></li>
+                                    <li><span>상용전환</span><strong>1</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>만료임박</h2>
+                                    <a href="#" class="kt-text-link">더보기</a>
+                                </div>
+                                <p class="kt-count"><strong>2</strong><span>건</span></p>
+                                <div class="kt-inline-note">
+                                    <span class="kt-chip kt-chip--danger">D-9</span>
+                                    <span>myk 사내인증</span>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="kt-section">
+                        <div class="kt-section-head">
+                            <h2>내 워크스페이스</h2>
+                            <a href="#" class="kt-text-link kt-text-link--large">전체보기</a>
+                        </div>
+
+                        <div class="kt-workspace-grid">
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--green">DRAFT</span>
+                                </div>
+                                <h3>하나로소프트_포인트</h3>
+                                <p class="kt-api-count"><strong>2</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--rose kt-role">Owner</span>
+                            </article>
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--cyan">DEV</span>
+                                </div>
+                                <h3>하나로소프트_포인트</h3>
+                                <p class="kt-api-count"><strong>2</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--slate kt-role">Member</span>
+                            </article>
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--purple">Prod</span>
+                                </div>
+                                <h3>쿠팡_물류API</h3>
+                                <p class="kt-api-count"><strong>2</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--slate kt-role">Member</span>
+                            </article>
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--green">DRAFT</span>
+                                </div>
+                                <h3>카카오_페이먼트</h3>
+                                <p class="kt-api-count"><strong>1</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--sky kt-role">Manager</span>
+                            </article>
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--purple">Prod</span>
+                                </div>
+                                <h3>카카오_메시지연동</h3>
+                                <p class="kt-api-count"><strong>5</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--rose kt-role">Owner</span>
+                            </article>
+                            <article class="kt-workspace-card">
+                                <div class="kt-chip-row">
+                                    <span class="kt-chip">API</span>
+                                    <span class="kt-chip kt-chip--danger-soft">Expired</span>
+                                </div>
+                                <h3>하나로소프트_쿠폰서비스</h3>
+                                <p class="kt-api-count"><strong>3</strong><span>APIs</span></p>
+                                <span class="kt-chip kt-chip--sky kt-role">Manager</span>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="kt-section kt-section--alerts">
+                        <div class="kt-section-head">
+                            <h2>알림</h2>
+                        </div>
+
+                        <div class="kt-alert-grid">
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--pending">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--pending"></span>승인대기</h3>
+                                    <strong>5건</strong>
+                                </div>
+                                <ul class="kt-alert-list">
+                                    <li>
+                                        <div><strong>장기혜택쿠폰 서비스</strong><p>API 추가 승인 대기</p></div>
+                                        <button type="button">상세보기</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>카카오 메시지 연동</strong><p>PRD 전환 승인대기</p></div>
+                                        <button type="button">상세보기</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>넥슨_게임서버</strong><p>API 추가 승인 대기</p></div>
+                                        <button type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--danger">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--expiring"></span>만료임박</h3>
+                                    <strong>3건</strong>
+                                </div>
+                                <ul class="kt-alert-list">
+                                    <li>
+                                        <div><strong>하나로소프트_운영</strong><p>만료임박 D-9</p></div>
+                                        <button type="button">연장신청</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>카카오_페이먼트</strong><p>만료임박 D-21</p></div>
+                                        <button type="button">연장신청</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>LG유플러스_알림</strong><p>만료임박 D-25</p></div>
+                                        <button type="button">연장신청</button>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--expired">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--expired"></span>만료됨</h3>
+                                    <strong>2건</strong>
+                                </div>
+                                <ul class="kt-alert-list">
+                                    <li>
+                                        <div><strong>하나로포인트앱 KT멤버십</strong><p>PRD KEY 만료됨</p></div>
+                                        <button type="button">재발급</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>넥슨_결제서비스</strong><p>PRD KEY 만료됨</p></div>
+                                        <button type="button">재발급</button>
+                                    </li>
+                                    <li>
+                                        <div><strong>쿠팡_물류API</strong><p>PRD KEY 만료됨</p></div>
+                                        <button type="button">재발급</button>
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

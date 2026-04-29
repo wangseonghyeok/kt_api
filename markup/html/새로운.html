@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap" class="kt-dashboard-wrap">
+            <!--#include file="./include/_header.html"-->
+            <div id="contents" class="kt-dashboard-main">
+                <div class="kt-shell">
+                    <section class="kt-overview" aria-label="사용 현황">
+                        <div class="kt-greeting">
+                            <p>안녕하세요, <strong>홍길동</strong> 님</p>
+                            <span class="kt-chip kt-chip--dark">LDAP</span>
+                        </div>
+
+                        <div class="kt-summary-grid">
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>내 워크스페이스</h2>
+                                    <a href="#" class="kt-text-link is-disabled">더보기</a>
+                                </div>
+                                <p class="kt-count"><strong>0</strong><span>건</span></p>
+                                <ul class="kt-meta-list is-empty">
+                                    <li><span>API</span><strong>0</strong></li>
+                                    <li><span>OUATH</span><strong>0</strong></li>
+                                    <li><span>MCP</span><strong>0</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>이번 달 API 호출</h2>
+                                </div>
+                                <p class="kt-count"><strong>0</strong><span>건</span></p>
+                                <ul class="kt-meta-list is-empty">
+                                    <li><span>성공율</span><strong>00.0%</strong></li>
+                                    <li><span>평균응답시간</span><strong>0ms</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>승인대기</h2>
+                                </div>
+                                <p class="kt-count"><strong>0</strong><span>건</span></p>
+                                <ul class="kt-meta-list is-empty">
+                                    <li><span>Api key</span><strong>0</strong></li>
+                                    <li><span>PRD ip</span><strong>0</strong></li>
+                                    <li><span>상용전환</span><strong>0</strong></li>
+                                </ul>
+                            </article>
+
+                            <article class="kt-summary-card">
+                                <div class="kt-card-head">
+                                    <h2>만료임박</h2>
+                                    <a href="#" class="kt-text-link is-disabled">더보기</a>
+                                </div>
+                                <p class="kt-count"><strong>0</strong><span>건</span></p>
+                                <div class="kt-inline-note is-empty">
+                                    <span class="kt-chip kt-chip--disabled">D-0</span>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="kt-section">
+                        <div class="kt-section-head">
+                            <h2>내 워크스페이스</h2>
+                            <a href="#" class="kt-text-link kt-text-link--large is-disabled">전체보기</a>
+                        </div>
+
+                        <div class="kt-empty-box kt-empty-box--workspace">
+                            <div class="kt-empty">
+                                <img
+                                    src="./assets/img/contents/ico_warning_empty.svg"
+                                    alt=""
+                                    class="kt-empty__icon kt-empty__icon--warning"
+                                />
+                                <p>아직 생성된 워크스페이스가 없습니다.</p>
+                                <button type="button">워크스페이스 생성하기</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="kt-section kt-section--alerts">
+                        <div class="kt-section-head">
+                            <h2>알림</h2>
+                        </div>
+
+                        <div class="kt-alert-grid">
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--pending is-empty">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--pending"></span>승인대기</h3>
+                                    <strong>0건</strong>
+                                </div>
+                                <div class="kt-empty kt-empty--alert">
+                                    <img
+                                        src="./assets/img/contents/ico_alarm_empty.svg"
+                                        alt=""
+                                        class="kt-empty__icon kt-empty__icon--alarm"
+                                    />
+                                    <p>알림이 없습니다.</p>
+                                </div>
+                            </article>
+
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--danger is-empty">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--expiring"></span>만료임박</h3>
+                                    <strong>0건</strong>
+                                </div>
+                                <div class="kt-empty kt-empty--alert">
+                                    <img
+                                        src="./assets/img/contents/ico_alarm_empty.svg"
+                                        alt=""
+                                        class="kt-empty__icon kt-empty__icon--alarm"
+                                    />
+                                    <p>알림이 없습니다.</p>
+                                </div>
+                            </article>
+
+                            <article class="kt-alert-card">
+                                <div class="kt-alert-head kt-alert-head--expired is-empty">
+                                    <h3><span class="kt-alert-icon kt-alert-icon--expired"></span>만료됨</h3>
+                                    <strong>0건</strong>
+                                </div>
+                                <div class="kt-empty kt-empty--alert">
+                                    <img
+                                        src="./assets/img/contents/ico_alarm_empty.svg"
+                                        alt=""
+                                        class="kt-empty__icon kt-empty__icon--alarm"
+                                    />
+                                    <p>알림이 없습니다.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>
