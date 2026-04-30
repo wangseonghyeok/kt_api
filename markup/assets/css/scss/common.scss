@@ -26,7 +26,6 @@
 
 // html.is-locked,
 html {
-    font-size: 62.5%;
     letter-spacing: -0.4px;
     &.is-locked {
         body {
@@ -211,7 +210,9 @@ html {
         margin-top: 0;
     }
     .gnb {
-        @include absolute(top 0 left calc(50% - 399px));
+        position: absolute;
+        top: 0;
+        left: calc(50% - 399px);
         width: 780px;
         height: 228px;
     }

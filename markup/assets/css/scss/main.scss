@@ -78,7 +78,9 @@
         }
 
         .gnb {
-            @include absolute(top 0 left calc(50% - 399px));
+            position: absolute;
+            top: 0;
+            left: calc(50% - 399px);
             width: 780px;
             height: 228px;
 

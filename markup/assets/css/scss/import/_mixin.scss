@@ -37,12 +37,17 @@
     @each $o in top right bottom left {
         $i: index($args, $o);
 
-        @if $i and $i + 1<= length($args) and type-of(nth($args, $i + 1)) == number {
-            #{$o}: nth($args, $i + 1);
+        @if $i and $i + 1 <= length($args) {
+            $value: nth($args, $i + 1);
+            @if type-of($value) == number or type-of($value) == string {
+                #{$o}: $value;
+            }
         }
     }
     position: $position;
 }
+
+
 
 // @include absolute(top 0 right 0 bottom left 0);
 @mixin absolute($args: ()) {
@@ -122,24 +127,34 @@
 
 // shared scrollbar
 @mixin kt-scrollbar($size: 12px, $thumb: #8b8f97, $track: transparent, $border: 4px) {
-    scrollbar-color: $thumb $track;
-    scrollbar-width: thin;
 
-    &::-webkit-scrollbar {
-        width: $size;
-        height: $size;
-    }
 
-    &::-webkit-scrollbar-track {
-        background: $track;
-    }
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        border: $border solid transparent;
-        border-radius: 999px;
-        background: $thumb;
-        background-clip: content-box;
-    }
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: $border solid transparent;
+    border-radius: 999px;
+    background: $thumb;
+    background-clip: content-box;
+  }
+
+  // 위아래 화살표 버튼 제거
+  &::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 // responsive box
