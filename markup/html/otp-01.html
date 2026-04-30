@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-        <meta http-equiv="X-UA-compatible" content="IE=edge" />
-        <meta name="author" content="KT API Link" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
-        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/lib/jquery-ui.js"></script>
-        <script src="../assets/js/lib/swiper.min.js"></script>
-        <script src="../assets/js/common.js"></script>
-        <title>KT API Link</title>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-auth-page">
+    <body>
         <div id="wrap">
-            <main id="contents" class="kt-auth-main">
-                <section class="kt-auth-modal" aria-labelledby="authTitle">
+            <!--#include file="./include/_header.html"-->
+            <div class="kt-auth-modal">
+                <section class="kt-auth-modal">
                     <header class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
@@ -31,9 +21,13 @@
                                 <a href="signup-01.html">회원가입</a>
                             </nav>
                             <ol class="kt-auth-step" aria-label="로그인 단계">
-                                <li class="kt-auth-step__item is-done"><span class="kt-auth-step__num">01</span><span>인증</span></li>
+                                <li class="kt-auth-step__item is-done">
+                                    <span class="kt-auth-step__num">01</span><span>인증</span>
+                                </li>
                                 <li class="kt-auth-step__line" aria-hidden="true"></li>
-                                <li class="kt-auth-step__item is-current"><span class="kt-auth-step__num">02</span><span>OTP 인증</span></li>
+                                <li class="kt-auth-step__item is-current">
+                                    <span class="kt-auth-step__num">02</span><span>OTP 인증</span>
+                                </li>
                             </ol>
                         </div>
                         <div class="kt-auth-panel">
@@ -45,7 +39,13 @@
                             <form class="kt-auth-form">
                                 <div class="kt-auth-field is-error kt-auth-verify">
                                     <label for="otpCode">인증번호 <span class="is-required">*</span></label>
-                                    <input type="text" id="otpCode" class="kt-input is-error" value="123456" inputmode="numeric" />
+                                    <input
+                                        type="text"
+                                        id="otpCode"
+                                        class="kt-input is-error"
+                                        value="123456"
+                                        inputmode="numeric"
+                                    />
                                     <span class="kt-auth-verify__side">
                                         <span class="kt-auth-timer">02:23</span>
                                         <button type="button" class="kt-auth-resend">재전송</button>
@@ -62,7 +62,8 @@
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
 </html>

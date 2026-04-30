@@ -1,1 +1,10 @@
-{"client_meta":{"background_color":{"r":0.3333333432674408,"g":0.3333333432674408,"b":0.3333333432674408,"a":1},"thumbnail_size":{"width":400,"height":357},"render_coordinates":{"x":-344,"y":-5966,"width":36840,"height":32852}},"file_name":"KT API Link 테스트","developer_related_links":[],"exported_at":"2026-04-29T04:31:51.841Z"}
+{
+    "client_meta": {
+        "background_color": { "a": 1, "b": 0.3333333432674408, "g": 0.3333333432674408, "r": 0.3333333432674408 },
+        "render_coordinates": { "height": 32852, "width": 36840, "x": -344, "y": -5966 },
+        "thumbnail_size": { "height": 357, "width": 400 }
+    },
+    "developer_related_links": [],
+    "exported_at": "2026-04-29T04:31:51.841Z",
+    "file_name": "KT API Link 테스트"
+}

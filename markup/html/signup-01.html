@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-        <meta http-equiv="X-UA-compatible" content="IE=edge" />
-        <meta name="author" content="KT API Link" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
-        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/lib/jquery-ui.js"></script>
-        <script src="../assets/js/lib/swiper.min.js"></script>
-        <script src="../assets/js/common.js"></script>
-        <title>KT API Link</title>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-auth-page">
+    <body>
         <div id="wrap">
-            <main id="contents" class="kt-auth-main">
-                <section class="kt-auth-modal" aria-labelledby="authTitle">
+            <!--#include file="./include/_header.html"-->
+            <div class="kt-auth-modal">
+                <section class="kt-auth-modal">
                     <header class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
@@ -31,15 +21,30 @@
                         </nav>
                         <div class="kt-auth-panel">
                             <div class="kt-auth-center">
-                                <span class="kt-auth-center__icon kt-auth-center__icon--signup" aria-hidden="true"></span>
+                                <span
+                                    class="kt-auth-center__icon kt-auth-center__icon--signup"
+                                    aria-hidden="true"
+                                ></span>
                                 <h2>KT API Link Portal 회원가입</h2>
                                 <p>LDAP 계정을 보유한 외부 파트너사만 가입할 수 있습니다.</p>
                             </div>
                             <div class="kt-auth-info-box">
-                                <dl class="kt-auth-info-row"><dt>대상</dt><dd>KT와 계약된 외부 파트너사 담당자</dd></dl>
-                                <dl class="kt-auth-info-row"><dt>가입 방법</dt><dd>KT 통합 로그인 시스템에서 LDAP 계정 신청</dd></dl>
-                                <dl class="kt-auth-info-row"><dt>발급 기간</dt><dd>KT 담당 서비스 PO에게 연락하세요.</dd></dl>
-                                <dl class="kt-auth-info-row"><dt>문의</dt><dd>KT 담당 서비스 PO에게 연락하세요.</dd></dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>대상</dt>
+                                    <dd>KT와 계약된 외부 파트너사 담당자</dd>
+                                </dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>가입 방법</dt>
+                                    <dd>KT 통합 로그인 시스템에서 LDAP 계정 신청</dd>
+                                </dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>발급 기간</dt>
+                                    <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                </dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>문의</dt>
+                                    <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                </dl>
                             </div>
                             <div class="kt-auth-actions">
                                 <div class="kt-auth-button-row">
@@ -49,7 +54,8 @@
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
 </html>

@@ -1,25 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-        <meta http-equiv="X-UA-compatible" content="IE=edge" />
-        <meta name="author" content="KT API Link" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
-        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/lib/jquery-ui.js"></script>
-        <script src="../assets/js/lib/swiper.min.js"></script>
-        <script src="../assets/js/common.js"></script>
-        <title>KT API Link</title>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-auth-page">
+    <body>
         <div id="wrap">
-            <main id="contents" class="kt-auth-main">
-                <section class="kt-auth-modal" aria-labelledby="authTitle">
+            <!--#include file="./include/_header.html"-->
+            <div class="kt-auth-modal">
+                <section class="kt-auth-modal">
                     <header class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
@@ -39,18 +29,50 @@
                                 <div class="kt-auth-field">
                                     <label for="findName">이름 <span class="is-required">*</span></label>
                                     <span class="kt-input-field">
-                                        <input type="text" id="findName" class="kt-input" placeholder="가입 시 등록한 이름을 입력해 주세요" />
+                                        <input
+                                            type="text"
+                                            id="findName"
+                                            class="kt-input"
+                                            placeholder="가입 시 등록한 이름을 입력해 주세요"
+                                        />
                                         <span class="kt-input-field__actions">
-                                            <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="findName" aria-label="입력값 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                            <button
+                                                type="button"
+                                                class="kt-input-field__clear"
+                                                data-clear_input
+                                                aria-controls="findName"
+                                                aria-label="입력값 삭제"
+                                                hidden
+                                                aria-hidden="true"
+                                                tabindex="-1"
+                                            >
+                                                <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                            </button>
                                         </span>
                                     </span>
                                 </div>
                                 <div class="kt-auth-field">
                                     <label for="findEmail">이메일 <span class="is-required">*</span></label>
                                     <span class="kt-input-field">
-                                        <input type="email" id="findEmail" class="kt-input" placeholder="your@email.com" />
+                                        <input
+                                            type="email"
+                                            id="findEmail"
+                                            class="kt-input"
+                                            placeholder="your@email.com"
+                                        />
                                         <span class="kt-input-field__actions">
-                                            <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="findEmail" aria-label="입력값 삭제" hidden aria-hidden="true" tabindex="-1"><img src="../assets/img/components/ico_delete.svg" alt="" /></button>
+                                            <button
+                                                type="button"
+                                                class="kt-input-field__clear"
+                                                data-clear_input
+                                                aria-controls="findEmail"
+                                                aria-label="입력값 삭제"
+                                                hidden
+                                                aria-hidden="true"
+                                                tabindex="-1"
+                                            >
+                                                <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                            </button>
                                         </span>
                                     </span>
                                 </div>
@@ -61,8 +83,8 @@
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
 </html>
-

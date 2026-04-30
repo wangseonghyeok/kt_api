@@ -57,6 +57,7 @@
         "node-sass": "^7.0.1",
         "postcss": "^8.4.6",
         "prettier": "2.5.1",
+        "prettier-plugin-sort-json": "^2.0.0",
         "sass": "^1.49.7"
     },
     "browserslist": [

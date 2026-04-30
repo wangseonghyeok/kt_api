@@ -1,25 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-        <meta http-equiv="X-UA-compatible" content="IE=edge" />
-        <meta name="author" content="KT API Link" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/lib/swiper.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/common.min.css" />
-        <link rel="stylesheet" type="text/css" href="../assets/css/contents.min.css" />
-        <script src="../assets/js/lib/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/lib/jquery-ui.js"></script>
-        <script src="../assets/js/lib/swiper.min.js"></script>
-        <script src="../assets/js/common.js"></script>
-        <title>KT API Link</title>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-auth-page">
+    <body>
         <div id="wrap">
-            <main id="contents" class="kt-auth-main">
-                <section class="kt-auth-modal" aria-labelledby="authTitle">
+            <!--#include file="./include/_header.html"-->
+            <div class="kt-auth-modal">
+                <section class="kt-auth-modal">
                     <header class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
@@ -36,20 +26,28 @@
                                 <p>가입 정보와 일치하는 아이디를 확인했습니다.</p>
                             </div>
                             <div class="kt-auth-info-box">
-                                <dl class="kt-auth-info-row"><dt>아이디</dt><dd>kt_hong****</dd></dl>
-                                <dl class="kt-auth-info-row"><dt>가입일</dt><dd>2025년 11월 20일</dd></dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>아이디</dt>
+                                    <dd>kt_hong****</dd>
+                                </dl>
+                                <dl class="kt-auth-info-row">
+                                    <dt>가입일</dt>
+                                    <dd>2025년 11월 20일</dd>
+                                </dl>
                             </div>
                             <div class="kt-auth-actions">
                                 <div class="kt-auth-button-row">
-                                    <a href="pw-04.html" class="kt-auth-button kt-auth-button--secondary">비밀번호 찾기</a>
+                                    <a href="pw-04.html" class="kt-auth-button kt-auth-button--secondary"
+                                        >비밀번호 찾기</a
+                                    >
                                     <a href="login-01.html" class="kt-auth-button">로그인</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
 </html>
-

@@ -614,44 +614,31 @@
 /* ==============================
     KT auth pages
 ============================== */
-.kt-auth-page {
-    min-width: 1280px;
+.kt-auth-modal {
+    position: relative;
+    @include flex(center, center);
     min-height: 100vh;
-    margin: 0;
-    background: rgba(20, 20, 20, 0.65);
-    color: $kt-primary;
-    font-family: Pretendard, sans-serif;
-    letter-spacing: 0;
-
-    #contents {
-        margin-top: 0;
-    }
+    margin-top: 0 !important;
 
     .kt-auth-main {
-        @include flex(center, center);
-        min-height: 100vh;
-        padding: 40px 0;
-    }
-
-    .kt-auth-modal {
+        transform: translateZ(0);
+        z-index: 1000;
         width: 610px;
         max-height: 800px;
         overflow: hidden;
         border-radius: 12px;
         background: #fff;
         box-shadow: 0 0 40px rgba(20, 20, 20, 0.05), 0 20px 40px rgba(19, 20, 21, 0.1);
-
-        &--scroll {
-            @include relative();
-            overflow-y: auto;
-            @include kt-scrollbar;
-        }
+        position: relative;
     }
 
     .kt-auth-header {
+        width: inherit;
+        position: fixed;
         @include flex(flex-start, space-between);
         height: 64px;
         padding: 32px 16px 0 24px;
+        top: 0;
     }
 
     .kt-auth-title {
@@ -669,10 +656,17 @@
     }
 
     .kt-auth-content {
+        max-height: calc(800px - 64px);
         @include flex(null, null);
         flex-direction: column;
         gap: 40px;
         padding: 24px 24px 28px;
+        margin-top: 64px;
+        &.kt-auth-scroll {
+            @include relative();
+            overflow-y: auto;
+            @include kt-scrollbar;
+        }
     }
 
     .kt-auth-tabs {
@@ -843,7 +837,6 @@
     .kt-auth-panel {
         @include flex(null, null);
         flex-direction: column;
-        gap: 24px;
     }
 
     .kt-auth-center {
@@ -996,7 +989,7 @@
     .kt-auth-actions {
         @include flex(null, null);
         flex-direction: column;
-        gap: 8px;
+        gap: 16px;
         padding-top: 24px;
     }
 

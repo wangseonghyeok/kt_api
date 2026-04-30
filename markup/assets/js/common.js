@@ -398,11 +398,9 @@ const ui = {
                 return;
             }
 
-            let hasInputStarted = false;
-
             const syncClearButton = () => {
                 const hasValue = input.value.trim().length > 0;
-                const shouldShow = hasInputStarted && hasValue;
+                const shouldShow = hasValue;
 
                 field.classList.toggle('has-value', shouldShow);
                 clearButton.hidden = !shouldShow;
@@ -411,7 +409,6 @@ const ui = {
             };
 
             const markInputStarted = () => {
-                hasInputStarted = true;
                 syncClearButton();
             };
 
@@ -430,11 +427,9 @@ const ui = {
                 return;
             }
 
-            let hasInputStarted = false;
-
             const syncClearButton = () => {
                 const hasValue = input.value.trim().length > 0;
-                const shouldShow = hasInputStarted && hasValue;
+                const shouldShow = hasValue;
 
                 field.classList.toggle('has-value', shouldShow);
 
@@ -446,7 +441,6 @@ const ui = {
             };
 
             const markInputStarted = () => {
-                hasInputStarted = true;
                 syncClearButton();
             };
 
@@ -478,10 +472,7 @@ const ui = {
             const input = prompt.querySelector('input[data-prompt_trg]');
             const options = menu ? menu.querySelectorAll('[role="option"]') : [];
             const foot = menu ? menu.querySelector('[data-prompt_foot]') : null;
-            const clearButton = input
-                ? prompt.querySelector(`[data-clear_input][aria-controls="${input.id}"]`)
-                : null;
-            let hasInputStarted = false;
+            const clearButton = input ? prompt.querySelector(`[data-clear_input][aria-controls="${input.id}"]`) : null;
 
             if (!menu || !triggers.length) {
                 return;
@@ -492,7 +483,17 @@ const ui = {
             const getSelectedOption = () =>
                 getVisibleOptions().find(option => option.classList.contains('is-selected'));
             const getActiveOption = () => getSelectedOption() || getVisibleOptions()[0];
-            const ignoreSyncKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Meta'];
+            const ignoreSyncKeys = [
+                'ArrowDown',
+                'ArrowUp',
+                'Enter',
+                'Escape',
+                'Tab',
+                'Shift',
+                'Control',
+                'Alt',
+                'Meta',
+            ];
 
             const highlightOption = option => {
                 if (!option || option.hidden) {
@@ -526,7 +527,7 @@ const ui = {
                 }
 
                 const hasValue = input.value.trim().length > 0;
-                const shouldShow = hasInputStarted && hasValue;
+                const shouldShow = hasValue;
 
                 clearButton.hidden = !shouldShow;
                 clearButton.setAttribute('aria-hidden', String(!shouldShow));
@@ -589,7 +590,6 @@ const ui = {
             };
 
             const syncPromptByInput = () => {
-                hasInputStarted = true;
                 filterOptions();
                 syncClearButton();
 
