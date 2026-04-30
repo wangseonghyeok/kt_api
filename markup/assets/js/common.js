@@ -165,6 +165,11 @@ const ui = {
         dropWrap.forEach(e => {
             const dropTrg = e.querySelector('[data-dropdown_trg]');
             const dropMenu = e.querySelector('[data-dropdown_menu]');
+
+            if (!dropTrg || !dropMenu) {
+                return;
+            }
+
             const dropItem = dropMenu.querySelectorAll('a, button');
             const trgPosY = dropTrg.getBoundingClientRect().top;
             const winY = window.innerHeight / 4;
@@ -207,6 +212,10 @@ const ui = {
                 });
             }
             dropTrg.addEventListener('click', () => {
+                if (dropTrg.disabled) {
+                    return;
+                }
+
                 if (dropTrg.classList.contains('__open')) {
                     hideDropMenu();
                 } else {
@@ -218,7 +227,7 @@ const ui = {
                 }
             });
             dropTrg.addEventListener('focus', () => {
-                if (!dropTrg.classList.contains('__open')) {
+                if (!dropTrg.disabled && !dropTrg.classList.contains('__open')) {
                     setTimeout(() => {
                         showDropMenu();
                     }, 100);
@@ -381,7 +390,7 @@ const ui = {
             });
         });
 
-        document.querySelectorAll('.kt-input-field, .kt-password').forEach(field => {
+        document.querySelectorAll('.kt-input-field, .kt-password, .kt-search').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');
 
@@ -389,16 +398,27 @@ const ui = {
                 return;
             }
 
+            let hasInputStarted = false;
+
             const syncClearButton = () => {
                 const hasValue = input.value.trim().length > 0;
+                const shouldShow = hasInputStarted && hasValue;
 
-                field.classList.toggle('has-value', hasValue);
-                clearButton.hidden = !hasValue;
-                clearButton.setAttribute('aria-hidden', String(!hasValue));
-                clearButton.tabIndex = hasValue ? 0 : -1;
+                field.classList.toggle('has-value', shouldShow);
+                clearButton.hidden = !shouldShow;
+                clearButton.setAttribute('aria-hidden', String(!shouldShow));
+                clearButton.tabIndex = shouldShow ? 0 : -1;
             };
 
-            input.addEventListener('input', syncClearButton);
+            const markInputStarted = () => {
+                hasInputStarted = true;
+                syncClearButton();
+            };
+
+            input.addEventListener('input', markInputStarted);
+            input.addEventListener('change', markInputStarted);
+            input.addEventListener('compositionend', markInputStarted);
+            input.addEventListener('keyup', markInputStarted);
             syncClearButton();
         });
 
@@ -410,19 +430,30 @@ const ui = {
                 return;
             }
 
+            let hasInputStarted = false;
+
             const syncClearButton = () => {
                 const hasValue = input.value.trim().length > 0;
+                const shouldShow = hasInputStarted && hasValue;
 
-                field.classList.toggle('has-value', hasValue);
+                field.classList.toggle('has-value', shouldShow);
 
                 if (clearButton) {
-                    clearButton.hidden = !hasValue;
-                    clearButton.setAttribute('aria-hidden', String(!hasValue));
-                    clearButton.tabIndex = hasValue ? 0 : -1;
+                    clearButton.hidden = !shouldShow;
+                    clearButton.setAttribute('aria-hidden', String(!shouldShow));
+                    clearButton.tabIndex = shouldShow ? 0 : -1;
                 }
             };
 
-            input.addEventListener('input', syncClearButton);
+            const markInputStarted = () => {
+                hasInputStarted = true;
+                syncClearButton();
+            };
+
+            input.addEventListener('input', markInputStarted);
+            input.addEventListener('change', markInputStarted);
+            input.addEventListener('compositionend', markInputStarted);
+            input.addEventListener('keyup', markInputStarted);
             syncClearButton();
         });
 
@@ -446,21 +477,27 @@ const ui = {
             const menu = prompt.querySelector('[data-prompt_menu]');
             const input = prompt.querySelector('input[data-prompt_trg]');
             const options = menu ? menu.querySelectorAll('[role="option"]') : [];
+            const foot = menu ? menu.querySelector('[data-prompt_foot]') : null;
+            const clearButton = input
+                ? prompt.querySelector(`[data-clear_input][aria-controls="${input.id}"]`)
+                : null;
+            let hasInputStarted = false;
 
             if (!menu || !triggers.length) {
                 return;
             }
 
-            const openPrompt = () => {
-                closeOtherPrompts(prompt);
-                prompt.classList.add('is-open');
-                triggers.forEach(trigger => {
-                    trigger.setAttribute('aria-expanded', 'true');
-                });
-            };
+            const hasKeyword = () => input && input.value.trim().length > 0;
+            const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden);
+            const getSelectedOption = () =>
+                getVisibleOptions().find(option => option.classList.contains('is-selected'));
+            const getActiveOption = () => getSelectedOption() || getVisibleOptions()[0];
+            const ignoreSyncKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Meta'];
 
-            const selectOption = option => {
-                const value = option.querySelector('strong')?.textContent.trim() || option.textContent.trim();
+            const highlightOption = option => {
+                if (!option || option.hidden) {
+                    return;
+                }
 
                 options.forEach(item => {
                     item.classList.remove('is-selected');
@@ -468,13 +505,130 @@ const ui = {
                 });
                 option.classList.add('is-selected');
                 option.setAttribute('aria-selected', 'true');
+            };
+
+            const openPrompt = () => {
+                if (input && !hasKeyword()) {
+                    closePrompt(prompt);
+                    return;
+                }
+
+                closeOtherPrompts(prompt);
+                prompt.classList.add('is-open');
+                triggers.forEach(trigger => {
+                    trigger.setAttribute('aria-expanded', 'true');
+                });
+            };
+
+            const syncClearButton = () => {
+                if (!clearButton || !input) {
+                    return;
+                }
+
+                const hasValue = input.value.trim().length > 0;
+                const shouldShow = hasInputStarted && hasValue;
+
+                clearButton.hidden = !shouldShow;
+                clearButton.setAttribute('aria-hidden', String(!shouldShow));
+                clearButton.tabIndex = shouldShow ? 0 : -1;
+            };
+
+            const syncFoot = matchCount => {
+                if (!foot) {
+                    return;
+                }
+
+                const shouldShow = matchCount >= 3;
+                const message = foot.dataset.promptFootText || '검색어를 더 입력해 결과를 줄여보세요';
+
+                foot.hidden = !shouldShow;
+                foot.setAttribute('aria-hidden', String(!shouldShow));
+
+                if (shouldShow) {
+                    foot.textContent = `${message} (${matchCount}개 더 있음)`;
+                }
+            };
+
+            const filterOptions = () => {
+                if (!input) {
+                    syncFoot(0);
+                    return 0;
+                }
+
+                const keyword = input.value.trim().toLowerCase();
+                let matchCount = 0;
+
+                options.forEach(option => {
+                    const isMatched = keyword.length > 0 && option.textContent.trim().toLowerCase().includes(keyword);
+
+                    if (isMatched) {
+                        matchCount += 1;
+                    }
+
+                    option.hidden = !isMatched;
+                    option.setAttribute('aria-hidden', String(!isMatched));
+                    option.tabIndex = isMatched ? 0 : -1;
+                });
+
+                syncFoot(matchCount);
+
+                options.forEach(option => {
+                    if (option.hidden) {
+                        option.classList.remove('is-selected');
+                        option.setAttribute('aria-selected', 'false');
+                    }
+                });
+
+                const visibleOptions = getVisibleOptions();
+
+                if (keyword.length && visibleOptions.length && !getSelectedOption()) {
+                    highlightOption(visibleOptions[0]);
+                }
+
+                return matchCount;
+            };
+
+            const syncPromptByInput = () => {
+                hasInputStarted = true;
+                filterOptions();
+                syncClearButton();
+
+                if (hasKeyword() && getVisibleOptions().length) {
+                    openPrompt();
+                } else {
+                    closePrompt(prompt);
+                }
+            };
+
+            const selectOption = option => {
+                if (!option || option.hidden) {
+                    return;
+                }
+
+                const value = option.querySelector('strong')?.textContent.trim() || option.textContent.trim();
+
+                highlightOption(option);
 
                 if (input && value) {
                     input.value = value;
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
                 }
 
                 closePrompt(prompt);
             };
+
+            if (input) {
+                input.addEventListener('input', syncPromptByInput);
+                input.addEventListener('compositionend', syncPromptByInput);
+                input.addEventListener('keyup', event => {
+                    if (!ignoreSyncKeys.includes(event.key)) {
+                        syncPromptByInput();
+                    }
+                });
+
+                filterOptions();
+                syncClearButton();
+            }
 
             triggers.forEach(trigger => {
                 trigger.addEventListener('click', event => {
@@ -483,20 +637,39 @@ const ui = {
                     if (prompt.classList.contains('is-open') && trigger.tagName !== 'INPUT') {
                         closePrompt(prompt);
                     } else {
+                        filterOptions();
+                        syncClearButton();
                         openPrompt();
                     }
                 });
 
-                trigger.addEventListener('focus', openPrompt);
+                trigger.addEventListener('focus', () => {
+                    filterOptions();
+                    syncClearButton();
+                    openPrompt();
+                });
                 trigger.addEventListener('keydown', event => {
                     if (event.key === 'Escape') {
                         closePrompt(prompt);
                     }
 
-                    if (event.key === 'ArrowDown' && options.length) {
+                    if (event.key === 'Enter' && trigger === input && getVisibleOptions().length) {
+                        event.preventDefault();
+                        selectOption(getActiveOption());
+                    }
+
+                    if (event.key === 'ArrowDown' && getVisibleOptions().length) {
                         event.preventDefault();
                         openPrompt();
-                        options[0].focus();
+                        getActiveOption().focus();
+                    }
+
+                    if (event.key === 'ArrowUp' && getVisibleOptions().length) {
+                        event.preventDefault();
+                        openPrompt();
+                        const visibleOptions = getVisibleOptions();
+                        highlightOption(visibleOptions[visibleOptions.length - 1]);
+                        visibleOptions[visibleOptions.length - 1].focus();
                     }
                 });
             });
@@ -507,9 +680,26 @@ const ui = {
                 });
 
                 option.addEventListener('keydown', event => {
+                    const visibleOptions = getVisibleOptions();
+                    const currentIndex = visibleOptions.indexOf(option);
+
                     if (event.key === 'Enter' || event.key === ' ') {
                         event.preventDefault();
                         selectOption(option);
+                    }
+
+                    if (event.key === 'ArrowDown' && visibleOptions.length) {
+                        event.preventDefault();
+                        const nextOption = visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)];
+                        highlightOption(nextOption);
+                        nextOption.focus();
+                    }
+
+                    if (event.key === 'ArrowUp' && visibleOptions.length) {
+                        event.preventDefault();
+                        const prevOption = visibleOptions[Math.max(currentIndex - 1, 0)];
+                        highlightOption(prevOption);
+                        prevOption.focus();
                     }
 
                     if (event.key === 'Escape') {

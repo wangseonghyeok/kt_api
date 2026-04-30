@@ -4,6 +4,10 @@
 @import 'import/typography';
 @import 'import/mixin';
 
+
+/* ==============================
+    KT main
+============================== */
 #wrap {
     min-width: 1480px;
 
@@ -68,22 +72,18 @@
         }
 
         > .btn-home {
-            position: absolute;
-            top: 20px;
-            left: 24px;
+            @include absolute(top 20px left 24px);
             background-image: url('/assets/img/common/img_logo_hd.svg');
             margin-top: 0;
         }
 
         .gnb {
-            position: absolute;
-            top: 0;
-            left: calc(50% - 399px);
+            @include absolute(top 0 left calc(50% - 399px));
             width: 780px;
             height: 228px;
 
             > ul {
-                display: flex;
+                @include flex(null, null);
                 gap: 100px;
                 width: 780px;
                 height: 80px;
@@ -138,12 +138,9 @@
         }
 
         .l-right {
-            position: absolute;
-            top: 30px;
-            right: 24px;
+            @include absolute(top 30px right 24px);
             .user-menu {
-                display: flex;
-                align-items: center;
+                @include flex(center, null);
                 margin-top: 0;
                 &--after {
                     display: none;
@@ -155,9 +152,7 @@
                     }
 
                     > a {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex(center, center);
                         gap: 8px;
                         min-height: 21px;
                     }
@@ -192,7 +187,7 @@
             }
 
             .user-menu--after {
-                display: flex;
+                @include flex(null, null);
             }
         }
     }
@@ -204,13 +199,13 @@
     color: #191a1b;
 
     .main-visual {
-        position: relative;
+        @include relative();
         height: 740px;
         color: var(--white);
     }
 
     .visual-bg {
-        position: absolute;
+        @include absolute();
         inset: 0;
         z-index: 0;
         overflow: hidden;
@@ -226,11 +221,9 @@
     }
 
     .visual-inner {
-        position: relative;
+        @include relative();
         z-index: 1;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        @include flex(flex-start, space-between);
         width: 1240px;
         margin: 0 auto;
         padding-top: 194px;
@@ -260,15 +253,13 @@
     }
 
     .visual-actions {
-        display: flex;
+        @include flex(null, null);
         gap: 16px;
         margin-top: 48px;
     }
 
     .btn-main {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        @include inline-flex(center, center);
         min-width: 147px;
         height: 56px;
         padding: 0 16px;
@@ -312,17 +303,15 @@
     }
 
     .workspace-cards {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 16px;
         width: 393px;
     }
 
     .workspace-card {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include relative();
+        @include flex(center, space-between);
         width: 393px;
         height: 116px;
         padding: 24px 8px 24px 24px;
@@ -376,9 +365,7 @@
     }
 
     .workspace-arrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
         flex: 0 0 48px;
         width: 48px;
         height: 48px;
@@ -397,16 +384,13 @@
     }
 
     .step-list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(center, space-between);
         height: 182px;
     }
 
     .step-item {
-        display: flex;
+        @include flex(center, null);
         flex-direction: column;
-        align-items: center;
         width: 238px;
         height: 182px;
         text-align: center;
@@ -429,9 +413,7 @@
     }
 
     .step-badge {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        @include inline-flex(center, center);
         width: 66px;
         height: 30px;
         border-radius: 999px;
@@ -443,9 +425,7 @@
     }
 
     .step-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center, center);
         width: 40px;
         height: 40px;
         margin-top: 16px;
@@ -478,9 +458,7 @@
     }
 
     .board-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(center, space-between);
         height: 36px;
         margin-bottom: 16px;
 
@@ -492,7 +470,7 @@
     }
 
     .board-more {
-        position: relative;
+        @include relative();
         padding-right: 20px;
         color: #6f737b;
         font-size: 14px;
@@ -501,9 +479,7 @@
 
         &::after {
             content: '';
-            position: absolute;
-            top: 50%;
-            right: 3px;
+            @include absolute(top 50% right 3px);
             width: 7px;
             height: 7px;
             border-top: 1.5px solid #191a1b;
@@ -514,7 +490,7 @@
 
     .board-list,
     .faq-list {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 6px;
         border-top: 0;
@@ -526,25 +502,20 @@
         }
 
         a {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include relative();
+            @include flex(center, space-between);
             min-height: 54px;
             padding: 15px 16px;
         }
     }
 
     .board-text {
-        display: flex;
-        align-items: center;
+        @include flex(center, null);
         min-width: 0;
     }
 
     .tag {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        @include inline-flex(center, center);
         height: 24px;
         margin-right: 8px;
         padding: 0 6px;
@@ -573,13 +544,11 @@
 
     .board-list {
         strong {
-            overflow: hidden;
+            @include ellipsis;
             color: #191a1b;
             font-size: 16px;
             font-weight: var(--fw-SemiBold);
             line-height: 1.48;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
 
         time {
@@ -593,16 +562,14 @@
 
     .faq-list {
         a {
-            position: relative;
+            @include relative();
             justify-content: flex-start;
             gap: 8px;
             padding-right: 40px;
 
             &::after {
                 content: '';
-                position: absolute;
-                top: 50%;
-                right: 21px;
+                @include absolute(top 50% right 21px);
                 width: 7px;
                 height: 7px;
                 border-top: 1.5px solid #191a1b;
@@ -619,13 +586,11 @@
         }
 
         strong {
-            overflow: hidden;
+            @include ellipsis;
             color: #191a1b;
             font-size: 16px;
             font-weight: var(--fw-Medium);
             line-height: 1.48;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
     }
 }

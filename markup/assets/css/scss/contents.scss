@@ -2,18 +2,8 @@
 @import 'import/lib-fonts';
 @import 'base';
 @import 'import/typography';
+@import 'import/kt-variables';
 @import 'import/mixin';
-
-$kt-primary: #191a1b;
-$kt-secondary: #55585d;
-$kt-tertiary: #6f737b;
-$kt-disabled: #adb1b9;
-$kt-bg: #f3f4f6;
-$kt-line: #e9eaee;
-$kt-line-dark: #d5d8dd;
-$kt-blue: #148aff;
-$kt-red: #e0282f;
-$kt-green: #009900;
 
 /* ==============================
     KT dashboard common
@@ -43,14 +33,12 @@ $kt-green: #009900;
     }
 
     .kt-greeting {
-        display: flex;
-        align-items: center;
+        @include flex(center, null);
         gap: 8px;
         margin-bottom: 16px;
 
         p {
-            display: flex;
-            align-items: center;
+            @include flex(center, null);
             gap: 2px;
             color: $kt-secondary;
             font-size: 18px;
@@ -91,9 +79,7 @@ $kt-green: #009900;
     .kt-section-head,
     .kt-alert-head,
     .kt-alert-list li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex(center, space-between);
     }
 
     .kt-card-head {
@@ -108,8 +94,7 @@ $kt-green: #009900;
     }
 
     .kt-count {
-        display: flex;
-        align-items: flex-end;
+        @include flex(flex-end, null);
         gap: 6px;
         height: 52px;
         margin-bottom: 16px;
@@ -130,15 +115,12 @@ $kt-green: #009900;
     }
 
     .kt-meta-list {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex(center, space-between);
         width: 100%;
         height: 24px;
 
         li {
-            display: flex;
-            align-items: center;
+            @include flex(center, null);
             gap: 4px;
         }
 
@@ -178,8 +160,7 @@ $kt-green: #009900;
     }
 
     .kt-inline-note {
-        display: flex;
-        align-items: center;
+        @include flex(center, null);
         gap: 8px;
         height: 24px;
         color: $kt-secondary;
@@ -189,9 +170,7 @@ $kt-green: #009900;
     }
 
     .kt-chip {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include inline-flex(center, center);
         min-height: 24px;
         padding: 3px 6px;
         border-radius: 4px;
@@ -249,9 +228,8 @@ $kt-green: #009900;
     }
 
     .kt-text-link {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
+        @include relative();
+        @include inline-flex(center, null);
         min-height: 20px;
         padding-right: 18px;
         color: $kt-primary;
@@ -261,9 +239,7 @@ $kt-green: #009900;
 
         &::after {
             content: '';
-            position: absolute;
-            top: 50%;
-            right: 0;
+            @include absolute(top 50% right 0);
             width: 16px;
             height: 16px;
             background-color: currentColor;
@@ -310,7 +286,7 @@ $kt-green: #009900;
     }
 
     .kt-workspace-card {
-        position: relative;
+        @include relative();
         height: 172px;
         padding: 16px 24px;
 
@@ -323,14 +299,12 @@ $kt-green: #009900;
     }
 
     .kt-chip-row {
-        display: flex;
-        align-items: center;
+        @include flex(center, null);
         gap: 8px;
     }
 
     .kt-api-count {
-        display: flex;
-        align-items: flex-end;
+        @include flex(flex-end, null);
         gap: 6px;
         margin-top: 24px;
 
@@ -349,9 +323,7 @@ $kt-green: #009900;
     }
 
     .kt-role {
-        position: absolute;
-        right: 24px;
-        bottom: 16px;
+        @include absolute(right 24px bottom 16px);
     }
 
     /* ==============================
@@ -373,8 +345,7 @@ $kt-green: #009900;
         border-bottom: 1px solid $kt-line-dark;
 
         h3 {
-            display: flex;
-            align-items: center;
+            @include flex(center, null);
             gap: 8px;
             color: $kt-blue;
             font-size: 18px;
@@ -383,9 +354,7 @@ $kt-green: #009900;
         }
 
         strong {
-            display: inline-flex;
-            align-items: center;
-            justify-content: flex-end;
+            @include inline-flex(center, flex-end);
             min-width: 28px;
             color: inherit;
             text-align: right;
@@ -540,9 +509,7 @@ $kt-green: #009900;
         KT dashboard empty state
     ============================== */
     .kt-empty-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
         border: 1px dashed #8b8f97;
         border-radius: 12px;
 
@@ -552,10 +519,8 @@ $kt-green: #009900;
     }
 
     .kt-empty {
-        display: flex;
+        @include flex(center, center);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 8px;
 
         p {
@@ -663,9 +628,7 @@ $kt-green: #009900;
     }
 
     .kt-auth-main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
         min-height: 100vh;
         padding: 40px 0;
     }
@@ -679,32 +642,14 @@ $kt-green: #009900;
         box-shadow: 0 0 40px rgba(20, 20, 20, 0.05), 0 20px 40px rgba(19, 20, 21, 0.1);
 
         &--scroll {
-            position: relative;
+            @include relative();
             overflow-y: auto;
-            scrollbar-color: #8b8f97 transparent;
-            scrollbar-width: thin;
-
-            &::-webkit-scrollbar {
-                width: 12px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                border: 4px solid transparent;
-                border-radius: 999px;
-                background: #8b8f97;
-                background-clip: content-box;
-            }
+            @include kt-scrollbar;
         }
     }
 
     .kt-auth-header {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        @include flex(flex-start, space-between);
         height: 64px;
         padding: 32px 16px 0 24px;
     }
@@ -720,25 +665,23 @@ $kt-green: #009900;
         width: 32px;
         height: 32px;
         border-radius: 4px;
-        background: url('../img/auth/ico_auth_close.svg') 50% 50% / 24px 24px no-repeat;
+        background: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 24px 24px no-repeat;
     }
 
     .kt-auth-content {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 40px;
         padding: 24px 24px 28px;
     }
 
     .kt-auth-tabs {
-        display: flex;
+        @include flex(null, null);
         height: 48px;
         border-bottom: 1px solid $kt-line;
 
         a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex(center, center);
             flex: 1 1 0;
             height: 48px;
             padding: 0 12px;
@@ -757,20 +700,17 @@ $kt-green: #009900;
     }
 
     .kt-auth-top {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 24px;
     }
 
     .kt-auth-step {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
         gap: 8px;
 
         &__item {
-            display: flex;
-            align-items: center;
+            @include flex(center, null);
             gap: 8px;
             color: #61646b;
             font-size: 15px;
@@ -779,9 +719,7 @@ $kt-green: #009900;
         }
 
         &__num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            @include inline-flex(center, center);
             width: 24px;
             height: 24px;
             border: 1px solid #c7cad1;
@@ -818,7 +756,7 @@ $kt-green: #009900;
                     display: block;
                     width: 16px;
                     height: 16px;
-                    background: url('../img/auth/ico_auth_check_white.svg') 50% 50% / 16px 16px no-repeat;
+                    background: url('/assets/img/auth/ico_auth_check_white.svg') 50% 50% / 16px 16px no-repeat;
                 }
             }
         }
@@ -839,9 +777,8 @@ $kt-green: #009900;
     }
 
     .kt-auth-method {
-        display: flex;
+        @include flex(null, center);
         flex-direction: column;
-        justify-content: center;
         height: 110px;
         padding: 16px;
         border: 1px solid #8b8f97;
@@ -892,27 +829,26 @@ $kt-green: #009900;
     }
 
     .kt-auth-icon--kt {
-        background-image: url('../img/auth/ico_auth_kt_logo.svg');
+        background-image: url('/assets/img/auth/ico_auth_kt_logo.svg');
     }
 
     .kt-auth-icon--shield {
-        background-image: url('../img/auth/ico_auth_shield.svg');
+        background-image: url('/assets/img/auth/ico_auth_shield.svg');
     }
 
     .kt-auth-icon--users {
-        background-image: url('../img/auth/ico_auth_users.svg');
+        background-image: url('/assets/img/auth/ico_auth_users.svg');
     }
 
     .kt-auth-panel {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 24px;
     }
 
     .kt-auth-center {
-        display: flex;
+        @include flex(center, null);
         flex-direction: column;
-        align-items: center;
         gap: 8px;
         text-align: center;
 
@@ -941,46 +877,46 @@ $kt-green: #009900;
     }
 
     .kt-auth-center__icon--entra {
-        background-image: url('../img/auth/ico_auth_entra.svg');
+        background-image: url('/assets/img/auth/ico_auth_entra.svg');
     }
 
     .kt-auth-center__icon--otp {
-        background-image: url('../img/auth/ico_auth_otp.svg');
+        background-image: url('/assets/img/auth/ico_auth_otp.svg');
     }
 
     .kt-auth-center__icon--id {
-        background-image: url('../img/auth/ico_auth_id_find.svg');
+        background-image: url('/assets/img/auth/ico_auth_id_find.svg');
     }
 
     .kt-auth-center__icon--mail {
-        background-image: url('../img/auth/ico_auth_mail.svg');
+        background-image: url('/assets/img/auth/ico_auth_mail.svg');
     }
 
     .kt-auth-center__icon--lock {
-        background-image: url('../img/auth/ico_auth_password_find.svg');
+        background-image: url('/assets/img/auth/ico_auth_password_find.svg');
     }
 
     .kt-auth-center__icon--reset {
-        background-image: url('../img/auth/ico_auth_password_reset.svg');
+        background-image: url('/assets/img/auth/ico_auth_password_reset.svg');
     }
 
     .kt-auth-center__icon--done {
-        background-image: url('../img/auth/ico_auth_done.svg');
+        background-image: url('/assets/img/auth/ico_auth_done.svg');
     }
 
     .kt-auth-center__icon--signup {
         height: 36px;
-        background-image: url('../img/auth/ico_auth_signup.svg');
+        background-image: url('/assets/img/auth/ico_auth_signup.svg');
     }
 
     .kt-auth-form {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 24px;
     }
 
     .kt-auth-field {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 8px;
 
@@ -1058,16 +994,14 @@ $kt-green: #009900;
     }
 
     .kt-auth-actions {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 8px;
         padding-top: 24px;
     }
 
     .kt-auth-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include inline-flex(center, center);
         min-width: 180px;
         min-height: 56px;
         padding: 8px 16px;
@@ -1109,8 +1043,7 @@ $kt-green: #009900;
     }
 
     .kt-auth-button-row {
-        display: flex;
-        justify-content: center;
+        @include flex(null, center);
         gap: 8px;
         padding-bottom: 28px;
 
@@ -1124,14 +1057,10 @@ $kt-green: #009900;
     }
 
     .kt-auth-text-links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex(center, center);
 
         a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            @include inline-flex(center, center);
             min-width: 56px;
             min-height: 48px;
             padding: 12px 16px;
@@ -1163,12 +1092,12 @@ $kt-green: #009900;
     }
 
     .kt-auth-note-list {
-        display: flex;
+        @include flex(null, null);
         flex-direction: column;
         gap: 6px;
 
         li {
-            position: relative;
+            @include relative();
             padding-left: 22px;
             color: #61646b;
             font-size: 12px;
@@ -1177,9 +1106,7 @@ $kt-green: #009900;
 
             &::before {
                 content: '';
-                position: absolute;
-                top: 8px;
-                left: 8px;
+                @include absolute(top 8px left 8px);
                 width: 2px;
                 height: 2px;
                 border-radius: 50%;
@@ -1197,8 +1124,7 @@ $kt-green: #009900;
     }
 
     .kt-auth-info-row {
-        display: flex;
-        align-items: center;
+        @include flex(center, null);
         gap: 4px;
         padding-left: 16px;
         font-size: 15px;
@@ -1223,19 +1149,15 @@ $kt-green: #009900;
     }
 
     .kt-auth-verify {
-        position: relative;
-
+        @include relative();
         .kt-input {
             padding-right: 112px;
         }
     }
 
     .kt-auth-verify__side {
-        position: absolute;
-        right: 8px;
-        bottom: 4px;
-        display: inline-flex;
-        align-items: center;
+        @include absolute(right 8px bottom 4px);
+        @include inline-flex(center, null);
         gap: 8px;
         height: 44px;
     }
@@ -1248,9 +1170,7 @@ $kt-green: #009900;
     }
 
     .kt-auth-resend {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include inline-flex(center, center);
         min-width: 48px;
         min-height: 32px;
         padding: 4px 12px;

@@ -33,7 +33,7 @@
 // }
 
 // positioning 한줄 축약 mixin
-@mixin position($position, $args) {
+@mixin position($position, $args: ()) {
     @each $o in top right bottom left {
         $i: index($args, $o);
 
@@ -45,17 +45,17 @@
 }
 
 // @include absolute(top 0 right 0 bottom left 0);
-@mixin absolute($args) {
+@mixin absolute($args: ()) {
     @include position(absolute, $args);
 }
 
 // @include fixed(top 0 right 0 bottom left 0);
-@mixin fixed($args) {
+@mixin fixed($args: ()) {
     @include position(fixed, $args);
 }
 
 // @include relative(top 0 right 0 bottom left 0);
-@mixin relative($args) {
+@mixin relative($args: ()) {
     @include position(relative, $args);
 }
 
@@ -111,6 +111,35 @@
     display: flex;
     align-items: $align;
     justify-content: $justify;
+}
+
+// display inline-flex
+@mixin inline-flex($align: center, $justify: center) {
+    display: inline-flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// shared scrollbar
+@mixin kt-scrollbar($size: 12px, $thumb: #8b8f97, $track: transparent, $border: 4px) {
+    scrollbar-color: $thumb $track;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: $border solid transparent;
+        border-radius: 999px;
+        background: $thumb;
+        background-clip: content-box;
+    }
 }
 
 // responsive box
