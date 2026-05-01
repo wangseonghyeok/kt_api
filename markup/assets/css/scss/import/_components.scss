@@ -1263,12 +1263,6 @@
     a {
         color: var(--kt-primary);
         @include ellipsis;
-
-        &:hover,
-        &:focus {
-            color: var(--kt-blue);
-            text-decoration: underline;
-        }
     }
 }
 
@@ -3198,7 +3192,7 @@
 
 .kt-table-scroll--works {
     width: calc(100% - 48px);
-    height: 530px;
+    height: 520px;
     margin: 0 24px;
     overflow: hidden;
     overscroll-behavior: contain;
@@ -3212,11 +3206,11 @@
 }
 
 .kt-table-scroll--result {
-    height: 530px;
+    height: 520px;
 }
 
 .kt-table-scroll--empty {
-    height: 530px;
+    height: 520px;
 }
 
 .kt-table--works {
@@ -3315,8 +3309,8 @@
     th,
     td {
         box-sizing: border-box;
-        min-height: 40px;
-        padding: 7px 20px;
+        height: 40px;
+        padding: 0 20px;
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         background: #fff;
@@ -3364,26 +3358,45 @@
     }
 }
 
+.kt-table--works-result {
+    tbody {
+        background: #f8f9fa;
+    }
+}
+
 .kt-table__name {
     position: relative;
     z-index: 1;
 }
 
-.kt-table__name:hover,
-.kt-table__name:focus-within {
-    z-index: 60;
+.kt-table__name:hover {
+    z-index: 1000;
+}
+
+.kt-table__name:has(.kt-table__name-text:focus-visible) {
+    z-index: 1000;
 }
 
 .kt-table__name-text {
     display: inline-block;
 }
 
+.kt-table__name-text:focus {
+    outline: 0;
+}
+
+.kt-table__name-text:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid #191a1b;
+    outline-offset: 2px;
+}
+
 .kt-table-tooltip {
     display: none;
     position: absolute;
-    z-index: 50;
-    top: calc(100% - 89px);
-    left: 38px;
+    z-index: 1000;
+    top: calc(100% + 6px);
+    left: 44px;
     width: 155px;
     padding: 8px 12px;
     border-radius: 6px;
@@ -3401,21 +3414,37 @@
 .kt-table-tooltip::after {
     content: '';
     position: absolute;
-    bottom: -6px;
+    top: -6px;
     left: 18px;
     width: 12px;
     height: 6px;
     background: #3d3f43;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 
 .kt-table-tooltip:empty {
     display: none !important;
 }
 
-.kt-table__name:hover .kt-table-tooltip,
-.kt-table__name:focus-within .kt-table-tooltip {
+.kt-table__name:hover .kt-table-tooltip {
     display: block;
+}
+
+.kt-table__name:has(.kt-table__name-text:focus-visible) .kt-table-tooltip {
+    display: block;
+}
+
+.kt-table--works tbody tr:nth-child(n + 10) {
+    .kt-table-tooltip {
+        top: auto;
+        bottom: calc(100% + 6px);
+    }
+
+    .kt-table-tooltip::after {
+        top: auto;
+        bottom: -6px;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
 }
 
 .kt-table-role {
@@ -3450,9 +3479,25 @@
         margin-top: 8px;
         color: var(--kt-primary);
         font-size: 15px;
-        font-weight: var(--fw-Medium);
+        font-weight: var(--fw-Bold);
         line-height: 1.48;
-        white-space: pre-line;
+    }
+
+    p strong,
+    p span {
+        display: block;
+    }
+
+    p strong {
+        font-size: 15px;
+        font-weight: var(--fw-Bold);
+        line-height: 1.48;
+    }
+
+    p span {
+        font-size: 14px;
+        font-weight: var(--fw-Regular);
+        line-height: 1.58;
     }
 
     .kt-btn {
