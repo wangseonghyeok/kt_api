@@ -669,6 +669,10 @@
         }
 
         &--steps {
+            gap: 40px;
+        }
+
+        &:has(.kt-auth-methods) {
             gap: 24px;
         }
     }
@@ -755,6 +759,7 @@
                     width: 16px;
                     height: 16px;
                     background: url('/assets/img/auth/ico_auth_check_white.svg') 50% 50% / 16px 16px no-repeat;
+                    position: absolute;
                 }
             }
         }
@@ -1001,7 +1006,6 @@
     .kt-auth-button-row {
         @include flex(null, center);
         gap: 8px;
-        padding-bottom: 28px;
 
         .kt-auth-button {
             width: 180px;

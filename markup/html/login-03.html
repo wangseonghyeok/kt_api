@@ -49,7 +49,8 @@
 
                         <div class="kt-auth-panel">
                             <form class="kt-auth-form">
-                                <div class="kt-field">
+                                <!-- .error 표시-->
+                                <div class="kt-field error">
                                     <label class="kt-field__label" for="loginId"
                                         >아이디 <span class="is-required">*</span></label
                                     >
@@ -70,8 +71,9 @@
                                             </button>
                                         </span>
                                     </span>
+                                    <p class="kt-field__message">사용자 아이디를 입력해주세요.</p>
                                 </div>
-                                <div class="kt-field">
+                                <div class="kt-field error">
                                     <label class="kt-field__label" for="loginPw"
                                         >비밀번호 <span class="is-required">*</span></label
                                     >
@@ -108,10 +110,11 @@
                                             </button>
                                         </span>
                                     </span>
+                                    <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
                                 </div>
                             </form>
                             <div class="kt-auth-actions">
-                                <a href="#" class="kt-auth-button">다음단계 (OTP 인증)</a>
+                                <button class="kt-auth-button" disabled>다음단계 (OTP 인증)</button>
                                 <div class="kt-auth-text-links">
                                     <a href="#">아이디 찾기</a><span aria-hidden="true"></span
                                     ><a href="#">비밀번호 찾기</a>

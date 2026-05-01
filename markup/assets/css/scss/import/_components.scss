@@ -1408,7 +1408,7 @@
 }
 
 .kt-password__actions {
-    @include absolute(top 4px right 4px);
+    @include absolute(top 5px right 4px);
     @include inline-flex(center, null);
     gap: 0;
 }
