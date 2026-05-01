@@ -2,13 +2,13 @@
     <div class="kt-works-search__row">
         <p>워크스페이스 이름, ID, 설명</p>
         <div class="kt-works-search__controls">
-            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-min-length="3">
                 <div class="kt-prompt__field">
                     <input
                         type="text"
                         id="workspaceKeyword"
                         class="kt-input kt-input--40"
-                        placeholder="워크스페이스 이름으로 검색하세요"
+                        placeholder="워크스페이스 이름 또는 ID 3자 이상 입력하세요"
                         data-prompt_trg
                         aria-controls="workspacePromptMenu"
                         aria-expanded="false"
@@ -71,7 +71,7 @@
     </div>
     <div class="kt-works-search__row">
         <p>API 검색(OIF_숫자)</p>
-        <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+        <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-min-length="3">
             <div class="kt-prompt__field">
                 <input
                     type="text"

@@ -1435,13 +1435,17 @@ KT API Link 연동 설명을 입력합니다.
                                         <div class="kt-works-search__row">
                                             <p>워크스페이스 이름, ID, 설명</p>
                                             <div class="kt-works-search__controls">
-                                                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+                                                <div
+                                                    class="kt-prompt kt-prompt--works kt-prompt--wide"
+                                                    data-prompt
+                                                    data-prompt-min-length="3"
+                                                >
                                                     <div class="kt-prompt__field">
                                                         <input
                                                             type="text"
                                                             id="componentWorkspaceKeyword"
                                                             class="kt-input kt-input--40"
-                                                            placeholder="워크스페이스 이름으로 검색하세요"
+                                                            placeholder="워크스페이스 이름 또는 ID 3자 이상 입력하세요"
                                                             data-prompt_trg
                                                             aria-controls="componentWorkspacePromptMenu"
                                                             aria-expanded="false"
@@ -1472,9 +1476,10 @@ KT API Link 연동 설명을 입력합니다.
                                                         class="kt-prompt__menu"
                                                         id="componentWorkspacePromptMenu"
                                                         data-prompt_menu
+                                                        data-prompt-visible-count="10"
                                                         role="listbox"
                                                     >
-                                                        <ul class="kt-prompt__workspace-list">
+                                                        <ul class="kt-prompt__api-list kt-prompt__workspace-list">
                                                             <li
                                                                 role="option"
                                                                 tabindex="-1"
@@ -1515,6 +1520,13 @@ KT API Link 연동 설명을 입력합니다.
                                                                 <span>카카오_메시지연동</span>
                                                             </li>
                                                         </ul>
+                                                        <p
+                                                            class="kt-prompt__foot"
+                                                            data-prompt_foot
+                                                            data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요"
+                                                            hidden
+                                                            aria-hidden="true"
+                                                        ></p>
                                                     </div>
                                                 </div>
                                                 <div class="kt-works-dropdowns">
@@ -1578,7 +1590,11 @@ KT API Link 연동 설명을 입력합니다.
                                         </div>
                                         <div class="kt-works-search__row">
                                             <p>API 검색(OIF_숫자)</p>
-                                            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+                                            <div
+                                                class="kt-prompt kt-prompt--works kt-prompt--wide"
+                                                data-prompt
+                                                data-prompt-min-length="3"
+                                            >
                                                 <div class="kt-prompt__field">
                                                     <input
                                                         type="text"
@@ -1609,7 +1625,7 @@ KT API Link 연동 설명을 입력합니다.
                                                     class="kt-prompt__menu"
                                                     id="componentApiPromptMenu"
                                                     data-prompt_menu
-                                                    data-prompt-visible-count="5"
+                                                    data-prompt-visible-count="10"
                                                     role="listbox"
                                                 >
                                                     <ul class="kt-prompt__api-list">
@@ -1729,6 +1745,71 @@ KT API Link 연동 설명을 입력합니다.
                                                             ></span>
                                                             <strong>OIF_1137</strong>
                                                             <span>쿠폰검증</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1138 쿠폰 쿠폰재발급"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1138</strong>
+                                                            <span>쿠폰재발급</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1139 쿠폰 쿠폰이력조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1139</strong>
+                                                            <span>쿠폰이력조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1140 쿠폰 쿠폰승인조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1140</strong>
+                                                            <span>쿠폰승인조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1141 쿠폰 쿠폰만료처리"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1141</strong>
+                                                            <span>쿠폰만료처리</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1142 쿠폰 쿠폰만료조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1142</strong>
+                                                            <span>쿠폰만료조회</span>
                                                         </li>
                                                     </ul>
                                                     <p

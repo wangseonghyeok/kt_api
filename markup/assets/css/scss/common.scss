@@ -275,8 +275,6 @@ html {
     .footer-menu,
     .footer-info {
         width: 100%;
-        max-width: 1872px;
-        margin: 0 auto;
     }
 
     .footer-menu {
@@ -309,22 +307,29 @@ html {
     }
 
     .footer-info {
-        @include flex(flex-start, space-between);
+        @include flex(center, space-between);
         color: #6f737b;
         font-size: 14px;
         line-height: 1.58;
     }
 
+    .footer-info-text {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
     .footer-info-line {
-        @include flex(null, null);
+        @include flex(center, null);
         flex-wrap: wrap;
         gap: 8px 17px;
+        min-height: 16px;
 
         li {
             @include relative();
+            line-height: 16px;
             & + li::before {
                 content: '';
-                @include absolute(top 5px left -9px);
+                @include absolute(top 2px left -9px);
                 width: 1px;
                 height: 12px;
                 background: #d9dce2;
@@ -333,15 +338,16 @@ html {
     }
 
     .footer-copyright {
-        margin-top: 4px;
+        min-height: 16px;
+        margin-top: 8px;
         font-size: 13px;
         font-weight: var(--fw-Medium);
+        line-height: 16px;
     }
 
     .footer-logo {
         width: 154px;
         height: 40px;
-        opacity: 0.5;
     }
 }
 

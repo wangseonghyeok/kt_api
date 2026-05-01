@@ -680,9 +680,9 @@
             }
         }
 
-        &:has(.kt-auth-methods) {
-            gap: 24px;
-        }
+        // &:has(.kt-auth-step) {
+        //     gap: 24px;
+        // }
     }
 
     .kt-auth-tabs {
@@ -725,6 +725,7 @@
         @include flex(null, null);
         flex-direction: column;
         gap: 24px;
+        margin-top: -15px;
     }
 
     .kt-auth-step {

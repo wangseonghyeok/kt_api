@@ -734,7 +734,7 @@
     &:focus {
         border-color: #191a1c;
         border-width: 2px;
-        box-shadow: none;
+        box-shadow: 0 0 2px 0 rgba(19, 20, 21, 0.05), 0 2px 4px 0 rgba(19, 20, 21, 0.1);
         outline: 0;
     }
 
@@ -1021,7 +1021,7 @@
         &.__open {
             border-color: #191a1c;
             border-width: 2px;
-            box-shadow: none;
+            box-shadow: 0 0 2px 0 rgba(19, 20, 21, 0.05), 0 2px 4px 0 rgba(19, 20, 21, 0.1);
 
             &::after {
                 transform: translateY(-50%) rotate(180deg);
@@ -1909,7 +1909,7 @@
 
         &:focus {
             border-color: #191a1b;
-            box-shadow: 0 4px 10px rgba(25, 26, 27, 0.08);
+            box-shadow: 0 0 2px 0 rgba(19, 20, 21, 0.05), 0 2px 4px 0 rgba(19, 20, 21, 0.1);
         }
     }
 }
@@ -2439,7 +2439,7 @@
     &.is-focused {
         border-color: #191a1c;
         border-width: 2px;
-        box-shadow: none;
+        box-shadow: 0 0 2px 0 rgba(19, 20, 21, 0.05), 0 2px 4px 0 rgba(19, 20, 21, 0.1);
     }
 }
 
@@ -2963,7 +2963,7 @@
     }
 
     [data-dropdown_menu] {
-        top: 48px;
+        top: 48px !important;
         padding: 8px;
         border: 0;
         box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 4px 4px rgba(19, 20, 21, 0.1);
@@ -3037,7 +3037,8 @@
 
     .kt-prompt__api-list,
     .kt-prompt__workspace-list {
-        padding: 8px 8px 0;
+        max-height: 468px;
+        padding: 8px;
         overflow-x: hidden;
         overflow-y: auto;
 
@@ -3047,6 +3048,13 @@
             min-height: 46px;
             padding: 0 8px;
             border-radius: 4px;
+
+            &.is-selected,
+            &:hover,
+            &:focus-visible {
+                background: #f3f4f6;
+                outline: 0;
+            }
         }
 
         strong {
@@ -3058,14 +3066,6 @@
             font-size: 15px;
             font-weight: var(--fw-Medium);
         }
-    }
-
-    .kt-prompt__api-list {
-        max-height: 238px;
-    }
-
-    .kt-prompt__workspace-list {
-        max-height: 184px;
     }
 
     .kt-prompt__foot {
@@ -3198,8 +3198,10 @@
 
 .kt-table-scroll--works {
     width: calc(100% - 48px);
+    height: 530px;
     margin: 0 24px;
     overflow: hidden;
+    overscroll-behavior: contain;
     border: 0;
     border-radius: 0;
     background: #fff;
@@ -3210,11 +3212,11 @@
 }
 
 .kt-table-scroll--result {
-    height: 520px;
+    height: 530px;
 }
 
 .kt-table-scroll--empty {
-    height: 520px;
+    height: 530px;
 }
 
 .kt-table--works {
@@ -3240,10 +3242,11 @@
 
     tbody {
         display: block;
-        height: 576px;
+        height: 480px;
         overflow-x: hidden;
         overflow-y: auto;
         background: #fff;
+        overscroll-behavior: contain;
         scrollbar-gutter: stable;
     }
 
@@ -3312,8 +3315,8 @@
     th,
     td {
         box-sizing: border-box;
-        height: 48px;
-        padding: 9px 20px;
+        min-height: 40px;
+        padding: 7px 20px;
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         background: #fff;
@@ -3368,7 +3371,7 @@
 
 .kt-table__name:hover,
 .kt-table__name:focus-within {
-    z-index: 6;
+    z-index: 60;
 }
 
 .kt-table__name-text {
@@ -3378,9 +3381,9 @@
 .kt-table-tooltip {
     display: none;
     position: absolute;
-    z-index: 5;
-    top: calc(100% + 1px);
-    left: 44px;
+    z-index: 50;
+    top: calc(100% - 89px);
+    left: 38px;
     width: 155px;
     padding: 8px 12px;
     border-radius: 6px;
@@ -3390,6 +3393,7 @@
     font-weight: var(--fw-Medium);
     line-height: 1.48;
     text-align: center;
+    pointer-events: none;
     white-space: normal;
     box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 4px 4px rgba(19, 20, 21, 0.1);
 }

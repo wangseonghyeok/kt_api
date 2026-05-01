@@ -562,12 +562,15 @@ const ui = {
             const foot = menu ? menu.querySelector('[data-prompt_foot]') : null;
             const clearButton = input ? prompt.querySelector(`[data-clear_input][aria-controls="${input.id}"]`) : null;
             const visibleCount = Number(prompt.dataset.promptVisibleCount || menu?.dataset.promptVisibleCount || 0);
+            const minLength = Number(prompt.dataset.promptMinLength || menu?.dataset.promptMinLength || 0);
 
             if (!menu || !triggers.length) {
                 return;
             }
 
-            const hasKeyword = () => input && input.value.trim().length > 0;
+            const getKeyword = () => (input ? input.value.trim() : '');
+            const hasKeyword = () => getKeyword().length > 0;
+            const canSearch = () => !input || minLength <= 0 || getKeyword().length >= minLength;
             const shouldShowAllOptions = () => input && prompt.hasAttribute('data-prompt-show-all') && !hasKeyword();
             const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden);
             const getSelectedOption = () =>
@@ -599,7 +602,10 @@ const ui = {
             };
 
             const openPrompt = () => {
-                if (input && !hasKeyword() && !shouldShowAllOptions()) {
+                if (
+                    input &&
+                    ((!hasKeyword() && !shouldShowAllOptions()) || (!canSearch() && !shouldShowAllOptions()))
+                ) {
                     closePrompt(prompt);
                     return;
                 }
@@ -652,6 +658,18 @@ const ui = {
                 const showAllOptions = shouldShowAllOptions();
                 let matchCount = 0;
 
+                if (!showAllOptions && !canSearch()) {
+                    options.forEach(option => {
+                        option.hidden = true;
+                        option.setAttribute('aria-hidden', 'true');
+                        option.classList.remove('is-selected');
+                        option.setAttribute('aria-selected', 'false');
+                        option.tabIndex = -1;
+                    });
+                    syncFoot(0);
+                    return 0;
+                }
+
                 options.forEach(option => {
                     const optionText = option.dataset.searchKeywords || option.textContent;
                     const isMatched =
@@ -661,9 +679,11 @@ const ui = {
                         matchCount += 1;
                     }
 
-                    option.hidden = !isMatched;
-                    option.setAttribute('aria-hidden', String(!isMatched));
-                    option.tabIndex = isMatched ? 0 : -1;
+                    const isVisible = isMatched && (visibleCount <= 0 || matchCount <= visibleCount);
+
+                    option.hidden = !isVisible;
+                    option.setAttribute('aria-hidden', String(!isVisible));
+                    option.tabIndex = isVisible ? 0 : -1;
                 });
 
                 syncFoot(matchCount);
@@ -688,7 +708,7 @@ const ui = {
                 filterOptions();
                 syncClearButton();
 
-                if ((hasKeyword() || shouldShowAllOptions()) && getVisibleOptions().length) {
+                if (((hasKeyword() && canSearch()) || shouldShowAllOptions()) && getVisibleOptions().length) {
                     openPrompt();
                 } else {
                     closePrompt(prompt);
