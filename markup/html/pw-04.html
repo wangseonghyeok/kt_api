@@ -32,7 +32,7 @@
                                         <p>가입 시 등록한 정보를 입력하면 해당 이메일로 인증번호가 발송됩니다.</p>
                                     </div>
                                     <form class="kt-auth-form">
-                                        <div class="kt-field">
+                                        <div class="kt-field error">
                                             <label class="kt-field__label" for="resetName"
                                                 >이름 <span class="is-required">*</span></label
                                             >
@@ -59,9 +59,10 @@
                                                             alt=""
                                                         /></button
                                                 ></span>
+                                                <p class="kt-field__message">이름을 입력해주세요.</p>
                                             </span>
                                         </div>
-                                        <div class="kt-field">
+                                        <div class="kt-field error">
                                             <label class="kt-field__label" for="resetEmail"
                                                 >이메일 <span class="is-required">*</span></label
                                             >
@@ -89,8 +90,9 @@
                                                         /></button
                                                 ></span>
                                             </span>
+                                            <p class="kt-field__message">이메일 주소를 입력해 주세요.</p>
                                         </div>
-                                        <div class="kt-field">
+                                        <div class="kt-field error">
                                             <label class="kt-field__label" for="resetId"
                                                 >아이디 <span class="is-required">*</span></label
                                             >
@@ -118,11 +120,13 @@
                                                         /></button
                                                 ></span>
                                             </span>
+                                            <p class="kt-field__message">아이디를 입력해 주세요.</p>
                                         </div>
                                     </form>
                                     <div class="kt-auth-actions">
                                         <div class="kt-auth-button-row">
-                                            <button class="kt-auth-button kt-auth-button--secondary">이전</button
+                                            <button class="kt-auth-button kt-auth-button--secondary">
+                                                아이디 먼저 찾기</button
                                             ><button class="kt-auth-button">인증번호 발송</button>
                                         </div>
                                     </div>

@@ -672,6 +672,14 @@
             gap: 40px;
         }
 
+        &--otp-tabs {
+            gap: 24px;
+
+            .kt-auth-main-panel > .kt-auth-top + .kt-auth-panel {
+                margin-top: 40px;
+            }
+        }
+
         &:has(.kt-auth-methods) {
             gap: 24px;
         }
