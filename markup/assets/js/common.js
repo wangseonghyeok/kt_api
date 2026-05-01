@@ -324,6 +324,31 @@ const ui = {
         });
     },
     component: () => {
+        document.querySelectorAll('[data-auth-main-tabs]').forEach(tabWrap => {
+            const mainTabs = tabWrap.querySelectorAll('[data-auth-main-tab]');
+            const mainPanels = tabWrap.querySelectorAll('[data-auth-main-panel]');
+
+            mainTabs.forEach(tab => {
+                tab.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const targetName = tab.dataset.authMainTab;
+
+                    mainTabs.forEach(item => {
+                        item.classList.toggle('is-active', item === tab);
+                    });
+
+                    mainPanels.forEach(panel => {
+                        const isTarget = panel.dataset.authMainPanel === targetName;
+
+                        panel.classList.toggle('is-active', isTarget);
+                        panel.hidden = !isTarget;
+                        panel.setAttribute('aria-hidden', String(!isTarget));
+                    });
+                });
+            });
+        });
+
         document.querySelectorAll('.kt-auth-tabs').forEach(tabWrap => {
             tabWrap.querySelectorAll('a[href="#"]').forEach(tab => {
                 tab.addEventListener('click', event => {

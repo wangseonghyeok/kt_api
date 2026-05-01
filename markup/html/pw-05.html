@@ -13,43 +13,59 @@
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
                     </div>
-                    <div class="kt-auth-content kt-auth-scroll">
+                    <div class="kt-auth-content kt-auth-scroll" data-auth-main-tabs>
                         <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
-                            <a href="#" class="">아이디 찾기</a>
-                            <a href="#" class="is-active">비밀번호 찾기</a>
+                            <ul>
+                                <li><a href="#" data-auth-main-tab="id">아이디 찾기</a></li>
+                                <li><a href="#" data-auth-main-tab="password" class="is-active">비밀번호 찾기</a></li>
+                            </ul>
                         </nav>
-                        <div class="kt-auth-panel" data-auth-panel="password" aria-hidden="false">
-                            <div class="kt-auth-center">
-                                <span class="kt-auth-center__icon kt-auth-center__icon--mail" aria-hidden="true"></span>
-                                <h2>이메일 인증</h2>
-                                <p>이메일로 발송된 인증번호 6자리를 입력해주세요.</p>
-                            </div>
-                            <form class="kt-auth-form">
-                                <div class="kt-field kt-auth-verify">
-                                    <label class="kt-field__label" for="resetCode"
-                                        >인증번호 <span class="is-required">*</span></label
-                                    ><input
-                                        type="text"
-                                        id="resetCode"
-                                        class="kt-input kt-input--52"
-                                        value="123456"
-                                        inputmode="numeric"
-                                    /><span class="kt-auth-verify__side"
-                                        ><span class="kt-auth-timer">02:23</span
-                                        ><button type="button" class="kt-auth-resend">재전송</button></span
-                                    >
-                                    <p class="kt-field__message kt-field__message--complete">
-                                        인증 번호가 확인되었습니다.
-                                    </p>
+                        <ul class="kt-auth-main-panels">
+                            <li class="kt-auth-main-panel is-active" data-auth-main-panel="password">
+                                <div class="kt-auth-panel" data-auth-panel="password" aria-hidden="false">
+                                    <div class="kt-auth-center">
+                                        <span
+                                            class="kt-auth-center__icon kt-auth-center__icon--mail"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <h2>이메일 인증</h2>
+                                        <p>이메일로 발송된 인증번호 6자리를 입력해주세요.</p>
+                                    </div>
+                                    <form class="kt-auth-form">
+                                        <div class="kt-field kt-auth-verify">
+                                            <label class="kt-field__label" for="resetCode"
+                                                >인증번호 <span class="is-required">*</span></label
+                                            ><input
+                                                type="text"
+                                                id="resetCode"
+                                                class="kt-input kt-input--52"
+                                                value="123456"
+                                                inputmode="numeric"
+                                            /><span class="kt-auth-verify__side"
+                                                ><span class="kt-auth-timer">02:23</span
+                                                ><button type="button" class="kt-auth-resend">재전송</button></span
+                                            >
+                                            <p class="kt-field__message kt-field__message--complete">
+                                                인증 번호가 확인되었습니다.
+                                            </p>
+                                        </div>
+                                    </form>
+                                    <div class="kt-auth-actions">
+                                        <div class="kt-auth-button-row">
+                                            <button class="kt-auth-button kt-auth-button--secondary">이전</button
+                                            ><button class="kt-auth-button">인증 확인</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </form>
-                            <div class="kt-auth-actions">
-                                <div class="kt-auth-button-row">
-                                    <button class="kt-auth-button kt-auth-button--secondary">이전</button
-                                    ><button class="kt-auth-button">인증 확인</button>
+                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="id" hidden aria-hidden="true">
+                                <div class="kt-auth-panel">
+                                    <div class="kt-auth-center">
+                                        <p>텍스트 1</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

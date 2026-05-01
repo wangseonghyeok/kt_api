@@ -13,228 +13,290 @@
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
                     </div>
-                    <div class="kt-auth-content kt-auth-scroll">
-                        <div class="kt-auth-top">
-                            <nav class="kt-auth-tabs" aria-label="로그인 메뉴">
-                                <a href="#" class="is-active">로그인</a>
-                                <a href="#">회원가입</a>
-                            </nav>
-                            <ol class="kt-auth-step" aria-label="로그인 단계">
-                                <li class="kt-auth-step__item is-current">
-                                    <span class="kt-auth-step__num">01</span><span>인증</span>
-                                </li>
-                                <li class="kt-auth-step__line" aria-hidden="true"></li>
-                                <li class="kt-auth-step__item">
-                                    <span class="kt-auth-step__num">02</span><span>OTP 인증</span>
-                                </li>
-                            </ol>
-                            <div>
-                                <h2 class="kt-auth-section-title">인증 방식 선택</h2>
-                                <div class="kt-auth-methods">
-                                    <a href="#" class="kt-auth-method" data-auth-method="entra"
-                                        ><i class="kt-auth-icon--kt"></i><strong>Entra ID</strong
-                                        ><span>Kt 직원</span></a
-                                    >
-                                    <a href="#" class="kt-auth-method is-active" data-auth-method="ldap"
-                                        ><i class="kt-auth-icon--shield"></i><strong>LDAP</strong
-                                        ><span>사내 임직원</span></a
-                                    >
-                                    <a href="#" class="kt-auth-method" data-auth-method="idpwd"
-                                        ><i class="kt-auth-icon--users"></i><strong>ID/PWD</strong
-                                        ><span>일반 개발자</span></a
-                                    >
+                    <div class="kt-auth-content kt-auth-scroll" data-auth-main-tabs>
+                        <nav class="kt-auth-tabs" aria-label="로그인 메뉴">
+                            <ul>
+                                <li><a href="#" data-auth-main-tab="login" class="is-active">로그인</a></li>
+                                <li><a href="#" data-auth-main-tab="signup">회원가입</a></li>
+                            </ul>
+                        </nav>
+                        <ul class="kt-auth-main-panels">
+                            <li class="kt-auth-main-panel is-active" data-auth-main-panel="login">
+                                <div class="kt-auth-top">
+                                    <ol class="kt-auth-step" aria-label="로그인 단계">
+                                        <li class="kt-auth-step__item is-current">
+                                            <span class="kt-auth-step__num">01</span><span>인증</span>
+                                        </li>
+                                        <li class="kt-auth-step__line" aria-hidden="true"></li>
+                                        <li class="kt-auth-step__item">
+                                            <span class="kt-auth-step__num">02</span><span>OTP 인증</span>
+                                        </li>
+                                    </ol>
+                                    <div>
+                                        <h2 class="kt-auth-section-title">인증 방식 선택</h2>
+                                        <div class="kt-auth-methods">
+                                            <a href="#" class="kt-auth-method" data-auth-method="entra"
+                                                ><i class="kt-auth-icon--kt"></i><strong>Entra ID</strong
+                                                ><span>Kt 직원</span></a
+                                            >
+                                            <a href="#" class="kt-auth-method is-active" data-auth-method="ldap"
+                                                ><i class="kt-auth-icon--shield"></i><strong>LDAP</strong
+                                                ><span>사내 임직원</span></a
+                                            >
+                                            <a href="#" class="kt-auth-method" data-auth-method="idpwd"
+                                                ><i class="kt-auth-icon--users"></i><strong>ID/PWD</strong
+                                                ><span>일반 개발자</span></a
+                                            >
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <ul class="kt-auth-panels">
-                            <li data-auth-panel="entra">
+                                <ul class="kt-auth-panels">
+                                    <li data-auth-panel="entra">
+                                        <div class="kt-auth-panel">
+                                            <div class="kt-auth-center">
+                                                <span
+                                                    class="kt-auth-center__icon kt-auth-center__icon--entra"
+                                                    aria-hidden="true"
+                                                ></span>
+                                                <h2>Microsoft Entra ID 로그인</h2>
+                                                <p>
+                                                    KT 직원 계정으로 안전하게 로그인하며 Microsoft 로그인 페이지로
+                                                    이동합니다.
+                                                </p>
+                                            </div>
+                                            <div class="kt-auth-actions">
+                                                <button class="kt-auth-button">Entra ID 로 계속하기</button>
+                                                <div class="kt-auth-note">
+                                                    <ul class="kt-auth-note-list">
+                                                        <li>Entra ID 인증은 KT 직원만 사용할 수 있습니다.</li>
+                                                        <li>로그인 후 자동으로 kt직원 권한이 부여됩니다.</li>
+                                                        <li>MFA(OTP) 인증은 필수입니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="is-active" data-auth-panel="ldap">
+                                        <div class="kt-auth-panel">
+                                            <form class="kt-auth-form">
+                                                <!-- .error 표시-->
+                                                <div class="kt-field error">
+                                                    <label class="kt-field__label" for="ldapId"
+                                                        >사번 <span class="is-required">*</span></label
+                                                    >
+                                                    <span class="kt-input-field">
+                                                        <input
+                                                            type="text"
+                                                            id="ldapId"
+                                                            class="kt-input kt-input--52"
+                                                            placeholder="사번을 입력해 주세요"
+                                                        />
+                                                        <span class="kt-input-field__actions">
+                                                            <button
+                                                                type="button"
+                                                                class="kt-input-field__clear"
+                                                                data-clear_input
+                                                                aria-controls="ldapId"
+                                                                aria-label="입력값 삭제"
+                                                                hidden
+                                                                aria-hidden="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                <img
+                                                                    src="/assets/img/components/ico_delete.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                        </span>
+                                                    </span>
+                                                    <p class="kt-field__message">사번을 입력해주세요</p>
+                                                </div>
+                                                <div class="kt-field error">
+                                                    <label class="kt-field__label" for="ldapPw"
+                                                        >비밀번호 <span class="is-required">*</span></label
+                                                    >
+                                                    <span class="kt-password">
+                                                        <input
+                                                            type="password"
+                                                            id="ldapPw"
+                                                            class="kt-input kt-input--52"
+                                                            placeholder="비밀번호를 입력해 주세요"
+                                                        />
+                                                        <span class="kt-password__actions">
+                                                            <button
+                                                                type="button"
+                                                                class="kt-input-field__clear kt-password__clear"
+                                                                data-clear_input
+                                                                aria-controls="ldapPw"
+                                                                aria-label="비밀번호 삭제"
+                                                                hidden
+                                                                aria-hidden="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                <img
+                                                                    src="/assets/img/components/ico_delete.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                            <button
+                                                                type="button"
+                                                                class="kt-password__toggle"
+                                                                data-password_toggle
+                                                                aria-controls="ldapPw"
+                                                                aria-label="비밀번호 보기"
+                                                                data-icon-show="/assets/img/components/ico_eye.svg"
+                                                                data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                                            >
+                                                                <img
+                                                                    src="/assets/img/components/ico_eye_off.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                        </span>
+                                                    </span>
+                                                    <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
+                                                </div>
+                                            </form>
+                                            <div class="kt-auth-actions">
+                                                <button type="button" class="kt-auth-button">LDAP으로 로그인</button>
+                                                <div class="kt-auth-text-links kt-auth-text-links--small">
+                                                    <a href="#">아이디/비밀번호 찾기</a>
+                                                </div>
+                                                <div class="kt-auth-note">
+                                                    <ul class="kt-auth-note-list">
+                                                        <li>사번과 사내 비밀번호는 사내 인트라넷 계정과 동일합니다.</li>
+                                                        <li>
+                                                            비밀번호 변경 및 계정 문의는 IT 서비스데스크로 연락하세요.
+                                                        </li>
+                                                        <li>
+                                                            5회 오류 시 계정이 잠기며 해제는 IT 서비스데스크에
+                                                            요청하세요.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-auth-panel="idpwd">
+                                        <div class="kt-auth-panel">
+                                            <form class="kt-auth-form">
+                                                <!-- .error 표시-->
+                                                <div class="kt-field error">
+                                                    <label class="kt-field__label" for="loginId"
+                                                        >아이디 <span class="is-required">*</span></label
+                                                    >
+                                                    <span class="kt-input-field">
+                                                        <input
+                                                            type="text"
+                                                            id="loginId"
+                                                            class="kt-input kt-input--52"
+                                                            value="kimkt"
+                                                        />
+                                                        <span class="kt-input-field__actions">
+                                                            <button
+                                                                type="button"
+                                                                class="kt-input-field__clear"
+                                                                data-clear_input
+                                                                aria-controls="loginId"
+                                                                aria-label="입력값 삭제"
+                                                                hidden
+                                                                aria-hidden="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                <img
+                                                                    src="/assets/img/components/ico_delete.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                        </span>
+                                                    </span>
+                                                    <p class="kt-field__message">사용자 아이디를 입력해주세요.</p>
+                                                </div>
+                                                <div class="kt-field error">
+                                                    <label class="kt-field__label" for="loginPw"
+                                                        >비밀번호 <span class="is-required">*</span></label
+                                                    >
+                                                    <span class="kt-password">
+                                                        <input
+                                                            type="password"
+                                                            id="loginPw"
+                                                            class="kt-input kt-input--52"
+                                                            value="password"
+                                                        />
+                                                        <span class="kt-password__actions">
+                                                            <button
+                                                                type="button"
+                                                                class="kt-input-field__clear kt-password__clear"
+                                                                data-clear_input
+                                                                aria-controls="loginPw"
+                                                                aria-label="비밀번호 삭제"
+                                                                hidden
+                                                                aria-hidden="true"
+                                                                tabindex="-1"
+                                                            >
+                                                                <img
+                                                                    src="/assets/img/components/ico_delete.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                            <button
+                                                                type="button"
+                                                                class="kt-password__toggle"
+                                                                data-password_toggle
+                                                                aria-controls="loginPw"
+                                                                aria-label="비밀번호 보기"
+                                                                data-icon-show="/assets/img/components/ico_eye.svg"
+                                                                data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                                            >
+                                                                <img src="/assets/img/components/ico_eye.svg" alt="" />
+                                                            </button>
+                                                        </span>
+                                                    </span>
+                                                    <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
+                                                </div>
+                                            </form>
+                                            <div class="kt-auth-actions">
+                                                <button class="kt-auth-button" disabled>다음단계 (OTP 인증)</button>
+                                                <div class="kt-auth-text-links">
+                                                    <a href="#">아이디 찾기</a><span aria-hidden="true"></span
+                                                    ><a href="#">비밀번호 찾기</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="signup" hidden aria-hidden="true">
                                 <div class="kt-auth-panel">
                                     <div class="kt-auth-center">
                                         <span
-                                            class="kt-auth-center__icon kt-auth-center__icon--entra"
+                                            class="kt-auth-center__icon kt-auth-center__icon--signup"
                                             aria-hidden="true"
                                         ></span>
-                                        <h2>Microsoft Entra ID 로그인</h2>
-                                        <p>
-                                            KT 직원 계정으로 안전하게 로그인하며 Microsoft 로그인 페이지로 이동합니다.
-                                        </p>
+                                        <h2>KT API Link Portal 회원가입</h2>
+                                        <p>LDAP 계정을 보유한 외부 파트너사만 가입할 수 있습니다.</p>
+                                    </div>
+                                    <div class="kt-auth-info-box">
+                                        <dl class="kt-auth-info-row">
+                                            <dt>대상</dt>
+                                            <dd>KT와 계약된 외부 파트너사 담당자</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>가입 방법</dt>
+                                            <dd>KT 통합 로그인 시스템에서 LDAP 계정 신청</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>발급 기간</dt>
+                                            <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>문의</dt>
+                                            <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                        </dl>
                                     </div>
                                     <div class="kt-auth-actions">
-                                        <button class="kt-auth-button">Entra ID 로 계속하기</button>
-                                        <div class="kt-auth-note">
-                                            <ul class="kt-auth-note-list">
-                                                <li>Entra ID 인증은 KT 직원만 사용할 수 있습니다.</li>
-                                                <li>로그인 후 자동으로 kt직원 권한이 부여됩니다.</li>
-                                                <li>MFA(OTP) 인증은 필수입니다.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="is-active" data-auth-panel="ldap">
-                                <div class="kt-auth-panel">
-                                    <form class="kt-auth-form">
-                                        <!-- .error 표시-->
-                                        <div class="kt-field error">
-                                            <label class="kt-field__label" for="ldapId"
-                                                >사번 <span class="is-required">*</span></label
-                                            >
-                                            <span class="kt-input-field">
-                                                <input
-                                                    type="text"
-                                                    id="ldapId"
-                                                    class="kt-input kt-input--52"
-                                                    placeholder="사번을 입력해 주세요"
-                                                />
-                                                <span class="kt-input-field__actions">
-                                                    <button
-                                                        type="button"
-                                                        class="kt-input-field__clear"
-                                                        data-clear_input
-                                                        aria-controls="ldapId"
-                                                        aria-label="입력값 삭제"
-                                                        hidden
-                                                        aria-hidden="true"
-                                                        tabindex="-1"
-                                                    >
-                                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </span>
-                                            <p class="kt-field__message">사번을 입력해주세요</p>
-                                        </div>
-                                        <div class="kt-field error">
-                                            <label class="kt-field__label" for="ldapPw"
-                                                >비밀번호 <span class="is-required">*</span></label
-                                            >
-                                            <span class="kt-password">
-                                                <input
-                                                    type="password"
-                                                    id="ldapPw"
-                                                    class="kt-input kt-input--52"
-                                                    placeholder="비밀번호를 입력해 주세요"
-                                                />
-                                                <span class="kt-password__actions">
-                                                    <button
-                                                        type="button"
-                                                        class="kt-input-field__clear kt-password__clear"
-                                                        data-clear_input
-                                                        aria-controls="ldapPw"
-                                                        aria-label="비밀번호 삭제"
-                                                        hidden
-                                                        aria-hidden="true"
-                                                        tabindex="-1"
-                                                    >
-                                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        class="kt-password__toggle"
-                                                        data-password_toggle
-                                                        aria-controls="ldapPw"
-                                                        aria-label="비밀번호 보기"
-                                                        data-icon-show="/assets/img/components/ico_eye.svg"
-                                                        data-icon-hide="/assets/img/components/ico_eye_off.svg"
-                                                    >
-                                                        <img src="/assets/img/components/ico_eye_off.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </span>
-                                            <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
-                                        </div>
-                                    </form>
-                                    <div class="kt-auth-actions">
-                                        <button type="button" class="kt-auth-button">LDAP으로 로그인</button>
-                                        <div class="kt-auth-text-links kt-auth-text-links--small">
-                                            <a href="#">아이디/비밀번호 찾기</a>
-                                        </div>
-                                        <div class="kt-auth-note">
-                                            <ul class="kt-auth-note-list">
-                                                <li>사번과 사내 비밀번호는 사내 인트라넷 계정과 동일합니다.</li>
-                                                <li>비밀번호 변경 및 계정 문의는 IT 서비스데스크로 연락하세요.</li>
-                                                <li>5회 오류 시 계정이 잠기며 해제는 IT 서비스데스크에 요청하세요.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li data-auth-panel="idpwd">
-                                <div class="kt-auth-panel">
-                                    <form class="kt-auth-form">
-                                        <!-- .error 표시-->
-                                        <div class="kt-field error">
-                                            <label class="kt-field__label" for="loginId"
-                                                >아이디 <span class="is-required">*</span></label
-                                            >
-                                            <span class="kt-input-field">
-                                                <input
-                                                    type="text"
-                                                    id="loginId"
-                                                    class="kt-input kt-input--52"
-                                                    value="kimkt"
-                                                />
-                                                <span class="kt-input-field__actions">
-                                                    <button
-                                                        type="button"
-                                                        class="kt-input-field__clear"
-                                                        data-clear_input
-                                                        aria-controls="loginId"
-                                                        aria-label="입력값 삭제"
-                                                        hidden
-                                                        aria-hidden="true"
-                                                        tabindex="-1"
-                                                    >
-                                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </span>
-                                            <p class="kt-field__message">사용자 아이디를 입력해주세요.</p>
-                                        </div>
-                                        <div class="kt-field error">
-                                            <label class="kt-field__label" for="loginPw"
-                                                >비밀번호 <span class="is-required">*</span></label
-                                            >
-                                            <span class="kt-password">
-                                                <input
-                                                    type="password"
-                                                    id="loginPw"
-                                                    class="kt-input kt-input--52"
-                                                    value="password"
-                                                />
-                                                <span class="kt-password__actions">
-                                                    <button
-                                                        type="button"
-                                                        class="kt-input-field__clear kt-password__clear"
-                                                        data-clear_input
-                                                        aria-controls="loginPw"
-                                                        aria-label="비밀번호 삭제"
-                                                        hidden
-                                                        aria-hidden="true"
-                                                        tabindex="-1"
-                                                    >
-                                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        class="kt-password__toggle"
-                                                        data-password_toggle
-                                                        aria-controls="loginPw"
-                                                        aria-label="비밀번호 보기"
-                                                        data-icon-show="/assets/img/components/ico_eye.svg"
-                                                        data-icon-hide="/assets/img/components/ico_eye_off.svg"
-                                                    >
-                                                        <img src="/assets/img/components/ico_eye.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </span>
-                                            <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
-                                        </div>
-                                    </form>
-                                    <div class="kt-auth-actions">
-                                        <button class="kt-auth-button" disabled>다음단계 (OTP 인증)</button>
-                                        <div class="kt-auth-text-links">
-                                            <a href="#">아이디 찾기</a><span aria-hidden="true"></span
-                                            ><a href="#">비밀번호 찾기</a>
+                                        <div class="kt-auth-button-row">
+                                            <button class="kt-auth-button">계정 신청</button>
                                         </div>
                                     </div>
                                 </div>

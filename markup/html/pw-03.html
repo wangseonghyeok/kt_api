@@ -13,34 +13,51 @@
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
                     </div>
-                    <div class="kt-auth-content kt-auth-scroll">
+                    <div class="kt-auth-content kt-auth-scroll" data-auth-main-tabs>
                         <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
-                            <a href="#" class="is-active">아이디 찾기</a>
-                            <a href="#" class="">비밀번호 찾기</a>
+                            <ul>
+                                <li><a href="#" data-auth-main-tab="id" class="is-active">아이디 찾기</a></li>
+                                <li><a href="#" data-auth-main-tab="password">비밀번호 찾기</a></li>
+                            </ul>
                         </nav>
-                        <div class="kt-auth-panel" data-auth-panel="id" aria-hidden="false">
-                            <div class="kt-auth-center">
-                                <span class="kt-auth-center__icon kt-auth-center__icon--done" aria-hidden="true"></span>
-                                <h2>아이디 찾기 완료</h2>
-                                <p>가입된 아이디를 확인해 주세요.</p>
-                            </div>
-                            <div class="kt-auth-info-box">
-                                <dl class="kt-auth-info-row">
-                                    <dt>아이디</dt>
-                                    <dd>kt_hong****</dd>
-                                </dl>
-                                <dl class="kt-auth-info-row">
-                                    <dt>가입일</dt>
-                                    <dd>2025년 11월 20일</dd>
-                                </dl>
-                            </div>
-                            <div class="kt-auth-actions">
-                                <div class="kt-auth-button-row">
-                                    <button class="kt-auth-button kt-auth-button--secondary">비밀번호 찾기</button
-                                    ><button class="kt-auth-button">로그인</button>
+                        <ul class="kt-auth-main-panels">
+                            <li class="kt-auth-main-panel is-active" data-auth-main-panel="id">
+                                <div class="kt-auth-panel" data-auth-panel="id" aria-hidden="false">
+                                    <div class="kt-auth-center">
+                                        <span
+                                            class="kt-auth-center__icon kt-auth-center__icon--done"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <h2>아이디 찾기 완료</h2>
+                                        <p>가입된 아이디를 확인해 주세요.</p>
+                                    </div>
+                                    <div class="kt-auth-info-box">
+                                        <dl class="kt-auth-info-row">
+                                            <dt>아이디</dt>
+                                            <dd>kt_hong****</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>가입일</dt>
+                                            <dd>2025년 11월 20일</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="kt-auth-actions">
+                                        <div class="kt-auth-button-row">
+                                            <button class="kt-auth-button kt-auth-button--secondary">
+                                                비밀번호 찾기</button
+                                            ><button class="kt-auth-button">로그인</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="password" hidden aria-hidden="true">
+                                <div class="kt-auth-panel">
+                                    <div class="kt-auth-center">
+                                        <p>텍스트 1</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

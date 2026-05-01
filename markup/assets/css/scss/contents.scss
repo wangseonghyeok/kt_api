@@ -678,9 +678,21 @@
     }
 
     .kt-auth-tabs {
-        @include flex(null, null);
         height: 48px;
         border-bottom: 1px solid $kt-line;
+
+        ul {
+            @include flex(null, null);
+            height: 48px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            @include flex(null, null);
+            flex: 1 1 0;
+        }
 
         a {
             @include flex(center, center);
@@ -843,6 +855,21 @@
         background-image: url('/assets/img/auth/ico_auth_users.svg');
     }
 
+    .kt-auth-main-panels {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .kt-auth-main-panel {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
     .kt-auth-panels {
         margin: 0;
         padding: 0;
@@ -860,6 +887,10 @@
     .kt-auth-panel {
         @include flex(null, null);
         flex-direction: column;
+    }
+
+    .kt-auth-top + .kt-auth-panels {
+        margin-top: 24px;
     }
 
     // .kt-auth-top + .kt-auth-panel {

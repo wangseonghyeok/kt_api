@@ -13,44 +13,57 @@
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
                     </div>
-                    <div class="kt-auth-content">
+                    <div class="kt-auth-content" data-auth-main-tabs>
                         <nav class="kt-auth-tabs" aria-label="회원 메뉴">
-                            <a href="#">로그인</a>
-                            <a href="#" class="is-active">회원가입</a>
+                            <ul>
+                                <li><a href="#" data-auth-main-tab="login">로그인</a></li>
+                                <li><a href="#" data-auth-main-tab="signup" class="is-active">회원가입</a></li>
+                            </ul>
                         </nav>
-                        <div class="kt-auth-panel">
-                            <div class="kt-auth-center">
-                                <span
-                                    class="kt-auth-center__icon kt-auth-center__icon--signup"
-                                    aria-hidden="true"
-                                ></span>
-                                <h2>KT API Link Portal 회원가입</h2>
-                                <p>LDAP 계정을 보유한 외부 파트너사만 가입할 수 있습니다.</p>
-                            </div>
-                            <div class="kt-auth-info-box">
-                                <dl class="kt-auth-info-row">
-                                    <dt>대상</dt>
-                                    <dd>KT와 계약된 외부 파트너사 담당자</dd>
-                                </dl>
-                                <dl class="kt-auth-info-row">
-                                    <dt>가입 방법</dt>
-                                    <dd>KT 통합 로그인 시스템에서 LDAP 계정 신청</dd>
-                                </dl>
-                                <dl class="kt-auth-info-row">
-                                    <dt>발급 기간</dt>
-                                    <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
-                                </dl>
-                                <dl class="kt-auth-info-row">
-                                    <dt>문의</dt>
-                                    <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
-                                </dl>
-                            </div>
-                            <div class="kt-auth-actions">
-                                <div class="kt-auth-button-row">
-                                    <button class="kt-auth-button">계정 신청</button>
+                        <ul class="kt-auth-main-panels">
+                            <li class="kt-auth-main-panel is-active" data-auth-main-panel="signup">
+                                <div class="kt-auth-panel">
+                                    <div class="kt-auth-center">
+                                        <span
+                                            class="kt-auth-center__icon kt-auth-center__icon--signup"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <h2>KT API Link Portal 회원가입</h2>
+                                        <p>LDAP 계정을 보유한 외부 파트너사만 가입할 수 있습니다.</p>
+                                    </div>
+                                    <div class="kt-auth-info-box">
+                                        <dl class="kt-auth-info-row">
+                                            <dt>대상</dt>
+                                            <dd>KT와 계약된 외부 파트너사 담당자</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>가입 방법</dt>
+                                            <dd>KT 통합 로그인 시스템에서 LDAP 계정 신청</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>발급 기간</dt>
+                                            <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                        </dl>
+                                        <dl class="kt-auth-info-row">
+                                            <dt>문의</dt>
+                                            <dd>KT 담당 서비스 PO에게 연락하세요.</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="kt-auth-actions">
+                                        <div class="kt-auth-button-row">
+                                            <button class="kt-auth-button">계정 신청</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="login" hidden aria-hidden="true">
+                                <div class="kt-auth-panel">
+                                    <div class="kt-auth-center">
+                                        <p>텍스트 1</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

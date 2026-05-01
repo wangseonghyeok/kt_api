@@ -13,25 +13,43 @@
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
                     </div>
-                    <div class="kt-auth-content kt-auth-scroll">
+                    <div class="kt-auth-content kt-auth-scroll" data-auth-main-tabs>
                         <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
-                            <a href="#" class="">아이디 찾기</a>
-                            <a href="#" class="is-active">비밀번호 찾기</a>
+                            <ul>
+                                <li><a href="#" data-auth-main-tab="id">아이디 찾기</a></li>
+                                <li><a href="#" data-auth-main-tab="password" class="is-active">비밀번호 찾기</a></li>
+                            </ul>
                         </nav>
-                        <div class="kt-auth-panel" data-auth-panel="password" aria-hidden="false">
-                            <div class="kt-auth-center">
-                                <span class="kt-auth-center__icon kt-auth-center__icon--done" aria-hidden="true"></span>
-                                <h2>비밀번호 변경 완료</h2>
-                                <p>
-                                    비밀번호가 성공적으로 변경되어<br />
-                                    보안을 위해 기존 로그인 세션이 모두 종료되었습니다.<br />
-                                    새 비밀번호로 로그인해 주세요.
-                                </p>
-                            </div>
-                            <div class="kt-auth-actions">
-                                <div class="kt-auth-button-row"><button class="kt-auth-button">로그인</button></div>
-                            </div>
-                        </div>
+                        <ul class="kt-auth-main-panels">
+                            <li class="kt-auth-main-panel is-active" data-auth-main-panel="password">
+                                <div class="kt-auth-panel" data-auth-panel="password" aria-hidden="false">
+                                    <div class="kt-auth-center">
+                                        <span
+                                            class="kt-auth-center__icon kt-auth-center__icon--done"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <h2>비밀번호 변경 완료</h2>
+                                        <p>
+                                            비밀번호가 성공적으로 변경되어<br />
+                                            보안을 위해 기존 로그인 세션이 모두 종료되었습니다.<br />
+                                            새 비밀번호로 로그인해 주세요.
+                                        </p>
+                                    </div>
+                                    <div class="kt-auth-actions">
+                                        <div class="kt-auth-button-row">
+                                            <button class="kt-auth-button">로그인</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="id" hidden aria-hidden="true">
+                                <div class="kt-auth-panel">
+                                    <div class="kt-auth-center">
+                                        <p>텍스트 1</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
