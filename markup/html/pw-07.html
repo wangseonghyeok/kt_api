@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
     <head>
         <!--#include file="./include/_head.html"-->
@@ -7,34 +7,96 @@
 
     <body>
         <div id="wrap">
-            <!--#include file="./include/_header.html"-->
             <div class="kt-auth-modal">
-                <section class="kt-auth-modal">
-                    <header class="kt-auth-header">
+                <div class="kt-auth-main kt-auth-main--scroll">
+                    <div class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
-                    </header>
-                    <div class="kt-auth-content">
+                    </div>
+                    <div class="kt-auth-content kt-auth-scroll" data-auth-tabs>
                         <nav class="kt-auth-tabs" aria-label="아이디 비밀번호 찾기">
-                            <a href="pw-01.html">아이디 찾기</a>
-                            <a href="pw-04.html" class="is-active">비밀번호 찾기</a>
+                            <a href="#" data-auth-tab="id" class="">아이디 찾기</a>
+                            <a href="#" data-auth-tab="password" class="is-active">비밀번호 찾기</a>
                         </nav>
-                        <div class="kt-auth-panel">
+                        <div class="kt-auth-panel" data-auth-panel="password" aria-hidden="false">
                             <div class="kt-auth-center">
                                 <span class="kt-auth-center__icon kt-auth-center__icon--done" aria-hidden="true"></span>
                                 <h2>비밀번호 변경 완료</h2>
-                                <p>비밀번호가 정상적으로 변경되었습니다.</p>
+                                <p>
+                                    비밀번호가 성공적으로 변경되어 보안을 위해 기존 로그인 세션이 모두 종료되었습니다.
+                                    새 비밀번호로 로그인해 주세요.
+                                </p>
                             </div>
                             <div class="kt-auth-actions">
-                                <div class="kt-auth-button-row">
-                                    <a href="login-01.html" class="kt-auth-button">로그인</a>
-                                </div>
+                                <div class="kt-auth-button-row"><a href="#" class="kt-auth-button">로그인</a></div>
                             </div>
                         </div>
+                        <div class="kt-auth-panel" data-auth-panel="id" hidden aria-hidden="true">
+                            <div class="kt-auth-center">
+                                <span class="kt-auth-center__icon kt-auth-center__icon--id" aria-hidden="true"></span>
+                                <h2>아이디 찾기</h2>
+                                <p>가입 시 등록한 이름과 이메일 주소로 아이디를 찾을 수 있습니다.</p>
+                            </div>
+                            <form class="kt-auth-form">
+                                <div class="kt-field">
+                                    <label class="kt-field__label" for="findName"
+                                        >이름 <span class="is-required">*</span></label
+                                    >
+                                    <span class="kt-input-field">
+                                        <input
+                                            type="text"
+                                            id="findName"
+                                            class="kt-input kt-input--52"
+                                            placeholder="가입 시 등록한 이름을 입력해 주세요"
+                                        />
+                                        <span class="kt-input-field__actions"
+                                            ><button
+                                                type="button"
+                                                class="kt-input-field__clear"
+                                                data-clear_input
+                                                aria-controls="findName"
+                                                aria-label="입력값 삭제"
+                                                hidden
+                                                aria-hidden="true"
+                                                tabindex="-1"
+                                            >
+                                                <img src="/assets/img/components/ico_delete.svg" alt="" /></button
+                                        ></span>
+                                    </span>
+                                </div>
+                                <div class="kt-field">
+                                    <label class="kt-field__label" for="findEmail"
+                                        >이메일 <span class="is-required">*</span></label
+                                    >
+                                    <span class="kt-input-field">
+                                        <input
+                                            type="email"
+                                            id="findEmail"
+                                            class="kt-input kt-input--52"
+                                            placeholder="your@email.com"
+                                        />
+                                        <span class="kt-input-field__actions"
+                                            ><button
+                                                type="button"
+                                                class="kt-input-field__clear"
+                                                data-clear_input
+                                                aria-controls="findEmail"
+                                                aria-label="입력값 삭제"
+                                                hidden
+                                                aria-hidden="true"
+                                                tabindex="-1"
+                                            >
+                                                <img src="/assets/img/components/ico_delete.svg" alt="" /></button
+                                        ></span>
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="kt-auth-actions"><a href="#" class="kt-auth-button">인증번호 발송</a></div>
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
-            <!--#include file="./include/_footer.html"-->
+            <div id="dim"></div>
         </div>
     </body>
 </html>

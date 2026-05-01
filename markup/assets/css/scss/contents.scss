@@ -667,6 +667,10 @@
             overflow-y: auto;
             @include kt-scrollbar;
         }
+
+        &--steps {
+            gap: 24px;
+        }
     }
 
     .kt-auth-tabs {
@@ -839,6 +843,15 @@
         flex-direction: column;
     }
 
+    // .kt-auth-top + .kt-auth-panel {
+    //     margin-top: 24px;
+    // }
+
+    .kt-auth-top + .kt-auth-panel--intro,
+    .kt-auth-top + .kt-auth-panel--otp {
+        margin-top: 40px;
+    }
+
     .kt-auth-center {
         @include flex(center, null);
         flex-direction: column;
@@ -902,87 +915,37 @@
         background-image: url('/assets/img/auth/ico_auth_signup.svg');
     }
 
+    .kt-auth-center + .kt-auth-form,
+    .kt-auth-center + .kt-auth-info-box {
+        margin-top: 40px;
+    }
+
+    .kt-auth-form + .kt-auth-note {
+        margin-top: 24px;
+    }
+
     .kt-auth-form {
         @include flex(null, null);
         flex-direction: column;
         gap: 24px;
     }
 
-    .kt-auth-field {
-        @include flex(null, null);
-        flex-direction: column;
-        gap: 8px;
-
-        label {
-            color: $kt-tertiary;
-            font-size: 13px;
-            font-weight: var(--fw-Medium);
-            line-height: 1.48;
-        }
-
-        .is-required {
-            color: $kt-red;
-        }
-
-        .kt-input {
-            height: 52px;
-            border-color: #8b8f97;
-            font-size: 15px;
-            font-weight: var(--fw-Medium);
-
-            &:focus,
-            &.is-focused {
-                border-color: #191a1c;
-                border-width: 2px;
-                box-shadow: none;
-                outline: 0;
-            }
-
-            &.is-error {
-                border-color: $kt-red;
-            }
-
-            &.is-complete {
-                border-color: #8b8f98;
-                color: $kt-primary;
-            }
-        }
-
+    .kt-auth-form .kt-field {
         .kt-input-field,
         .kt-password {
             width: 100%;
         }
 
-        .kt-input-field.has-value .kt-input {
-            padding-right: 56px;
+        .kt-field__label {
+            color: $kt-tertiary;
+            font-size: 13px;
+            font-weight: var(--fw-Medium);
         }
 
-        .kt-password {
-            .kt-input {
-                padding-right: 56px;
-            }
-
-            &.has-value .kt-input {
-                padding-right: 96px;
-            }
-        }
-
-        &.is-error {
-            .kt-input {
-                border-color: $kt-red;
-            }
-        }
-    }
-
-    .kt-auth-helper {
-        padding-left: 4px;
-        color: $kt-red;
-        font-size: 12px;
-        font-weight: var(--fw-Medium);
-        line-height: 1.48;
-
-        &--complete {
-            color: $kt-primary;
+        .kt-field__message {
+            padding-left: 4px;
+            font-size: 12px;
+            font-weight: var(--fw-Medium);
         }
     }
 
@@ -1141,15 +1104,22 @@
         }
     }
 
+    .kt-auth-info-box--signup {
+        .kt-auth-info-row {
+            gap: 24px;
+        }
+    }
+
     .kt-auth-verify {
         @include relative();
+
         .kt-input {
             padding-right: 112px;
         }
     }
 
     .kt-auth-verify__side {
-        @include absolute(right 8px bottom 4px);
+        @include absolute(top 31px right 8px);
         @include inline-flex(center, null);
         gap: 8px;
         height: 44px;

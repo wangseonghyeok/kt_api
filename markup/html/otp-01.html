@@ -7,18 +7,17 @@
 
     <body>
         <div id="wrap">
-            <!--#include file="./include/_header.html"-->
             <div class="kt-auth-modal">
-                <section class="kt-auth-modal">
-                    <header class="kt-auth-header">
+                <div class="kt-auth-main">
+                    <div class="kt-auth-header">
                         <h1 id="authTitle" class="kt-auth-title">KT API Link</h1>
                         <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
-                    </header>
-                    <div class="kt-auth-content">
+                    </div>
+                    <div class="kt-auth-content kt-auth-content--steps">
                         <div class="kt-auth-top">
                             <nav class="kt-auth-tabs" aria-label="로그인 메뉴">
-                                <a href="login-01.html" class="is-active">로그인</a>
-                                <a href="signup-01.html">회원가입</a>
+                                <a href="#" class="is-active">로그인</a>
+                                <a href="#">회원가입</a>
                             </nav>
                             <ol class="kt-auth-step" aria-label="로그인 단계">
                                 <li class="kt-auth-step__item is-done">
@@ -37,12 +36,14 @@
                                 <p>이메일로 발송된 6자리 코드를 입력해 주세요.</p>
                             </div>
                             <form class="kt-auth-form">
-                                <div class="kt-auth-field is-error kt-auth-verify">
-                                    <label for="otpCode">인증번호 <span class="is-required">*</span></label>
+                                <div class="kt-field error kt-auth-verify">
+                                    <label class="kt-field__label" for="otpCode"
+                                        >인증번호 <span class="is-required">*</span></label
+                                    >
                                     <input
                                         type="text"
                                         id="otpCode"
-                                        class="kt-input is-error"
+                                        class="kt-input kt-input--52"
                                         value="123456"
                                         inputmode="numeric"
                                     />
@@ -50,20 +51,20 @@
                                         <span class="kt-auth-timer">02:23</span>
                                         <button type="button" class="kt-auth-resend">재전송</button>
                                     </span>
-                                    <p class="kt-auth-helper">인증 코드가 올바르지 않습니다. 다시 확인해 주세요.</p>
+                                    <p class="kt-field__message">인증 코드가 올바르지 않습니다. 다시 확인해 주세요.</p>
                                 </div>
                             </form>
                             <div class="kt-auth-actions">
                                 <div class="kt-auth-button-row">
-                                    <a href="login-03.html" class="kt-auth-button kt-auth-button--secondary">이전</a>
-                                    <a href="Ma-001.html" class="kt-auth-button">로그인</a>
+                                    <a href="#" class="kt-auth-button kt-auth-button--secondary">이전</a>
+                                    <a href="#" class="kt-auth-button">로그인</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-            <!--#include file="./include/_footer.html"-->
+            <div id="dim"></div>
         </div>
     </body>
 </html>

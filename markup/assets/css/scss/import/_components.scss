@@ -692,11 +692,21 @@
     line-height: 1.48;
 }
 
+.kt-field .is-required,
+.kt-field__required {
+    color: var(--kt-red);
+}
+
 .kt-field__message {
     display: none;
     color: var(--kt-red);
     font-size: 13px;
     line-height: 1.48;
+
+    &--complete {
+        display: block;
+        color: var(--kt-primary);
+    }
 }
 
 .kt-input,
@@ -2429,24 +2439,16 @@
         border-width: 2px;
         box-shadow: none;
     }
-
-    &.is-error {
-        border-color: #e0282f;
-        border-width: 1px;
-    }
-
-    &.is-error:hover:not(:disabled):not([readonly]) {
-        border-color: #e0282f;
-    }
-
-    &.is-error.is-focused {
-        border-color: #e0282f;
-        // border-width: 2px;
-    }
 }
 
 .kt-input--56 {
     height: 56px;
+    padding: 0 16px;
+    font-size: 15px;
+}
+
+.kt-input--52 {
+    height: 52px;
     padding: 0 16px;
     font-size: 15px;
 }

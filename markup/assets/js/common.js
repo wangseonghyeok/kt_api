@@ -319,12 +319,52 @@ const ui = {
                         items.hide();
                         $(`[data-sort="${btnCtrl}"]`).show();
                     }
-                    console.log(btnCtrl);
                 });
             }
         });
     },
     component: () => {
+        document.querySelectorAll('[data-auth-tabs]').forEach(tabWrap => {
+            const tabLinks = tabWrap.querySelectorAll('[data-auth-tab]');
+            const tabPanels = tabWrap.querySelectorAll('[data-auth-panel]');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const targetName = link.dataset.authTab;
+                    const targetPanel = tabWrap.querySelector(`[data-auth-panel="${targetName}"]`);
+
+                    tabLinks.forEach(item => {
+                        item.classList.toggle('is-active', item === link);
+                    });
+
+                    if (!targetPanel) {
+                        return;
+                    }
+
+                    tabPanels.forEach(panel => {
+                        const isTarget = panel === targetPanel;
+
+                        panel.hidden = !isTarget;
+                        panel.setAttribute('aria-hidden', String(!isTarget));
+                    });
+                });
+            });
+        });
+
+        document.querySelectorAll('.kt-auth-methods').forEach(methodWrap => {
+            methodWrap.querySelectorAll('.kt-auth-method[href="#"]').forEach(method => {
+                method.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    methodWrap.querySelectorAll('.kt-auth-method').forEach(item => {
+                        item.classList.toggle('is-active', item === method);
+                    });
+                });
+            });
+        });
+
         document.querySelectorAll('.kt-dropdown--check').forEach(drop => {
             const trigger = drop.querySelector('[data-dropdown_trg]');
             const items = drop.querySelectorAll('input[type="checkbox"]');
@@ -836,9 +876,20 @@ const ui = {
         (() => {
             document.querySelectorAll('a[href^="#"]').forEach(anc => {
                 anc.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        return;
+                    }
+
                     e.preventDefault();
 
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (!target) {
+                        return;
+                    }
+
+                    target.scrollIntoView({
                         behavior: 'smooth',
                     });
                 });
