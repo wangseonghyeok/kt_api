@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+    </head>
+
+    <body class="kt-works-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-works-main">
+                <section class="kt-works-header">
+                    <div class="kt-works-header__title">
+                        <h1>My Workspaces</h1>
+                        <p>내가 속한 전체 워크스페이스 목록</p>
+                    </div>
+                    <nav class="kt-works-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-works-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-works-path__separator" aria-hidden="true"></span>
+                        <p>My Workspaces</p>
+                        <span class="kt-works-path__separator" aria-hidden="true"></span>
+                        <strong>My Workspaces</strong>
+                    </nav>
+                </section>
+
+                <!--#include file="./include/_works_search_default.html"-->
+
+                <section class="kt-works-list" aria-label="My Workspaces 목록">
+                    <div class="kt-works-title">
+                        <div class="kt-works-title__left">
+                            <strong class="kt-works-count">전체 2000 건</strong>
+                        </div>
+                        <a href="#" class="kt-btn kt-btn--works-create">
+                            <span class="kt-btn__svg kt-btn__svg--plus" aria-hidden="true"></span>
+                            Create Workspace
+                        </a>
+                    </div>
+                    <div class="kt-works-table-area">
+                        <!--#include file="./include/_works_table_full.html"-->
+                        <!--#include file="./include/_works_pagination_full.html"-->
+                    </div>
+                </section>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -1013,7 +1013,7 @@ KT API Link 연동 설명을 입력합니다.
                         </p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-workspace-filter">
-                                <label for="workspaceNameSearch">워크스페이스 이름, ID, 설명</label>
+                                <p>워크스페이스 이름, ID, 설명</p>
                                 <div class="kt-search">
                                     <input
                                         type="text"
@@ -1424,6 +1424,331 @@ KT API Link 연동 설명을 입력합니다.
                             My Workspaces 목록 화면 기준 40px row, column grid, 내부 scrollbar, pagination을 함께
                             제공합니다.
                         </p>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-component-card kt-component-card--works">
+                                <h3>My Workspaces Search + Table</h3>
+                                <div class="kt-works-component-preview">
+                                    <section
+                                        class="kt-works-search kt-works-search--demo"
+                                        aria-label="워크스페이스 검색"
+                                    >
+                                        <div class="kt-works-search__row">
+                                            <p>워크스페이스 이름, ID, 설명</p>
+                                            <div class="kt-works-search__controls">
+                                                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+                                                    <div class="kt-prompt__field">
+                                                        <input
+                                                            type="text"
+                                                            id="componentWorkspaceKeyword"
+                                                            class="kt-input kt-input--40"
+                                                            placeholder="워크스페이스 이름으로 검색하세요"
+                                                            data-prompt_trg
+                                                            aria-controls="componentWorkspacePromptMenu"
+                                                            aria-expanded="false"
+                                                            autocomplete="off"
+                                                        />
+                                                        <span class="kt-prompt__actions">
+                                                            <button
+                                                                type="button"
+                                                                data-clear_input
+                                                                aria-controls="componentWorkspaceKeyword"
+                                                                aria-label="검색어 삭제"
+                                                                hidden
+                                                            >
+                                                                <img
+                                                                    src="./assets/img/components/ico_delete.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                            <button type="button" aria-label="검색">
+                                                                <img
+                                                                    src="./assets/img/components/ico_search.svg"
+                                                                    alt=""
+                                                                />
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="kt-prompt__menu"
+                                                        id="componentWorkspacePromptMenu"
+                                                        data-prompt_menu
+                                                        role="listbox"
+                                                    >
+                                                        <ul class="kt-prompt__workspace-list">
+                                                            <li
+                                                                role="option"
+                                                                tabindex="-1"
+                                                                aria-selected="false"
+                                                                data-search-keywords="A0001 LG유플러스_쿠폰 LG유플러스 쿠폰"
+                                                            >
+                                                                <span
+                                                                    class="kt-prompt__search-icon"
+                                                                    aria-hidden="true"
+                                                                ></span>
+                                                                <strong>A0001</strong>
+                                                                <span>LG유플러스_쿠폰</span>
+                                                            </li>
+                                                            <li
+                                                                role="option"
+                                                                tabindex="-1"
+                                                                aria-selected="false"
+                                                                data-search-keywords="M0001 하나로소프트_쿠폰서비스 하나로소프트 쿠폰"
+                                                            >
+                                                                <span
+                                                                    class="kt-prompt__search-icon"
+                                                                    aria-hidden="true"
+                                                                ></span>
+                                                                <strong>M0001</strong>
+                                                                <span>하나로소프트_쿠폰서비스</span>
+                                                            </li>
+                                                            <li
+                                                                role="option"
+                                                                tabindex="-1"
+                                                                aria-selected="false"
+                                                                data-search-keywords="A0003 카카오_메시지연동 카카오 메시지"
+                                                            >
+                                                                <span
+                                                                    class="kt-prompt__search-icon"
+                                                                    aria-hidden="true"
+                                                                ></span>
+                                                                <strong>A0003</strong>
+                                                                <span>카카오_메시지연동</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="kt-works-dropdowns">
+                                                    <div
+                                                        class="kt-dropdown kt-dropdown--works selectbox"
+                                                        data-dropdown_wrap
+                                                    >
+                                                        <button type="button" data-dropdown_trg>All Status</button>
+                                                        <div data-dropdown_menu>
+                                                            <ul>
+                                                                <li>
+                                                                    <button type="button" aria-current="true">
+                                                                        All Status
+                                                                    </button>
+                                                                </li>
+                                                                <li><button type="button">Draft</button></li>
+                                                                <li><button type="button">Dev</button></li>
+                                                                <li><button type="button">Prod</button></li>
+                                                                <li><button type="button">Expired</button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="kt-dropdown kt-dropdown--works selectbox"
+                                                        data-dropdown_wrap
+                                                    >
+                                                        <button type="button" data-dropdown_trg>All Type</button>
+                                                        <div data-dropdown_menu>
+                                                            <ul>
+                                                                <li>
+                                                                    <button type="button" aria-current="true">
+                                                                        All Type
+                                                                    </button>
+                                                                </li>
+                                                                <li><button type="button">API</button></li>
+                                                                <li><button type="button">OAuth</button></li>
+                                                                <li><button type="button">MCP</button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="kt-dropdown kt-dropdown--works selectbox"
+                                                        data-dropdown_wrap
+                                                    >
+                                                        <button type="button" data-dropdown_trg>All Issue</button>
+                                                        <div data-dropdown_menu>
+                                                            <ul>
+                                                                <li>
+                                                                    <button type="button" aria-current="true">
+                                                                        All Issue
+                                                                    </button>
+                                                                </li>
+                                                                <li><button type="button">승인대기</button></li>
+                                                                <li><button type="button">반려</button></li>
+                                                                <li><button type="button">Renew Rejected</button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-works-search__row">
+                                            <p>API 검색(OIF_숫자)</p>
+                                            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+                                                <div class="kt-prompt__field">
+                                                    <input
+                                                        type="text"
+                                                        id="componentApiKeyword"
+                                                        class="kt-input kt-input--40"
+                                                        placeholder="구독중인 API를 사용하는 워크스페이스 찾기 - OIF_숫자 3자 이상 입력하세요."
+                                                        data-prompt_trg
+                                                        aria-controls="componentApiPromptMenu"
+                                                        aria-expanded="false"
+                                                        autocomplete="off"
+                                                    />
+                                                    <span class="kt-prompt__actions">
+                                                        <button
+                                                            type="button"
+                                                            data-clear_input
+                                                            aria-controls="componentApiKeyword"
+                                                            aria-label="검색어 삭제"
+                                                            hidden
+                                                        >
+                                                            <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                        </button>
+                                                        <button type="button" aria-label="API 검색">
+                                                            <img src="./assets/img/components/ico_search.svg" alt="" />
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="kt-prompt__menu"
+                                                    id="componentApiPromptMenu"
+                                                    data-prompt_menu
+                                                    data-prompt-visible-count="5"
+                                                    role="listbox"
+                                                >
+                                                    <ul class="kt-prompt__api-list">
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_113 쿠폰 쿠폰발급"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_113</strong>
+                                                            <span>쿠폰발급</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1130 쿠폰 쿠폰상태조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1130</strong>
+                                                            <span>쿠폰상태조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1131 쿠폰 쿠폰목록조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1131</strong>
+                                                            <span>쿠폰목록조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1132 쿠폰 쿠폰 패키지 조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1132</strong>
+                                                            <span>쿠폰 패키지 조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1133 쿠폰 쿠폰상세조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1133</strong>
+                                                            <span>쿠폰상세조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1134 쿠폰 쿠폰사용처조회"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1134</strong>
+                                                            <span>쿠폰사용처조회</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1135 쿠폰 쿠폰취소"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1135</strong>
+                                                            <span>쿠폰취소</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1136 쿠폰 쿠폰발급이력"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1136</strong>
+                                                            <span>쿠폰발급이력</span>
+                                                        </li>
+                                                        <li
+                                                            role="option"
+                                                            tabindex="-1"
+                                                            aria-selected="false"
+                                                            data-search-keywords="OIF_1137 쿠폰 쿠폰검증"
+                                                        >
+                                                            <span
+                                                                class="kt-prompt__search-icon"
+                                                                aria-hidden="true"
+                                                            ></span>
+                                                            <strong>OIF_1137</strong>
+                                                            <span>쿠폰검증</span>
+                                                        </li>
+                                                    </ul>
+                                                    <p
+                                                        class="kt-prompt__foot"
+                                                        data-prompt_foot
+                                                        data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요"
+                                                        hidden
+                                                        aria-hidden="true"
+                                                    ></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div class="kt-works-table-area">
+                                        <!--#include file="./include/_works_table_full.html"-->
+                                        <!--#include file="./include/_works_pagination_full.html"-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-table kt-table--figma kt-scrollbar" role="table">
                                 <ul role="rowgroup">

@@ -561,12 +561,14 @@ const ui = {
             const options = menu ? menu.querySelectorAll('[role="option"]') : [];
             const foot = menu ? menu.querySelector('[data-prompt_foot]') : null;
             const clearButton = input ? prompt.querySelector(`[data-clear_input][aria-controls="${input.id}"]`) : null;
+            const visibleCount = Number(prompt.dataset.promptVisibleCount || menu?.dataset.promptVisibleCount || 0);
 
             if (!menu || !triggers.length) {
                 return;
             }
 
             const hasKeyword = () => input && input.value.trim().length > 0;
+            const shouldShowAllOptions = () => input && prompt.hasAttribute('data-prompt-show-all') && !hasKeyword();
             const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden);
             const getSelectedOption = () =>
                 getVisibleOptions().find(option => option.classList.contains('is-selected'));
@@ -597,7 +599,7 @@ const ui = {
             };
 
             const openPrompt = () => {
-                if (input && !hasKeyword()) {
+                if (input && !hasKeyword() && !shouldShowAllOptions()) {
                     closePrompt(prompt);
                     return;
                 }
@@ -627,14 +629,16 @@ const ui = {
                     return;
                 }
 
-                const shouldShow = matchCount >= 3;
+                const extraCount = visibleCount > 0 ? Math.max(matchCount - visibleCount, 0) : matchCount;
+                const shouldShow = visibleCount > 0 ? extraCount > 0 : matchCount >= 3;
                 const message = foot.dataset.promptFootText || '검색어를 더 입력해 결과를 줄여보세요';
+                const displayCount = foot.dataset.promptFootCount || extraCount;
 
                 foot.hidden = !shouldShow;
                 foot.setAttribute('aria-hidden', String(!shouldShow));
 
                 if (shouldShow) {
-                    foot.textContent = `${message} (${matchCount}개 더 있음)`;
+                    foot.textContent = `${message} (${displayCount}개 더 있음)`;
                 }
             };
 
@@ -645,10 +649,13 @@ const ui = {
                 }
 
                 const keyword = input.value.trim().toLowerCase();
+                const showAllOptions = shouldShowAllOptions();
                 let matchCount = 0;
 
                 options.forEach(option => {
-                    const isMatched = keyword.length > 0 && option.textContent.trim().toLowerCase().includes(keyword);
+                    const optionText = option.dataset.searchKeywords || option.textContent;
+                    const isMatched =
+                        showAllOptions || (keyword.length > 0 && optionText.trim().toLowerCase().includes(keyword));
 
                     if (isMatched) {
                         matchCount += 1;
@@ -670,7 +677,7 @@ const ui = {
 
                 const visibleOptions = getVisibleOptions();
 
-                if (keyword.length && visibleOptions.length && !getSelectedOption()) {
+                if ((keyword.length || showAllOptions) && visibleOptions.length && !getSelectedOption()) {
                     highlightOption(visibleOptions[0]);
                 }
 
@@ -681,7 +688,7 @@ const ui = {
                 filterOptions();
                 syncClearButton();
 
-                if (hasKeyword() && getVisibleOptions().length) {
+                if ((hasKeyword() || shouldShowAllOptions()) && getVisibleOptions().length) {
                     openPrompt();
                 } else {
                     closePrompt(prompt);

@@ -1,0 +1,104 @@
+<section class="kt-works-search" aria-label="워크스페이스 검색">
+    <div class="kt-works-search__row">
+        <p>워크스페이스 이름, ID, 설명</p>
+        <div class="kt-works-search__controls">
+            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+                <div class="kt-prompt__field">
+                    <input
+                        type="text"
+                        id="workspaceKeyword"
+                        class="kt-input kt-input--40"
+                        placeholder="워크스페이스 이름으로 검색하세요"
+                        data-prompt_trg
+                        aria-controls="workspacePromptMenu"
+                        aria-expanded="false"
+                        autocomplete="off"
+                    />
+                    <span class="kt-prompt__actions">
+                        <button
+                            type="button"
+                            data-clear_input
+                            aria-controls="workspaceKeyword"
+                            aria-label="검색어 삭제"
+                            hidden
+                        >
+                            <img src="./assets/img/components/ico_delete.svg" alt="" />
+                        </button>
+                        <button type="button" aria-label="검색">
+                            <img src="./assets/img/components/ico_search.svg" alt="" />
+                        </button>
+                    </span>
+                </div>
+                <!--#include file="./_works_workspace_prompt_menu.html"-->
+            </div>
+            <div class="kt-works-dropdowns">
+                <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
+                    <button type="button" data-dropdown_trg aria-expanded="false">All Status</button>
+                    <div data-dropdown_menu>
+                        <ul>
+                            <li><button type="button" aria-current="true">All Status</button></li>
+                            <li><button type="button">Draft</button></li>
+                            <li><button type="button">Dev</button></li>
+                            <li><button type="button">Prod</button></li>
+                            <li><button type="button">Expired</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
+                    <button type="button" data-dropdown_trg aria-expanded="false">All Type</button>
+                    <div data-dropdown_menu>
+                        <ul>
+                            <li><button type="button" aria-current="true">All Type</button></li>
+                            <li><button type="button">API</button></li>
+                            <li><button type="button">OAuth</button></li>
+                            <li><button type="button">MCP</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
+                    <button type="button" data-dropdown_trg aria-expanded="false">All Issue</button>
+                    <div data-dropdown_menu>
+                        <ul>
+                            <li><button type="button" aria-current="true">All Issue</button></li>
+                            <li><button type="button">승인대기</button></li>
+                            <li><button type="button">반려</button></li>
+                            <li><button type="button">Renew Rejected</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kt-works-search__row">
+        <p>API 검색(OIF_숫자)</p>
+        <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
+            <div class="kt-prompt__field">
+                <input
+                    type="text"
+                    id="workspaceApiKeyword"
+                    class="kt-input kt-input--40"
+                    placeholder="구독중인 API를 사용하는 워크스페이스 찾기 - OIF_숫자 3자 이상 입력하세요."
+                    data-prompt_trg
+                    aria-controls="workspaceApiPromptMenu"
+                    aria-expanded="false"
+                    autocomplete="off"
+                />
+                <span class="kt-prompt__actions">
+                    <button
+                        type="button"
+                        data-clear_input
+                        aria-controls="workspaceApiKeyword"
+                        aria-label="검색어 삭제"
+                        hidden
+                    >
+                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                    </button>
+                    <button type="button" aria-label="API 검색">
+                        <img src="./assets/img/components/ico_search.svg" alt="" />
+                    </button>
+                </span>
+            </div>
+            <!--#include file="./_works_api_prompt_menu.html"-->
+        </div>
+    </div>
+</section>

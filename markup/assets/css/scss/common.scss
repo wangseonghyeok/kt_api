@@ -55,6 +55,7 @@ html {
     min-height: var(--window-inner-height);
     @include flex(null, null);
     flex-direction: column;
+    justify-content: space-between;
     &.pc-only {
         min-width: 1480px;
         width: 100%;
@@ -75,7 +76,6 @@ html {
     margin: 0 auto;
 }
 
-//  20260428 수정
 .popup {
     display: none;
     @include fixed(top 0 right 0 bottom 0 left 0);
