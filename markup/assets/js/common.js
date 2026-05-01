@@ -277,7 +277,7 @@ const ui = {
         $('[data-tab_wrap]').each(function () {
             const tabWrap = $(this);
             const panels = tabWrap.find('[role="tabpanel"]');
-            const btn = tabWrap.find('[data-tab_btn]>button');
+            const btn = tabWrap.find('[data-tab_btn]>button, [data-tab_btn]>a');
             const tabDropBtn = tabWrap.find('.tab-drop-btn');
             const selectText = tabWrap.find('[aria-selected="true"]').text();
             tabDropBtn.text(selectText);
@@ -324,6 +324,18 @@ const ui = {
         });
     },
     component: () => {
+        document.querySelectorAll('.kt-auth-tabs').forEach(tabWrap => {
+            tabWrap.querySelectorAll('a[href="#"]').forEach(tab => {
+                tab.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    tabWrap.querySelectorAll('a').forEach(item => {
+                        item.classList.toggle('is-active', item === tab);
+                    });
+                });
+            });
+        });
+
         document.querySelectorAll('[data-auth-tabs]').forEach(tabWrap => {
             const tabLinks = tabWrap.querySelectorAll('[data-auth-tab]');
             const tabPanels = tabWrap.querySelectorAll('[data-auth-panel]');
@@ -354,12 +366,23 @@ const ui = {
         });
 
         document.querySelectorAll('.kt-auth-methods').forEach(methodWrap => {
+            const authContent = methodWrap.closest('.kt-auth-content');
+            const methodPanels = authContent ? authContent.querySelectorAll('.kt-auth-panels > li') : [];
+
             methodWrap.querySelectorAll('.kt-auth-method[href="#"]').forEach(method => {
                 method.addEventListener('click', event => {
                     event.preventDefault();
 
                     methodWrap.querySelectorAll('.kt-auth-method').forEach(item => {
                         item.classList.toggle('is-active', item === method);
+                    });
+
+                    if (!methodPanels.length || !method.dataset.authMethod) {
+                        return;
+                    }
+
+                    methodPanels.forEach(panel => {
+                        panel.classList.toggle('is-active', panel.dataset.authPanel === method.dataset.authMethod);
                     });
                 });
             });
