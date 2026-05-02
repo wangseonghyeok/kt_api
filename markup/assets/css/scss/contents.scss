@@ -925,14 +925,24 @@
                 font-weight: var(--fw-SemiBold);
             }
 
-            &.is-active,
-            &.is-done {
+            &.is-active {
                 color: #00a39c;
 
                 span {
                     border-color: #00a39c;
                     background: #00a39c;
                     color: #fff;
+                }
+            }
+
+            &.is-done {
+                color: #61646b;
+
+                span {
+                    border-color: #c7cad1;
+                    background: #c7cad1 url('../img/components/ico_check_white.svg') 50% 50% / 16px 16px no-repeat;
+                    color: transparent;
+                    font-size: 0;
                 }
             }
         }
@@ -1431,7 +1441,7 @@
             border: 0;
             border-radius: 7px;
             background: transparent;
-            color: $kt-secondary;
+            color: #6f737b;
 
             &::before {
                 content: '';
@@ -1455,6 +1465,7 @@
         }
 
         &__submit::before {
+            background: #191a1b;
             -webkit-mask: url('../img/components/ico_search.svg') 50% 50% / 20px 20px no-repeat;
             mask: url('../img/components/ico_search.svg') 50% 50% / 20px 20px no-repeat;
         }
@@ -1597,9 +1608,9 @@
             }
 
             .kt-newwork-search-icon {
-                background: $kt-primary;
-                -webkit-mask: url('../img/components/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
-                mask: url('../img/components/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
+                background: #adb1b9;
+                -webkit-mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
+                mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
             }
         }
     }
@@ -1680,7 +1691,7 @@
         th,
         td {
             height: 48px;
-            border-bottom: 1px solid $kt-line;
+            border-bottom: 1px solid #d5d8dd;
             font-size: 15px;
             line-height: 1.48;
             text-align: left;
@@ -1691,16 +1702,17 @@
             width: 130px;
             padding: 0 16px;
             background: #f8f9fa;
-            color: $kt-tertiary;
+            color: #55585d;
             font-weight: var(--fw-Medium);
         }
 
         td {
             padding: 0 16px;
+            border-left: 1px solid #d5d8dd;
             color: $kt-primary;
             font-weight: var(--fw-Regular);
 
-            > span:not(.kt-newwork-tag) {
+            > span:not(.kt-newwork-tag):not(.kt-newwork-review-person) {
                 margin-left: 8px;
                 color: $kt-tertiary;
             }
@@ -1715,34 +1727,58 @@
         }
     }
 
+    .kt-newwork-review-person {
+        @include inline-flex(center, null);
+        gap: 8px;
+        margin-right: 8px;
+        color: $kt-primary;
+        vertical-align: top;
+
+        strong {
+            font-weight: var(--fw-Bold);
+        }
+
+        em {
+            color: $kt-primary;
+            font-style: normal;
+            font-weight: var(--fw-Regular);
+            line-height: 1.58;
+        }
+
+        .kt-newwork-tag {
+            margin-left: 0;
+            margin-right: -4px;
+        }
+    }
+
     .kt-newwork-security {
         min-height: 139px;
         padding: 12px 16px;
-        border: 1px solid #eeeff2;
+        border: 1px solid #d5d8dd;
         border-radius: 8px;
-        background: #f8f9fa;
+        background: #fff;
 
         strong {
             @include flex(center, null);
             gap: 4px;
-            color: $kt-primary;
-            font-size: 14px;
-            font-weight: var(--fw-SemiBold);
+            color: #e0282f;
+            font-size: 15px;
+            font-weight: var(--fw-Bold);
             line-height: 1.48;
         }
 
         p {
             margin-top: 12px;
-            color: #61646b;
+            color: #6f737b;
             font-size: 14px;
-            font-weight: var(--fw-Medium);
+            font-weight: var(--fw-Regular);
             line-height: 1.58;
         }
 
         &__icon {
             width: 16px;
             height: 16px;
-            background: #bb1b21;
+            background: #e0282f;
             -webkit-mask: url('../img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
             mask: url('../img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
         }

@@ -3261,7 +3261,7 @@
 
     tbody {
         display: block;
-        height: 480px;
+        height: 481px;
         overflow-x: hidden;
         overflow-y: auto;
         background: #fff;
@@ -3274,11 +3274,11 @@
     }
 
     tbody::-webkit-scrollbar-track {
-        background: transparent;
+        background: #fff;
     }
 
     tbody::-webkit-scrollbar-thumb {
-        border: 4px solid transparent;
+        border: 4px solid #fff;
         border-radius: 999px;
         background: #8b8f97;
         background-clip: content-box;
