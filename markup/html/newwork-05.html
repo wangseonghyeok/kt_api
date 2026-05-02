@@ -50,11 +50,6 @@
                             ></textarea>
                             <i>0/0</i>
                         </label>
-                        <label class="kt-newwork-field">
-                            <span>Company</span>
-                            <input type="text" class="kt-input kt-input--52" value="하나로소프트" readonly />
-                            <small class="kt-newwork-field__help">LDAP 계정 소속 Company가 자동으로 매핑됩니다</small>
-                        </label>
                         <section class="kt-newwork-domain">
                             <h3>연동 도메인 유형</h3>
                             <div class="kt-newwork-domain__box">
@@ -70,6 +65,16 @@
                                 </ul>
                             </div>
                         </section>
+                        <label class="kt-newwork-field kt-newwork-field--disabled-map">
+                            <span>Company</span>
+                            <input
+                                type="text"
+                                class="kt-input kt-input--52 kt-input--disabled-map"
+                                value="하나로소프트"
+                                disabled
+                            />
+                            <small class="kt-newwork-field__help">LDAP 계정 소속 Company가 자동으로 매핑됩니다</small>
+                        </label>
                     </section>
                     <div class="kt-newwork-actions">
                         <button type="button" class="kt-newwork-button kt-newwork-button--secondary">취소</button>

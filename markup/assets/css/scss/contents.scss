@@ -1141,6 +1141,35 @@
             font-weight: var(--fw-Medium);
             line-height: 1.48;
         }
+
+        &--disabled-map {
+            .kt-input:disabled,
+            .kt-input[readonly] {
+                border-width: 1px;
+                border-color: #8b8f98;
+                background: #f3f4f6;
+                color: $kt-primary;
+                -webkit-text-fill-color: $kt-primary;
+                box-shadow: none;
+                cursor: default;
+                opacity: 1;
+                pointer-events: none;
+            }
+
+            .kt-input:disabled:hover,
+            .kt-input:disabled:focus,
+            .kt-input[readonly]:hover,
+            .kt-input[readonly]:focus {
+                border-width: 1px;
+                border-color: #8b8f98;
+                box-shadow: none;
+            }
+
+            .kt-newwork-field__help {
+                padding-left: 4px;
+                color: $kt-tertiary;
+            }
+        }
     }
 
     .kt-newwork-domain {
@@ -1557,26 +1586,75 @@
             }
 
             strong {
-                font-weight: var(--fw-Bold);
+                font-weight: var(--fw-Regular);
             }
 
             span {
                 white-space: nowrap;
             }
+
+            button.is-active strong,
+            button.is-selected strong {
+                font-weight: var(--fw-Bold);
+            }
         }
 
         &--service {
             .kt-newwork-search-menu__list {
-                max-height: 248px;
+                max-height: 152px;
                 overflow-y: auto;
             }
 
             button {
                 display: grid;
-                grid-template-columns: 24px minmax(90px, auto) minmax(110px, auto) minmax(74px, auto) minmax(104px, 1fr) 20px;
+                grid-template-columns: minmax(120px, auto) minmax(104px, auto) minmax(74px, auto) minmax(104px, 1fr) 20px;
                 gap: 16px;
                 align-items: center;
-                padding-right: 16px;
+                padding-right: 8px;
+            }
+
+            .kt-newwork-search-menu__service {
+                display: inline-flex;
+                gap: 8px;
+                align-items: center;
+                min-width: 0;
+            }
+
+            .kt-newwork-search-menu__service strong,
+            .kt-newwork-search-menu__code,
+            .kt-newwork-search-menu__owner,
+            .kt-newwork-search-menu__email {
+                font-weight: var(--fw-Regular);
+            }
+
+            .kt-newwork-search-menu__code {
+                color: $kt-tertiary;
+            }
+
+            .kt-newwork-search-menu__owner {
+                display: inline-flex;
+                gap: 6px;
+                align-items: center;
+                color: $kt-primary;
+            }
+
+            .kt-newwork-search-menu__email {
+                color: $kt-primary;
+            }
+
+            button.is-active,
+            button.is-selected {
+                .kt-newwork-search-menu__service strong,
+                .kt-newwork-search-menu__code {
+                    color: $kt-primary;
+                    font-weight: var(--fw-Bold);
+                }
+            }
+
+            .kt-newwork-search-icon {
+                background: #adb1b9;
+                -webkit-mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
+                mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
             }
         }
 
@@ -1620,9 +1698,9 @@
         width: 24px;
         height: 24px;
         flex: 0 0 24px;
-        background: $kt-secondary;
-        -webkit-mask: url('../img/components/ico_search.svg') 50% 50% / 20px 20px no-repeat;
-        mask: url('../img/components/ico_search.svg') 50% 50% / 20px 20px no-repeat;
+        background: #adb1b9;
+        -webkit-mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
+        mask: url('../img/contents/ico_search_16.svg') 50% 50% / 16px 16px no-repeat;
     }
 
     .kt-newwork-check {
