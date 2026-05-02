@@ -2402,7 +2402,7 @@
     }
 
     .kt-auth-verify__side {
-        @include absolute(top 31px right 8px);
+        @include absolute(top 31px right 16px);
         @include inline-flex(center, null);
         gap: 8px;
         height: 44px;

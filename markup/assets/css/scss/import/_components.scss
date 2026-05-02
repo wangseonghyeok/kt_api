@@ -3001,7 +3001,7 @@
 
     .kt-prompt__actions {
         top: 4px;
-        right: 4px;
+        right: 8px;
         gap: 0;
 
         button {
@@ -3028,20 +3028,25 @@
         right: 0;
         left: 0;
         margin-top: 8px;
+        padding: 8px;
         border: 0;
         box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 4px 4px rgba(19, 20, 21, 0.1);
+    }
+
+    #workspaceApiPromptMenu {
+        padding: 8px 8px 0;
     }
 
     .kt-prompt__api-list,
     .kt-prompt__workspace-list {
         max-height: 476px;
-        padding: 8px;
+        padding: 0;
         overflow-x: hidden;
         overflow-y: auto;
 
         li {
             grid-template-columns: 24px max-content minmax(0, 1fr);
-            gap: 8px 16px;
+            gap: 8px;
             min-height: 46px;
             padding: 0 8px;
             border-radius: 4px;
@@ -3056,30 +3061,47 @@
 
         strong {
             font-size: 15px;
-            font-weight: var(--fw-Bold);
+            font-weight: var(--fw-Regular);
         }
 
         span {
             font-size: 15px;
-            font-weight: var(--fw-Medium);
+            font-weight: var(--fw-Regular);
+        }
+
+        li.is-selected strong {
+            font-weight: var(--fw-Bold);
+        }
+
+        li > span:not(.kt-prompt__search-icon):last-child {
+            margin-left: 8px;
+            color: var(--kt-tertiary);
         }
     }
 
     .kt-prompt__foot {
+        @include flex(center, null);
+        gap: 4px;
+        height: 46px;
         min-height: 46px;
-        padding: 11px 16px;
-        border-top: 0;
-        color: var(--kt-secondary);
+        padding: 8px 16px;
+        box-sizing: border-box;
+        border-top: 1px solid var(--kt-line);
+        color: #6f737c;
         font-size: 15px;
+        line-height: 1.58;
+
+        strong {
+            color: var(--kt-primary);
+            font-weight: 700;
+        }
     }
 }
 
 .kt-prompt__search-icon {
     width: 24px;
     height: 24px;
-    background: var(--kt-secondary);
-    -webkit-mask: url('/assets/img/components/ico_search.svg') 50% 50% / 16px 16px no-repeat;
-    mask: url('/assets/img/components/ico_search.svg') 50% 50% / 16px 16px no-repeat;
+    background: url('/assets/img/components/ico_search_figma_16.svg') 50% 50% / 16px 16px no-repeat;
 }
 
 .kt-works-list {
@@ -3469,6 +3491,18 @@
     &--manager {
         background: #d9f2ff;
         color: #0049a3;
+    }
+}
+
+.kt-table-status {
+    font-weight: var(--fw-Medium);
+
+    &--pending {
+        color: #b85c00;
+    }
+
+    &--rejected {
+        color: #e0282f;
     }
 }
 

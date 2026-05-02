@@ -644,7 +644,10 @@ const ui = {
                 foot.setAttribute('aria-hidden', String(!shouldShow));
 
                 if (shouldShow) {
-                    foot.textContent = `${message} (${displayCount}개 더 있음)`;
+                    const count = document.createElement('strong');
+
+                    count.textContent = displayCount;
+                    foot.replaceChildren(`${message} (`, count, '개 더 있음)');
                 }
             };
 
