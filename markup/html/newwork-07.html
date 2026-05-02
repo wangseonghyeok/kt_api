@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-newwork-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-newwork-main">
+                <section class="kt-newwork-header">
+                    <div class="kt-newwork-header__title">
+                        <h1>새 워크스페이스 만들기</h1>
+                        <p>LDAP</p>
+                    </div>
+                    <!--#include file="./include/_newwork_path_create.html"-->
+                </section>
+                <div class="kt-newwork-shell">
+                    <ol class="kt-newwork-stepper kt-newwork-stepper--four" aria-label="워크스페이스 생성 단계">
+                        <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
+                        <li class="is-done"><span>02</span><strong>KT Service 선택</strong></li>
+                        <li class="is-active"><span>03</span><strong>멤버 설정</strong></li>
+                        <li><span>04</span><strong>확인 및 저장</strong></li>
+                    </ol>
+                    <section class="kt-newwork-form">
+                        <div class="kt-newwork-title">
+                            <h2>멤버 설정</h2>
+                            <p>워크스페이스에 참여할 멤버를 확인하고 추가하세요.</p>
+                        </div>
+                        <div class="kt-newwork-notice">
+                            <p>
+                                Owner(생성자)와 Manager(KT Service PO)은 자동 지정되며, 추가로 초대된 멤버는 Member
+                                역할로 등록됩니다.
+                            </p>
+                        </div>
+                        <section class="kt-newwork-member-group">
+                            <h3>Owner</h3>
+                            <ul class="kt-newwork-member-list">
+                                <li class="kt-newwork-member-row">
+                                    <div>
+                                        <strong>김하나</strong><span></span><em>hana.kim@hanarosoft.com</em><span></span
+                                        ><em>LDAP</em><span></span><em>하나로소프트</em>
+                                    </div>
+                                    <span class="kt-newwork-tag kt-newwork-tag--owner">Owner</span>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="kt-newwork-member-group">
+                            <h3>Manager</h3>
+                            <ul class="kt-newwork-member-list">
+                                <li class="kt-newwork-member-row">
+                                    <div>
+                                        <strong>최지훈</strong><span></span><em>minho.jo@kt.com</em><span></span
+                                        ><em>KT 메시지 서비스 PO</em>
+                                    </div>
+                                    <span class="kt-newwork-tag kt-newwork-tag--manager">Manager</span>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="kt-newwork-member-group">
+                            <h3>Member</h3>
+                            <ul
+                                class="kt-newwork-member-list kt-newwork-member-list--selected"
+                                data-newwork-selected-members
+                            >
+                                <li
+                                    class="kt-newwork-member-row kt-newwork-member-row--selected"
+                                    data-member-value="90000007@ktpartners.com"
+                                >
+                                    <div><strong>이상훈</strong><em>90000007@ktpartners.com</em></div>
+                                    <button type="button" class="kt-newwork-remove" data-newwork-member-remove>
+                                        <span class="blind">삭제</span>
+                                    </button>
+                                </li>
+                                <li
+                                    class="kt-newwork-member-row kt-newwork-member-row--selected"
+                                    data-member-value="Yoon.sy@kt.com"
+                                >
+                                    <div><strong>윤서연</strong><em>Yoon.sy@kt.com</em></div>
+                                    <button type="button" class="kt-newwork-remove" data-newwork-member-remove>
+                                        <span class="blind">삭제</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="kt-newwork-search" data-newwork-search data-newwork-search-type="member">
+                                <div class="kt-newwork-search__field">
+                                    <input
+                                        type="text"
+                                        class="kt-input kt-input--48"
+                                        placeholder="이름,사번 또는 이메일 검색"
+                                        aria-label="멤버 검색"
+                                    />
+                                    <button type="button" class="kt-newwork-search__clear" data-newwork-clear hidden>
+                                        <span class="blind">검색어 삭제</span>
+                                    </button>
+                                    <button type="button" class="kt-newwork-search__submit">
+                                        <span class="blind">검색</span>
+                                    </button>
+                                </div>
+                                <div class="kt-newwork-search-menu kt-newwork-search-menu--member" data-newwork-menu>
+                                    <div class="kt-newwork-search-menu__head">
+                                        <span>검색 결과</span>
+                                        <strong data-newwork-count>2</strong>
+                                        <span>건</span>
+                                    </div>
+                                    <ul class="kt-newwork-search-menu__list kt-scrollbar">
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이상훈"
+                                                data-meta="90000007@ktpartners.com"
+                                                data-search="이상훈 90000007@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이상훈</strong>
+                                                <span>90000007@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="윤서연"
+                                                data-meta="Yoon.sy@kt.com"
+                                                data-search="윤서연 Yoon.sy@kt.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>윤서연</strong>
+                                                <span>Yoon.sy@kt.com</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <div class="kt-newwork-actions">
+                        <button type="button" class="kt-newwork-button kt-newwork-button--secondary">이전</button>
+                        <button type="button" class="kt-newwork-button kt-newwork-button--primary">다음</button>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

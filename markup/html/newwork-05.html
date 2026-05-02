@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-newwork-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-newwork-main">
+                <section class="kt-newwork-header">
+                    <div class="kt-newwork-header__title">
+                        <h1>새 워크스페이스 만들기</h1>
+                        <p>LDAP</p>
+                    </div>
+                    <!--#include file="./include/_newwork_path_create.html"-->
+                </section>
+                <div class="kt-newwork-shell">
+                    <ol class="kt-newwork-stepper kt-newwork-stepper--four" aria-label="워크스페이스 생성 단계">
+                        <li class="is-active"><span>01</span><strong>기본 정보 입력</strong></li>
+                        <li><span>02</span><strong>KT Service 선택</strong></li>
+                        <li><span>03</span><strong>멤버 설정</strong></li>
+                        <li><span>04</span><strong>확인 및 저장</strong></li>
+                    </ol>
+                    <section class="kt-newwork-form">
+                        <div class="kt-newwork-title">
+                            <h2>기본 정보 입력</h2>
+                            <p>워크스페이스 이름과 설명을 입력하세요.</p>
+                        </div>
+                        <div class="kt-newwork-field" data-newwork-input>
+                            <label for="ldapWorkspaceName">Workspace Name <em>*</em></label>
+                            <div class="kt-newwork-input-control">
+                                <input
+                                    id="ldapWorkspaceName"
+                                    type="text"
+                                    class="kt-input kt-input--52"
+                                    placeholder="한글, 영문, 숫자, 공백 포함 2~50자 내외의 워크스페이스 이름을 입력해 주세요."
+                                />
+                                <button type="button" class="kt-newwork-input-clear" data-newwork-input-clear hidden>
+                                    <span class="blind">입력값 삭제</span>
+                                </button>
+                            </div>
+                        </div>
+                        <label class="kt-newwork-field kt-newwork-field--textarea">
+                            <span>Description <em>*</em></span>
+                            <textarea
+                                class="kt-textarea"
+                                placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."
+                            ></textarea>
+                            <i>0/0</i>
+                        </label>
+                        <label class="kt-newwork-field">
+                            <span>Company</span>
+                            <input type="text" class="kt-input kt-input--52" value="하나로소프트" readonly />
+                            <small class="kt-newwork-field__help">LDAP 계정 소속 Company가 자동으로 매핑됩니다</small>
+                        </label>
+                        <section class="kt-newwork-domain">
+                            <h3>연동 도메인 유형</h3>
+                            <div class="kt-newwork-domain__box">
+                                <ul>
+                                    <li>LDAP 계정은 공인망(Public IP) 기반의 외부 시스템 연동만 허용됩니다.</li>
+                                    <li>
+                                        하나의 API Key로 내부·외부를 동시에 사용할 수 없습니다. (정보보안실 보안 정책)
+                                    </li>
+                                    <li>
+                                        외부 시스템 연동이 필요한 경우
+                                        <a href="#">포털 관리자(apilink@kt.com)</a>에게 문의해 주세요.
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                    <div class="kt-newwork-actions">
+                        <button type="button" class="kt-newwork-button kt-newwork-button--secondary">취소</button>
+                        <button type="button" class="kt-newwork-button kt-newwork-button--primary">다음</button>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

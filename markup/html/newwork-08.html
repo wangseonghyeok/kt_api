@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-newwork-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-newwork-main">
+                <section class="kt-newwork-header">
+                    <div class="kt-newwork-header__title">
+                        <h1>새 워크스페이스 만들기</h1>
+                        <p>LDAP</p>
+                    </div>
+                    <!--#include file="./include/_newwork_path_create.html"-->
+                </section>
+                <div class="kt-newwork-shell">
+                    <ol class="kt-newwork-stepper kt-newwork-stepper--four" aria-label="워크스페이스 생성 단계">
+                        <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
+                        <li class="is-done"><span>02</span><strong>KT Service 선택</strong></li>
+                        <li class="is-done"><span>03</span><strong>멤버 설정</strong></li>
+                        <li class="is-active"><span>04</span><strong>확인 및 저장</strong></li>
+                    </ol>
+                    <section class="kt-newwork-form">
+                        <div class="kt-newwork-title">
+                            <h2>확인 및 저장</h2>
+                            <p>입력 내용을 확인하고 워크스페이스를 생성하세요.</p>
+                        </div>
+                        <section class="kt-newwork-section">
+                            <h3>기본 정보</h3>
+                            <table class="kt-newwork-review-table kt-newwork-review-table--wide-label">
+                                <caption>
+                                    워크스페이스 기본 정보
+                                </caption>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Workspace Name</th>
+                                        <td>하나로소프트_쿠폰서비스</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Description</th>
+                                        <td>쿠폰 발급 및 조회 서비스를 위한 외부 연동 워크스페이스</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Company</th>
+                                        <td>하나로소프트</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">연동 도메인 유형</th>
+                                        <td>Public IP</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">KT Service</th>
+                                        <td>KT멤버십</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Service Code</th>
+                                        <td>KT_SMS_003</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section class="kt-newwork-section">
+                            <h3>멤버</h3>
+                            <table class="kt-newwork-review-table kt-newwork-review-table--wide-label">
+                                <caption>
+                                    워크스페이스 멤버 정보
+                                </caption>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Owner</th>
+                                        <td>김철수 <span>kim.cs@hanaro.com</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Manager</th>
+                                        <td>조민호 <span>minho.jo@kt.com</span><span>KT Service PO 자동 지정</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Member</th>
+                                        <td>이상훈 <span>90000007@ktpartners.com</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section class="kt-newwork-security">
+                            <strong
+                                ><span class="kt-newwork-security__icon" aria-hidden="true"></span>보안 책임
+                                고지</strong
+                            >
+                            <p>
+                                본 워크스페이스에서 발급된 API Key는 외부에 노출되지 않도록 안전하게 관리해야 하며, 민감
+                                파라미터를 포함한 API는 사전 승인된 목적 외 사용이 금지되고 위반 시 서비스 이용이 즉시
+                                중단될 수 있습니다.
+                            </p>
+                            <label class="kt-newwork-checkbox">
+                                <input type="checkbox" />
+                                <span>위 내용을 확인하였으며, 책임 고지에 동의합니다.</span>
+                            </label>
+                        </section>
+                    </section>
+                    <div class="kt-newwork-actions">
+                        <button type="button" class="kt-newwork-button kt-newwork-button--secondary">이전</button>
+                        <button type="button" class="kt-newwork-button kt-newwork-button--primary">
+                            워크스페이스 생성
+                        </button>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

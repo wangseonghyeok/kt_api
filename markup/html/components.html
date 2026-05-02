@@ -2,6 +2,7 @@
 <html lang="ko">
     <head>
         <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
     </head>
 
     <body class="kt-component-page">
@@ -243,6 +244,7 @@
                         <h3 class="kt-icon-gallery__title">Basic</h3>
                         <ul class="kt-icon-gallery">
                             <li><span class="kt-icon-symbol kt-icon-symbol--search"></span>search</li>
+                            <li><span class="kt-icon-symbol kt-icon-symbol--delete"></span>delete</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--checked"></span>checked</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--add"></span>add</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--subtract"></span>subtract</li>
@@ -1941,6 +1943,103 @@ KT API Link 연동 설명을 입력합니다.
                             <li>OIF_1133 / 쿠폰 사용 이력 조회</li>
                             <li>OIF_1134 / 쿠폰 회수</li>
                         </ul>
+                    </section>
+
+                    <section class="kt-component-section" id="newwork">
+                        <h2>Create Workspace</h2>
+                        <p class="kt-component-desc">
+                            워크스페이스 생성 화면에서 반복 사용하는 유형 카드, 단계 표시, 검색 드롭다운, 확인 테이블
+                            패턴입니다.
+                        </p>
+                        <div class="kt-newwork-page kt-newwork-component-scope">
+                            <div class="kt-component-demo kt-component-demo--wide">
+                                <!--#include file="./include/_newwork_type_cards.html"-->
+                            </div>
+                            <div class="kt-component-demo kt-component-demo--wide">
+                                <div class="kt-newwork-component-form">
+                                    <ol
+                                        class="kt-newwork-stepper kt-newwork-stepper--four"
+                                        aria-label="워크스페이스 생성 단계"
+                                    >
+                                        <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
+                                        <li class="is-active"><span>02</span><strong>KT Service 선택</strong></li>
+                                        <li><span>03</span><strong>멤버 설정</strong></li>
+                                        <li><span>04</span><strong>확인 및 저장</strong></li>
+                                    </ol>
+                                    <section class="kt-newwork-section">
+                                        <h3>Workspace 입력 <em>*</em></h3>
+                                        <div class="kt-newwork-field" data-newwork-input>
+                                            <label for="componentWorkspaceName">Workspace Name <em>*</em></label>
+                                            <div class="kt-newwork-input-control">
+                                                <input
+                                                    id="componentWorkspaceName"
+                                                    type="text"
+                                                    class="kt-input kt-input--52"
+                                                    value="API Link Workspace"
+                                                    placeholder="워크스페이스 이름을 입력해 주세요."
+                                                />
+                                                <button
+                                                    type="button"
+                                                    class="kt-newwork-input-clear"
+                                                    data-newwork-input-clear
+                                                >
+                                                    <span class="blind">입력값 삭제</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <label class="kt-newwork-field kt-newwork-field--textarea">
+                                            <span>Description <em>*</em></span>
+                                            <textarea
+                                                class="kt-textarea"
+                                                placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."
+                                            ></textarea>
+                                            <i>0/0</i>
+                                        </label>
+                                        <label class="kt-newwork-field">
+                                            <span>Company</span>
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="하나로소프트"
+                                                readonly
+                                            />
+                                            <small class="kt-newwork-field__help">
+                                                계정 정보와 매핑되는 읽기 전용 입력 케이스입니다.
+                                            </small>
+                                        </label>
+                                    </section>
+                                    <section class="kt-newwork-section">
+                                        <h3>KTService 검색 <em>*</em></h3>
+                                        <div
+                                            class="kt-newwork-search"
+                                            data-newwork-search
+                                            data-newwork-search-type="service"
+                                        >
+                                            <div class="kt-newwork-search__field">
+                                                <input
+                                                    type="text"
+                                                    class="kt-input kt-input--48"
+                                                    placeholder="KT 서비스명 또는 Service Code 검색"
+                                                    aria-label="KT Service 검색"
+                                                />
+                                                <button
+                                                    type="button"
+                                                    class="kt-newwork-search__clear"
+                                                    data-newwork-clear
+                                                    hidden
+                                                >
+                                                    <span class="blind">검색어 삭제</span>
+                                                </button>
+                                                <button type="button" class="kt-newwork-search__submit">
+                                                    <span class="blind">검색</span>
+                                                </button>
+                                            </div>
+                                            <!--#include file="./include/_newwork_service_search_menu.html"-->
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <section class="kt-component-section" id="chart">

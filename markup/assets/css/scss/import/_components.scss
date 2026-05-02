@@ -1501,6 +1501,9 @@
     &--search {
         --kt-icon-mask: url('/assets/img/components/ico_search.svg');
     }
+    &--delete {
+        --kt-icon-mask: url('/assets/img/components/ico_delete.svg');
+    }
     &--checked,
     &--complete {
         --kt-icon-mask: url('/assets/img/components/ico_check.svg');
@@ -3031,7 +3034,7 @@
 
     .kt-prompt__api-list,
     .kt-prompt__workspace-list {
-        max-height: 468px;
+        max-height: 476px;
         padding: 8px;
         overflow-x: hidden;
         overflow-y: auto;
@@ -3405,7 +3408,7 @@
     font-size: 12px;
     font-weight: var(--fw-Medium);
     line-height: 1.48;
-    text-align: center;
+    text-align: left;
     pointer-events: none;
     white-space: normal;
     box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 4px 4px rgba(19, 20, 21, 0.1);

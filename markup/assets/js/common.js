@@ -833,6 +833,363 @@ const ui = {
             });
         });
     },
+    newwork: () => {
+        const searches = document.querySelectorAll('[data-newwork-search]');
+        const inputFields = document.querySelectorAll('[data-newwork-input]');
+
+        const syncInputClear = field => {
+            const input = field.querySelector('input');
+            const clear = field.querySelector('[data-newwork-input-clear]');
+            const hasValue = Boolean(input?.value.trim());
+
+            if (!clear) {
+                return;
+            }
+
+            clear.hidden = !hasValue;
+            clear.setAttribute('aria-hidden', String(!hasValue));
+            clear.setAttribute('tabindex', hasValue ? '0' : '-1');
+        };
+
+        inputFields.forEach(field => {
+            const input = field.querySelector('input');
+            const clear = field.querySelector('[data-newwork-input-clear]');
+
+            if (!input || !clear) {
+                return;
+            }
+
+            input.addEventListener('input', () => syncInputClear(field));
+            clear.addEventListener('click', event => {
+                event.preventDefault();
+                input.value = '';
+                syncInputClear(field);
+                input.focus();
+            });
+
+            syncInputClear(field);
+        });
+
+        const closeSearch = search => {
+            search.classList.remove('is-open');
+            search
+                .querySelectorAll('[data-newwork-option].is-active')
+                .forEach(option => option.classList.remove('is-active'));
+        };
+
+        const syncClear = search => {
+            const input = search.querySelector('input');
+            const clear = search.querySelector('[data-newwork-clear]');
+            const hasValue = Boolean(input?.value.trim());
+
+            if (!clear) {
+                return;
+            }
+
+            clear.hidden = !hasValue;
+            clear.setAttribute('aria-hidden', String(!hasValue));
+            clear.setAttribute('tabindex', hasValue ? '0' : '-1');
+        };
+
+        const getOptionData = option => {
+            const label = option.dataset.label || option.querySelector('strong')?.textContent.trim() || '';
+            const meta = option.dataset.meta || option.querySelector('span:last-child')?.textContent.trim() || '';
+
+            return { label, meta };
+        };
+
+        const createMemberRow = (label, meta) => {
+            const item = document.createElement('li');
+            const text = document.createElement('div');
+            const name = document.createElement('strong');
+            const divider = document.createElement('span');
+            const email = document.createElement('em');
+            const remove = document.createElement('button');
+            const blind = document.createElement('span');
+
+            item.className = 'kt-newwork-member-row kt-newwork-member-row--selected';
+            item.dataset.memberValue = meta || label;
+            name.textContent = label;
+            divider.setAttribute('aria-hidden', 'true');
+            email.textContent = meta;
+            remove.type = 'button';
+            remove.className = 'kt-newwork-remove';
+            remove.dataset.newworkMemberRemove = '';
+            blind.className = 'blind';
+            blind.textContent = '삭제';
+            text.append(name, divider, email);
+            remove.append(blind);
+            item.append(text, remove);
+
+            return item;
+        };
+
+        const syncMemberError = search => {
+            const selectedList = search
+                .closest('.kt-newwork-member-group')
+                ?.querySelector('[data-newwork-selected-members]');
+            const input = search.querySelector('input');
+            const hasMember = Boolean(selectedList?.children.length);
+            const hasKeyword = Boolean(input?.value.trim());
+            const shouldShowError = search.dataset.newworkSearchType === 'member' && !hasMember && !hasKeyword;
+
+            search.classList.toggle('is-error', shouldShowError);
+            input?.setAttribute('aria-invalid', String(shouldShowError));
+        };
+
+        const addSelectedMember = (search, option) => {
+            const selectedList = search
+                .closest('.kt-newwork-member-group')
+                ?.querySelector('[data-newwork-selected-members]');
+            const { label, meta } = getOptionData(option);
+            const value = meta || label;
+
+            if (!selectedList || !label) {
+                return;
+            }
+
+            const hasSameMember = Array.from(selectedList.children).some(item => item.dataset.memberValue === value);
+
+            if (!hasSameMember) {
+                selectedList.appendChild(createMemberRow(label, meta));
+            }
+
+            syncMemberError(search);
+        };
+
+        const updateSelectedService = (search, option) => {
+            const selectedService = search
+                .closest('.kt-newwork-form')
+                ?.querySelector('[data-newwork-selected-service]');
+
+            if (!selectedService) {
+                return;
+            }
+
+            ['service', 'code', 'po', 'email'].forEach(key => {
+                const target = selectedService.querySelector(`[data-service-value="${key}"]`);
+                const value = option.dataset[key];
+
+                if (target && value) {
+                    target.textContent = value;
+                }
+            });
+        };
+
+        const filterOptions = search => {
+            const input = search.querySelector('input');
+            const menu = search.querySelector('[data-newwork-menu]');
+            const count = search.querySelector('[data-newwork-count]');
+            const options = menu ? Array.from(menu.querySelectorAll('[data-newwork-option]')) : [];
+            const minLength = Number(search.dataset.minLength || 1);
+            const keyword = input?.value.trim().toLowerCase() || '';
+
+            if (keyword.length < minLength) {
+                options.forEach(option => {
+                    option.closest('li').hidden = true;
+                    option.classList.remove('is-active');
+                });
+                if (count) count.textContent = '0';
+                return [];
+            }
+
+            const visibleOptions = options.filter(option => {
+                const searchText = (option.dataset.search || option.textContent || '').toLowerCase();
+                const isVisible = searchText.includes(keyword);
+
+                option.closest('li').hidden = !isVisible;
+                if (!isVisible) {
+                    option.classList.remove('is-active');
+                }
+
+                return isVisible;
+            });
+
+            if (count) {
+                count.textContent = String(visibleOptions.length);
+            }
+
+            if (!visibleOptions.some(option => option.classList.contains('is-active'))) {
+                visibleOptions[0]?.classList.add('is-active');
+            }
+
+            return visibleOptions;
+        };
+
+        const highlightOption = (search, nextOption) => {
+            if (!nextOption) {
+                return;
+            }
+
+            search
+                .querySelectorAll('[data-newwork-option].is-active')
+                .forEach(option => option.classList.remove('is-active'));
+            nextOption.classList.add('is-active');
+            nextOption.scrollIntoView({ block: 'nearest' });
+        };
+
+        const selectOption = (search, option) => {
+            const input = search.querySelector('input');
+            const menu = search.querySelector('[data-newwork-menu]');
+            const options = menu ? menu.querySelectorAll('[data-newwork-option]') : [];
+            const currentCheck = menu?.querySelector('.kt-newwork-check');
+            const { label } = getOptionData(option);
+            const searchType = search.dataset.newworkSearchType;
+
+            options.forEach(item => item.classList.remove('is-selected'));
+            option.classList.add('is-selected');
+
+            if (currentCheck && currentCheck.parentElement !== option) {
+                option.appendChild(currentCheck);
+            }
+
+            if (searchType === 'member') {
+                addSelectedMember(search, option);
+                input.value = '';
+            } else {
+                input.value = label;
+                updateSelectedService(search, option);
+            }
+
+            closeSearch(search);
+            syncClear(search);
+        };
+
+        if (!searches.length) {
+            return;
+        }
+
+        searches.forEach(search => {
+            const input = search.querySelector('input');
+            const clear = search.querySelector('[data-newwork-clear]');
+            const menu = search.querySelector('[data-newwork-menu]');
+            const options = menu ? Array.from(menu.querySelectorAll('[data-newwork-option]')) : [];
+
+            if (!input || !menu) {
+                return;
+            }
+
+            const openSearch = () => {
+                const visibleOptions = filterOptions(search);
+
+                if (visibleOptions.length) {
+                    search.classList.add('is-open');
+                } else {
+                    closeSearch(search);
+                }
+                syncClear(search);
+                syncMemberError(search);
+            };
+
+            input.addEventListener('focus', openSearch);
+            input.addEventListener('input', () => {
+                if (input.value.trim()) {
+                    openSearch();
+                } else {
+                    closeSearch(search);
+                }
+                syncClear(search);
+                syncMemberError(search);
+            });
+            input.addEventListener('keydown', event => {
+                const visibleOptions = filterOptions(search);
+                const currentIndex = visibleOptions.findIndex(option => option.classList.contains('is-active'));
+
+                if (event.key === 'ArrowDown' && visibleOptions.length) {
+                    event.preventDefault();
+                    search.classList.add('is-open');
+                    highlightOption(search, visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)]);
+                }
+
+                if (event.key === 'ArrowUp' && visibleOptions.length) {
+                    event.preventDefault();
+                    search.classList.add('is-open');
+                    highlightOption(search, visibleOptions[Math.max(currentIndex - 1, 0)]);
+                }
+
+                if (event.key === 'Enter' && visibleOptions.length) {
+                    event.preventDefault();
+                    selectOption(search, visibleOptions[Math.max(currentIndex, 0)]);
+                }
+
+                if (event.key === 'Escape') {
+                    closeSearch(search);
+                }
+            });
+
+            clear?.addEventListener('click', event => {
+                event.preventDefault();
+                input.value = '';
+                closeSearch(search);
+                syncClear(search);
+                syncMemberError(search);
+                input.focus();
+            });
+
+            options.forEach(option => {
+                option.addEventListener('mouseenter', () => highlightOption(search, option));
+                option.addEventListener('click', () => selectOption(search, option));
+                option.addEventListener('keydown', event => {
+                    const visibleOptions = filterOptions(search);
+                    const currentIndex = visibleOptions.indexOf(option);
+
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        selectOption(search, option);
+                    }
+
+                    if (event.key === 'ArrowDown' && visibleOptions.length) {
+                        event.preventDefault();
+                        const nextOption = visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)];
+                        highlightOption(search, nextOption);
+                        nextOption.focus();
+                    }
+
+                    if (event.key === 'ArrowUp' && visibleOptions.length) {
+                        event.preventDefault();
+                        const prevOption = visibleOptions[Math.max(currentIndex - 1, 0)];
+                        highlightOption(search, prevOption);
+                        prevOption.focus();
+                    }
+
+                    if (event.key === 'Escape') {
+                        closeSearch(search);
+                        input.focus();
+                    }
+                });
+            });
+
+            syncClear(search);
+            syncMemberError(search);
+        });
+
+        document.addEventListener('click', event => {
+            searches.forEach(search => {
+                if (!search.contains(event.target)) {
+                    closeSearch(search);
+                }
+            });
+        });
+
+        document.addEventListener('click', event => {
+            const removeButton = event.target.closest('[data-newwork-member-remove]');
+
+            if (!removeButton) {
+                return;
+            }
+
+            const group = removeButton.closest('.kt-newwork-member-group');
+            const row = removeButton.closest('.kt-newwork-member-row');
+
+            row?.remove();
+
+            const search = group?.querySelector('[data-newwork-search]');
+
+            if (search) {
+                syncMemberError(search);
+            }
+        });
+    },
     // modal 팝업 동작 및 접근성
     modal: e => {
         // e.preventDefault();
@@ -1012,6 +1369,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.accordion();
     ui.pagination();
     ui.component();
+    ui.newwork();
     ui.init();
 });
 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-newwork-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-newwork-main">
+                <section class="kt-newwork-header">
+                    <div class="kt-newwork-header__title">
+                        <h1>새 워크스페이스 만들기</h1>
+                        <p>Entra ID</p>
+                    </div>
+                    <!--#include file="./include/_newwork_path_create.html"-->
+                </section>
+                <div class="kt-newwork-shell">
+                    <ol class="kt-newwork-stepper" aria-label="워크스페이스 생성 단계">
+                        <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
+                        <li class="is-active"><span>02</span><strong>멤버 설정</strong></li>
+                        <li><span>03</span><strong>확인 및 저장</strong></li>
+                    </ol>
+                    <section class="kt-newwork-form">
+                        <div class="kt-newwork-title">
+                            <h2>멤버설정</h2>
+                            <p>연동할 KT 서비스를 선택하면 해당 서비스 PO가 Manager로 자동 지정됩니다.</p>
+                        </div>
+                        <div class="kt-newwork-notice">
+                            <p>
+                                내부 계정은 IDMS 연동을 통해 Domain PO·BA가 Owner로 자동 지정됩니다.<br />Manager는
+                                Owner가 직접 지정하거나, 추가 멤버 초대 시 역할을 설정할 수 있습니다.
+                            </p>
+                        </div>
+                        <section class="kt-newwork-member-list-section">
+                            <h3>멤버 목록</h3>
+                            <div class="kt-newwork-member-group">
+                                <h4>Owner</h4>
+                                <ul class="kt-newwork-member-list">
+                                    <li class="kt-newwork-member-row">
+                                        <div>
+                                            <strong>한수지</strong>
+                                            <span aria-hidden="true"></span>
+                                            <em>suji.han@kt.com</em>
+                                        </div>
+                                        <span class="kt-newwork-tag kt-newwork-tag--po">PO</span>
+                                    </li>
+                                    <li class="kt-newwork-member-row">
+                                        <div>
+                                            <strong>최지훈</strong>
+                                            <span aria-hidden="true"></span>
+                                            <em>jihun.choi@kt.com</em>
+                                        </div>
+                                        <span class="kt-newwork-tag kt-newwork-tag--manager">BA</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="kt-newwork-member-group kt-newwork-member-group--member">
+                            <h4>Member</h4>
+                            <ul
+                                class="kt-newwork-member-list kt-newwork-member-list--selected"
+                                data-newwork-selected-members
+                            ></ul>
+                            <div
+                                class="kt-newwork-search is-error"
+                                data-newwork-search
+                                data-newwork-search-type="member"
+                            >
+                                <div class="kt-newwork-search__field">
+                                    <input
+                                        type="text"
+                                        class="kt-input kt-input--48"
+                                        placeholder="이름, 사번 또는 이메일 검색"
+                                        aria-label="멤버 검색"
+                                        aria-invalid="true"
+                                        aria-describedby="newworkMemberError"
+                                    />
+                                    <button type="button" class="kt-newwork-search__clear" data-newwork-clear hidden>
+                                        <span class="blind">검색어 삭제</span>
+                                    </button>
+                                    <button type="button" class="kt-newwork-search__submit">
+                                        <span class="blind">검색</span>
+                                    </button>
+                                </div>
+                                <p class="kt-newwork-search__error" id="newworkMemberError" role="alert">
+                                    멤버를 1명 이상 추가해 주세요.
+                                </p>
+                                <div class="kt-newwork-search-menu kt-newwork-search-menu--member" data-newwork-menu>
+                                    <div class="kt-newwork-search-menu__head">
+                                        <span>검색 결과</span>
+                                        <strong data-newwork-count>5</strong>
+                                        <span>건</span>
+                                    </div>
+                                    <ul class="kt-newwork-search-menu__list kt-scrollbar">
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이가훈"
+                                                data-meta="90000007@ktpartners.com"
+                                                data-search="이가훈 90000007@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이가훈</strong>
+                                                <span>90000007@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이나훈"
+                                                data-meta="90000008@ktpartners.com"
+                                                data-search="이나훈 90000008@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이나훈</strong>
+                                                <span>90000008@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이다훈"
+                                                data-meta="90000009@ktpartners.com"
+                                                data-search="이다훈 90000009@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이다훈</strong>
+                                                <span>90000009@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이리훈"
+                                                data-meta="90000010@ktpartners.com"
+                                                data-search="이리훈 90000010@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이리훈</strong>
+                                                <span>90000010@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                type="button"
+                                                data-newwork-option
+                                                data-label="이마훈"
+                                                data-meta="90000011@ktpartners.com"
+                                                data-search="이마훈 90000011@ktpartners.com"
+                                            >
+                                                <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                <strong>이마훈</strong>
+                                                <span>90000011@ktpartners.com</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <div class="kt-newwork-actions">
+                        <button type="button" class="kt-newwork-button kt-newwork-button--secondary">이전</button>
+                        <button type="button" class="kt-newwork-button kt-newwork-button--primary">다음</button>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>
