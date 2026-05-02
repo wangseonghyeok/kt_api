@@ -63,19 +63,14 @@
                                 class="kt-newwork-member-list kt-newwork-member-list--selected"
                                 data-newwork-selected-members
                             ></ul>
-                            <div
-                                class="kt-newwork-search is-error"
-                                data-newwork-search
-                                data-newwork-search-type="member"
-                            >
+                            <div class="kt-newwork-search" data-newwork-search data-newwork-search-type="member">
                                 <div class="kt-newwork-search__field">
                                     <input
                                         type="text"
                                         class="kt-input kt-input--48"
                                         placeholder="이름, 사번 또는 이메일 검색"
                                         aria-label="멤버 검색"
-                                        aria-invalid="true"
-                                        aria-describedby="newworkMemberError"
+                                        aria-describedby="newworkMemberNotice"
                                     />
                                     <button type="button" class="kt-newwork-search__clear" data-newwork-clear hidden>
                                         <span class="blind">검색어 삭제</span>
@@ -84,8 +79,8 @@
                                         <span class="blind">검색</span>
                                     </button>
                                 </div>
-                                <p class="kt-newwork-search__error" id="newworkMemberError" role="alert">
-                                    멤버를 1명 이상 추가해 주세요.
+                                <p class="kt-newwork-search__notice" id="newworkMemberNotice">
+                                    Entra ID 계정(@kt.com, @ktds.co.kr 등 KT 그룹사)만 초대 가능합니다.
                                 </p>
                                 <div class="kt-newwork-search-menu kt-newwork-search-menu--member" data-newwork-menu>
                                     <div class="kt-newwork-search-menu__head">

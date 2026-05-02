@@ -1232,7 +1232,7 @@
         background: #f8f9fa;
 
         p {
-            color: #61646b;
+            color: $kt-tertiary;
             font-size: 14px;
             font-weight: var(--fw-Regular);
             line-height: 1.58;
@@ -1270,6 +1270,13 @@
             font-weight: var(--fw-Bold);
             line-height: 1.48;
         }
+    }
+
+    .kt-newwork-member-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
     }
 
     .kt-newwork-member-group {
@@ -1331,7 +1338,7 @@
         }
 
         strong {
-            font-weight: var(--fw-SemiBold);
+            font-weight: var(--fw-Bold);
         }
 
         em {
@@ -1508,6 +1515,28 @@
             line-height: 1.48;
         }
 
+        &__notice {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            min-height: 21px;
+            margin-top: 8px;
+            color: $kt-red;
+            font-size: 14px;
+            font-weight: var(--fw-Medium);
+            line-height: 1.48;
+
+            &::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                flex: 0 0 16px;
+                background: currentColor;
+                -webkit-mask: url('../img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
+                mask: url('../img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
+            }
+        }
+
         &__error {
             display: none;
             margin-top: 8px;
@@ -1660,7 +1689,8 @@
 
         &--member {
             .kt-newwork-search-menu__list {
-                max-height: 248px;
+                max-height: 152px;
+                overflow-y: auto;
             }
 
             button {
@@ -1829,10 +1859,18 @@
         }
     }
 
+    .kt-newwork-review-divider {
+        display: inline-block;
+        width: 1px;
+        height: 14px;
+        flex: 0 0 auto;
+        background: #d5d8dd;
+    }
+
     .kt-newwork-security {
         min-height: 139px;
         padding: 12px 16px;
-        border: 1px solid #d5d8dd;
+        border: 1px solid rgba(19, 20, 21, 0.1);
         border-radius: 8px;
         background: #fff;
 
@@ -1868,7 +1906,7 @@
         margin-top: 8px;
         color: $kt-primary;
         font-size: 14px;
-        font-weight: var(--fw-Medium);
+        font-weight: var(--fw-SemiBold);
         line-height: 1.48;
 
         input {

@@ -932,6 +932,14 @@ const ui = {
                 .closest('.kt-newwork-member-group')
                 ?.querySelector('[data-newwork-selected-members]');
             const input = search.querySelector('input');
+            const error = search.querySelector('.kt-newwork-search__error');
+
+            if (!error) {
+                search.classList.remove('is-error');
+                input?.removeAttribute('aria-invalid');
+                return;
+            }
+
             const hasMember = Boolean(selectedList?.children.length);
             const hasKeyword = Boolean(input?.value.trim());
             const shouldShowError = search.dataset.newworkSearchType === 'member' && !hasMember && !hasKeyword;
