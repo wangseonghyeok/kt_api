@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+    </head>
+
+    <body class="kt-user-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-user-main">
+                <section class="kt-user-header">
+                    <div class="kt-user-header__title">
+                        <h1>정보변경</h1>
+                        <span>개인정보 및 비밀번호를 관리합니다.</span>
+                    </div>
+                    <nav class="kt-user-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <p>My page</p>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <strong>비밀번호 변경</strong>
+                    </nav>
+                </section>
+                <div class="kt-user-shell">
+                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
+                        <ul>
+                            <li><a href="#">개인정보 변경</a></li>
+                            <li><a href="#" class="is-active">비밀번호 변경</a></li>
+                            <li><a href="#">회원탈퇴</a></li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <li>
+                            <div class="kt-user-form">
+                                <div class="kt-user-title">
+                                    <h2>비밀번호 변경</h2>
+                                    <p>1분 이내로 입력해주세요.</p>
+                                </div>
+                                <form class="kt-user-form-body kt-user-form-body--spacious">
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">새비밀번호</span>
+                                        <span class="kt-password">
+                                            <input
+                                                type="password"
+                                                id="userNewPassword"
+                                                class="kt-input kt-input--52"
+                                                placeholder="비밀번호를 입력해 주세요"
+                                            />
+                                            <span class="kt-password__actions">
+                                                <button
+                                                    type="button"
+                                                    class="kt-input-field__clear kt-password__clear"
+                                                    data-clear_input
+                                                    aria-controls="userNewPassword"
+                                                    aria-label="비밀번호 삭제"
+                                                    hidden
+                                                >
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="kt-password__toggle"
+                                                    data-password_toggle
+                                                    data-icon-show="./assets/img/components/ico_eye.svg"
+                                                    data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                    aria-controls="userNewPassword"
+                                                    aria-pressed="false"
+                                                    aria-label="비밀번호 보기"
+                                                >
+                                                    <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
+                                        <span class="kt-field__message"
+                                            >최소 8자 이상, 영문 대소문자·숫자·특수문자(‘`~!@$^*{}|/) 중 3가지 이상을
+                                            조합해 입력해 주세요.</span
+                                        >
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">새 비밀번호 확인</span>
+                                        <span class="kt-password">
+                                            <input
+                                                type="password"
+                                                id="userNewPasswordConfirm"
+                                                class="kt-input kt-input--52"
+                                                placeholder="비밀번호를 입력해 주세요"
+                                            />
+                                            <span class="kt-password__actions">
+                                                <button
+                                                    type="button"
+                                                    class="kt-input-field__clear kt-password__clear"
+                                                    data-clear_input
+                                                    aria-controls="userNewPasswordConfirm"
+                                                    aria-label="비밀번호 삭제"
+                                                    hidden
+                                                >
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="kt-password__toggle"
+                                                    data-password_toggle
+                                                    data-icon-show="./assets/img/components/ico_eye.svg"
+                                                    data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                    aria-controls="userNewPasswordConfirm"
+                                                    aria-pressed="false"
+                                                    aria-label="비밀번호 보기"
+                                                >
+                                                    <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </form>
+                                <div class="kt-user-actions">
+                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
+                                    <button type="button" class="kt-user-button kt-user-button--primary">
+                                        입력완료
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>2</li>
+
+                        <li>3</li>
+                    </ul>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,749 @@
+/nodeChanges[0]/pluginData[13]/value: [{"id":"9IBqihqhuHc","width":3776,"height":2832,"urls":{"full":"https://images.unsplash.com/photo-1498940757830-82f7813bf178?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDN8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/9IBqihqhuHc/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDN8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww"},"user":{"name":"Greyson Joralemon","username":"greysonjoralemon"},"plus":false,"blur_hash":"LJK+J?M$mlXLz_2,;NkUM~E*Kb#*","color":"#f38c0c","datetime":"2026-02-23T06:46:29.251Z"},{"id":"dEGu-oCuB1Y","width":4016,"height":6016,"urls":{"full":"https://images.unsplash.com/photo-1532135468830-e51699205b70?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDZ8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/dEGu-oCuB1Y/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDZ8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww"},"user":{"name":"guy stevens","username":"gstevens0884"},"plus":false,"blur_hash":"LKKSw~7d1*+J;5I[XSvSEBM.w5Xg","color":"#f38c0c","datetime":"2026-02-23T06:46:33.184Z"},{"id":"Mzy-OjtCI70","width":3622,"height":4527,"urls":{"full":"https://images.unsplash.com/photo-1565958011703-44f9829ba187?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDExfHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/Mzy-OjtCI70/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDExfHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww"},"user":{"name":"Anna Tukhfatullina Food Photographer/Stylist","username":"anna_tukhfatullina"},"plus":false,"blur_hash":"LSDSXVxb9uoIoxWCW=ae0Lae-oWV","color":"#262626","datetime":"2026-02-23T06:46:49.686Z"},{"id":"TLD6iCOlyb0","width":3456,"height":5184,"urls":{"full":"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDIzfHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/TLD6iCOlyb0/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDIzfHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww"},"user":{"name":"ian dooley","username":"sadswim"},"plus":false,"blur_hash":"LORnlJYR}gw??tw@M{N0xBN2J=xt","color":"#f3d98c","datetime":"2026-02-23T06:46:55.595Z"},{"id":"rAyCBQTH7ws","width":3744,"height":3744,"urls":{"full":"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDI4fHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/rAyCBQTH7ws/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDI4fHxmb29kfGVufDB8fHx8MTc3MTc3NDczNHww"},"user":{"name":"Michele Blackwell","username":"mab_studio"},"plus":false,"blur_hash":"LQIgMt$L0gQ;IrNb%0oL0NRRxWx@","color":"#73260c","datetime":"2026-02-23T06:47:00.322Z"},{"id":"sc5sTPMrVfk","width":4338,"height":3604,"urls":{"full":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDU5fHxmb29kfGVufDB8fHx8MTc3MTgwODcyNHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/sc5sTPMrVfk/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDU5fHxmb29kfGVufDB8fHx8MTc3MTgwODcyNHww"},"user":{"name":"amirali mirhashemian","username":"amir_v_ali"},"plus":false,"blur_hash":"LJE25$%211I?4pWBI;WBtRS4%0xZ","color":"#262626","datetime":"2026-02-23T06:47:12.110Z"},{"id":"MJPr6nOdppw","width":3072,"height":4608,"urls":{"full":"https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDkyfHxmb29kfGVufDB8fHx8MTc3MTgxNDIyMXww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/MJPr6nOdppw/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDkyfHxmb29kfGVufDB8fHx8MTc3MTgxNDIyMXww"},"user":{"name":"luisana zerpa","username":"luisanazl"},"plus":false,"blur_hash":"LKIWfhEL9tsq~Tr@NHNb9Za~=|NG","color":"#c08c73","datetime":"2026-02-23T06:47:24.218Z"},{"id":"kgqu_qs3B78","width":3024,"height":4032,"urls":{"full":"https://images.unsplash.com/photo-1560015534-cee980ba7e13?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDR8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/kgqu_qs3B78/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDR8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww"},"user":{"name":"Fatih","username":"fatihwashere"},"plus":false,"blur_hash":"LaKlXx0%Oe,,NF+Xo~Z~v4]gJ{Nf","color":"#c00c0c","datetime":"2026-02-23T06:55:22.097Z"},{"id":"iMdsjoiftZo","width":3456,"height":3456,"urls":{"full":"https://images.unsplash.com/photo-1464820453369-31d2c0b651af?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDJ8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/iMdsjoiftZo/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDJ8fGNvbG9yZnVsfGVufDB8fHx8MTc3MTgwOTI0MXww"},"user":{"name":"Sharon Pittaway","username":"sharonp"},"plus":false,"blur_hash":"LlQb;0z_?wKu-UV{Nbt2?^O,RjwO","color":"#f3f3f3","datetime":"2026-02-23T06:55:26.265Z"},{"id":"IPOfv6Me1IM","width":4016,"height":6016,"urls":{"full":"https://plus.unsplash.com/premium_photo-1679440415182-c362deb2fd40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDJ8fHdvbWVufGVufDB8fHx8MTc3MTcxNDQyMHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/IPOfv6Me1IM/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDJ8fHdvbWVufGVufDB8fHx8MTc3MTcxNDQyMHww"},"user":{"name":"Leire Cavia","username":"leirecavia"},"plus":true,"blur_hash":"LYFbCbV@%%t6^%ofOZjZxxW;i[WF","color":"#a6d9f3","datetime":"2026-02-23T06:56:05.423Z"},{"id":"nHIb0s-BZMA","width":4000,"height":6000,"urls":{"full":"https://images.unsplash.com/photo-1560087637-bf797bc7796a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDR8fHdvbWVufGVufDB8fHx8MTc3MTcxNDQyMHww&ixlib=rb-4.1.0&q=85"},"links":{"download_location":"https://api.unsplash.com/photos/nHIb0s-BZMA/download?ixid=M3w3MjAxN3wwfDF8c2VhcmNofDR8fHdvbWVufGVufDB8fHx8MTc3MTcxNDQyMHww"},"user":{"name":"Marco Chilese","username":"chmarco"},"plus":false,"blur_hash":"LeKB5d9Z_3i_~qxuITWA.8t8MxWV","color":"#f3f3f3","datetime":"2026-02-23T06:56:08.972Z"}]
+/nodeChanges[1462]/name: 속성 1=user-x
+/nodeChanges[1462]/variantPropSpecs[0]/value: user-x
+/nodeChanges[1463]/name: 속성 1=user-plus
+/nodeChanges[1463]/variantPropSpecs[0]/value: user-plus
+/nodeChanges[1464]/name: 속성 1=user
+/nodeChanges[1464]/variantPropSpecs[0]/value: user
+/nodeChanges[1571]/name: 속성 1=users
+/nodeChanges[1571]/variantPropSpecs[0]/value: users
+/nodeChanges[1656]/name: 속성 1=user-check
+/nodeChanges[1656]/variantPropSpecs[0]/value: user-check
+/nodeChanges[1660]/name: 속성 1=user-minus
+/nodeChanges[1660]/variantPropSpecs[0]/value: user-minus
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[261]: user
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[262]: user-check
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[263]: user-minus
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[264]: user-plus
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[265]: user-x
+/nodeChanges[1736]/stateGroupPropertyValueOrders[0]/values[266]: users
+/nodeChanges[2038]/name: ic24/basic/user
+/nodeChanges[2396]/name: ic24/basic/user
+/nodeChanges[2402]/name: ic24/basic/user
+/nodeChanges[2408]/name: ic24/basic/user
+/nodeChanges[2494]/name: LDAP 또는 KT Entra ID로 바로 시작하세요.
+/nodeChanges[2494]/textData/characters: LDAP 또는 KT Entra ID로 바로 시작하세요.
+/nodeChanges[2613]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202[User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[2613]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202[User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[2767]/name: LDAP
+/nodeChanges[2770]/name: LDAP
+/nodeChanges[2770]/textData/characters: LDAP
+/nodeChanges[3850]/name: ADD Member (LDAP ID)
+/nodeChanges[3850]/textData/characters: ADD Member 
+(LDAP ID)
+/nodeChanges[3890]/name: Create Workspace (상세) LDAP / Draft
+/nodeChanges[3890]/textData/characters: Create Workspace
+(상세) LDAP / Draft
+/nodeChanges[3893]/name: Create Workspace (상세) LDAP / Penging
+/nodeChanges[3893]/textData/characters: Create Workspace
+(상세) LDAP / Penging
+/nodeChanges[3896]/name: Create Workspace (상세) LDAP / DEV
+/nodeChanges[3896]/textData/characters: Create Workspace
+(상세) LDAP / DEV
+/nodeChanges[3899]/name: Create Workspace (상세) LDAP / Reject
+/nodeChanges[3899]/textData/characters: Create Workspace
+(상세) LDAP / Reject
+/nodeChanges[3902]/name: Create Workspace (상세) LDAP / Prod Pending
+/nodeChanges[3902]/textData/characters: Create Workspace
+(상세) LDAP / Prod Pending
+/nodeChanges[3905]/name: Create Workspace (상세) LDAP / PRD
+/nodeChanges[3905]/textData/characters: Create Workspace
+(상세) LDAP / PRD
+/nodeChanges[3970]/name: 로그인 (LDAP)
+/nodeChanges[4006]/symbolData/symbolOverrides[0]/textData/characters: LDAP으로 로그인
+/nodeChanges[4263]/name: 워크스페이스 생성 (LDAP)
+/nodeChanges[4263]/textData/characters: 워크스페이스 생성
+(LDAP)
+/nodeChanges[4291]/name: LDAP
+/nodeChanges[4295]/name: LDAP
+/nodeChanges[4295]/textData/characters: LDAP
+/nodeChanges[4310]/name: LDAP
+/nodeChanges[4314]/name: LDAP
+/nodeChanges[4314]/textData/characters: LDAP
+/nodeChanges[4386]/name: LDAP
+/nodeChanges[4390]/name: LDAP
+/nodeChanges[4390]/textData/characters: LDAP
+/nodeChanges[4657]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[4657]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[7814]/name: LDAP 계정 전용
+/nodeChanges[7814]/textData/characters: LDAP 계정 전용
+/nodeChanges[7851]/name: ic24/basic/user
+/nodeChanges[8072]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[8383]/name: ic24/basic/user
+/nodeChanges[8401]/name: ic24/basic/user
+/nodeChanges[8619]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[8869]/name: 회원가입 (LDAP)
+/nodeChanges[8882]/name: KT API Link Portal 회원가입
+/nodeChanges[8882]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[8883]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[8883]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[9013]/name: LDAP
+/nodeChanges[9017]/name: LDAP
+/nodeChanges[9017]/textData/characters: LDAP
+/nodeChanges[9130]/name: 로그인 (LDAP)
+/nodeChanges[9152]/name: LDAP
+/nodeChanges[9156]/name: LDAP
+/nodeChanges[9156]/textData/characters: LDAP
+/nodeChanges[9189]/symbolData/symbolOverrides[0]/textData/characters: LDAP으로 로그인
+/nodeChanges[9226]/name: LDAP
+/nodeChanges[9230]/name: LDAP
+/nodeChanges[9230]/textData/characters: LDAP
+/nodeChanges[9593]/name: 회원가입 (LDAP)
+/nodeChanges[9606]/name: KT API Link Portal 회원가입
+/nodeChanges[9606]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[9607]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[9607]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[9616]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[9616]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[9631]/name: 02_로그인 (LDAP)
+/nodeChanges[9991]/name: 회원가입 (LDAP)
+/nodeChanges[9996]/name: 회원가입 (LDAP)
+/nodeChanges[10002]/name: KT API Link Portal 회원가입
+/nodeChanges[10002]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[10003]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[10003]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[10012]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[10012]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[10078]/name: LDAP 계정 전용
+/nodeChanges[10078]/textData/characters: LDAP 계정 전용
+/nodeChanges[10113]/name: User
+/nodeChanges[10113]/stateGroupPropertyValueOrders[0]/property: User
+/nodeChanges[10113]/stateGroupPropertyValueOrders[0]/values[5]: User6
+/nodeChanges[10113]/componentPropDefs[0]/name: User
+/nodeChanges[10114]/name: User=서영
+/nodeChanges[10116]/name: User=혜영
+/nodeChanges[10118]/name: User=도연
+/nodeChanges[10120]/name: User=봉주
+/nodeChanges[10122]/name: User=종일
+/nodeChanges[10124]/name: User=User6
+/nodeChanges[10124]/variantPropSpecs[0]/value: User6
+/nodeChanges[10139]/name: User
+/nodeChanges[10140]/name: User
+/nodeChanges[10141]/name: User
+/nodeChanges[10142]/name: User
+/nodeChanges[13822]/name: ic/line/users
+/nodeChanges[15024]/name: ic/line/users
+/nodeChanges[15028]/name: LDAP
+/nodeChanges[15032]/name: LDAP
+/nodeChanges[15032]/textData/characters: LDAP
+/nodeChanges[15065]/name: ic/line/users
+/nodeChanges[15069]/name: LDAP
+/nodeChanges[15073]/name: LDAP
+/nodeChanges[15073]/textData/characters: LDAP
+/nodeChanges[15106]/name: ic/line/users
+/nodeChanges[15110]/name: LDAP
+/nodeChanges[15114]/name: LDAP
+/nodeChanges[15114]/textData/characters: LDAP
+/nodeChanges[15130]/componentPropAssignments[0]/value/textValue/characters: LDAP으로 로그인
+/nodeChanges[15130]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP으로 로그인
+/nodeChanges[15158]/name: ic/line/users
+/nodeChanges[15162]/name: LDAP
+/nodeChanges[15166]/name: LDAP
+/nodeChanges[15166]/textData/characters: LDAP
+/nodeChanges[15248]/name: ic/line/users
+/nodeChanges[15252]/name: LDAP
+/nodeChanges[15256]/name: LDAP
+/nodeChanges[15256]/textData/characters: LDAP
+/nodeChanges[15301]/name: ic/line/users
+/nodeChanges[15305]/name: LDAP
+/nodeChanges[15309]/name: LDAP
+/nodeChanges[15309]/textData/characters: LDAP
+/nodeChanges[15365]/name: ic/line/users
+/nodeChanges[15369]/name: LDAP
+/nodeChanges[15373]/name: LDAP
+/nodeChanges[15373]/textData/characters: LDAP
+/nodeChanges[15401]/name: ic/line/users
+/nodeChanges[15405]/name: LDAP
+/nodeChanges[15409]/name: LDAP
+/nodeChanges[15409]/textData/characters: LDAP
+/nodeChanges[15454]/name: ic/line/users
+/nodeChanges[15458]/name: LDAP
+/nodeChanges[15462]/name: LDAP
+/nodeChanges[15462]/textData/characters: LDAP
+/nodeChanges[15478]/componentPropAssignments[0]/value/textValue/characters: LDAP으로 로그인
+/nodeChanges[15478]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP으로 로그인
+/nodeChanges[15506]/name: ic/line/users
+/nodeChanges[15510]/name: LDAP
+/nodeChanges[15514]/name: LDAP
+/nodeChanges[15514]/textData/characters: LDAP
+/nodeChanges[15569]/name: ic/line/users
+/nodeChanges[15573]/name: LDAP
+/nodeChanges[15577]/name: LDAP
+/nodeChanges[15577]/textData/characters: LDAP
+/nodeChanges[15648]/name: ic/line/users
+/nodeChanges[15652]/name: LDAP
+/nodeChanges[15656]/name: LDAP
+/nodeChanges[15656]/textData/characters: LDAP
+/nodeChanges[15707]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[15707]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[15731]/name: ic/line/users
+/nodeChanges[15735]/name: LDAP
+/nodeChanges[15739]/name: LDAP
+/nodeChanges[15739]/textData/characters: LDAP
+/nodeChanges[15750]/name: KT API Link Portal 회원가입
+/nodeChanges[15750]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[15751]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[15751]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[16252]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[17196]/name: User
+/nodeChanges[17201]/name: User
+/nodeChanges[17205]/name: User
+/nodeChanges[17209]/name: User
+/nodeChanges[17619]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[18068]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[18080]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[18174]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[18174]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[18182]/name: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[18182]/textData/characters: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[18314]/name: 로그인 (LDAP)
+/nodeChanges[18314]/textData/characters: 로그인 (LDAP)
+/nodeChanges[18398]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[18398]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[18402]/name: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[18402]/textData/characters: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[18605]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[18641]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[18703]/name: ic/line/users
+/nodeChanges[19002]/name: ic/line/users
+/nodeChanges[26507]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지
+/nodeChanges[26507]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지
+/nodeChanges[26568]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[26568]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[26613]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[26613]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[26749]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[26749]/componentPropAssignments[1]/value/textValue/characters: LDAP
+/nodeChanges[26749]/componentPropAssignments[1]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[26813]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[26813]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[26845]/name: 18_워크스페이스 생성 (LDAP)2
+/nodeChanges[27205]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[27205]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[27254]/name: User Authentication
+/nodeChanges[27254]/textData/characters: User Authentication
+/nodeChanges[27321]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[27321]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[33800]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[33800]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[33875]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지
+/nodeChanges[33875]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지
+/nodeChanges[33954]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[33954]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[40560]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40560]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40575]/name: ic/line/users
+/nodeChanges[40579]/name: LDAP
+/nodeChanges[40583]/name: LDAP
+/nodeChanges[40583]/textData/characters: LDAP
+/nodeChanges[40606]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40606]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40621]/name: ic/line/users
+/nodeChanges[40625]/name: LDAP
+/nodeChanges[40629]/name: LDAP
+/nodeChanges[40629]/textData/characters: LDAP
+/nodeChanges[40651]/name: 로그인 (LDAP)
+/nodeChanges[40653]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40653]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40668]/name: ic/line/users
+/nodeChanges[40672]/name: LDAP
+/nodeChanges[40676]/name: LDAP
+/nodeChanges[40676]/textData/characters: LDAP
+/nodeChanges[40693]/componentPropAssignments[0]/value/textValue/characters: LDAP으로 로그인
+/nodeChanges[40693]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP으로 로그인
+/nodeChanges[40704]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40704]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40719]/name: ic/line/users
+/nodeChanges[40723]/name: LDAP
+/nodeChanges[40727]/name: LDAP
+/nodeChanges[40727]/textData/characters: LDAP
+/nodeChanges[40750]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40750]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40763]/name: ic/line/users
+/nodeChanges[40767]/name: LDAP
+/nodeChanges[40771]/name: LDAP
+/nodeChanges[40771]/textData/characters: LDAP
+/nodeChanges[40806]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40806]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40818]/name: ic/line/users
+/nodeChanges[40822]/name: LDAP
+/nodeChanges[40826]/name: LDAP
+/nodeChanges[40826]/textData/characters: LDAP
+/nodeChanges[40858]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40858]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40870]/name: ic/line/users
+/nodeChanges[40874]/name: LDAP
+/nodeChanges[40878]/name: LDAP
+/nodeChanges[40878]/textData/characters: LDAP
+/nodeChanges[40916]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40916]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40943]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40943]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40964]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40964]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[40994]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[40994]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[41020]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[41020]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[41034]/name: 회원가입 (LDAP)
+/nodeChanges[41036]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[41036]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[41046]/name: KT API Link Portal 회원가입
+/nodeChanges[41046]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[41047]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[41047]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[41063]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[41063]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[41261]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[41297]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[41350]/name: LDAP
+/nodeChanges[41350]/textData/characters: LDAP
+/nodeChanges[41351]/name: 워크스페이스 생성(LDAP)
+/nodeChanges[41410]/name: LDAP 계정 전용
+/nodeChanges[41410]/textData/characters: LDAP 계정 전용
+/nodeChanges[41425]/name: 워크스페이스 생성 (LDAP) 기본정보 입력
+/nodeChanges[41445]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[41445]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[41446]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[41447]/name: 워크스페이스 생성 (LDAP) KT Service 선택
+/nodeChanges[41465]/name: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[41465]/textData/characters: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 
+만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[41538]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[41539]/name: 워크스페이스 생성 (LDAP) 멤버설정
+/nodeChanges[41570]/name: LDAP
+/nodeChanges[41570]/textData/characters: LDAP
+/nodeChanges[41590]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[41591]/name: 워크스페이스 생성 (LDAP) 멤버추가
+/nodeChanges[41668]/name: LDAP
+/nodeChanges[41668]/textData/characters: LDAP
+/nodeChanges[41699]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[41700]/name: 워크스페이스 생성 (LDAP) 확인 및 저장
+/nodeChanges[41775]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[41779]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[41865]/name: LDAP 계정 전용
+/nodeChanges[41865]/textData/characters: LDAP 계정 전용
+/nodeChanges[41935]/name: LDAP 계정 전용
+/nodeChanges[41935]/textData/characters: LDAP 계정 전용
+/nodeChanges[42020]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[43041]/symbolData/symbolOverrides[1]/textData/characters: LDAP 계정은 공인망(Public IP) 기반의 외부 시스템 연동만 허용됩니다. 
+/nodeChanges[44907]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[44907]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[44924]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[44924]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[44934]/name: User Authentication
+/nodeChanges[44934]/textData/characters: User Authentication
+/nodeChanges[45016]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[45016]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[45233]/componentPropAssignments[1]/value/textValue/characters: User Authentication
+/nodeChanges[45233]/componentPropAssignments[1]/varValue/value/textDataValue/characters: User Authentication
+/nodeChanges[45296]/name: User Authentication
+/nodeChanges[45296]/textData/characters: User Authentication
+/nodeChanges[45347]/name: User Authentication
+/nodeChanges[45347]/textData/characters: User Authentication
+/nodeChanges[45401]/name: User Authentication
+/nodeChanges[45401]/textData/characters: User Authentication
+/nodeChanges[45467]/name: User Authentication
+/nodeChanges[45467]/textData/characters: User Authentication
+/nodeChanges[45544]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[45544]/componentPropAssignments[1]/value/textValue/characters: LDAP
+/nodeChanges[45544]/componentPropAssignments[1]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[47186]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[47186]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[47193]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_251125
+/nodeChanges[47193]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_251125
+/nodeChanges[47337]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[47337]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49332]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49332]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49351]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49351]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49370]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49370]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49427]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49427]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49446]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49446]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49465]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49465]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49484]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49484]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49505]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49505]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49524]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[49524]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50222]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50222]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50308]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50308]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50348]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50348]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50388]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50388]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50508]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50508]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50548]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50548]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50588]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50588]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50628]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50628]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[50674]/name: User Authentication
+/nodeChanges[50674]/textData/characters: User Authentication
+/nodeChanges[50729]/name: User Authentication
+/nodeChanges[50729]/textData/characters: User Authentication
+/nodeChanges[50784]/name: User Authentication
+/nodeChanges[50784]/textData/characters: User Authentication
+/nodeChanges[50845]/name: User Authentication
+/nodeChanges[50845]/textData/characters: User Authentication
+/nodeChanges[51003]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[51003]/componentPropAssignments[1]/value/textValue/characters: LDAP
+/nodeChanges[51003]/componentPropAssignments[1]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[51168]/name: ic/line/users
+/nodeChanges[51218]/name: LDAP 계정 필요
+/nodeChanges[51218]/textData/characters: LDAP 계정 필요
+/nodeChanges[51248]/name: ic/line/users
+/nodeChanges[51404]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51404]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51423]/name: LDAP
+/nodeChanges[51427]/name: LDAP
+/nodeChanges[51427]/textData/characters: LDAP
+/nodeChanges[51431]/name: ic/line/users
+/nodeChanges[51450]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51450]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51469]/name: LDAP
+/nodeChanges[51473]/name: LDAP
+/nodeChanges[51473]/textData/characters: LDAP
+/nodeChanges[51477]/name: ic/line/users
+/nodeChanges[51495]/name: 로그인 (LDAP)
+/nodeChanges[51497]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51497]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51516]/name: LDAP
+/nodeChanges[51520]/name: LDAP
+/nodeChanges[51520]/textData/characters: LDAP
+/nodeChanges[51524]/name: ic/line/users
+/nodeChanges[51537]/componentPropAssignments[0]/value/textValue/characters: LDAP으로 로그인
+/nodeChanges[51537]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP으로 로그인
+/nodeChanges[51548]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51548]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51567]/name: LDAP
+/nodeChanges[51571]/name: LDAP
+/nodeChanges[51571]/textData/characters: LDAP
+/nodeChanges[51575]/name: ic/line/users
+/nodeChanges[51594]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51594]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51607]/name: ic/line/users
+/nodeChanges[51611]/name: LDAP
+/nodeChanges[51615]/name: LDAP
+/nodeChanges[51615]/textData/characters: LDAP
+/nodeChanges[51650]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51650]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51662]/name: ic/line/users
+/nodeChanges[51666]/name: LDAP
+/nodeChanges[51670]/name: LDAP
+/nodeChanges[51670]/textData/characters: LDAP
+/nodeChanges[51702]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51702]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51714]/name: ic/line/users
+/nodeChanges[51718]/name: LDAP
+/nodeChanges[51722]/name: LDAP
+/nodeChanges[51722]/textData/characters: LDAP
+/nodeChanges[51760]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51760]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51787]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51787]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51808]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51808]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51838]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51838]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51864]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51864]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51878]/name: 회원가입 (LDAP)
+/nodeChanges[51880]/componentPropAssignments[0]/value/textValue/characters: KT API Link
+/nodeChanges[51880]/componentPropAssignments[0]/varValue/value/textDataValue/characters: KT API Link
+/nodeChanges[51890]/name: KT API Link Portal 회원가입
+/nodeChanges[51890]/textData/characters: KT API Link Portal 회원가입
+/nodeChanges[51891]/name: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[51891]/textData/characters: LDAP 계정을 보유한 외부 파트너사만 가능합니다.
+/nodeChanges[51907]/name: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[51907]/textData/characters: KT 통합 로그인 시스템에서 LDAP 계정 신청
+/nodeChanges[51961]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[51968]/componentPropAssignments[1]/value/textValue/characters: user_id
+/nodeChanges[51968]/componentPropAssignments[1]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[51973]/componentPropAssignments[1]/value/textValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[51973]/componentPropAssignments[1]/varValue/value/textDataValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[52056]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[52136]/componentPropAssignments[1]/value/textValue/characters: user_id
+/nodeChanges[52136]/componentPropAssignments[1]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[52144]/componentPropAssignments[1]/value/textValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[52144]/componentPropAssignments[1]/varValue/value/textDataValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[52958]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[52958]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[53716]/name: 워크스페이스 상세 (LDAP Draft)
+/nodeChanges[53717]/name: LDAP – Draft
+/nodeChanges[53831]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[53831]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[53930]/name: 워크스페이스 상세 (LDAP DEV)
+/nodeChanges[53931]/name: LDAP – Draft
+/nodeChanges[54084]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54084]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54189]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[54239]/name: 워크스페이스 상세 (LDAP PROD)
+/nodeChanges[54240]/name: LDAP – Draft
+/nodeChanges[54392]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54392]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54497]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[54537]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[54556]/name: 워크스페이스 상세 (LDAP Expired)
+/nodeChanges[54557]/name: LDAP – Draft
+/nodeChanges[54710]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54710]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[54814]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[54841]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[54868]/name: 워크스페이스 상세 (LDAP Expired Renew Pending)
+/nodeChanges[54869]/name: LDAP – Draft
+/nodeChanges[55022]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[55022]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[55128]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55132]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55158]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55171]/name: 워크스페이스 상세 (LDAP Expired Renew Rejected)
+/nodeChanges[55172]/name: LDAP – Draft
+/nodeChanges[55324]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[55324]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[55430]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55459]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55463]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[55496]/name: LDAP – Draft
+/nodeChanges[55668]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[55668]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[57265]/name: LDAP – Draft
+/nodeChanges[57418]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[57418]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[57523]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[57527]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[57747]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[57817]/name: API 명 : UserProperty (LDAP)
+/nodeChanges[57817]/textData/characters: API 명 : UserProperty (LDAP)
+/nodeChanges[58150]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[58576]/name: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[58576]/textData/characters: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 
+만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[58597]/symbolData/symbolOverrides[1]/textData/characters: LDAP 계정은 공인망(Public IP) 기반의 외부 시스템 연동만 허용됩니다. 
+/nodeChanges[58669]/name: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[58669]/textData/characters: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[58744]/name: LDAP 또는 KT Entra ID로 간편하게 시작하세요.
+/nodeChanges[58744]/textData/characters: LDAP 또는 KT Entra ID로
+간편하게 시작하세요.
+/nodeChanges[58846]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[58846]/componentPropAssignments[1]/value/textValue/characters: LDAP
+/nodeChanges[58846]/componentPropAssignments[1]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[59106]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[59106]/componentPropAssignments[1]/value/textValue/characters: LDAP
+/nodeChanges[59106]/componentPropAssignments[1]/varValue/value/textDataValue/characters: LDAP
+/nodeChanges[60648]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[60648]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_260202
+/nodeChanges[60656]/name: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_251125
+/nodeChanges[60656]/textData/characters: [User Auth/Service Auth/app Service] API Link 활용가이드 패키지_251125
+/nodeChanges[61419]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61419]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61438]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61438]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61457]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61457]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61476]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61476]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61533]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61533]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61552]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61552]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61571]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61571]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61590]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61590]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61609]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61609]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61628]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/value/textValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61628]/symbolData/symbolOverrides[1]/componentPropAssignments[1]/varValue/value/textDataValue/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[61782]/name: User Authentication
+/nodeChanges[61782]/textData/characters: User Authentication
+/nodeChanges[61837]/name: User Authentication
+/nodeChanges[61837]/textData/characters: User Authentication
+/nodeChanges[61892]/name: User Authentication
+/nodeChanges[61892]/textData/characters: User Authentication
+/nodeChanges[61953]/name: User Authentication
+/nodeChanges[61953]/textData/characters: User Authentication
+/nodeChanges[62690]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62690]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62730]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62730]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62770]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62770]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62810]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62810]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62930]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62930]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62970]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[62970]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[63010]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[63010]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[63050]/name: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[63050]/textData/characters: KT 고객 대상 서비스 > User Authentication > KT ID인증
+/nodeChanges[63336]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[70399]/name: LDAP
+/nodeChanges[70399]/textData/characters: LDAP
+/nodeChanges[70460]/name: LDAP 계정 전용
+/nodeChanges[70460]/textData/characters: LDAP 계정 전용
+/nodeChanges[70686]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[70725]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[70748]/name: 워크스페이스 생성(LDAP)
+/nodeChanges[70808]/name: LDAP 계정 전용
+/nodeChanges[70808]/textData/characters: LDAP 계정 전용
+/nodeChanges[70823]/name: 워크스페이스 생성 (LDAP) 기본정보 입력
+/nodeChanges[70846]/symbolData/symbolOverrides[1]/textData/characters: LDAP 계정은 공인망(Public IP) 기반의 외부 시스템 연동만 허용됩니다. 
+/nodeChanges[70849]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[70849]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[70855]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[70856]/name: 워크스페이스 생성 (LDAP) KT Service 선택
+/nodeChanges[70874]/name: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[70874]/textData/characters: KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이 
+만료되어도 워크스페이스 관리는 유지됩니다.
+/nodeChanges[70954]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[70955]/name: 워크스페이스 생성 (LDAP) 멤버설정
+/nodeChanges[70987]/name: LDAP
+/nodeChanges[70987]/textData/characters: LDAP
+/nodeChanges[71012]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[71013]/name: 워크스페이스 생성 (LDAP) 멤버추가
+/nodeChanges[71048]/name: LDAP
+/nodeChanges[71048]/textData/characters: LDAP
+/nodeChanges[71127]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[71128]/name: 워크스페이스 생성 (LDAP) 확인 및 저장
+/nodeChanges[71132]/symbolData/symbolOverrides[1]/textData/characters: LDAP
+/nodeChanges[71210]/symbolData/symbolOverrides[1]/textData/characters: myK 사내직원인증을 위한 LDAP 및 SCAP 연동
+/nodeChanges[71343]/name: LDAP 계정 필요
+/nodeChanges[71343]/textData/characters: LDAP 계정 필요
+/nodeChanges[71523]/componentPropAssignments[1]/value/textValue/characters: user_id
+/nodeChanges[71523]/componentPropAssignments[1]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[71531]/componentPropAssignments[1]/value/textValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[71531]/componentPropAssignments[1]/varValue/value/textDataValue/characters: curl --request POST \ --url 
+https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'
+/nodeChanges[71588]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_id
+/nodeChanges[71823]/name: API 명 : UserProperty (LDAP)
+/nodeChanges[71823]/textData/characters: API 명 : UserProperty (LDAP)
+/nodeChanges[72192]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[72199]/name: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[72199]/textData/characters: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[72714]/componentPropAssignments[1]/value/textValue/characters: IF_199  authenticateUserByAppInfo (SCAP) 민감1
+/nodeChanges[72714]/componentPropAssignments[1]/varValue/value/textDataValue/characters: IF_199  authenticateUserByAppInfo (SCAP) 민감1
+/nodeChanges[72730]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[72792]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[72858]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[72924]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[73005]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[73059]/name: 워크스페이스 상세 (LDAP Draft)
+/nodeChanges[73059]/textData/characters: 워크스페이스 상세 (LDAP Draft)
+/nodeChanges[73068]/name: 워크스페이스 상세 (LDAP DEV)
+/nodeChanges[73068]/textData/characters: 워크스페이스 상세 (LDAP DEV)
+/nodeChanges[73074]/name: 워크스페이스 상세 (LDAP PROD)
+/nodeChanges[73074]/textData/characters: 워크스페이스 상세 (LDAP PROD)
+/nodeChanges[73075]/name: 워크스페이스 상세 (LDAP Expired)
+/nodeChanges[73075]/textData/characters: 워크스페이스 상세 (LDAP Expired)
+/nodeChanges[73076]/name: 워크스페이스 상세 (LDAP Expired Renew Pending)
+/nodeChanges[73076]/textData/characters: 워크스페이스 상세 (LDAP Expired Renew Pending)
+/nodeChanges[73077]/name: 워크스페이스 상세 (LDAP Expired Renew Rejected)
+/nodeChanges[73077]/textData/characters: 워크스페이스 상세 (LDAP Expired Renew Rejected)
+/nodeChanges[73226]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[73226]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[73318]/name: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[73318]/textData/characters: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[73977]/name: OIF_311  UserProperty (LDAP)
+/nodeChanges[73977]/textData/characters: OIF_311  UserProperty (LDAP)
+/nodeChanges[74029]/textData/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[74047]/textData/characters: OIF_314  UserProperty (LDAP)
+/nodeChanges[74083]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[74083]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[74173]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[74173]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[75758]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[75758]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[77415]/componentPropAssignments[1]/value/textValue/characters: IF_199  authenticateUserByAppInfo (SCAP) 민감1
+/nodeChanges[77415]/componentPropAssignments[1]/varValue/value/textDataValue/characters: IF_199  authenticateUserByAppInfo (SCAP) 민감1
+/nodeChanges[77431]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[77493]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[77559]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[77625]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[77706]/symbolData/symbolOverrides[1]/componentPropAssignments[0]/varValue/value/textDataValue/characters: user_toke
+/nodeChanges[77771]/name: 워크스페이스 상세 (LDAP Draft)
+/nodeChanges[77772]/name: LDAP – Draft
+/nodeChanges[77947]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[77947]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78058]/name: LDAP – Draft
+/nodeChanges[78245]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78245]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78346]/name: 워크스페이스 상세 (LDAP DEV)
+/nodeChanges[78347]/name: LDAP – Draft
+/nodeChanges[78517]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78517]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78623]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[78763]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78763]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[78855]/name: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[78855]/textData/characters: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[79514]/name: OIF_311  UserProperty (LDAP)
+/nodeChanges[79514]/textData/characters: OIF_311  UserProperty (LDAP)
+/nodeChanges[79566]/textData/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[79584]/textData/characters: OIF_314  UserProperty (LDAP)
+/nodeChanges[79620]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[79620]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[79710]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[79710]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81295]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81295]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81449]/name: 워크스페이스 상세 (LDAP PROD)
+/nodeChanges[81450]/name: LDAP – Draft
+/nodeChanges[81628]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81628]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81734]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[81762]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[81785]/name: 워크스페이스 상세 (LDAP Expired)
+/nodeChanges[81786]/name: LDAP – Draft
+/nodeChanges[81956]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[81956]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[82062]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82092]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82115]/name: 워크스페이스 상세 (LDAP Expired Renew Pending)
+/nodeChanges[82116]/name: LDAP – Draft
+/nodeChanges[82286]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[82286]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[82392]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82397]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82423]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82437]/name: 워크스페이스 상세 (LDAP Expired Renew Rejected)
+/nodeChanges[82438]/name: LDAP – Draft
+/nodeChanges[82612]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[82612]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[82718]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82748]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82753]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[82783]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[82808]/textData/characters: IF_199  authenticateUserByAppInfo (SCAP)
+/nodeChanges[82815]/name: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[82815]/textData/characters: IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.
+/nodeChanges[82837]/name: API 명 : UserProperty (LDAP)
+/nodeChanges[82837]/textData/characters: API 명 : UserProperty (LDAP)
+/nodeChanges[83687]/name: LDAP – Draft
+/nodeChanges[83857]/componentPropAssignments[0]/value/textValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[83857]/componentPropAssignments[0]/varValue/value/textDataValue/characters: OIF_312  UserProperty (LDAP)
+/nodeChanges[83966]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다
+/nodeChanges[83970]/symbolData/symbolOverrides[2]/componentPropAssignments[0]/varValue/value/textDataValue/characters: LDAP 계정 소속 Company가 자동으로 매핑됩니다

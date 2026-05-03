@@ -1,0 +1,376 @@
+================================================================================
+956:25065 개인정보 변경_01
+956-25065 FRAME 개인정보 변경_01
+  name: 개인정보 변경_01
+956-25067 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25068 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25070 FRAME Tab
+  name: Tab
+956-25071 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25073 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25079 TEXT Title
+  name: Title
+  textData: 비밀번호 확인
+956-25080 TEXT 타이틀
+  name: 타이틀
+  textData: 본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25081 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[0]/value/textValue/styleOverrideTable[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 0702db5bd1204b43775d662667c2c04633a3be55
+  /componentPropAssignments[0]/value/textValue/styleOverrideTable[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19223:34
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25083 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25084 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium
+================================================================================
+956:25085 개인정보 변경_02
+956-25085 FRAME 개인정보 변경_02
+  name: 개인정보 변경_02
+956-25087 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25088 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25090 FRAME Tab
+  name: Tab
+956-25091 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25093 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25098 TEXT Title
+  name: Title
+  textData: 정보입력
+956-25099 TEXT 타이틀
+  name: 타이틀
+  textData: 변경하실 정보를 정확하게 입력해 주세요.
+956-25102 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25103 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[3]/varValue/value/textDataValue/characters: API명을 입력해 주세요.
+956-25106 TEXT Label
+  name: Label
+  textData: 사업자등록번호
+956-25109 FRAME input area
+  name: input area
+956-25110 TEXT Label
+  textData: 832
+956-25113 TEXT Label
+  textData: 86
+956-25116 TEXT Label
+  textData: 00304
+956-25117 INSTANCE ┗ Helper Text
+  name: ┗ Helper Text
+956-25119 TEXT Label
+  textData: 전화번호
+956-25123 TEXT Label
+  textData: 010
+956-25126 TEXT Label
+  textData: 1234
+956-25129 TEXT Label
+  textData: 5678
+956-25131 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[1]/value/textValue/characters: http://foreversoft.co.kr
+956-25132 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[1]/value/textValue/characters: abc@foeversoft.co.kr
+956-25134 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25135 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium
+================================================================================
+956:25136 비밀번호 변경_01
+956-25136 FRAME 비밀번호 변경_01
+  name: 비밀번호 변경_01
+956-25138 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25139 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25141 FRAME Tab
+  name: Tab
+956-25142 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25144 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25150 TEXT Title
+  name: Title
+  textData: 비밀번호 확인
+956-25151 TEXT 타이틀
+  name: 타이틀
+  textData: 본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25152 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25153 FRAME 인증번호
+  name: 인증번호
+956-25155 TEXT Label
+  name: Label
+956-25157 FRAME input area
+  name: input area
+956-25158 TEXT Label
+  textData: 123456
+956-25159 FRAME btn area
+  name: btn area
+956-25160 FRAME btn_clear
+  name: btn_clear
+956-25161 INSTANCE ic/fill/delete
+  name: ic/fill/delete
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/key: b1c574e9b6bf8f2f49f8c24ec771834959338249
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/version: 20778:4
+956-25162 FRAME time / btn
+  name: time / btn
+956-25163 TEXT Time
+  name: Time
+  textData: 02:23
+956-25165 INSTANCE ┗ Helper Text
+  name: ┗ Helper Text
+956-25167 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25168 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium
+================================================================================
+956:25169 비밀번호 변경_02
+956-25169 FRAME 비밀번호 변경_02
+  name: 비밀번호 변경_02
+956-25171 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25172 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25174 FRAME Tab
+  name: Tab
+956-25175 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25177 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25183 TEXT Title
+  name: Title
+  textData: 비밀번호 변경
+956-25184 TEXT 타이틀
+  name: 타이틀
+  textData: 1분 이내로 입력해주세요.
+956-25185 INSTANCE Text Input (Desktop)
+  /symbolData/symbolOverrides[2]/componentPropAssignments[0]/value/textValue/characters: 최소 8자 이상, 영문 대소문자·숫자·특수문자(‘`~!@$^*{}|/) 중 3가지 이상을 조합해 입력해 주세요.
+  /symbolData/symbolOverrides[3]/fillPaints[0]/colorVar/value/alias/assetRef/key: 1abab28f89d540cbdac789677aea38bddbcf35e8
+  /symbolData/symbolOverrides[3]/fillPaints[0]/colorVar/value/alias/assetRef/version: 21800:11
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25188 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25189 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium
+================================================================================
+956:25190 회원탈퇴_01
+956-25190 FRAME 회원탈퇴_01
+  name: 회원탈퇴_01
+956-25192 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25193 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25195 FRAME Tab
+  name: Tab
+956-25196 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25198 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25204 TEXT Title
+  name: Title
+  textData: 비밀번호 확인
+956-25205 TEXT 타이틀
+  name: 타이틀
+  textData: 본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25206 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25207 FRAME 인증번호
+  name: 인증번호
+956-25209 TEXT Label
+  name: Label
+956-25211 FRAME input area
+  name: input area
+956-25212 TEXT Label
+  textData: 123456
+956-25213 FRAME btn area
+  name: btn area
+956-25214 FRAME btn_clear
+  name: btn_clear
+956-25215 INSTANCE ic/fill/delete
+  name: ic/fill/delete
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/key: b1c574e9b6bf8f2f49f8c24ec771834959338249
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/version: 20778:4
+956-25216 FRAME time / btn
+  name: time / btn
+956-25217 TEXT Time
+  name: Time
+  textData: 02:23
+956-25219 INSTANCE ┗ Helper Text
+  name: ┗ Helper Text
+956-25221 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25222 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium
+================================================================================
+956:25223 회원탈퇴_02
+956-25223 FRAME 회원탈퇴_02
+  name: 회원탈퇴_02
+956-25225 INSTANCE GNB
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/key: 2a23c56d2d16457921d799c94ac36950237d5180
+  /symbolData/symbolOverrides[0]/styleIdForText/assetRef/version: 18113:7
+  /symbolData/symbolOverrides[0]/lineHeight/units: RAW
+  /symbolData/symbolOverrides[0]/fontName/family: Pretendard
+  /symbolData/symbolOverrides[0]/fontName/style: SemiBold
+  /symbolData/symbolOverrides[0]/fontName/postscript: Pretendard-SemiBold
+  /symbolData/symbolOverrides[0]/letterSpacing/units: PERCENT
+  /symbolData/symbolOverrides[0]/fillPaints[0]/type: SOLID
+  /symbolData/symbolOverrides[0]/fillPaints[0]/blendMode: NORMAL
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/dataType: ALIAS
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/resolvedDataType: COLOR
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[0]/variableField: FONT_FAMILY
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[1]/variableField: FONT_STYLE
+  /symbolData/symbolOverrides[0]/variableConsumptionMap/entries[2]/variableField: FONT_SIZE
+956-25226 INSTANCE Header
+  /symbolData/symbolOverrides[0]/textData/characters: My page
+  /symbolData/symbolOverrides[0]/textData/lines[0]/lineType: PLAIN
+  /symbolData/symbolOverrides[0]/textData/lines[0]/sourceDirectionality: AUTO
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/key: f589415689d1575aa8647b5503bfd12079f6302b
+  /symbolData/symbolOverrides[4]/strokePaints[0]/colorVar/value/alias/assetRef/version: 19223:133
+956-25228 FRAME Tab
+  name: Tab
+956-25229 FRAME Fixed Tab Group
+  name: Fixed Tab Group
+956-25231 INSTANCE Fixed Tab
+  /componentPropAssignments[0]/varValue/dataType: TEXT_DATA
+956-25237 TEXT Title
+  name: Title
+  textData: 회원탈퇴
+956-25238 TEXT 타이틀
+  name: 타이틀
+  textData: 정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.
+956-25240 FRAME 유의사항
+  name: 유의사항
+956-25243 FRAME List Group
+  name: List Group
+956-25244 INSTANCE List
+  name: List
+  /symbolData/symbolOverrides[1]/styleIdForText/assetRef/key: 406693d14cc62fa6065fbd68b612ef58008e6b64
+  /symbolData/symbolOverrides[1]/styleIdForText/assetRef/version: 14433:729
+  /symbolData/symbolOverrides[1]/letterSpacing/units: PIXELS
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/key: 976e1f2cdba54b3d0bb9cab5db3dd45b05a5510b
+  /symbolData/symbolOverrides[1]/fillPaints[0]/colorVar/value/alias/assetRef/version: 20029:19
+956-25245 INSTANCE List
+  /symbolData/symbolOverrides[1]/textData/characters: 본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다. (예: SOP, SDP, 개발지원, CASS 등)
+956-25246 FRAME 3Depth
+  name: 3Depth
+956-25249 INSTANCE Text Input (Desktop)
+  /componentPropAssignments[1]/varValue/value/textDataValue/characters: sung***
+  /componentPropAssignments[2]/varValue/dataType: BOOLEAN
+956-25252 INSTANCE Button
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/key: 216bd55015eaec16ec92bea67f100f7b8d3b9dec
+  /symbolData/symbolOverrides[0]/fillPaints[0]/colorVar/value/alias/assetRef/version: 19770:33
+  /symbolData/symbolOverrides[0]/stackPrimarySizing: FIXED
+  /symbolData/symbolOverrides[1]/variableConsumptionMap/entries[3]/variableField: LETTER_SPACING
+956-25253 INSTANCE Button
+  /symbolData/symbolOverrides[1]/fontName/style: Medium
+  /symbolData/symbolOverrides[1]/fontName/postscript: Pretendard-Medium

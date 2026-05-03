@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+    </head>
+
+    <body class="kt-user-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-user-main">
+                <section class="kt-user-header">
+                    <div class="kt-user-header__title">
+                        <h1>정보변경</h1>
+                        <span>개인정보 및 비밀번호를 관리합니다.</span>
+                    </div>
+                    <nav class="kt-user-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <p>My page</p>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <strong>회원탈퇴</strong>
+                    </nav>
+                </section>
+                <div class="kt-user-shell">
+                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
+                        <ul>
+                            <li><a href="#">개인정보 변경</a></li>
+                            <li><a href="#">비밀번호 변경</a></li>
+                            <li><a href="#" class="is-active">회원탈퇴</a></li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <li>
+                            <div class="kt-user-form">
+                                <div class="kt-user-title">
+                                    <h2>회원탈퇴</h2>
+                                    <p>정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.</p>
+                                </div>
+                                <form class="kt-user-form-body">
+                                    <section class="kt-user-notice" aria-labelledby="userWithdrawNoticeTitle">
+                                        <h3 id="userWithdrawNoticeTitle">유의사항</h3>
+                                        <ul class="kt-user-note-list">
+                                            <li>본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제됩니다.</li>
+                                            <li>
+                                                본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다. (예: SOP, SDP,
+                                                개발지원, CASS 등)
+                                            </li>
+                                            <li>
+                                                개인 데이터 처리
+                                                <ul>
+                                                    <li>
+                                                        본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제
+                                                        됩니다.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <label class="kt-field kt-user-field kt-user-field--bare">
+                                        <span class="blind">아이디</span>
+                                        <input
+                                            type="text"
+                                            class="kt-input kt-input--52"
+                                            value="sung***"
+                                            placeholder="비밀번호를 입력해 주세요"
+                                        />
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">비밀번호 확인</span>
+                                        <span class="kt-password">
+                                            <input
+                                                type="password"
+                                                id="userWithdrawFinalPassword"
+                                                class="kt-input kt-input--52"
+                                                placeholder="비밀번호를 입력해 주세요"
+                                            />
+                                            <span class="kt-password__actions">
+                                                <button
+                                                    type="button"
+                                                    class="kt-input-field__clear kt-password__clear"
+                                                    data-clear_input
+                                                    aria-controls="userWithdrawFinalPassword"
+                                                    aria-label="비밀번호 삭제"
+                                                    hidden
+                                                >
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="kt-password__toggle"
+                                                    data-password_toggle
+                                                    data-icon-show="./assets/img/components/ico_eye.svg"
+                                                    data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                    aria-controls="userWithdrawFinalPassword"
+                                                    aria-pressed="false"
+                                                    aria-label="비밀번호 보기"
+                                                >
+                                                    <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </form>
+                                <div class="kt-user-actions">
+                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
+                                    <button type="button" class="kt-user-button kt-user-button--primary">
+                                        회원탈퇴
+                                    </button>
+                                </div>
+                            </div>
+                            <div>2</div>
+                            <div>3</div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

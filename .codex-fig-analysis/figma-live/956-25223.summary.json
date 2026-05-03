@@ -1,0 +1,1220 @@
+[
+    {
+        "depth": 0,
+        "id": "956:25223",
+        "name": "회원탈퇴_02",
+        "rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 12576,
+            "y": 9240
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 1,
+        "id": "956:25224",
+        "name": "Header",
+        "rect": {
+            "height": 144,
+            "width": 1920,
+            "x": 12576,
+            "y": 9240
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 2,
+        "id": "956:25225",
+        "name": "GNB",
+        "rect": {
+            "height": 80,
+            "width": 1920,
+            "x": 12576,
+            "y": 9240
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 3,
+        "id": "I956:25225;383:2296",
+        "name": "GNB",
+        "rect": {
+            "height": 40,
+            "width": 1920,
+            "x": 12576,
+            "y": 9260
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25225;383:2297",
+        "name": "LOGO",
+        "rect": {
+            "height": 40,
+            "width": 154,
+            "x": 12600,
+            "y": 9260
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25225;383:2299",
+        "name": "Menu",
+        "rect": {
+            "height": 40,
+            "width": 780,
+            "x": 13137,
+            "y": 9260
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25225;383:2300",
+        "name": "My Workspaces",
+        "rect": {
+            "height": 24,
+            "width": 119,
+            "x": 13137.5,
+            "y": 9268
+        },
+        "style": {
+            "fontSize": 16,
+            "fontWeight": 600,
+            "lineHeightPx": 23.68000030517578,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "My Workspaces",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25225;383:2301",
+        "name": "Workspaces",
+        "rect": {
+            "height": 24,
+            "width": 92,
+            "x": 13371,
+            "y": 9268
+        },
+        "style": {
+            "fontSize": 16,
+            "fontWeight": 600,
+            "lineHeightPx": 23.68000030517578,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "Workspaces",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25225;383:2302",
+        "name": "Tools",
+        "rect": {
+            "height": 24,
+            "width": 40,
+            "x": 13617,
+            "y": 9268
+        },
+        "style": {
+            "fontSize": 16,
+            "fontWeight": 600,
+            "lineHeightPx": 23.68000030517578,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "Tools",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25225;383:2303",
+        "name": "Support",
+        "rect": {
+            "height": 24,
+            "width": 60,
+            "x": 13827,
+            "y": 9268
+        },
+        "style": {
+            "fontSize": 16,
+            "fontWeight": 600,
+            "lineHeightPx": 23.68000030517578,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "Support",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25225;383:2304",
+        "name": "Frame 217",
+        "rect": {
+            "height": 21,
+            "width": 172,
+            "x": 14300,
+            "y": 9269.5
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25225;383:2305;256:958",
+        "name": "레이블",
+        "rect": {
+            "height": 22,
+            "width": 244,
+            "x": 14316,
+            "y": 9274
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "API, 문서, FAQ  검색",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25225;383:2337;383:2288",
+        "name": "홍길동",
+        "rect": {
+            "height": 21,
+            "width": 50,
+            "x": 14324,
+            "y": 9269.5
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "홍길동",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25225;383:2337;383:2291",
+        "name": "Log out",
+        "rect": {
+            "height": 21,
+            "width": 50,
+            "x": 14422,
+            "y": 9269.5
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "Log out",
+        "type": "TEXT"
+    },
+    {
+        "depth": 2,
+        "id": "956:25226",
+        "name": "Header",
+        "rect": {
+            "height": 64,
+            "width": 1920,
+            "x": 12576,
+            "y": 9320
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 3,
+        "id": "I956:25226;473:1512",
+        "name": "타이틀",
+        "rect": {
+            "height": 33,
+            "width": 317,
+            "x": 12600,
+            "y": 9335.5
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1512;473:1504",
+        "name": "타이틀",
+        "rect": {
+            "height": 33,
+            "width": 317,
+            "x": 12600,
+            "y": 9335.5
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25226;473:1512;473:1505",
+        "name": "새 워크스페이스 만들기",
+        "rect": {
+            "height": 33,
+            "width": 77,
+            "x": 12600,
+            "y": 9335.5
+        },
+        "style": {
+            "fontSize": 22,
+            "fontWeight": 700,
+            "lineHeightPx": 32.560001373291016,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "정보변경",
+        "type": "TEXT"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25226;473:1512;473:1506",
+        "name": "Entra ID",
+        "rect": {
+            "height": 27,
+            "width": 224,
+            "x": 12693,
+            "y": 9338.5
+        },
+        "style": {
+            "fontSize": 16,
+            "fontWeight": 400,
+            "lineHeightPx": 27.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "개인정보 및 비밀번호를 관리합니다.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 8,
+        "id": "I956:25226;473:1512;473:1541",
+        "name": "text",
+        "rect": {
+            "height": 19,
+            "width": 34,
+            "x": 12898,
+            "y": 9342.5
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "도움말",
+        "type": "TEXT"
+    },
+    {
+        "depth": 3,
+        "id": "I956:25226;473:1494",
+        "name": "Breadcrumb",
+        "rect": {
+            "height": 19,
+            "width": 177,
+            "x": 14295,
+            "y": 9342.5
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1494;890:18256",
+        "name": "ic/line/home",
+        "rect": {
+            "height": 16,
+            "width": 16,
+            "x": 14295,
+            "y": 9344
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1494;890:18455",
+        "name": "ic/line/chevron_right",
+        "rect": {
+            "height": 16,
+            "width": 16,
+            "x": 14319,
+            "y": 9344
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1494;473:1487",
+        "name": "My Workspaces",
+        "rect": {
+            "height": 19,
+            "width": 52,
+            "x": 14343,
+            "y": 9342.5
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "My page",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1494;890:18257",
+        "name": "ic/line/chevron_right",
+        "rect": {
+            "height": 16,
+            "width": 16,
+            "x": 14403,
+            "y": 9344
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25226;473:1494;473:1489",
+        "name": "Create Workspace",
+        "rect": {
+            "height": 19,
+            "width": 45,
+            "x": 14427,
+            "y": 9342.5
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 600,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "회원탈퇴",
+        "type": "TEXT"
+    },
+    {
+        "depth": 1,
+        "id": "956:25227",
+        "name": "Footer",
+        "rect": {
+            "height": 117,
+            "width": 1920,
+            "x": 12576,
+            "y": 10203
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 2,
+        "id": "I956:25227;383:1856",
+        "name": "Frame 51",
+        "rect": {
+            "height": 77,
+            "width": 1872,
+            "x": 12600,
+            "y": 10219
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 3,
+        "id": "I956:25227;383:1857",
+        "name": "Frame 50",
+        "rect": {
+            "height": 77,
+            "width": 1872,
+            "x": 12600,
+            "y": 10219
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25227;383:1858",
+        "name": "menu",
+        "rect": {
+            "height": 21,
+            "width": 1872,
+            "x": 12600,
+            "y": 10219
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25227;383:1859",
+        "name": "회사소개",
+        "rect": {
+            "height": 21,
+            "width": 49,
+            "x": 12600,
+            "y": 10219
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 500,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "회사소개",
+        "type": "TEXT"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25227;383:1861",
+        "name": "이용약관",
+        "rect": {
+            "height": 21,
+            "width": 49,
+            "x": 12681,
+            "y": 10219
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 500,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "이용약관",
+        "type": "TEXT"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25227;383:1863",
+        "name": "개인정보처리방침",
+        "rect": {
+            "height": 21,
+            "width": 97,
+            "x": 12762,
+            "y": 10219
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 600,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "개인정보처리방침",
+        "type": "TEXT"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25227;383:1865",
+        "name": "불법스팸대응",
+        "rect": {
+            "height": 21,
+            "width": 73,
+            "x": 12891,
+            "y": 10219
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 500,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "불법스팸대응",
+        "type": "TEXT"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25227;383:1867",
+        "name": "명의도용방지서비스",
+        "rect": {
+            "height": 21,
+            "width": 109,
+            "x": 12996,
+            "y": 10219
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 500,
+            "lineHeightPx": 20.720001220703125,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "명의도용방지서비스",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25227;383:1868",
+        "name": "info",
+        "rect": {
+            "height": 40,
+            "width": 1872,
+            "x": 12600,
+            "y": 10256
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25227;383:1869",
+        "name": "㈜케이티 대표이사 : 박윤영",
+        "rect": {
+            "height": 22,
+            "width": 151,
+            "x": 12600,
+            "y": 10253
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 22.1200008392334,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "㈜케이티 대표이사 : 박윤영",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25227;383:1871",
+        "name": "사업자등록번호 : 102-81-42945",
+        "rect": {
+            "height": 22,
+            "width": 188,
+            "x": 12767,
+            "y": 10253
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 22.1200008392334,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "사업자등록번호 : 102-81-42945",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25227;383:1873",
+        "name": "통신판매업신고 : 2002-경기성남-0048",
+        "rect": {
+            "height": 22,
+            "width": 223,
+            "x": 12971,
+            "y": 10253
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 22.1200008392334,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "통신판매업신고 : 2002-경기성남-0048",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25227;383:1875",
+        "name": "경기도 성남시 분당구 불정로 90 (정자동)",
+        "rect": {
+            "height": 22,
+            "width": 226,
+            "x": 13210,
+            "y": 10253
+        },
+        "style": {
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeightPx": 22.1200008392334,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "경기도 성남시 분당구 불정로 90 (정자동)",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25227;383:1877",
+        "name": "Copyright ⓒ 2026 KT corp. All rights reserved",
+        "rect": {
+            "height": 16,
+            "width": 1718,
+            "x": 12600,
+            "y": 10280
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "Copyright ⓒ 2026 KT corp. All rights reserved",
+        "type": "TEXT"
+    },
+    {
+        "depth": 1,
+        "id": "956:25228",
+        "name": "Tab",
+        "rect": {
+            "height": 48,
+            "width": 608,
+            "x": 13232,
+            "y": 9440
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 2,
+        "id": "956:25229",
+        "name": "Fixed Tab Group",
+        "rect": {
+            "height": 48,
+            "width": 608,
+            "x": 13232,
+            "y": 9440
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 3,
+        "id": "956:25230",
+        "name": "group",
+        "rect": {
+            "height": 48,
+            "width": 608,
+            "x": 13232,
+            "y": 9440
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "956:25231",
+        "name": "Fixed Tab",
+        "rect": {
+            "height": 48,
+            "width": 202.6666717529297,
+            "x": 13232,
+            "y": 9440
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25231;804:12166",
+        "name": "텍스트",
+        "rect": {
+            "height": 22,
+            "width": 178.6666717529297,
+            "x": 13244,
+            "y": 9453
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "개인정보 변경",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "956:25232",
+        "name": "Fixed Tab",
+        "rect": {
+            "height": 48,
+            "width": 202.66665649414062,
+            "x": 13434.6669921875,
+            "y": 9440
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25232;804:12166",
+        "name": "텍스트",
+        "rect": {
+            "height": 22,
+            "width": 178.66665649414062,
+            "x": 13446.6669921875,
+            "y": 9453
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "비밀번호 변경",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "956:25233",
+        "name": "Fixed Tab",
+        "rect": {
+            "height": 48,
+            "width": 202.66665649414062,
+            "x": 13637.3330078125,
+            "y": 9440
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25233;804:12170",
+        "name": "텍스트",
+        "rect": {
+            "height": 22,
+            "width": 178.66665649414062,
+            "x": 13649.3330078125,
+            "y": 9453
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 700,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "회원탈퇴",
+        "type": "TEXT"
+    },
+    {
+        "depth": 1,
+        "id": "956:25234",
+        "name": "Frame 2147206489",
+        "rect": {
+            "height": 585,
+            "width": 608,
+            "x": 13232,
+            "y": 9488
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 2,
+        "id": "956:25235",
+        "name": "Frame 2147206481",
+        "rect": {
+            "height": 481,
+            "width": 608,
+            "x": 13232,
+            "y": 9488
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 3,
+        "id": "956:25236",
+        "name": "Title Container",
+        "rect": {
+            "height": 133,
+            "width": 608,
+            "x": 13232,
+            "y": 9488
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "956:25237",
+        "name": "Title",
+        "rect": {
+            "height": 47,
+            "width": 608,
+            "x": 13232,
+            "y": 9544
+        },
+        "style": {
+            "fontSize": 32,
+            "fontWeight": 700,
+            "lineHeightPx": 47.36000061035156,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "회원탈퇴",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "956:25238",
+        "name": "타이틀",
+        "rect": {
+            "height": 22,
+            "width": 608,
+            "x": 13232,
+            "y": 9599
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 3,
+        "id": "956:25239",
+        "name": "Frame 2147206491",
+        "rect": {
+            "height": 308,
+            "width": 608,
+            "x": 13232,
+            "y": 9661
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 4,
+        "id": "956:25240",
+        "name": "유의사항",
+        "rect": {
+            "height": 129,
+            "width": 608,
+            "x": 13232,
+            "y": 9661
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 6,
+        "id": "956:25242",
+        "name": "유의사항",
+        "rect": {
+            "height": 19,
+            "width": 45,
+            "x": 13232,
+            "y": 9661
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 700,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "유의사항",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25244;7694:29789",
+        "name": "이 문장은 콘텐츠 영역의 테스트를 위한 더미 텍스트입니다. 문장 길이와 문단 간의 여백 확인 용도로 사용합니다.",
+        "rect": {
+            "height": 18,
+            "width": 566,
+            "x": 13262,
+            "y": 9700
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 600,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제됩니다.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 8,
+        "id": "I956:25245;7694:29816",
+        "name": "Text",
+        "rect": {
+            "height": 18,
+            "width": 18,
+            "x": 13278,
+            "y": 9720
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "",
+        "type": "TEXT"
+    },
+    {
+        "depth": 8,
+        "id": "I956:25245;7694:29817",
+        "name": "이 문장은 콘텐츠 영역의 테스트를 위한 더미 텍스트입니다. 문장 길이와 문단 간의 여백 확인 용도로 사용합니다.",
+        "rect": {
+            "height": 18,
+            "width": 550,
+            "x": 13278,
+            "y": 9720
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다.\u000b (예: SOP, SDP, 개발지원, CASS 등)\r",
+        "type": "TEXT"
+    },
+    {
+        "depth": 8,
+        "id": "I956:25247;7694:29789",
+        "name": "이 문장은 콘텐츠 영역의 테스트를 위한 더미 텍스트입니다. 문장 길이와 문단 간의 여백 확인 용도로 사용합니다.",
+        "rect": {
+            "height": 18,
+            "width": 566,
+            "x": 13262,
+            "y": 9740
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 600,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "개인 데이터 처리\r",
+        "type": "TEXT"
+    },
+    {
+        "depth": 9,
+        "id": "I956:25248;7694:29816",
+        "name": "Text",
+        "rect": {
+            "height": 18,
+            "width": 18,
+            "x": 13278,
+            "y": 9760
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "",
+        "type": "TEXT"
+    },
+    {
+        "depth": 9,
+        "id": "I956:25248;7694:29817",
+        "name": "이 문장은 콘텐츠 영역의 테스트를 위한 더미 텍스트입니다. 문장 길이와 문단 간의 여백 확인 용도로 사용합니다.",
+        "rect": {
+            "height": 18,
+            "width": 550,
+            "x": 13278,
+            "y": 9760
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제 됩니다.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "956:25249",
+        "name": "Text Input (Desktop)",
+        "rect": {
+            "height": 52,
+            "width": 608,
+            "x": 13232,
+            "y": 9814
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25249;18801:135624",
+        "name": "Label",
+        "rect": {
+            "height": 19,
+            "width": 610,
+            "x": 13232,
+            "y": 9814
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "아이디",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25249;18801:135627",
+        "name": "Label",
+        "rect": {
+            "height": 22,
+            "width": 576,
+            "x": 13248,
+            "y": 9829
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "sung***",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25249;18801:135628;765:13443",
+        "name": "헬프 텍스트입니다. 한 줄을 넘기지 않는 것을 권장해요.",
+        "rect": {
+            "height": 18,
+            "width": 606,
+            "x": 13236,
+            "y": 9901
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 4,
+        "id": "956:25250",
+        "name": "Text Input (Desktop)",
+        "rect": {
+            "height": 79,
+            "width": 608,
+            "x": 13232,
+            "y": 9890
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 5,
+        "id": "I956:25250;18803:102211",
+        "name": "Label",
+        "rect": {
+            "height": 19,
+            "width": 608,
+            "x": 13232,
+            "y": 9890
+        },
+        "style": {
+            "fontSize": 13,
+            "fontWeight": 500,
+            "lineHeightPx": 19.239999771118164,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "비밀번호 확인",
+        "type": "TEXT"
+    },
+    {
+        "depth": 7,
+        "id": "I956:25250;18803:102214",
+        "name": "Label",
+        "rect": {
+            "height": 22,
+            "width": 552,
+            "x": 13248,
+            "y": 9932
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 500,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "비밀번호를 입력해 주세요",
+        "type": "TEXT"
+    },
+    {
+        "depth": 6,
+        "id": "I956:25250;18803:102215;765:13443",
+        "name": "헬프 텍스트입니다. 한 줄을 넘기지 않는 것을 권장해요.",
+        "rect": {
+            "height": 18,
+            "width": 606,
+            "x": 13236,
+            "y": 9977
+        },
+        "style": {
+            "fontSize": 12,
+            "fontWeight": 500,
+            "lineHeightPx": 17.760000228881836,
+            "textAlignHorizontal": "LEFT"
+        },
+        "text": "팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.",
+        "type": "TEXT"
+    },
+    {
+        "depth": 2,
+        "id": "956:25251",
+        "name": "Button Group",
+        "rect": {
+            "height": 48,
+            "width": 368,
+            "x": 13352,
+            "y": 10025
+        },
+        "type": "FRAME"
+    },
+    {
+        "depth": 3,
+        "id": "956:25252",
+        "name": "Button",
+        "rect": {
+            "height": 48,
+            "width": 180,
+            "x": 13352,
+            "y": 10025
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25252;583:13042",
+        "name": "Label",
+        "rect": {
+            "height": 22,
+            "width": 26,
+            "x": 13429,
+            "y": 10038
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 600,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "취소",
+        "type": "TEXT"
+    },
+    {
+        "depth": 3,
+        "id": "956:25253",
+        "name": "Button",
+        "rect": {
+            "height": 48,
+            "width": 180,
+            "x": 13540,
+            "y": 10025
+        },
+        "type": "INSTANCE"
+    },
+    {
+        "depth": 4,
+        "id": "I956:25253;583:12726",
+        "name": "Label",
+        "rect": {
+            "height": 22,
+            "width": 52,
+            "x": 13604,
+            "y": 10038
+        },
+        "style": {
+            "fontSize": 15,
+            "fontWeight": 600,
+            "lineHeightPx": 22.200000762939453,
+            "textAlignHorizontal": "CENTER"
+        },
+        "text": "회원탈퇴",
+        "type": "TEXT"
+    }
+]

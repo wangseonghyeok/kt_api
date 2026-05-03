@@ -1,0 +1,230 @@
+
+### 956:25065 개인정보 변경_01
+956-25068 Header [INSTANCE]
+  My page
+  개인정보 변경
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25073 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25074 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25075 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25079 Title [TEXT]
+  비밀번호 확인
+956-25080 타이틀 [TEXT]
+  본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25081 Text Input (Desktop) [INSTANCE]
+  비밀번호 *
+  김케이
+  비밀번호를 입력해 주세요
+  팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.
+956-25083 Button [INSTANCE]
+  취소
+956-25084 Button [INSTANCE]
+  입력완료
+
+### 956:25085 개인정보 변경_02
+956-25088 Header [INSTANCE]
+  My page
+  개인정보 변경
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25093 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25094 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25095 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25098 Title [TEXT]
+  정보입력
+956-25099 타이틀 [TEXT]
+  변경하실 정보를 정확하게 입력해 주세요.
+956-25102 Text Input (Desktop) [INSTANCE]
+  회사명
+  포에버소프트
+956-25103 Text Input (Desktop) [INSTANCE]
+  대표자명
+  홍길동
+  API명을 입력해 주세요.
+956-25104 Text Input (Desktop) [INSTANCE]
+  구분
+  법인사업자
+  API명을 입력해 주세요.
+956-25106 Label [TEXT]
+  사업자등록번호
+956-25110 Label [TEXT]
+  832
+956-25113 Label [TEXT]
+  86
+956-25116 Label [TEXT]
+  00304
+956-25119 Label [TEXT]
+  전화번호
+956-25123 Label [TEXT]
+  010
+956-25126 Label [TEXT]
+  1234
+956-25129 Label [TEXT]
+  5678
+956-25130 Text Input (Desktop) [INSTANCE]
+  담당자부서
+  플랫폼사업본부
+  API명을 입력해 주세요.
+956-25131 Text Input (Desktop) [INSTANCE]
+  홈페이지
+  http://foreversoft.co.kr
+  API명을 입력해 주세요.
+956-25132 Text Input (Desktop) [INSTANCE]
+  이메일
+  abc@foeversoft.co.kr
+  API명을 입력해 주세요.
+956-25134 Button [INSTANCE]
+  취소
+956-25135 Button [INSTANCE]
+  입력완료
+
+### 956:25136 비밀번호 변경_01
+956-25139 Header [INSTANCE]
+  My page
+  비밀번호 변경
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25144 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25145 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25146 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25150 Title [TEXT]
+  비밀번호 확인
+956-25151 타이틀 [TEXT]
+  본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25152 Text Input (Desktop) [INSTANCE]
+  비밀번호
+  김케이
+  비밀번호를 입력해 주세요
+  팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.
+956-25155 Label [TEXT]
+  인증번호
+956-25158 Label [TEXT]
+  123456
+956-25163 Time [TEXT]
+  02:23
+956-25164 Button [INSTANCE]
+  인증번호 발송
+956-25165 ┗ Helper Text [INSTANCE]
+  인증 코드가 올바르지 않습니다. 다시 확인해 주세요.  
+956-25167 Button [INSTANCE]
+  취소
+956-25168 Button [INSTANCE]
+  입력완료
+
+### 956:25169 비밀번호 변경_02
+956-25172 Header [INSTANCE]
+  My page
+  비밀번호 변경
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25177 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25178 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25179 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25183 Title [TEXT]
+  비밀번호 변경
+956-25184 타이틀 [TEXT]
+  1분 이내로 입력해주세요.
+956-25185 Text Input (Desktop) [INSTANCE]
+  새비밀번호
+  김케이
+  비밀번호를 입력해 주세요
+  최소 8자 이상, 영문 대소문자·숫자·특수문자(‘`~!@$^*{}|/) 중 3가지 이상을 조합해 입력해 주세요.
+956-25186 Text Input (Desktop) [INSTANCE]
+  새 비밀번호 확인
+  김케이
+  비밀번호를 입력해 주세요
+  최소 8자 이상, 영문 대소문자·숫자·특수문자(‘`~!@$^*{}|/) 중 3가지 이상을 조합해 입력해 주세요.
+956-25188 Button [INSTANCE]
+  취소
+956-25189 Button [INSTANCE]
+  입력완료
+
+### 956:25190 회원탈퇴_01
+956-25193 Header [INSTANCE]
+  My page
+  회원탈퇴
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25198 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25199 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25200 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25204 Title [TEXT]
+  비밀번호 확인
+956-25205 타이틀 [TEXT]
+  본인 확인을 위해 비밀번호 확인이 필요합니다.
+956-25206 Text Input (Desktop) [INSTANCE]
+  비밀번호
+  김케이
+  비밀번호를 입력해 주세요
+  팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.
+956-25209 Label [TEXT]
+  인증번호
+956-25212 Label [TEXT]
+  123456
+956-25217 Time [TEXT]
+  02:23
+956-25218 Button [INSTANCE]
+  인증번호 발송
+956-25219 ┗ Helper Text [INSTANCE]
+  인증 코드가 올바르지 않습니다. 다시 확인해 주세요.  
+956-25221 Button [INSTANCE]
+  취소
+956-25222 Button [INSTANCE]
+  입력완료
+
+### 956:25223 회원탈퇴_02
+956-25226 Header [INSTANCE]
+  My page
+  회원탈퇴
+  정보변경
+  개인정보 및 비밀번호를 관리합니다.
+956-25231 Fixed Tab [INSTANCE]
+  개인정보 변경
+956-25232 Fixed Tab [INSTANCE]
+  비밀번호 변경
+956-25233 Fixed Tab [INSTANCE]
+  회원탈퇴
+956-25237 Title [TEXT]
+  회원탈퇴
+956-25238 타이틀 [TEXT]
+  정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.
+956-25242 유의사항 [TEXT]
+  유의사항
+956-25244 List [INSTANCE]
+  본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제됩니다.
+956-25245 List [INSTANCE]
+  본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다.  (예: SOP, SDP, 개발지원, CASS 등) 
+956-25247 List [INSTANCE]
+  개인 데이터 처리 
+956-25248 List [INSTANCE]
+  본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제 됩니다.
+956-25249 Text Input (Desktop) [INSTANCE]
+  아이디
+  sung***
+  비밀번호를 입력해 주세요
+  팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.
+956-25250 Text Input (Desktop) [INSTANCE]
+  비밀번호 확인
+  김케이
+  비밀번호를 입력해 주세요
+  팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.
+956-25252 Button [INSTANCE]
+  취소
+956-25253 Button [INSTANCE]
+  회원탈퇴

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+    </head>
+
+    <body class="kt-user-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-user-main">
+                <section class="kt-user-header">
+                    <div class="kt-user-header__title">
+                        <h1>정보변경</h1>
+                        <span>개인정보 및 비밀번호를 관리합니다.</span>
+                    </div>
+                    <nav class="kt-user-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <p>My page</p>
+                        <span class="kt-user-path__separator" aria-hidden="true"></span>
+                        <strong>개인정보 변경</strong>
+                    </nav>
+                </section>
+                <div class="kt-user-shell">
+                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
+                        <ul>
+                            <li><a href="#" class="is-active">개인정보 변경</a></li>
+                            <li><a href="#">비밀번호 변경</a></li>
+                            <li><a href="#">회원탈퇴</a></li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <li>
+                            <div class="kt-user-form">
+                                <div class="kt-user-title">
+                                    <h2>정보입력</h2>
+                                    <p>변경하실 정보를 정확하게 입력해 주세요.</p>
+                                </div>
+                                <form class="kt-user-form-body">
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">회사명</span>
+                                        <input type="text" class="kt-input kt-input--52" value="포에버소프트" />
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">대표자명</span>
+                                        <input
+                                            type="text"
+                                            class="kt-input kt-input--52"
+                                            value="홍길동"
+                                            placeholder="API명을 입력해 주세요."
+                                        />
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">구분</span>
+                                        <input
+                                            type="text"
+                                            class="kt-input kt-input--52"
+                                            value="법인사업자"
+                                            placeholder="API명을 입력해 주세요."
+                                        />
+                                    </label>
+                                    <div class="kt-field kt-user-field" role="group" aria-label="사업자등록번호">
+                                        <span class="kt-field__label">사업자등록번호</span>
+                                        <div class="kt-user-field-row">
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="832"
+                                                aria-label="사업자등록번호 앞자리"
+                                            />
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="86"
+                                                aria-label="사업자등록번호 가운데자리"
+                                            />
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="00304"
+                                                aria-label="사업자등록번호 뒷자리"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="kt-field kt-user-field" role="group" aria-label="전화번호">
+                                        <span class="kt-field__label">전화번호</span>
+                                        <div class="kt-user-field-row">
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="010"
+                                                aria-label="전화번호 앞자리"
+                                            />
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="1234"
+                                                aria-label="전화번호 가운데자리"
+                                            />
+                                            <input
+                                                type="text"
+                                                class="kt-input kt-input--52"
+                                                value="5678"
+                                                aria-label="전화번호 뒷자리"
+                                            />
+                                        </div>
+                                    </div>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">담당자부서</span>
+                                        <input
+                                            type="text"
+                                            class="kt-input kt-input--52"
+                                            value="플랫폼사업본부"
+                                            placeholder="API명을 입력해 주세요."
+                                        />
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">홈페이지</span>
+                                        <input
+                                            type="url"
+                                            class="kt-input kt-input--52"
+                                            value="http://foreversoft.co.kr"
+                                            placeholder="API명을 입력해 주세요."
+                                        />
+                                    </label>
+                                    <label class="kt-field kt-user-field">
+                                        <span class="kt-field__label">이메일</span>
+                                        <input
+                                            type="email"
+                                            class="kt-input kt-input--52"
+                                            value="abc@foeversoft.co.kr"
+                                            placeholder="API명을 입력해 주세요."
+                                        />
+                                    </label>
+                                </form>
+                                <div class="kt-user-actions">
+                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
+                                    <button type="button" class="kt-user-button kt-user-button--primary">
+                                        입력완료
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

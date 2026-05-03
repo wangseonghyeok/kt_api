@@ -21,7 +21,10 @@
                     </section>
 
                     <ul class="kt-component-summary">
-                        <li><strong>Form</strong><span>Input, Password, Select, Checkbox, Radio, Switch</span></li>
+                        <li>
+                            <strong>Form</strong
+                            ><span>Input, Password, Select, Checkbox, Radio, Switch, User account</span>
+                        </li>
                         <li>
                             <strong>Dropdown</strong><span>Choice, Multi Check, Search Prompt, Service Prompt</span>
                         </li>
@@ -2052,6 +2055,192 @@ KT API Link 연동 설명을 입력합니다.
                                                 <input type="checkbox" disabled />
                                                 <span>비활성 체크 상태</span>
                                             </label>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="kt-component-section" id="user-account">
+                        <h2>User Account</h2>
+                        <p class="kt-component-desc">
+                            My page의 개인정보 변경, 비밀번호 변경, 회원탈퇴 화면에서 반복 사용하는 탭, 타이틀, 입력,
+                            인증번호, 유의사항, 하단 액션 패턴입니다.
+                        </p>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-user-page kt-user-component-scope">
+                                <div class="kt-user-shell">
+                                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴 예시">
+                                        <ul>
+                                            <li><a href="user-01.html" class="is-active">개인정보 변경</a></li>
+                                            <li><a href="user-03.html">비밀번호 변경</a></li>
+                                            <li><a href="user-05.html">회원탈퇴</a></li>
+                                        </ul>
+                                    </nav>
+                                    <section class="kt-user-form">
+                                        <div class="kt-user-title">
+                                            <h2>비밀번호 확인</h2>
+                                            <p>본인 확인을 위해 비밀번호 확인이 필요합니다.</p>
+                                        </div>
+                                        <form class="kt-user-form-body kt-user-form-body--spacious">
+                                            <label class="kt-field kt-user-field">
+                                                <span class="kt-field__label"
+                                                    >비밀번호 <span class="is-required">*</span></span
+                                                >
+                                                <span class="kt-password">
+                                                    <input
+                                                        type="password"
+                                                        id="componentUserPassword"
+                                                        class="kt-input kt-input--52"
+                                                        placeholder="비밀번호를 입력해 주세요"
+                                                    />
+                                                    <span class="kt-password__actions">
+                                                        <button
+                                                            type="button"
+                                                            class="kt-input-field__clear kt-password__clear"
+                                                            data-clear_input
+                                                            aria-controls="componentUserPassword"
+                                                            aria-label="비밀번호 삭제"
+                                                            hidden
+                                                        >
+                                                            <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="kt-password__toggle"
+                                                            data-password_toggle
+                                                            data-icon-show="./assets/img/components/ico_eye.svg"
+                                                            data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                            aria-controls="componentUserPassword"
+                                                            aria-pressed="false"
+                                                            aria-label="비밀번호 보기"
+                                                        >
+                                                            <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                                <span class="kt-field__message"
+                                                    >팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리
+                                                    팝업 차단을 해제해 주세요.</span
+                                                >
+                                            </label>
+                                            <div class="kt-user-verify">
+                                                <span class="kt-user-verify__label">인증번호</span>
+                                                <div class="kt-user-verify__box">
+                                                    <input type="text" value="123456" aria-label="인증번호" />
+                                                    <button
+                                                        type="button"
+                                                        class="kt-user-verify__clear"
+                                                        aria-label="인증번호 삭제"
+                                                    ></button>
+                                                    <span class="kt-user-verify__side">
+                                                        <span class="kt-user-verify__time">02:23</span>
+                                                        <button type="button" class="kt-user-verify__resend">
+                                                            인증번호 발송
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="kt-user-actions">
+                                            <button type="button" class="kt-user-button kt-user-button--secondary">
+                                                취소
+                                            </button>
+                                            <button type="button" class="kt-user-button kt-user-button--primary">
+                                                입력완료
+                                            </button>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-user-page kt-user-component-scope">
+                                <div class="kt-user-shell">
+                                    <section class="kt-user-form">
+                                        <div class="kt-user-title">
+                                            <h2>회원탈퇴</h2>
+                                            <p>정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.</p>
+                                        </div>
+                                        <form class="kt-user-form-body">
+                                            <section
+                                                class="kt-user-notice"
+                                                aria-labelledby="componentUserWithdrawNoticeTitle"
+                                            >
+                                                <h3 id="componentUserWithdrawNoticeTitle">유의사항</h3>
+                                                <ul class="kt-user-note-list">
+                                                    <li>
+                                                        본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두
+                                                        삭제됩니다.
+                                                    </li>
+                                                    <li>
+                                                        본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다. (예: SOP,
+                                                        SDP, 개발지원, CASS 등)
+                                                    </li>
+                                                    <li>
+                                                        개인 데이터 처리
+                                                        <ul>
+                                                            <li>
+                                                                본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두
+                                                                삭제 됩니다.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                            <label class="kt-field kt-user-field kt-user-field--bare">
+                                                <span class="blind">아이디</span>
+                                                <input
+                                                    type="text"
+                                                    class="kt-input kt-input--52"
+                                                    value="sung***"
+                                                    placeholder="비밀번호를 입력해 주세요"
+                                                />
+                                            </label>
+                                            <label class="kt-field kt-user-field">
+                                                <span class="kt-field__label">비밀번호 확인</span>
+                                                <span class="kt-password">
+                                                    <input
+                                                        type="password"
+                                                        id="componentUserWithdrawPassword"
+                                                        class="kt-input kt-input--52"
+                                                        placeholder="비밀번호를 입력해 주세요"
+                                                    />
+                                                    <span class="kt-password__actions">
+                                                        <button
+                                                            type="button"
+                                                            class="kt-input-field__clear kt-password__clear"
+                                                            data-clear_input
+                                                            aria-controls="componentUserWithdrawPassword"
+                                                            aria-label="비밀번호 삭제"
+                                                            hidden
+                                                        >
+                                                            <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="kt-password__toggle"
+                                                            data-password_toggle
+                                                            data-icon-show="./assets/img/components/ico_eye.svg"
+                                                            data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                            aria-controls="componentUserWithdrawPassword"
+                                                            aria-pressed="false"
+                                                            aria-label="비밀번호 보기"
+                                                        >
+                                                            <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </form>
+                                        <div class="kt-user-actions">
+                                            <button type="button" class="kt-user-button kt-user-button--secondary">
+                                                취소
+                                            </button>
+                                            <button type="button" class="kt-user-button kt-user-button--primary">
+                                                회원탈퇴
+                                            </button>
                                         </div>
                                     </section>
                                 </div>
