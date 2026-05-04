@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-support-page kt-support-page--inquiry">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-support-main">
+                <section class="kt-page-header">
+                    <div class="kt-page-header__title">
+                        <h1>문의하기</h1>
+                        <p>해결되지 않은 문제나 궁금한 점은 담당자에게 직접 문의하세요.</p>
+                    </div>
+                    <nav class="kt-path" aria-label="현재 위치">
+                        <a href="#" class="kt-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <p>Support</p>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <strong>문의하기</strong>
+                    </nav>
+                </section>
+
+                <div class="kt-inquiry-shell kt-inquiry-shell--form">
+                    <form class="kt-inquiry-form" action="#" method="post">
+                        <div class="kt-field kt-inquiry-field">
+                            <label class="kt-field__label">카테고리 선택 <span class="is-required">*</span></label>
+                            <div class="kt-inquiry-category-row kt-inquiry-category-row--form">
+                                <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                    <button type="button" data-dropdown_trg aria-expanded="false">대분류 카테고리 전체</button>
+                                    <div data-dropdown_menu>
+                                        <ul role="listbox">
+                                            <li><button type="button" aria-current="true">대분류 카테고리 전체</button></li>
+                                            <li><button type="button">KT 고객 대상 서비스</button></li>
+                                            <li><button type="button">기업 고객 대상 서비스</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                    <button type="button" data-dropdown_trg aria-expanded="false">중분류 카테고리 전체</button>
+                                    <div data-dropdown_menu>
+                                        <ul role="listbox">
+                                            <li><button type="button" aria-current="true">중분류 카테고리 전체</button></li>
+                                            <li><button type="button">User Authentication</button></li>
+                                            <li><button type="button">Application Service</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                    <button type="button" data-dropdown_trg aria-expanded="false">소분류 카테고리 전체</button>
+                                    <div data-dropdown_menu>
+                                        <ul role="listbox">
+                                            <li><button type="button" aria-current="true">소분류 카테고리 전체</button></li>
+                                            <li><button type="button">KT ID인증</button></li>
+                                            <li><button type="button">휴대폰 본인확인</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kt-field kt-inquiry-field">
+                            <label for="supportInquiryTitle" class="kt-field__label">제목 <span class="is-required">*</span></label>
+                            <input type="text" id="supportInquiryTitle" class="kt-input kt-input--inquiry" placeholder="제목을 입력해 주세요." />
+                        </div>
+
+                        <div class="kt-field kt-inquiry-field">
+                            <label for="supportInquiryApi" class="kt-field__label">API명</label>
+                            <input type="text" id="supportInquiryApi" class="kt-input kt-input--inquiry" placeholder="API명을 입력해 주세요." />
+                        </div>
+
+                        <div class="kt-field kt-inquiry-field">
+                            <label for="supportInquiryContent" class="kt-field__label">내용 <span class="is-required">*</span></label>
+                            <div class="kt-inquiry-textarea">
+                                <textarea
+                                    id="supportInquiryContent"
+                                    class="kt-textarea"
+                                    maxlength="1000"
+                                    placeholder="문의 내용을 입력해 주세요."
+                                    data-inquiry-count="supportInquiryContentCount"
+                                ></textarea>
+                                <span class="kt-inquiry-textarea__count" id="supportInquiryContentCount">0/0</span>
+                            </div>
+                        </div>
+
+                        <div class="kt-field kt-inquiry-field">
+                            <label class="kt-field__label">첨부파일</label>
+                            <div class="kt-inquiry-file" data-inquiry-file>
+                                <span class="kt-inquiry-file__name" data-inquiry-file-name>
+                                    <svg aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                        <path
+                                            d="m7.2 9.9 3.2-3.2a2 2 0 0 0-2.8-2.8L4 7.5a3 3 0 0 0 4.2 4.2l3.7-3.7"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.4"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                    선택된 파일이 없습니다.
+                                </span>
+                                <button type="button" class="kt-inquiry-file__clear" data-inquiry-file-clear aria-label="첨부파일 삭제" hidden>
+                                    <svg aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                        <path d="m4.2 4.2 7.6 7.6M11.8 4.2l-7.6 7.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <label class="kt-inquiry-file__button">
+                                    파일찾기
+                                    <input type="file" accept=".zip" />
+                                </label>
+                            </div>
+                            <p class="kt-inquiry-help">ZIP 파일만 업로드 가능하며, 파일 용량은 최대 25MB까지 허용됩니다.</p>
+                        </div>
+
+                        <div class="kt-inquiry-option-row">
+                            <label class="kt-check kt-inquiry-check-card">
+                                <input type="checkbox" checked />
+                                <span>비밀글</span>
+                            </label>
+                            <label class="kt-check kt-inquiry-check-card">
+                                <input type="checkbox" />
+                                <span>이메일로 답변 알림 받기</span>
+                            </label>
+                        </div>
+
+                        <div class="kt-actions kt-inquiry-form-actions">
+                            <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">취소</button>
+                            <button type="button" class="kt-btn kt-btn--primary kt-btn--form">등록</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

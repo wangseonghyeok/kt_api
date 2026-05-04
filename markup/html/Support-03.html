@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-support-page kt-support-page--inquiry">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-support-main">
+                <section class="kt-page-header">
+                    <div class="kt-page-header__title">
+                        <h1>문의하기</h1>
+                        <p>해결되지 않은 문제나 궁금한 점은 담당자에게 직접 문의하세요.</p>
+                    </div>
+                    <nav class="kt-path" aria-label="현재 위치">
+                        <a href="#" class="kt-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <p>Support</p>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <strong>문의하기</strong>
+                    </nav>
+                </section>
+
+                <div class="kt-inquiry-shell kt-inquiry-shell--list">
+                    <section class="kt-inquiry-filter" aria-label="문의 카테고리 검색">
+                        <div class="kt-inquiry-category-row">
+                            <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                <button type="button" data-dropdown_trg aria-expanded="false">대분류 카테고리 전체</button>
+                                <div data-dropdown_menu>
+                                    <ul role="listbox">
+                                        <li><button type="button" aria-current="true">대분류 카테고리 전체</button></li>
+                                        <li><button type="button">KT 고객 대상 서비스</button></li>
+                                        <li><button type="button">기업 고객 대상 서비스</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                <button type="button" data-dropdown_trg aria-expanded="false">중분류 카테고리 전체</button>
+                                <div data-dropdown_menu>
+                                    <ul role="listbox">
+                                        <li><button type="button" aria-current="true">중분류 카테고리 전체</button></li>
+                                        <li><button type="button">User Authentication</button></li>
+                                        <li><button type="button">Application Service</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
+                                <button type="button" data-dropdown_trg aria-expanded="false">소분류 카테고리 전체</button>
+                                <div data-dropdown_menu>
+                                    <ul role="listbox">
+                                        <li><button type="button" aria-current="true">소분류 카테고리 전체</button></li>
+                                        <li><button type="button">KT ID인증</button></li>
+                                        <li><button type="button">휴대폰 본인확인</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="kt-inquiry-list" aria-label="문의하기 목록">
+                        <div class="kt-inquiry-list__toolbar">
+                            <strong class="kt-inquiry-count">전체 23 건</strong>
+                            <div class="kt-inquiry-controls">
+                                <div class="kt-dropdown kt-dropdown--inquiry kt-dropdown--inquiry-search selectbox" data-dropdown_wrap>
+                                    <button type="button" data-dropdown_trg aria-expanded="false">전체</button>
+                                    <div data-dropdown_menu>
+                                        <ul role="listbox">
+                                            <li><button type="button" aria-current="true">전체</button></li>
+                                            <li><button type="button">제목</button></li>
+                                            <li><button type="button">내용</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kt-search-field kt-search-field--inquiry" data-search_field>
+                                    <input type="text" id="supportInquiryKeyword" class="kt-input" placeholder="검색어를 입력하세요" aria-label="문의 검색어" />
+                                    <span class="kt-search-field__actions">
+                                        <button
+                                            type="button"
+                                            class="kt-input-field__clear kt-search-field__clear"
+                                            data-clear_input
+                                            aria-controls="supportInquiryKeyword"
+                                            aria-label="검색어 삭제"
+                                            hidden
+                                        >
+                                            <img src="./assets/img/components/ico_delete.svg" alt />
+                                        </button>
+                                        <button type="button" class="kt-search-field__submit" aria-label="검색">
+                                            <img src="./assets/img/components/ico_search.svg" alt />
+                                        </button>
+                                    </span>
+                                </div>
+                                <label class="kt-check kt-inquiry-my">
+                                    <input type="checkbox" checked />
+                                    <span>내 문의글</span>
+                                </label>
+                                <button type="button" class="kt-btn kt-btn--primary kt-btn--inquiry-create">
+                                    <svg class="kt-btn__icon" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                        <path d="M3.1 11.7 3 13l1.3-.1 7-7-1.2-1.2-7 7Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                                        <path
+                                            d="m9.4 3.9 1-1a1.1 1.1 0 0 1 1.6 0l1.1 1.1a1.1 1.1 0 0 1 0 1.6l-1 1"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.4"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                    등록
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="kt-table-scroll--works kt-scrollbar kt-inquiry-table-scroll">
+                            <table class="kt-table kt-table--works kt-table--inquiry">
+                                <caption>
+                                    문의하기 목록
+                                </caption>
+                                <colgroup>
+                                    <col class="kt-inquiry-table__title" />
+                                    <col class="kt-inquiry-table__status" />
+                                    <col class="kt-inquiry-table__count" />
+                                    <col class="kt-inquiry-table__writer" />
+                                    <col class="kt-inquiry-table__view" />
+                                    <col class="kt-inquiry-table__date" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">제목</th>
+                                        <th scope="col">상태</th>
+                                        <th scope="col">답변수</th>
+                                        <th scope="col">작성자</th>
+                                        <th scope="col">조회수</th>
+                                        <th scope="col">작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                공기질OIF_4205 호출 문의드립니다.<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status">답변대기</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                giftishow_goods_v1.0 호출 문의드립니다<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                [OIF_2102] 수신자 KT, KT mvno의 선불회선인 경우 메세지 수신 가능 여부 문의<svg
+                                                    class="kt-inquiry-lock"
+                                                    aria-hidden="true"
+                                                    viewBox="0 0 16 16"
+                                                    focusable="false"
+                                                >
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                GeoMaster프로젝트 조회 불가 관련<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status">답변대기</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">미지정</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                OIF_185 부가서비스 등록 요청<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">미지정</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                공기질OIF_4205 호출 문의드립니다.<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                giftishow_goods_v1.0 호출 문의드립니다<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                [OIF_2102] 수신자 KT, KT mvno의 선불회선인 경우 메세지 수신 가능 여부 문의<svg
+                                                    class="kt-inquiry-lock"
+                                                    aria-hidden="true"
+                                                    viewBox="0 0 16 16"
+                                                    focusable="false"
+                                                >
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status kt-inquiry-status--complete">답변완료</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title">
+                                                GeoMaster프로젝트 조회 불가 관련<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status">답변대기</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="kt-inquiry-category">KT 고객 대상 서비스 &gt; User Authentication &gt; KT ID인증</span>
+                                            <button type="button" class="kt-inquiry-title is-disabled">
+                                                OIF_185 부가서비스 등록 요청<svg class="kt-inquiry-lock" aria-hidden="true" viewBox="0 0 16 16" focusable="false">
+                                                    <rect x="4" y="7" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+                                                    <path d="M5.6 7V5.6a2.4 2.4 0 0 1 4.8 0V7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                        <td><span class="kt-inquiry-status">답변대기</span></td>
+                                        <td>2</td>
+                                        <td>aaa***</td>
+                                        <td>2</td>
+                                        <td>2026.02.27</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--#include file="./include/_support_pagination_full.html"-->
+                    </section>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

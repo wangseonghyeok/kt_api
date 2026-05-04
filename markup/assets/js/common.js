@@ -311,6 +311,92 @@ const ui = {
             });
         });
     },
+    supportInquiry: () => {
+        const syncCount = textarea => {
+            const targetId = textarea.dataset.inquiryCount;
+            const target = targetId && document.getElementById(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            const max = textarea.getAttribute('maxlength') || target.textContent.split('/')[1] || '0';
+            target.textContent = `${textarea.value.length}/${max}`;
+        };
+
+        document.querySelectorAll('textarea[data-inquiry-count]').forEach(textarea => {
+            textarea.addEventListener('input', () => syncCount(textarea));
+            syncCount(textarea);
+        });
+
+        document.querySelectorAll('.kt-inquiry-form').forEach(form => {
+            form.addEventListener('submit', event => event.preventDefault());
+        });
+
+        document.querySelectorAll('[data-inquiry-file]').forEach(field => {
+            const input = field.querySelector('input[type="file"]');
+            const name = field.querySelector('[data-inquiry-file-name]');
+            const clear = field.querySelector('[data-inquiry-file-clear]');
+            const icon = name?.querySelector('svg');
+            const defaultText = name?.textContent.trim() || '';
+
+            if (!input || !name) {
+                return;
+            }
+
+            const setName = (text, hasFile) => {
+                name.replaceChildren();
+                if (icon) {
+                    name.appendChild(icon);
+                }
+                name.append(text);
+                field.classList.toggle('has-file', hasFile);
+                if (clear) {
+                    clear.hidden = !hasFile;
+                }
+            };
+
+            input.addEventListener('change', () => {
+                const fileName = input.files && input.files.length ? input.files[0].name : '';
+                setName(fileName || defaultText, Boolean(fileName));
+            });
+
+            clear?.addEventListener('click', () => {
+                input.value = '';
+                setName(defaultText, false);
+                input.focus();
+            });
+
+            setName(defaultText, false);
+        });
+
+        document.querySelectorAll('[data-inquiry-answer-wrap]').forEach(answerWrap => {
+            const answer = answerWrap.querySelector('[data-inquiry-answer-container]');
+            const defaultActions = answerWrap.querySelector('[data-inquiry-default-actions]');
+            const openButton = answerWrap.querySelector('[data-inquiry-answer-open]');
+            const cancelButton = answerWrap.querySelector('[data-inquiry-answer-cancel]');
+            const answerInput = answer?.querySelector('textarea');
+
+            if (!answer || !openButton) {
+                return;
+            }
+
+            openButton.addEventListener('click', () => {
+                answer.hidden = false;
+                defaultActions?.setAttribute('hidden', '');
+                answerInput?.focus();
+                if (answerInput) {
+                    syncCount(answerInput);
+                }
+            });
+
+            cancelButton?.addEventListener('click', () => {
+                answer.hidden = true;
+                defaultActions?.removeAttribute('hidden');
+                openButton.focus();
+            });
+        });
+    },
     pagination: () => {
         $('[data-pagination] ul > li > a').on('click', function () {
             $('[data-pagination] ul > li > a').removeAttr('aria-current');
@@ -1420,6 +1506,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.dropdown();
     ui.accordion();
     ui.supportTabs();
+    ui.supportInquiry();
     ui.pagination();
     ui.component();
     ui.newwork();
