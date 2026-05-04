@@ -24,37 +24,22 @@
                             <li class="kt-auth-main-panel is-active" data-auth-main-panel="id">
                                 <div class="kt-auth-panel" data-auth-panel="id" aria-hidden="false">
                                     <div class="kt-auth-center">
-                                        <span
-                                            class="kt-auth-center__icon kt-auth-center__icon--mail"
-                                            aria-hidden="true"
-                                        ></span>
+                                        <span class="kt-auth-center__icon kt-auth-center__icon--mail" aria-hidden="true"></span>
                                         <h2>이메일 인증</h2>
                                         <p>발송된 인증번호 6자리를 입력해 주세요.</p>
                                     </div>
                                     <form class="kt-auth-form">
                                         <div class="kt-field kt-auth-verify">
-                                            <label class="kt-field__label" for="findCode"
-                                                >인증번호 <span class="is-required">*</span></label
-                                            ><input
-                                                type="text"
-                                                id="findCode"
-                                                class="kt-input kt-input--52"
-                                                value="123456"
-                                                inputmode="numeric"
-                                            /><span class="kt-auth-verify__side"
-                                                ><span class="kt-auth-timer">02:23</span
-                                                ><button type="button" class="kt-auth-resend">재전송</button></span
+                                            <label class="kt-field__label" for="findCode">인증번호 <span class="is-required">*</span></label
+                                            ><input type="text" id="findCode" class="kt-input kt-input--52" value="123456" inputmode="numeric" /><span class="kt-auth-verify__side"
+                                                ><span class="kt-auth-timer">02:23</span><button type="button" class="kt-auth-resend">재전송</button></span
                                             >
-                                            <p class="kt-field__message kt-field__message--complete">
-                                                인증 번호가 확인되었습니다.
-                                            </p>
+                                            <!-- .kt-field__message--complete 삭제시 안보임 -->
+                                            <p class="kt-field__message kt-field__message--complete">인증 번호가 확인되었습니다.</p>
                                         </div>
                                     </form>
                                     <div class="kt-auth-actions">
-                                        <div class="kt-auth-button-row">
-                                            <button class="kt-auth-button kt-auth-button--secondary">이전</button
-                                            ><button class="kt-auth-button">이메일 확인</button>
-                                        </div>
+                                        <div class="kt-auth-button-row"><button class="kt-auth-button kt-auth-button--secondary">이전</button><button class="kt-auth-button">이메일 확인</button></div>
                                     </div>
                                 </div>
                             </li>

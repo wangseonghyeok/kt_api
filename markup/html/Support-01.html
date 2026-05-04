@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+    </head>
+
+    <body class="kt-support-page kt-support-page--notice">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-support-main">
+                <section class="kt-support-header">
+                    <div class="kt-support-header__title">
+                        <h1>공지사항</h1>
+                        <p>서비스 점검, API 변경, 신규 기능 등 중요한 소식을 안내합니다.</p>
+                    </div>
+                    <nav class="kt-support-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-support-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-support-path__separator" aria-hidden="true"></span>
+                        <p>Support</p>
+                        <span class="kt-support-path__separator" aria-hidden="true"></span>
+                        <strong>공지사항</strong>
+                    </nav>
+                </section>
+
+                <div class="kt-support-shell">
+                    <div class="kt-support-tab-wrap" data-support-tabs>
+                        <nav class="kt-support-tabs" aria-label="공지사항 분류" role="tablist">
+                            <button type="button" class="is-active" data-support-tab="all" role="tab" aria-selected="true" aria-current="page">전체</button>
+                            <button type="button" data-support-tab="new" role="tab" aria-selected="false">신규서비스</button>
+                            <button type="button" data-support-tab="update" role="tab" aria-selected="false">업데이트</button>
+                            <button type="button" data-support-tab="notice" role="tab" aria-selected="false">공지</button>
+                        </nav>
+
+                        <ul class="kt-support-tab-panels" aria-live="polite">
+                            <li data-support-panel="all">
+                                <section class="kt-support-list-section" aria-label="공지사항 목록">
+                                    <div class="kt-support-toolbar">
+                                        <strong class="kt-support-count">전체 23건</strong>
+                                        <div class="kt-support-controls">
+                                            <div class="kt-dropdown kt-dropdown--support selectbox" data-dropdown_wrap>
+                                                <button type="button" data-dropdown_trg aria-expanded="false">전체</button>
+                                                <div data-dropdown_menu>
+                                                    <ul role="listbox">
+                                                        <li><button type="button" aria-current="true">전체</button></li>
+                                                        <li><button type="button">제목</button></li>
+                                                        <li><button type="button">내용</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="kt-search-field kt-search-field--support" data-search_field>
+                                                <input type="text" id="supportNoticeKeyword" class="kt-input" placeholder="검색어를 입력하세요" aria-label="공지사항 검색어" />
+                                                <span class="kt-search-field__actions">
+                                                    <button
+                                                        type="button"
+                                                        class="kt-input-field__clear kt-search-field__clear"
+                                                        data-clear_input
+                                                        aria-controls="supportNoticeKeyword"
+                                                        aria-label="검색어 삭제"
+                                                        hidden
+                                                    >
+                                                        <img src="./assets/img/components/ico_delete.svg" alt />
+                                                    </button>
+                                                    <button type="button" class="kt-search-field__submit" aria-label="검색">
+                                                        <img src="./assets/img/components/ico_search.svg" alt />
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <ul class="kt-support-accordion" data-accordion data-accordion-duration="340">
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel1">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>Azure 계획된 유지관리 작업 공지 (4/7 17:00 ~ 4/8 08:00, 4/8 17:00 ~ 4/9 08:00)</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel1" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel2">
+                                                    <span class="kt-support-badge kt-support-badge--update">업데이트</span>
+                                                    <strong>Azure 계획된 유지관리 작업 공지 (03/30 23:00 ~ 3/31 00:00)</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel2" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="true" aria-controls="supportNoticePanel3">
+                                                    <span class="kt-support-badge kt-support-badge--new">신규 서비스</span>
+                                                    <strong>API Link 플랫폼(API GW SHUB) 전환 작업(2단계) 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel3" data-accordion_cont aria-hidden="false">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel4">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API_LINK_GW(SHUB) 개발환경(TB) 인증서 갱신(기간 만료) 작업 관련 2026.02.10</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel4" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel5">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API_LINK_GW(SHUB) 운영환경 인증서 갱신 작업 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel5" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel6">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API Link 포털 개인정보 처리방침 개정 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel6" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel7">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API Link 서비스 신청 절차 변경 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel7" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel8">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API Link 고객지원 운영시간 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel8" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel9">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API Link 포털 접속 지연 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel9" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="kt-support-item">
+                                            <div class="kt-support-item__head" data-accordion_trg>
+                                                <button type="button" aria-expanded="false" aria-controls="supportNoticePanel10">
+                                                    <span class="kt-support-badge">공지</span>
+                                                    <strong>API Link 시스템 점검 완료 안내</strong>
+
+                                                    <span class="kt-support-item__date">2026.02.01</span>
+
+                                                    <span class="kt-support-item__toggle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="kt-support-detail" id="supportNoticePanel10" data-accordion_cont aria-hidden="true">
+                                                <div class="kt-support-file">
+                                                    <span>첨부파일</span>
+                                                    <a href="#" class="kt-support-file__link">
+                                                        <i class="kt-support-icon kt-support-icon--clip" aria-hidden="true"></i>
+                                                        <strong class="kt-support-file__text">2단계 API별_서비스별 차수.zip</strong>
+                                                    </a>
+                                                    <button type="button" class="kt-support-download" aria-label="첨부파일 다운로드">
+                                                        <span aria-hidden="true"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="kt-support-detail__body">
+                                                    <div class="kt-support-detail__copy">
+                                                        <div class="kt-support-copy__block">
+                                                            <p>안녕하세요</p>
+                                                            <p>API Link 플랫폼입니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>API Link 플랫폼(API GW SHUB) 전환 작업(2단계)과 관련하여 아래와 같이 일정 및 전환내용 공유드립니다.</p>
+                                                            <p>해당 기간 동안 전환 2단계 서비스 모니터링 및 이슈 확인에 적극적인 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 단계별 전환 일정입니다.</p>
+                                                            <p>가) PRD 서비스 전환 일정 (KT Cloud 에서 Azure Cloud 로 트래픽 Redirection)</p>
+                                                            <p>1차 : 2026.01.15 (목) 19:00 - SCAP ID</p>
+                                                            <p>2차 : 2026.01.20 (화) 19:00 - SCAP CUS</p>
+                                                            <p>3차 : 2026.01.22 (목) 19:00 - CAPRI</p>
+                                                            <p>나) PRD DNS(IP) 전환 일정 (22:00 ~ 23:00 사이 수동 작업)</p>
+                                                            <p>1차 : 2026.01.27 (화) 22:00 - cus-in.api.kt.com</p>
+                                                            <p>2차 : 2026.01.29 (목) 22:00 - cus.api.kt.com, anycus.api.kt.com</p>
+                                                            <p>다) 전환 시 유의 사항</p>
+                                                            <p>DNS 전환 작업 중 연동 오류 발생 시, 일부 서비스는 프로세스 재기동 또는 hosts 설정 변경 등 인프라 조치가 필요할 수 있습니다.</p>
+                                                            <p>전환 작업 시간대에 운영 작업 및 장애 대응이 가능하도록 사전 협조를 부탁드립니다.</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p class="kt-support-copy__subhead">아래는 전환 작업(2단계) 상황실 정보입니다.</p>
+                                                            <p>연동 중인 대내·외 서비스 담당자, 운영자, 개발자 분들과의 원활한 소통을 위해 전환 상황실(카카오톡 오픈채팅방)을 운영하고자 합니다.</p>
+                                                            <p>가) 운영 목적</p>
+                                                            <p>전환 작업 진행 상황 실시간 공유</p>
+                                                            <p>서비스 이상 유무에 대한 신속한 확인 및 대응 지원</p>
+                                                            <p>나) 참여 안내</p>
+                                                            <p>아래 공유드린 오픈채팅방 링크를 통해 입장해 주시기 바랍니다.</p>
+                                                            <p>전환 기간 동안 서비스 모니터링 및 이슈 발생 여부를 확인해 주시면 감사하겠습니다.</p>
+                                                            <p>입장 시 서비스 확인을 위해 인증키에 등록된 "SCAP(홍길동)" 형식으로 이름을 변경해 주시기 바랍니다.</p>
+                                                            <p>(관통테스트 메일 제목내 서비스명 사용)</p>
+                                                            <p>다) 오픈채팅방 정보</p>
+                                                            <p>오픈 채팅방 주소: https://open.kakao.com/o/gxat6N2h</p>
+                                                            <p>오픈 채팅방 제목: API Link 플랫폼(API GW SHUB) 2단계</p>
+                                                            <p>오픈 채팅방 코드: a23456</p>
+                                                            <p>입장 시 프로필 네이밍 룰 : “서비스명(홍길동)“ 형식 ex. API Link SMS 발송(조명희)</p>
+                                                            <p>라) 2단계 API별 차수 및 서비스별 차수 파일 첨부</p>
+                                                        </div>
+                                                        <div class="kt-support-copy__block">
+                                                            <p>감사합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <!--#include file="./include/_support_pagination_full.html"-->
+                                </section>
+                            </li>
+                            <li data-support-panel="new" hidden>
+                                <p class="kt-support-tab-sample">텍스트 1</p>
+                            </li>
+                            <li data-support-panel="update" hidden>
+                                <p class="kt-support-tab-sample">텍스트 2</p>
+                            </li>
+                            <li data-support-panel="notice" hidden>
+                                <p class="kt-support-tab-sample">텍스트 3</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

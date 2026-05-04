@@ -14,30 +14,21 @@
                     <section class="kt-component-hero">
                         <h1>KT API Link 공통 컴포넌트</h1>
                         <p>
-                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Chip, Tag, Input, Select, Dropdown,
-                            Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를 공통
-                            사용 기준으로 정리했습니다.
+                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Chip, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를
+                            공통 사용 기준으로 정리했습니다.
                         </p>
                     </section>
 
                     <ul class="kt-component-summary">
-                        <li>
-                            <strong>Form</strong
-                            ><span>Input, Password, Select, Checkbox, Radio, Switch, User account</span>
-                        </li>
-                        <li>
-                            <strong>Dropdown</strong><span>Choice, Multi Check, Search Prompt, Service Prompt</span>
-                        </li>
+                        <li><strong>Form</strong><span>Input, Password, Select, Checkbox, Radio, Switch, User account</span></li>
+                        <li><strong>Dropdown</strong><span>Choice, Multi Check, Search Prompt, Service Prompt</span></li>
                         <li><strong>Data</strong><span>Grid, Pagination, Indicator, Badge, Tag, Chart</span></li>
                         <li><strong>Asset</strong><span>SVG Icon, Button, Tab, Chip, Scrollbar</span></li>
                     </ul>
 
                     <section class="kt-component-section" id="buttons">
                         <h2>Button</h2>
-                        <p class="kt-component-desc">
-                            Figma 버튼 가이드 기준으로 Accent, Primary, Secondary, Tertiary, Tertiary filled의 모든
-                            상태와 56/48/44/32/24 사이즈를 빠짐없이 정리합니다.
-                        </p>
+                        <p class="kt-component-desc">Figma 버튼 가이드 기준으로 Accent, Primary, Secondary, Tertiary, Tertiary filled의 모든 상태와 56/48/44/32/24 사이즈를 빠짐없이 정리합니다.</p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-button-matrix">
                                 <div class="kt-button-matrix__grid">
@@ -67,9 +58,7 @@
                                     <button type="button" class="kt-btn kt-btn--primary is-pressed">레이블</button>
                                     <button type="button" class="kt-btn kt-btn--secondary is-pressed">레이블</button>
                                     <button type="button" class="kt-btn kt-btn--tertiary is-pressed">레이블</button>
-                                    <button type="button" class="kt-btn kt-btn--tertiary-fill is-pressed">
-                                        레이블
-                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--tertiary-fill is-pressed">레이블</button>
 
                                     <span class="kt-button-matrix__label">Disabled</span>
                                     <button type="button" class="kt-btn kt-btn--accent" disabled>레이블</button>
@@ -105,20 +94,12 @@
                             </div>
                         </div>
                         <div class="kt-component-demo">
+                            <button type="button" class="kt-btn kt-btn--primary"><span class="kt-btn__svg kt-btn__svg--search"></span>레이블</button>
+                            <button type="button" class="kt-btn kt-btn--primary">레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span></button>
                             <button type="button" class="kt-btn kt-btn--primary">
-                                <span class="kt-btn__svg kt-btn__svg--search"></span>레이블
+                                <span class="kt-btn__svg kt-btn__svg--search"></span>레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span>
                             </button>
-                            <button type="button" class="kt-btn kt-btn--primary">
-                                레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span>
-                            </button>
-                            <button type="button" class="kt-btn kt-btn--primary">
-                                <span class="kt-btn__svg kt-btn__svg--search"></span>레이블<span
-                                    class="kt-btn__svg kt-btn__svg--chevron-right"
-                                ></span>
-                            </button>
-                            <button type="button" class="kt-btn kt-btn--accent kt-btn--xs">
-                                레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span>
-                            </button>
+                            <button type="button" class="kt-btn kt-btn--accent kt-btn--xs">레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span></button>
                             <button type="button" class="kt-btn kt-btn--tertiary kt-btn--icon" aria-label="추가">
                                 <span class="kt-btn__svg kt-btn__svg--plus"></span>
                             </button>
@@ -146,10 +127,7 @@
 
                     <section class="kt-component-section" id="chips">
                         <h2>Chip</h2>
-                        <p class="kt-component-desc">
-                            필터 선택값과 드롭다운 필터는 Chip으로 분리하고 선택, hover, pressed, disabled 상태를 같이
-                            관리합니다.
-                        </p>
+                        <p class="kt-component-desc">필터 선택값과 드롭다운 필터는 Chip으로 분리하고 선택, hover, pressed, disabled 상태를 같이 관리합니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card">
                                 <h3>Selection Chip</h3>
@@ -165,9 +143,7 @@
                                     <button type="button" class="kt-chip kt-chip--dropdown">Default</button>
                                     <button type="button" class="kt-chip kt-chip--dropdown is-hover">Hover</button>
                                     <button type="button" class="kt-chip kt-chip--dropdown is-pressed">Pressed</button>
-                                    <button type="button" class="kt-chip kt-chip--dropdown kt-chip--selected">
-                                        Selected
-                                    </button>
+                                    <button type="button" class="kt-chip kt-chip--dropdown kt-chip--selected">Selected</button>
                                     <button type="button" class="kt-chip kt-chip--dropdown" disabled>Disabled</button>
                                 </div>
                             </div>
@@ -176,9 +152,7 @@
 
                     <section class="kt-component-section" id="tags">
                         <h2>Tag</h2>
-                        <p class="kt-component-desc">
-                            상태성 정보는 Fill, Dot, Text 세 가지 타입으로 맞추고 상태 색상은 같은 토큰을 공유합니다.
-                        </p>
+                        <p class="kt-component-desc">상태성 정보는 Fill, Dot, Text 세 가지 타입으로 맞추고 상태 색상은 같은 토큰을 공유합니다.</p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-tag-matrix">
                                 <span></span>
@@ -241,9 +215,7 @@
 
                     <section class="kt-component-section" id="icons">
                         <h2>SVG Icon</h2>
-                        <p class="kt-component-desc">
-                            Figma Icon 24 기준으로 Basic / Arrow 아이콘을 공통 24px 컴포넌트로 분리했습니다.
-                        </p>
+                        <p class="kt-component-desc">Figma Icon 24 기준으로 Basic / Arrow 아이콘을 공통 24px 컴포넌트로 분리했습니다.</p>
                         <h3 class="kt-icon-gallery__title">Basic</h3>
                         <ul class="kt-icon-gallery">
                             <li><span class="kt-icon-symbol kt-icon-symbol--search"></span>search</li>
@@ -280,12 +252,8 @@
                             <li><span class="kt-icon-symbol kt-icon-symbol--edit"></span>edit</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--save"></span>save</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--trash"></span>trash</li>
-                            <li>
-                                <span class="kt-icon-symbol kt-icon-symbol--circle-close-fill"></span>circle-close-fill
-                            </li>
-                            <li>
-                                <span class="kt-icon-symbol kt-icon-symbol--information-fill"></span>information-fill
-                            </li>
+                            <li><span class="kt-icon-symbol kt-icon-symbol--circle-close-fill"></span>circle-close-fill</li>
+                            <li><span class="kt-icon-symbol kt-icon-symbol--information-fill"></span>information-fill</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--paperclip"></span>paperclip</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--card"></span>card</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--mappin"></span>mappin</li>
@@ -302,13 +270,8 @@
                             <li><span class="kt-icon-symbol kt-icon-symbol--chevron-right"></span>chevron-right</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--chevron-up"></span>chevron-up</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--chevron-down"></span>chevron-down</li>
-                            <li>
-                                <span class="kt-icon-symbol kt-icon-symbol--arrow-double-left"></span>arrow-double-left
-                            </li>
-                            <li>
-                                <span class="kt-icon-symbol kt-icon-symbol--arrow-double-right"></span
-                                >arrow-double-right
-                            </li>
+                            <li><span class="kt-icon-symbol kt-icon-symbol--arrow-double-left"></span>arrow-double-left</li>
+                            <li><span class="kt-icon-symbol kt-icon-symbol--arrow-double-right"></span>arrow-double-right</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--arrow-left"></span>arrow-left</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--arrow-right"></span>arrow-right</li>
                             <li><span class="kt-icon-symbol kt-icon-symbol--arrow-up"></span>arrow-up</li>
@@ -320,10 +283,7 @@
 
                     <section class="kt-component-section" id="inputs">
                         <h2>Input</h2>
-                        <p class="kt-component-desc">
-                            기본 입력, 포커스, 에러, 비활성, 비밀번호 보기/숨기기, 검색 입력, textarea를 같은 필드
-                            구조로 사용합니다.
-                        </p>
+                        <p class="kt-component-desc">기본 입력, 포커스, 에러, 비활성, 비밀번호 보기/숨기기, 검색 입력, textarea를 같은 필드 구조로 사용합니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>Input State</h3>
@@ -331,21 +291,9 @@
                                     <div class="kt-field">
                                         <span class="kt-field__label">Default</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputDefault"
-                                                class="kt-input"
-                                                placeholder="입력하세요"
-                                            />
+                                            <input type="text" id="componentInputDefault" class="kt-input" placeholder="입력하세요" />
                                             <span class="kt-input-field__actions">
-                                                <button
-                                                    type="button"
-                                                    class="kt-input-field__clear"
-                                                    data-clear_input
-                                                    aria-controls="componentInputDefault"
-                                                    aria-label="입력값 삭제"
-                                                    hidden
-                                                >
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="componentInputDefault" aria-label="입력값 삭제" hidden>
                                                     <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                 </button>
                                             </span>
@@ -354,21 +302,9 @@
                                     <div class="kt-field">
                                         <span class="kt-field__label">Focused</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputFocused"
-                                                class="kt-input is-focused"
-                                                value="포커스 상태"
-                                            />
+                                            <input type="text" id="componentInputFocused" class="kt-input is-focused" value="포커스 상태" />
                                             <span class="kt-input-field__actions">
-                                                <button
-                                                    type="button"
-                                                    class="kt-input-field__clear"
-                                                    data-clear_input
-                                                    aria-controls="componentInputFocused"
-                                                    aria-label="입력값 삭제"
-                                                    hidden
-                                                >
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="componentInputFocused" aria-label="입력값 삭제" hidden>
                                                     <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                 </button>
                                             </span>
@@ -377,21 +313,9 @@
                                     <div class="kt-field error">
                                         <span class="kt-field__label">Error</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputError"
-                                                class="kt-input"
-                                                value="중복 API"
-                                            />
+                                            <input type="text" id="componentInputError" class="kt-input" value="중복 API" />
                                             <span class="kt-input-field__actions">
-                                                <button
-                                                    type="button"
-                                                    class="kt-input-field__clear"
-                                                    data-clear_input
-                                                    aria-controls="componentInputError"
-                                                    aria-label="입력값 삭제"
-                                                    hidden
-                                                >
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="componentInputError" aria-label="입력값 삭제" hidden>
                                                     <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                 </button>
                                             </span>
@@ -401,21 +325,9 @@
                                     <div class="kt-field error">
                                         <span class="kt-field__label">Error Focused</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputErrorFocused"
-                                                class="kt-input is-focused"
-                                                value="중복 API"
-                                            />
+                                            <input type="text" id="componentInputErrorFocused" class="kt-input is-focused" value="중복 API" />
                                             <span class="kt-input-field__actions">
-                                                <button
-                                                    type="button"
-                                                    class="kt-input-field__clear"
-                                                    data-clear_input
-                                                    aria-controls="componentInputErrorFocused"
-                                                    aria-label="입력값 삭제"
-                                                    hidden
-                                                >
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="componentInputErrorFocused" aria-label="입력값 삭제" hidden>
                                                     <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                 </button>
                                             </span>
@@ -438,12 +350,7 @@
                                     <label class="kt-field">
                                         <span class="kt-field__label">XLarge 56</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputXLarge"
-                                                class="kt-input kt-input--56"
-                                                value="XLarge"
-                                            />
+                                            <input type="text" id="componentInputXLarge" class="kt-input kt-input--56" value="XLarge" />
                                             <span class="kt-input-field__actions">
                                                 <button
                                                     type="button"
@@ -463,12 +370,7 @@
                                     <label class="kt-field">
                                         <span class="kt-field__label">Large 48</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputLarge"
-                                                class="kt-input kt-input--48"
-                                                value="Large"
-                                            />
+                                            <input type="text" id="componentInputLarge" class="kt-input kt-input--48" value="Large" />
                                             <span class="kt-input-field__actions">
                                                 <button
                                                     type="button"
@@ -488,12 +390,7 @@
                                     <label class="kt-field">
                                         <span class="kt-field__label">Medium 44</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputMedium"
-                                                class="kt-input kt-input--44"
-                                                value="Medium"
-                                            />
+                                            <input type="text" id="componentInputMedium" class="kt-input kt-input--44" value="Medium" />
                                             <span class="kt-input-field__actions">
                                                 <button
                                                     type="button"
@@ -513,12 +410,7 @@
                                     <label class="kt-field">
                                         <span class="kt-field__label">Small 32</span>
                                         <span class="kt-input-field">
-                                            <input
-                                                type="text"
-                                                id="componentInputSmall"
-                                                class="kt-input kt-input--32"
-                                                value="Small"
-                                            />
+                                            <input type="text" id="componentInputSmall" class="kt-input kt-input--32" value="Small" />
                                             <span class="kt-input-field__actions">
                                                 <button
                                                     type="button"
@@ -543,12 +435,7 @@
                                     <div class="kt-field">
                                         <span class="kt-field__label">Hidden</span>
                                         <span class="kt-password">
-                                            <input
-                                                type="password"
-                                                id="componentPassword"
-                                                class="kt-input"
-                                                value="ktapilink1234"
-                                            />
+                                            <input type="password" id="componentPassword" class="kt-input" value="ktapilink1234" />
                                             <span class="kt-password__actions">
                                                 <button
                                                     type="button"
@@ -578,12 +465,7 @@
                                     <div class="kt-field">
                                         <span class="kt-field__label">Visible</span>
                                         <span class="kt-password">
-                                            <input
-                                                type="text"
-                                                id="componentPasswordVisible"
-                                                class="kt-input"
-                                                value="ktapilink1234"
-                                            />
+                                            <input type="text" id="componentPasswordVisible" class="kt-input" value="ktapilink1234" />
                                             <span class="kt-password__actions">
                                                 <button
                                                     type="button"
@@ -618,13 +500,7 @@
                                     <div class="kt-search-state">
                                         <span class="kt-search-state__label">Default</span>
                                         <div class="kt-search-field" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchDefault"
-                                                class="kt-input"
-                                                placeholder="검색어 입력"
-                                                aria-label="Default search"
-                                            />
+                                            <input type="text" id="componentSearchDefault" class="kt-input" placeholder="검색어 입력" aria-label="Default search" />
                                             <span class="kt-search-field__actions">
                                                 <button
                                                     type="button"
@@ -645,13 +521,7 @@
                                     <div class="kt-search-state">
                                         <span class="kt-search-state__label">Hover</span>
                                         <div class="kt-search-field is-hover" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchHover"
-                                                class="kt-input"
-                                                placeholder="검색어 입력"
-                                                aria-label="Hover search"
-                                            />
+                                            <input type="text" id="componentSearchHover" class="kt-input" placeholder="검색어 입력" aria-label="Hover search" />
                                             <span class="kt-search-field__actions">
                                                 <button
                                                     type="button"
@@ -672,13 +542,7 @@
                                     <div class="kt-search-state">
                                         <span class="kt-search-state__label">Focused</span>
                                         <div class="kt-search-field is-focused" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchFocused"
-                                                class="kt-input"
-                                                value="OIF_"
-                                                aria-label="Focused search"
-                                            />
+                                            <input type="text" id="componentSearchFocused" class="kt-input" value="OIF_" aria-label="Focused search" />
                                             <span class="kt-search-field__actions">
                                                 <button
                                                     type="button"
@@ -699,13 +563,7 @@
                                     <div class="kt-search-state">
                                         <span class="kt-search-state__label">Typing</span>
                                         <div class="kt-search-field is-typing" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchTyping"
-                                                class="kt-input"
-                                                value="OIF_113"
-                                                aria-label="Typing search"
-                                            />
+                                            <input type="text" id="componentSearchTyping" class="kt-input" value="OIF_113" aria-label="Typing search" />
                                             <span class="kt-search-field__actions">
                                                 <button
                                                     type="button"
@@ -726,13 +584,7 @@
                                     <div class="kt-search-state" hidden>
                                         <span class="kt-search-state__label">Complete</span>
                                         <div class="kt-search-field is-complete" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchComplete"
-                                                class="kt-input"
-                                                value="KT멤버십"
-                                                aria-label="Complete search"
-                                            />
+                                            <input type="text" id="componentSearchComplete" class="kt-input" value="KT멤버십" aria-label="Complete search" />
                                             <span class="kt-search-field__actions">
                                                 <button
                                                     type="button"
@@ -753,21 +605,9 @@
                                     <div class="kt-search-state">
                                         <span class="kt-search-state__label">Disabled</span>
                                         <div class="kt-search-field is-disabled" data-search_field>
-                                            <input
-                                                type="text"
-                                                id="componentSearchDisabled"
-                                                class="kt-input"
-                                                placeholder="검색어 입력"
-                                                disabled
-                                                aria-label="Disabled search"
-                                            />
+                                            <input type="text" id="componentSearchDisabled" class="kt-input" placeholder="검색어 입력" disabled aria-label="Disabled search" />
                                             <span class="kt-search-field__actions">
-                                                <button
-                                                    type="button"
-                                                    class="kt-search-field__submit"
-                                                    disabled
-                                                    aria-label="검색"
-                                                >
+                                                <button type="button" class="kt-search-field__submit" disabled aria-label="검색">
                                                     <img src="./assets/img/components/ico_search.svg" alt="" />
                                                 </button>
                                             </span>
@@ -792,24 +632,12 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="selects">
                         <h2>Select / Dropdown</h2>
-                        <p class="kt-component-desc">
-                            Select 계열은 Choice Dropdown을 기본 타입으로 사용하고, 다중 선택은 Multi Check Dropdown으로
-                            분리합니다.
-                        </p>
+                        <p class="kt-component-desc">Select 계열은 Choice Dropdown을 기본 타입으로 사용하고, 다중 선택은 Multi Check Dropdown으로 분리합니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card">
                                 <h3>Choice Dropdown Default</h3>
                                 <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button
-                                        type="button"
-                                        data-dropdown_trg
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-selected="false"
-                                        aria-expanded="false"
-                                    >
-                                        전체
-                                    </button>
+                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">전체</button>
                                     <div data-dropdown_menu role="listbox">
                                         <ol>
                                             <li><button type="button" aria-current="true">전체</button></li>
@@ -823,33 +651,19 @@ KT API Link 연동 설명을 입력합니다.
                             <div class="kt-component-card">
                                 <h3>Multi Check Dropdown</h3>
                                 <div data-dropdown_wrap class="kt-dropdown kt-dropdown--check">
-                                    <button
-                                        type="button"
-                                        data-dropdown_trg
-                                        data-placeholder="API 유형"
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-selected="false"
-                                        aria-expanded="false"
-                                    >
+                                    <button type="button" data-dropdown_trg data-placeholder="API 유형" role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">
                                         API 유형
                                     </button>
                                     <div data-dropdown_menu role="listbox">
                                         <ul>
                                             <li>
-                                                <label class="kt-check"
-                                                    ><input type="checkbox" checked /><span>REST API</span></label
-                                                >
+                                                <label class="kt-check"><input type="checkbox" checked /><span>REST API</span></label>
                                             </li>
                                             <li>
-                                                <label class="kt-check"
-                                                    ><input type="checkbox" /><span>OAuth</span></label
-                                                >
+                                                <label class="kt-check"><input type="checkbox" /><span>OAuth</span></label>
                                             </li>
                                             <li>
-                                                <label class="kt-check"
-                                                    ><input type="checkbox" /><span>MCP</span></label
-                                                >
+                                                <label class="kt-check"><input type="checkbox" /><span>MCP</span></label>
                                             </li>
                                         </ul>
                                     </div>
@@ -861,49 +675,19 @@ KT API Link 연동 설명을 입력합니다.
                                     <label class="kt-field">
                                         <span class="kt-field__label">Hover</span>
                                         <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                            <button
-                                                type="button"
-                                                class="is-hover"
-                                                data-dropdown_trg
-                                                role="combobox"
-                                                aria-haspopup="true"
-                                                aria-selected="false"
-                                                aria-expanded="false"
-                                            >
-                                                상품
-                                            </button>
+                                            <button type="button" class="is-hover" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">상품</button>
                                         </div>
                                     </label>
                                     <label class="kt-field">
                                         <span class="kt-field__label">Focused</span>
                                         <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                            <button
-                                                type="button"
-                                                class="is-focused"
-                                                data-dropdown_trg
-                                                role="combobox"
-                                                aria-haspopup="true"
-                                                aria-selected="false"
-                                                aria-expanded="false"
-                                            >
-                                                상품
-                                            </button>
+                                            <button type="button" class="is-focused" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">상품</button>
                                         </div>
                                     </label>
                                     <label class="kt-field">
                                         <span class="kt-field__label">Disabled</span>
                                         <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                            <button
-                                                type="button"
-                                                data-dropdown_trg
-                                                role="combobox"
-                                                aria-haspopup="true"
-                                                aria-selected="false"
-                                                aria-expanded="false"
-                                                disabled
-                                            >
-                                                상품
-                                            </button>
+                                            <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false" disabled>상품</button>
                                         </div>
                                     </label>
                                 </div>
@@ -913,10 +697,7 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="checks">
                         <h2>Checkbox / Radio / Switch</h2>
-                        <p class="kt-component-desc">
-                            Figma 서비스 선택 화면 기준으로 checkbox는 20px 원형 체크, radio는 20px 원형 dot 형태로
-                            맞춥니다.
-                        </p>
+                        <p class="kt-component-desc">Figma 서비스 선택 화면 기준으로 checkbox는 20px 원형 체크, radio는 20px 원형 dot 형태로 맞춥니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>Checkbox State</h3>
@@ -928,25 +709,11 @@ KT API Link 연동 설명을 입력합니다.
                                     <span class="kt-control-state-grid__head">Selected Hover</span>
                                     <span class="kt-control-state-grid__head">Selected Disabled</span>
                                     <label class="kt-check"><input type="checkbox" /><span>기본</span></label>
-                                    <label class="kt-check"
-                                        ><input type="checkbox" class="is-hover" /><span>Hover</span></label
-                                    >
-                                    <label class="kt-check"
-                                        ><input type="checkbox" disabled /><span>Disabled</span></label
-                                    >
-                                    <label class="kt-check"
-                                        ><input type="checkbox" checked /><span>Selected</span></label
-                                    >
-                                    <label class="kt-check"
-                                        ><input type="checkbox" checked class="is-selected-hover" /><span
-                                            >Selected Hover</span
-                                        ></label
-                                    >
-                                    <label class="kt-check"
-                                        ><input type="checkbox" checked disabled class="is-selected-disabled" /><span
-                                            >Selected Disabled</span
-                                        ></label
-                                    >
+                                    <label class="kt-check"><input type="checkbox" class="is-hover" /><span>Hover</span></label>
+                                    <label class="kt-check"><input type="checkbox" disabled /><span>Disabled</span></label>
+                                    <label class="kt-check"><input type="checkbox" checked /><span>Selected</span></label>
+                                    <label class="kt-check"><input type="checkbox" checked class="is-selected-hover" /><span>Selected Hover</span></label>
+                                    <label class="kt-check"><input type="checkbox" checked disabled class="is-selected-disabled" /><span>Selected Disabled</span></label>
                                 </div>
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
@@ -958,40 +725,13 @@ KT API Link 연동 설명을 입력합니다.
                                     <span class="kt-control-state-grid__head">Selected</span>
                                     <span class="kt-control-state-grid__head">Selected Hover</span>
                                     <span class="kt-control-state-grid__head">Selected Disabled</span>
+                                    <label class="kt-radio"><input type="radio" name="componentRadioDefault" /><span>기본</span></label>
+                                    <label class="kt-radio"><input type="radio" name="componentRadioHover" class="is-hover" /><span>Hover</span></label>
+                                    <label class="kt-radio"><input type="radio" name="componentRadioDisabled" disabled /><span>Disabled</span></label>
+                                    <label class="kt-radio"><input type="radio" name="componentRadioSelected" checked /><span>Selected</span></label>
+                                    <label class="kt-radio"><input type="radio" name="componentRadioSelectedHover" checked class="is-selected-hover" /><span>Selected Hover</span></label>
                                     <label class="kt-radio"
-                                        ><input type="radio" name="componentRadioDefault" /><span>기본</span></label
-                                    >
-                                    <label class="kt-radio"
-                                        ><input type="radio" name="componentRadioHover" class="is-hover" /><span
-                                            >Hover</span
-                                        ></label
-                                    >
-                                    <label class="kt-radio"
-                                        ><input type="radio" name="componentRadioDisabled" disabled /><span
-                                            >Disabled</span
-                                        ></label
-                                    >
-                                    <label class="kt-radio"
-                                        ><input type="radio" name="componentRadioSelected" checked /><span
-                                            >Selected</span
-                                        ></label
-                                    >
-                                    <label class="kt-radio"
-                                        ><input
-                                            type="radio"
-                                            name="componentRadioSelectedHover"
-                                            checked
-                                            class="is-selected-hover"
-                                        /><span>Selected Hover</span></label
-                                    >
-                                    <label class="kt-radio"
-                                        ><input
-                                            type="radio"
-                                            name="componentRadioSelectedDisabled"
-                                            checked
-                                            disabled
-                                            class="is-selected-disabled"
-                                        /><span>Selected Disabled</span></label
+                                        ><input type="radio" name="componentRadioSelectedDisabled" checked disabled class="is-selected-disabled" /><span>Selected Disabled</span></label
                                     >
                                 </div>
                             </div>
@@ -1000,12 +740,8 @@ KT API Link 연동 설명을 입력합니다.
                                 <div class="kt-switch-state-row">
                                     <label class="kt-switch"><input type="checkbox" /><span>Off</span></label>
                                     <label class="kt-switch"><input type="checkbox" checked /><span>On</span></label>
-                                    <label class="kt-switch"
-                                        ><input type="checkbox" disabled /><span>Disabled</span></label
-                                    >
-                                    <label class="kt-switch"
-                                        ><input type="checkbox" checked disabled /><span>On Disabled</span></label
-                                    >
+                                    <label class="kt-switch"><input type="checkbox" disabled /><span>Disabled</span></label>
+                                    <label class="kt-switch"><input type="checkbox" checked disabled /><span>On Disabled</span></label>
                                 </div>
                             </div>
                         </div>
@@ -1013,19 +749,12 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="prompt">
                         <h2>Dropdown Prompt</h2>
-                        <p class="kt-component-desc">
-                            Figma의 API 검색 prompt와 KT Service 선택 prompt를 별도 컴포넌트로 분리했습니다.
-                        </p>
+                        <p class="kt-component-desc">Figma의 API 검색 prompt와 KT Service 선택 prompt를 별도 컴포넌트로 분리했습니다.</p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-workspace-filter">
                                 <p>워크스페이스 이름, ID, 설명</p>
                                 <div class="kt-search">
-                                    <input
-                                        type="text"
-                                        id="workspaceNameSearch"
-                                        class="kt-input"
-                                        placeholder="검색어 입력"
-                                    />
+                                    <input type="text" id="workspaceNameSearch" class="kt-input" placeholder="검색어 입력" />
                                     <button
                                         type="button"
                                         class="kt-input-field__clear kt-search__clear"
@@ -1043,16 +772,7 @@ KT API Link 연동 설명을 입력합니다.
                                     </button>
                                 </div>
                                 <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button
-                                        type="button"
-                                        data-dropdown_trg
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-selected="false"
-                                        aria-expanded="false"
-                                    >
-                                        All Status
-                                    </button>
+                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Status</button>
                                     <div data-dropdown_menu role="listbox">
                                         <ol>
                                             <li><button type="button" aria-current="true">All Status</button></li>
@@ -1062,16 +782,7 @@ KT API Link 연동 설명을 입력합니다.
                                     </div>
                                 </div>
                                 <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button
-                                        type="button"
-                                        data-dropdown_trg
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-selected="false"
-                                        aria-expanded="false"
-                                    >
-                                        All Type
-                                    </button>
+                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Type</button>
                                     <div data-dropdown_menu role="listbox">
                                         <ol>
                                             <li><button type="button" aria-current="true">All Type</button></li>
@@ -1081,16 +792,7 @@ KT API Link 연동 설명을 입력합니다.
                                     </div>
                                 </div>
                                 <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button
-                                        type="button"
-                                        data-dropdown_trg
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-selected="false"
-                                        aria-expanded="false"
-                                    >
-                                        All Issue
-                                    </button>
+                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Issue</button>
                                     <div data-dropdown_menu role="listbox">
                                         <ol>
                                             <li><button type="button" aria-current="true">All Issue</button></li>
@@ -1127,42 +829,21 @@ KT API Link 연동 설명을 입력합니다.
                                             >
                                                 <img src="./assets/img/components/ico_delete.svg" alt="" />
                                             </button>
-                                            <button
-                                                type="button"
-                                                class="kt-icon-btn"
-                                                data-prompt_trg
-                                                aria-controls="apiPromptMenu"
-                                                aria-expanded="false"
-                                                aria-label="검색"
-                                            >
+                                            <button type="button" class="kt-icon-btn" data-prompt_trg aria-controls="apiPromptMenu" aria-expanded="false" aria-label="검색">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
                                             </button>
                                         </div>
                                     </div>
                                     <div class="kt-prompt__menu" id="apiPromptMenu" data-prompt_menu role="listbox">
                                         <ul class="kt-prompt__api-list kt-scrollbar">
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_113</strong><span>쿠폰발급</span>
-                                            </li>
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_1130</strong><span>쿠폰상태조회</span>
-                                            </li>
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_1131</strong><span>쿠폰목록조회</span>
-                                            </li>
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_1132</strong><span>쿠폰 패키지 조회</span>
-                                            </li>
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_1133</strong><span>쿠폰 사용 이력 조회</span>
-                                            </li>
-                                            <li role="option" tabindex="0">
-                                                <strong>OIF_1000</strong><span>쿠폰 6개 이상 테스트</span>
-                                            </li>
+                                            <li role="option" tabindex="0"><strong>OIF_113</strong><span>쿠폰발급</span></li>
+                                            <li role="option" tabindex="0"><strong>OIF_1130</strong><span>쿠폰상태조회</span></li>
+                                            <li role="option" tabindex="0"><strong>OIF_1131</strong><span>쿠폰목록조회</span></li>
+                                            <li role="option" tabindex="0"><strong>OIF_1132</strong><span>쿠폰 패키지 조회</span></li>
+                                            <li role="option" tabindex="0"><strong>OIF_1133</strong><span>쿠폰 사용 이력 조회</span></li>
+                                            <li role="option" tabindex="0"><strong>OIF_1000</strong><span>쿠폰 6개 이상 테스트</span></li>
                                         </ul>
-                                        <p class="kt-prompt__foot" data-prompt_foot hidden aria-hidden="true">
-                                            검색어를 더 입력해 결과를 줄여보세요 (5개 더 있음)
-                                        </p>
+                                        <p class="kt-prompt__foot" data-prompt_foot hidden aria-hidden="true">검색어를 더 입력해 결과를 줄여보세요 (5개 더 있음)</p>
                                     </div>
                                 </div>
                             </div>
@@ -1200,14 +881,7 @@ KT API Link 연동 설명을 입력합니다.
                                             >
                                                 <img src="./assets/img/components/ico_delete.svg" alt="" />
                                             </button>
-                                            <button
-                                                type="button"
-                                                class="kt-icon-btn"
-                                                data-prompt_trg
-                                                aria-controls="servicePromptMenu"
-                                                aria-expanded="false"
-                                                aria-label="검색"
-                                            >
+                                            <button type="button" class="kt-icon-btn" data-prompt_trg aria-controls="servicePromptMenu" aria-expanded="false" aria-label="검색">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
                                             </button>
                                         </span>
@@ -1218,50 +892,43 @@ KT API Link 연동 설명을 입력합니다.
                                         <li class="is-selected" role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT멤버십</strong><span>BG007301</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>한수지</span
-                                                ><span>suji.han@kt.com</span
+                                                <strong>KT멤버십</strong><span>BG007301</span><span class="kt-badge kt-badge--danger">PO</span><span>한수지</span><span>suji.han@kt.com</span
                                                 ><img src="./assets/img/components/ico_check.svg" alt="" />
                                             </span>
                                         </li>
                                         <li role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>쿠폰 플랫폼</strong><span>KT_COUPON_002</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>박상현</span
-                                                ><span>park.sh@kt.com</span><span></span>
+                                                <strong>쿠폰 플랫폼</strong><span>KT_COUPON_002</span><span class="kt-badge kt-badge--danger">PO</span><span>박상현</span><span>park.sh@kt.com</span
+                                                ><span></span>
                                             </span>
                                         </li>
                                         <li role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span
-                                                ><span>choi.jh@kt.com</span><span></span>
+                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
+                                                ><span></span>
                                             </span>
                                         </li>
                                         <li role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span
-                                                ><span>choi.jh@kt.com</span><span></span>
+                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
+                                                ><span></span>
                                             </span>
                                         </li>
                                         <li role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span
-                                                ><span>choi.jh@kt.com</span><span></span>
+                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
+                                                ><span></span>
                                             </span>
                                         </li>
                                         <li role="option" tabindex="0">
                                             <span class="kt-prompt__row">
                                                 <img src="./assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span
-                                                ><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span
-                                                ><span>choi.jh@kt.com</span><span></span>
+                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
+                                                ><span></span>
                                             </span>
                                         </li>
                                     </ul>
@@ -1296,127 +963,55 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="tabs">
                         <h2>Tab</h2>
-                        <p class="kt-component-desc">
-                            기존 data-tab 동작을 유지하면서 pill, segment, line 타입을 클래스만 바꿔 사용합니다.
-                        </p>
+                        <p class="kt-component-desc">기존 data-tab 동작을 유지하면서 pill, segment, line 타입을 클래스만 바꿔 사용합니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card">
                                 <h3>Pill Tab</h3>
                                 <div data-tab_wrap class="kt-tabs">
-                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab01">
-                                        전체
-                                    </button>
+                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab01">전체</button>
                                     <nav id="componentTab01">
                                         <ol data-tab_list role="tablist">
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="true"
-                                                    aria-current="true"
-                                                    aria-controls="pillPanel01"
-                                                    id="pillTab01"
-                                                >
-                                                    전체
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="true" aria-current="true" aria-controls="pillPanel01" id="pillTab01">전체</button>
                                             </li>
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
-                                                    aria-controls="pillPanel02"
-                                                    id="pillTab02"
-                                                >
-                                                    API
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="false" aria-controls="pillPanel02" id="pillTab02">API</button>
                                             </li>
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
-                                                    aria-controls="pillPanel03"
-                                                    id="pillTab03"
-                                                >
-                                                    OAuth
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="false" aria-controls="pillPanel03" id="pillTab03">OAuth</button>
                                             </li>
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
-                                                    aria-disabled="true"
-                                                    disabled
-                                                >
-                                                    비활성
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="false" aria-disabled="true" disabled>비활성</button>
                                             </li>
                                         </ol>
                                     </nav>
                                     <div data-tab_container>
-                                        <div role="tabpanel" id="pillPanel01" aria-labelledby="pillTab01">
-                                            전체 목록
-                                        </div>
-                                        <div role="tabpanel" id="pillPanel02" aria-labelledby="pillTab02" hidden>
-                                            API 목록
-                                        </div>
-                                        <div role="tabpanel" id="pillPanel03" aria-labelledby="pillTab03" hidden>
-                                            OAuth 목록
-                                        </div>
+                                        <div role="tabpanel" id="pillPanel01" aria-labelledby="pillTab01">전체 목록</div>
+                                        <div role="tabpanel" id="pillPanel02" aria-labelledby="pillTab02" hidden>API 목록</div>
+                                        <div role="tabpanel" id="pillPanel03" aria-labelledby="pillTab03" hidden>OAuth 목록</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="kt-component-card">
                                 <h3>Line Tab</h3>
                                 <div data-tab_wrap class="kt-tabs kt-tabs--line">
-                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab02">
-                                        기본정보
-                                    </button>
+                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab02">기본정보</button>
                                     <nav id="componentTab02">
                                         <ol data-tab_list role="tablist">
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="true"
-                                                    aria-current="true"
-                                                    aria-controls="linePanel01"
-                                                    id="lineTab01"
-                                                >
-                                                    기본정보
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="true" aria-current="true" aria-controls="linePanel01" id="lineTab01">기본정보</button>
                                             </li>
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
-                                                    aria-controls="linePanel02"
-                                                    id="lineTab02"
-                                                >
-                                                    이력
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="false" aria-controls="linePanel02" id="lineTab02">이력</button>
                                             </li>
                                             <li data-tab_btn>
-                                                <button
-                                                    type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
-                                                    aria-disabled="true"
-                                                    disabled
-                                                >
-                                                    비활성
-                                                </button>
+                                                <button type="button" role="tab" aria-selected="false" aria-disabled="true" disabled>비활성</button>
                                             </li>
                                         </ol>
                                     </nav>
                                     <div data-tab_container>
                                         <div role="tabpanel" id="linePanel01" aria-labelledby="lineTab01">기본정보</div>
-                                        <div role="tabpanel" id="linePanel02" aria-labelledby="lineTab02" hidden>
-                                            이력
-                                        </div>
+                                        <div role="tabpanel" id="linePanel02" aria-labelledby="lineTab02" hidden>이력</div>
                                     </div>
                                 </div>
                             </div>
@@ -1425,26 +1020,16 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="grid">
                         <h2>Grid / Table</h2>
-                        <p class="kt-component-desc">
-                            My Workspaces 목록 화면 기준 40px row, column grid, 내부 scrollbar, pagination을 함께
-                            제공합니다.
-                        </p>
+                        <p class="kt-component-desc">My Workspaces 목록 화면 기준 40px row, column grid, 내부 scrollbar, pagination을 함께 제공합니다.</p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-component-card kt-component-card--works">
                                 <h3>My Workspaces Search + Table</h3>
                                 <div class="kt-works-component-preview">
-                                    <section
-                                        class="kt-works-search kt-works-search--demo"
-                                        aria-label="워크스페이스 검색"
-                                    >
+                                    <section class="kt-works-search kt-works-search--demo" aria-label="워크스페이스 검색">
                                         <div class="kt-works-search__row">
                                             <p>워크스페이스 이름, ID, 설명</p>
                                             <div class="kt-works-search__controls">
-                                                <div
-                                                    class="kt-prompt kt-prompt--works kt-prompt--wide"
-                                                    data-prompt
-                                                    data-prompt-min-length="3"
-                                                >
+                                                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-min-length="3">
                                                     <div class="kt-prompt__field">
                                                         <input
                                                             type="text"
@@ -1457,95 +1042,42 @@ KT API Link 연동 설명을 입력합니다.
                                                             autocomplete="off"
                                                         />
                                                         <span class="kt-prompt__actions">
-                                                            <button
-                                                                type="button"
-                                                                data-clear_input
-                                                                aria-controls="componentWorkspaceKeyword"
-                                                                aria-label="검색어 삭제"
-                                                                hidden
-                                                            >
-                                                                <img
-                                                                    src="./assets/img/components/ico_delete.svg"
-                                                                    alt=""
-                                                                />
+                                                            <button type="button" data-clear_input aria-controls="componentWorkspaceKeyword" aria-label="검색어 삭제" hidden>
+                                                                <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                             </button>
                                                             <button type="button" aria-label="검색">
-                                                                <img
-                                                                    src="./assets/img/components/ico_search.svg"
-                                                                    alt=""
-                                                                />
+                                                                <img src="./assets/img/components/ico_search.svg" alt="" />
                                                             </button>
                                                         </span>
                                                     </div>
-                                                    <div
-                                                        class="kt-prompt__menu"
-                                                        id="componentWorkspacePromptMenu"
-                                                        data-prompt_menu
-                                                        data-prompt-visible-count="10"
-                                                        role="listbox"
-                                                    >
+                                                    <div class="kt-prompt__menu" id="componentWorkspacePromptMenu" data-prompt_menu data-prompt-visible-count="10" role="listbox">
                                                         <ul class="kt-prompt__api-list kt-prompt__workspace-list">
-                                                            <li
-                                                                role="option"
-                                                                tabindex="-1"
-                                                                aria-selected="false"
-                                                                data-search-keywords="A0001 LG유플러스_쿠폰 LG유플러스 쿠폰"
-                                                            >
-                                                                <span
-                                                                    class="kt-prompt__search-icon"
-                                                                    aria-hidden="true"
-                                                                ></span>
+                                                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="A0001 LG유플러스_쿠폰 LG유플러스 쿠폰">
+                                                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                                 <strong>A0001</strong>
                                                                 <span>LG유플러스_쿠폰</span>
                                                             </li>
-                                                            <li
-                                                                role="option"
-                                                                tabindex="-1"
-                                                                aria-selected="false"
-                                                                data-search-keywords="M0001 하나로소프트_쿠폰서비스 하나로소프트 쿠폰"
-                                                            >
-                                                                <span
-                                                                    class="kt-prompt__search-icon"
-                                                                    aria-hidden="true"
-                                                                ></span>
+                                                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="M0001 하나로소프트_쿠폰서비스 하나로소프트 쿠폰">
+                                                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                                 <strong>M0001</strong>
                                                                 <span>하나로소프트_쿠폰서비스</span>
                                                             </li>
-                                                            <li
-                                                                role="option"
-                                                                tabindex="-1"
-                                                                aria-selected="false"
-                                                                data-search-keywords="A0003 카카오_메시지연동 카카오 메시지"
-                                                            >
-                                                                <span
-                                                                    class="kt-prompt__search-icon"
-                                                                    aria-hidden="true"
-                                                                ></span>
+                                                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="A0003 카카오_메시지연동 카카오 메시지">
+                                                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                                 <strong>A0003</strong>
                                                                 <span>카카오_메시지연동</span>
                                                             </li>
                                                         </ul>
-                                                        <p
-                                                            class="kt-prompt__foot"
-                                                            data-prompt_foot
-                                                            data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요"
-                                                            hidden
-                                                            aria-hidden="true"
-                                                        ></p>
+                                                        <p class="kt-prompt__foot" data-prompt_foot data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요" hidden aria-hidden="true"></p>
                                                     </div>
                                                 </div>
                                                 <div class="kt-works-dropdowns">
-                                                    <div
-                                                        class="kt-dropdown kt-dropdown--works selectbox"
-                                                        data-dropdown_wrap
-                                                    >
+                                                    <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
                                                         <button type="button" data-dropdown_trg>All Status</button>
                                                         <div data-dropdown_menu>
                                                             <ul>
                                                                 <li>
-                                                                    <button type="button" aria-current="true">
-                                                                        All Status
-                                                                    </button>
+                                                                    <button type="button" aria-current="true">All Status</button>
                                                                 </li>
                                                                 <li><button type="button">Draft</button></li>
                                                                 <li><button type="button">Dev</button></li>
@@ -1554,17 +1086,12 @@ KT API Link 연동 설명을 입력합니다.
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <div
-                                                        class="kt-dropdown kt-dropdown--works selectbox"
-                                                        data-dropdown_wrap
-                                                    >
+                                                    <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
                                                         <button type="button" data-dropdown_trg>All Type</button>
                                                         <div data-dropdown_menu>
                                                             <ul>
                                                                 <li>
-                                                                    <button type="button" aria-current="true">
-                                                                        All Type
-                                                                    </button>
+                                                                    <button type="button" aria-current="true">All Type</button>
                                                                 </li>
                                                                 <li><button type="button">API</button></li>
                                                                 <li><button type="button">OAuth</button></li>
@@ -1572,17 +1099,12 @@ KT API Link 연동 설명을 입력합니다.
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <div
-                                                        class="kt-dropdown kt-dropdown--works selectbox"
-                                                        data-dropdown_wrap
-                                                    >
+                                                    <div class="kt-dropdown kt-dropdown--works selectbox" data-dropdown_wrap>
                                                         <button type="button" data-dropdown_trg>All Issue</button>
                                                         <div data-dropdown_menu>
                                                             <ul>
                                                                 <li>
-                                                                    <button type="button" aria-current="true">
-                                                                        All Issue
-                                                                    </button>
+                                                                    <button type="button" aria-current="true">All Issue</button>
                                                                 </li>
                                                                 <li><button type="button">승인대기</button></li>
                                                                 <li><button type="button">반려</button></li>
@@ -1595,11 +1117,7 @@ KT API Link 연동 설명을 입력합니다.
                                         </div>
                                         <div class="kt-works-search__row">
                                             <p>API 검색(OIF_숫자)</p>
-                                            <div
-                                                class="kt-prompt kt-prompt--works kt-prompt--wide"
-                                                data-prompt
-                                                data-prompt-min-length="3"
-                                            >
+                                            <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-min-length="3">
                                                 <div class="kt-prompt__field">
                                                     <input
                                                         type="text"
@@ -1612,13 +1130,7 @@ KT API Link 연동 설명을 입력합니다.
                                                         autocomplete="off"
                                                     />
                                                     <span class="kt-prompt__actions">
-                                                        <button
-                                                            type="button"
-                                                            data-clear_input
-                                                            aria-controls="componentApiKeyword"
-                                                            aria-label="검색어 삭제"
-                                                            hidden
-                                                        >
+                                                        <button type="button" data-clear_input aria-controls="componentApiKeyword" aria-label="검색어 삭제" hidden>
                                                             <img src="./assets/img/components/ico_delete.svg" alt="" />
                                                         </button>
                                                         <button type="button" aria-label="API 검색">
@@ -1626,204 +1138,80 @@ KT API Link 연동 설명을 입력합니다.
                                                         </button>
                                                     </span>
                                                 </div>
-                                                <div
-                                                    class="kt-prompt__menu"
-                                                    id="componentApiPromptMenu"
-                                                    data-prompt_menu
-                                                    data-prompt-visible-count="10"
-                                                    role="listbox"
-                                                >
+                                                <div class="kt-prompt__menu" id="componentApiPromptMenu" data-prompt_menu data-prompt-visible-count="10" role="listbox">
                                                     <ul class="kt-prompt__api-list">
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_113 쿠폰 쿠폰발급"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_113 쿠폰 쿠폰발급">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_113</strong>
                                                             <span>쿠폰발급</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1130 쿠폰 쿠폰상태조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1130 쿠폰 쿠폰상태조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1130</strong>
                                                             <span>쿠폰상태조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1131 쿠폰 쿠폰목록조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1131 쿠폰 쿠폰목록조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1131</strong>
                                                             <span>쿠폰목록조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1132 쿠폰 쿠폰 패키지 조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1132 쿠폰 쿠폰 패키지 조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1132</strong>
                                                             <span>쿠폰 패키지 조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1133 쿠폰 쿠폰상세조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1133 쿠폰 쿠폰상세조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1133</strong>
                                                             <span>쿠폰상세조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1134 쿠폰 쿠폰사용처조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1134 쿠폰 쿠폰사용처조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1134</strong>
                                                             <span>쿠폰사용처조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1135 쿠폰 쿠폰취소"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1135 쿠폰 쿠폰취소">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1135</strong>
                                                             <span>쿠폰취소</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1136 쿠폰 쿠폰발급이력"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1136 쿠폰 쿠폰발급이력">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1136</strong>
                                                             <span>쿠폰발급이력</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1137 쿠폰 쿠폰검증"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1137 쿠폰 쿠폰검증">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1137</strong>
                                                             <span>쿠폰검증</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1138 쿠폰 쿠폰재발급"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1138 쿠폰 쿠폰재발급">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1138</strong>
                                                             <span>쿠폰재발급</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1139 쿠폰 쿠폰이력조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1139 쿠폰 쿠폰이력조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1139</strong>
                                                             <span>쿠폰이력조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1140 쿠폰 쿠폰승인조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1140 쿠폰 쿠폰승인조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1140</strong>
                                                             <span>쿠폰승인조회</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1141 쿠폰 쿠폰만료처리"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1141 쿠폰 쿠폰만료처리">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1141</strong>
                                                             <span>쿠폰만료처리</span>
                                                         </li>
-                                                        <li
-                                                            role="option"
-                                                            tabindex="-1"
-                                                            aria-selected="false"
-                                                            data-search-keywords="OIF_1142 쿠폰 쿠폰만료조회"
-                                                        >
-                                                            <span
-                                                                class="kt-prompt__search-icon"
-                                                                aria-hidden="true"
-                                                            ></span>
+                                                        <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_1142 쿠폰 쿠폰만료조회">
+                                                            <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                                             <strong>OIF_1142</strong>
                                                             <span>쿠폰만료조회</span>
                                                         </li>
                                                     </ul>
-                                                    <p
-                                                        class="kt-prompt__foot"
-                                                        data-prompt_foot
-                                                        data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요"
-                                                        hidden
-                                                        aria-hidden="true"
-                                                    ></p>
+                                                    <p class="kt-prompt__foot" data-prompt_foot data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요" hidden aria-hidden="true"></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1920,11 +1308,7 @@ KT API Link 연동 설명을 입력합니다.
                                 <div>
                                     <strong>Paging Pill</strong>
                                     <span class="kt-page-pill">1 / 6</span>
-                                    <button
-                                        type="button"
-                                        class="kt-page-pill kt-page-pill--button"
-                                        aria-label="다음 배너"
-                                    >
+                                    <button type="button" class="kt-page-pill kt-page-pill--button" aria-label="다음 배너">
                                         <span>1 / 6</span>
                                         <img src="./assets/img/components/ico_chevron_right.svg" alt="" />
                                     </button>
@@ -1935,9 +1319,7 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="scrollbar">
                         <h2>Scrollbar</h2>
-                        <p class="kt-component-desc">
-                            Dropdown prompt와 table 내부 스크롤은 20px 영역 안에 4px thumb가 보이는 형태로 맞춥니다.
-                        </p>
+                        <p class="kt-component-desc">Dropdown prompt와 table 내부 스크롤은 20px 영역 안에 4px thumb가 보이는 형태로 맞춥니다.</p>
                         <ul class="kt-scroll-demo kt-scrollbar">
                             <li>OIF_113 / 쿠폰발급</li>
                             <li>OIF_1130 / 쿠폰상태조회</li>
@@ -1950,20 +1332,14 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="newwork">
                         <h2>Create Workspace</h2>
-                        <p class="kt-component-desc">
-                            워크스페이스 생성 화면에서 반복 사용하는 유형 카드, 단계 표시, 검색 드롭다운, 확인 테이블
-                            패턴입니다.
-                        </p>
+                        <p class="kt-component-desc">워크스페이스 생성 화면에서 반복 사용하는 유형 카드, 단계 표시, 검색 드롭다운, 확인 테이블 패턴입니다.</p>
                         <div class="kt-newwork-page kt-newwork-component-scope">
                             <div class="kt-component-demo kt-component-demo--wide">
                                 <!--#include file="./include/_newwork_type_cards.html"-->
                             </div>
                             <div class="kt-component-demo kt-component-demo--wide">
                                 <div class="kt-newwork-component-form">
-                                    <ol
-                                        class="kt-newwork-stepper kt-newwork-stepper--four"
-                                        aria-label="워크스페이스 생성 단계"
-                                    >
+                                    <ol class="kt-newwork-stepper kt-newwork-stepper--four" aria-label="워크스페이스 생성 단계">
                                         <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
                                         <li class="is-active"><span>02</span><strong>KT Service 선택</strong></li>
                                         <li><span>03</span><strong>멤버 설정</strong></li>
@@ -1981,56 +1357,28 @@ KT API Link 연동 설명을 입력합니다.
                                                     value="API Link Workspace"
                                                     placeholder="워크스페이스 이름을 입력해 주세요."
                                                 />
-                                                <button
-                                                    type="button"
-                                                    class="kt-newwork-input-clear"
-                                                    data-newwork-input-clear
-                                                >
+                                                <button type="button" class="kt-newwork-input-clear" data-newwork-input-clear>
                                                     <span class="blind">입력값 삭제</span>
                                                 </button>
                                             </div>
                                         </div>
                                         <label class="kt-newwork-field kt-newwork-field--textarea">
                                             <span>Description <em>*</em></span>
-                                            <textarea
-                                                class="kt-textarea"
-                                                placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."
-                                            ></textarea>
+                                            <textarea class="kt-textarea" placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."></textarea>
                                             <i>0/0</i>
                                         </label>
                                         <label class="kt-newwork-field">
                                             <span>Company</span>
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="하나로소프트"
-                                                readonly
-                                            />
-                                            <small class="kt-newwork-field__help">
-                                                계정 정보와 매핑되는 읽기 전용 입력 케이스입니다.
-                                            </small>
+                                            <input type="text" class="kt-input kt-input--52" value="하나로소프트" readonly />
+                                            <small class="kt-newwork-field__help"> 계정 정보와 매핑되는 읽기 전용 입력 케이스입니다. </small>
                                         </label>
                                     </section>
                                     <section class="kt-newwork-section">
                                         <h3>KTService 검색 <em>*</em></h3>
-                                        <div
-                                            class="kt-newwork-search"
-                                            data-newwork-search
-                                            data-newwork-search-type="service"
-                                        >
+                                        <div class="kt-newwork-search" data-newwork-search data-newwork-search-type="service">
                                             <div class="kt-newwork-search__field">
-                                                <input
-                                                    type="text"
-                                                    class="kt-input kt-input--48"
-                                                    placeholder="KT 서비스명 또는 Service Code 검색"
-                                                    aria-label="KT Service 검색"
-                                                />
-                                                <button
-                                                    type="button"
-                                                    class="kt-newwork-search__clear"
-                                                    data-newwork-clear
-                                                    hidden
-                                                >
+                                                <input type="text" class="kt-input kt-input--48" placeholder="KT 서비스명 또는 Service Code 검색" aria-label="KT Service 검색" />
+                                                <button type="button" class="kt-newwork-search__clear" data-newwork-clear hidden>
                                                     <span class="blind">검색어 삭제</span>
                                                 </button>
                                                 <button type="button" class="kt-newwork-search__submit">
@@ -2064,94 +1412,83 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="user-account">
                         <h2>User Account</h2>
-                        <p class="kt-component-desc">
-                            My page의 개인정보 변경, 비밀번호 변경, 회원탈퇴 화면에서 반복 사용하는 탭, 타이틀, 입력,
-                            인증번호, 유의사항, 하단 액션 패턴입니다.
-                        </p>
+                        <p class="kt-component-desc">My page의 개인정보 변경, 비밀번호 변경, 회원탈퇴 화면에서 반복 사용하는 탭, 타이틀, 입력, 인증번호, 유의사항, 하단 액션 패턴입니다.</p>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-user-page kt-user-component-scope">
-                                <div class="kt-user-shell">
+                                <div class="kt-user-shell" data-user-main-tabs>
                                     <nav class="kt-user-tabs" aria-label="정보변경 메뉴 예시">
                                         <ul>
-                                            <li><a href="user-01.html" class="is-active">개인정보 변경</a></li>
-                                            <li><a href="user-03.html">비밀번호 변경</a></li>
-                                            <li><a href="user-05.html">회원탈퇴</a></li>
+                                            <li>
+                                                <a href="#" data-user-main-tab="profile" class="is-active">개인정보 변경</a>
+                                            </li>
+                                            <li><a href="#" data-user-main-tab="password">비밀번호 변경</a></li>
+                                            <li><a href="#" data-user-main-tab="withdraw">회원탈퇴</a></li>
                                         </ul>
                                     </nav>
-                                    <section class="kt-user-form">
-                                        <div class="kt-user-title">
-                                            <h2>비밀번호 확인</h2>
-                                            <p>본인 확인을 위해 비밀번호 확인이 필요합니다.</p>
-                                        </div>
-                                        <form class="kt-user-form-body kt-user-form-body--spacious">
-                                            <label class="kt-field kt-user-field">
-                                                <span class="kt-field__label"
-                                                    >비밀번호 <span class="is-required">*</span></span
-                                                >
-                                                <span class="kt-password">
-                                                    <input
-                                                        type="password"
-                                                        id="componentUserPassword"
-                                                        class="kt-input kt-input--52"
-                                                        placeholder="비밀번호를 입력해 주세요"
-                                                    />
-                                                    <span class="kt-password__actions">
-                                                        <button
-                                                            type="button"
-                                                            class="kt-input-field__clear kt-password__clear"
-                                                            data-clear_input
-                                                            aria-controls="componentUserPassword"
-                                                            aria-label="비밀번호 삭제"
-                                                            hidden
-                                                        >
-                                                            <img src="./assets/img/components/ico_delete.svg" alt="" />
-                                                        </button>
-                                                        <button
-                                                            type="button"
-                                                            class="kt-password__toggle"
-                                                            data-password_toggle
-                                                            data-icon-show="./assets/img/components/ico_eye.svg"
-                                                            data-icon-hide="./assets/img/components/ico_eye_off.svg"
-                                                            aria-controls="componentUserPassword"
-                                                            aria-pressed="false"
-                                                            aria-label="비밀번호 보기"
-                                                        >
-                                                            <img src="./assets/img/components/ico_eye.svg" alt="" />
-                                                        </button>
-                                                    </span>
-                                                </span>
-                                                <span class="kt-field__message"
-                                                    >팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리
-                                                    팝업 차단을 해제해 주세요.</span
-                                                >
-                                            </label>
-                                            <div class="kt-user-verify">
-                                                <span class="kt-user-verify__label">인증번호</span>
-                                                <div class="kt-user-verify__box">
-                                                    <input type="text" value="123456" aria-label="인증번호" />
-                                                    <button
-                                                        type="button"
-                                                        class="kt-user-verify__clear"
-                                                        aria-label="인증번호 삭제"
-                                                    ></button>
-                                                    <span class="kt-user-verify__side">
-                                                        <span class="kt-user-verify__time">02:23</span>
-                                                        <button type="button" class="kt-user-verify__resend">
-                                                            인증번호 발송
-                                                        </button>
-                                                    </span>
+                                    <ul class="kt-user-panels">
+                                        <li class="kt-user-panel is-active" data-user-main-panel="profile">
+                                            <section class="kt-user-form">
+                                                <div class="kt-user-title">
+                                                    <h2>비밀번호 확인</h2>
+                                                    <p>본인 확인을 위해 비밀번호 확인이 필요합니다.</p>
                                                 </div>
-                                            </div>
-                                        </form>
-                                        <div class="kt-user-actions">
-                                            <button type="button" class="kt-user-button kt-user-button--secondary">
-                                                취소
-                                            </button>
-                                            <button type="button" class="kt-user-button kt-user-button--primary">
-                                                입력완료
-                                            </button>
-                                        </div>
-                                    </section>
+                                                <form class="kt-user-form-body kt-user-form-body--spacious">
+                                                    <label class="kt-field kt-user-field">
+                                                        <span class="kt-field__label">비밀번호 <span class="is-required">*</span></span>
+                                                        <span class="kt-password">
+                                                            <input type="password" id="componentUserPassword" class="kt-input kt-input--52" placeholder="비밀번호를 입력해 주세요" />
+                                                            <span class="kt-password__actions">
+                                                                <button
+                                                                    type="button"
+                                                                    class="kt-input-field__clear kt-password__clear"
+                                                                    data-clear_input
+                                                                    aria-controls="componentUserPassword"
+                                                                    aria-label="비밀번호 삭제"
+                                                                    hidden
+                                                                >
+                                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                                </button>
+                                                                <button
+                                                                    type="button"
+                                                                    class="kt-password__toggle"
+                                                                    data-password_toggle
+                                                                    data-icon-show="./assets/img/components/ico_eye.svg"
+                                                                    data-icon-hide="./assets/img/components/ico_eye_off.svg"
+                                                                    aria-controls="componentUserPassword"
+                                                                    aria-pressed="false"
+                                                                    aria-label="비밀번호 보기"
+                                                                >
+                                                                    <img src="./assets/img/components/ico_eye.svg" alt="" />
+                                                                </button>
+                                                            </span>
+                                                        </span>
+                                                        <span class="kt-field__message">팝업 차단 기능이 활성화된 경우 비밀번호를 변경할 수 없으니, 미리 팝업 차단을 해제해 주세요.</span>
+                                                    </label>
+                                                    <div class="kt-user-verify">
+                                                        <span class="kt-user-verify__label">인증번호</span>
+                                                        <div class="kt-user-verify__box">
+                                                            <input type="text" id="componentUserCode" value="123456" aria-label="인증번호" />
+                                                            <button type="button" class="kt-user-verify__clear" data-clear_input aria-controls="componentUserCode" aria-label="인증번호 삭제"></button>
+                                                            <span class="kt-user-verify__side">
+                                                                <span class="kt-user-verify__time">02:23</span>
+                                                                <button type="button" class="kt-user-verify__resend">인증번호 발송</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="kt-user-actions">
+                                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
+                                                    <button type="button" class="kt-user-button kt-user-button--primary">입력완료</button>
+                                                </div>
+                                            </section>
+                                        </li>
+                                        <li class="kt-user-panel" data-user-main-panel="password" hidden aria-hidden="true">
+                                            <div class="kt-user-placeholder">텍스트 1</div>
+                                        </li>
+                                        <li class="kt-user-panel" data-user-main-panel="withdraw" hidden aria-hidden="true">
+                                            <div class="kt-user-placeholder">텍스트 2</div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -2164,49 +1501,25 @@ KT API Link 연동 설명을 입력합니다.
                                             <p>정확한 본인확인을 위해 비밀번호를 다시 한번 입력해 주세요.</p>
                                         </div>
                                         <form class="kt-user-form-body">
-                                            <section
-                                                class="kt-user-notice"
-                                                aria-labelledby="componentUserWithdrawNoticeTitle"
-                                            >
+                                            <section class="kt-user-notice" aria-labelledby="componentUserWithdrawNoticeTitle">
                                                 <h3 id="componentUserWithdrawNoticeTitle">유의사항</h3>
                                                 <ul class="kt-user-note-list">
                                                     <li>
-                                                        본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두
-                                                        삭제됩니다.
+                                                        <strong>본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제됩니다.</strong>
                                                     </li>
-                                                    <li>
-                                                        본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다. (예: SOP,
-                                                        SDP, 개발지원, CASS 등)
-                                                    </li>
-                                                    <li>
-                                                        개인 데이터 처리
-                                                        <ul>
-                                                            <li>
-                                                                본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두
-                                                                삭제 됩니다.
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                    <li class="is-sub">본 계정을 탈퇴하시면 파트너 사이트 이용이 불가합니다. (예: SOP, SDP, 개발지원, CASS 등)</li>
+                                                    <li><strong>개인 데이터 처리</strong></li>
+                                                    <li class="is-sub">본 계정을 탈퇴하시면 기존에 사용하시던 계정 정보는 모두 삭제됩니다.</li>
                                                 </ul>
                                             </section>
                                             <label class="kt-field kt-user-field kt-user-field--bare">
                                                 <span class="blind">아이디</span>
-                                                <input
-                                                    type="text"
-                                                    class="kt-input kt-input--52"
-                                                    value="sung***"
-                                                    placeholder="비밀번호를 입력해 주세요"
-                                                />
+                                                <input type="text" class="kt-input kt-input--52 kt-user-input--disabled" value="sung***" disabled />
                                             </label>
                                             <label class="kt-field kt-user-field">
                                                 <span class="kt-field__label">비밀번호 확인</span>
                                                 <span class="kt-password">
-                                                    <input
-                                                        type="password"
-                                                        id="componentUserWithdrawPassword"
-                                                        class="kt-input kt-input--52"
-                                                        placeholder="비밀번호를 입력해 주세요"
-                                                    />
+                                                    <input type="password" id="componentUserWithdrawPassword" class="kt-input kt-input--52" placeholder="비밀번호를 입력해 주세요" />
                                                     <span class="kt-password__actions">
                                                         <button
                                                             type="button"
@@ -2235,12 +1548,8 @@ KT API Link 연동 설명을 입력합니다.
                                             </label>
                                         </form>
                                         <div class="kt-user-actions">
-                                            <button type="button" class="kt-user-button kt-user-button--secondary">
-                                                취소
-                                            </button>
-                                            <button type="button" class="kt-user-button kt-user-button--primary">
-                                                회원탈퇴
-                                            </button>
+                                            <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
+                                            <button type="button" class="kt-user-button kt-user-button--primary">회원탈퇴</button>
                                         </div>
                                     </section>
                                 </div>
@@ -2250,15 +1559,10 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="chart">
                         <h2>Chart</h2>
-                        <p class="kt-component-desc">
-                            차트는 무료 사용 가능한 Apache-2.0 라이선스 ECharts를 기준 후보로 둡니다.
-                        </p>
+                        <p class="kt-component-desc">차트는 무료 사용 가능한 Apache-2.0 라이선스 ECharts를 기준 후보로 둡니다.</p>
                         <div class="kt-license-note">
                             <span class="kt-badge kt-badge--line">Apache-2.0</span>
-                            <span
-                                >jQuery, jQuery UI, Swiper는 MIT 계열, ECharts는 Apache-2.0 라이선스로 사용할 수
-                                있습니다.</span
-                            >
+                            <span>jQuery, jQuery UI, Swiper는 MIT 계열, ECharts는 Apache-2.0 라이선스로 사용할 수 있습니다.</span>
                         </div>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <article class="kt-chart-card">
@@ -2268,15 +1572,9 @@ KT API Link 연동 설명을 입력합니다.
                                         <span class="kt-badge kt-badge--blue">ECharts</span>
                                     </div>
                                     <div class="kt-chart-canvas">
-                                        <div
-                                            id="componentApiChart"
-                                            class="kt-chart-echarts"
-                                            role="img"
-                                            aria-label="API 호출 추이 차트"
-                                        ></div>
+                                        <div id="componentApiChart" class="kt-chart-echarts" role="img" aria-label="API 호출 추이 차트"></div>
                                         <div class="kt-chart-fallback" aria-hidden="true">
-                                            <span style="height: 48%"></span><span style="height: 66%"></span
-                                            ><span style="height: 54%"></span><span style="height: 82%"></span
+                                            <span style="height: 48%"></span><span style="height: 66%"></span><span style="height: 54%"></span><span style="height: 82%"></span
                                             ><span style="height: 72%"></span><span style="height: 92%"></span>
                                         </div>
                                     </div>
@@ -2286,8 +1584,7 @@ KT API Link 연동 설명을 입력합니다.
                                         <span><i></i>성공 호출</span><strong>12,530</strong>
                                     </li>
                                     <li>
-                                        <span><i style="background: var(--kt-green)"></i>오류 호출</span
-                                        ><strong>317</strong>
+                                        <span><i style="background: var(--kt-green)"></i>오류 호출</span><strong>317</strong>
                                     </li>
                                     <li>
                                         <span><i style="background: var(--kt-red)"></i>장애</span><strong>2</strong>

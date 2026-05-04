@@ -204,6 +204,7 @@ html {
         display: block;
         flex: 0 0 154px;
         @include absolute(top 20px left 24px);
+        overflow: hidden;
         border-radius: 0;
         line-height: 1;
         padding: 0;
@@ -212,6 +213,16 @@ html {
         background: url(/assets/img/common/img_logo_ft.svg) 50% no-repeat;
         background-size: 154px 40px;
         margin-top: 0;
+
+        &::after {
+            content: '';
+            @include absolute(top 0 left 33px);
+            width: 121px;
+            height: 40px;
+            background: #191a1c;
+            -webkit-mask: url('/assets/img/common/img_logo_ft.svg') -33px 0 / 154px 40px no-repeat;
+            mask: url('/assets/img/common/img_logo_ft.svg') -33px 0 / 154px 40px no-repeat;
+        }
     }
     .gnb {
         position: absolute;

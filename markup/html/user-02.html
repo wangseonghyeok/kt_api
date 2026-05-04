@@ -14,24 +14,26 @@
                         <span>개인정보 및 비밀번호를 관리합니다.</span>
                     </div>
                     <nav class="kt-user-path" aria-label="현재 위치">
-                        <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
-                        <span class="kt-user-path__separator" aria-hidden="true"></span>
-                        <p>My page</p>
-                        <span class="kt-user-path__separator" aria-hidden="true"></span>
-                        <strong>개인정보 변경</strong>
-                    </nav>
-                </section>
-                <div class="kt-user-shell">
-                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
                         <ul>
-                            <li><a href="#" class="is-active">개인정보 변경</a></li>
-                            <li><a href="#">비밀번호 변경</a></li>
-                            <li><a href="#">회원탈퇴</a></li>
+                            <li>
+                                <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
+                            </li>
+                            <li>My page</li>
+                            <li><strong>개인정보 변경</strong></li>
                         </ul>
                     </nav>
-                    <ul>
-                        <li>
-                            <div class="kt-user-form">
+                </section>
+                <div class="kt-user-shell" data-user-main-tabs>
+                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
+                        <ul>
+                            <li><a href="#" data-user-main-tab="profile" class="is-active">개인정보 변경</a></li>
+                            <li><a href="#" data-user-main-tab="password">비밀번호 변경</a></li>
+                            <li><a href="#" data-user-main-tab="withdraw">회원탈퇴</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="kt-user-panels">
+                        <li class="kt-user-panel is-active" data-user-main-panel="profile">
+                            <section class="kt-user-form">
                                 <div class="kt-user-title">
                                     <h2>정보입력</h2>
                                     <p>변경하실 정보를 정확하게 입력해 주세요.</p>
@@ -39,110 +41,147 @@
                                 <form class="kt-user-form-body">
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">회사명</span>
-                                        <input type="text" class="kt-input kt-input--52" value="포에버소프트" />
+                                        <span class="kt-input-field has-value">
+                                            <input type="text" id="userCompanyName" class="kt-input kt-input--52" value="포에버소프트" />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userCompanyName" aria-label="회사명 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">대표자명</span>
-                                        <input
-                                            type="text"
-                                            class="kt-input kt-input--52"
-                                            value="홍길동"
-                                            placeholder="API명을 입력해 주세요."
-                                        />
+                                        <span class="kt-input-field has-value">
+                                            <input type="text" id="userRepresentative" class="kt-input kt-input--52" value="홍길동" placeholder="API명을 입력해 주세요." />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userRepresentative" aria-label="대표자명 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">구분</span>
-                                        <input
-                                            type="text"
-                                            class="kt-input kt-input--52"
-                                            value="법인사업자"
-                                            placeholder="API명을 입력해 주세요."
-                                        />
+                                        <span class="kt-input-field has-value">
+                                            <input type="text" id="userBusinessType" class="kt-input kt-input--52" value="법인사업자" placeholder="API명을 입력해 주세요." />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userBusinessType" aria-label="구분 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                     <div class="kt-field kt-user-field" role="group" aria-label="사업자등록번호">
                                         <span class="kt-field__label">사업자등록번호</span>
                                         <div class="kt-user-field-row">
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="832"
-                                                aria-label="사업자등록번호 앞자리"
-                                            />
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="86"
-                                                aria-label="사업자등록번호 가운데자리"
-                                            />
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="00304"
-                                                aria-label="사업자등록번호 뒷자리"
-                                            />
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userBusinessNumber1" class="kt-input kt-input--52" value="832" aria-label="사업자등록번호 앞자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userBusinessNumber1" aria-label="사업자등록번호 앞자리 삭제">
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userBusinessNumber2" class="kt-input kt-input--52" value="86" aria-label="사업자등록번호 가운데자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button
+                                                        type="button"
+                                                        class="kt-input-field__clear"
+                                                        data-clear_input
+                                                        aria-controls="userBusinessNumber2"
+                                                        aria-label="사업자등록번호 가운데자리 삭제"
+                                                    >
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userBusinessNumber3" class="kt-input kt-input--52" value="00304" aria-label="사업자등록번호 뒷자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userBusinessNumber3" aria-label="사업자등록번호 뒷자리 삭제">
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="kt-field kt-user-field" role="group" aria-label="전화번호">
                                         <span class="kt-field__label">전화번호</span>
                                         <div class="kt-user-field-row">
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="010"
-                                                aria-label="전화번호 앞자리"
-                                            />
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="1234"
-                                                aria-label="전화번호 가운데자리"
-                                            />
-                                            <input
-                                                type="text"
-                                                class="kt-input kt-input--52"
-                                                value="5678"
-                                                aria-label="전화번호 뒷자리"
-                                            />
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userPhone1" class="kt-input kt-input--52" value="010" aria-label="전화번호 앞자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userPhone1" aria-label="전화번호 앞자리 삭제">
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userPhone2" class="kt-input kt-input--52" value="1234" aria-label="전화번호 가운데자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userPhone2" aria-label="전화번호 가운데자리 삭제">
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
+                                            <span class="kt-input-field has-value">
+                                                <input type="text" id="userPhone3" class="kt-input kt-input--52" value="5678" aria-label="전화번호 뒷자리" />
+                                                <span class="kt-input-field__actions">
+                                                    <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userPhone3" aria-label="전화번호 뒷자리 삭제">
+                                                        <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                    </button>
+                                                </span>
+                                            </span>
                                         </div>
                                     </div>
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">담당자부서</span>
-                                        <input
-                                            type="text"
-                                            class="kt-input kt-input--52"
-                                            value="플랫폼사업본부"
-                                            placeholder="API명을 입력해 주세요."
-                                        />
+                                        <span class="kt-input-field has-value">
+                                            <input type="text" id="userDepartment" class="kt-input kt-input--52" value="플랫폼사업본부" placeholder="API명을 입력해 주세요." />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userDepartment" aria-label="담당자부서 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">홈페이지</span>
-                                        <input
-                                            type="url"
-                                            class="kt-input kt-input--52"
-                                            value="http://foreversoft.co.kr"
-                                            placeholder="API명을 입력해 주세요."
-                                        />
+                                        <span class="kt-input-field has-value">
+                                            <input type="url" id="userHomepage" class="kt-input kt-input--52" value="http://foreversoft.co.kr" placeholder="API명을 입력해 주세요." />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userHomepage" aria-label="홈페이지 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                     <label class="kt-field kt-user-field">
                                         <span class="kt-field__label">이메일</span>
-                                        <input
-                                            type="email"
-                                            class="kt-input kt-input--52"
-                                            value="abc@foeversoft.co.kr"
-                                            placeholder="API명을 입력해 주세요."
-                                        />
+                                        <span class="kt-input-field has-value">
+                                            <input type="email" id="userEmail" class="kt-input kt-input--52" value="abc@foeversoft.co.kr" placeholder="API명을 입력해 주세요." />
+                                            <span class="kt-input-field__actions">
+                                                <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="userEmail" aria-label="이메일 삭제">
+                                                    <img src="./assets/img/components/ico_delete.svg" alt="" />
+                                                </button>
+                                            </span>
+                                        </span>
                                     </label>
                                 </form>
                                 <div class="kt-user-actions">
                                     <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
-                                    <button type="button" class="kt-user-button kt-user-button--primary">
-                                        입력완료
-                                    </button>
+                                    <button type="button" class="kt-user-button kt-user-button--primary">입력완료</button>
                                 </div>
-                            </div>
+                            </section>
                         </li>
-                        <li>2</li>
-                        <li>3</li>
+                        <li class="kt-user-panel" data-user-main-panel="password" hidden aria-hidden="true">
+                            <div class="kt-user-placeholder">텍스트 1</div>
+                        </li>
+                        <li class="kt-user-panel" data-user-main-panel="withdraw" hidden aria-hidden="true">
+                            <div class="kt-user-placeholder">텍스트 2</div>
+                        </li>
                     </ul>
                 </div>
             </main>

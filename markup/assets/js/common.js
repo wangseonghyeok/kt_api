@@ -111,14 +111,12 @@ function addFile(obj) {
         if (htmlDataParent.querySelector('.upload-list').classList.contains('download')) {
             htmlData += '<li id="file' + fileNo + '" class="file-item">';
             htmlData += '   <p class="name"><a href="" download>' + obj.files[i].name + '</a></p>';
-            htmlData +=
-                '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
+            htmlData += '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
             htmlData += '</li>';
         } else {
             htmlData += '<li id="file' + fileNo + '" class="file-item">';
             htmlData += '   <p class="name">' + obj.files[i].name + '</p>';
-            htmlData +=
-                '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
+            htmlData += '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
             htmlData += '</li>';
         }
 
@@ -220,9 +218,7 @@ const ui = {
                     hideDropMenu();
                 } else {
                     $('[data-dropdown_wrap] [data-dropdown_trg][aria-expanded="true"]').removeClass('__open');
-                    $('[data-dropdown_wrap] [data-dropdown_trg][aria-expanded="true"]')
-                        .attr('aria-selected', 'false')
-                        .attr('aria-expanded', 'false');
+                    $('[data-dropdown_wrap] [data-dropdown_trg][aria-expanded="true"]').attr('aria-selected', 'false').attr('aria-expanded', 'false');
                     showDropMenu();
                 }
             });
@@ -250,20 +246,68 @@ const ui = {
         $('[data-accordion]').each(function () {
             const others = $(this).find('[data-accordion_cont][aria-hidden]');
             const btn = $(this).find('[data-accordion_trg] > button[aria-controls]');
+            const duration = Number($(this).attr('data-accordion-duration')) || 320;
             btn.on('click', function () {
                 const expanded = $(this).attr('aria-expanded');
                 const cont = $(this).attr('aria-controls');
+                const target = $('#' + cont);
+
+                if (!target.length || !target.children().length) {
+                    return;
+                }
+
                 if (expanded === 'true') {
-                    $('#' + cont).slideUp('fast');
                     $(this).attr('aria-expanded', 'false');
-                    $('#' + cont).attr('aria-hidden', 'true');
+                    target.stop(true, false).slideUp(duration, 'swing', () => {
+                        target.attr('aria-hidden', 'true').removeAttr('style');
+                    });
                 } else {
-                    others.attr('aria-hidden', 'true').slideUp('fast');
-                    $('#' + cont).slideDown('fast');
                     btn.attr('aria-expanded', 'false');
                     $(this).attr('aria-expanded', 'true');
-                    $('#' + cont).attr('aria-hidden', 'false');
+                    others.not(target).each(function () {
+                        const panel = $(this);
+                        panel.stop(true, false).slideUp(duration, 'swing', () => {
+                            panel.attr('aria-hidden', 'true').removeAttr('style');
+                        });
+                    });
+                    target
+                        .stop(true, false)
+                        .attr('aria-hidden', 'false')
+                        .hide()
+                        .slideDown(duration, 'swing', () => {
+                            target.removeAttr('style');
+                        });
                 }
+            });
+        });
+    },
+    supportTabs: () => {
+        document.querySelectorAll('[data-support-tabs]').forEach(tabWrap => {
+            const tabs = tabWrap.querySelectorAll('[data-support-tab]');
+            const panels = tabWrap.querySelectorAll('[data-support-panel]');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const tabName = tab.getAttribute('data-support-tab');
+                    tabs.forEach(item => {
+                        item.classList.remove('is-active');
+                        item.setAttribute('aria-selected', 'false');
+                        item.removeAttribute('aria-current');
+                    });
+                    tab.classList.add('is-active');
+                    tab.setAttribute('aria-selected', 'true');
+                    tab.setAttribute('aria-current', 'page');
+
+                    panels.forEach(panel => {
+                        if (panel.getAttribute('data-support-panel') === tabName && panel.textContent.trim()) {
+                            panel.removeAttribute('hidden');
+                        } else {
+                            panel.setAttribute('hidden', '');
+                        }
+                    });
+                });
             });
         });
     },
@@ -340,6 +384,31 @@ const ui = {
 
                     mainPanels.forEach(panel => {
                         const isTarget = panel.dataset.authMainPanel === targetName;
+
+                        panel.classList.toggle('is-active', isTarget);
+                        panel.hidden = !isTarget;
+                        panel.setAttribute('aria-hidden', String(!isTarget));
+                    });
+                });
+            });
+        });
+
+        document.querySelectorAll('[data-user-main-tabs]').forEach(tabWrap => {
+            const mainTabs = tabWrap.querySelectorAll('[data-user-main-tab]');
+            const mainPanels = tabWrap.querySelectorAll('[data-user-main-panel]');
+
+            mainTabs.forEach(tab => {
+                tab.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const targetName = tab.dataset.userMainTab;
+
+                    mainTabs.forEach(item => {
+                        item.classList.toggle('is-active', item === tab);
+                    });
+
+                    mainPanels.forEach(panel => {
+                        const isTarget = panel.dataset.userMainPanel === targetName;
 
                         panel.classList.toggle('is-active', isTarget);
                         panel.hidden = !isTarget;
@@ -440,8 +509,7 @@ const ui = {
 
         document.querySelectorAll('[data-password_toggle]').forEach(button => {
             const inputId = button.getAttribute('aria-controls');
-            const input =
-                (inputId && document.getElementById(inputId)) || button.closest('.kt-password')?.querySelector('input');
+            const input = (inputId && document.getElementById(inputId)) || button.closest('.kt-password')?.querySelector('input');
             const icon = button.querySelector('img');
             const showIcon = button.dataset.iconShow;
             const hideIcon = button.dataset.iconHide;
@@ -478,7 +546,7 @@ const ui = {
             });
         });
 
-        document.querySelectorAll('.kt-input-field, .kt-password, .kt-search').forEach(field => {
+        document.querySelectorAll('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');
 
@@ -573,20 +641,9 @@ const ui = {
             const canSearch = () => !input || minLength <= 0 || getKeyword().length >= minLength;
             const shouldShowAllOptions = () => input && prompt.hasAttribute('data-prompt-show-all') && !hasKeyword();
             const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden);
-            const getSelectedOption = () =>
-                getVisibleOptions().find(option => option.classList.contains('is-selected'));
+            const getSelectedOption = () => getVisibleOptions().find(option => option.classList.contains('is-selected'));
             const getActiveOption = () => getSelectedOption() || getVisibleOptions()[0];
-            const ignoreSyncKeys = [
-                'ArrowDown',
-                'ArrowUp',
-                'Enter',
-                'Escape',
-                'Tab',
-                'Shift',
-                'Control',
-                'Alt',
-                'Meta',
-            ];
+            const ignoreSyncKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Meta'];
 
             const highlightOption = option => {
                 if (!option || option.hidden) {
@@ -602,10 +659,7 @@ const ui = {
             };
 
             const openPrompt = () => {
-                if (
-                    input &&
-                    ((!hasKeyword() && !shouldShowAllOptions()) || (!canSearch() && !shouldShowAllOptions()))
-                ) {
+                if (input && ((!hasKeyword() && !shouldShowAllOptions()) || (!canSearch() && !shouldShowAllOptions()))) {
                     closePrompt(prompt);
                     return;
                 }
@@ -675,8 +729,7 @@ const ui = {
 
                 options.forEach(option => {
                     const optionText = option.dataset.searchKeywords || option.textContent;
-                    const isMatched =
-                        showAllOptions || (keyword.length > 0 && optionText.trim().toLowerCase().includes(keyword));
+                    const isMatched = showAllOptions || (keyword.length > 0 && optionText.trim().toLowerCase().includes(keyword));
 
                     if (isMatched) {
                         matchCount += 1;
@@ -875,9 +928,7 @@ const ui = {
 
         const closeSearch = search => {
             search.classList.remove('is-open');
-            search
-                .querySelectorAll('[data-newwork-option].is-active')
-                .forEach(option => option.classList.remove('is-active'));
+            search.querySelectorAll('[data-newwork-option].is-active').forEach(option => option.classList.remove('is-active'));
         };
 
         const syncClear = search => {
@@ -928,9 +979,7 @@ const ui = {
         };
 
         const syncMemberError = search => {
-            const selectedList = search
-                .closest('.kt-newwork-member-group')
-                ?.querySelector('[data-newwork-selected-members]');
+            const selectedList = search.closest('.kt-newwork-member-group')?.querySelector('[data-newwork-selected-members]');
             const input = search.querySelector('input');
             const error = search.querySelector('.kt-newwork-search__error');
 
@@ -949,9 +998,7 @@ const ui = {
         };
 
         const addSelectedMember = (search, option) => {
-            const selectedList = search
-                .closest('.kt-newwork-member-group')
-                ?.querySelector('[data-newwork-selected-members]');
+            const selectedList = search.closest('.kt-newwork-member-group')?.querySelector('[data-newwork-selected-members]');
             const { label, meta } = getOptionData(option);
             const value = meta || label;
 
@@ -969,9 +1016,7 @@ const ui = {
         };
 
         const updateSelectedService = (search, option) => {
-            const selectedService = search
-                .closest('.kt-newwork-form')
-                ?.querySelector('[data-newwork-selected-service]');
+            const selectedService = search.closest('.kt-newwork-form')?.querySelector('[data-newwork-selected-service]');
 
             if (!selectedService) {
                 return;
@@ -1032,9 +1077,7 @@ const ui = {
                 return;
             }
 
-            search
-                .querySelectorAll('[data-newwork-option].is-active')
-                .forEach(option => option.classList.remove('is-active'));
+            search.querySelectorAll('[data-newwork-option].is-active').forEach(option => option.classList.remove('is-active'));
             nextOption.classList.add('is-active');
             nextOption.scrollIntoView({ block: 'nearest' });
         };
@@ -1208,9 +1251,7 @@ const ui = {
         const lp = $('#' + op.attr('aria-controls'));
         const lpObj = lp.children('.popup__inner');
         const lpObjClose = lp.find('.popup__close');
-        const lpObjTabbable = lpObj.find(
-            "button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])",
-        );
+        const lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
         const lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
         const lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();
         const lpOuterObjHidden = $('#loadingStart, #loadingEnd, #skipNavi, #wrap'); // 레이어 바깥 영역의 요소
@@ -1378,6 +1419,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.tab();
     ui.dropdown();
     ui.accordion();
+    ui.supportTabs();
     ui.pagination();
     ui.component();
     ui.newwork();
