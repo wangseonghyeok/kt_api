@@ -9,8 +9,8 @@
         <div id="wrap">
             <!--#include file="./include/_header.html"-->
             <main id="contents" class="kt-newwork-main">
-                <section class="kt-newwork-header">
-                    <div class="kt-newwork-header__title">
+                <section class="kt-page-header">
+                    <div class="kt-page-header__title">
                         <h1>새 워크스페이스 만들기</h1>
                         <p>LDAP</p>
                     </div>
@@ -30,8 +30,7 @@
                         </div>
                         <div class="kt-newwork-notice">
                             <p>
-                                KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP
-                                계정이<br />
+                                KT Service는 1개만 선택 가능하며, 선택한 서비스의 PO가 Manager로 자동 지정되고 LDAP 계정이<br />
                                 만료되어도 워크스페이스 관리는 유지됩니다.
                             </p>
                         </div>
@@ -39,12 +38,7 @@
                             <h3>KTService 검색 <em>*</em></h3>
                             <div class="kt-newwork-search" data-newwork-search data-newwork-search-type="service">
                                 <div class="kt-newwork-search__field">
-                                    <input
-                                        type="text"
-                                        class="kt-input kt-input--48"
-                                        placeholder="KT 서비스명 또는 Service Code 검색"
-                                        aria-label="KT Service 검색"
-                                    />
+                                    <input type="text" class="kt-input kt-input--48" placeholder="KT 서비스명 또는 Service Code 검색" aria-label="KT Service 검색" />
                                     <button type="button" class="kt-newwork-search__clear" data-newwork-clear hidden>
                                         <span class="blind">검색어 삭제</span>
                                     </button>
@@ -79,9 +73,9 @@
                             </div>
                         </section>
                     </section>
-                    <div class="kt-newwork-actions">
-                        <button type="button" class="kt-newwork-button kt-newwork-button--secondary">이전</button>
-                        <button type="button" class="kt-newwork-button kt-newwork-button--primary">다음</button>
+                    <div class="kt-actions">
+                        <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">이전</button>
+                        <button type="button" class="kt-btn kt-btn--primary kt-btn--form">다음</button>
                     </div>
                 </div>
             </main>

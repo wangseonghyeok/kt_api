@@ -20,11 +20,83 @@
                     </section>
 
                     <ul class="kt-component-summary">
-                        <li><strong>Form</strong><span>Input, Password, Select, Checkbox, Radio, Switch, User account</span></li>
-                        <li><strong>Dropdown</strong><span>Choice, Multi Check, Search Prompt, Service Prompt</span></li>
+                        <li><strong>Layout</strong><span>Page Header, Path, Line Tab, Actions</span></li>
+                        <li><strong>Control</strong><span>Input, Select, Dropdown, Search Prompt</span></li>
                         <li><strong>Data</strong><span>Grid, Pagination, Indicator, Badge, Tag, Chart</span></li>
                         <li><strong>Asset</strong><span>SVG Icon, Button, Tab, Chip, Scrollbar</span></li>
                     </ul>
+
+                    <section class="kt-component-section" id="page-layout">
+                        <h2>Page Layout</h2>
+                        <p class="kt-component-desc">페이지 공통 헤더, 현재 위치, 라인 탭, 하단 액션은 페이지별 이름을 만들지 않고 아래 클래스를 공통으로 사용합니다.</p>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Page Header + Path</h3>
+                                <section class="kt-page-header">
+                                    <div class="kt-page-header__title">
+                                        <h1>페이지 제목</h1>
+                                        <p>페이지 설명 문구가 들어갑니다.</p>
+                                    </div>
+                                    <nav class="kt-path" aria-label="현재 위치">
+                                        <a href="Ma-001.html" class="kt-path__home"><span class="blind">Home</span></a>
+                                        <span class="kt-path__separator" aria-hidden="true"></span>
+                                        <p>상위 메뉴</p>
+                                        <span class="kt-path__separator" aria-hidden="true"></span>
+                                        <strong>현재 페이지</strong>
+                                    </nav>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="kt-component-demo kt-component-demo--column">
+                            <div class="kt-component-card">
+                                <h3>Line Tab / Fill</h3>
+                                <nav class="kt-line-tabs kt-line-tabs--fill" aria-label="공통 탭 예시">
+                                    <ul>
+                                        <li><a href="#" class="is-active">탭 1</a></li>
+                                        <li><a href="#">탭 2</a></li>
+                                        <li><a href="#">탭 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>Actions</h3>
+                                <div class="kt-actions">
+                                    <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">취소</button>
+                                    <button type="button" class="kt-btn kt-btn--primary kt-btn--form">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-component-card">
+                                <h3>List Pagination</h3>
+                                <nav class="kt-pagination kt-pagination--list" aria-label="목록 페이지">
+                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--first" aria-label="처음 페이지">
+                                        <svg aria-hidden="true" viewBox="0 0 16 16">
+                                            <path d="M6.7 3.3 2 8l4.7 4.7.9-.9L3.8 8l3.8-3.8-.9-.9Zm5.2 0L7.2 8l4.7 4.7.9-.9L9 8l3.8-3.8-.9-.9Z" fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--prev" aria-label="이전 페이지">
+                                        <svg aria-hidden="true" viewBox="0 0 16 16">
+                                            <path d="M10.2 3.3 5.5 8l4.7 4.7.9-.9L7.3 8l3.8-3.8-.9-.9Z" fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-current="true">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--next" aria-label="다음 페이지">
+                                        <svg aria-hidden="true" viewBox="0 0 16 16">
+                                            <path d="M5.8 12.7 10.5 8 5.8 3.3l-.9.9L8.7 8l-3.8 3.8.9.9Z" fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--last" aria-label="마지막 페이지">
+                                        <svg aria-hidden="true" viewBox="0 0 16 16">
+                                            <path d="M9.3 12.7 14 8 9.3 3.3l-.9.9L12.2 8l-3.8 3.8.9.9Zm-5.2 0L8.8 8 4.1 3.3l-.9.9L7 8l-3.8 3.8.9.9Z" fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
 
                     <section class="kt-component-section" id="buttons">
                         <h2>Button</h2>
@@ -1416,7 +1488,7 @@ KT API Link 연동 설명을 입력합니다.
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-user-page kt-user-component-scope">
                                 <div class="kt-user-shell" data-user-main-tabs>
-                                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴 예시">
+                                    <nav class="kt-line-tabs kt-line-tabs--fill" aria-label="정보변경 메뉴 예시">
                                         <ul>
                                             <li>
                                                 <a href="#" data-user-main-tab="profile" class="is-active">개인정보 변경</a>
@@ -1476,9 +1548,9 @@ KT API Link 연동 설명을 입력합니다.
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <div class="kt-user-actions">
-                                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
-                                                    <button type="button" class="kt-user-button kt-user-button--primary">입력완료</button>
+                                                <div class="kt-actions">
+                                                    <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--primary kt-btn--form">입력완료</button>
                                                 </div>
                                             </section>
                                         </li>
@@ -1547,9 +1619,9 @@ KT API Link 연동 설명을 입력합니다.
                                                 </span>
                                             </label>
                                         </form>
-                                        <div class="kt-user-actions">
-                                            <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
-                                            <button type="button" class="kt-user-button kt-user-button--primary">회원탈퇴</button>
+                                        <div class="kt-actions">
+                                            <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">취소</button>
+                                            <button type="button" class="kt-btn kt-btn--primary kt-btn--form">회원탈퇴</button>
                                         </div>
                                     </section>
                                 </div>

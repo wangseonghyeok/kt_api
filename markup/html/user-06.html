@@ -8,23 +8,21 @@
         <div id="wrap">
             <!--#include file="./include/_header.html"-->
             <main id="contents" class="kt-user-main">
-                <section class="kt-user-header">
-                    <div class="kt-user-header__title">
+                <section class="kt-page-header">
+                    <div class="kt-page-header__title">
                         <h1>정보변경</h1>
                         <span>개인정보 및 비밀번호를 관리합니다.</span>
                     </div>
-                    <nav class="kt-user-path" aria-label="현재 위치">
-                        <ul>
-                            <li>
-                                <a href="Ma-001.html" class="kt-user-path__home"><span class="blind">Home</span></a>
-                            </li>
-                            <li>My page</li>
-                            <li><strong>회원탈퇴</strong></li>
-                        </ul>
+                    <nav class="kt-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <p>My page</p>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <strong>회원탈퇴</strong>
                     </nav>
                 </section>
                 <div class="kt-user-shell" data-user-main-tabs>
-                    <nav class="kt-user-tabs" aria-label="정보변경 메뉴">
+                    <nav class="kt-line-tabs kt-line-tabs--fill" aria-label="정보변경 메뉴">
                         <ul>
                             <li><a href="#" data-user-main-tab="profile">개인정보 변경</a></li>
                             <li><a href="#" data-user-main-tab="password">비밀번호 변경</a></li>
@@ -91,9 +89,9 @@
                                         </span>
                                     </label>
                                 </form>
-                                <div class="kt-user-actions">
-                                    <button type="button" class="kt-user-button kt-user-button--secondary">취소</button>
-                                    <button type="button" class="kt-user-button kt-user-button--primary">회원탈퇴</button>
+                                <div class="kt-actions">
+                                    <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">취소</button>
+                                    <button type="button" class="kt-btn kt-btn--primary kt-btn--form">회원탈퇴</button>
                                 </div>
                             </section>
                         </li>
