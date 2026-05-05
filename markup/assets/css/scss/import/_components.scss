@@ -330,10 +330,10 @@
 
 .kt-button-matrix__grid {
     display: grid;
-    grid-template-columns: 112px repeat(5, minmax(112px, 1fr));
+    grid-template-columns: 112px repeat(4, minmax(112px, 1fr));
     gap: 12px;
     align-items: center;
-    min-width: 780px;
+    min-width: 620px;
 
     .kt-btn {
         justify-self: center;
@@ -392,7 +392,7 @@
 
     &--accent,
     &--danger {
-        background: #e0282f;
+        background: #e02830;
         color: #fff;
 
         &:hover,
@@ -408,8 +408,8 @@
         &:disabled,
         &.is-disabled {
             border-color: transparent;
-            background: #fce9e9;
-            color: #f2a7aa;
+            background: #f3f4f6;
+            color: #acb0b9;
         }
     }
 
@@ -431,7 +431,7 @@
         &.is-disabled {
             border-color: transparent;
             background: #f3f4f6;
-            color: #c7cad1;
+            color: #acb0b9;
         }
     }
 
@@ -453,37 +453,36 @@
         &.is-disabled {
             border-color: transparent;
             background: #f3f4f6;
-            color: #c7cad1;
+            color: #acb0b9;
         }
     }
 
     &--tertiary,
     &--line {
-        border-color: #8b8f97;
+        border-color: #8b8f98;
         background: #fff;
         color: #191a1c;
 
         &:hover,
         &.is-hover {
-            border-color: #55585d;
-            background: #fff;
+            border-color: #8b8f98;
+            background: #f3f4f6;
         }
 
         &:active,
         &.is-pressed {
-            border-color: #191a1c;
-            background: #f7f8fb;
+            border-color: #8b8f98;
+            background: #eeeff3;
         }
 
         &:disabled,
         &.is-disabled {
-            border-color: #e9eaee;
-            background: #fff;
-            color: #c7cad1;
+            border: 1px solid #d5d8dd;
+            background: #f3f4f6;
+            color: #acb0b9;
         }
     }
 
-    &--tertiary-fill,
     &--soft {
         border-color: #d5d8dd;
         background: #fff;
