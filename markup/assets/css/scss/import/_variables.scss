@@ -11,7 +11,7 @@ $html-fz: 10px;
 $body-fz: 10px;
 
 // 본문(paragraph) 기본 컬러
-$base-color: #222;
+$base-color: #191a1b;
 
 // 기본 행간 비율
 $line-height: 1.4;
@@ -20,10 +20,8 @@ $line-height: 1.4;
 $base-line: $body-fz * 1.4;
 
 // 적용 웹 폰트
-$font-family-ko: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
-    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-$font-family-en: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
-    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+$font-family-ko: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+$font-family-en: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 
 // vw 계산용 기준 viewport 사이즈
 $vw-viewport: 720px !default;

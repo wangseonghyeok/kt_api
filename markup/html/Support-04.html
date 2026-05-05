@@ -26,7 +26,7 @@
                 <div class="kt-inquiry-shell kt-inquiry-shell--form">
                     <form class="kt-inquiry-form" action="#" method="post">
                         <div class="kt-field kt-inquiry-field">
-                            <label class="kt-field__label">카테고리 선택 <span class="is-required">*</span></label>
+                            <p class="kt-field__label">카테고리 선택 <span class="is-required">*</span></p>
                             <div class="kt-inquiry-category-row kt-inquiry-category-row--form">
                                 <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
                                     <button type="button" data-dropdown_trg aria-expanded="false">대분류 카테고리 전체</button>
@@ -62,17 +62,17 @@
                         </div>
 
                         <div class="kt-field kt-inquiry-field">
-                            <label for="supportInquiryTitle" class="kt-field__label">제목 <span class="is-required">*</span></label>
-                            <input type="text" id="supportInquiryTitle" class="kt-input kt-input--inquiry" placeholder="제목을 입력해 주세요." />
+                            <p class="kt-field__label">제목 <span class="is-required">*</span></p>
+                            <input type="text" id="supportInquiryTitle" class="kt-input kt-input--inquiry" placeholder="제목을 입력해 주세요." aria-label="제목" />
                         </div>
 
                         <div class="kt-field kt-inquiry-field">
-                            <label for="supportInquiryApi" class="kt-field__label">API명</label>
-                            <input type="text" id="supportInquiryApi" class="kt-input kt-input--inquiry" placeholder="API명을 입력해 주세요." />
+                            <p class="kt-field__label">API명</p>
+                            <input type="text" id="supportInquiryApi" class="kt-input kt-input--inquiry" placeholder="API명을 입력해 주세요." aria-label="API명" />
                         </div>
 
                         <div class="kt-field kt-inquiry-field">
-                            <label for="supportInquiryContent" class="kt-field__label">내용 <span class="is-required">*</span></label>
+                            <p class="kt-field__label">내용 <span class="is-required">*</span></p>
                             <div class="kt-inquiry-textarea">
                                 <textarea
                                     id="supportInquiryContent"
@@ -80,31 +80,21 @@
                                     maxlength="1000"
                                     placeholder="문의 내용을 입력해 주세요."
                                     data-inquiry-count="supportInquiryContentCount"
+                                    aria-label="내용"
                                 ></textarea>
                                 <span class="kt-inquiry-textarea__count" id="supportInquiryContentCount">0/0</span>
                             </div>
                         </div>
 
                         <div class="kt-field kt-inquiry-field">
-                            <label class="kt-field__label">첨부파일</label>
+                            <p class="kt-field__label">첨부파일</p>
                             <div class="kt-inquiry-file" data-inquiry-file>
                                 <span class="kt-inquiry-file__name" data-inquiry-file-name>
-                                    <svg aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-                                        <path
-                                            d="m7.2 9.9 3.2-3.2a2 2 0 0 0-2.8-2.8L4 7.5a3 3 0 0 0 4.2 4.2l3.7-3.7"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="1.4"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
+                                    <i class="kt-inquiry-file__icon" data-inquiry-file-icon aria-hidden="true"></i>
                                     선택된 파일이 없습니다.
                                 </span>
                                 <button type="button" class="kt-inquiry-file__clear" data-inquiry-file-clear aria-label="첨부파일 삭제" hidden>
-                                    <svg aria-hidden="true" viewBox="0 0 16 16" focusable="false">
-                                        <path d="m4.2 4.2 7.6 7.6M11.8 4.2l-7.6 7.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                                    </svg>
+                                    <i class="kt-inquiry-file__clear-icon" aria-hidden="true"></i>
                                 </button>
                                 <label class="kt-inquiry-file__button">
                                     파일찾기

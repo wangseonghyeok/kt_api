@@ -333,11 +333,27 @@ const ui = {
             form.addEventListener('submit', event => event.preventDefault());
         });
 
+        document.querySelectorAll('[data-inquiry-table-fade]').forEach(tableScroll => {
+            const scrollBody = tableScroll.querySelector('tbody');
+
+            if (!scrollBody) {
+                return;
+            }
+
+            const syncTableFade = () => {
+                const isScrollEnd = scrollBody.scrollTop + scrollBody.clientHeight >= scrollBody.scrollHeight - 1;
+                tableScroll.classList.toggle('is-scroll-end', isScrollEnd);
+            };
+
+            scrollBody.addEventListener('scroll', syncTableFade, { passive: true });
+            syncTableFade();
+        });
+
         document.querySelectorAll('[data-inquiry-file]').forEach(field => {
             const input = field.querySelector('input[type="file"]');
             const name = field.querySelector('[data-inquiry-file-name]');
             const clear = field.querySelector('[data-inquiry-file-clear]');
-            const icon = name?.querySelector('svg');
+            const icon = name?.querySelector('[data-inquiry-file-icon]');
             const defaultText = name?.textContent.trim() || '';
 
             if (!input || !name) {
