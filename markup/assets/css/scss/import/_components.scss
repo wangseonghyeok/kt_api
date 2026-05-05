@@ -508,6 +508,10 @@
         }
     }
 
+    &--transparent {
+        background: transparent;
+    }
+
     &--xl {
         min-width: 74px;
         height: 56px;

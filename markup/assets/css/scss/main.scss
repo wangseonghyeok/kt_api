@@ -4,7 +4,6 @@
 @import 'import/typography';
 @import 'import/mixin';
 
-
 /* ==============================
     KT main
 ============================== */
@@ -258,50 +257,6 @@
         @include flex(null, null);
         gap: 16px;
         margin-top: 48px;
-    }
-
-    .btn-main {
-        @include inline-flex(center, center);
-        min-width: 147px;
-        height: 56px;
-        padding: 0 16px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: var(--fw-SemiBold);
-        line-height: 1.48;
-    }
-
-    .btn-main-primary {
-        background: #e0282f;
-        color: var(--white);
-
-        &:hover,
-        &.is-hover {
-            background: #bb1b21;
-        }
-
-        &:active,
-        &.is-pressed {
-            background: #8f1116;
-        }
-    }
-
-    .btn-main-secondary {
-        border: 1px solid #8b8f97;
-        background: var(--white);
-        color: #191a1b;
-
-        &:hover,
-        &.is-hover {
-            border-color: #55585d;
-            background: var(--white);
-        }
-
-        &:active,
-        &.is-pressed {
-            border-color: #191a1c;
-            background: #f7f8fb;
-        }
     }
 
     .workspace-cards {

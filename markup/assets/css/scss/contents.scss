@@ -459,7 +459,7 @@
             line-height: 1.48;
         }
 
-        button {
+        button:not(.kt-btn) {
             min-width: 66px;
             height: 35px;
             padding: 0 16px;
@@ -470,38 +470,6 @@
             font-weight: var(--fw-Medium);
             line-height: 33px;
             text-align: center;
-        }
-
-        .kt-dashboard-btn {
-            min-width: 58px;
-            height: 35px;
-            padding: 0 15px;
-            border-color: #8b8f97;
-            border-radius: 8px;
-            background: #fff;
-            color: $kt-primary;
-            font-size: 13px;
-            font-weight: var(--fw-SemiBold);
-            line-height: 1.5;
-
-            &:hover,
-            &.is-hover {
-                border-color: #55585d;
-                background: #fff;
-            }
-
-            &:active,
-            &.is-pressed {
-                border-color: #191a1c;
-                background: #f7f8fb;
-            }
-
-            &:disabled,
-            &.is-disabled {
-                border-color: #e9eaee;
-                background: #fff;
-                color: #c7cad1;
-            }
         }
     }
 
@@ -529,8 +497,7 @@
             font-weight: var(--fw-Bold);
             line-height: 1.48;
         }
-
-        button {
+        button:not(.kt-btn) {
             min-width: 64px;
             height: 44px;
             margin-top: 8px;
@@ -541,58 +508,6 @@
             font-size: 13px;
             font-weight: var(--fw-Medium);
             line-height: 42px;
-        }
-
-        .kt-dashboard-btn {
-            min-width: 66px;
-            height: 44px;
-            margin-top: 8px;
-            padding: 0 16px;
-            border-color: #8b8f97;
-            border-radius: 8px;
-            background: #fff;
-            color: $kt-primary;
-            font-size: 13px;
-            font-weight: var(--fw-SemiBold);
-            line-height: 1.5;
-
-            &:hover,
-            &.is-hover {
-                border-color: #55585d;
-                background: #fff;
-            }
-
-            &:active,
-            &.is-pressed {
-                border-color: #191a1c;
-                background: #f7f8fb;
-            }
-
-            &:disabled,
-            &.is-disabled {
-                border-color: #e9eaee;
-                background: #fff;
-                color: #c7cad1;
-            }
-
-            &--transparent {
-                background: transparent;
-
-                &:hover,
-                &.is-hover {
-                    background: transparent;
-                }
-
-                &:active,
-                &.is-pressed {
-                    background: rgba(25, 26, 28, 0.04);
-                }
-
-                &:disabled,
-                &.is-disabled {
-                    background: transparent;
-                }
-            }
         }
 
         &--alert {
