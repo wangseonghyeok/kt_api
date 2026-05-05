@@ -273,7 +273,7 @@
     .kt-section-head {
         height: 36px;
         margin-bottom: 16px;
-
+        align-items: flex-end;
         h2 {
             font-size: 24px;
             font-weight: var(--fw-Bold);
@@ -934,48 +934,6 @@
         padding-top: 24px;
     }
 
-    .kt-auth-button {
-        @include inline-flex(center, center);
-        min-width: 180px;
-        min-height: 56px;
-        padding: 8px 16px;
-        border-radius: 8px;
-        background: $kt-primary;
-        color: #fff;
-        font-size: 16px;
-        font-weight: var(--fw-SemiBold);
-        line-height: 1.48;
-        text-align: center;
-        transition: background-color 0.16s ease, transform 0.16s ease;
-
-        &:hover,
-        &.is-hover {
-            background: #333538;
-        }
-
-        &:active,
-        &.is-pressed {
-            transform: scale(0.98);
-        }
-
-        &--secondary {
-            background: $kt-line;
-            color: $kt-primary;
-
-            &:hover,
-            &.is-hover {
-                background: #dee0e5;
-            }
-        }
-
-        &:disabled,
-        &.is-disabled {
-            background: $kt-bg;
-            color: $kt-disabled;
-            pointer-events: none;
-        }
-    }
-
     .kt-auth-button-row {
         @include flex(null, center);
         gap: 8px;
@@ -1105,19 +1063,6 @@
     .kt-auth-timer {
         color: $kt-tertiary;
         font-size: 12px;
-        font-weight: var(--fw-Medium);
-        line-height: 1.48;
-    }
-
-    .kt-auth-resend {
-        @include inline-flex(center, center);
-        min-width: 48px;
-        min-height: 32px;
-        padding: 4px 12px;
-        border-radius: 4px;
-        background: $kt-line;
-        color: $kt-primary;
-        font-size: 13px;
         font-weight: var(--fw-Medium);
         line-height: 1.48;
     }

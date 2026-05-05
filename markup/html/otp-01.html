@@ -26,56 +26,37 @@
                             <li class="kt-auth-main-panel is-active" data-auth-main-panel="login">
                                 <div class="kt-auth-top">
                                     <ol class="kt-auth-step" aria-label="로그인 단계">
-                                        <li class="kt-auth-step__item is-done">
-                                            <span class="kt-auth-step__num">01</span><span>인증</span>
-                                        </li>
+                                        <li class="kt-auth-step__item is-done"><span class="kt-auth-step__num">01</span><span>인증</span></li>
                                         <li class="kt-auth-step__line" aria-hidden="true"></li>
-                                        <li class="kt-auth-step__item is-current">
-                                            <span class="kt-auth-step__num">02</span><span>OTP 인증</span>
-                                        </li>
+                                        <li class="kt-auth-step__item is-current"><span class="kt-auth-step__num">02</span><span>OTP 인증</span></li>
                                     </ol>
                                 </div>
                                 <div class="kt-auth-panel">
                                     <div class="kt-auth-center">
-                                        <span
-                                            class="kt-auth-center__icon kt-auth-center__icon--otp"
-                                            aria-hidden="true"
-                                        ></span>
+                                        <span class="kt-auth-center__icon kt-auth-center__icon--otp" aria-hidden="true"></span>
                                         <h2>OTP 인증 코드 입력</h2>
                                         <p>휴대폰으로 발송된 6자리 코드를 입력해 주세요.</p>
                                     </div>
                                     <form class="kt-auth-form">
                                         <div class="kt-field error kt-auth-verify">
-                                            <label class="kt-field__label" for="otpCode"
-                                                >인증번호 <span class="is-required">*</span></label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="otpCode"
-                                                class="kt-input kt-input--52"
-                                                value="123456"
-                                                inputmode="numeric"
-                                            />
+                                            <label class="kt-field__label" for="otpCode">인증번호 <span class="is-required">*</span></label>
+                                            <input type="text" id="otpCode" class="kt-input kt-input--52" value="123456" inputmode="numeric" />
                                             <span class="kt-auth-verify__side">
                                                 <span class="kt-auth-timer">02:23</span>
-                                                <button type="button" class="kt-auth-resend">재전송</button>
+                                                <button type="button" class="kt-btn kt-btn--secondary kt-btn--sm kt-auth-resend">재전송</button>
                                             </span>
-                                            <p class="kt-field__message">
-                                                인증 코드가 올바르지 않습니다. 다시 확인해 주세요.
-                                            </p>
+                                            <p class="kt-field__message">인증 코드가 올바르지 않습니다. 다시 확인해 주세요.</p>
                                         </div>
                                     </form>
                                     <div class="kt-auth-actions">
                                         <div class="kt-auth-button-row">
-                                            <button class="kt-auth-button kt-auth-button--secondary">이전</button>
-                                            <button class="kt-auth-button">로그인</button>
+                                            <button class="kt-btn kt-btn--secondary kt-btn--xl kt-btn--cta kt-auth-button">이전</button>
+                                            <button class="kt-btn kt-btn--primary kt-btn--xl kt-btn--cta kt-auth-button">로그인</button>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="kt-auth-main-panel" data-auth-main-panel="signup" hidden aria-hidden="true">
-                                1
-                            </li>
+                            <li class="kt-auth-main-panel" data-auth-main-panel="signup" hidden aria-hidden="true">1</li>
                         </ul>
                     </div>
                 </div>

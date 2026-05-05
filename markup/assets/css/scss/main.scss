@@ -257,6 +257,9 @@
         @include flex(null, null);
         gap: 16px;
         margin-top: 48px;
+        > button {
+            min-width: 147px;
+        }
     }
 
     .workspace-cards {
@@ -436,12 +439,13 @@
 
         &::after {
             content: '';
-            @include absolute(top 50% right 3px);
-            width: 7px;
-            height: 7px;
-            border-top: 1.5px solid #191a1b;
-            border-right: 1.5px solid #191a1b;
-            transform: translateY(-50%) rotate(45deg);
+            @include absolute(top 50% right 0);
+            width: 16px;
+            height: 16px;
+            background: #191a1b;
+            -webkit-mask: url('/assets/img/contents/ico_chevron_right.svg') 50% 50% / 16px 16px no-repeat;
+            mask: url('/assets/img/contents/ico_chevron_right.svg') 50% 50% / 16px 16px no-repeat;
+            transform: translateY(-50%);
         }
     }
 
@@ -508,7 +512,7 @@
             line-height: 1.48;
         }
 
-        time {
+        .time {
             margin-left: 16px;
             color: #6f737b;
             font-size: 14px;
@@ -526,12 +530,13 @@
 
             &::after {
                 content: '';
-                @include absolute(top 50% right 21px);
-                width: 7px;
-                height: 7px;
-                border-top: 1.5px solid #191a1b;
-                border-right: 1.5px solid #191a1b;
-                transform: translateY(-50%) rotate(45deg);
+                @include absolute(top 50% right 16px);
+                width: 16px;
+                height: 16px;
+                background: #191a1b;
+                -webkit-mask: url('/assets/img/contents/ico_chevron_right.svg') 50% 50% / 16px 16px no-repeat;
+                mask: url('/assets/img/contents/ico_chevron_right.svg') 50% 50% / 16px 16px no-repeat;
+                transform: translateY(-50%);
             }
         }
 
