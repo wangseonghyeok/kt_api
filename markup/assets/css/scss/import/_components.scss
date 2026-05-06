@@ -762,6 +762,17 @@
 .kt-input {
     height: 48px;
     padding: 0 16px;
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    &::-webkit-search-cancel-button {
+        appearance: none;
+    }
 }
 
 .kt-select {
@@ -1469,7 +1480,7 @@
     @include kt-scrollbar;
 }
 
-/* SVG icon gallery */
+/* Icon asset gallery */
 .kt-icon-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
@@ -1488,10 +1499,31 @@
         line-height: 1.4;
     }
 
+    .kt-icon-gallery__preview {
+        @include flex(center, center);
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;
+        border: 1px solid var(--kt-line);
+        border-radius: 6px;
+        background: #f7f8fb;
+    }
+
+    .kt-icon-gallery__preview--dark {
+        border-color: #191a1c;
+        background: #191a1c;
+    }
+
     img {
         width: 24px;
         height: 24px;
         flex: 0 0 auto;
+        object-fit: contain;
+    }
+
+    .kt-icon-gallery__name {
+        min-width: 0;
+        word-break: break-all;
     }
 }
 
@@ -2609,7 +2641,7 @@
 }
 
 .kt-search-field__clear img {
-    opacity: 0.62;
+    opacity: 1;
 }
 
 /* Checkbox / radio / switch state matrix */
@@ -5707,6 +5739,17 @@
         font-weight: var(--fw-Medium);
         line-height: 1.48;
         outline: 0;
+
+        &::-ms-clear,
+        &::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        &::-webkit-search-cancel-button {
+            appearance: none;
+        }
     }
 
     &__clear {
