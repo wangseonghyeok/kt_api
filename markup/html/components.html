@@ -1039,56 +1039,55 @@ KT API Link 연동 설명을 입력합니다.
 
                     <section class="kt-component-section" id="tabs">
                         <h2>Tab</h2>
-                        <p class="kt-component-desc">기존 data-tab 동작을 유지하면서 pill, segment, line 타입을 클래스만 바꿔 사용합니다.</p>
+                        <p class="kt-component-desc">실제 페이지에서 사용하는 Auth / Support / User 탭 구조를 기준으로 정리했습니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
-                            <div class="kt-component-card">
-                                <h3>Pill Tab</h3>
-                                <div data-tab_wrap class="kt-tabs">
-                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab01">전체</button>
-                                    <nav id="componentTab01">
-                                        <ol data-tab_list role="tablist">
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="true" aria-current="true" aria-controls="pillPanel01" id="pillTab01">전체</button>
-                                            </li>
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="false" aria-controls="pillPanel02" id="pillTab02">API</button>
-                                            </li>
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="false" aria-controls="pillPanel03" id="pillTab03">OAuth</button>
-                                            </li>
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="false" aria-disabled="true" disabled>비활성</button>
-                                            </li>
-                                        </ol>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Auth Tab</h3>
+                                <div class="kt-tab-demo" data-auth-main-tabs>
+                                    <nav class="kt-auth-tabs" aria-label="인증 메뉴 예시">
+                                        <ul>
+                                            <li><a href="#" data-auth-main-tab="login" class="is-active">로그인</a></li>
+                                            <li><a href="#" data-auth-main-tab="signup">회원가입</a></li>
+                                        </ul>
                                     </nav>
-                                    <div data-tab_container>
-                                        <div role="tabpanel" id="pillPanel01" aria-labelledby="pillTab01">전체 목록</div>
-                                        <div role="tabpanel" id="pillPanel02" aria-labelledby="pillTab02" hidden>API 목록</div>
-                                        <div role="tabpanel" id="pillPanel03" aria-labelledby="pillTab03" hidden>OAuth 목록</div>
-                                    </div>
+                                    <ul class="kt-tab-demo__panels">
+                                        <li class="is-active" data-auth-main-panel="login">로그인 패널</li>
+                                        <li data-auth-main-panel="signup" hidden aria-hidden="true">회원가입 패널</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="kt-component-card">
-                                <h3>Line Tab</h3>
-                                <div data-tab_wrap class="kt-tabs kt-tabs--line">
-                                    <button type="button" class="tab-drop-btn" aria-controls="componentTab02">기본정보</button>
-                                    <nav id="componentTab02">
-                                        <ol data-tab_list role="tablist">
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="true" aria-current="true" aria-controls="linePanel01" id="lineTab01">기본정보</button>
-                                            </li>
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="false" aria-controls="linePanel02" id="lineTab02">이력</button>
-                                            </li>
-                                            <li data-tab_btn>
-                                                <button type="button" role="tab" aria-selected="false" aria-disabled="true" disabled>비활성</button>
-                                            </li>
-                                        </ol>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Support Line Tab</h3>
+                                <div class="kt-support-tab-wrap" data-support-tabs>
+                                    <nav class="kt-line-tabs kt-line-tabs--support" aria-label="고객지원 분류 예시" role="tablist">
+                                        <button type="button" class="is-active" data-support-tab="all" role="tab" aria-selected="true" aria-current="page">전체</button>
+                                        <button type="button" data-support-tab="new" role="tab" aria-selected="false">신규서비스</button>
+                                        <button type="button" data-support-tab="update" role="tab" aria-selected="false">업데이트</button>
+                                        <button type="button" data-support-tab="notice" role="tab" aria-selected="false">공지</button>
                                     </nav>
-                                    <div data-tab_container>
-                                        <div role="tabpanel" id="linePanel01" aria-labelledby="lineTab01">기본정보</div>
-                                        <div role="tabpanel" id="linePanel02" aria-labelledby="lineTab02" hidden>이력</div>
-                                    </div>
+                                    <ul class="kt-support-tab-panels kt-tab-demo__panels" aria-live="polite">
+                                        <li data-support-panel="all">전체 목록</li>
+                                        <li data-support-panel="new" hidden>신규서비스 목록</li>
+                                        <li data-support-panel="update" hidden>업데이트 목록</li>
+                                        <li data-support-panel="notice" hidden>공지 목록</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>User Fill Tab</h3>
+                                <div class="kt-tab-demo" data-user-main-tabs>
+                                    <nav class="kt-line-tabs kt-line-tabs--fill" aria-label="정보변경 메뉴 예시">
+                                        <ul>
+                                            <li><a href="#" data-user-main-tab="profile" class="is-active">개인정보 변경</a></li>
+                                            <li><a href="#" data-user-main-tab="password">비밀번호 변경</a></li>
+                                            <li><a href="#" data-user-main-tab="withdraw">회원탈퇴</a></li>
+                                        </ul>
+                                    </nav>
+                                    <ul class="kt-tab-demo__panels">
+                                        <li class="is-active" data-user-main-panel="profile">개인정보 변경 패널</li>
+                                        <li data-user-main-panel="password" hidden aria-hidden="true">비밀번호 변경 패널</li>
+                                        <li data-user-main-panel="withdraw" hidden aria-hidden="true">회원탈퇴 패널</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
