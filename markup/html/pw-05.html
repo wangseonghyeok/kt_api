@@ -32,6 +32,16 @@
                                         <div class="kt-field kt-auth-verify">
                                             <label class="kt-field__label" for="resetCode">인증번호 <span class="is-required">*</span></label
                                             ><input type="text" id="resetCode" class="kt-input kt-input--52" value="123456" inputmode="numeric" /><span class="kt-auth-verify__side"
+                                                ><button
+                                                    type="button"
+                                                    class="kt-auth-verify__clear"
+                                                    data-clear_input
+                                                    aria-controls="resetCode"
+                                                    aria-label="인증번호 삭제"
+                                                    hidden
+                                                    aria-hidden="true"
+                                                    tabindex="-1"
+                                                ></button
                                                 ><span class="kt-auth-timer">02:23</span><button type="button" class="kt-btn kt-btn--secondary kt-btn--sm kt-auth-resend">재전송</button></span
                                             >
                                             <!-- .kt-field__message--complete 삭제시 안보임 -->

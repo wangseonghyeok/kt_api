@@ -63,12 +63,44 @@
 
                         <div class="kt-field kt-inquiry-field">
                             <p class="kt-field__label">제목 <span class="is-required">*</span></p>
-                            <input type="text" id="supportInquiryTitle" class="kt-input kt-input--inquiry" placeholder="제목을 입력해 주세요." aria-label="제목" />
+                            <span class="kt-input-field">
+                                <input type="text" id="supportInquiryTitle" class="kt-input kt-input--inquiry" placeholder="제목을 입력해 주세요." aria-label="제목" />
+                                <span class="kt-input-field__actions">
+                                    <button
+                                        type="button"
+                                        class="kt-input-field__clear"
+                                        data-clear_input
+                                        aria-controls="supportInquiryTitle"
+                                        aria-label="제목 삭제"
+                                        hidden
+                                        aria-hidden="true"
+                                        tabindex="-1"
+                                    >
+                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                    </button>
+                                </span>
+                            </span>
                         </div>
 
                         <div class="kt-field kt-inquiry-field">
                             <p class="kt-field__label">API명</p>
-                            <input type="text" id="supportInquiryApi" class="kt-input kt-input--inquiry" placeholder="API명을 입력해 주세요." aria-label="API명" />
+                            <span class="kt-input-field">
+                                <input type="text" id="supportInquiryApi" class="kt-input kt-input--inquiry" placeholder="API명을 입력해 주세요." aria-label="API명" />
+                                <span class="kt-input-field__actions">
+                                    <button
+                                        type="button"
+                                        class="kt-input-field__clear"
+                                        data-clear_input
+                                        aria-controls="supportInquiryApi"
+                                        aria-label="API명 삭제"
+                                        hidden
+                                        aria-hidden="true"
+                                        tabindex="-1"
+                                    >
+                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                    </button>
+                                </span>
+                            </span>
                         </div>
 
                         <div class="kt-field kt-inquiry-field">

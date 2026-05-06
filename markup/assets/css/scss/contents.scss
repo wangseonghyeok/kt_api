@@ -1049,7 +1049,7 @@
         @include relative();
 
         .kt-input {
-            padding-right: 112px;
+            padding-right: 160px;
         }
     }
 
@@ -1058,6 +1058,29 @@
         @include inline-flex(center, null);
         gap: 8px;
         height: 44px;
+    }
+
+    .kt-auth-verify__clear {
+        @include inline-flex(center, center);
+        width: 32px;
+        height: 32px;
+        border: 0;
+        background: transparent;
+        color: $kt-tertiary;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: currentColor;
+            -webkit-mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+            mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+        }
+
+        &[hidden] {
+            display: none;
+        }
     }
 
     .kt-auth-timer {

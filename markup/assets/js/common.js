@@ -648,7 +648,7 @@ const ui = {
             });
         });
 
-        document.querySelectorAll('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box').forEach(field => {
+        document.querySelectorAll('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box, .kt-auth-verify').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');
 
