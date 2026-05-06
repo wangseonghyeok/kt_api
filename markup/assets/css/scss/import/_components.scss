@@ -2632,10 +2632,17 @@
 
 .kt-check input,
 .kt-radio input {
-    &.is-hover:not(:checked) {
+    &:hover:not(:disabled):not(:checked),
+    &.is-hover:not(:disabled):not(:checked) {
         border-color: #55585d;
         background: #f7f8fb;
     }
+}
+
+.kt-check:hover input:not(:disabled):not(:checked),
+.kt-radio:hover input:not(:disabled):not(:checked) {
+    border-color: #55585d;
+    background: #f7f8fb;
 }
 
 .kt-check input {
@@ -2643,9 +2650,14 @@
         border-color: #d5d8dd;
     }
 
+    &:hover:not(:disabled):checked,
     &.is-selected-hover:checked {
         border-color: #191a1c;
         background-color: #313234;
+    }
+
+    &:hover:not(:disabled):not(:checked)::after {
+        background: #8b8f97;
     }
 
     &.is-selected-disabled:checked {
@@ -2659,16 +2671,27 @@
     }
 }
 
+.kt-check:hover input:not(:disabled):not(:checked)::after {
+    background: #8b8f97;
+}
+
+.kt-check:hover input:checked:not(:disabled) {
+    border-color: #191a1c;
+    background-color: #313234;
+}
+
 .kt-radio input {
     &:disabled {
         border-color: #d5d8dd;
     }
 
+    &:hover:not(:disabled):checked,
     &.is-selected-hover:checked {
         border-color: #313234;
         background: #313234;
     }
 
+    &:hover:not(:disabled):checked::after,
     &.is-selected-hover:checked::after {
         background: #fff;
     }
@@ -2681,6 +2704,15 @@
     &.is-selected-disabled:checked::after {
         background: #adb1b9;
     }
+}
+
+.kt-radio:hover input:checked:not(:disabled) {
+    border-color: #313234;
+    background: #313234;
+}
+
+.kt-radio:hover input:checked:not(:disabled)::after {
+    background: #fff;
 }
 
 .kt-switch-state-row {

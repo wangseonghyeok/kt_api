@@ -38,7 +38,7 @@
                                         <strong class="kt-support-count">전체 23건</strong>
                                         <div class="kt-support-controls">
                                             <div class="kt-dropdown kt-dropdown--support selectbox" data-dropdown_wrap>
-                                                <button type="button" data-dropdown_trg aria-expanded="false">전체</button>
+                                                <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">전체</button>
                                                 <div data-dropdown_menu>
                                                     <ul role="listbox">
                                                         <li><button type="button" aria-current="true">전체</button></li>
@@ -57,11 +57,13 @@
                                                         aria-controls="supportNoticeKeyword"
                                                         aria-label="검색어 삭제"
                                                         hidden
+                                                        aria-hidden="true"
+                                                        tabindex="-1"
                                                     >
-                                                        <img src="/assets/img/components/ico_delete.svg" alt />
+                                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
                                                     </button>
                                                     <button type="button" class="kt-search-field__submit" aria-label="검색">
-                                                        <img src="/assets/img/components/ico_search.svg" alt />
+                                                        <img src="/assets/img/components/ico_search.svg" alt="" />
                                                     </button>
                                                 </span>
                                             </div>

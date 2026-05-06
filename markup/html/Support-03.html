@@ -27,7 +27,7 @@
                     <section class="kt-inquiry-filter" aria-label="문의 카테고리 검색">
                         <div class="kt-inquiry-category-row">
                             <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
-                                <button type="button" data-dropdown_trg aria-expanded="false">대분류 카테고리 전체</button>
+                                <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">대분류 카테고리 전체</button>
                                 <div data-dropdown_menu>
                                     <ul role="listbox">
                                         <li><button type="button" aria-current="true">대분류 카테고리 전체</button></li>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
-                                <button type="button" data-dropdown_trg aria-expanded="false">중분류 카테고리 전체</button>
+                                <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">중분류 카테고리 전체</button>
                                 <div data-dropdown_menu>
                                     <ul role="listbox">
                                         <li><button type="button" aria-current="true">중분류 카테고리 전체</button></li>
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="kt-dropdown kt-dropdown--inquiry selectbox" data-dropdown_wrap>
-                                <button type="button" data-dropdown_trg aria-expanded="false">소분류 카테고리 전체</button>
+                                <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">소분류 카테고리 전체</button>
                                 <div data-dropdown_menu>
                                     <ul role="listbox">
                                         <li><button type="button" aria-current="true">소분류 카테고리 전체</button></li>
@@ -64,7 +64,7 @@
                             <strong class="kt-inquiry-count">전체 23 건</strong>
                             <div class="kt-inquiry-controls">
                                 <div class="kt-dropdown kt-dropdown--inquiry kt-dropdown--inquiry-search selectbox" data-dropdown_wrap>
-                                    <button type="button" data-dropdown_trg aria-expanded="false">전체</button>
+                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">전체</button>
                                     <div data-dropdown_menu>
                                         <ul role="listbox">
                                             <li><button type="button" aria-current="true">전체</button></li>
@@ -83,11 +83,13 @@
                                             aria-controls="supportInquiryKeyword"
                                             aria-label="검색어 삭제"
                                             hidden
+                                            aria-hidden="true"
+                                            tabindex="-1"
                                         >
-                                            <img src="/assets/img/components/ico_delete.svg" alt />
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
                                         </button>
                                         <button type="button" class="kt-search-field__submit" aria-label="검색">
-                                            <img src="/assets/img/components/ico_search.svg" alt />
+                                            <img src="/assets/img/components/ico_search.svg" alt="" />
                                         </button>
                                     </span>
                                 </div>

@@ -1595,8 +1595,17 @@
         font-weight: var(--fw-SemiBold);
         cursor: pointer;
 
+        &:hover {
+            border-color: $kt-secondary;
+            background: #f7f8fb;
+        }
+
         &:has(input:checked) {
             border: 2px solid $kt-primary;
+        }
+
+        &:has(input:checked):hover {
+            border-color: $kt-primary;
         }
     }
 
