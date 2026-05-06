@@ -14,7 +14,7 @@
                     <section class="kt-component-hero">
                         <h1>KT API Link 공통 컴포넌트</h1>
                         <p>
-                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Chip, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를
+                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를
                             공통 사용 기준으로 정리했습니다.
                         </p>
                     </section>
@@ -23,7 +23,7 @@
                         <li><strong>Layout</strong><span>Page Header, Path, Line Tab, Actions</span></li>
                         <li><strong>Control</strong><span>Input, Select, Dropdown, Search Prompt</span></li>
                         <li><strong>Data</strong><span>Grid, Pagination, Indicator, Badge, Tag, Chart</span></li>
-                        <li><strong>Asset</strong><span>Icon, Button, Tab, Chip, Scrollbar</span></li>
+                        <li><strong>Asset</strong><span>Icon, Button, Tab, Scrollbar</span></li>
                     </ul>
 
                     <section class="kt-component-section" id="page-layout">
@@ -184,31 +184,6 @@
                         </div>
                     </section>
 
-                    <section class="kt-component-section" id="chips">
-                        <h2>Chip</h2>
-                        <p class="kt-component-desc">필터 선택값과 드롭다운 필터는 Chip으로 분리하고 선택, hover, pressed, disabled 상태를 같이 관리합니다.</p>
-                        <div class="kt-component-demo kt-component-demo--column">
-                            <div class="kt-component-card">
-                                <h3>Selection Chip</h3>
-                                <div class="kt-token-row">
-                                    <span class="kt-chip">선택 전</span>
-                                    <span class="kt-chip kt-chip--selected">선택됨</span>
-                                    <span class="kt-chip kt-chip--disabled">비활성</span>
-                                </div>
-                            </div>
-                            <div class="kt-component-card kt-component-card--wide">
-                                <h3>Dropdown Chip</h3>
-                                <div class="kt-token-row">
-                                    <button type="button" class="kt-chip kt-chip--dropdown">Default</button>
-                                    <button type="button" class="kt-chip kt-chip--dropdown is-hover">Hover</button>
-                                    <button type="button" class="kt-chip kt-chip--dropdown is-pressed">Pressed</button>
-                                    <button type="button" class="kt-chip kt-chip--dropdown kt-chip--selected">Selected</button>
-                                    <button type="button" class="kt-chip kt-chip--dropdown" disabled>Disabled</button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
                     <section class="kt-component-section" id="tags">
                         <h2>Tag</h2>
                         <p class="kt-component-desc">상태성 정보는 Fill, Dot, Text 세 가지 타입으로 맞추고 상태 색상은 같은 토큰을 공유합니다.</p>
@@ -277,83 +252,231 @@
                         <p class="kt-component-desc">현재 페이지에서 사용하는 SVG 파일 기준으로 정리했습니다.</p>
                         <h3 class="kt-icon-gallery__title">Components</h3>
                         <ul class="kt-icon-gallery">
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_figma_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_figma_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_delete.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_delete.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_check.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_check.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_figma_16.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_search_figma_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_delete.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_delete.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_check.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_check.svg</span>
+                            </li>
                             <li>
                                 <span class="kt-icon-gallery__preview kt-icon-gallery__preview--dark"><img src="/assets/img/components/ico_check_white.svg" alt="" /></span
                                 ><span class="kt-icon-gallery__name">ico_check_white.svg</span>
                             </li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_plus.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_plus.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye_off.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye_off.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_home.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_home.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_user.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_logout.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_download_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_download_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_attach_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_attach_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_calendar.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_calendar.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_left.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_left.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_right.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_right.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_down.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_down_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_down_16_gray.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_20.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_down_20.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_first.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_pagination_first.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_prev.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_pagination_prev.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_next.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_pagination_next.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_last.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_pagination_last.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_plus.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_plus.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye_off.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye_off.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_home.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_home.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_user.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_logout.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_download_16.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_download_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_attach_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_attach_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_calendar.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_calendar.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_left.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_left.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_right.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_right.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_down.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_down_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_down_16_gray.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_20.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_down_20.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_first.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_pagination_first.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_prev.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_pagination_prev.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_next.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_pagination_next.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_last.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_pagination_last.svg</span>
+                            </li>
                         </ul>
                         <h3 class="kt-icon-gallery__title">Auth / Common</h3>
                         <ul class="kt-icon-gallery">
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_close.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_close.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_done.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_done.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_entra.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_entra.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_id_find.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_id_find.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_kt_logo.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_kt_logo.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_mail.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_mail.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_otp.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_otp.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_find.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_password_find.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_reset.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_password_reset.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_shield.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_shield.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_signup.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_signup.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_users.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_users.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_close.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_close.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_done.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_done.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_entra.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_entra.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_id_find.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_id_find.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_kt_logo.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_kt_logo.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_mail.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_mail.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_otp.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_otp.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_find.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_auth_password_find.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_reset.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_auth_password_reset.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_shield.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_shield.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_signup.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_signup.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_users.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_users.svg</span>
+                            </li>
                             <li>
                                 <span class="kt-icon-gallery__preview kt-icon-gallery__preview--dark"><img src="/assets/img/auth/ico_auth_check_white.svg" alt="" /></span
                                 ><span class="kt-icon-gallery__name">ico_auth_check_white.svg</span>
                             </li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_login.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_login.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_logout.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_sign.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_sign.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_login.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_login.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_logout.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_sign.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_sign.svg</span>
+                            </li>
                         </ul>
                         <h3 class="kt-icon-gallery__title">Contents / Main</h3>
                         <ul class="kt-icon-gallery">
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alarm_empty.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_alarm_empty.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expired.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_alert_expired.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expiring.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_alert_expiring.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_pending.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_alert_pending.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_chevron_right.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_chevron_right.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_none_empty.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_none_empty.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_warning_empty.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_warning_empty.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_api.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_api.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_arrow.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_arrow.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_dev.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_dev.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_space.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_space.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_user.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_workspace_arrow.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_workspace_arrow.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alarm_empty.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_alarm_empty.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expired.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_alert_expired.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expiring.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_alert_expiring.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_pending.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_alert_pending.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_chevron_right.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_chevron_right.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_none_empty.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_none_empty.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_warning_empty.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_warning_empty.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_api.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_api.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_arrow.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_arrow.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_dev.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_dev.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_space.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_space.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_user.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_workspace_arrow.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_workspace_arrow.svg</span>
+                            </li>
                         </ul>
                         <h3 class="kt-icon-gallery__title">Support</h3>
                         <ul class="kt-icon-gallery">
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_answer.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_answer.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_calendar.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_calendar.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_close.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_close.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_lock.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_lock.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_user.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_view.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_view.svg</span></li>
-                            <li><span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_write.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_inquiry_write.svg</span></li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_answer.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_answer.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_calendar.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_calendar.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_close.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_close.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_lock.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_lock.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_user.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_user.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_view.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_view.svg</span>
+                            </li>
+                            <li>
+                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_write.svg" alt="" /></span
+                                ><span class="kt-icon-gallery__name">ico_inquiry_write.svg</span>
+                            </li>
                         </ul>
                     </section>
 
@@ -695,12 +818,14 @@
                                 <h3>Textarea</h3>
                                 <label class="kt-field">
                                     <span class="kt-field__label">설명</span>
-                                    <textarea class="kt-textarea" placeholder="설명을 입력하세요">
+                                    <span class="kt-textarea-wrap">
+                                        <textarea id="componentTextareaSample" class="kt-textarea" maxlength="1000" placeholder="설명을 입력하세요" data-textarea-count="componentTextareaSampleCount">
 KT API Link 연동 설명을 입력합니다.
 텍스트가 길어지면 textarea 내부에 공통 스크롤바가 노출됩니다.
 스크롤바 디자인은 모든 페이지의 스크롤 영역과 동일하게 적용됩니다.
-추가 내용을 입력해 스크롤 상태를 확인합니다.</textarea
-                                    >
+추가 내용을 입력해 스크롤 상태를 확인합니다.</textarea>
+                                        <span class="kt-textarea__count" id="componentTextareaSampleCount" data-textarea-count-output>0/1000</span>
+                                    </span>
                                 </label>
                             </div>
                         </div>
@@ -1439,8 +1564,14 @@ KT API Link 연동 설명을 입력합니다.
                                         </div>
                                         <label class="kt-newwork-field kt-newwork-field--textarea">
                                             <span>Description <em>*</em></span>
-                                            <textarea class="kt-textarea" placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."></textarea>
-                                            <i>0/0</i>
+                                            <textarea
+                                                id="componentWorkspaceDescription"
+                                                class="kt-textarea"
+                                                maxlength="1000"
+                                                placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."
+                                                data-textarea-count="componentWorkspaceDescriptionCount"
+                                            ></textarea>
+                                            <i id="componentWorkspaceDescriptionCount" data-textarea-count-output>0/1000</i>
                                         </label>
                                         <label class="kt-newwork-field">
                                             <span>Company</span>
@@ -1682,8 +1813,7 @@ KT API Link 연동 설명을 입력합니다.
             <!--#include file="./include/_footer.html"-->
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
-        <!-- <script>
+        <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const chartEl = document.getElementById('componentApiChart');
                 const fallback = document.querySelector('.kt-chart-fallback');
@@ -1755,6 +1885,6 @@ KT API Link 연동 설명을 입력합니다.
                     apiChart.resize();
                 });
             });
-        </script> -->
+        </script>
     </body>
 </html>

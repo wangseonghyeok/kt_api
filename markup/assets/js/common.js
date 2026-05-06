@@ -1,57 +1,36 @@
 let scrollY;
 let wrap;
-let winHeight;
-let docHeight;
 let scrollP;
 
-// 스크린 높이 계산
 function syncHeight() {
     document.documentElement.style.setProperty('--window-inner-height', `${window.innerHeight}px`);
 }
 
-// mobile check
-function isMobile() {
-    const width = window.innerWidth;
-    if (width < 1025) {
-        return true;
-    }
-    return false;
-}
-
-// body scroll lock
 function bodyLock() {
     scrollY = window.scrollY;
     document.documentElement.classList.add('is-locked');
-    wrap.style.top = `-${scrollY}px`;
-    // AOS 사용시 refresh 필요
-    // AOS.refresh();
+    if (wrap) {
+        wrap.style.top = `-${scrollY}px`;
+    }
 }
 
-// body scroll unlock
 function bodyUnlock() {
+    const isLocked = document.documentElement.classList.contains('is-locked');
+
     document.documentElement.classList.remove('is-locked');
-    window.scrollTo(0, scrollY);
-    wrap.style.top = '';
-    // AOS 사용시 refresh 필요
-    // AOS.refresh();
+    if (wrap) {
+        wrap.style.top = '';
+    }
+    if (isLocked) {
+        window.scrollTo(0, scrollY || 0);
+    }
 }
 
-// popup open
-function popOpen(id) {
-    $('#' + id).fadeIn('fast');
-    $('#' + id)
-        .find('button:eq(0)')
-        .focus();
-    bodyLock();
-}
-
-// popup close
 function popClose(obj) {
     $(obj).parents('.popup').fadeOut('fast');
     bodyUnlock();
 }
 
-// scroll header
 function scrollHeader() {
     scrollP = $(window).scrollTop();
     if (scrollP > 50) {
@@ -61,18 +40,12 @@ function scrollHeader() {
     }
 }
 
-// top Button
 function scrollTopBtn() {
     scrollP = $(window).scrollTop();
     if (scrollP > 50) {
         $('.top-btn-wrap').fadeIn('fast');
-        // if (isMobile()) {
-        // } else {
-        // }
     } else {
         $('.top-btn-wrap').fadeOut('fast');
-        // if (isMobile()) {
-        // }
     }
     if ($('#footer').length) {
         if ($(window).scrollTop() + $(window).innerHeight() > $('#footer').offset().top) {
@@ -83,80 +56,31 @@ function scrollTopBtn() {
     }
 }
 
-// 파일 첨부
-function addFile(obj) {
-    const filesArr = [];
-    const uploadBox = obj.parentElement;
-    const infoText = uploadBox.querySelector('.desc-text');
-    const btn = uploadBox.querySelector('.btn-upload');
-    const input = uploadBox.querySelector('input[type=file]');
+function getTextareaCountTarget(textarea) {
+    const targetId = textarea.dataset.textareaCount || textarea.dataset.inquiryCount;
 
-    if (infoText) {
-        infoText.classList.add('__hide');
+    if (targetId) {
+        return document.getElementById(targetId);
     }
 
-    for (let i = 0; i < obj.files.length; i++) {
-        // 파일 배열에 담기
-        const reader = new FileReader();
-        reader.onload = function () {
-            filesArr.push(obj.files[i]);
-        };
-        reader.readAsDataURL(obj.files[i]);
-        const fileNo = new Date().getTime();
-
-        // 목록 추가
-        const htmlDataParent = obj.parentElement;
-        let htmlData = htmlDataParent.querySelector('.upload-list').innerHTML;
-
-        if (htmlDataParent.querySelector('.upload-list').classList.contains('download')) {
-            htmlData += '<li id="file' + fileNo + '" class="file-item">';
-            htmlData += '   <p class="name"><a href="" download>' + obj.files[i].name + '</a></p>';
-            htmlData += '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
-            htmlData += '</li>';
-        } else {
-            htmlData += '<li id="file' + fileNo + '" class="file-item">';
-            htmlData += '   <p class="name">' + obj.files[i].name + '</p>';
-            htmlData += '   <a class="delete-btn" onclick="deleteFile(' + fileNo + ');"><span class="blind">삭제</span></a>';
-            htmlData += '</li>';
-        }
-
-        htmlDataParent.querySelector('.upload-list').innerHTML = htmlData;
-    }
-    if (!$('input[type="file"][multiple]').length) {
-        input.setAttribute('disabled', '');
-    }
-
-    document.querySelector('input[type=file]').value = '';
+    return textarea
+        .closest('.kt-textarea-wrap, .kt-inquiry-textarea, .kt-newwork-field--textarea, .kt-field')
+        ?.querySelector('[data-textarea-count-output], .kt-textarea__count, .kt-inquiry-textarea__count, i');
 }
 
-// 첨부 파일 삭제
-function deleteFile(num) {
-    const uploadBox = document.querySelector(`#file${num}`).closest('.upload-img');
-    const li = document.querySelector(`#file${num}`);
-    const btn = uploadBox.querySelector('.btn-upload');
-    const input = uploadBox.querySelector('input[type=file]');
-    const infoText = uploadBox.querySelector('.desc-text');
+function syncTextareaCount(textarea) {
+    const target = getTextareaCountTarget(textarea);
 
-    // 파일 없을 경우 infoText 노출
-    if (infoText) {
-        infoText.classList.remove('__hide');
+    if (!target) {
+        return;
     }
 
-    // 버튼 활성화
-    if (input) {
-        input.removeAttribute('disabled');
-    }
-    document.querySelector('#file' + num).remove();
-}
-
-// footer selectbox value값 없는 option에 대해서는 반응X about:blank#blocked
-function footerSelectbox(value) {
-    if (value !== '') {
-        window.open(value, '_blank');
-    }
+    const max = textarea.getAttribute('maxlength') || target.dataset.textareaMax || target.textContent.split('/')[1]?.trim() || '0';
+    target.textContent = `${textarea.value.length}/${max}`;
 }
 
 const ui = {
+    // 공통 드롭다운/셀렉트박스 열림, 닫힘, 선택값 동기화
     dropdown: () => {
         const dropWrap = document.querySelectorAll('[data-dropdown_wrap]');
 
@@ -169,9 +93,6 @@ const ui = {
             }
 
             const dropItem = dropMenu.querySelectorAll('a, button');
-            const trgPosY = dropTrg.getBoundingClientRect().top;
-            const winY = window.innerHeight / 4;
-            const CalwinY = winY * 3;
 
             const hideDropMenu = () => {
                 dropTrg.classList.remove('__open', '__up', '__down');
@@ -185,16 +106,6 @@ const ui = {
 
                 dropTrg.classList.add('__down');
                 dropMenu.style.top = `${dropTrg.clientHeight + 10}px`;
-
-                // if (trgPosY <= CalwinY) {
-                //     // 윈도우 중앙 기준 상단 위치
-                //     dropTrg.classList.add('__down');
-                //     dropMenu.style.top = `${dropTrg.clientHeight}px`;
-                // } else {
-                //     // 윈도우 중앙 기준 하단 위치
-                //     dropTrg.classList.add('__up');
-                //     dropMenu.style.bottom = `${dropTrg.clientHeight}px`;
-                // }
             };
             if (e.classList.contains('selectbox')) {
                 dropItem.forEach(el => {
@@ -229,7 +140,7 @@ const ui = {
                     }, 100);
                 }
             });
-            // 외부 요소 클릭 시 닫힘
+            // 외부 클릭 시 열린 드롭다운을 닫습니다.
             $(document).mouseup(elm => {
                 if ($('[data-dropdown_trg].__open').length) {
                     const drop = $('[data-dropdown_wrap]');
@@ -242,6 +153,7 @@ const ui = {
             });
         });
     },
+    // FAQ/문의 등 공통 아코디언
     accordion: () => {
         $('[data-accordion]').each(function () {
             const others = $(this).find('[data-accordion_cont][aria-hidden]');
@@ -281,6 +193,7 @@ const ui = {
             });
         });
     },
+    // Support 페이지의 라인 탭
     supportTabs: () => {
         document.querySelectorAll('[data-support-tabs]').forEach(tabWrap => {
             const tabs = tabWrap.querySelectorAll('[data-support-tab]');
@@ -311,24 +224,15 @@ const ui = {
             });
         });
     },
-    supportInquiry: () => {
-        const syncCount = textarea => {
-            const targetId = textarea.dataset.inquiryCount;
-            const target = targetId && document.getElementById(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            const max = textarea.getAttribute('maxlength') || target.textContent.split('/')[1] || '0';
-            target.textContent = `${textarea.value.length}/${max}`;
-        };
-
-        document.querySelectorAll('textarea[data-inquiry-count]').forEach(textarea => {
-            textarea.addEventListener('input', () => syncCount(textarea));
-            syncCount(textarea);
+    // Support 문의 폼: 글자수, 파일명, 답변 영역 상태
+    textareaCounter: () => {
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.addEventListener('input', () => syncTextareaCount(textarea));
+            syncTextareaCount(textarea);
         });
-
+    },
+    // Support inquiry file, answer, and table states
+    supportInquiry: () => {
         document.querySelectorAll('.kt-inquiry-form').forEach(form => {
             form.addEventListener('submit', event => event.preventDefault());
         });
@@ -402,7 +306,7 @@ const ui = {
                 defaultActions?.setAttribute('hidden', '');
                 answerInput?.focus();
                 if (answerInput) {
-                    syncCount(answerInput);
+                    syncTextareaCount(answerInput);
                 }
             });
 
@@ -413,63 +317,16 @@ const ui = {
             });
         });
     },
+    // 페이지네이션 현재 페이지 표시
     pagination: () => {
         $('[data-pagination] ul > li > a').on('click', function () {
             $('[data-pagination] ul > li > a').removeAttr('aria-current');
             $(this).attr('aria-current', 'true');
         });
     },
-    tab: () => {
-        $('[data-tab_wrap]').each(function () {
-            const tabWrap = $(this);
-            const panels = tabWrap.find('[role="tabpanel"]');
-            const btn = tabWrap.find('[data-tab_btn]>button, [data-tab_btn]>a');
-            const tabDropBtn = tabWrap.find('.tab-drop-btn');
-            const selectText = tabWrap.find('[aria-selected="true"]').text();
-            tabDropBtn.text(selectText);
-
-            btn.on('click', el => {
-                btn.attr('aria-selected', 'false');
-                btn.removeAttr('aria-current');
-                $(el.target).closest('nav').prev().text(el.target.innerText);
-                $(el.target).attr('aria-selected', 'true');
-                $(el.target).attr('aria-current', 'true');
-                if (panels) {
-                    const controlTg = el.target.getAttribute('aria-controls');
-                    panels.attr('hidden', 'true');
-                    $('#' + controlTg).removeAttr('hidden');
-                }
-            });
-            if (isMobile) {
-                tabDropBtn.on('click', () => {
-                    if (tabDropBtn.hasClass('__show')) {
-                        tabDropBtn.removeClass('__show');
-                    } else {
-                        tabDropBtn.addClass('__show');
-                    }
-                });
-                btn.on('click', () => {
-                    tabDropBtn.removeClass('__show');
-                });
-            }
-
-            // 20240326 아코디언 연동 스크립트 추가
-            if ($(this).hasClass('__connect')) {
-                const accordion = $('[data-accordion]');
-                const items = accordion.find('[data-sort]');
-                btn.on('click', el => {
-                    const btnCtrl = $(el.target).attr('aria-controls');
-                    if (btnCtrl === 'all') {
-                        items.show();
-                    } else {
-                        items.hide();
-                        $(`[data-sort="${btnCtrl}"]`).show();
-                    }
-                });
-            }
-        });
-    },
+    // Auth/User/Components 페이지에서 사용하는 공통 UI 상태
     component: () => {
+        // 로그인/회원/비밀번호 찾기 상단 탭과 패널
         document.querySelectorAll('[data-auth-main-tabs]').forEach(tabWrap => {
             const mainTabs = tabWrap.querySelectorAll('[data-auth-main-tab]');
             const mainPanels = tabWrap.querySelectorAll('[data-auth-main-panel]');
@@ -495,6 +352,7 @@ const ui = {
             });
         });
 
+        // 내 정보 페이지 상단 탭과 패널
         document.querySelectorAll('[data-user-main-tabs]').forEach(tabWrap => {
             const mainTabs = tabWrap.querySelectorAll('[data-user-main-tab]');
             const mainPanels = tabWrap.querySelectorAll('[data-user-main-panel]');
@@ -520,6 +378,7 @@ const ui = {
             });
         });
 
+        // 패널이 없는 단순 탭 상태
         document.querySelectorAll('.kt-auth-tabs').forEach(tabWrap => {
             tabWrap.querySelectorAll('a[href="#"]').forEach(tab => {
                 tab.addEventListener('click', event => {
@@ -532,6 +391,7 @@ const ui = {
             });
         });
 
+        // 인증 수단 내부 탭과 패널
         document.querySelectorAll('[data-auth-tabs]').forEach(tabWrap => {
             const tabLinks = tabWrap.querySelectorAll('[data-auth-tab]');
             const tabPanels = tabWrap.querySelectorAll('[data-auth-panel]');
@@ -561,6 +421,7 @@ const ui = {
             });
         });
 
+        // 인증 방식 카드 선택 상태
         document.querySelectorAll('.kt-auth-methods').forEach(methodWrap => {
             const authContent = methodWrap.closest('.kt-auth-content');
             const methodPanels = authContent ? authContent.querySelectorAll('.kt-auth-panels > li') : [];
@@ -584,6 +445,7 @@ const ui = {
             });
         });
 
+        // 체크박스형 드롭다운 선택 라벨
         document.querySelectorAll('.kt-dropdown--check').forEach(drop => {
             const trigger = drop.querySelector('[data-dropdown_trg]');
             const items = drop.querySelectorAll('input[type="checkbox"]');
@@ -609,6 +471,7 @@ const ui = {
             syncLabel();
         });
 
+        // 비밀번호 보기/숨기기 토글
         document.querySelectorAll('[data-password_toggle]').forEach(button => {
             const inputId = button.getAttribute('aria-controls');
             const input = (inputId && document.getElementById(inputId)) || button.closest('.kt-password')?.querySelector('input');
@@ -633,6 +496,7 @@ const ui = {
             });
         });
 
+        // input clear 버튼 클릭 동작
         document.querySelectorAll('[data-clear_input]').forEach(button => {
             const inputId = button.getAttribute('aria-controls');
             const input = inputId && document.getElementById(inputId);
@@ -648,6 +512,7 @@ const ui = {
             });
         });
 
+        // 일반 input/인증번호 input의 clear 버튼 노출 상태
         document.querySelectorAll('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box, .kt-auth-verify').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');
@@ -677,6 +542,7 @@ const ui = {
             syncClearButton();
         });
 
+        // 검색 input의 clear 버튼 노출 상태
         document.querySelectorAll('[data-search_field]').forEach(field => {
             const input = field.querySelector('input');
             const clearButton = field.querySelector('[data-clear_input]');
@@ -709,6 +575,7 @@ const ui = {
             syncClearButton();
         });
 
+        // 검색 프롬프트/자동완성 메뉴
         const closePrompt = prompt => {
             prompt.classList.remove('is-open');
             prompt.querySelectorAll('[data-prompt_trg]').forEach(trigger => {
@@ -991,10 +858,12 @@ const ui = {
             });
         });
     },
+    // New Work 페이지 검색, 선택, 삭제 인터랙션
     newwork: () => {
         const searches = document.querySelectorAll('[data-newwork-search]');
         const inputFields = document.querySelectorAll('[data-newwork-input]');
 
+        // 일반 입력 필드 clear 버튼
         const syncInputClear = field => {
             const input = field.querySelector('input');
             const clear = field.querySelector('[data-newwork-input-clear]');
@@ -1028,11 +897,13 @@ const ui = {
             syncInputClear(field);
         });
 
+        // 검색 메뉴 열림 상태
         const closeSearch = search => {
             search.classList.remove('is-open');
             search.querySelectorAll('[data-newwork-option].is-active').forEach(option => option.classList.remove('is-active'));
         };
 
+        // 검색 필드 clear 버튼
         const syncClear = search => {
             const input = search.querySelector('input');
             const clear = search.querySelector('[data-newwork-clear]');
@@ -1054,6 +925,7 @@ const ui = {
             return { label, meta };
         };
 
+        // 선택한 멤버 행 생성
         const createMemberRow = (label, meta) => {
             const item = document.createElement('li');
             const text = document.createElement('div');
@@ -1080,6 +952,7 @@ const ui = {
             return item;
         };
 
+        // 멤버 검색 필수값 오류 상태
         const syncMemberError = search => {
             const selectedList = search.closest('.kt-newwork-member-group')?.querySelector('[data-newwork-selected-members]');
             const input = search.querySelector('input');
@@ -1117,6 +990,7 @@ const ui = {
             syncMemberError(search);
         };
 
+        // 서비스 선택 결과 영역 동기화
         const updateSelectedService = (search, option) => {
             const selectedService = search.closest('.kt-newwork-form')?.querySelector('[data-newwork-selected-service]');
 
@@ -1134,6 +1008,7 @@ const ui = {
             });
         };
 
+        // 검색어 기준 옵션 필터링
         const filterOptions = search => {
             const input = search.querySelector('input');
             const menu = search.querySelector('[data-newwork-menu]');
@@ -1174,6 +1049,7 @@ const ui = {
             return visibleOptions;
         };
 
+        // 키보드/마우스 이동 시 활성 옵션 표시
         const highlightOption = (search, nextOption) => {
             if (!nextOption) {
                 return;
@@ -1184,6 +1060,7 @@ const ui = {
             nextOption.scrollIntoView({ block: 'nearest' });
         };
 
+        // 선택한 옵션을 멤버/서비스 상태에 반영
         const selectOption = (search, option) => {
             const input = search.querySelector('input');
             const menu = search.querySelector('[data-newwork-menu]');
@@ -1346,87 +1223,11 @@ const ui = {
             }
         });
     },
-    // modal 팝업 동작 및 접근성
-    modal: e => {
-        // e.preventDefault();
-        const op = $(e);
-        const lp = $('#' + op.attr('aria-controls'));
-        const lpObj = lp.children('.popup__inner');
-        const lpObjClose = lp.find('.popup__close');
-        const lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
-        const lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
-        const lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();
-        const lpOuterObjHidden = $('#loadingStart, #loadingEnd, #skipNavi, #wrap'); // 레이어 바깥 영역의 요소
-        let tabDisable;
-
-        bodyLock();
-
-        function lpClose() {
-            // 레이어 닫기 함수
-            if (tabDisable === true) lpObj.attr('tabindex', '-1');
-            // lp.removeClass('on');
-            lp.fadeOut('fast').removeClass('on');
-            lpOuterObjHidden.removeAttr('aria-hidden');
-            op.focus(); // 레이어 닫은 후 원래 있던 곳으로 초점 이동
-            $(document).off('keydown.lp_keydown');
-            bodyUnlock();
-        }
-
-        op.blur();
-        // lp.addClass('on');
-        lp.fadeIn('fast').css('display', 'flex').addClass('on');
-        lpOuterObjHidden.attr('aria-hidden', 'true'); // 레이어 바깥 영역을 스크린리더가 읽지 않게
-        if (lpObjTabbable.length) {
-            lpObjTabbableFirst.focus().on('keydown', event => {
-                // 레이어 열리자마자 초점 받을 수 있는 첫번째 요소로 초점 이동
-                if (event.shiftKey && (event.keyCode || event.which) === 9) {
-                    // Shift + Tab키 : 초점 받을 수 있는 첫번째 요소에서 마지막 요소로 초점 이동
-                    event.preventDefault();
-                    lpObjTabbableLast.focus();
-                }
-            });
-        } else {
-            lpObj
-                .attr('tabindex', '0')
-                .focus()
-                .on('keydown', event => {
-                    tabDisable = true;
-                    if ((event.keyCode || event.which) === 9) event.preventDefault();
-                    // Tab키 / Shift + Tab키 : 초점 받을 수 있는 요소가 없을 경우 레이어 밖으로 초점 이동 안되게
-                });
-        }
-
-        lpObjTabbableLast.on('keydown', event => {
-            if (!event.shiftKey && (event.keyCode || event.which) === 9) {
-                // Tab키 : 초점 받을 수 있는 마지막 요소에서 첫번째 요소으로 초점 이동
-                event.preventDefault();
-                lpObjTabbableFirst.focus();
-            }
-        });
-
-        lpObjClose.on('click', lpClose); // 닫기 버튼 클릭 시 레이어 닫기
-
-        lp.on('click', event => {
-            if (event.target === event.currentTarget) {
-                // 반투명 배경 클릭 시 레이어 닫기
-                lpClose();
-            }
-        });
-
-        $(document).on('keydown.lp_keydown', event => {
-            // Esc키 : 레이어 닫기
-            const keyType = event.keyCode || event.which;
-
-            if (keyType === 27 && lp.hasClass('on')) {
-                lpClose();
-            }
-        });
-    },
     init: () => {
         wrap = document.getElementById('wrap');
         syncHeight();
 
-        // gnb hover
+        // PC GNB hover/focus 상태
         (() => {
             const header = document.getElementById('header');
             const gnbWrap = document.querySelector('.gnb > ul');
@@ -1458,7 +1259,7 @@ const ui = {
             }
         })();
 
-        // 앵커 부드럽게
+        // 내부 앵커 부드러운 이동
         (() => {
             document.querySelectorAll('a[href^="#"]').forEach(anc => {
                 anc.addEventListener('click', function (e) {
@@ -1500,7 +1301,7 @@ const ui = {
                 });
             }
 
-            // nav slideUpdown
+            // 모바일 메뉴 2depth 아코디언
             $('.m-menu nav>ul>li>button').on('click', function () {
                 const parentLi = $(this).parents('li');
                 $('.m-menu nav>ul>li .depth2').slideUp().attr('aria-hidden', 'true');
@@ -1518,10 +1319,10 @@ const ui = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    ui.tab();
     ui.dropdown();
     ui.accordion();
     ui.supportTabs();
+    ui.textareaCounter();
     ui.supportInquiry();
     ui.pagination();
     ui.component();
@@ -1529,19 +1330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.init();
 });
 
-window.addEventListener('load', () => {
-    winHeight = $(window).innerHeight();
-    docHeight = $('body').outerHeight();
-});
-
 window.addEventListener('resize', () => {
-    // if ($(window).width() > 1024) {
-    //     console.log('1024 초과');
-    // }
-
-    // if ($(window).width() <= 1024) {
-    //     console.log('1024 이하 사이즈');
-    // }
     syncHeight();
 });
 

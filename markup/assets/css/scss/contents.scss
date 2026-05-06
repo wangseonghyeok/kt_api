@@ -593,16 +593,11 @@
         }
 
         &--otp-tabs {
-            gap: 24px;
-
             .kt-auth-main-panel > .kt-auth-top + .kt-auth-panel {
                 margin-top: 40px;
             }
         }
 
-        // &:has(.kt-auth-step) {
-        //     gap: 24px;
-        // }
     }
 
     .kt-auth-top {
@@ -614,7 +609,7 @@
     .kt-auth-step {
         @include flex(center, center);
         gap: 8px;
-
+        margin-top: -16px;
         &__item {
             @include flex(center, null);
             gap: 8px;
@@ -633,6 +628,8 @@
             color: $kt-disabled;
             font-size: 12px;
             font-weight: var(--fw-SemiBold);
+            padding-right: 1px;
+            padding-top: 2px;
         }
 
         &__line {
@@ -1172,12 +1169,16 @@
         height: 40px;
         font-size: 15px;
         font-weight: var(--fw-SemiBold);
+                margin-left: 16px;
+        margin-right: 16px;
     }
 
     .kt-btn--inquiry-create {
+        width: 64px;
         min-width: 64px;
+        flex: 0 0 64px;
         height: 40px;
-        padding: 0 14px;
+        padding: 0 8px;
         border-radius: 8px;
         gap: 4px;
         font-size: 13px;
@@ -1232,7 +1233,7 @@
         height: 604px;
         margin: 0;
         box-sizing: border-box;
-        border-top: 1px solid $kt-primary;
+        // border-top: 1px solid $kt-primary;
         background: #fff;
 
         &::after {
