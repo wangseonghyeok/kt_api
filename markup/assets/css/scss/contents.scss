@@ -169,64 +169,6 @@
         line-height: 1.48;
     }
 
-    .kt-chip {
-        @include inline-flex(center, center);
-        min-height: 24px;
-        padding: 3px 6px;
-        border-radius: 4px;
-        background: #e9eaee;
-        color: #55585d;
-        font-size: 12px;
-        font-weight: var(--fw-SemiBold);
-        line-height: 1.48;
-
-        &--dark {
-            background: #191a1b;
-            color: #fff;
-        }
-
-        &--green {
-            background: #e5f5e1;
-            color: #136600;
-        }
-
-        &--cyan {
-            background: #e1f5f5;
-            color: #005e66;
-        }
-
-        &--purple {
-            background: #efebff;
-            color: #4c00e5;
-        }
-
-        &--danger,
-        &--danger-soft {
-            background: #fce9e9;
-            color: #bb1b21;
-        }
-
-        &--rose {
-            background: #fce9e9;
-            color: #bb1b21;
-        }
-
-        &--slate {
-            background: #e9eaee;
-            color: #55585d;
-        }
-
-        &--sky {
-            background: #dff4ff;
-            color: #006699;
-        }
-
-        &--disabled {
-            background: #f3f4f6;
-            color: $kt-disabled;
-        }
-    }
-
     .kt-text-link {
         @include relative();
         @include inline-flex(center, null);
@@ -296,11 +238,6 @@
             font-weight: var(--fw-Bold);
             line-height: 1.48;
         }
-    }
-
-    .kt-chip-row {
-        @include flex(center, null);
-        gap: 8px;
     }
 
     .kt-api-count {
@@ -1398,23 +1335,6 @@
         background: currentColor;
         -webkit-mask: url('/assets/img/support/ico_inquiry_lock.svg') 50% 50% / 14px 14px no-repeat;
         mask: url('/assets/img/support/ico_inquiry_lock.svg') 50% 50% / 14px 14px no-repeat;
-    }
-
-    .kt-inquiry-status {
-        @include inline-flex(center, center);
-        min-height: 24px;
-        padding: 3px 6px;
-        border-radius: 4px;
-        background: #e9eaee;
-        color: $kt-secondary;
-        font-size: 12px;
-        font-weight: var(--fw-SemiBold);
-        line-height: 1.48;
-
-        &--complete {
-            background: #e5f5e1;
-            color: #136600;
-        }
     }
 
     .kt-inquiry-form {

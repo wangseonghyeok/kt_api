@@ -611,6 +611,7 @@
     font-size: 12px;
     font-weight: var(--fw-SemiBold);
     line-height: 1.48;
+    white-space: nowrap;
     vertical-align: top;
 
     &--dark {
@@ -658,6 +659,12 @@
         background: #f3f4f6;
         color: var(--kt-disabled);
     }
+}
+
+.kt-badge-row {
+    @include flex(center, null);
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 /* Form field base */
@@ -2253,74 +2260,6 @@
     gap: 8px;
 }
 
-/* Chip */
-.kt-chip {
-    @include inline-flex(center, center);
-    min-height: 24px;
-    padding: 2px 10px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    background: #e9eaee;
-    color: #55585d;
-    font-family: inherit;
-    font-size: 12px;
-    font-weight: var(--fw-SemiBold);
-    line-height: 1.48;
-    vertical-align: top;
-
-    &--selected {
-        background: #191a1c;
-        color: #fff;
-    }
-
-    &--disabled,
-    &:disabled {
-        background: #f3f4f6;
-        color: #adb1b9;
-        border-width: 0;
-    }
-
-    &--dropdown {
-        min-height: 36px;
-        padding: 0 12px;
-        gap: 4px;
-        border-color: #d5d8dd;
-        background: #fff;
-        color: #313235;
-
-        &::after {
-            content: '';
-            width: 16px;
-            height: 16px;
-            background: currentColor;
-            -webkit-mask: url('/assets/img/components/ico_chevron_down.svg') 50% 50% / 16px 16px no-repeat;
-            mask: url('/assets/img/components/ico_chevron_down.svg') 50% 50% / 16px 16px no-repeat;
-        }
-
-        &.is-hover {
-            border-color: #55585d;
-            background: #f7f8fb;
-        }
-
-        &.is-pressed {
-            border-color: #191a1c;
-            background: #e9eaee;
-        }
-
-        &.kt-chip--selected {
-            border-color: #191a1c;
-            background: #191a1c;
-            color: #fff;
-        }
-
-        &:disabled {
-            border-color: #e1e3e8;
-            background: #f3f4f6;
-            color: #adb1b9;
-        }
-    }
-}
-
 /* Tag */
 .kt-tag-matrix {
     display: grid;
@@ -3541,40 +3480,6 @@
     }
 }
 
-.kt-table-role {
-    @include inline-flex(center, center);
-    min-height: 24px;
-    padding: 3px 6px;
-    border-radius: 4px;
-    background: #e9eaee;
-    color: var(--kt-secondary);
-    font-size: 12px;
-    font-weight: var(--fw-SemiBold);
-    line-height: 1.48;
-
-    &--owner {
-        background: #fce9e9;
-        color: #bb1b21;
-    }
-
-    &--manager {
-        background: #d9f2ff;
-        color: #0049a3;
-    }
-}
-
-.kt-table-status {
-    font-weight: var(--fw-Medium);
-
-    &--pending {
-        color: #b85c00;
-    }
-
-    &--rejected {
-        color: #e0282f;
-    }
-}
-
 .kt-works-empty {
     @include flex(center, center);
     flex-direction: column;
@@ -4000,40 +3905,6 @@
     line-height: 1.48;
     text-align: right;
     white-space: nowrap;
-}
-
-.kt-support-badge {
-    @include inline-flex(center, center);
-    min-width: 35px;
-    height: 24px;
-    padding: 3px 6px;
-    border-radius: 4px;
-    background: #e9eaee;
-    color: var(--kt-secondary);
-    font-size: 12px;
-    font-weight: var(--fw-SemiBold);
-    line-height: 1.5;
-    white-space: nowrap;
-
-    &--update {
-        background: #e1f5f5;
-        color: #005e66;
-    }
-
-    &--new {
-        background: #fce9e9;
-        color: #bb1b21;
-    }
-
-    &--workspace {
-        background: #dff4ff;
-        color: #0049a3;
-    }
-
-    &--payment {
-        background: #efebff;
-        color: #4c00e5;
-    }
 }
 
 .kt-support-item__toggle {
