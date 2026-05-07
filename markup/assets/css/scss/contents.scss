@@ -303,6 +303,9 @@
                 font-size: 16px;
                 font-weight: var(--fw-Bold);
                 line-height: 1.48;
+                &.blue {
+                    color: $kt-blue;
+                }
             }
 
             span {
@@ -534,7 +537,6 @@
                 margin-top: 40px;
             }
         }
-
     }
 
     .kt-auth-top {
@@ -719,10 +721,6 @@
         margin-top: 24px;
     }
 
-    // .kt-auth-top + .kt-auth-panel {
-    //     margin-top: 24px;
-    // }
-
     .kt-auth-top + .kt-auth-panel--intro,
     .kt-auth-top + .kt-auth-panel--otp {
         margin-top: 40px;
@@ -855,7 +853,7 @@
             padding: 12px 16px;
             border-radius: 8px;
             color: $kt-primary;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: var(--fw-Medium);
             line-height: 1.48;
         }
@@ -1106,7 +1104,7 @@
         height: 40px;
         font-size: 15px;
         font-weight: var(--fw-SemiBold);
-                margin-left: 16px;
+        margin-left: 16px;
         margin-right: 16px;
     }
 

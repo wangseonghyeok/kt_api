@@ -483,16 +483,22 @@ const ui = {
                 return;
             }
 
-            button.addEventListener('click', () => {
-                const willShow = input.type === 'password';
+            const syncToggleState = () => {
+                const isVisible = input.type === 'text';
 
-                input.type = willShow ? 'text' : 'password';
-                button.setAttribute('aria-pressed', String(willShow));
-                button.setAttribute('aria-label', willShow ? '비밀번호 숨기기' : '비밀번호 보기');
+                button.setAttribute('aria-pressed', String(isVisible));
+                button.setAttribute('aria-label', isVisible ? '비밀번호 숨기기' : '비밀번호 보기');
 
                 if (icon && showIcon && hideIcon) {
-                    icon.src = willShow ? hideIcon : showIcon;
+                    icon.src = isVisible ? showIcon : hideIcon;
                 }
+            };
+
+            syncToggleState();
+
+            button.addEventListener('click', () => {
+                input.type = input.type === 'password' ? 'text' : 'password';
+                syncToggleState();
             });
         });
 

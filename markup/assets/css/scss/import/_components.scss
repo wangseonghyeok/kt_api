@@ -543,6 +543,7 @@
         border-radius: 4px;
         font-size: 13px;
         line-height: 1.5;
+        font-weight: var(--fw-Medium);
     }
 
     &--xs {
@@ -2908,7 +2909,7 @@
     > label,
     > p {
         margin: 0;
-        color:#6F737B;
+        color: #6f737b;
         font-size: 13px;
         font-weight: var(--fw-Medium);
         line-height: 1.48;
@@ -3271,8 +3272,8 @@
         display: block;
         padding-right: 12px;
         box-sizing: border-box;
-        tr{
-             border-top: 1px solid var(--kt-primary);
+        tr {
+            border-top: 1px solid var(--kt-primary);
         }
     }
 
