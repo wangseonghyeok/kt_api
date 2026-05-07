@@ -186,9 +186,10 @@ html {
         display: none;
     }
     &.__hover {
+        box-shadow: 0 0 2px 0 rgba(19, 20, 21, 0.05), 0 2px 4px 0 rgba(19, 20, 21, 0.1);
         max-height: 228px;
         height: 228px;
-        box-shadow: none;
+        // box-shadow: none;
 
         &:after {
             display: block;

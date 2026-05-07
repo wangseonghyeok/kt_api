@@ -66,7 +66,7 @@
     <!-- 개발 전달: API 검색(OIF_숫자)은 common.js의 data-prompt 공통 스크립트와 _works_api_prompt_menu.html 후보 목록을 사용합니다. -->
     <div class="kt-works-search__row">
         <p>API 검색(OIF_숫자)</p>
-        <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-min-length="3">
+        <div class="kt-prompt kt-prompt--works kt-prompt--wide is-open" data-prompt data-prompt-min-length="3" data-prompt-show-all>
             <div class="kt-prompt__field">
                 <input
                     type="text"
@@ -75,7 +75,7 @@
                     placeholder="구독중인 API를 사용하는 워크스페이스 찾기 - OIF_숫자 3자 이상 입력하세요."
                     data-prompt_trg
                     aria-controls="workspaceApiPromptMenu"
-                    aria-expanded="false"
+                    aria-expanded="true"
                     autocomplete="off"
                 />
                 <span class="kt-prompt__actions">

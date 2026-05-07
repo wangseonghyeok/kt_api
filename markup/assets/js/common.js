@@ -140,7 +140,7 @@ const ui = {
                     }, 100);
                 }
             });
-            // 외부 클릭 시 열린 드롭다운을 닫습니다.
+            // 외부 클릭 시 열린 드롭다운 닫기
             $(document).mouseup(elm => {
                 if ($('[data-dropdown_trg].__open').length) {
                     const drop = $('[data-dropdown_wrap]');
@@ -597,6 +597,8 @@ const ui = {
             });
         };
 
+        // 개발 전달: works API 검색(OIF_숫자)은 이 data-prompt 공통 로직을 사용합니다.
+        // 대상: #workspaceApiKeyword / 후보 목록: #workspaceApiPromptMenu.
         document.querySelectorAll('[data-prompt]').forEach(prompt => {
             const triggers = prompt.querySelectorAll('[data-prompt_trg]');
             const menu = prompt.querySelector('[data-prompt_menu]');
@@ -1286,39 +1288,6 @@ const ui = {
                         behavior: 'smooth',
                     });
                 });
-            });
-        })();
-
-        // 모바일 메뉴
-        (() => {
-            const mobileMenuWrap = document.querySelector('.menu-wrap');
-            if (mobileMenuWrap) {
-                const openBtn = mobileMenuWrap.querySelector('.menu-wrap > button');
-                const menu = mobileMenuWrap.querySelector('.m-menu');
-                const closeBtn = mobileMenuWrap.querySelector('.to-close');
-                openBtn.addEventListener('click', () => {
-                    menu.classList.add('__open');
-                    bodyLock();
-                });
-
-                closeBtn.addEventListener('click', () => {
-                    menu.classList.remove('__open');
-                    bodyUnlock();
-                });
-            }
-
-            // 모바일 메뉴 2depth 아코디언
-            $('.m-menu nav>ul>li>button').on('click', function () {
-                const parentLi = $(this).parents('li');
-                $('.m-menu nav>ul>li .depth2').slideUp().attr('aria-hidden', 'true');
-                $('.m-menu nav>ul>li button').attr('aria-expanded', 'false');
-                if (!parentLi.hasClass('__show')) {
-                    $('.m-menu nav>ul>li').removeClass('__show');
-                    parentLi.addClass('__show').find('.depth2').slideDown().attr('aria-hidden', 'false');
-                    parentLi.find('button').attr('aria-expanded', 'true');
-                } else {
-                    parentLi.removeClass('__show');
-                }
             });
         })();
     },

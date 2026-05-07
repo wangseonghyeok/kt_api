@@ -481,10 +481,12 @@
     margin-top: 0 !important;
 
     .kt-auth-main {
+        --kt-auth-main-max-height: min(829px, calc(100vh - 48px));
+
         transform: translateZ(0);
         z-index: 1000;
         width: 610px;
-        max-height: 800px;
+        max-height: var(--kt-auth-main-max-height);
         overflow: hidden;
         border-radius: 12px;
         background: #fff;
@@ -516,7 +518,7 @@
     }
 
     .kt-auth-content {
-        max-height: calc(800px - 64px);
+        max-height: calc(var(--kt-auth-main-max-height) - 64px);
         @include flex(null, null);
         flex-direction: column;
         gap: 40px;
@@ -721,6 +723,10 @@
         margin-top: 24px;
     }
 
+    .kt-auth-panels > li[data-auth-panel='entra'] .kt-auth-panel {
+        padding-top: 16px;
+    }
+
     .kt-auth-top + .kt-auth-panel--intro,
     .kt-auth-top + .kt-auth-panel--otp {
         margin-top: 40px;
@@ -828,6 +834,10 @@
         flex-direction: column;
         gap: 16px;
         padding-top: 24px;
+
+        &:has(.kt-auth-text-links:not(.kt-auth-text-links--small)) {
+            gap: 8px;
+        }
     }
 
     .kt-auth-button-row {
@@ -938,6 +948,10 @@
     .kt-auth-info-box--signup {
         .kt-auth-info-row {
             gap: 24px;
+
+            & + .kt-auth-info-row {
+                margin-top: 6px;
+            }
         }
     }
 
@@ -945,12 +959,13 @@
         @include relative();
 
         .kt-input {
+            height: 64px;
             padding-right: 160px;
         }
     }
 
     .kt-auth-verify__side {
-        @include absolute(top 31px right 16px);
+        @include absolute(top 37px right 16px);
         @include inline-flex(center, null);
         gap: 8px;
         height: 44px;
