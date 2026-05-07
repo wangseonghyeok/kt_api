@@ -2836,7 +2836,7 @@
 
 .kt-page-header--large-title .kt-page-header__title {
     h1 {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.38;
     }
 
@@ -3088,7 +3088,9 @@
         li.is-selected strong {
             font-weight: var(--fw-Bold);
         }
-
+        li.is-selected span {
+            color: #191a1b !important;
+        }
         li > span:not(.kt-prompt__search-icon):last-child {
             margin-left: 8px;
             color: var(--kt-tertiary);
@@ -3142,37 +3144,6 @@
     font-size: 18px;
     font-weight: var(--fw-Bold);
     line-height: 1.48;
-}
-
-.kt-works-size {
-    @include inline-flex(center, null);
-    gap: 16px;
-
-    &::before {
-        content: '';
-        width: 1px;
-        height: 16px;
-        background: #d5d8dd;
-    }
-}
-
-.kt-works-size__button {
-    @include inline-flex(center, null);
-    gap: 4px;
-    height: 32px;
-    color: var(--kt-primary);
-    font-size: 13px;
-    font-weight: var(--fw-Medium);
-    line-height: 1.48;
-
-    &::after {
-        content: '';
-        width: 16px;
-        height: 16px;
-        background: currentColor;
-        -webkit-mask: url('/assets/img/components/ico_chevron_down_16.svg') 50% 50% / 16px 16px no-repeat;
-        mask: url('/assets/img/components/ico_chevron_down_16.svg') 50% 50% / 16px 16px no-repeat;
-    }
 }
 
 .kt-btn--works-create {
@@ -3270,21 +3241,32 @@
 
     thead {
         display: block;
-        padding-right: 12px;
+        padding-right: 0;
         box-sizing: border-box;
         tr {
-            border-top: 1px solid var(--kt-primary);
+            border-top: 1px solid #191a1b;
         }
     }
 
     tbody {
         display: block;
-        height: 481px;
+        height: 480px;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: hidden;
         background: #fff;
         overscroll-behavior: contain;
-        scrollbar-gutter: stable;
+        scrollbar-gutter: auto;
+    }
+
+    &:has(tbody tr:nth-child(13)) {
+        thead {
+            padding-right: 12px;
+        }
+
+        tbody {
+            overflow-y: auto;
+            scrollbar-gutter: stable;
+        }
     }
 
     tbody::-webkit-scrollbar {
@@ -3357,7 +3339,7 @@
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         background: #fff;
-        color: var(--kt-primary);
+        color: #4a4c50;
         font-size: 14px;
         font-weight: var(--fw-Medium);
         line-height: 1.48;
@@ -3367,11 +3349,24 @@
 
     th {
         // border-top: 1px solid var(--kt-primary);
+        border-right-color: #e9eaee;
         border-bottom-color: #c7cad1;
         background: #fff;
         color: var(--kt-tertiary);
         font-weight: var(--fw-SemiBold);
         text-align: center;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .right {
+        text-align: right;
     }
 
     th:last-child,
@@ -3390,6 +3385,43 @@
         border-right: 0;
         background: #f8f9fa;
     }
+
+    .kt-badge {
+        vertical-align: middle;
+    }
+}
+
+.kt-works-status,
+.kt-works-issue {
+    font-weight: var(--fw-Medium);
+    white-space: nowrap;
+}
+
+.kt-works-status {
+    display: inline-block;
+    color: inherit;
+}
+
+.kt-works-issue--rejected {
+    color: #e0282f;
+}
+
+.kt-works-issue--pending {
+    color: #e57300;
+}
+
+.kt-works-issue {
+    margin-left: 4px;
+}
+
+.kt-badge--owner {
+    background: #fce9e9;
+    color: #bb1b21;
+}
+
+.kt-badge--manager {
+    background: #d9f2ff;
+    color: #0049a3;
 }
 
 .kt-table--works-result {

@@ -14,8 +14,8 @@
                     <section class="kt-component-hero">
                         <h1>KT API Link 공통 컴포넌트</h1>
                         <p>
-                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를
-                            공통 사용 기준으로 정리했습니다.
+                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를 공통
+                            사용 기준으로 정리했습니다.
                         </p>
                     </section>
 
@@ -827,7 +827,8 @@
 KT API Link 연동 설명을 입력합니다.
 텍스트가 길어지면 textarea 내부에 공통 스크롤바가 노출됩니다.
 스크롤바 디자인은 모든 페이지의 스크롤 영역과 동일하게 적용됩니다.
-추가 내용을 입력해 스크롤 상태를 확인합니다.</textarea>
+추가 내용을 입력해 스크롤 상태를 확인합니다.</textarea
+                                        >
                                         <span class="kt-textarea__count" id="componentTextareaSampleCount" data-textarea-count-output>0/1000</span>
                                     </span>
                                 </label>
@@ -1444,7 +1445,7 @@ KT API Link 연동 설명을 입력합니다.
                                     <li class="kt-table__row" role="row">
                                         <div role="cell" class="left">KT멤버십</div>
                                         <div role="cell" class="left">BG007301</div>
-                                        <div role="cell" class="left"><span class="kt-badge kt-badge--cyan">DEV</span></div>
+                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--dev">DEV</span></div>
                                         <div role="cell" class="center">LDAP</div>
                                         <div role="cell" class="left">None</div>
                                         <div role="cell" class="center">한수지</div>
@@ -1453,7 +1454,7 @@ KT API Link 연동 설명을 입력합니다.
                                     <li class="kt-table__row" role="row">
                                         <div role="cell" class="left">쿠폰 플랫폼</div>
                                         <div role="cell" class="left">KT_COUPON_002</div>
-                                        <div role="cell" class="left"><span class="kt-badge kt-badge--purple">PROD</span></div>
+                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--prod">PROD</span></div>
                                         <div role="cell" class="center">API</div>
                                         <div role="cell" class="left">Pending</div>
                                         <div role="cell" class="center">박상현</div>
@@ -1462,7 +1463,7 @@ KT API Link 연동 설명을 입력합니다.
                                     <li class="kt-table__row" role="row">
                                         <div role="cell" class="left">KT 메시지 서비스</div>
                                         <div role="cell" class="left">KT_SMS_003</div>
-                                        <div role="cell" class="left"><span class="kt-badge kt-badge--green">DRAFT</span></div>
+                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--draft">DRAFT</span></div>
                                         <div role="cell" class="center">API</div>
                                         <div role="cell" class="left">None</div>
                                         <div role="cell" class="center">최지훈</div>
@@ -1471,7 +1472,7 @@ KT API Link 연동 설명을 입력합니다.
                                     <li class="kt-table__row" role="row">
                                         <div role="cell" class="left">정산 서비스</div>
                                         <div role="cell" class="left">KT_PAY_004</div>
-                                        <div role="cell" class="left"><span class="kt-badge kt-badge--cyan">DEV</span></div>
+                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--dev">DEV</span></div>
                                         <div role="cell" class="center">OAuth</div>
                                         <div role="cell" class="left">None</div>
                                         <div role="cell" class="center">김민정</div>
@@ -1480,7 +1481,7 @@ KT API Link 연동 설명을 입력합니다.
                                     <li class="kt-table__row" role="row">
                                         <div role="cell" class="left">고객 인증</div>
                                         <div role="cell" class="left">KT_AUTH_005</div>
-                                        <div role="cell" class="left"><span class="kt-badge kt-badge--purple">PROD</span></div>
+                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--prod">PROD</span></div>
                                         <div role="cell" class="center">LDAP</div>
                                         <div role="cell" class="left">Expired</div>
                                         <div role="cell" class="center">이준호</div>
@@ -1818,77 +1819,77 @@ KT API Link 연동 설명을 입력합니다.
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const chartEl = document.getElementById('componentApiChart');
-                const fallback = document.querySelector('.kt-chart-fallback');
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     const chartEl = document.getElementById('componentApiChart');
+            //     const fallback = document.querySelector('.kt-chart-fallback');
 
-                if (!chartEl || !window.echarts) {
-                    return;
-                }
+            //     if (!chartEl || !window.echarts) {
+            //         return;
+            //     }
 
-                fallback.style.display = 'none';
+            //     fallback.style.display = 'none';
 
-                const apiChart = echarts.init(chartEl, null, { renderer: 'svg' });
-                apiChart.setOption({
-                    grid: {
-                        top: 18,
-                        right: 14,
-                        bottom: 28,
-                        left: 40,
-                    },
-                    tooltip: {
-                        trigger: 'axis',
-                    },
-                    xAxis: {
-                        type: 'category',
-                        boundaryGap: false,
-                        data: ['월', '화', '수', '목', '금', '토'],
-                        axisLine: { lineStyle: { color: '#d5d8dd' } },
-                        axisTick: { show: false },
-                        axisLabel: { color: '#6f737b' },
-                    },
-                    yAxis: {
-                        type: 'value',
-                        min: 0,
-                        splitNumber: 3,
-                        axisLabel: { color: '#6f737b' },
-                        splitLine: { lineStyle: { color: '#e9eaee' } },
-                    },
-                    series: [
-                        {
-                            name: 'API 호출',
-                            type: 'line',
-                            smooth: true,
-                            symbolSize: 7,
-                            data: [640, 860, 710, 1120, 940, 1280],
-                            lineStyle: {
-                                width: 3,
-                                color: '#148aff',
-                            },
-                            itemStyle: {
-                                color: '#148aff',
-                            },
-                            areaStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 0,
-                                    y2: 1,
-                                    colorStops: [
-                                        { offset: 0, color: 'rgba(20, 138, 255, 0.22)' },
-                                        { offset: 1, color: 'rgba(20, 138, 255, 0.02)' },
-                                    ],
-                                },
-                            },
-                        },
-                    ],
-                });
+            //     const apiChart = echarts.init(chartEl, null, { renderer: 'svg' });
+            //     apiChart.setOption({
+            //         grid: {
+            //             top: 18,
+            //             right: 14,
+            //             bottom: 28,
+            //             left: 40,
+            //         },
+            //         tooltip: {
+            //             trigger: 'axis',
+            //         },
+            //         xAxis: {
+            //             type: 'category',
+            //             boundaryGap: false,
+            //             data: ['월', '화', '수', '목', '금', '토'],
+            //             axisLine: { lineStyle: { color: '#d5d8dd' } },
+            //             axisTick: { show: false },
+            //             axisLabel: { color: '#6f737b' },
+            //         },
+            //         yAxis: {
+            //             type: 'value',
+            //             min: 0,
+            //             splitNumber: 3,
+            //             axisLabel: { color: '#6f737b' },
+            //             splitLine: { lineStyle: { color: '#e9eaee' } },
+            //         },
+            //         series: [
+            //             {
+            //                 name: 'API 호출',
+            //                 type: 'line',
+            //                 smooth: true,
+            //                 symbolSize: 7,
+            //                 data: [640, 860, 710, 1120, 940, 1280],
+            //                 lineStyle: {
+            //                     width: 3,
+            //                     color: '#148aff',
+            //                 },
+            //                 itemStyle: {
+            //                     color: '#148aff',
+            //                 },
+            //                 areaStyle: {
+            //                     color: {
+            //                         type: 'linear',
+            //                         x: 0,
+            //                         y: 0,
+            //                         x2: 0,
+            //                         y2: 1,
+            //                         colorStops: [
+            //                             { offset: 0, color: 'rgba(20, 138, 255, 0.22)' },
+            //                             { offset: 1, color: 'rgba(20, 138, 255, 0.02)' },
+            //                         ],
+            //                     },
+            //                 },
+            //             },
+            //         ],
+            //     });
 
-                window.addEventListener('resize', () => {
-                    apiChart.resize();
-                });
-            });
+            //     window.addEventListener('resize', () => {
+            //         apiChart.resize();
+            //     });
+            // });
         </script>
     </body>
 </html>
