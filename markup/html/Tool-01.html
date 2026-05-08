@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-tool-page">
+        <div id="wrap">
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-tool-main">
+                <section class="kt-page-header kt-tool-header">
+                    <div class="kt-page-header__title">
+                        <h1>API Playground</h1>
+                        <p>전체 API 목록을 탐색하고 테스트해보세요.</p>
+                    </div>
+                    <nav class="kt-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <p>Tool</p>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <strong>API Playground</strong>
+                    </nav>
+                </section>
+
+                <div class="kt-tool-body">
+                    <aside class="kt-tool-sidebar" aria-label="API 탐색">
+                        <div class="kt-tool-search" data-api-tree-search>
+                            <input type="search" class="kt-input" placeholder="API 검색" aria-label="API 검색" />
+                        </div>
+                        <div class="kt-tool-tabs" role="tablist" aria-label="API 유형">
+                            <button type="button" class="is-active" role="tab" aria-selected="true" data-api-tree-tab="all">전체</button>
+                            <button type="button" role="tab" aria-selected="false" data-api-tree-tab="rest">REST</button>
+                            <button type="button" role="tab" aria-selected="false" data-api-tree-tab="soap">SOAP</button>
+                        </div>
+
+                        <nav class="kt-tool-tree" aria-label="API 카테고리" data-api-tree>
+                            <ul>
+                                <li class="kt-tool-tree__branch is-open" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="true">
+                                        <i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i>
+                                        <span>커머스/결제 <em>(8)</em></span>
+                                        <i class="kt-tool-tree__toggle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="kt-tool-tree__children">
+                                        <li class="kt-tool-tree__group is-open">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="true">
+                                                <span>쿠폰 API</span>
+                                                <i class="kt-tool-tree__small-toggle" aria-hidden="true"></i>
+                                            </button>
+                                            <ul>
+                                                <li>
+                                                    <button
+                                                        type="button"
+                                                        class="kt-tool-tree__item is-active"
+                                                        data-api-leaf
+                                                        data-api-name="쿠폰발급"
+                                                        data-api-code="oif_2118"
+                                                        data-api-method="POST"
+                                                        data-api-path="/api/v1/coupon/issue"
+                                                        data-api-protocol="rest"
+                                                    >
+                                                        <i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i>
+                                                        <span>장기혜택쿠폰 사용 API</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button
+                                                        type="button"
+                                                        class="kt-tool-tree__item"
+                                                        data-api-leaf
+                                                        data-api-name="쿠폰선물"
+                                                        data-api-code="oif_2124"
+                                                        data-api-method="POST"
+                                                        data-api-path="/api/v1/coupon/gift"
+                                                        data-api-protocol="rest"
+                                                    >
+                                                        <i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i>
+                                                        <span>장기혜택쿠폰 선물하기 API</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button
+                                                        type="button"
+                                                        class="kt-tool-tree__item"
+                                                        data-api-leaf
+                                                        data-api-name="TV쿠폰 조회"
+                                                        data-api-code="oif_2130"
+                                                        data-api-method="GET"
+                                                        data-api-path="/api/v1/tv-coupon"
+                                                        data-api-protocol="rest"
+                                                    >
+                                                        <i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i>
+                                                        <span>TV쿠폰 조회 API</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button
+                                                        type="button"
+                                                        class="kt-tool-tree__item"
+                                                        data-api-leaf
+                                                        data-api-name="TV쿠폰 사용"
+                                                        data-api-code="oif_2134"
+                                                        data-api-method="POST"
+                                                        data-api-path="/api/v1/tv-coupon/use"
+                                                        data-api-protocol="rest"
+                                                    >
+                                                        <i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i>
+                                                        <span>TV쿠폰 사용 API</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false">
+                                                <span>멤버십 API</span>
+                                                <i class="kt-tool-tree__small-toggle" aria-hidden="true"></i>
+                                            </button>
+                                            <ul hidden>
+                                                <li>
+                                                    <button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="멤버십 조회" data-api-code="oif_2201" data-api-method="GET" data-api-path="/api/v1/membership" data-api-protocol="rest">
+                                                        <i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i>
+                                                        <span>멤버십 조회 API</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>제휴 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="제휴 포인트 조회" data-api-code="oif_2304" data-api-method="GET" data-api-path="/api/v1/partner/points" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>제휴 포인트 조회 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>KT샵 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="상품 주문" data-api-code="oif_2402" data-api-method="POST" data-api-path="/api/v1/shop/orders" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>상품 주문 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>통합과금 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="결제 승인" data-api-code="oif_2501" data-api-method="POST" data-api-path="/api/v1/billing/approval" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>결제 승인 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>인증/보안 <em>(5)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>인증 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="토큰 발급" data-api-code="oif_3101" data-api-method="POST" data-api-path="/api/v1/auth/token" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>토큰 발급 API</span></button></li>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="토큰 검증" data-api-code="oif_3102" data-api-method="POST" data-api-path="/api/v1/auth/verify" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>토큰 검증 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>보안 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="IP 접근 제어" data-api-code="oif_3201" data-api-method="GET" data-api-path="/api/v1/security/ip-rules" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>IP 접근 제어 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>커뮤니케이션 <em>(6)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>메시지 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="SMS 발송" data-api-code="oif_4101" data-api-method="POST" data-api-path="/api/v1/message/sms" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>SMS 발송 API</span></button></li>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="알림톡 발송" data-api-code="oif_4102" data-api-method="POST" data-api-path="/api/v1/message/alimtalk" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>알림톡 발송 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>콜 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="번호 인증" data-api-code="oif_4201" data-api-method="POST" data-api-path="/api/v1/call/verification" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>번호 인증 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>위치/IOT <em>(4)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>위치 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="위치 조회" data-api-code="oif_5101" data-api-method="GET" data-api-path="/api/v1/location/search" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>위치 조회 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>IOT API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="디바이스 상태" data-api-code="oif_5201" data-api-method="GET" data-api-path="/api/v1/iot/devices/status" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>디바이스 상태 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>플랫폼/인프라 <em>(3)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>플랫폼 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="서비스 상태" data-api-code="oif_6101" data-api-method="GET" data-api-path="/api/v1/platform/status" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>서비스 상태 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="rest">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>미디어/콘텐츠 <em>(2)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>콘텐츠 API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="콘텐츠 목록" data-api-code="oif_7101" data-api-method="GET" data-api-path="/api/v1/contents" data-api-protocol="rest"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>콘텐츠 목록 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kt-tool-tree__branch" data-protocol="soap">
+                                    <button type="button" class="kt-tool-tree__branch-btn" aria-expanded="false"><i class="kt-tool-icon kt-tool-icon--folder" aria-hidden="true"></i><span>기타 <em>(1)</em></span><i class="kt-tool-tree__toggle" aria-hidden="true"></i></button>
+                                    <ul class="kt-tool-tree__children" hidden>
+                                        <li class="kt-tool-tree__group">
+                                            <button type="button" class="kt-tool-tree__group-btn" aria-expanded="false"><span>SOAP API</span><i class="kt-tool-tree__small-toggle" aria-hidden="true"></i></button>
+                                            <ul hidden>
+                                                <li><button type="button" class="kt-tool-tree__item" data-api-leaf data-api-name="레거시 연동" data-api-code="oif_8101" data-api-method="POST" data-api-path="/soap/legacy/connect" data-api-protocol="soap"><i class="kt-tool-icon kt-tool-icon--document" aria-hidden="true"></i><span>레거시 연동 API</span></button></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p class="kt-tool-tree__empty" hidden>검색 결과가 없습니다.</p>
+                        </nav>
+                    </aside>
+
+                    <section class="kt-tool-detail" aria-labelledby="apiDetailTitle">
+                        <div class="kt-tool-detail__head">
+                            <div>
+                                <span class="kt-badge kt-badge--blue">REST</span>
+                                <strong id="apiDetailTitle" data-api-detail="name">쿠폰발급</strong>
+                            </div>
+                            <span data-api-detail="code">oif_2118</span>
+                        </div>
+                        <p class="kt-tool-detail__path"><span data-api-detail="method">POST</span><span data-api-detail="path">/api/v1/coupon/issue</span></p>
+
+                        <section class="kt-tool-data" aria-labelledby="apiRequestTitle">
+                            <h2 id="apiRequestTitle">Request</h2>
+                            <table class="kt-tool-table kt-tool-table--request">
+                                <caption>Request parameter table</caption>
+                                <colgroup>
+                                    <col style="width: 200px" />
+                                    <col style="width: 150px" />
+                                    <col style="width: 160px" />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr><th>id</th><th>type</th><th>required/optional</th><th>description</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>user_id <span class="kt-tool-sensitive">민감 1</span></td><td>string</td><td>required</td><td>사용자 고유 ID</td></tr>
+                                    <tr><td>coupon_type</td><td>string</td><td>required</td><td>쿠폰 유형 코드<br />예: DISCOUNT_10</td></tr>
+                                    <tr><td>expire_at</td><td>date</td><td>optional</td><td>쿠폰 만료일 (YYYY-MM-DD)</td></tr>
+                                    <tr><td>quantity</td><td>integer</td><td>optional</td><td>발급 수량 (기본값: 1, 최대: 100)</td></tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <section class="kt-tool-data kt-tool-data--response" aria-labelledby="apiResponseBodyTitle">
+                            <h2 id="apiResponseBodyTitle">Response body</h2>
+                            <table class="kt-tool-table kt-tool-table--response">
+                                <caption>Response body table</caption>
+                                <colgroup>
+                                    <col style="width: 200px" />
+                                    <col style="width: 150px" />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr><th>field</th><th>type</th><th>description</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>success</td><td>boolean</td><td>처리 성공 여부</td></tr>
+                                    <tr><td>data.coupon_id</td><td>string</td><td>발급된 쿠폰 ID</td></tr>
+                                    <tr><td>data.coupon_type</td><td>string</td><td>쿠폰 유형</td></tr>
+                                    <tr><td>data.discount_rate</td><td>integer</td><td>할인율 (%)</td></tr>
+                                    <tr><td>data.expire_at</td><td>date</td><td>쿠폰 만료일</td></tr>
+                                    <tr><td>data.issued_at</td><td>datetime</td><td>발급 일시 (ISO 8601)</td></tr>
+                                    <tr><td>error_code</td><td>string</td><td>에러 발생 시 에러 코드 반환, 성공인 경우 0 반환</td></tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </section>
+
+                    <aside class="kt-tool-playground" aria-label="API 테스트" data-code-snippet>
+                        <div class="kt-tool-code-tabs" role="tablist" aria-label="코드 언어">
+                            <button type="button" class="is-active" role="tab" aria-selected="true" aria-controls="snippetShell" data-snippet-tab="shell">Shell</button>
+                            <button type="button" role="tab" aria-selected="false" aria-controls="snippetNode" data-snippet-tab="node">Node</button>
+                            <button type="button" role="tab" aria-selected="false" aria-controls="snippetJava" data-snippet-tab="java">Java</button>
+                            <button type="button" role="tab" aria-selected="false" aria-controls="snippetPython" data-snippet-tab="python">Python</button>
+                        </div>
+
+                            <div class="kt-tool-form">
+                                <section>
+                                    <h2>AUTHENTICATION</h2>
+                                    <label class="blind" for="toolApiKeyId">Api key ID</label>
+                                    <input type="text" class="kt-input" id="toolApiKeyId" placeholder="Api key ID" />
+                                    <label class="blind" for="toolApiKeyPw">Api key Password</label>
+                                    <input type="password" class="kt-input" id="toolApiKeyPw" placeholder="Api key Password" />
+                                </section>
+                                <section>
+                                    <h2>BODY PARAMS</h2>
+                                    <label class="blind" for="toolUserId">user_id</label>
+                                    <input type="text" class="kt-input" id="toolUserId" placeholder="user_id" />
+                                    <label class="blind" for="toolCouponType">coupon_type</label>
+                                    <input type="text" class="kt-input" id="toolCouponType" placeholder="coupon_type" />
+                                    <label class="blind" for="toolExpireAt">expire_at</label>
+                                    <input type="text" class="kt-input" id="toolExpireAt" placeholder="expire_at" />
+                                    <label class="blind" for="toolQuantity">quantity</label>
+                                    <input type="number" class="kt-input" id="toolQuantity" placeholder="quantity" />
+                                </section>
+                            </div>
+
+                            <section class="kt-tool-snippet" aria-labelledby="curlRequestTitle">
+                                <div class="kt-tool-snippet__title">
+                                    <h2 id="curlRequestTitle">cURL Request</h2>
+                                    <button type="button" class="kt-tool-copy" aria-label="코드 복사" data-snippet-copy><span class="blind">코드 복사</span></button>
+                                </div>
+                                <pre id="snippetShell" class="kt-tool-code is-active" role="tabpanel" data-snippet-panel="shell" data-code="curl --request POST \ --url https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header 'Content-Type:application/json' \ --data '{&quot;user_id&quot;: &quot;value&quot;, &quot;coupon_type&quot;: &quot;value&quot;}'"><code class="language-bash">curl --request POST \ --url https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header 'Content-Type:application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'</code></pre>
+                                <pre id="snippetNode" class="kt-tool-code" role="tabpanel" data-snippet-panel="node" data-code="// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.&#10;await fetch('https://api.kt.com/api/v1/coupon/issue', { method: 'POST' });" hidden><code class="language-javascript">// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.
+await fetch('https://api.kt.com/api/v1/coupon/issue', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ user_id: 'value', coupon_type: 'value' })
+});</code></pre>
+                                <pre id="snippetJava" class="kt-tool-code" role="tabpanel" data-snippet-panel="java" data-code="// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.&#10;request.POST(bodyPublisher);" hidden><code class="language-java">// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.
+HttpRequest request = HttpRequest.newBuilder()
+  .uri(URI.create("https://api.kt.com/api/v1/coupon/issue"))
+  .header("Content-Type", "application/json")
+  .POST(HttpRequest.BodyPublishers.ofString(body))
+  .build();</code></pre>
+                                <pre id="snippetPython" class="kt-tool-code" role="tabpanel" data-snippet-panel="python" data-code="# API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.&#10;requests.post(url, json=payload, headers=headers)" hidden><code class="language-python"># API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.
+response = requests.post(
+    "https://api.kt.com/api/v1/coupon/issue",
+    json={"user_id": "value", "coupon_type": "value"},
+    headers=headers,
+)</code></pre>
+                            </section>
+
+                            <section class="kt-tool-snippet kt-tool-snippet--response" aria-labelledby="snippetResponseTitle">
+                                <div class="kt-tool-snippet__title">
+                                    <h2 id="snippetResponseTitle">Response</h2>
+                                    <span class="kt-tool-status"><i aria-hidden="true"></i>200 OK</span>
+                                </div>
+                                <pre class="kt-tool-code kt-tool-code--response"><code class="language-javascript">// 200 OK — 오후 3:16:43
+{ "success": true, "data": { "coupon_id": "CPR_20260330_001", "coupon_type": "DISCOUNT_10", "discount_rate": 10, "expire_at": "2026-12-31", "issued_at": "2026-03-30T15:42:00Z" }, "error_code": 0 }</code></pre>
+                            </section>
+                    </aside>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
+        </div>
+    </body>
+</html>

@@ -866,6 +866,377 @@ const ui = {
             });
         });
     },
+    apiTree: () => {
+        const trees = document.querySelectorAll('[data-api-tree]');
+
+        if (!trees.length) {
+            return;
+        }
+
+        const getDirectList = item => Array.from(item.children).find(child => child.tagName === 'UL');
+
+        const setOpen = (item, isOpen) => {
+            if (!item) {
+                return;
+            }
+
+            const button = Array.from(item.children).find(child => child.tagName === 'BUTTON');
+            const list = getDirectList(item);
+
+            if (!list) {
+                item.classList.remove('is-open');
+                button?.setAttribute('aria-expanded', 'false');
+                return;
+            }
+
+            item.classList.toggle('is-open', isOpen);
+            button?.setAttribute('aria-expanded', String(isOpen));
+            list.hidden = !isOpen;
+        };
+
+        const getLeafData = leaf => ({
+            name: leaf.dataset.apiName || leaf.textContent.trim(),
+            code: leaf.dataset.apiCode || '',
+            method: leaf.dataset.apiMethod || '',
+            path: leaf.dataset.apiPath || '',
+            protocol: leaf.dataset.apiProtocol || 'rest',
+        });
+
+        const syncDetail = (tree, leaf) => {
+            const data = getLeafData(leaf);
+            const page = tree.closest('.kt-tool-main') || document;
+            const protocolBadge = page.querySelector('.kt-tool-detail__head .kt-badge');
+
+            Object.entries(data).forEach(([key, value]) => {
+                page.querySelectorAll(`[data-api-detail="${key}"]`).forEach(target => {
+                    target.textContent = key === 'protocol' ? value.toUpperCase() : value;
+                });
+            });
+
+            if (protocolBadge) {
+                protocolBadge.textContent = data.protocol.toUpperCase();
+            }
+
+            tree.dispatchEvent(
+                new CustomEvent('api-tree-select', {
+                    bubbles: true,
+                    detail: data,
+                }),
+            );
+        };
+
+        trees.forEach(tree => {
+            const sidebar = tree.closest('.kt-tool-sidebar') || document;
+            const searchInput = sidebar.querySelector('[data-api-tree-search] input');
+            const tabButtons = sidebar.querySelectorAll('[data-api-tree-tab]');
+            const branches = tree.querySelectorAll('.kt-tool-tree__branch');
+            const empty = tree.querySelector('.kt-tool-tree__empty');
+            let activeProtocol = 'all';
+
+            const applyFilter = () => {
+                const keyword = (searchInput?.value || '').trim().toLowerCase();
+                let hasVisibleBranch = false;
+
+                branches.forEach(branch => {
+                    const protocol = branch.dataset.protocol || 'rest';
+                    const protocolMatched = activeProtocol === 'all' || activeProtocol === protocol;
+                    let branchMatched = !keyword || branch.textContent.toLowerCase().includes(keyword);
+
+                    branch.querySelectorAll('[data-api-leaf]').forEach(leaf => {
+                        const item = leaf.closest('li');
+                        const terms = [leaf.textContent, leaf.dataset.apiName, leaf.dataset.apiCode, leaf.dataset.apiMethod, leaf.dataset.apiPath]
+                            .filter(Boolean)
+                            .join(' ')
+                            .toLowerCase();
+                        const leafMatched = !keyword || terms.includes(keyword);
+
+                        if (item) {
+                            item.hidden = protocolMatched && !leafMatched;
+                        }
+
+                        branchMatched = branchMatched || leafMatched;
+                    });
+
+                    branch.querySelectorAll('.kt-tool-tree__children > li').forEach(group => {
+                        const groupButton = Array.from(group.children).find(child => child.classList?.contains('kt-tool-tree__group-btn'));
+
+                        if (!groupButton) {
+                            return;
+                        }
+
+                        const groupTextMatched = !keyword || groupButton.textContent.toLowerCase().includes(keyword);
+                        const visibleChild = Array.from(group.querySelectorAll('li')).some(item => !item.hidden);
+                        const groupMatched = groupTextMatched || visibleChild;
+
+                        group.hidden = protocolMatched && !groupMatched;
+
+                        if (keyword && groupMatched) {
+                            setOpen(group, true);
+                        }
+                    });
+
+                    const visibleLeaf = Array.from(branch.querySelectorAll('[data-api-leaf]')).some(leaf => !leaf.closest('li')?.hidden);
+                    const visibleGroup = Array.from(branch.querySelectorAll('.kt-tool-tree__children > li')).some(item => !item.hidden);
+                    const branchVisible = protocolMatched && (branchMatched || visibleLeaf || visibleGroup);
+
+                    branch.hidden = !branchVisible;
+
+                    if (branchVisible) {
+                        hasVisibleBranch = true;
+                    }
+
+                    if (keyword && branchVisible) {
+                        setOpen(branch, true);
+                    }
+                });
+
+                if (empty) {
+                    empty.hidden = hasVisibleBranch;
+                }
+            };
+
+            tree.addEventListener('click', event => {
+                const branchButton = event.target.closest('.kt-tool-tree__branch-btn');
+                const groupButton = event.target.closest('.kt-tool-tree__group-btn');
+                const leaf = event.target.closest('[data-api-leaf]');
+
+                if (branchButton && tree.contains(branchButton)) {
+                    const branch = branchButton.closest('.kt-tool-tree__branch');
+
+                    setOpen(branch, !branch?.classList.contains('is-open'));
+                    return;
+                }
+
+                if (groupButton && tree.contains(groupButton)) {
+                    const group = groupButton.closest('li');
+
+                    setOpen(group, !group?.classList.contains('is-open'));
+                    return;
+                }
+
+                if (leaf && tree.contains(leaf)) {
+                    tree.querySelectorAll('[data-api-leaf].is-active').forEach(item => {
+                        item.classList.remove('is-active');
+                    });
+                    leaf.classList.add('is-active');
+                    syncDetail(tree, leaf);
+                }
+            });
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    activeProtocol = button.dataset.apiTreeTab || 'all';
+
+                    tabButtons.forEach(tab => {
+                        const isActive = tab === button;
+
+                        tab.classList.toggle('is-active', isActive);
+                        tab.setAttribute('aria-selected', String(isActive));
+                    });
+
+                    applyFilter();
+                });
+            });
+
+            searchInput?.addEventListener('input', applyFilter);
+            applyFilter();
+        });
+    },
+    codeSnippet: () => {
+        const snippets = document.querySelectorAll('[data-code-snippet]');
+
+        if (!snippets.length) {
+            return;
+        }
+
+        const writeClipboard = text => {
+            if (navigator.clipboard?.writeText) {
+                return navigator.clipboard.writeText(text);
+            }
+
+            const textarea = document.createElement('textarea');
+
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.top = '-9999px';
+            document.body.append(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            textarea.remove();
+
+            return Promise.resolve();
+        };
+
+        const escapeHtml = value =>
+            value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+
+        const renderShellHighlight = code => {
+            const text = code.textContent;
+            const tokenPattern = /(curl|--request|--url|--header|--data|POST|GET|PUT|PATCH|DELETE|https:\/\/[^\s]+|'[^']*')/g;
+            let html = '';
+            let cursor = 0;
+
+            text.replace(tokenPattern, (token, _match, index) => {
+                const tokenClass = token === 'curl' ? 'kt-code-command' : token.startsWith('https://') ? 'kt-code-url' : token.startsWith("'") ? 'kt-code-string' : 'kt-code-flag';
+
+                html += escapeHtml(text.slice(cursor, index));
+                html += `<span class="${tokenClass}">${escapeHtml(token)}</span>`;
+                cursor = index + token.length;
+
+                return token;
+            });
+
+            code.innerHTML = html + escapeHtml(text.slice(cursor));
+        };
+
+        const getSnippetData = data => {
+            const method = data.method || 'POST';
+            const path = data.path || '/api/v1/coupon/issue';
+            const url = `https://api.kt.com${path}`;
+            const hasBody = method.toUpperCase() !== 'GET';
+            const payload = hasBody ? '{"user_id": "value", "coupon_type": "value"}' : '';
+
+            return {
+                shell: {
+                    language: 'language-bash',
+                    text: `curl --request ${method} \\ --url ${url} \\ --header 'X-API-Key-ID: your_key_id' \\ --header 'X-API-Key: your_key_pw' \\ --header 'Content-Type:application/json'${hasBody ? ` \\ --data '${payload}'` : ''}`,
+                },
+                node: {
+                    language: 'language-javascript',
+                    text: [
+                        '// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.',
+                        `await fetch('${url}', {`,
+                        `  method: '${method}',`,
+                        "  headers: { 'Content-Type': 'application/json' },",
+                        hasBody ? `  body: JSON.stringify(${payload})` : '',
+                        '});',
+                    ]
+                        .filter(Boolean)
+                        .join('\n'),
+                },
+                java: {
+                    language: 'language-java',
+                    text: [
+                        '// API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.',
+                        'HttpRequest request = HttpRequest.newBuilder()',
+                        `  .uri(URI.create("${url}"))`,
+                        '  .header("Content-Type", "application/json")',
+                        hasBody ? '  .method("' + method + '", HttpRequest.BodyPublishers.ofString(body))' : '  .GET()',
+                        '  .build();',
+                    ].join('\n'),
+                },
+                python: {
+                    language: 'language-python',
+                    text: [
+                        '# API Key와 body parameter 값을 실제 값으로 바꿔 호출합니다.',
+                        'response = requests.request(',
+                        `    "${method}",`,
+                        `    "${url}",`,
+                        hasBody ? '    json={"user_id": "value", "coupon_type": "value"},' : '',
+                        '    headers=headers,',
+                        ')',
+                    ]
+                        .filter(Boolean)
+                        .join('\n'),
+                },
+            };
+        };
+
+        snippets.forEach(snippet => {
+            const tabs = snippet.querySelectorAll('[data-snippet-tab]');
+            const panels = snippet.querySelectorAll('[data-snippet-panel]');
+            const copy = snippet.querySelector('[data-snippet-copy]');
+            const page = snippet.closest('.kt-tool-main') || document;
+
+            const highlightPanel = panel => {
+                const code = panel?.querySelector('code');
+
+                if (!code || !window.hljs) {
+                    return;
+                }
+
+                code.removeAttribute('data-highlighted');
+                window.hljs.highlightElement(code);
+
+                if (code.classList.contains('language-bash')) {
+                    renderShellHighlight(code);
+                }
+            };
+
+            const setActivePanel = target => {
+                tabs.forEach(tab => {
+                    const isActive = tab.dataset.snippetTab === target;
+
+                    tab.classList.toggle('is-active', isActive);
+                    tab.setAttribute('aria-selected', String(isActive));
+                });
+
+                panels.forEach(panel => {
+                    const isActive = panel.dataset.snippetPanel === target;
+
+                    panel.hidden = !isActive;
+                    panel.classList.toggle('is-active', isActive);
+                    panel.setAttribute('aria-hidden', String(!isActive));
+                });
+
+                highlightPanel(snippet.querySelector(`[data-snippet-panel="${target}"]`));
+            };
+
+            const renderSnippet = data => {
+                const snippetData = getSnippetData(data);
+
+                panels.forEach(panel => {
+                    const panelData = snippetData[panel.dataset.snippetPanel];
+
+                    if (!panelData) {
+                        return;
+                    }
+
+                    panel.dataset.code = panelData.text;
+                    const code = panel.querySelector('code');
+
+                    code.className = panelData.language;
+                    code.textContent = panelData.text;
+                    highlightPanel(panel);
+                });
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    setActivePanel(tab.dataset.snippetTab);
+                });
+            });
+
+            copy?.addEventListener('click', () => {
+                const activePanel = snippet.querySelector('[data-snippet-panel].is-active');
+                const code = activePanel?.dataset.code || activePanel?.textContent.trim() || '';
+                const defaultLabel = copy.getAttribute('aria-label') || '코드 복사';
+
+                writeClipboard(code).then(() => {
+                    copy.classList.add('is-copied');
+                    copy.setAttribute('aria-label', '복사 완료');
+
+                    window.setTimeout(() => {
+                        copy.classList.remove('is-copied');
+                        copy.setAttribute('aria-label', defaultLabel);
+                    }, 1400);
+                });
+            });
+
+            page.addEventListener('api-tree-select', event => {
+                renderSnippet(event.detail);
+            });
+
+            setActivePanel(snippet.querySelector('[data-snippet-tab].is-active')?.dataset.snippetTab || 'shell');
+            snippet.querySelectorAll('.kt-tool-code code').forEach(code => {
+                const panel = code.closest('.kt-tool-code');
+
+                panel.dataset.code = code.textContent.trim();
+                highlightPanel(panel);
+            });
+        });
+    },
     // New Work 페이지 검색, 선택, 삭제 인터랙션
     newwork: () => {
         const searches = document.querySelectorAll('[data-newwork-search]');
@@ -1301,6 +1672,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.supportInquiry();
     ui.pagination();
     ui.component();
+    ui.apiTree();
+    ui.codeSnippet();
     ui.newwork();
     ui.init();
 });
