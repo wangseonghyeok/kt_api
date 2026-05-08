@@ -26,7 +26,17 @@
                 <div class="kt-tool-body">
                     <aside class="kt-tool-sidebar" aria-label="API 탐색">
                         <div class="kt-tool-search" data-api-tree-search>
-                            <button type="button" class="kt-tool-search__button">API 검색</button>
+                            <div class="kt-search-field" data-search_field>
+                                <input type="text" id="toolApiSearch" class="kt-input" placeholder="API 검색" aria-label="API 검색" />
+                                <span class="kt-search-field__actions">
+                                    <button type="button" class="kt-input-field__clear kt-search-field__clear" data-clear_input aria-controls="toolApiSearch" aria-label="검색어 삭제" hidden>
+                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                    </button>
+                                    <button type="button" class="kt-search-field__submit" aria-label="검색">
+                                        <img src="/assets/img/components/ico_search.svg" alt="" />
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                         <div class="kt-tool-tabs" role="tablist" aria-label="API 유형">
                             <button type="button" class="is-active" role="tab" aria-selected="true" data-api-tree-tab="all">전체</button>
@@ -587,6 +597,64 @@
                                 </tbody>
                             </table>
                         </section>
+
+                        <section class="kt-tool-data kt-tool-data--response" aria-labelledby="apiResponseBodyTitle">
+                            <h2 id="apiResponseBodyTitle">Response body</h2>
+                            <table class="kt-tool-table kt-tool-table--response">
+                                <caption>
+                                    Response body table
+                                </caption>
+                                <colgroup>
+                                    <col style="width: 200px" />
+                                    <col style="width: 150px" />
+                                    <col />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>field</th>
+                                        <th>type</th>
+                                        <th>description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>success</td>
+                                        <td>boolean</td>
+                                        <td>처리 성공 여부</td>
+                                    </tr>
+                                    <tr>
+                                        <td>data.coupon_id</td>
+                                        <td>string</td>
+                                        <td>발급된 쿠폰 ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>data.coupon_type</td>
+                                        <td>string</td>
+                                        <td>쿠폰 유형</td>
+                                    </tr>
+                                    <tr>
+                                        <td>data.discount_rate</td>
+                                        <td>integer</td>
+                                        <td>할인율 (%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>data.expire_at</td>
+                                        <td>date</td>
+                                        <td>쿠폰 만료일</td>
+                                    </tr>
+                                    <tr>
+                                        <td>data.issued_at</td>
+                                        <td>datetime</td>
+                                        <td>발급 일시 (ISO 8601)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>error_code</td>
+                                        <td>string</td>
+                                        <td>에러 발생 시 에러 코드 반환, 성공인 경우 0 반환</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </section>
 
                     <aside class="kt-tool-playground" aria-label="API 테스트" data-code-snippet>
@@ -601,20 +669,74 @@
                             <section>
                                 <h2>AUTHENTICATION</h2>
                                 <label class="blind" for="toolApiKeyId">Api key ID</label>
-                                <input type="text" class="kt-input" id="toolApiKeyId" placeholder="Api key ID" />
+                                <span class="kt-input-field">
+                                    <input type="text" class="kt-input" id="toolApiKeyId" placeholder="Api key ID" />
+                                    <span class="kt-input-field__actions">
+                                        <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="toolApiKeyId" aria-label="Api key ID 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                                 <label class="blind" for="toolApiKeyPw">Api key Password</label>
-                                <input type="password" class="kt-input" id="toolApiKeyPw" placeholder="Api key Password" />
+                                <span class="kt-password">
+                                    <input type="password" class="kt-input" id="toolApiKeyPw" placeholder="Api key Password" />
+                                    <span class="kt-password__actions">
+                                        <button type="button" class="kt-input-field__clear kt-password__clear" data-clear_input aria-controls="toolApiKeyPw" aria-label="Api key Password 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="kt-password__toggle"
+                                            data-password_toggle
+                                            data-icon-show="/assets/img/components/ico_eye.svg"
+                                            data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                            aria-controls="toolApiKeyPw"
+                                            aria-pressed="false"
+                                            aria-label="비밀번호 보기"
+                                        >
+                                            <img src="/assets/img/components/ico_eye.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                             </section>
                             <section>
                                 <h2>BODY PARAMS</h2>
                                 <label class="blind" for="toolUserId">user_id</label>
-                                <input type="text" class="kt-input" id="toolUserId" placeholder="user_id" />
+                                <span class="kt-input-field">
+                                    <input type="text" class="kt-input" id="toolUserId" placeholder="user_id" />
+                                    <span class="kt-input-field__actions">
+                                        <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="toolUserId" aria-label="user_id 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                                 <label class="blind" for="toolCouponType">coupon_type</label>
-                                <input type="text" class="kt-input" id="toolCouponType" placeholder="coupon_type" />
+                                <span class="kt-input-field">
+                                    <input type="text" class="kt-input" id="toolCouponType" placeholder="coupon_type" />
+                                    <span class="kt-input-field__actions">
+                                        <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="toolCouponType" aria-label="coupon_type 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                                 <label class="blind" for="toolExpireAt">expire_at</label>
-                                <input type="text" class="kt-input" id="toolExpireAt" placeholder="expire_at" />
+                                <span class="kt-input-field">
+                                    <input type="text" class="kt-input" id="toolExpireAt" placeholder="expire_at" />
+                                    <span class="kt-input-field__actions">
+                                        <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="toolExpireAt" aria-label="expire_at 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                                 <label class="blind" for="toolQuantity">quantity</label>
-                                <input type="number" class="kt-input" id="toolQuantity" placeholder="quantity" />
+                                <span class="kt-input-field">
+                                    <input type="number" class="kt-input" id="toolQuantity" placeholder="quantity" />
+                                    <span class="kt-input-field__actions">
+                                        <button type="button" class="kt-input-field__clear" data-clear_input aria-controls="toolQuantity" aria-label="quantity 삭제" hidden>
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
                             </section>
                         </div>
 
@@ -628,9 +750,13 @@
                                 class="kt-tool-code is-active"
                                 role="tabpanel"
                                 data-snippet-panel="shell"
-                                data-code="curl --request POST \ --url&#10;https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header 'Content-Type: application/json' \ --data '{&quot;user_id&quot;: &quot;value&quot;, &quot;coupon_type&quot;: &quot;value&quot;}'"
-                            ><code class="language-bash">curl --request POST \ --url
-https://api.kt.com/api/v1/coupon/issue \ --header 'X-API-Key-ID: your_key_id' \ --header 'X-API-Key: your_key_pw' \ --header 'Content-Type: application/json' \ --data '{"user_id": "value", "coupon_type": "value"}'</code></pre>
+                                data-code="curl --request POST \&#10;  --url https://api.kt.com/api/v1/coupon/issue \&#10;  --header 'X-API-Key-ID: your_key_id' \&#10;  --header 'X-API-Key: your_key_pw' \&#10;  --header 'Content-Type: application/json' \&#10;  --data '{&quot;user_id&quot;: &quot;value&quot;, &quot;coupon_type&quot;: &quot;value&quot;}'"
+                            ><code class="language-bash">curl --request POST \
+  --url https://api.kt.com/api/v1/coupon/issue \
+  --header 'X-API-Key-ID: your_key_id' \
+  --header 'X-API-Key: your_key_pw' \
+  --header 'Content-Type: application/json' \
+  --data '{"user_id": "value", "coupon_type": "value"}'</code></pre>
                             <pre
                                 id="snippetNode"
                                 class="kt-tool-code"

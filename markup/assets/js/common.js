@@ -866,6 +866,90 @@ const ui = {
             });
         });
     },
+    codeSnippet: () => {
+        const snippetWraps = document.querySelectorAll('[data-code-snippet]');
+
+        if (window.hljs) {
+            document.querySelectorAll('.kt-tool-code code').forEach(code => {
+                window.hljs.highlightElement(code);
+            });
+        }
+
+        // eslint-disable-next-line no-shadow
+        snippetWraps.forEach(wrap => {
+            const tabs = wrap.querySelectorAll('[data-snippet-tab]');
+            const panels = wrap.querySelectorAll('[data-snippet-panel]');
+            const copyButton = wrap.querySelector('[data-snippet-copy]');
+
+            if (!tabs.length || !panels.length) {
+                return;
+            }
+
+            const activateTab = activeTab => {
+                const activeName = activeTab.dataset.snippetTab;
+
+                tabs.forEach(tab => {
+                    const isActive = tab === activeTab;
+
+                    tab.classList.toggle('is-active', isActive);
+                    tab.setAttribute('aria-selected', String(isActive));
+                    tab.tabIndex = isActive ? 0 : -1;
+                });
+
+                panels.forEach(panel => {
+                    const isActive = panel.dataset.snippetPanel === activeName;
+
+                    panel.classList.toggle('is-active', isActive);
+                    panel.hidden = !isActive;
+                    panel.setAttribute('aria-hidden', String(!isActive));
+                });
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => activateTab(tab));
+                tab.addEventListener('keydown', event => {
+                    const keyMap = {
+                        ArrowLeft: -1,
+                        ArrowUp: -1,
+                        ArrowRight: 1,
+                        ArrowDown: 1,
+                    };
+                    const direction = keyMap[event.key];
+
+                    if (!direction) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    const tabArray = Array.from(tabs);
+                    const currentIndex = tabArray.indexOf(tab);
+                    const nextIndex = (currentIndex + direction + tabArray.length) % tabArray.length;
+                    const nextTab = tabArray[nextIndex];
+
+                    activateTab(nextTab);
+                    nextTab.focus();
+                });
+            });
+
+            copyButton?.addEventListener('click', async () => {
+                const activePanel = wrap.querySelector('[data-snippet-panel].is-active');
+                const text = activePanel?.querySelector('code')?.textContent || activePanel?.textContent || '';
+
+                if (!text.trim() || !navigator.clipboard) {
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(text.trim());
+                    copyButton.classList.add('is-copied');
+                    window.setTimeout(() => copyButton.classList.remove('is-copied'), 1400);
+                } catch (error) {
+                    copyButton.classList.remove('is-copied');
+                }
+            });
+        });
+    },
     apiTree: () => {
         const trees = document.querySelectorAll('[data-api-tree]');
 
@@ -1474,8 +1558,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.supportInquiry();
     ui.pagination();
     ui.component();
-    ui.apiTree();
     ui.codeSnippet();
+    ui.apiTree();
     ui.newwork();
     ui.init();
 });
