@@ -88,13 +88,10 @@
             "[admin-work-06] 관리자 권한 - KEY 재발급 승인처리 팝업": ["/admin-work-06.html", "mainframe", "대기", "기획: 컨펌대기 / 디자인: 4/27~4/30 / 퍼블: 5/18~5/21"]
         },
         "Workspace": {
-            "[intro-work-01] API Workspace": ["/intro-work-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 5/12~5/13"],
-            "[intro-work-02] OUATH Workspace (2차범위)": ["/intro-work-02.html", "mainframe", "대기", "기획: 1차범위 미해당 / 디자인: 1차범위 미해당 / 퍼블: -"],
-            "[intro-work-03] MCP Workspace (2차범위)": ["/intro-work-03.html", "mainframe", "대기", "기획: 1차범위 미해당 / 디자인: 1차범위 미해당 / 퍼블: -"]
+            "[intro-work-01] API Workspace": ["/intro-work-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 5/12~5/13"]
         },
         "Tool": {
-            "[Tool-01] API Playground (2차범위 - 테스트도구)": ["/Tool-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 5/12~5/13"],
-            "[Tool-02] MCP Playground (2차범위)": ["/Tool-02.html", "mainframe", "대기", "기획: 1차범위 미해당 / 디자인: 1차범위 미해당 / 퍼블: -"]
+            "[Tool-01] API Playground (2차범위 - 테스트도구)": ["/Tool-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 5/12~5/13"]
         },
         "Support": {
             "[Support-01] 공지사항": ["/Support-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 05/14 ~5/15"],

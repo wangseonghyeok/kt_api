@@ -28,70 +28,10 @@
                         <h2 id="apiIntroHeroTitle">API Workspace</h2>
                         <p>KT REST API를 팀 단위로 구독·관리하고 멤버, API 구독, IP Whitelist, API Key를 하나의 워크스페이스에서 통합 관리하세요.</p>
                         <div class="kt-intro-hero__actions">
-                            <a href="newwork-01.html" class="kt-btn kt-btn--accent kt-intro-hero__btn">워크스페이스 시작</a>
-                            <a href="Support-02.html" class="kt-btn kt-btn--tertiary kt-intro-hero__btn">API 문서 보기</a>
+                            <button type="button" class="kt-btn kt-btn--accent kt-intro-hero__btn">워크스페이스 시작</button>
+                            <button type="button" class="kt-btn kt-btn--tertiary kt-intro-hero__btn">API 문서 보기</button>
                         </div>
                     </div>
-                </section>
-
-                <section class="kt-intro-section kt-intro-feature" aria-labelledby="apiIntroFeatureTitle">
-                    <h2 id="apiIntroFeatureTitle">핵심 특징</h2>
-                    <ul class="kt-intro-feature__grid">
-                        <li>
-                            <i class="kt-intro-icon kt-intro-icon--api" aria-hidden="true"></i>
-                            <strong>API 구독 관리</strong>
-                            <p>필요한 KT REST API를 검색하고 구독을 신청할 수 있으며, 민감 파라미터 포함 API는 관리자 승인 후 사용할 수 있습니다.</p>
-                        </li>
-                        <li>
-                            <i class="kt-intro-icon kt-intro-icon--key" aria-hidden="true"></i>
-                            <strong>API Key 발급</strong>
-                            <p>DEV/PRD 환경별 API Key가 자동 발급되며, 하나의 키로 구독한 모든 API에 접근할 수 있습니다.</p>
-                        </li>
-                        <li>
-                            <i class="kt-intro-icon kt-intro-icon--ip" aria-hidden="true"></i>
-                            <strong>IP Whitelist</strong>
-                            <p>API 호출 서버의 IP를 환경별로 등록하여, KT 내부는 Private IP, 외부 파트너는 Public IP 등록이 가능합니다.</p>
-                        </li>
-                        <li>
-                            <i class="kt-intro-icon kt-intro-icon--team" aria-hidden="true"></i>
-                            <strong>팀 멤버 관리</strong>
-                            <p>Owner, Manager, Member 역할별로 팀원을 초대하고 권한을 설정 및 관리할 수 있습니다.</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="kt-intro-section kt-intro-use" aria-labelledby="apiIntroUseTitle">
-                    <h2 id="apiIntroUseTitle">활용사례</h2>
-                    <ul class="kt-intro-use__grid">
-                        <li>
-                            <i class="kt-intro-use__icon kt-intro-use__icon--kt" aria-hidden="true"></i>
-                            <div>
-                                <strong>사내 서비스 KT API 연동</strong>
-                                <p>KT 내부 서비스에서 인증, 쿠폰, 멤버십 등 다양한 API를 호출해 연동할 때</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="kt-intro-use__icon kt-intro-use__icon--partner" aria-hidden="true"></i>
-                            <div>
-                                <strong>외부 파트너 앱 연동</strong>
-                                <p>파트너사가 자사 앱에서 멤버십 조회, 쿠폰 발급 등 KT API를 연동할 때</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="kt-intro-use__icon kt-intro-use__icon--dev" aria-hidden="true"></i>
-                            <div>
-                                <strong>신규 서비스 개발 및 테스트</strong>
-                                <p>DEV 환경에서 충분히 테스트한 후 PRD 전환을 통해 안정적으로 배포할 때</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="kt-intro-use__icon kt-intro-use__icon--team" aria-hidden="true"></i>
-                            <div>
-                                <strong>팀 단위 API 관리</strong>
-                                <p>여러 개발자가 하나의 워크스페이스에서 API와 Key를 함께 관리할 때</p>
-                            </div>
-                        </li>
-                    </ul>
                 </section>
 
                 <section class="kt-intro-section kt-intro-start" aria-labelledby="apiIntroStartTitle">
@@ -110,13 +50,13 @@
                                 <div class="kt-intro-steps__line">
                                     <span class="kt-intro-chip kt-intro-chip--red">KT 내부</span>
                                     <span>Entra ID SSO 계정 준비</span>
-                                    <i aria-hidden="true"></i>
+                                    <i class="kt-intro-steps__option" aria-hidden="true"></i>
                                     <span>별도 가입 없이 KT 사내 계정으로 로그인 가능</span>
                                 </div>
                                 <div class="kt-intro-steps__line">
                                     <span class="kt-intro-chip">외부 파트너</span>
                                     <span>LDAP 계정 필요</span>
-                                    <i aria-hidden="true"></i>
+                                    <i class="kt-intro-steps__option" aria-hidden="true"></i>
                                     <span>KT 담당 PO에게 계정 발급 요청 후 로그인</span>
                                 </div>
                             </div>
@@ -212,6 +152,33 @@
                             </div>
                         </li>
                     </ol>
+                    <button type="button" class="kt-btn kt-btn--primary kt-intro-start__button">시작하기</button>
+                </section>
+
+                <section class="kt-intro-section kt-intro-feature" aria-labelledby="apiIntroFeatureTitle">
+                    <h2 id="apiIntroFeatureTitle">핵심기능</h2>
+                    <ul class="kt-intro-feature__grid">
+                        <li>
+                            <i class="kt-intro-icon kt-intro-icon--api" aria-hidden="true"></i>
+                            <strong>API 구독 관리</strong>
+                            <p>필요한 KT REST API를 검색하고 구독을 신청할 수 있으며, 민감 파라미터 포함 API는 관리자 승인 후 사용할 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <i class="kt-intro-icon kt-intro-icon--key" aria-hidden="true"></i>
+                            <strong>API Key 발급</strong>
+                            <p>DEV/PRD 환경별 API Key가 자동 발급되며, 하나의 키로 구독한 모든 API에 접근할 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <i class="kt-intro-icon kt-intro-icon--ip" aria-hidden="true"></i>
+                            <strong>IP Whitelist</strong>
+                            <p>API 호출 서버의 IP를 환경별로 등록하며, KT 내부는 Private IP, 외부 파트너는 Public IP 등록이 가능합니다.</p>
+                        </li>
+                        <li>
+                            <i class="kt-intro-icon kt-intro-icon--team" aria-hidden="true"></i>
+                            <strong>팀 멤버 관리</strong>
+                            <p>Owner, Manager, Member 역할별로 팀원을 초대하고 권한을 설정 및 관리할 수 있습니다.</p>
+                        </li>
+                    </ul>
                 </section>
             </main>
             <!--#include file="./include/_footer.html"-->
