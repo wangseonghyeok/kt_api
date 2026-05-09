@@ -1768,6 +1768,16 @@
     }
 }
 
+.kt-tool-page {
+    background: $kt-bg;
+
+    #wrap {
+        justify-content: flex-start;
+        min-height: auto;
+        background: $kt-bg;
+    }
+}
+
 .kt-api-intro-main,
 .kt-tool-main {
     margin-top: 80px !important;
@@ -2120,8 +2130,9 @@
     display: grid;
     grid-template-columns: 340px minmax(0, 1fr) 580px;
     gap: 20px;
-    padding: 0 24px 32px 0;
-    align-items: start;
+    min-height: max(976px, calc(100vh - 224px));
+    padding: 0 24px 0 0;
+    align-items: stretch;
 }
 
 .kt-tool-sidebar,
@@ -2131,7 +2142,11 @@
 }
 
 .kt-tool-sidebar {
-    min-height: 976px;
+    display: flex;
+    flex-direction: column;
+    height: max(976px, calc(100vh - 224px));
+    min-height: max(976px, calc(100vh - 224px));
+    overflow: hidden;
     padding: 24px;
     border-radius: 0;
 }
@@ -2222,10 +2237,13 @@
 .kt-tool-tree {
     @include kt-scrollbar(12px, #8b8f97, transparent, 4px);
     width: 292px;
-    height: 554px;
+    flex: 0 0 auto;
+    height: calc(100% - 100px);
+    min-height: 0;
     margin: 16px -8px 0 0;
     padding-right: 8px;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     ul {
         margin: 0;
@@ -2278,7 +2296,7 @@
 
     &:hover,
     &:focus-visible {
-        background: #eef6ff;
+        background: transparent;
     }
 }
 
@@ -2288,7 +2306,9 @@
 
 .kt-tool-tree__group-btn {
     gap: 8px;
+    width: calc(100% - 16px);
     height: 32px;
+    margin-left: 16px;
     padding: 5px 0;
     color: $kt-primary;
     font-size: 15px;
@@ -2302,15 +2322,15 @@
 
     &:hover,
     &:focus-visible {
-        background: #f7f8fb;
+        background: transparent;
         color: $kt-primary;
     }
 }
 
 .kt-tool-tree__group {
     &.is-open > .kt-tool-tree__group-btn {
-        height: 22px;
-        padding: 0;
+        height: 32px;
+        padding: 5px 0;
     }
 
     > ul {
@@ -2320,7 +2340,7 @@
 
 .kt-tool-tree__item {
     gap: 6px;
-    width: 276px;
+    width: calc(100% - 16px);
     height: 32px;
     margin-left: 16px;
     padding: 4px 8px;
@@ -2336,10 +2356,22 @@
     }
 
     &:hover,
-    &:focus-visible,
+    &:focus-visible {
+        background: #eef6ff;
+        color: #006ecd;
+
+        .kt-tool-icon--document {
+            color: #006ecd;
+        }
+    }
+
     &.is-active {
         background: #f3f4f6;
         color: $kt-primary;
+
+        .kt-tool-icon--document {
+            color: $kt-primary;
+        }
     }
 }
 
@@ -2401,7 +2433,7 @@
 
 .kt-tool-detail {
     @include kt-scrollbar(12px, #8b8f97, transparent, 4px);
-    height: 920px;
+    height: max(920px, calc(100vh - 280px));
     margin-top: 24px;
     padding: 19px;
     overflow: auto;
@@ -2560,7 +2592,7 @@
 }
 
 .kt-tool-playground {
-    height: 920px;
+    height: max(920px, calc(100vh - 280px));
     margin-top: 24px;
     overflow: hidden;
     padding: 19px;

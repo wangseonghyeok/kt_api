@@ -1013,9 +1013,15 @@ const ui = {
             const sidebar = tree.closest('.kt-tool-sidebar') || document;
             const searchInput = sidebar.querySelector('[data-api-tree-search] input');
             const tabButtons = sidebar.querySelectorAll('[data-api-tree-tab]');
-            const branches = tree.querySelectorAll('.kt-tool-tree__branch');
             const empty = tree.querySelector('.kt-tool-tree__empty');
             let activeProtocol = 'all';
+            const branches = tree.querySelectorAll('.kt-tool-tree__branch');
+
+            tree.querySelectorAll('.kt-tool-tree__group').forEach(group => {
+                setOpen(group, false);
+            });
+
+            branches.forEach(branch => setOpen(branch, false));
 
             const applyFilter = () => {
                 const keyword = (searchInput?.value || '').trim().toLowerCase();
