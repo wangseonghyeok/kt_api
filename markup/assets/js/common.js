@@ -1023,6 +1023,19 @@ const ui = {
 
             branches.forEach(branch => setOpen(branch, false));
 
+            const openActivePath = () => {
+                const activeLeaf = tree.querySelector('[data-api-leaf].is-active');
+
+                if (!activeLeaf) {
+                    return;
+                }
+
+                setOpen(activeLeaf.closest('.kt-tool-tree__group'), true);
+                setOpen(activeLeaf.closest('.kt-tool-tree__branch'), true);
+            };
+
+            openActivePath();
+
             const applyFilter = () => {
                 const keyword = (searchInput?.value || '').trim().toLowerCase();
                 let hasVisibleBranch = false;
