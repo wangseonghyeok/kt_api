@@ -229,7 +229,7 @@
 
     .kt-workspace-card {
         @include relative();
-        height: 172px;
+        height: 196px;
         padding: 16px 24px;
 
         h3 {
@@ -240,10 +240,38 @@
         }
     }
 
+    .kt-workspace-issue-row {
+        @include flex(center, null);
+        gap: 4px;
+        min-height: 20px;
+        margin-top: 4px;
+        color: $kt-secondary;
+        font-size: 14px;
+        font-weight: var(--fw-Medium);
+        line-height: 1.48;
+    }
+
+    .kt-workspace-issue {
+        white-space: nowrap;
+
+        &--pending {
+            color: #e57300;
+        }
+
+        &--elapsed {
+            color: #005ccc;
+        }
+
+        &--rejected {
+            color: #e0282f;
+        }
+    }
+
     .kt-api-count {
+        @include absolute(left 24px bottom 16px);
         @include flex(flex-end, null);
         gap: 6px;
-        margin-top: 24px;
+        margin-top: 0;
 
         strong {
             font-size: 36px;
