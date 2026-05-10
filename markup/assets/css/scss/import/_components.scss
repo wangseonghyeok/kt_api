@@ -5890,6 +5890,15 @@
     line-height: 1.48;
 }
 
+.kt-btn--popup-line-danger {
+    border-color: #e02830;
+    color: #e02830;
+
+    strong {
+        font-weight: var(--fw-Bold);
+    }
+}
+
 .kt-btn--popup-icon {
     @include inline-flex(center, center);
     width: 32px;
@@ -6582,6 +6591,8 @@
 }
 
 .kt-data-table--api {
+    --kt-api-table-columns: 376px 376px 100px 140px 100px 100px;
+
     td {
         height: 58px;
     }
@@ -6596,7 +6607,7 @@
 
 .kt-api-detail-card {
     display: grid;
-    grid-template-columns: 376px 376px 100px 140px 100px 100px;
+    grid-template-columns: var(--kt-api-table-columns);
     margin: -16px -20px;
     border-bottom: 1px solid #e9eaee;
     color: #4a4c50;
@@ -6630,18 +6641,18 @@
     }
 
     thead {
-        padding-right: 8px;
+        padding-right: 12px;
     }
 
     tr {
         display: grid;
-        grid-template-columns: 376px 376px 100px 140px 100px 100px;
+        grid-template-columns: var(--kt-api-table-columns);
         width: 100%;
     }
 
     tbody {
         max-height: 232px;
-        overflow-y: auto;
+        overflow-y: scroll;
         scrollbar-gutter: stable;
         @include kt-scrollbar;
     }
@@ -6660,13 +6671,28 @@
     }
 
     .kt-api-reject-row td,
+    .kt-api-detail-row td,
     .kt-data-table__empty td {
         grid-column: 1 / -1;
+    }
+
+    .kt-api-detail-row td {
+        align-items: stretch;
+        justify-content: stretch;
+        height: auto;
+        padding: 0;
+    }
+
+    .kt-api-detail-row .kt-api-detail-card {
+        width: 100%;
+        margin: 0;
     }
 
     .kt-api-reject-row td {
         align-items: stretch;
         justify-content: stretch;
+        height: auto;
+        min-height: 77px;
         padding: 0;
     }
 

@@ -19,6 +19,216 @@
         });
     };
 
+    const closeLdapSearch = search => {
+        if (!search) {
+            return;
+        }
+
+        search.classList.remove('is-open');
+        search.querySelectorAll('[data-ldap-search-option].is-active').forEach(option => {
+            option.classList.remove('is-active');
+        });
+        search.querySelectorAll('input[aria-expanded]').forEach(input => {
+            input.setAttribute('aria-expanded', 'false');
+        });
+    };
+
+    const syncLdapSearchClear = search => {
+        const input = search.querySelector('input');
+        const clear = search.querySelector('[data-ldap-search-clear]');
+        const hasValue = Boolean(input?.value.trim());
+
+        if (!clear) {
+            return;
+        }
+
+        clear.hidden = !hasValue;
+        clear.setAttribute('aria-hidden', String(!hasValue));
+        clear.tabIndex = hasValue ? 0 : -1;
+    };
+
+    const getLdapSearchOptions = search => Array.from(search.querySelectorAll('[data-ldap-search-option]'));
+
+    const isLdapSearchOptionDisabled = option => option.hasAttribute('data-prompt-disabled') || option.getAttribute('aria-disabled') === 'true';
+
+    const filterLdapSearch = search => {
+        const input = search.querySelector('input');
+        const count = search.querySelector('[data-ldap-search-count]');
+        const minLength = Number(search.dataset.minLength || 1);
+        const keyword = input?.value.trim().toLowerCase() || '';
+        const options = getLdapSearchOptions(search);
+
+        if (keyword.length < minLength) {
+            options.forEach(option => {
+                option.closest('li').hidden = true;
+                option.classList.remove('is-active');
+            });
+
+            if (count) {
+                count.textContent = '0';
+            }
+
+            return [];
+        }
+
+        const visibleOptions = options.filter(option => {
+            const searchText = (option.dataset.search || option.dataset.searchKeywords || option.textContent || '').toLowerCase();
+            const isVisible = !isLdapSearchOptionDisabled(option) && searchText.includes(keyword);
+
+            option.closest('li').hidden = !isVisible;
+
+            if (!isVisible) {
+                option.classList.remove('is-active');
+            }
+
+            return isVisible;
+        });
+
+        if (count) {
+            count.textContent = String(visibleOptions.length);
+        }
+
+        if (!visibleOptions.some(option => option.classList.contains('is-active'))) {
+            visibleOptions[0]?.classList.add('is-active');
+        }
+
+        return visibleOptions;
+    };
+
+    const openLdapSearch = search => {
+        const visibleOptions = filterLdapSearch(search);
+
+        if (visibleOptions.length) {
+            search.classList.add('is-open');
+            search.querySelectorAll('input[aria-expanded]').forEach(input => {
+                input.setAttribute('aria-expanded', 'true');
+            });
+        } else {
+            closeLdapSearch(search);
+        }
+
+        syncLdapSearchClear(search);
+    };
+
+    const highlightLdapSearchOption = (search, option) => {
+        if (!option || option.closest('li')?.hidden) {
+            return;
+        }
+
+        getLdapSearchOptions(search).forEach(item => item.classList.remove('is-active'));
+        option.classList.add('is-active');
+        option.scrollIntoView({ block: 'nearest' });
+    };
+
+    const setupLdapSearch = search => {
+        const input = search.querySelector('input');
+        const clear = search.querySelector('[data-ldap-search-clear]');
+        const options = getLdapSearchOptions(search);
+        const searchType = search.dataset.ldapSearchType;
+
+        if (!input || !options.length) {
+            return;
+        }
+
+        input.addEventListener('focus', () => openLdapSearch(search));
+        input.addEventListener('input', () => {
+            openLdapSearch(search);
+            syncLdapSearchClear(search);
+        });
+        input.addEventListener('keydown', event => {
+            const visibleOptions = filterLdapSearch(search);
+            const currentIndex = visibleOptions.findIndex(option => option.classList.contains('is-active'));
+
+            if (event.key === 'ArrowDown' && visibleOptions.length) {
+                event.preventDefault();
+                search.classList.add('is-open');
+                highlightLdapSearchOption(search, visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)]);
+            }
+
+            if (event.key === 'ArrowUp' && visibleOptions.length) {
+                event.preventDefault();
+                search.classList.add('is-open');
+                highlightLdapSearchOption(search, visibleOptions[Math.max(currentIndex - 1, 0)]);
+            }
+
+            if (event.key === 'Enter' && visibleOptions.length && searchType === 'member') {
+                event.preventDefault();
+                registerMember(visibleOptions[Math.max(currentIndex, 0)]);
+            }
+
+            if (event.key === 'Escape') {
+                closeLdapSearch(search);
+            }
+        });
+
+        clear?.addEventListener('click', event => {
+            event.preventDefault();
+            input.value = '';
+            filterLdapSearch(search);
+            closeLdapSearch(search);
+            syncLdapSearchClear(search);
+            input.focus({ preventScroll: true });
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        options.forEach(option => {
+            const checkbox = option.querySelector('[data-api-option-checkbox]');
+
+            option.addEventListener('mouseenter', () => highlightLdapSearchOption(search, option));
+
+            if (searchType === 'member') {
+                option.addEventListener('click', event => {
+                    event.preventDefault();
+                    registerMember(option);
+                });
+            }
+
+            if (searchType === 'api') {
+                checkbox?.addEventListener('change', () => {
+                    toggleApiSelection(option, checkbox.checked);
+                });
+            }
+
+            option.addEventListener('keydown', event => {
+                const visibleOptions = filterLdapSearch(search);
+                const currentIndex = visibleOptions.indexOf(option);
+
+                if ((event.key === 'Enter' || event.key === ' ') && searchType === 'member') {
+                    event.preventDefault();
+                    registerMember(option);
+                }
+
+                if ((event.key === 'Enter' || event.key === ' ') && searchType === 'api' && checkbox) {
+                    event.preventDefault();
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                if (event.key === 'ArrowDown' && visibleOptions.length) {
+                    event.preventDefault();
+                    const nextOption = visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)];
+                    highlightLdapSearchOption(search, nextOption);
+                    nextOption.focus();
+                }
+
+                if (event.key === 'ArrowUp' && visibleOptions.length) {
+                    event.preventDefault();
+                    const prevOption = visibleOptions[Math.max(currentIndex - 1, 0)];
+                    highlightLdapSearchOption(search, prevOption);
+                    prevOption.focus();
+                }
+
+                if (event.key === 'Escape') {
+                    closeLdapSearch(search);
+                    input.focus({ preventScroll: true });
+                }
+            });
+        });
+
+        filterLdapSearch(search);
+        syncLdapSearchClear(search);
+    };
+
     const resetBasicEditFields = section => {
         section.querySelectorAll('[data-basic-field]').forEach(control => {
             const valueCell = section.querySelector(`[data-basic-value="${control.dataset.basicField}"]`);
@@ -192,6 +402,7 @@
 
     const setMemberOptionRegistered = (option, isRegistered) => {
         option.hidden = isRegistered;
+        option.closest('li').hidden = isRegistered;
         option.setAttribute('aria-hidden', String(isRegistered));
         option.setAttribute('aria-selected', 'false');
         option.classList.remove('is-selected');
@@ -208,6 +419,7 @@
 
     const clearMemberSearch = section => {
         const input = section.querySelector('[data-ldap-member-search]');
+        const search = input?.closest('[data-ldap-search]');
 
         if (!input) {
             return;
@@ -215,6 +427,7 @@
 
         input.value = '';
         input.dispatchEvent(new Event('input', { bubbles: true }));
+        closeLdapSearch(search);
         closePrompt(input.closest('[data-prompt]'));
         input.focus({ preventScroll: true });
     };
@@ -241,11 +454,11 @@
         clearMemberSearch(section);
     };
 
-    const getSelectedMemberOption = prompt =>
-        Array.from(prompt?.querySelectorAll('[role="option"][data-member-id]') || []).find(option => {
+    const getSelectedMemberOption = container =>
+        Array.from(container?.querySelectorAll('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]') || []).find(option => {
             const isSelected = option.classList.contains('is-selected') || option.getAttribute('aria-selected') === 'true';
 
-            return isSelected && !option.hidden && !option.hasAttribute('data-prompt-disabled');
+            return isSelected && !option.hidden && !option.closest('li')?.hidden && !option.hasAttribute('data-prompt-disabled');
         });
 
     const filterMemberRows = input => {
@@ -344,6 +557,447 @@
         }
     };
 
+    const parseApiParams = params =>
+        (params || '')
+            .split('|')
+            .map(item => item.trim())
+            .filter(Boolean)
+            .map(item => {
+                const [name, sensitivity] = item.split(':').map(value => value.trim());
+
+                return { name, sensitivity: sensitivity || '' };
+            });
+
+    const getApiData = option => ({
+        id: option.dataset.apiId || '',
+        code: option.dataset.apiCode || option.querySelector('strong')?.textContent.trim() || '',
+        name: option.dataset.apiName || '',
+        prodDomain: option.dataset.apiProdDomain || 'cus-in.api.kt.com',
+        devDomain: option.dataset.apiDevDomain || 'cus-in.tbapi.kt.com',
+        sensitivity: option.dataset.apiSensitivity || '-',
+        selfTesting: option.dataset.apiSelfTesting || '-',
+        approval: option.dataset.apiApproval || '대기',
+        status: option.dataset.apiStatus || '미상용',
+        params: parseApiParams(option.dataset.apiParams),
+    });
+
+    const createSelectedApiParam = param => {
+        const row = document.createElement('div');
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        const text = document.createElement('span');
+
+        row.className = 'kt-selected-api__param';
+        label.className = 'kt-check';
+        input.type = 'checkbox';
+        input.checked = true;
+        text.textContent = param.name;
+        label.append(input, text);
+        row.appendChild(label);
+
+        if (param.sensitivity) {
+            const sensitive = document.createElement('em');
+
+            sensitive.textContent = param.sensitivity;
+            row.appendChild(sensitive);
+        }
+
+        return row;
+    };
+
+    const createSelectedApi = api => {
+        const item = document.createElement('article');
+        const summary = document.createElement('div');
+        const toggle = document.createElement('button');
+        const toggleIcon = document.createElement('img');
+        const title = document.createElement('div');
+        const code = document.createElement('strong');
+        const name = document.createElement('span');
+        const sensitivity = document.createElement('span');
+        const remove = document.createElement('button');
+        const removeIcon = document.createElement('img');
+        const detail = document.createElement('div');
+        const params = document.createElement('div');
+        const paramsTitle = document.createElement('strong');
+
+        item.className = 'kt-selected-api is-open';
+        item.dataset.selectedApi = '';
+        item.dataset.apiId = api.id;
+        summary.className = 'kt-selected-api__summary';
+        toggle.type = 'button';
+        toggle.className = 'kt-row-toggle';
+        toggle.dataset.selectedApiToggle = '';
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', '선택된 API 상세 닫기');
+        toggleIcon.className = 'kt-svg-icon';
+        toggleIcon.src = '/assets/img/components/ico_chevron_down_16_gray.svg';
+        toggleIcon.alt = '';
+        toggleIcon.setAttribute('aria-hidden', 'true');
+        toggle.appendChild(toggleIcon);
+        title.className = 'kt-selected-api__title';
+        code.textContent = api.code;
+        name.textContent = api.name;
+        title.append(code, name);
+        sensitivity.className = 'kt-selected-api__sensitive';
+        sensitivity.textContent = api.sensitivity;
+        remove.type = 'button';
+        remove.className = 'kt-selected-api__remove';
+        remove.dataset.selectedApiRemove = '';
+        remove.setAttribute('aria-label', `${api.code} 삭제`);
+        removeIcon.className = 'kt-svg-icon kt-svg-icon--16';
+        removeIcon.src = '/assets/img/auth/ico_auth_close.svg';
+        removeIcon.alt = '';
+        removeIcon.setAttribute('aria-hidden', 'true');
+        remove.appendChild(removeIcon);
+        summary.append(toggle, title, sensitivity, remove);
+        detail.className = 'kt-selected-api__detail';
+        detail.dataset.selectedApiPanel = '';
+        params.className = 'kt-selected-api__params';
+        paramsTitle.textContent = 'Return Parameters (사용할 필드 선택)';
+        params.appendChild(paramsTitle);
+        (api.params.length ? api.params : [{ name: 'point_balance', sensitivity: '' }]).forEach(param => {
+            params.appendChild(createSelectedApiParam(param));
+        });
+        detail.appendChild(params);
+        item.append(summary, detail);
+
+        return item;
+    };
+
+    const syncSelectedApiSection = section => {
+        const selectedItems = Array.from(section.querySelectorAll('[data-selected-api]'));
+        const empty = section.querySelector('[data-api-selected-empty]');
+        const count = section.querySelector('.kt-ws-section__count strong');
+
+        if (empty) {
+            empty.hidden = selectedItems.length !== 0;
+        }
+
+        if (count) {
+            count.textContent = String(selectedItems.length);
+        }
+    };
+
+    const setApiOptionSelected = (option, isSelected) => {
+        const checkbox = option.querySelector('[data-api-option-checkbox]');
+
+        option.classList.toggle('is-selected', isSelected);
+        option.setAttribute('aria-selected', String(isSelected));
+
+        if (checkbox) {
+            checkbox.checked = isSelected;
+        }
+    };
+
+    const showApiSelectedToast = section => {
+        const toast = section.querySelector('.kt-ldap-toast-api-edit');
+
+        if (!toast) {
+            return;
+        }
+
+        toast.hidden = false;
+        window.clearTimeout(showApiSelectedToast.timer);
+        showApiSelectedToast.timer = window.setTimeout(() => {
+            toast.hidden = true;
+        }, 1600);
+    };
+
+    const toggleApiSelection = (option, isSelected) => {
+        const section = option.closest('.kt-ldap-section-api');
+        const list = section?.querySelector('[data-api-selected-list]');
+        const api = getApiData(option);
+
+        if (!section || !list || !api.id) {
+            return;
+        }
+
+        const existing = list.querySelector(`[data-selected-api][data-api-id="${api.id}"]`);
+
+        if (isSelected) {
+            if (!existing) {
+                list.appendChild(createSelectedApi(api));
+                showApiSelectedToast(section);
+            }
+
+            setApiOptionSelected(option, true);
+            syncSelectedApiSection(section);
+            return;
+        }
+
+        existing?.remove();
+        setApiOptionSelected(option, false);
+        syncSelectedApiSection(section);
+    };
+
+    const removeSelectedApi = button => {
+        const item = button.closest('[data-selected-api]');
+        const section = button.closest('.kt-ldap-section-api');
+        const apiId = item?.dataset.apiId;
+
+        if (!item || !section || !apiId) {
+            return;
+        }
+
+        section.querySelectorAll(`[data-ldap-search-option][data-api-id="${apiId}"]`).forEach(option => {
+            setApiOptionSelected(option, false);
+        });
+        item.remove();
+        syncSelectedApiSection(section);
+    };
+
+    const getApiReadTableBody = section => {
+        const readWrap = Array.from(section.children).find(child => child.classList.contains('kt-ldap-api-table-wrap'));
+
+        return readWrap?.querySelector('.kt-data-table--api:not(.kt-data-table--api-edit) tbody') || null;
+    };
+
+    const createApiBadge = (text, context) => {
+        const badge = document.createElement('span');
+
+        badge.className = 'kt-badge';
+        badge.textContent = text;
+
+        if (context === 'approval' && text === '승인') {
+            badge.classList.add('kt-badge--green');
+        }
+
+        if (context === 'approval' && text === '대기') {
+            badge.classList.add('kt-badge--warning');
+        }
+
+        if (context === 'approval' && text === '반려') {
+            badge.classList.add('kt-badge--danger');
+        }
+
+        if (context === 'status' && text === '상용') {
+            badge.classList.add('kt-badge--prod');
+        }
+
+        return badge;
+    };
+
+    const createApiNameCell = (api, group) => {
+        const cell = document.createElement('td');
+        const nameWrap = document.createElement('div');
+        const toggle = document.createElement('button');
+        const icon = document.createElement('img');
+        const text = document.createElement('span');
+        const link = document.createElement('a');
+
+        nameWrap.className = 'kt-api-name';
+        toggle.type = 'button';
+        toggle.className = 'kt-row-toggle';
+        toggle.dataset.apiAccordion = group;
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'API 상세 열기');
+        icon.className = 'kt-svg-icon';
+        icon.src = '/assets/img/components/ico_chevron_down_16_gray.svg';
+        icon.alt = '';
+        icon.setAttribute('aria-hidden', 'true');
+        toggle.appendChild(icon);
+        text.className = 'kt-api-name__text';
+        text.append(`${api.code} `);
+        link.href = '#';
+        link.className = 'is-link';
+        link.textContent = api.name;
+        text.appendChild(link);
+        nameWrap.append(toggle, text);
+        cell.appendChild(nameWrap);
+
+        return cell;
+    };
+
+    const createDomainCell = api => {
+        const cell = document.createElement('td');
+        const domains = document.createElement('div');
+        const prod = document.createElement('span');
+        const dev = document.createElement('span');
+
+        domains.className = 'kt-domain-lines';
+        prod.textContent = `상용 ${api.prodDomain}`;
+        dev.textContent = `개발 ${api.devDomain}`;
+        domains.append(prod, dev);
+        cell.appendChild(domains);
+
+        return cell;
+    };
+
+    const createCenterCell = (content, className = '') => {
+        const cell = document.createElement('td');
+
+        cell.className = `center ${className}`.trim();
+
+        if (content instanceof Node) {
+            cell.appendChild(content);
+        } else {
+            cell.textContent = content;
+        }
+
+        return cell;
+    };
+
+    const createApiDetailRow = (api, group) => {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        const card = document.createElement('div');
+        const paramCell = document.createElement('div');
+        const params = document.createElement('div');
+        const paramsTitle = document.createElement('strong');
+
+        row.className = 'kt-api-detail-row';
+        row.dataset.apiAccordionPanel = group;
+        row.hidden = true;
+        cell.colSpan = 6;
+        card.className = 'kt-api-detail-card';
+        paramCell.className = 'kt-api-detail-card__cell';
+        params.className = 'kt-api-params';
+        paramsTitle.textContent = 'Return Parameters';
+        params.appendChild(paramsTitle);
+        (api.params.length ? api.params : [{ name: '-', sensitivity: '' }]).forEach(param => {
+            const paramRow = document.createElement('span');
+
+            if (param.sensitivity) {
+                const sensitive = document.createElement('em');
+
+                paramRow.className = 'kt-api-params__row';
+                paramRow.append(`${param.name} `);
+                sensitive.className = 'kt-api-params__sensitive';
+                sensitive.textContent = param.sensitivity;
+                paramRow.appendChild(sensitive);
+            } else {
+                paramRow.textContent = param.name;
+            }
+
+            params.appendChild(paramRow);
+        });
+        paramCell.appendChild(params);
+        card.append(
+            paramCell,
+            (() => {
+                const detailDomain = document.createElement('div');
+                detailDomain.className = 'kt-api-detail-card__cell';
+                detailDomain.appendChild(createDomainCell(api).firstElementChild);
+                return detailDomain;
+            })(),
+            (() => {
+                const detailSensitivity = document.createElement('div');
+                detailSensitivity.className = `kt-api-detail-card__cell kt-api-detail-card__cell--center ${api.sensitivity === '-' ? 'is-muted' : 'is-danger'}`;
+                detailSensitivity.textContent = api.sensitivity;
+                return detailSensitivity;
+            })(),
+            (() => {
+                const detailTest = document.createElement('div');
+                detailTest.className = 'kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted';
+                detailTest.textContent = '-';
+                return detailTest;
+            })(),
+            (() => {
+                const detailApproval = document.createElement('div');
+                detailApproval.className = 'kt-api-detail-card__cell kt-api-detail-card__cell--center';
+                detailApproval.appendChild(createApiBadge(api.approval, 'approval'));
+                return detailApproval;
+            })(),
+            (() => {
+                const detailStatus = document.createElement('div');
+                detailStatus.className = 'kt-api-detail-card__cell kt-api-detail-card__cell--center';
+                detailStatus.appendChild(createApiBadge(api.status, 'status'));
+                return detailStatus;
+            })(),
+        );
+        cell.appendChild(card);
+        row.appendChild(cell);
+
+        return row;
+    };
+
+    const createApiRejectRow = group => {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        const reason = document.createElement('div');
+        const tag = document.createElement('span');
+        const text = document.createElement('p');
+
+        row.className = 'kt-api-reject-row';
+        row.dataset.apiAccordionPanel = group;
+        row.hidden = true;
+        cell.colSpan = 6;
+        reason.className = 'kt-reject-reason';
+        tag.className = 'kt-reject-reason__tag';
+        tag.textContent = '반려 사유';
+        text.textContent = 'IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.';
+        reason.append(tag, text);
+        cell.appendChild(reason);
+        row.appendChild(cell);
+
+        return row;
+    };
+
+    const createApiEmptyReadRow = () => {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        const empty = document.createElement('div');
+        const icon = document.createElement('img');
+        const text = document.createElement('p');
+
+        row.className = 'kt-data-table__empty kt-data-table__empty--result';
+        cell.colSpan = 6;
+        empty.className = 'kt-table-empty-result';
+        icon.className = 'kt-svg-icon kt-svg-icon--24';
+        icon.src = '/assets/img/contents/ico_warning_empty.svg';
+        icon.alt = '';
+        icon.setAttribute('aria-hidden', 'true');
+        text.textContent = '등록된 API가 없습니다.';
+        empty.append(icon, text);
+        cell.appendChild(empty);
+        row.appendChild(cell);
+
+        return row;
+    };
+
+    const syncApiReadTable = section => {
+        const body = getApiReadTableBody(section);
+        const selectedOptions = Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id].is-selected'));
+        const count = section.querySelector('.kt-ws-section__count strong');
+
+        if (!body) {
+            return;
+        }
+
+        body.replaceChildren();
+
+        if (!selectedOptions.length) {
+            body.appendChild(createApiEmptyReadRow());
+        } else {
+            selectedOptions.forEach(option => {
+                const api = getApiData(option);
+                const group = `read-${api.id}`;
+                const row = document.createElement('tr');
+
+                row.className = 'kt-api-row';
+                row.dataset.apiRow = '';
+                row.dataset.apiAccordion = group;
+                row.append(
+                    createApiNameCell(api, group),
+                    createDomainCell(api),
+                    createCenterCell(api.sensitivity, api.sensitivity === '-' ? 'is-muted' : 'is-danger'),
+                    createCenterCell(api.selfTesting, api.selfTesting === 'Completed' ? '' : 'is-muted'),
+                    createCenterCell(createApiBadge(api.approval, 'approval')),
+                    createCenterCell(createApiBadge(api.status, 'status')),
+                );
+                body.append(row, createApiDetailRow(api, group));
+
+                if (api.approval === '반려') {
+                    body.appendChild(createApiRejectRow(group));
+                }
+            });
+        }
+
+        if (count) {
+            count.textContent = String(selectedOptions.length);
+        }
+    };
+
     const createIpRow = value => {
         const row = document.createElement('div');
         const input = document.createElement('input');
@@ -367,8 +1021,10 @@
         return row;
     };
 
+    workspaceRoot.querySelectorAll('[data-ldap-search]').forEach(setupLdapSearch);
     workspaceRoot.querySelectorAll('[data-ldap-member-search]').forEach(filterMemberRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-members').forEach(syncMemberSection);
+    workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncSelectedApiSection);
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
 
     workspaceRoot.addEventListener('input', e => {
@@ -385,7 +1041,7 @@
     });
 
     workspaceRoot.addEventListener('keydown', e => {
-        const memberOption = e.target.closest('[role="option"][data-member-id]');
+        const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberInput = e.target.closest('[data-ldap-member-search]');
 
         if (memberOption && memberOption.closest('.kt-ldap-section-members') && (e.key === 'Enter' || e.key === ' ')) {
@@ -394,7 +1050,7 @@
         }
 
         if (memberInput && e.key === 'Enter') {
-            const option = getSelectedMemberOption(memberInput.closest('[data-prompt]'));
+            const option = getSelectedMemberOption(memberInput.closest('[data-ldap-search]') || memberInput.closest('[data-prompt]'));
 
             if (option) {
                 window.setTimeout(() => registerMember(option), 0);
@@ -405,8 +1061,10 @@
     workspaceRoot.addEventListener('click', e => {
         const actionButton = e.target.closest('[data-edit-cancel], [data-edit-save]');
         const accordionButton = e.target.closest('.kt-row-toggle[data-api-accordion]');
+        const selectedApiToggle = e.target.closest('[data-selected-api-toggle]');
+        const selectedApiRemove = e.target.closest('[data-selected-api-remove]');
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
-        const memberOption = e.target.closest('[role="option"][data-member-id]');
+        const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberDeleteButton = e.target.closest('[data-member-delete]');
 
         if (memberOption && memberOption.closest('.kt-ldap-section-members')) {
@@ -467,9 +1125,36 @@
                     }
                 }
 
+                if (section.classList.contains('kt-ldap-section-api')) {
+                    syncApiReadTable(section);
+                }
+
                 setEditMode(section, false);
             }
 
+            return;
+        }
+
+        if (selectedApiRemove) {
+            e.preventDefault();
+            removeSelectedApi(selectedApiRemove);
+            return;
+        }
+
+        if (selectedApiToggle) {
+            const item = selectedApiToggle.closest('[data-selected-api]');
+            const panel = item?.querySelector('[data-selected-api-panel]');
+            const isOpen = !item?.classList.contains('is-open');
+
+            if (!item || !panel) {
+                return;
+            }
+
+            e.preventDefault();
+            item.classList.toggle('is-open', isOpen);
+            panel.hidden = !isOpen;
+            selectedApiToggle.setAttribute('aria-expanded', String(isOpen));
+            selectedApiToggle.setAttribute('aria-label', isOpen ? '선택된 API 상세 닫기' : '선택된 API 상세 열기');
             return;
         }
 
@@ -548,6 +1233,18 @@
             resetBasicEditFields(section);
         }
 
+        if (!isEditing && section.classList.contains('kt-ldap-section-api')) {
+            syncApiReadTable(section);
+        }
+
         setEditMode(section, isEditing);
+    });
+
+    document.addEventListener('click', event => {
+        workspaceRoot.querySelectorAll('[data-ldap-search].is-open').forEach(search => {
+            if (!search.contains(event.target)) {
+                closeLdapSearch(search);
+            }
+        });
     });
 })();
