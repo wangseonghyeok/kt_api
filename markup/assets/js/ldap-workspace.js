@@ -328,6 +328,8 @@
             count.textContent = String(total);
         }
 
+        section.classList.toggle('has-many-members', total >= 5);
+
         if (readEmptyRow) {
             readEmptyRow.hidden = total !== 0;
         }
@@ -794,6 +796,25 @@
         syncSelectedApiSection(section);
     };
 
+    const removeAddedApi = button => {
+        const row = button.closest('[data-api-row]');
+        const section = button.closest('.kt-ldap-section-api');
+        const apiId = getEditApiId(row?.dataset.apiAccordion);
+
+        if (!row || !section || !apiId) {
+            return;
+        }
+
+        section.querySelectorAll(`[data-ldap-search-option][data-api-id="${apiId}"]`).forEach(option => {
+            delete option.dataset.apiAdded;
+            setApiOptionSelected(option, false);
+        });
+        section.querySelector(`[data-selected-api][data-api-id="${apiId}"]`)?.remove();
+        syncApiEditTable(section);
+        syncApiReadTable(section);
+        syncSelectedApiSection(section);
+    };
+
     const getSelectedApiOptions = section => Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id].is-selected'));
 
     const getAddedApiOptions = section => Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id][data-api-added="true"]'));
@@ -1185,6 +1206,7 @@
         const apiAddButton = e.target.closest('[data-api-add-to-list]');
         const apiApprovalButton = e.target.closest('[data-api-approval-request]');
         const apiEmptyAddButton = e.target.closest('[data-api-empty-add]');
+        const apiEditDeleteButton = e.target.closest('[data-api-edit-delete]');
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
         const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberDeleteButton = e.target.closest('[data-member-delete]');
@@ -1247,7 +1269,14 @@
 
         if (apiAddButton) {
             e.preventDefault();
+            e.stopPropagation();
             addSelectedApisToList(apiAddButton);
+            return;
+        }
+
+        if (apiEditDeleteButton) {
+            e.preventDefault();
+            removeAddedApi(apiEditDeleteButton);
             return;
         }
 

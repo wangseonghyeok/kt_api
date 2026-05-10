@@ -39,9 +39,12 @@
                 <tr class="kt-data-table__empty kt-data-table__empty--result">
                     <td colspan="6">
                         <div class="kt-table-empty-result kt-api-empty-guide">
-                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
                             <p>구독된 API가 없으니 + Add API로 추가해 보세요.</p>
-                            <button type="button" class="kt-btn kt-btn--popup-line" data-api-empty-add>+ Add API</button>
+                            <button type="button" class="kt-btn kt-btn--popup-line" data-api-empty-add>
+                                <span class="kt-btn__icon kt-btn__icon--plus" aria-hidden="true"></span>
+                                <span>Add API</span>
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -215,12 +218,12 @@
                                 <p>등록된 API가 없습니다.</p>
                             </div>
                         </div>
-                        <p class="kt-selected-api-notice" data-api-sensitive-notice hidden>민감 파라미터 포함 API로 승인 요청이 필요합니다.</p>
                     </div>
                 </section>
             </div>
             <div class="kt-ldap-api-edit-actions">
-                <button type="button" class="kt-btn kt-btn--popup-primary" data-api-add-to-list disabled>목록에 추가</button>
+                <p class="kt-selected-api-notice" data-api-sensitive-notice hidden>민감 파라미터 포함 API로 승인 요청이 필요합니다.</p>
+                <button type="button" class="kt-btn kt-btn--sm kt-btn--tertiary" data-api-add-to-list disabled>목록에 추가</button>
             </div>
             <table class="kt-data-table kt-data-table--api kt-data-table--api-edit">
                 <caption class="blind">
@@ -241,7 +244,7 @@
                         <th scope="col">민감도</th>
                         <th scope="col">Self Testing</th>
                         <th scope="col">승인</th>
-                        <th scope="col">상태</th>
+                        <th scope="col">관리</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -271,7 +274,7 @@
                         <td class="center is-danger">민감 1</td>
                         <td class="center is-muted">Unfinished</td>
                         <td class="center"><span class="kt-badge kt-badge--warning">대기</span></td>
-                        <td class="center"><span class="kt-badge">미상용</span></td>
+                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-311" hidden>
                         <td colspan="6">
@@ -314,7 +317,7 @@
                         <td class="center is-muted">-</td>
                         <td class="center is-muted">Unfinished</td>
                         <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                        <td class="center"><span class="kt-badge">미상용</span></td>
+                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-312" hidden>
                         <td colspan="6">
@@ -357,7 +360,7 @@
                         <td class="center is-danger">민감 1</td>
                         <td class="center"><a href="#" class="is-link">Completed</a></td>
                         <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
+                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-313" hidden>
                         <td colspan="6">
@@ -400,7 +403,7 @@
                         <td class="center is-danger">민감 1</td>
                         <td class="center is-muted">Unfinished</td>
                         <td class="center"><span class="kt-badge kt-badge--danger">반려</span></td>
-                        <td class="center"><span class="kt-badge">미상용</span></td>
+                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-314" hidden>
                         <td colspan="6">
@@ -451,7 +454,7 @@
                         <td class="center is-muted">-</td>
                         <td class="center"><a href="#" class="is-link">Completed</a></td>
                         <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
+                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-315" hidden>
                         <td colspan="6">
