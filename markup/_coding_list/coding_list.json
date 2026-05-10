@@ -49,16 +49,16 @@
             "[works-05] 워크스페이스 목록 - 데이터 없는 경우": ["/works-05.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/8"]
         },
         "Create Workspace (Entra ID)": {
-            "[newwork-01] Create Workspace -유형선택": ["/newwork-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-02] Create Workspace- 기본정보입력": ["/newwork-02.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-03] Create Workspace -멤버설정": ["/newwork-03.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-04] Create Workspace -확인 및 저장": ["/newwork-04.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"]
+            "[newwork-01] Create Workspace -유형선택": ["/newwork-01.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-02] Create Workspace- 기본정보입력": ["/newwork-02.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-03] Create Workspace -멤버설정": ["/newwork-03.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-04] Create Workspace -확인 및 저장": ["/newwork-04.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"]
         },
         "Create Workspace (LDAP)": {
-            "[newwork-05] Create Workspace- 기본정보입력": ["/newwork-05.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-06] Create Workspace -KT서비스 선택": ["/newwork-06.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-07] Create Workspace -멤버설정": ["/newwork-07.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
-            "[newwork-08] Create Workspace -확인 및 저장": ["/newwork-08.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"]
+            "[newwork-05] Create Workspace- 기본정보입력": ["/newwork-05.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-06] Create Workspace -KT서비스 선택": ["/newwork-06.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-07] Create Workspace -멤버설정": ["/newwork-07.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"],
+            "[newwork-08] Create Workspace -확인 및 저장": ["/newwork-08.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/11"]
         },
         "api workspace": {
             "[works-ldap-01] LDAP - 워크스페이스 상세(draft)": ["/works-ldap-01.html", "mainframe", "대기", "기획: 컨펌완료 / 디자인: 4/27~4/30 / 퍼블: 5/18~5/21"],

@@ -2102,6 +2102,10 @@
         mask-image: url('/assets/img/contents/ico_intro_option.svg') !important;
         transform: none;
     }
+    .primary-black {
+        color: var(--kt-primary);
+        font-weight: var(--fw-semiBold);
+    }
 }
 
 .kt-intro-chip {
@@ -2164,7 +2168,7 @@
     display: grid;
     grid-template-columns: 340px minmax(0, 1fr) 580px;
     gap: 20px;
-    min-height: max(960px, calc(100vh - 240px));
+    min-height: max(960px, calc(100vh - 262px));
     padding: 0 24px 0 0;
     align-items: stretch;
 }
@@ -2178,8 +2182,8 @@
 .kt-tool-sidebar {
     display: flex;
     flex-direction: column;
-    height: max(960px, calc(100vh - 240px));
-    min-height: max(960px, calc(100vh - 240px));
+    height: max(960px, calc(100vh - 262px));
+    min-height: max(960px, calc(100vh - 262px));
     overflow: hidden;
     padding: 24px;
     border-radius: 0;
@@ -2366,10 +2370,6 @@
         height: 32px;
         padding: 5px 0;
     }
-
-    > ul {
-        margin: 8px 0 0;
-    }
 }
 
 .kt-tool-tree__item {
@@ -2459,7 +2459,7 @@
 
 .kt-tool-detail {
     @include kt-scrollbar(12px, #8b8f97, transparent, 4px);
-    height: max(904px, calc(100vh - 296px));
+    height: max(904px, calc(100vh - 310px));
     margin-top: 24px;
     padding: 19px;
     overflow: auto;
@@ -2618,7 +2618,7 @@
 }
 
 .kt-tool-playground {
-    height: max(904px, calc(100vh - 296px));
+    height: max(904px, calc(100vh - 310px));
     margin-top: 24px;
     overflow: hidden;
     padding: 19px;

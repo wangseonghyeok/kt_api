@@ -2094,6 +2094,14 @@
     color: var(--kt-tertiary);
     font-size: 14px;
     line-height: 1.48;
+
+    &[hidden] {
+        display: none !important;
+    }
+}
+
+.kt-prompt.is-complete .kt-prompt__foot {
+    display: none !important;
 }
 
 .kt-service-card {
@@ -3050,7 +3058,7 @@
     }
 
     #workspaceApiPromptMenu {
-        padding: 8px 8px 0;
+        padding: 8px;
     }
 
     .kt-prompt__api-list,
@@ -3102,7 +3110,7 @@
         gap: 4px;
         height: 46px;
         min-height: 46px;
-        padding: 8px 16px;
+        padding: 8px 16px 0;
         box-sizing: border-box;
         border-top: 1px solid var(--kt-line);
         color: #6f737b;
@@ -3409,9 +3417,12 @@
 .kt-works-issue--pending {
     color: #e57300;
 }
+.kt-works-issue--elapsed {
+    color: #005ccc;
+}
 
 .kt-works-issue {
-    margin-left: 4px;
+    // margin-left: 4px;
 }
 
 .kt-badge--owner {
@@ -4420,7 +4431,7 @@
     .kt-newwork-info {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 24px;
 
         h3 {
             font-size: 16px;

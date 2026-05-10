@@ -621,6 +621,18 @@ const ui = {
             const getSelectedOption = () => getVisibleOptions().find(option => option.classList.contains('is-selected'));
             const getActiveOption = () => getSelectedOption() || getVisibleOptions()[0];
             const ignoreSyncKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Meta'];
+            let selectedPromptValue = '';
+            let isSelectingOption = false;
+
+            const normalizePromptValue = value => (value || '').trim().toLowerCase();
+            const getOptionValue = option => option?.querySelector('strong')?.textContent.trim() || option?.textContent.trim() || '';
+            const clearOptionSelection = () => {
+                options.forEach(item => {
+                    item.classList.remove('is-selected');
+                    item.setAttribute('aria-selected', 'false');
+                });
+            };
+            const isPromptValueComplete = () => Boolean(selectedPromptValue && normalizePromptValue(getKeyword()) === normalizePromptValue(selectedPromptValue));
 
             const highlightOption = option => {
                 if (!option || option.hidden) {
@@ -661,8 +673,27 @@ const ui = {
                 clearButton.tabIndex = shouldShow ? 0 : -1;
             };
 
+            const hideFoot = () => {
+                if (!foot) {
+                    return;
+                }
+
+                foot.hidden = true;
+                foot.style.display = 'none';
+                foot.setAttribute('aria-hidden', 'true');
+            };
+
             const syncFoot = matchCount => {
                 if (!foot) {
+                    return;
+                }
+
+                const isComplete = Boolean(input && isPromptValueComplete());
+
+                prompt.classList.toggle('is-complete', isComplete);
+
+                if (isComplete) {
+                    hideFoot();
                     return;
                 }
 
@@ -671,15 +702,19 @@ const ui = {
                 const message = foot.dataset.promptFootText || '검색어를 더 입력해 결과를 줄여보세요';
                 const displayCount = foot.dataset.promptFootCount || extraCount;
 
-                foot.hidden = !shouldShow;
-                foot.setAttribute('aria-hidden', String(!shouldShow));
-
-                if (shouldShow) {
-                    const count = document.createElement('strong');
-
-                    count.textContent = displayCount;
-                    foot.replaceChildren(`${message} (`, count, '개 더 있음)');
+                if (!shouldShow) {
+                    hideFoot();
+                    return;
                 }
+
+                foot.hidden = false;
+                foot.style.removeProperty('display');
+                foot.setAttribute('aria-hidden', 'false');
+
+                const count = document.createElement('strong');
+
+                count.textContent = displayCount;
+                foot.replaceChildren(`${message} (`, count, '개 더 있음)');
             };
 
             const filterOptions = () => {
@@ -728,16 +763,27 @@ const ui = {
                     }
                 });
 
-                const visibleOptions = getVisibleOptions();
-
-                if ((keyword.length || showAllOptions) && visibleOptions.length && !getSelectedOption()) {
-                    highlightOption(visibleOptions[0]);
-                }
-
                 return matchCount;
             };
 
             const syncPromptByInput = () => {
+                if (isSelectingOption) {
+                    filterOptions();
+                    syncClearButton();
+                    hideFoot();
+                    closePrompt(prompt);
+                    return;
+                }
+
+                if (selectedPromptValue && normalizePromptValue(getKeyword()) !== normalizePromptValue(selectedPromptValue)) {
+                    selectedPromptValue = '';
+                    clearOptionSelection();
+                }
+
+                if (!selectedPromptValue) {
+                    clearOptionSelection();
+                }
+
                 filterOptions();
                 syncClearButton();
 
@@ -753,13 +799,22 @@ const ui = {
                     return;
                 }
 
-                const value = option.querySelector('strong')?.textContent.trim() || option.textContent.trim();
+                const value = getOptionValue(option);
 
                 highlightOption(option);
 
                 if (input && value) {
+                    selectedPromptValue = value;
+                    isSelectingOption = true;
                     input.value = value;
-                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                    try {
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                    } finally {
+                        isSelectingOption = false;
+                    }
+                    filterOptions();
+                    syncClearButton();
+                    hideFoot();
                 }
 
                 closePrompt(prompt);
@@ -809,7 +864,13 @@ const ui = {
                     if (event.key === 'ArrowDown' && getVisibleOptions().length) {
                         event.preventDefault();
                         openPrompt();
-                        getActiveOption().focus();
+                        const visibleOptions = getVisibleOptions();
+                        const selectedOption = getSelectedOption();
+                        const currentIndex = selectedOption ? visibleOptions.indexOf(selectedOption) : -1;
+                        const nextOption = visibleOptions[Math.min(currentIndex + 1, visibleOptions.length - 1)];
+
+                        highlightOption(nextOption);
+                        nextOption.focus();
                     }
 
                     if (event.key === 'ArrowUp' && getVisibleOptions().length) {
