@@ -163,6 +163,43 @@
     white-space: pre;
 }
 
+.kt-component-popup-actions {
+    @include flex(center, null);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.kt-component-popup-guide {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+
+    li {
+        min-height: 76px;
+        padding: 14px 16px;
+        border: 1px solid var(--kt-line);
+        border-radius: 8px;
+        background: #f7f8fb;
+    }
+
+    strong {
+        display: block;
+        color: var(--kt-primary);
+        font-size: 14px;
+        font-weight: var(--fw-Bold);
+        line-height: 1.48;
+    }
+
+    span {
+        display: block;
+        margin-top: 4px;
+        color: var(--kt-secondary);
+        font-size: 13px;
+        line-height: 1.48;
+    }
+}
+
 .kt-license-note {
     @include flex(null, null);
     gap: 8px;

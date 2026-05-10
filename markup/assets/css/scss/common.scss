@@ -163,6 +163,59 @@ html {
     padding: 0 24px 24px;
 }
 
+.popup.kt-popup-loader {
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+
+    &::before {
+        display: none;
+    }
+}
+
+.kt-popup-loader__content {
+    min-height: 100%;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.kt-popup-loader .kt-auth-modal {
+    height: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.kt-popup-loading {
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 8px;
+    min-height: 100vh;
+    color: #fff;
+    font-size: 16px;
+    font-weight: var(--fw-SemiBold);
+    line-height: 1.48;
+    text-align: center;
+
+    strong {
+        display: block;
+        color: inherit;
+        font-size: 18px;
+        font-weight: var(--fw-Bold);
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 14px;
+        font-weight: var(--fw-Regular);
+    }
+}
+
+.kt-popup-loading--error {
+    padding: 24px;
+}
+
 #header {
     background: var(--white);
     padding: 0 24px;

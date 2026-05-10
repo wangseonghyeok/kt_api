@@ -20,7 +20,7 @@
                     </section>
 
                     <ul class="kt-component-summary">
-                        <li><strong>Layout</strong><span>Page Header, Path, Line Tab, Actions</span></li>
+                        <li><strong>Layout</strong><span>Page Header, Popup, Path, Line Tab, Actions</span></li>
                         <li><strong>Control</strong><span>Input, Select, Dropdown, Search Prompt</span></li>
                         <li><strong>Data</strong><span>Grid, Pagination, Indicator, Badge, Tag, Chart</span></li>
                         <li><strong>Asset</strong><span>Icon, Button, Tab, Scrollbar</span></li>
@@ -86,6 +86,93 @@
                                         <i class="kt-pagination__icon kt-pagination__icon--last" aria-hidden="true"></i>
                                     </a>
                                 </nav>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="kt-component-section" id="popup">
+                        <h2>Popup</h2>
+                        <p class="kt-component-desc">
+                            공통 팝업은 버튼의 <code>data-popup-url</code>로 대상 HTML을 불러오고, <code>data-popup-fragment</code>에 지정한 모달 영역만 화면에 표시합니다. 팝업이 열려 있는 동안 바깥
+                            페이지 스크롤은 잠기고, 닫으면 기존 스크롤 위치로 돌아갑니다.
+                        </p>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Auth Popup Loader</h3>
+                                <div class="kt-component-popup-actions">
+                                    <button
+                                        type="button"
+                                        class="kt-btn kt-btn--line kt-btn--sm"
+                                        data-popup-open="#componentAuthPopup"
+                                        data-popup-url="login-01.html"
+                                        data-popup-fragment=".kt-auth-modal"
+                                    >
+                                        login 01
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="kt-btn kt-btn--line kt-btn--sm"
+                                        data-popup-open="#componentAuthPopup"
+                                        data-popup-url="login-02.html"
+                                        data-popup-fragment=".kt-auth-modal"
+                                    >
+                                        login 02
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="kt-btn kt-btn--line kt-btn--sm"
+                                        data-popup-open="#componentAuthPopup"
+                                        data-popup-url="login-03.html"
+                                        data-popup-fragment=".kt-auth-modal"
+                                    >
+                                        login 03
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="kt-btn kt-btn--line kt-btn--sm"
+                                        data-popup-open="#componentAuthPopup"
+                                        data-popup-url="otp-01.html"
+                                        data-popup-fragment=".kt-auth-modal"
+                                    >
+                                        OTP 01
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-01.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 01
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-02.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 02
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-03.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 03
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-04.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 04
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-05.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 05
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-06.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 06
+                                    </button>
+                                    <button type="button" class="kt-btn kt-btn--line kt-btn--sm" data-popup-open="#componentAuthPopup" data-popup-url="pw-07.html" data-popup-fragment=".kt-auth-modal">
+                                        ID/PW 07
+                                    </button>
+                                </div>
+                                <ul class="kt-component-popup-guide">
+                                    <li><strong>열기</strong><span>data-popup-open에 공통 팝업 ID를 지정합니다.</span></li>
+                                    <li><strong>불러오기</strong><span>data-popup-url에 같은 경로의 HTML 파일명을 넣습니다.</span></li>
+                                    <li><strong>추출 영역</strong><span>data-popup-fragment로 실제 표시할 영역을 지정합니다.</span></li>
+                                </ul>
+                                <pre class="kt-component-code"><code>&lt;button type="button"
+    data-popup-open="#componentAuthPopup"
+    data-popup-url="login-01.html"
+    data-popup-fragment=".kt-auth-modal"&gt;
+    login 01
+&lt;/button&gt;
+
+&lt;div class="popup kt-popup-loader" id="componentAuthPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-label="인증 공통 팝업" hidden&gt;
+    &lt;div class="kt-popup-loader__content" data-popup-content tabindex="-1"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                             </div>
                         </div>
                     </section>
@@ -1857,6 +1944,10 @@ KT API Link 연동 설명을 입력합니다.
                 </div>
             </main>
             <!--#include file="./include/_footer.html"-->
+        </div>
+
+        <div class="popup kt-popup-loader" id="componentAuthPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-label="인증 공통 팝업" hidden>
+            <div class="kt-popup-loader__content" data-popup-content tabindex="-1"></div>
         </div>
 
         <script src="/assets/js/ldap-workspace.js"></script>

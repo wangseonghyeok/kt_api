@@ -26,9 +26,76 @@ function bodyUnlock() {
     }
 }
 
+let activePopupTrigger = null;
+
+function getPopup(obj) {
+    if (!obj) {
+        return null;
+    }
+
+    if (typeof obj === 'string') {
+        return document.querySelector(obj);
+    }
+
+    return obj.classList?.contains('popup') ? obj : obj.closest?.('.popup');
+}
+
+function openPopup(popup, trigger) {
+    if (!popup) {
+        return;
+    }
+
+    activePopupTrigger = trigger || document.activeElement;
+    popup.hidden = false;
+    popup.setAttribute('aria-hidden', 'false');
+    popup.classList.add('is-active');
+
+    if (window.jQuery) {
+        $(popup).stop(true, true).fadeIn('fast');
+    } else {
+        popup.style.display = 'block';
+    }
+
+    bodyLock();
+
+    window.setTimeout(() => {
+        const focusTarget = popup.querySelector('[data-popup-focus], .kt-auth-close, .popup__close, button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+
+        focusTarget?.focus();
+    }, 0);
+}
+
+function closePopup(popup) {
+    if (!popup) {
+        return;
+    }
+
+    const afterClose = () => {
+        popup.classList.remove('is-active');
+        popup.hidden = true;
+        popup.setAttribute('aria-hidden', 'true');
+        bodyUnlock();
+
+        if (activePopupTrigger && document.contains(activePopupTrigger)) {
+            activePopupTrigger.focus();
+        }
+        activePopupTrigger = null;
+    };
+
+    if (window.jQuery) {
+        $(popup).stop(true, true).fadeOut('fast', afterClose);
+    } else {
+        popup.style.display = 'none';
+        afterClose();
+    }
+}
+
+function popOpen(target, trigger) {
+    openPopup(getPopup(target), trigger);
+}
+
 function popClose(obj) {
-    $(obj).parents('.popup').fadeOut('fast');
-    bodyUnlock();
+    closePopup(getPopup(obj));
 }
 
 function scrollHeader() {
@@ -322,6 +389,254 @@ const ui = {
         $('[data-pagination] ul > li > a').on('click', function () {
             $('[data-pagination] ul > li > a').removeAttr('aria-current');
             $(this).attr('aria-current', 'true');
+        });
+    },
+    popupContent: root => {
+        if (!root) {
+            return;
+        }
+
+        root.querySelectorAll('[data-auth-main-tabs]').forEach(tabWrap => {
+            const mainTabs = tabWrap.querySelectorAll('[data-auth-main-tab]');
+            const mainPanels = tabWrap.querySelectorAll('[data-auth-main-panel]');
+
+            mainTabs.forEach(tab => {
+                tab.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const targetName = tab.dataset.authMainTab;
+
+                    mainTabs.forEach(item => {
+                        item.classList.toggle('is-active', item === tab);
+                    });
+
+                    mainPanels.forEach(panel => {
+                        const isTarget = panel.dataset.authMainPanel === targetName;
+
+                        panel.classList.toggle('is-active', isTarget);
+                        panel.hidden = !isTarget;
+                        panel.setAttribute('aria-hidden', String(!isTarget));
+                    });
+                });
+            });
+        });
+
+        root.querySelectorAll('[data-auth-tabs]').forEach(tabWrap => {
+            const tabLinks = tabWrap.querySelectorAll('[data-auth-tab]');
+            const tabPanels = tabWrap.querySelectorAll('[data-auth-panel]');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    const targetName = link.dataset.authTab;
+                    const targetPanel = tabWrap.querySelector(`[data-auth-panel="${targetName}"]`);
+
+                    tabLinks.forEach(item => {
+                        item.classList.toggle('is-active', item === link);
+                    });
+
+                    if (!targetPanel) {
+                        return;
+                    }
+
+                    tabPanels.forEach(panel => {
+                        const isTarget = panel === targetPanel;
+
+                        panel.hidden = !isTarget;
+                        panel.setAttribute('aria-hidden', String(!isTarget));
+                    });
+                });
+            });
+        });
+
+        root.querySelectorAll('.kt-auth-methods').forEach(methodWrap => {
+            const authContent = methodWrap.closest('.kt-auth-content');
+            const methodPanels = authContent ? authContent.querySelectorAll('.kt-auth-panels > li') : [];
+
+            methodWrap.querySelectorAll('.kt-auth-method[href="#"]').forEach(method => {
+                method.addEventListener('click', event => {
+                    event.preventDefault();
+
+                    methodWrap.querySelectorAll('.kt-auth-method').forEach(item => {
+                        item.classList.toggle('is-active', item === method);
+                    });
+
+                    if (!methodPanels.length || !method.dataset.authMethod) {
+                        return;
+                    }
+
+                    methodPanels.forEach(panel => {
+                        panel.classList.toggle('is-active', panel.dataset.authPanel === method.dataset.authMethod);
+                    });
+                });
+            });
+        });
+
+        root.querySelectorAll('[data-password_toggle]').forEach(button => {
+            const inputId = button.getAttribute('aria-controls');
+            const input = (inputId && root.querySelector(`#${inputId}`)) || button.closest('.kt-password')?.querySelector('input');
+            const icon = button.querySelector('img');
+            const showIcon = button.dataset.iconShow;
+            const hideIcon = button.dataset.iconHide;
+
+            if (!input) {
+                return;
+            }
+
+            const syncToggleState = () => {
+                const isVisible = input.type === 'text';
+
+                button.setAttribute('aria-pressed', String(isVisible));
+                button.setAttribute('aria-label', isVisible ? '비밀번호 숨기기' : '비밀번호 보기');
+
+                if (icon && showIcon && hideIcon) {
+                    icon.src = isVisible ? showIcon : hideIcon;
+                }
+            };
+
+            syncToggleState();
+
+            button.addEventListener('click', () => {
+                input.type = input.type === 'password' ? 'text' : 'password';
+                syncToggleState();
+            });
+        });
+
+        root.querySelectorAll('[data-clear_input]').forEach(button => {
+            const inputId = button.getAttribute('aria-controls');
+            const input = (inputId && root.querySelector(`#${inputId}`)) || button.closest('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box, .kt-auth-verify')?.querySelector('input');
+
+            if (!input) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                input.value = '';
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+                input.focus();
+            });
+        });
+
+        root.querySelectorAll('.kt-input-field, .kt-password, .kt-search, .kt-user-verify__box, .kt-auth-verify').forEach(field => {
+            const input = field.querySelector('input');
+            const clearButton = field.querySelector('[data-clear_input]');
+
+            if (!input || !clearButton) {
+                return;
+            }
+
+            const syncClearButton = () => {
+                const hasValue = input.value.trim().length > 0;
+
+                field.classList.toggle('has-value', hasValue);
+                clearButton.hidden = !hasValue;
+                clearButton.setAttribute('aria-hidden', String(!hasValue));
+                clearButton.tabIndex = hasValue ? 0 : -1;
+            };
+
+            input.addEventListener('input', syncClearButton);
+            input.addEventListener('change', syncClearButton);
+            input.addEventListener('compositionend', syncClearButton);
+            input.addEventListener('keyup', syncClearButton);
+            syncClearButton();
+        });
+    },
+    popup: () => {
+        const setLoading = popup => {
+            const content = popup.querySelector('[data-popup-content]');
+
+            if (content) {
+                content.innerHTML = '<div class="kt-popup-loading" role="status">팝업을 불러오는 중입니다.</div>';
+            }
+        };
+
+        const loadRemotePopup = async (trigger, popup) => {
+            const content = popup.querySelector('[data-popup-content]');
+            const url = trigger.dataset.popupUrl;
+
+            if (!content || !url) {
+                return;
+            }
+
+            setLoading(popup);
+
+            try {
+                const response = await fetch(url, { credentials: 'same-origin' });
+
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${url}`);
+                }
+
+                const html = await response.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const selector = trigger.dataset.popupFragment || '.popup, .kt-auth-modal, main';
+                const fragment = doc.querySelector(selector);
+
+                if (!fragment) {
+                    throw new Error(`Popup fragment not found: ${selector}`);
+                }
+
+                content.replaceChildren(fragment.cloneNode(true));
+                ui.popupContent(content);
+                content.querySelector('.kt-auth-close, .popup__close, button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')?.focus();
+            } catch (error) {
+                content.innerHTML = `
+                    <div class="kt-popup-loading kt-popup-loading--error" role="alert">
+                        <strong>팝업을 불러오지 못했습니다.</strong>
+                        <span>${url}</span>
+                    </div>
+                `;
+            }
+        };
+
+        document.addEventListener('click', event => {
+            const openButton = event.target.closest('[data-popup-open]');
+
+            if (openButton) {
+                const popup = getPopup(openButton.dataset.popupOpen);
+
+                if (!popup) {
+                    return;
+                }
+
+                event.preventDefault();
+                openPopup(popup, openButton);
+
+                if (openButton.dataset.popupUrl) {
+                    loadRemotePopup(openButton, popup);
+                }
+
+                return;
+            }
+
+            const closeButton = event.target.closest('[data-popup-close], .popup__close, .kt-auth-close');
+            const popup = closeButton?.closest('.popup');
+
+            if (popup) {
+                event.preventDefault();
+                closePopup(popup);
+            }
+        });
+
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('mousedown', event => {
+                if (event.target === popup && popup.dataset.popupBackdrop !== 'static') {
+                    closePopup(popup);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Escape') {
+                return;
+            }
+
+            const popup = document.querySelector('.popup.is-active');
+
+            if (popup) {
+                closePopup(popup);
+            }
         });
     },
     // Auth/User/Components 페이지에서 사용하는 공통 UI 상태
@@ -1647,6 +1962,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.textareaCounter();
     ui.supportInquiry();
     ui.pagination();
+    ui.popup();
     ui.component();
     ui.codeSnippet();
     ui.apiTree();
