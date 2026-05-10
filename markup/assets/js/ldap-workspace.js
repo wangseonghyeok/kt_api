@@ -7,6 +7,36 @@
 
     const getEditTemplate = section => Array.from(section.children).find(child => child.classList.contains('kt-edit-template'));
     const getControlValue = control => (control.value || '').trim();
+    const toastTimers = new WeakMap();
+
+    const showToast = (toast, message, duration = 1800) => {
+        if (!toast) {
+            return;
+        }
+
+        if (message) {
+            toast.textContent = message;
+        }
+
+        window.clearTimeout(toastTimers.get(toast));
+        toast.hidden = false;
+        toast.setAttribute('aria-hidden', 'false');
+        // toast.offsetHeight;
+        toast.classList.add('is-visible');
+
+        toastTimers.set(
+            toast,
+            window.setTimeout(() => {
+                toast.classList.remove('is-visible');
+                toast.setAttribute('aria-hidden', 'true');
+                window.setTimeout(() => {
+                    if (!toast.classList.contains('is-visible')) {
+                        toast.hidden = true;
+                    }
+                }, 240);
+            }, duration),
+        );
+    };
 
     const closePrompt = prompt => {
         if (!prompt) {
@@ -469,6 +499,21 @@
             return;
         }
 
+        if (input.closest('[data-ldap-search]')) {
+            template.querySelectorAll('[data-member-row]').forEach(row => {
+                row.hidden = false;
+            });
+            template.querySelectorAll('[data-member-empty]').forEach(row => {
+                row.hidden = true;
+            });
+
+            if (section) {
+                syncMemberSection(section);
+            }
+
+            return;
+        }
+
         const query = input.value.trim().toLowerCase();
         const rows = Array.from(template.querySelectorAll('[data-member-row]'));
         const emptyRow = template.querySelector('[data-member-empty]');
@@ -623,6 +668,7 @@
         item.className = 'kt-selected-api is-open';
         item.dataset.selectedApi = '';
         item.dataset.apiId = api.id;
+        item.dataset.apiSensitivity = api.sensitivity;
         summary.className = 'kt-selected-api__summary';
         toggle.type = 'button';
         toggle.className = 'kt-row-toggle';
@@ -667,14 +713,24 @@
     const syncSelectedApiSection = section => {
         const selectedItems = Array.from(section.querySelectorAll('[data-selected-api]'));
         const empty = section.querySelector('[data-api-selected-empty]');
-        const count = section.querySelector('.kt-ws-section__count strong');
+        const notice = section.querySelector('[data-api-sensitive-notice]');
+        const addButton = section.querySelector('[data-api-add-to-list]');
+        const hasSensitiveApi = selectedItems.some(item => item.dataset.apiSensitivity?.includes('민감'));
 
         if (empty) {
             empty.hidden = selectedItems.length !== 0;
         }
 
-        if (count) {
-            count.textContent = String(selectedItems.length);
+        if (notice) {
+            notice.hidden = !hasSensitiveApi;
+        }
+
+        if (addButton) {
+            addButton.disabled = !selectedItems.some(item => {
+                const option = section.querySelector(`[data-ldap-search-option][data-api-id="${item.dataset.apiId}"]`);
+
+                return option && option.dataset.apiAdded !== 'true';
+            });
         }
     };
 
@@ -689,18 +745,8 @@
         }
     };
 
-    const showApiSelectedToast = section => {
-        const toast = section.querySelector('.kt-ldap-toast-api-edit');
-
-        if (!toast) {
-            return;
-        }
-
-        toast.hidden = false;
-        window.clearTimeout(showApiSelectedToast.timer);
-        showApiSelectedToast.timer = window.setTimeout(() => {
-            toast.hidden = true;
-        }, 1600);
+    const showApiSelectedToast = (section, message, duration = 1800) => {
+        showToast(section.querySelector('.kt-ldap-toast-api-edit'), message, duration);
     };
 
     const toggleApiSelection = (option, isSelected) => {
@@ -716,8 +762,7 @@
 
         if (isSelected) {
             if (!existing) {
-                list.appendChild(createSelectedApi(api));
-                showApiSelectedToast(section);
+                list.insertBefore(createSelectedApi(api), list.querySelector('[data-api-sensitive-notice]'));
             }
 
             setApiOptionSelected(option, true);
@@ -740,10 +785,83 @@
         }
 
         section.querySelectorAll(`[data-ldap-search-option][data-api-id="${apiId}"]`).forEach(option => {
+            delete option.dataset.apiAdded;
             setApiOptionSelected(option, false);
         });
         item.remove();
+        syncApiEditTable(section);
+        syncApiReadTable(section);
         syncSelectedApiSection(section);
+    };
+
+    const getSelectedApiOptions = section => Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id].is-selected'));
+
+    const getAddedApiOptions = section => Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id][data-api-added="true"]'));
+
+    const hasSensitiveApiOption = options => options.some(option => (option.dataset.apiSensitivity || '').includes('민감') || (option.dataset.apiParams || '').includes('민감'));
+
+    const getApiEditTableBody = section => section?.querySelector('.kt-data-table--api-edit tbody') || null;
+
+    const getEditApiId = value => (value || '').replace(/^edit-/, '');
+
+    const syncApiEditTable = section => {
+        const body = getApiEditTableBody(section);
+        const addedIds = new Set(getAddedApiOptions(section).map(option => option.dataset.apiId));
+        const empty = body?.querySelector('[data-api-edit-empty]');
+
+        if (!body) {
+            return;
+        }
+
+        body.querySelectorAll('[data-api-row]').forEach(row => {
+            const apiId = getEditApiId(row.dataset.apiAccordion);
+            const isVisible = addedIds.has(apiId);
+
+            row.hidden = !isVisible;
+
+            if (!isVisible) {
+                row.classList.remove('is-open');
+                row.querySelectorAll('.kt-row-toggle[data-api-accordion]').forEach(button => {
+                    button.setAttribute('aria-expanded', 'false');
+                    button.setAttribute('aria-label', 'API 상세 열기');
+                });
+            }
+        });
+
+        body.querySelectorAll('[data-api-accordion-panel]').forEach(panel => {
+            const apiId = getEditApiId(panel.dataset.apiAccordionPanel);
+            const row = body.querySelector(`[data-api-row][data-api-accordion="${panel.dataset.apiAccordionPanel}"]`);
+
+            panel.hidden = !addedIds.has(apiId) || !row?.classList.contains('is-open');
+        });
+
+        if (empty) {
+            empty.hidden = addedIds.size !== 0;
+        }
+    };
+
+    const addSelectedApisToList = button => {
+        const section = button.closest('.kt-ldap-section-api');
+        const selectedOptions = section ? getSelectedApiOptions(section) : [];
+        const newOptions = selectedOptions.filter(option => option.dataset.apiAdded !== 'true');
+
+        if (!section || !newOptions.length) {
+            return;
+        }
+
+        newOptions.forEach(option => {
+            option.dataset.apiAdded = 'true';
+        });
+        syncApiEditTable(section);
+        syncApiReadTable(section);
+        syncSelectedApiSection(section);
+        showApiSelectedToast(section, '선택하신 api가 목록에 추가되었습니다.');
+
+        if (hasSensitiveApiOption(newOptions)) {
+            window.setTimeout(() => {
+                showApiSelectedToast(section, '민감 파라미터 포함 API가 있습니다. API 승인요청이 필요합니다.', 2200);
+            }, 1900);
+        }
     };
 
     const getApiReadTableBody = section => {
@@ -957,7 +1075,7 @@
 
     const syncApiReadTable = section => {
         const body = getApiReadTableBody(section);
-        const selectedOptions = Array.from(section.querySelectorAll('[data-ldap-search-option][data-api-id].is-selected'));
+        const selectedOptions = getAddedApiOptions(section);
         const count = section.querySelector('.kt-ws-section__count strong');
 
         if (!body) {
@@ -1026,6 +1144,7 @@
     workspaceRoot.querySelectorAll('.kt-ldap-section-members').forEach(syncMemberSection);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncSelectedApiSection);
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
+    workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncApiEditTable);
 
     workspaceRoot.addEventListener('input', e => {
         const memberInput = e.target.closest('[data-ldap-member-search]');
@@ -1063,6 +1182,9 @@
         const accordionButton = e.target.closest('.kt-row-toggle[data-api-accordion]');
         const selectedApiToggle = e.target.closest('[data-selected-api-toggle]');
         const selectedApiRemove = e.target.closest('[data-selected-api-remove]');
+        const apiAddButton = e.target.closest('[data-api-add-to-list]');
+        const apiApprovalButton = e.target.closest('[data-api-approval-request]');
+        const apiEmptyAddButton = e.target.closest('[data-api-empty-add]');
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
         const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberDeleteButton = e.target.closest('[data-member-delete]');
@@ -1108,6 +1230,32 @@
                 syncMemberSection(section);
             }
 
+            return;
+        }
+
+        if (apiEmptyAddButton) {
+            const section = apiEmptyAddButton.closest('.kt-ldap-section-api');
+
+            if (section) {
+                e.preventDefault();
+                setEditMode(section, true);
+                syncApiEditTable(section);
+            }
+
+            return;
+        }
+
+        if (apiAddButton) {
+            e.preventDefault();
+            addSelectedApisToList(apiAddButton);
+            return;
+        }
+
+        if (apiApprovalButton) {
+            const section = apiApprovalButton.closest('.kt-ldap-section-api');
+
+            e.preventDefault();
+            showToast(section?.querySelector('.kt-ldap-toast-api'), 'API 추가 승인이 완료되었습니다.');
             return;
         }
 
@@ -1238,6 +1386,10 @@
         }
 
         setEditMode(section, isEditing);
+
+        if (isEditing && section.classList.contains('kt-ldap-section-api')) {
+            syncApiEditTable(section);
+        }
     });
 
     document.addEventListener('click', event => {
