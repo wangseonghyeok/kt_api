@@ -1,0 +1,194 @@
+<section class="kt-ws-section kt-ldap-section-members">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">
+            Members
+            <span class="kt-ws-section__count"><strong>5</strong><span>명</span></span>
+        </h2>
+        <button type="button" class="kt-btn kt-btn--popup">편집</button>
+    </div>
+    <table class="kt-data-table kt-data-table--members">
+        <caption class="blind">
+            멤버 목록
+        </caption>
+        <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">이메일</th>
+                <th scope="col">소속</th>
+                <th scope="col">역할</th>
+                <th scope="col">지정 방식</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="center">김철수</td>
+                <td>kim.cs@hanaro.com</td>
+                <td class="center">하나로소프트</td>
+                <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
+                <td class="center">생성자 자동 지정</td>
+            </tr>
+            <tr>
+                <td class="center">이순희</td>
+                <td>lee.sh@kt.com</td>
+                <td class="center">KT</td>
+                <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
+                <td class="center">KT Service PO 자동 지정</td>
+            </tr>
+            <tr>
+                <td class="center">박지은</td>
+                <td>park.je@hanaro.com</td>
+                <td class="center">하나로소프트</td>
+                <td class="center"><span class="kt-badge">Member</span></td>
+                <td class="center">Owner 초대</td>
+            </tr>
+            <tr>
+                <td class="center">강다희</td>
+                <td>kang.dh@hanaro.com</td>
+                <td class="center">기술개발팀</td>
+                <td class="center"><span class="kt-badge">Member</span></td>
+                <td class="center">Owner 초대</td>
+            </tr>
+            <tr>
+                <td class="center">최민준</td>
+                <td>choi.mj@hanaro.com</td>
+                <td class="center">하나로소프트</td>
+                <td class="center"><span class="kt-badge">Member</span></td>
+                <td class="center">Manager 초대</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- edit mode: 멤버 검색어 입력 시 테이블 행 필터링 -->
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">멤버 편집모드</strong>
+        <section class="kt-works-search kt-works-search--demo kt-ldap-filter" aria-label="멤버 검색">
+            <div class="kt-works-search__row kt-ldap-member-filter">
+                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-show-all>
+                    <div class="kt-prompt__field">
+                        <input
+                            type="text"
+                            id="devMemberKeyword"
+                            class="kt-input kt-input--40"
+                            placeholder="이름 또는 이메일을 입력하세요"
+                            data-prompt_trg
+                            data-ldap-member-search
+                            aria-controls="devMemberPromptMenu"
+                            aria-expanded="false"
+                            autocomplete="off"
+                        />
+                        <span class="kt-prompt__actions">
+                            <button type="button" data-clear_input aria-controls="devMemberKeyword" aria-label="검색어 삭제" hidden>
+                                <img src="/assets/img/components/ico_delete.svg" alt="" />
+                            </button>
+                            <button type="button" aria-label="멤버 검색">
+                                <img src="/assets/img/components/ico_search.svg" alt="" />
+                            </button>
+                        </span>
+                    </div>
+                    <div class="kt-prompt__menu" id="devMemberPromptMenu" data-prompt_menu data-prompt-visible-count="5" role="listbox">
+                        <ul class="kt-prompt__api-list kt-prompt__workspace-list">
+                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="김철수 kim.cs@hanaro.com 하나로소프트 Owner">
+                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                <strong>김철수</strong>
+                                <span>kim.cs@hanaro.com</span>
+                            </li>
+                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="이순희 lee.sh@kt.com KT Manager">
+                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                <strong>이순희</strong>
+                                <span>lee.sh@kt.com</span>
+                            </li>
+                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="박지은 park.je@hanaro.com 하나로소프트 Member">
+                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                <strong>박지은</strong>
+                                <span>park.je@hanaro.com</span>
+                            </li>
+                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="강다희 kang.dh@hanaro.com 기술개발팀 Member">
+                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                <strong>강다희</strong>
+                                <span>kang.dh@hanaro.com</span>
+                            </li>
+                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="최민준 choi.mj@hanaro.com 하나로소프트 Member">
+                                <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                <strong>최민준</strong>
+                                <span>choi.mj@hanaro.com</span>
+                            </li>
+                        </ul>
+                        <p class="kt-prompt__foot" data-prompt_foot data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요" hidden aria-hidden="true"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <table class="kt-data-table kt-data-table--members kt-data-table--members-edit">
+            <caption class="blind">
+                멤버 검색 결과
+            </caption>
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">이름</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">소속</th>
+                    <th scope="col">역할</th>
+                    <th scope="col">지정 방식</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-member-row>
+                    <td class="center">김철수</td>
+                    <td>kim.cs@hanaro.com</td>
+                    <td class="center">하나로소프트</td>
+                    <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
+                    <td class="center">생성자 자동 지정</td>
+                </tr>
+                <tr data-member-row>
+                    <td class="center">이순희</td>
+                    <td>lee.sh@kt.com</td>
+                    <td class="center">KT</td>
+                    <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
+                    <td class="center">KT Service PO 자동 지정</td>
+                </tr>
+                <tr data-member-row>
+                    <td class="center">박지은</td>
+                    <td>park.je@hanaro.com</td>
+                    <td class="center">하나로소프트</td>
+                    <td class="center"><span class="kt-badge">Member</span></td>
+                    <td class="center">Owner 초대</td>
+                </tr>
+                <tr data-member-row>
+                    <td class="center">강다희</td>
+                    <td>kang.dh@hanaro.com</td>
+                    <td class="center">기술개발팀</td>
+                    <td class="center"><span class="kt-badge">Member</span></td>
+                    <td class="center">Owner 초대</td>
+                </tr>
+                <tr data-member-row>
+                    <td class="center">최민준</td>
+                    <td>choi.mj@hanaro.com</td>
+                    <td class="center">하나로소프트</td>
+                    <td class="center"><span class="kt-badge">Member</span></td>
+                    <td class="center">Manager 초대</td>
+                </tr>
+                <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-empty hidden>
+                    <td colspan="5">
+                        <div class="kt-table-empty-result">
+                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                            <p>검색 결과가 없습니다.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

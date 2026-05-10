@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-ldap-popup-page">
+        <div id="wrap">
+            <div class="kt-ldap-modal">
+                <main class="kt-ldap-stage kt-ldap-stage--draft" aria-label="워크스페이스 상세 LDAP Draft">
+                    <article class="kt-ws-popup">
+                        <header class="kt-ws-popup__header">
+                            <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
+                            <button type="button" class="kt-ws-popup__close" aria-label="닫기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </header>
+
+                        <div class="kt-ws-popup__body">
+                            <div class="kt-ws-popup__content">
+                                <section class="kt-ldap-status-group">
+                                    <div class="kt-ws-summary">
+                                        <div>
+                                            <div class="kt-ws-summary__title">
+                                                <strong>하나로소프트_쿠폰서비스</strong>
+                                                <!-- badge composition: API / MCP / OAUTH / DRAFT / DEV / Prod / Expired -->
+                                                <span class="kt-ws-summary__badges">
+                                                    <span class="kt-badge kt-badge--xs">API</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--dark">MCP</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--oauth">OAUTH</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--green">DRAFT</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--prod">Prod</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
+                                                </span>
+                                            </div>
+                                            <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
+                                        </div>
+                                        <div class="kt-ws-meta">
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
+                                                <strong>2026.03.28</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
+                                                <strong>김철수</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
+                                                <strong>하나로소프트</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-ws-status-note kt-ws-status-note--draft">
+                                        <span class="kt-tag kt-tag--dot kt-tag--positive">DRAFT</span>
+                                        <p>멤버, API, IP 설정 완료 후 DEV 전환을 누르면 별도 승인 없이 즉시 DEV로 전환됩니다.</p>
+                                    </div>
+                                </section>
+
+                                <!--#include file="./include/_ldap_section_basic.html"-->
+
+                                <!--#include file="./include/_ldap_section_members_empty.html"-->
+
+                                <!--#include file="./include/_ldap_section_api_empty.html"-->
+
+                                <!--#include file="./include/_ldap_section_ip_empty.html"-->
+
+                                <!--#include file="./include/_ldap_section_keys_empty.html"-->
+                            </div>
+                        </div>
+
+                        <footer class="kt-ws-popup__footer">
+                            <button type="button" class="kt-btn kt-btn--popup-cta">DEV 전환</button>
+                        </footer>
+                    </article>
+                </main>
+            </div>
+            <div id="dim"></div>
+        </div>
+        <script src="/assets/js/ldap-workspace.js"></script>
+    </body>
+</html>

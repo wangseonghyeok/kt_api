@@ -1,0 +1,404 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1192" height="268" viewBox="0 0 1192 268">
+<rect x="0" y="0" width="1192" height="268" rx="0" ry="0" fill="rgba(255,255,255,1.0000)"/>
+<g transform="translate(0,0)">
+<g transform="translate(0,40)">
+<text font-size="18" font-family="Pretendard, sans-serif"
+  font-weight="700" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="20.08799934387207">I</tspan><tspan x="4.78125" y="20.08799934387207">P</tspan><tspan x="20.162109375" y="20.08799934387207">W</tspan><tspan x="38.162109375" y="20.08799934387207">h</tspan><tspan x="48.955078125" y="20.08799934387207">i</tspan><tspan x="53.595703125" y="20.08799934387207">t</tspan><tspan x="60.15234375" y="20.08799934387207">e</tspan><tspan x="70.48828125" y="20.08799934387207">l</tspan><tspan x="75.12890625" y="20.08799934387207">i</tspan><tspan x="79.76953125" y="20.08799934387207">s</tspan><tspan x="89.455078125" y="20.08799934387207">t</tspan></text>
+</g>
+<g transform="translate(1123,40)">
+<g transform="translate(0,0)">
+<clipPath id="frame-clip-1"><rect width="32" height="32" rx="0" ry="0"/></clipPath>
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g clip-path="url(#frame-clip-1)"><g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,3,3)">
+<path d="M9,0C6.17,0 3.65,1.31 2,3.34L2,2C2,1.45 1.55,1 1,1C0.45,1 0,1.45 0,2L0,6C0,6.55 0.45,7 1,7L5,7C5.55,7 6,6.55 6,6C6,5.45 5.55,5 5,5L3.25,5C4.52,3.19 6.62,2 9,2C12.87,2 16,5.13 16,9C16,12.87 12.87,16 9,16C5.74,16 3,13.77 2.22,10.75C2.08,10.22 1.53,9.89 1,10.03C0.47,10.17 0.14,10.72 0.28,11.25C1.28,15.13 4.8,18 9,18C13.97,18 18,13.97 18,9C18,4.03 13.97,0 9,0Z" fill="rgba(25,26,27,1.0000)"/>
+<path d="M8,5C8,4.45 8.45,4 9,4C9.55,4 10,4.45 10,5L10,8.59L12.21,10.79C12.6,11.18 12.6,11.82 12.21,12.21C11.82,12.6 11.18,12.6 10.79,12.21L8,9.41L8,5Z" fill="rgba(25,26,27,1.0000)"/>
+</g>
+</g>
+</g></g>
+<rect x="0.5" y="0.5" width="31" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="69" height="32" rx="0" ry="0" fill="rgba(25,26,27,1.0000)"/>
+<g transform="translate(12,6.5)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(255,255,255,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="22.50" y="14.26" text-anchor="middle">레이블</tspan></text>
+</g>
+</g>
+</g>
+</g>
+<g transform="translate(0,88)">
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="584" height="180" rx="8" ry="8" fill="rgba(255,255,255,1.0000)"/>
+<g transform="translate(0,0)">
+<g transform="translate(0,0)">
+<g transform="translate(24,0)">
+<g transform="translate(0,11)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="700" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.48583984375">D</tspan><tspan x="10.517578125" y="16.48583984375">E</tspan><tspan x="19.3505859375" y="16.48583984375">V</tspan><tspan x="33.57421875" y="16.48583984375">환</tspan><tspan x="46.5380859375" y="16.48583984375">경</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="535" height="43" rx="0" ry="0" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(0,52)">
+<g transform="translate(24,0)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">2</tspan><tspan x="8.90625" y="16.489999771118164">1</tspan><tspan x="15.6298828125" y="16.489999771118164">1</tspan><tspan x="21.7529296875" y="16.489999771118164">.</tspan><tspan x="25.7080078125" y="16.489999771118164">4</tspan><tspan x="35.21484375" y="16.489999771118164">5</tspan><tspan x="43.9306640625" y="16.489999771118164">.</tspan><tspan x="47.490234375" y="16.489999771118164">6</tspan><tspan x="56.8505859375" y="16.489999771118164">7</tspan><tspan x="63.4130859375" y="16.489999771118164">.</tspan><tspan x="66.9873046875" y="16.489999771118164">8</tspan><tspan x="76.259765625" y="16.489999771118164">9</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="31" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(24,38)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">2</tspan><tspan x="8.90625" y="16.489999771118164">1</tspan><tspan x="15.6298828125" y="16.489999771118164">1</tspan><tspan x="21.7529296875" y="16.489999771118164">.</tspan><tspan x="25.7080078125" y="16.489999771118164">4</tspan><tspan x="35.21484375" y="16.489999771118164">5</tspan><tspan x="43.9306640625" y="16.489999771118164">.</tspan><tspan x="47.490234375" y="16.489999771118164">6</tspan><tspan x="56.8505859375" y="16.489999771118164">7</tspan><tspan x="63.4130859375" y="16.489999771118164">.</tspan><tspan x="67.236328125" y="16.489999771118164">9</tspan><tspan x="76.5966796875" y="16.489999771118164">0</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="31" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(24,76)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">예</tspan><tspan x="12.9638671875" y="16.489999771118164">)</tspan><tspan x="22.001953125" y="16.489999771118164">2</tspan><tspan x="30.908203125" y="16.489999771118164">1</tspan><tspan x="37.6318359375" y="16.489999771118164">1</tspan><tspan x="43.7548828125" y="16.489999771118164">.</tspan><tspan x="46.4208984375" y="16.489999771118164">1</tspan><tspan x="53.14453125" y="16.489999771118164">1</tspan><tspan x="59.267578125" y="16.489999771118164">.</tspan><tspan x="61.93359375" y="16.489999771118164">1</tspan><tspan x="68.6572265625" y="16.489999771118164">0</tspan><tspan x="77.5048828125" y="16.489999771118164">.</tspan><tspan x="81.328125" y="16.489999771118164">9</tspan><tspan x="90.6884765625" y="16.489999771118164">2</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(233,234,238,1.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="583" height="179" rx="7.5" ry="7.5" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(608,0)">
+<rect x="0" y="0" width="584" height="180" rx="8" ry="8" fill="rgba(255,255,255,1.0000)"/>
+<g transform="translate(0,0)">
+<g transform="translate(0,0)">
+<g transform="translate(24,0)">
+<g transform="translate(0,11)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="700" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.48583984375">P</tspan><tspan x="9.345703125" y="16.48583984375">R</tspan><tspan x="18.8232421875" y="16.48583984375">D</tspan><tspan x="32.7978515625" y="16.48583984375">환</tspan><tspan x="45.76171875" y="16.48583984375">경</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="535" height="43" rx="0" ry="0" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(0,52)">
+<g transform="translate(24,0)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">2</tspan><tspan x="8.90625" y="16.489999771118164">1</tspan><tspan x="15.6298828125" y="16.489999771118164">1</tspan><tspan x="21.7529296875" y="16.489999771118164">.</tspan><tspan x="25.7080078125" y="16.489999771118164">4</tspan><tspan x="35.21484375" y="16.489999771118164">5</tspan><tspan x="43.9306640625" y="16.489999771118164">.</tspan><tspan x="47.490234375" y="16.489999771118164">6</tspan><tspan x="56.8505859375" y="16.489999771118164">7</tspan><tspan x="63.4130859375" y="16.489999771118164">.</tspan><tspan x="66.9873046875" y="16.489999771118164">8</tspan><tspan x="76.259765625" y="16.489999771118164">9</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="31" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(24,38)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">2</tspan><tspan x="8.90625" y="16.489999771118164">1</tspan><tspan x="15.6298828125" y="16.489999771118164">1</tspan><tspan x="21.7529296875" y="16.489999771118164">.</tspan><tspan x="25.7080078125" y="16.489999771118164">4</tspan><tspan x="35.21484375" y="16.489999771118164">5</tspan><tspan x="43.9306640625" y="16.489999771118164">.</tspan><tspan x="47.490234375" y="16.489999771118164">6</tspan><tspan x="56.8505859375" y="16.489999771118164">7</tspan><tspan x="63.4130859375" y="16.489999771118164">.</tspan><tspan x="67.236328125" y="16.489999771118164">9</tspan><tspan x="76.5966796875" y="16.489999771118164">0</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="31" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(24,76)">
+<g transform="translate(0,2)">
+<g transform="translate(0,0)">
+<text font-size="13" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="14.258000373840332">레</tspan><tspan x="11.2353515625" y="14.258000373840332">이</tspan><tspan x="22.470703125" y="14.258000373840332">블</tspan></text>
+</g>
+<g transform="translate(0,0)">
+<rect x="0" y="0" width="496" height="32" rx="0" ry="0" fill="rgba(19,20,21,0.0000)"/>
+<g transform="translate(16,5)">
+<g transform="translate(0,0)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.489999771118164">예</tspan><tspan x="12.9638671875" y="16.489999771118164">)</tspan><tspan x="22.001953125" y="16.489999771118164">2</tspan><tspan x="30.908203125" y="16.489999771118164">1</tspan><tspan x="37.6318359375" y="16.489999771118164">1</tspan><tspan x="43.7548828125" y="16.489999771118164">.</tspan><tspan x="46.4208984375" y="16.489999771118164">1</tspan><tspan x="53.14453125" y="16.489999771118164">1</tspan><tspan x="59.267578125" y="16.489999771118164">.</tspan><tspan x="61.93359375" y="16.489999771118164">1</tspan><tspan x="68.6572265625" y="16.489999771118164">0</tspan><tspan x="77.5048828125" y="16.489999771118164">.</tspan><tspan x="81.328125" y="16.489999771118164">9</tspan><tspan x="90.6884765625" y="16.489999771118164">2</tspan></text>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="495" height="31" rx="0" ry="0" fill="none" stroke="rgba(139,143,151,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(0,87)">
+<g transform="translate(4,0)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(111,115,123,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">헬</tspan><tspan x="10.37109375" y="13.392000198364258">프</tspan><tspan x="23.671875" y="13.392000198364258">텍</tspan><tspan x="34.04296875" y="13.392000198364258">스</tspan><tspan x="44.4140625" y="13.392000198364258">트</tspan><tspan x="54.78515625" y="13.392000198364258">입</tspan><tspan x="65.15625" y="13.392000198364258">니</tspan><tspan x="75.52734375" y="13.392000198364258">다</tspan><tspan x="85.8984375" y="13.392000198364258">.</tspan><tspan x="91.86328125" y="13.392000198364258">한</tspan><tspan x="105.1640625" y="13.392000198364258">줄</tspan><tspan x="115.53515625" y="13.392000198364258">을</tspan><tspan x="128.8359375" y="13.392000198364258">넘</tspan><tspan x="139.20703125" y="13.392000198364258">기</tspan><tspan x="149.578125" y="13.392000198364258">지</tspan><tspan x="162.87890625" y="13.392000198364258">않</tspan><tspan x="173.25" y="13.392000198364258">는</tspan><tspan x="186.55078125" y="13.392000198364258">것</tspan><tspan x="196.921875" y="13.392000198364258">을</tspan><tspan x="210.22265625" y="13.392000198364258">권</tspan><tspan x="220.59375" y="13.392000198364258">장</tspan><tspan x="230.96484375" y="13.392000198364258">해</tspan><tspan x="241.3359375" y="13.392000198364258">요</tspan><tspan x="251.70703125" y="13.392000198364258">.</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(406.5,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(504,2)">
+<rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="rgba(233,234,238,1.0000)"/>
+<g transform="translate(6,6)">
+<g transform="scale(0.8333333333333334,0.8333333333333334)">
+<g transform="matrix(1,0,0,1,2,3)">
+<path d="M10,18C9.85,18 9.69,17.96 9.55,17.89C9.16,17.69 0,13.03 0,6C0,2.69 2.69,0 6,0C7.98,0 9.24,1.02 10,1.99C10.76,1.02 12.02,0 14,0C17.31,0 20,2.69 20,6C20,13.04 10.84,17.7 10.45,17.89C10.31,17.96 10.16,18 10,18ZM6,2C3.79,2 2,3.79 2,6C2,11.02 8.25,14.88 10,15.86C11.75,14.88 18,11.01 18,6C18,3.79 16.21,2 14,2C11.79,2 10.98,4.23 10.95,4.32C10.81,4.72 10.43,5 10,5C9.57,5 9.19,4.73 9.06,4.32C9.03,4.23 8.23,2 6.01,2L6,2Z" fill="rgba(26,26,26,1.0000)"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="583" height="179" rx="7.5" ry="7.5" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+<g transform="translate(608,23)">
+<rect x="0" y="0" width="584" height="134" rx="8" ry="8" fill="rgba(255,255,255,1.0000)"/>
+<g transform="translate(0,0)">
+<g transform="translate(0,0)">
+<g transform="translate(24,0)">
+<g transform="translate(0,11)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="700" font-style="normal" fill="rgba(25,26,27,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="16.48583984375">P</tspan><tspan x="9.345703125" y="16.48583984375">R</tspan><tspan x="18.8232421875" y="16.48583984375">D</tspan><tspan x="32.7978515625" y="16.48583984375">환</tspan><tspan x="45.76171875" y="16.48583984375">경</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="535" height="43" rx="0" ry="0" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<g transform="translate(0,52)">
+<g transform="translate(24,0)">
+<g transform="translate(0,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.595703125" y="17.48583984375">8</tspan><tspan x="74.6923828125" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(503,4)">
+<rect x="0" y="0" width="33" height="24" rx="0" ry="0" fill="rgba(255,243,229,1.0000)"/>
+<g transform="translate(6,3)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="600" font-style="normal" fill="rgba(143,72,0,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">레</tspan><tspan x="10.37109375" y="13.392000198364258">이블</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(24,34)">
+<g transform="translate(0,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.8154296875" y="17.48583984375">9</tspan><tspan x="75.0146484375" y="17.48583984375">0</tspan></text>
+</g>
+<g transform="translate(503,4)">
+<rect x="0" y="0" width="33" height="24" rx="0" ry="0" fill="rgba(229,245,225,1.0000)"/>
+<g transform="translate(6,3)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="600" font-style="normal" fill="rgba(19,102,0,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.392000198364258">레</tspan><tspan x="10.37109375" y="13.392000198364258">이블</tspan></text>
+</g>
+</g>
+</g>
+<g transform="translate(24,68)">
+<g transform="translate(0,4)">
+<text font-size="15" font-family="Pretendard, sans-serif"
+  font-weight="400" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="17.48583984375">2</tspan><tspan x="8.8037109375" y="17.48583984375">1</tspan><tspan x="15.380859375" y="17.48583984375">1</tspan><tspan x="21.328125" y="17.48583984375">.</tspan><tspan x="25.13671875" y="17.48583984375">4</tspan><tspan x="34.4970703125" y="17.48583984375">5</tspan><tspan x="43.0517578125" y="17.48583984375">.</tspan><tspan x="46.4794921875" y="17.48583984375">6</tspan><tspan x="55.6787109375" y="17.48583984375">7</tspan><tspan x="62.1240234375" y="17.48583984375">.</tspan><tspan x="65.8154296875" y="17.48583984375">9</tspan><tspan x="75.0146484375" y="17.48583984375">9</tspan></text>
+</g>
+<g transform="translate(507,4)">
+<rect x="0" y="0" width="33" height="24" rx="0" ry="0" fill="rgba(252,233,233,1.0000)"/>
+<g transform="translate(6,3)">
+<text font-size="12" font-family="Pretendard, sans-serif"
+  font-weight="600" font-style="normal" fill="rgba(187,27,33,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="13.388671875">레</tspan><tspan x="10.37109375" y="13.388671875">이블</tspan></text>
+</g>
+</g>
+</g>
+</g>
+<g transform="translate(0,156)">
+<rect x="0" y="0" width="588" height="72" rx="12" ry="12" fill="rgba(248,249,250,1.0000)"/>
+<g transform="translate(24,12)">
+<text font-size="14" font-family="Pretendard, sans-serif"
+  font-weight="700" font-style="normal" fill="rgba(224,40,48,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="15.62399959564209">반</tspan><tspan x="12.099609375" y="15.62399959564209">려</tspan><tspan x="27.42578125" y="15.62399959564209">사</tspan><tspan x="39.525390625" y="15.62399959564209">유</tspan></text>
+</g>
+<g transform="translate(24,39)">
+<text font-size="14" font-family="Pretendard, sans-serif"
+  font-weight="500" font-style="normal" fill="rgba(85,88,93,1.0000)"
+  text-rendering="geometricPrecision"><tspan x="0" y="15.6201171875">등</tspan><tspan x="12.099609375" y="15.6201171875">록</tspan><tspan x="27.6171875" y="15.6201171875">요</tspan><tspan x="39.716796875" y="15.6201171875">청</tspan><tspan x="55.234375" y="15.6201171875">I</tspan><tspan x="58.748046875" y="15.6201171875">P</tspan><tspan x="70.7109375" y="15.6201171875">대</tspan><tspan x="82.810546875" y="15.6201171875">역</tspan><tspan x="94.91015625" y="15.6201171875">이</tspan><tspan x="110.427734375" y="15.6201171875">내</tspan><tspan x="122.52734375" y="15.6201171875">부</tspan><tspan x="138.044921875" y="15.6201171875">보</tspan><tspan x="150.14453125" y="15.6201171875">안</tspan><tspan x="165.662109375" y="15.6201171875">정</tspan><tspan x="177.76171875" y="15.6201171875">책</tspan><tspan x="189.861328125" y="15.6201171875">에</tspan><tspan x="205.37890625" y="15.6201171875">부</tspan><tspan x="217.478515625" y="15.6201171875">합</tspan><tspan x="229.578125" y="15.6201171875">하</tspan><tspan x="241.677734375" y="15.6201171875">지</tspan><tspan x="257.1953125" y="15.6201171875">않</tspan><tspan x="269.294921875" y="15.6201171875">습</tspan><tspan x="281.39453125" y="15.6201171875">니</tspan><tspan x="293.494140625" y="15.6201171875">다</tspan><tspan x="305.59375" y="15.6201171875">.</tspan></text>
+</g>
+<rect x="0.5" y="0.5" width="587" height="71" rx="11.5" ry="11.5" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="583" height="133" rx="7.5" ry="7.5" fill="none" stroke="rgba(233,234,238,1.0000)" stroke-width="1"/>
+</g>
+</g>
+</svg>

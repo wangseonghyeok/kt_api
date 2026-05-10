@@ -1,0 +1,279 @@
+<section class="kt-ws-section kt-ldap-section-api-empty">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">
+            구독 API
+            <span class="kt-ws-section__count"><strong>0</strong><span>개</span></span>
+        </h2>
+        <div class="kt-ws-section__actions">
+            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
+                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
+            </button>
+            <button type="button" class="kt-btn kt-btn--popup-line">API 승인요청 민감 0</button>
+            <button type="button" class="kt-btn kt-btn--popup">편집</button>
+        </div>
+    </div>
+    <div class="kt-ldap-api-table-wrap">
+        <table class="kt-data-table kt-data-table--api">
+            <caption class="blind">
+                구독 API 목록
+            </caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">API명</th>
+                    <th scope="col">호출 도메인</th>
+                    <th scope="col">민감도</th>
+                    <th scope="col">Self Testing</th>
+                    <th scope="col">승인</th>
+                    <th scope="col">상태</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="kt-empty-state">
+            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
+            <p>구독된 API가 없으니 + Add API로 추가해 보세요.</p>
+            <button type="button" class="kt-btn kt-btn--popup-line"><img class="kt-svg-icon" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />Add API</button>
+        </div>
+    </div>
+    <!-- alert toast: API 추가 승인 완료 -->
+    <div class="kt-toast kt-ldap-toast-api" role="status">API 추가 승인이 완료되었습니다.</div>
+    <!-- edit mode: 구독 API 편집모드, API 추가 후 목록에 추가 버튼 클릭 시 기본모드 전환 -->
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">구독 API 편집모드</strong>
+        <div class="kt-ldap-api-table-wrap">
+            <div class="kt-toast kt-toast--inside kt-ldap-toast-api-edit" role="status">선택하신 API가 목록에 추가되었습니다.</div>
+            <section class="kt-works-search kt-works-search--demo kt-ldap-filter" aria-label="구독 API 검색">
+                <div class="kt-works-search__row kt-ldap-api-filter">
+                    <p>API 검색</p>
+                    <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-show-all>
+                        <div class="kt-prompt__field">
+                            <input
+                                type="text"
+                                id="draftApiKeyword"
+                                class="kt-input kt-input--40"
+                                placeholder="API명 또는 OIF 코드를 입력하세요"
+                                data-prompt_trg
+                                data-ldap-api-search
+                                aria-controls="draftApiPromptMenu"
+                                aria-expanded="false"
+                                autocomplete="off"
+                            />
+                            <span class="kt-prompt__actions">
+                                <button type="button" data-clear_input aria-controls="draftApiKeyword" aria-label="검색어 삭제" hidden>
+                                    <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                </button>
+                                <button type="button" aria-label="API 검색">
+                                    <img src="/assets/img/components/ico_search.svg" alt="" />
+                                </button>
+                            </span>
+                        </div>
+                        <div class="kt-prompt__menu" id="draftApiPromptMenu" data-prompt_menu data-prompt-visible-count="5" role="listbox">
+                            <ul class="kt-prompt__api-list">
+                                <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_311 checkAppSSOBasedTokenId">
+                                    <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                    <strong>OIF_311</strong>
+                                    <span>checkAppSSOBasedTokenId</span>
+                                </li>
+                                <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_312 UserProperty LDAP">
+                                    <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                    <strong>OIF_312</strong>
+                                    <span>UserProperty (LDAP)</span>
+                                </li>
+                                <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_313 CouponPkgSearch CUPI">
+                                    <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                    <strong>OIF_313</strong>
+                                    <span>CouponPkgSearch (CUPI)</span>
+                                </li>
+                                <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_314 CouponIssue CUPI">
+                                    <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                    <strong>OIF_314</strong>
+                                    <span>CouponIssue (CUPI)</span>
+                                </li>
+                                <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="OIF_315 CouponStatus CUPI">
+                                    <span class="kt-prompt__search-icon" aria-hidden="true"></span>
+                                    <strong>OIF_315</strong>
+                                    <span>CouponStatus (CUPI)</span>
+                                </li>
+                            </ul>
+                            <p class="kt-prompt__foot" data-prompt_foot data-prompt-foot-text="검색어를 더 입력해 결과를 줄여보세요" hidden aria-hidden="true"></p>
+                        </div>
+                    </div>
+                    <span class="kt-ldap-member-filter__count">검색 결과 <strong data-api-filter-count>5</strong>개</span>
+                </div>
+            </section>
+            <table class="kt-data-table kt-data-table--api kt-data-table--api-edit">
+                <caption class="blind">
+                    구독 API 편집 목록
+                </caption>
+                <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">API명</th>
+                        <th scope="col">호출 도메인</th>
+                        <th scope="col">민감도</th>
+                        <th scope="col">Self Testing</th>
+                        <th scope="col">승인</th>
+                        <th scope="col">상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="kt-api-row" data-api-row>
+                        <td>
+                            <div class="kt-api-name">
+                                <button type="button" class="kt-row-toggle" aria-label="API 상세 열기">
+                                    <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                </button>
+                                <span class="kt-api-name__text">OIF_311 <a href="#" class="is-link">checkAppSSOBasedTokenId</a></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-danger">민감 1</td>
+                        <td class="center is-muted">Unfinished</td>
+                        <td class="center"><span class="kt-badge kt-badge--warning">대기</span></td>
+                        <td class="center"><span class="kt-badge">미상용</span></td>
+                    </tr>
+                    <tr class="kt-api-row" data-api-row>
+                        <td>
+                            <div class="kt-api-name">
+                                <button type="button" class="kt-row-toggle" aria-label="API 상세 열기">
+                                    <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                </button>
+                                <span class="kt-api-name__text">OIF_312 <a href="#" class="is-link">UserProperty (LDAP)</a></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-muted">-</td>
+                        <td class="center is-muted">Unfinished</td>
+                        <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                        <td class="center"><span class="kt-badge">미상용</span></td>
+                    </tr>
+                    <tr class="kt-api-row is-open" data-api-row data-api-accordion="coupon">
+                        <td>
+                            <div class="kt-api-name">
+                                <button type="button" class="kt-row-toggle" data-api-accordion="coupon" aria-expanded="true" aria-label="API 상세 닫기">
+                                    <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                </button>
+                                <span class="kt-api-name__text">OIF_313 <a href="#" class="is-link">CouponPkgSearch (CUPI)</a></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-danger">민감 1</td>
+                        <td class="center"><a href="#" class="is-link">Completed</a></td>
+                        <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
+                    </tr>
+                    <tr class="kt-api-detail-row" data-api-accordion-panel="coupon">
+                        <td>
+                            <div class="kt-api-params">
+                                <div class="kt-api-name">
+                                    <button type="button" class="kt-row-toggle" data-api-accordion="coupon" aria-expanded="true" aria-label="API 상세 닫기">
+                                        <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                    </button>
+                                    <span class="kt-api-name__text">OIF_313 <a href="#" class="is-link">checkAppSSOBasedTokenId</a></span>
+                                </div>
+                                <strong>Return Parameters</strong>
+                                <span class="kt-api-params__row">member_id <em class="kt-api-params__sensitive">민감 1</em></span>
+                                <span>point_balance</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-danger">민감 1</td>
+                        <td class="center is-muted">-</td>
+                        <td class="center"><span class="kt-badge kt-badge--danger">반려</span></td>
+                        <td class="center"><span class="kt-badge">미상용</span></td>
+                    </tr>
+                    <tr class="kt-api-reject-row" data-api-accordion-panel="coupon">
+                        <td colspan="6">
+                            <div class="kt-reject-reason">
+                                <span class="kt-reject-reason__tag">반려 사유</span>
+                                <p>IMEI 연관 파라미터(user_id)의 사용 목적이 불명확하므로, 보안성 검토 결과서와 데이터 보존 기간을 함께 제출해 주세요.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="kt-api-row" data-api-row>
+                        <td>
+                            <div class="kt-api-name">
+                                <button type="button" class="kt-row-toggle" aria-label="API 상세 열기">
+                                    <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                </button>
+                                <span class="kt-api-name__text">OIF_314 <a href="#" class="is-link">CouponIssue (CUPI)</a></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-danger">민감 1</td>
+                        <td class="center is-muted">Unfinished</td>
+                        <td class="center"><span class="kt-badge kt-badge--warning">대기</span></td>
+                        <td class="center"><span class="kt-badge">미상용</span></td>
+                    </tr>
+                    <tr class="kt-api-row" data-api-row>
+                        <td>
+                            <div class="kt-api-name">
+                                <button type="button" class="kt-row-toggle" aria-label="API 상세 열기">
+                                    <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                </button>
+                                <span class="kt-api-name__text">OIF_315 <a href="#" class="is-link">CouponStatus (CUPI)</a></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="kt-domain-lines">
+                                <span>상용 cus-in.api.kt.com</span>
+                                <span>개발 cus-in.tbapi.kt.com</span>
+                            </div>
+                        </td>
+                        <td class="center is-muted">-</td>
+                        <td class="center"><a href="#" class="is-link">Completed</a></td>
+                        <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
+                    </tr>
+                    <tr class="kt-data-table__empty kt-data-table__empty--result" data-api-empty hidden>
+                        <td colspan="6">
+                            <div class="kt-table-empty-result">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                                <p>검색 결과가 없습니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

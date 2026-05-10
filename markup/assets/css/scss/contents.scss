@@ -2910,3 +2910,200 @@
     min-height: 140px;
     max-height: 140px;
 }
+
+/* ==============================
+    LDAP workspace detail popup pages
+============================== */
+.kt-ldap-popup-page {
+    margin: 0;
+    overflow-x: hidden;
+    background: #292929;
+
+    #wrap {
+        min-height: 100vh;
+    }
+}
+
+.kt-ldap-modal {
+    position: relative;
+    z-index: 1000;
+    min-height: 100vh;
+}
+
+.kt-ldap-stage {
+    position: relative;
+    width: 100%;
+    min-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 100px 0;
+    background: transparent;
+
+    .kt-ws-popup {
+        margin: 0 auto;
+    }
+}
+
+.kt-ldap-stage--draft {
+    min-height: 100vh;
+}
+
+.kt-ldap-stage--dev {
+    min-height: 100vh;
+}
+
+.kt-ldap-badge-samples {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kt-ldap-badge-samples--top {
+    top: 51px;
+    left: calc(50% - 451px);
+}
+
+.kt-ldap-badge-samples--roles {
+    top: 766px;
+    left: calc(50% + 691px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.kt-ldap-badge-samples--statuses {
+    top: 650px;
+    left: calc(50% + 687px);
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 5px 16px;
+    align-items: start;
+}
+
+.kt-ldap-status-group {
+    height: 177px;
+}
+
+.kt-ldap-section-basic {
+    height: 253px;
+}
+
+.kt-ldap-section-members {
+    height: 288px;
+}
+
+.kt-ldap-section-api-empty {
+    position: relative;
+    height: 288px;
+}
+
+.kt-ldap-section-api-filled {
+    height: 244px;
+}
+
+.kt-ldap-section-ip-empty,
+.kt-ldap-section-keys-empty {
+    height: 236px;
+}
+
+.kt-ldap-section-ip-filled {
+    height: 222px;
+}
+
+.kt-ldap-section-keys-filled {
+    height: 330px;
+}
+
+.kt-ldap-section-api-edit {
+    height: 558px;
+}
+
+.kt-ldap-section-ip-edit {
+    height: 268px;
+}
+
+.kt-ldap-toast-api {
+    top: 38px;
+}
+
+.kt-ldap-toast-api-edit {
+    top: -34px;
+}
+
+.kt-ldap-api-table-wrap {
+    position: relative;
+}
+
+.kt-ldap-api-table-wrap .kt-data-table--api {
+    col:nth-child(1) {
+        width: 376px;
+    }
+
+    col:nth-child(2) {
+        width: 376px;
+    }
+
+    col:nth-child(3) {
+        width: 100px;
+    }
+
+    col:nth-child(4) {
+        width: 140px;
+    }
+
+    col:nth-child(5) {
+        width: 100px;
+    }
+
+    col:nth-child(6) {
+        width: 100px;
+    }
+}
+
+.kt-reject-reason--ip {
+    margin-top: 12px;
+}
+
+.kt-ldap-filter {
+    z-index: 15;
+    height: auto;
+    margin: 0 0 12px;
+}
+
+.kt-ldap-filter .kt-works-search__row {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 12px;
+}
+
+.kt-ldap-filter .kt-works-search__row > p {
+    color: #55585d;
+}
+
+.kt-ldap-filter .kt-prompt--works .kt-prompt__menu {
+    max-width: 520px;
+}
+
+.kt-ldap-filter .kt-ldap-api-filter {
+    grid-template-columns: 112px minmax(0, 1fr) max-content;
+}
+
+.kt-ldap-filter .kt-ldap-member-filter {
+    grid-template-columns: minmax(0, 520px);
+    gap: 0;
+}
+
+.kt-ldap-member-filter__count {
+    align-self: center;
+    justify-self: end;
+    color: #55585d;
+    font-size: 13px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+
+    strong {
+        color: #191a1b;
+        font-weight: var(--fw-Bold);
+    }
+}

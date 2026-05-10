@@ -1,0 +1,76 @@
+<section class="kt-ws-section kt-ldap-section-basic">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">기본 정보</h2>
+        <div class="kt-ws-section__actions">
+            <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
+            <span class="kt-edit-actions" aria-label="기본 정보 편집 액션">
+                <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
+                <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
+            </span>
+        </div>
+    </div>
+    <table class="kt-read-mode kt-info-table" aria-label="기본 정보">
+        <colgroup>
+            <col class="kt-info-table__label-col" />
+            <col class="kt-info-table__value-col" />
+            <col class="kt-info-table__label-col" />
+            <col class="kt-info-table__value-col" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th id="ldap-basic-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                <td headers="ldap-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">하나로소프트_쿠폰서비스</td>
+                <th id="ldap-basic-type" scope="row" class="kt-info-table__label">타입</th>
+                <td headers="ldap-basic-type" class="kt-info-table__value">Api Workspace</td>
+            </tr>
+            <tr>
+                <th id="ldap-basic-desc" scope="row" class="kt-info-table__label">설명</th>
+                <td headers="ldap-basic-desc" class="kt-info-table__value" data-basic-value="description">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</td>
+                <th id="ldap-basic-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                <td headers="ldap-basic-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+            </tr>
+            <tr>
+                <th id="ldap-basic-company" scope="row" class="kt-info-table__label kt-info-table__label--tall">회사</th>
+                <td headers="ldap-basic-company" class="kt-info-table__value kt-info-table__value--tall">하나로소프트</td>
+                <th id="ldap-basic-manager" scope="row" class="kt-info-table__label kt-info-table__label--tall">KT 사업담당자<br />(Manager)</th>
+                <td headers="ldap-basic-manager" class="kt-info-table__value kt-info-table__value--tall">조민호 (minho.jo@kt.com)</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- edit mode: 기본정보 편집 시 같은 테이블의 값 셀 안에서 입력 구조로 전환 -->
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">기본정보 편집모드</strong>
+        <table class="kt-info-table kt-info-table--edit" aria-label="기본 정보 편집">
+            <colgroup>
+                <col class="kt-info-table__label-col" />
+                <col class="kt-info-table__value-col" />
+                <col class="kt-info-table__label-col" />
+                <col class="kt-info-table__value-col" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th id="ldap-basic-edit-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                    <td headers="ldap-basic-edit-workspace-name" class="kt-info-table__value">
+                        <input type="text" class="kt-input kt-input--36" value="하나로소프트_쿠폰서비스" data-basic-field="workspaceName" />
+                    </td>
+                    <th id="ldap-basic-edit-type" scope="row" class="kt-info-table__label">타입</th>
+                    <td headers="ldap-basic-edit-type" class="kt-info-table__value">Api Workspace</td>
+                </tr>
+                <tr>
+                    <th id="ldap-basic-edit-desc" scope="row" class="kt-info-table__label">설명</th>
+                    <td headers="ldap-basic-edit-desc" class="kt-info-table__value">
+                        <input type="text" class="kt-input kt-input--36" value="쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스" data-basic-field="description" />
+                    </td>
+                    <th id="ldap-basic-edit-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                    <td headers="ldap-basic-edit-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                </tr>
+                <tr>
+                    <th id="ldap-basic-edit-company" scope="row" class="kt-info-table__label kt-info-table__label--tall">회사</th>
+                    <td headers="ldap-basic-edit-company" class="kt-info-table__value kt-info-table__value--tall">하나로소프트</td>
+                    <th id="ldap-basic-edit-manager" scope="row" class="kt-info-table__label kt-info-table__label--tall">KT 사업담당자<br />(Manager)</th>
+                    <td headers="ldap-basic-edit-manager" class="kt-info-table__value kt-info-table__value--tall">조민호 (minho.jo@kt.com)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1522,6 +1522,51 @@ KT API Link 연동 설명을 입력합니다.
                         </div>
                     </section>
 
+                    <section class="kt-component-section" id="ldap-workspace">
+                        <h2>LDAP Workspace Detail</h2>
+                        <p class="kt-component-desc">
+                            워크스페이스 상세 팝업에서 반복 사용하는 기본정보, Members, 구독 API, IP Whitelist, API Keys 섹션입니다. 실제 LDAP 화면과 같은 include를 사용합니다.
+                        </p>
+                        <div class="kt-component-demo kt-component-demo--wide" data-ldap-components>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>기본정보</h3>
+                                <!--#include file="./include/_ldap_section_basic.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Members - Empty</h3>
+                                <!--#include file="./include/_ldap_section_members_empty.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Members - Filled</h3>
+                                <!--#include file="./include/_ldap_section_members_filled.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>구독 API - Empty</h3>
+                                <!--#include file="./include/_ldap_section_api_empty.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>구독 API - Filled</h3>
+                                <!--#include file="./include/_ldap_section_api_filled.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>IP Whitelist - Empty</h3>
+                                <!--#include file="./include/_ldap_section_ip_empty.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>IP Whitelist - Filled</h3>
+                                <!--#include file="./include/_ldap_section_ip_filled.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - Empty</h3>
+                                <!--#include file="./include/_ldap_section_keys_empty.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - Filled</h3>
+                                <!--#include file="./include/_ldap_section_keys_filled.html"-->
+                            </div>
+                        </div>
+                    </section>
+
                     <section class="kt-component-section" id="scrollbar">
                         <h2>Scrollbar</h2>
                         <p class="kt-component-desc">Dropdown prompt와 table 내부 스크롤은 20px 영역 안에 4px thumb가 보이는 형태로 맞춥니다.</p>
@@ -1818,6 +1863,7 @@ KT API Link 연동 설명을 입력합니다.
             <!--#include file="./include/_footer.html"-->
         </div>
 
+        <script src="/assets/js/ldap-workspace.js"></script>
         <script>
             // document.addEventListener('DOMContentLoaded', () => {
             //     const chartEl = document.getElementById('componentApiChart');

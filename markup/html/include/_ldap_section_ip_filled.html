@@ -1,0 +1,92 @@
+<section class="kt-ws-section kt-ldap-section-ip-filled">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">IP Whitelist</h2>
+        <div class="kt-ws-section__actions">
+            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
+                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
+            </button>
+            <button type="button" class="kt-btn kt-btn--popup">편집</button>
+        </div>
+    </div>
+    <div class="kt-panel-grid">
+        <div class="kt-env-card">
+            <div class="kt-env-card__title">DEV 환경</div>
+            <div class="kt-env-card__body">
+                <div class="kt-env-card__list">
+                    <div class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></div>
+                    <div class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="kt-env-card">
+            <div class="kt-env-card__title">PRD 환경</div>
+            <div class="kt-env-card__body">
+                <div class="kt-env-card__list">
+                    <div class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></div>
+                    <div class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- edit mode: IP Whitelist 편집모드 및 반려/재신청 구조 -->
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
+        <div class="kt-panel-grid">
+            <div class="kt-env-card">
+                <div class="kt-env-card__title">DEV 환경</div>
+                <div class="kt-env-card__body">
+                    <div class="kt-ldap-ip-editor">
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" value="211.45.67.89" />
+                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" value="211.45.67.90" />
+                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" placeholder="예) 211.11.10.92" />
+                            <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-env-card">
+                <div class="kt-env-card__title">PRD 환경</div>
+                <div class="kt-env-card__body">
+                    <div class="kt-ldap-ip-editor">
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" value="211.45.67.89" />
+                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" value="211.45.67.90" />
+                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                        <div class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" placeholder="예) 211.11.10.92" />
+                            <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
+                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- reject state: IP Whitelist 반려/재신청 화면의 반려 사유 노출 -->
+        <div class="kt-reject-reason kt-reject-reason--ip">
+            <span class="kt-reject-reason__tag">반려 사유</span>
+            <p>등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.</p>
+        </div>
+    </div>
+</section>

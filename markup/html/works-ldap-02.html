@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-ldap-popup-page">
+        <div id="wrap">
+            <div class="kt-ldap-modal">
+                <main class="kt-ldap-stage kt-ldap-stage--dev" aria-label="워크스페이스 상세 LDAP DEV">
+                    <!-- badge samples: role badges shown next to the popup in Figma -->
+                    <div class="kt-ldap-badge-samples kt-ldap-badge-samples--roles" aria-label="역할 뱃지 샘플">
+                        <span class="kt-badge kt-badge--role-owner">Owner</span>
+                        <span class="kt-badge kt-badge--role-manager">Manager</span>
+                        <span class="kt-badge">Member</span>
+                    </div>
+
+                    <!-- badge samples: 재신청 / 상용 / 승인 / 호출제한 / 대기 / 미상용 / 반려 -->
+                    <div class="kt-ldap-badge-samples kt-ldap-badge-samples--statuses" aria-label="상태 뱃지 샘플">
+                        <span class="kt-badge kt-badge--blue">재신청</span>
+                        <span class="kt-badge kt-badge--prod">상용</span>
+                        <span class="kt-badge kt-badge--green">승인</span>
+                        <span class="kt-badge kt-badge--danger">호출제한</span>
+                        <span class="kt-badge kt-badge--warning">대기</span>
+                        <span class="kt-badge">미상용</span>
+                        <span class="kt-badge kt-badge--danger">반려</span>
+                    </div>
+
+                    <article class="kt-ws-popup">
+                        <header class="kt-ws-popup__header">
+                            <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
+                            <button type="button" class="kt-ws-popup__close" aria-label="닫기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </header>
+
+                        <div class="kt-ws-popup__body">
+                            <div class="kt-ws-popup__content">
+                                <section class="kt-ldap-status-group">
+                                    <div class="kt-ws-summary">
+                                        <div>
+                                            <div class="kt-ws-summary__title">
+                                                <strong>하나로소프트_쿠폰서비스</strong>
+                                                <!-- badge composition: API / MCP / OAUTH / DRAFT / DEV / Prod / Expired -->
+                                                <span class="kt-ws-summary__badges">
+                                                    <span class="kt-badge kt-badge--xs">API</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--dark">MCP</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--oauth">OAUTH</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--green">DRAFT</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--prod">Prod</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
+                                                </span>
+                                            </div>
+                                            <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
+                                        </div>
+                                        <div class="kt-ws-meta">
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
+                                                <strong>2026.03.28</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
+                                                <strong>김철수</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
+                                                <strong>하나로소프트</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-ws-status-note kt-ws-status-note--dev">
+                                        <span class="kt-tag kt-tag--dot kt-tag--info">DEV</span>
+                                        <p>환경이 활성화되었으며, 민감 API는 승인 후 호출 가능하고 전체 승인 완료 시 운영 전환이 활성화됩니다.</p>
+                                    </div>
+                                </section>
+
+                                <!--#include file="./include/_ldap_section_basic.html"-->
+
+                                <!--#include file="./include/_ldap_section_members_filled.html"-->
+
+                                <!--#include file="./include/_ldap_section_api_filled.html"-->
+
+                                <!--#include file="./include/_ldap_section_ip_filled.html"-->
+
+                                <!--#include file="./include/_ldap_section_keys_filled.html"-->
+                            </div>
+                        </div>
+
+                        <footer class="kt-ws-popup__footer">
+                            <button type="button" class="kt-btn kt-btn--popup-cta">PRD 반영신청</button>
+                        </footer>
+                    </article>
+                </main>
+            </div>
+            <div id="dim"></div>
+        </div>
+        <script src="/assets/js/ldap-workspace.js"></script>
+    </body>
+</html>
