@@ -652,8 +652,31 @@
         return row;
     };
 
+    const setSelectedApiOpen = (item, isOpen) => {
+        const panel = item?.querySelector('[data-selected-api-panel]');
+        const toggle = item?.querySelector('[data-selected-api-toggle]');
+
+        if (!item || !panel) {
+            return;
+        }
+
+        item.classList.toggle('is-open', isOpen);
+        panel.hidden = !isOpen;
+
+        if (toggle) {
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.setAttribute('aria-label', isOpen ? '선택된 API 상세 닫기' : '선택된 API 상세 열기');
+        }
+    };
+
+    const closeSelectedApis = section => {
+        section?.querySelectorAll('[data-selected-api]').forEach(item => {
+            setSelectedApiOpen(item, false);
+        });
+    };
+
     const createSelectedApi = api => {
-        const item = document.createElement('article');
+        const item = document.createElement('li');
         const summary = document.createElement('div');
         const toggle = document.createElement('button');
         const toggleIcon = document.createElement('img');
@@ -667,7 +690,7 @@
         const params = document.createElement('div');
         const paramsTitle = document.createElement('strong');
 
-        item.className = 'kt-selected-api is-open';
+        item.className = 'kt-selected-api';
         item.dataset.selectedApi = '';
         item.dataset.apiId = api.id;
         item.dataset.apiSensitivity = api.sensitivity;
@@ -675,8 +698,8 @@
         toggle.type = 'button';
         toggle.className = 'kt-row-toggle';
         toggle.dataset.selectedApiToggle = '';
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', '선택된 API 상세 닫기');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', '선택된 API 상세 열기');
         toggleIcon.className = 'kt-svg-icon';
         toggleIcon.src = '/assets/img/components/ico_chevron_down_16_gray.svg';
         toggleIcon.alt = '';
@@ -684,6 +707,7 @@
         toggle.appendChild(toggleIcon);
         title.className = 'kt-selected-api__title';
         code.textContent = api.code;
+        name.className = 'kt-selected-api__link';
         name.textContent = api.name;
         title.append(code, name);
         sensitivity.className = 'kt-selected-api__sensitive';
@@ -700,6 +724,7 @@
         summary.append(toggle, title, sensitivity, remove);
         detail.className = 'kt-selected-api__detail';
         detail.dataset.selectedApiPanel = '';
+        detail.hidden = true;
         params.className = 'kt-selected-api__params';
         paramsTitle.textContent = 'Return Parameters (사용할 필드 선택)';
         params.appendChild(paramsTitle);
@@ -768,12 +793,14 @@
             }
 
             setApiOptionSelected(option, true);
+            closeSelectedApis(section);
             syncSelectedApiSection(section);
             return;
         }
 
         existing?.remove();
         setApiOptionSelected(option, false);
+        closeSelectedApis(section);
         syncSelectedApiSection(section);
     };
 
@@ -1320,18 +1347,14 @@
 
         if (selectedApiToggle) {
             const item = selectedApiToggle.closest('[data-selected-api]');
-            const panel = item?.querySelector('[data-selected-api-panel]');
             const isOpen = !item?.classList.contains('is-open');
 
-            if (!item || !panel) {
+            if (!item) {
                 return;
             }
 
             e.preventDefault();
-            item.classList.toggle('is-open', isOpen);
-            panel.hidden = !isOpen;
-            selectedApiToggle.setAttribute('aria-expanded', String(isOpen));
-            selectedApiToggle.setAttribute('aria-label', isOpen ? '선택된 API 상세 닫기' : '선택된 API 상세 열기');
+            setSelectedApiOpen(item, isOpen);
             return;
         }
 

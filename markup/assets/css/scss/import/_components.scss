@@ -6605,6 +6605,11 @@
         background: #f8f9fa;
         text-align: left;
     }
+    .kt-api-reject-row {
+        td {
+            padding: 0 !important;
+        }
+    }
 }
 
 .kt-api-detail-card {
