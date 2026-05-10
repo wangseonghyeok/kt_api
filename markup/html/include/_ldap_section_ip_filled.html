@@ -12,23 +12,28 @@
         <div class="kt-env-card" data-ip-env="dev">
             <div class="kt-env-card__title">DEV 환경</div>
             <div class="kt-env-card__body">
-                <div class="kt-env-card__list">
-                    <div class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></div>
-                    <div class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></div>
-                </div>
+                <ul class="kt-env-card__list">
+                    <li class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></li>
+                    <li class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></li>
+                    <li class="kt-env-card__item"><span>211.45.67.99</span><span class="kt-badge kt-badge--danger">반려</span></li>
+                    <li class="kt-reject-reason kt-reject-reason--ip">
+                        <span class="kt-reject-reason__tag">반려 사유</span>
+                        <p>등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.</p>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="kt-env-card" data-ip-env="prd">
             <div class="kt-env-card__title">PRD 환경</div>
             <div class="kt-env-card__body">
-                <div class="kt-env-card__list">
-                    <div class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></div>
-                    <div class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></div>
-                </div>
+                <ul class="kt-env-card__list">
+                    <li class="kt-env-card__item"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></li>
+                    <li class="kt-env-card__item"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></li>
+                </ul>
             </div>
         </div>
     </div>
-    <!-- edit mode: IP Whitelist 편집모드 및 반려/재신청 구조 -->
+    <!-- edit mode: IP Whitelist 편집모드, DEV/PRD 입력 후 추가 행이 위로 쌓이는 구조 -->
     <div class="kt-edit-template kt-edit-box">
         <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
         <div class="kt-panel-grid">
@@ -58,11 +63,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <!-- reject state: IP Whitelist 반려/재신청 화면의 반려 사유 노출 -->
-        <div class="kt-reject-reason kt-reject-reason--ip">
-            <span class="kt-reject-reason__tag">반려 사유</span>
-            <p>등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.</p>
         </div>
     </div>
 </section>

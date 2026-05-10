@@ -1169,7 +1169,7 @@
     const createApiRejectRow = group => {
         const row = document.createElement('tr');
         const cell = document.createElement('td');
-        const reason = document.createElement('div');
+        const reason = document.createElement('li');
         const tag = document.createElement('span');
         const text = document.createElement('p');
 
@@ -1260,18 +1260,119 @@
 
     const getIpReadCard = (section, env) => getIpReadGrid(section)?.querySelector(`[data-ip-env="${env}"]`) || null;
 
-    const createIpReadItem = value => {
-        const item = document.createElement('div');
-        const text = document.createElement('span');
+    const ipBadgeClassMap = {
+        대기: 'kt-badge--warning',
+        승인: 'kt-badge--green',
+        반려: 'kt-badge--danger',
+    };
+    const ipStatusOrder = {
+        대기: 0,
+        승인: 1,
+        반려: 2,
+    };
+    // 임시: 기획 확정 전 행 추가 시 상태 배지를 대기 -> 승인 -> 반려 순서로 순환 노출합니다.
+    const temporaryIpStatusCycle = ['대기', '승인', '반려'];
+    const getTemporaryIpStatus = editor => temporaryIpStatusCycle[editor.querySelectorAll('[data-ip-editor-item]').length % temporaryIpStatusCycle.length];
+
+    const createIpBadge = (status = '대기') => {
         const badge = document.createElement('span');
+        const badgeClass = ipBadgeClassMap[status];
+
+        badge.className = 'kt-badge';
+        badge.textContent = status;
+
+        if (badgeClass) {
+            badge.classList.add(badgeClass);
+        }
+
+        return badge;
+    };
+
+    const createIpRejectReason = text => {
+        const reason = document.createElement('li');
+        const tag = document.createElement('span');
+        const paragraph = document.createElement('p');
+
+        // 임시: 반려 시 편집완료 디자인에서 반려 사유가 포함된 반려 디자인으로도 전환됩니다.
+        reason.className = 'kt-reject-reason kt-reject-reason--ip';
+        tag.className = 'kt-reject-reason__tag';
+        tag.textContent = '반려 사유';
+        paragraph.textContent = text || '등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.';
+        reason.append(tag, paragraph);
+
+        return reason;
+    };
+
+    const createIpReadItem = (value, status = '대기') => {
+        const item = document.createElement('li');
+        const text = document.createElement('span');
 
         item.className = 'kt-env-card__item';
+        item.dataset.ipValue = value;
+        item.dataset.ipStatus = status;
         text.textContent = value;
-        badge.className = 'kt-badge kt-badge--warning';
-        badge.textContent = '대기';
-        item.append(text, badge);
+        item.append(text, createIpBadge(status));
 
         return item;
+    };
+
+    const createIpRemoveButton = value => {
+        const button = document.createElement('button');
+        const icon = document.createElement('img');
+
+        button.type = 'button';
+        button.className = 'kt-ldap-ip-editor__button kt-ldap-ip-editor__button--remove';
+        button.setAttribute('aria-label', `${value} 삭제`);
+        icon.className = 'kt-svg-icon';
+        icon.src = '/assets/img/contents/ico_tool_minus.svg';
+        icon.alt = '';
+        icon.setAttribute('aria-hidden', 'true');
+        button.appendChild(icon);
+
+        return button;
+    };
+
+    const createIpEditorItem = (value, status = '대기', reason = '') => {
+        const item = document.createElement('li');
+        const input = document.createElement('input');
+
+        item.className = 'kt-ldap-ip-editor__row kt-ldap-ip-editor__row--item';
+        item.dataset.ipEditorItem = '';
+        item.dataset.ipValue = value;
+        item.dataset.ipStatus = status;
+        item.dataset.ipRejectReason = reason;
+        input.type = 'text';
+        input.className = 'kt-input kt-input--32';
+        input.inputMode = 'decimal';
+        input.placeholder = '예) 211.11.10.92';
+        input.value = value;
+        item.append(input, createIpRemoveButton(value));
+
+        return item;
+    };
+
+    const getIpReadValues = card => {
+        const values = [];
+        const list = card?.querySelector('.kt-env-card__list');
+        let lastValue = null;
+
+        Array.from(list?.children || []).forEach(child => {
+            if (child.classList.contains('kt-env-card__item')) {
+                lastValue = {
+                    value: child.dataset.ipValue || child.querySelector('span:first-child')?.textContent.trim() || '',
+                    status: child.dataset.ipStatus || child.querySelector('.kt-badge')?.textContent.trim() || '대기',
+                    reason: '',
+                };
+                values.push(lastValue);
+                return;
+            }
+
+            if (child.classList.contains('kt-reject-reason') && lastValue?.status === '반려') {
+                lastValue.reason = child.querySelector('p')?.textContent.trim() || '';
+            }
+        });
+
+        return values;
     };
 
     const ensureIpReadList = card => {
@@ -1289,7 +1390,7 @@
         }
 
         if (!list) {
-            list = document.createElement('div');
+            list = document.createElement('ul');
             list.className = 'kt-env-card__list';
             body.appendChild(list);
         }
@@ -1305,14 +1406,16 @@
 
         if (empty) {
             empty.hidden = hasItems;
+            empty.style.display = hasItems ? 'none' : 'flex';
         }
 
         if (body) {
             body.hidden = !hasItems;
+            body.style.display = hasItems ? '' : 'none';
         }
     };
 
-    const addIpToReadCard = (section, env, value) => {
+    const addIpToReadCard = (section, env, value, status = '대기', reason = '') => {
         const ip = value.trim();
         const card = getIpReadCard(section, env);
         const list = ensureIpReadList(card);
@@ -1322,37 +1425,141 @@
             return false;
         }
 
-        list.appendChild(createIpReadItem(ip));
+        list.appendChild(createIpReadItem(ip, status));
+
+        if (status === '반려') {
+            list.appendChild(createIpRejectReason(reason));
+        }
+
         syncIpReadCardState(card);
 
         return true;
     };
 
-    const addIpEditorValue = editor => {
-        const section = editor.closest('.kt-ws-section');
-        const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;
-        const input = editor.querySelector('.kt-ldap-ip-editor__row input');
-        const value = input?.value.trim() || '';
-        const isAdded = addIpToReadCard(section, env, value);
+    const clearIpReadCard = (section, env) => {
+        const card = getIpReadCard(section, env);
+        const list = ensureIpReadList(card);
 
-        if (isAdded && input) {
-            input.value = '';
+        list?.replaceChildren();
+        syncIpReadCardState(card);
+    };
+
+    const sortIpReadList = list => {
+        const entries = [];
+        let lastEntry = null;
+
+        Array.from(list?.children || []).forEach(child => {
+            if (child.classList.contains('kt-env-card__item')) {
+                lastEntry = {
+                    item: child,
+                    reason: null,
+                    status: child.dataset.ipStatus || child.querySelector('.kt-badge')?.textContent.trim() || '대기',
+                    index: entries.length,
+                };
+                entries.push(lastEntry);
+                return;
+            }
+
+            if (child.classList.contains('kt-reject-reason') && lastEntry?.status === '반려') {
+                lastEntry.reason = child;
+            }
+        });
+
+        entries
+            .sort((a, b) => (ipStatusOrder[a.status] ?? 99) - (ipStatusOrder[b.status] ?? 99) || a.index - b.index)
+            .forEach(entry => {
+                list.appendChild(entry.item);
+
+                if (entry.reason) {
+                    list.appendChild(entry.reason);
+                }
+            });
+    };
+
+    const sortIpReadCard = card => {
+        const list = card?.querySelector('.kt-env-card__list');
+
+        if (list) {
+            sortIpReadList(list);
+        }
+    };
+
+    const getIpEditorInputRow = editor => editor.querySelector('.kt-ldap-ip-editor__row:not([data-ip-editor-item])');
+
+    const getIpEditorValues = editor =>
+        Array.from(editor.querySelectorAll('[data-ip-editor-item]')).map(item => ({
+            value: item.querySelector('input')?.value.trim() || item.dataset.ipValue || '',
+            status: item.dataset.ipStatus || '대기',
+            reason: item.dataset.ipRejectReason || '',
+        }));
+
+    const hasIpEditorValue = (editor, value) => getIpEditorValues(editor).some(item => item.value === value);
+
+    const addIpEditorValue = editor => {
+        const inputRow = getIpEditorInputRow(editor);
+        const input = inputRow?.querySelector('input');
+        const value = input?.value.trim() || '';
+
+        if (!editor || !inputRow || !input) {
+            return false;
         }
 
-        return isAdded;
+        if (!value || hasIpEditorValue(editor, value)) {
+            return false;
+        }
+
+        editor.insertBefore(createIpEditorItem(value, getTemporaryIpStatus(editor)), inputRow);
+        input.value = '';
+
+        return true;
     };
 
     const syncIpWhitelist = section => {
         section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor').forEach(editor => {
+            const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;
+
             addIpEditorValue(editor);
+            clearIpReadCard(section, env);
+            getIpEditorValues(editor).forEach(item => {
+                addIpToReadCard(section, env, item.value, item.status, item.reason);
+            });
         });
 
-        getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(syncIpReadCardState);
+        getIpReadGrid(section)
+            ?.querySelectorAll('[data-ip-env]')
+            .forEach(card => {
+                sortIpReadCard(card);
+                syncIpReadCardState(card);
+            });
     };
 
     const resetIpEditors = section => {
+        section.querySelectorAll('.kt-edit-template [data-ip-editor-item]').forEach(item => {
+            item.remove();
+        });
+
         section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor input').forEach(input => {
             input.value = '';
+        });
+    };
+
+    const restoreIpEditors = section => {
+        resetIpEditors(section);
+
+        section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor').forEach(editor => {
+            const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;
+            const inputRow = getIpEditorInputRow(editor);
+            const readValues = getIpReadValues(getIpReadCard(section, env));
+
+            if (!inputRow) {
+                return;
+            }
+
+            readValues.forEach(item => {
+                if (item.value) {
+                    editor.insertBefore(createIpEditorItem(item.value, item.status, item.reason), inputRow);
+                }
+            });
         });
     };
 
@@ -1363,10 +1570,14 @@
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncApiEditTable);
     workspaceRoot.querySelectorAll('.kt-api-name').forEach(ensureApiNameTooltip);
+    workspaceRoot.querySelectorAll('.kt-ldap-section-ip-empty, .kt-ldap-section-ip-filled').forEach(section => {
+        getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(sortIpReadCard);
+    });
 
     workspaceRoot.addEventListener('input', e => {
         const memberInput = e.target.closest('[data-ldap-member-search]');
         const apiInput = e.target.closest('[data-ldap-api-search]');
+        const ipInput = e.target.closest('.kt-ldap-ip-editor input');
 
         if (memberInput) {
             filterMemberRows(memberInput);
@@ -1374,6 +1585,17 @@
 
         if (apiInput) {
             filterApiRows(apiInput);
+        }
+
+        if (ipInput) {
+            ipInput.value = ipInput.value.replace(/[^0-9.]/g, '');
+
+            if (ipInput.closest('[data-ip-editor-item]')) {
+                const item = ipInput.closest('[data-ip-editor-item]');
+
+                item.dataset.ipValue = ipInput.value.trim();
+                item.querySelector('.kt-ldap-ip-editor__button--remove')?.setAttribute('aria-label', `${item.dataset.ipValue} 삭제`);
+            }
         }
     });
 
@@ -1616,6 +1838,12 @@
                 return;
             }
 
+            if (ipButton.classList.contains('kt-ldap-ip-editor__button--remove')) {
+                row.remove();
+                getIpEditorInputRow(editor)?.querySelector('input')?.focus({ preventScroll: true });
+                return;
+            }
+
             return;
         }
 
@@ -1645,7 +1873,7 @@
         }
 
         if (isEditing && (section.classList.contains('kt-ldap-section-ip-empty') || section.classList.contains('kt-ldap-section-ip-filled'))) {
-            resetIpEditors(section);
+            restoreIpEditors(section);
         }
 
         if (!isEditing && (section.classList.contains('kt-ldap-section-ip-empty') || section.classList.contains('kt-ldap-section-ip-filled'))) {
