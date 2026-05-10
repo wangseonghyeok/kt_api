@@ -11,11 +11,11 @@
             멤버 목록
         </caption>
         <colgroup>
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
+            <col style="width: 18%" />
+            <col style="width: 26%" />
+            <col style="width: 18%" />
+            <col style="width: 14%" />
+            <col style="width: 24%" />
         </colgroup>
         <thead>
             <tr>
@@ -27,63 +27,70 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr data-member-read-row data-member-id="kim-cs">
                 <td class="center">김철수</td>
                 <td>kim.cs@hanaro.com</td>
                 <td class="center">하나로소프트</td>
                 <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
                 <td class="center">생성자 자동 지정</td>
             </tr>
-            <tr>
+            <tr data-member-read-row data-member-id="lee-sh">
                 <td class="center">이순희</td>
                 <td>lee.sh@kt.com</td>
                 <td class="center">KT</td>
                 <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
                 <td class="center">KT Service PO 자동 지정</td>
             </tr>
-            <tr>
+            <tr data-member-read-row data-member-id="park-je">
                 <td class="center">박지은</td>
                 <td>park.je@hanaro.com</td>
                 <td class="center">하나로소프트</td>
                 <td class="center"><span class="kt-badge">Member</span></td>
                 <td class="center">Owner 초대</td>
             </tr>
-            <tr>
+            <tr data-member-read-row data-member-id="kang-dh">
                 <td class="center">강다희</td>
                 <td>kang.dh@hanaro.com</td>
                 <td class="center">기술개발팀</td>
                 <td class="center"><span class="kt-badge">Member</span></td>
                 <td class="center">Owner 초대</td>
             </tr>
-            <tr>
+            <tr data-member-read-row data-member-id="choi-mj">
                 <td class="center">최민준</td>
                 <td>choi.mj@hanaro.com</td>
                 <td class="center">하나로소프트</td>
                 <td class="center"><span class="kt-badge">Member</span></td>
                 <td class="center">Manager 초대</td>
             </tr>
+            <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-read-empty hidden>
+                <td colspan="5">
+                    <div class="kt-table-empty-result">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                        <p>등록된 Members가 없습니다.</p>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
-    <!-- edit mode: 멤버 검색어 입력 시 테이블 행 필터링 -->
     <div class="kt-edit-template kt-edit-box">
         <strong class="kt-edit-box__title">멤버 편집모드</strong>
         <section class="kt-works-search kt-works-search--demo kt-ldap-filter" aria-label="멤버 검색">
             <div class="kt-works-search__row kt-ldap-member-filter">
-                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt data-prompt-show-all>
+                <div class="kt-prompt kt-prompt--works kt-prompt--wide" data-prompt>
                     <div class="kt-prompt__field">
                         <input
                             type="text"
-                            id="devMemberKeyword"
+                            id="ldapMemberKeyword"
                             class="kt-input kt-input--40"
                             placeholder="이름 또는 이메일을 입력하세요"
                             data-prompt_trg
                             data-ldap-member-search
-                            aria-controls="devMemberPromptMenu"
+                            aria-controls="ldapMemberPromptMenu"
                             aria-expanded="false"
                             autocomplete="off"
                         />
                         <span class="kt-prompt__actions">
-                            <button type="button" data-clear_input aria-controls="devMemberKeyword" aria-label="검색어 삭제" hidden>
+                            <button type="button" data-clear_input aria-controls="ldapMemberKeyword" aria-label="검색어 삭제" hidden>
                                 <img src="/assets/img/components/ico_delete.svg" alt="" />
                             </button>
                             <button type="button" aria-label="멤버 검색">
@@ -91,29 +98,29 @@
                             </button>
                         </span>
                     </div>
-                    <div class="kt-prompt__menu" id="devMemberPromptMenu" data-prompt_menu data-prompt-visible-count="5" role="listbox">
+                    <div class="kt-prompt__menu" id="ldapMemberPromptMenu" data-prompt_menu data-prompt-visible-count="5" role="listbox">
                         <ul class="kt-prompt__api-list kt-prompt__workspace-list">
-                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="김철수 kim.cs@hanaro.com 하나로소프트 Owner">
+                            <li role="option" tabindex="-1" aria-selected="false" data-member-id="kim-cs" data-search-keywords="김철수 kim.cs@hanaro.com 하나로소프트 Owner">
                                 <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                 <strong>김철수</strong>
                                 <span>kim.cs@hanaro.com</span>
                             </li>
-                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="이순희 lee.sh@kt.com KT Manager">
+                            <li role="option" tabindex="-1" aria-selected="false" data-member-id="lee-sh" data-search-keywords="이순희 lee.sh@kt.com KT Manager">
                                 <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                 <strong>이순희</strong>
                                 <span>lee.sh@kt.com</span>
                             </li>
-                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="박지은 park.je@hanaro.com 하나로소프트 Member">
+                            <li role="option" tabindex="-1" aria-selected="false" data-member-id="park-je" data-search-keywords="박지은 park.je@hanaro.com 하나로소프트 Member">
                                 <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                 <strong>박지은</strong>
                                 <span>park.je@hanaro.com</span>
                             </li>
-                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="강다희 kang.dh@hanaro.com 기술개발팀 Member">
+                            <li role="option" tabindex="-1" aria-selected="false" data-member-id="kang-dh" data-search-keywords="강다희 kang.dh@hanaro.com 기술개발팀 Member">
                                 <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                 <strong>강다희</strong>
                                 <span>kang.dh@hanaro.com</span>
                             </li>
-                            <li role="option" tabindex="-1" aria-selected="false" data-search-keywords="최민준 choi.mj@hanaro.com 하나로소프트 Member">
+                            <li role="option" tabindex="-1" aria-selected="false" data-member-id="choi-mj" data-search-keywords="최민준 choi.mj@hanaro.com 하나로소프트 Member">
                                 <span class="kt-prompt__search-icon" aria-hidden="true"></span>
                                 <strong>최민준</strong>
                                 <span>choi.mj@hanaro.com</span>
@@ -129,11 +136,12 @@
                 멤버 검색 결과
             </caption>
             <colgroup>
-                <col style="width: 20%" />
-                <col style="width: 20%" />
-                <col style="width: 20%" />
-                <col style="width: 20%" />
-                <col style="width: 20%" />
+                <col style="width: 17%" />
+                <col style="width: 25%" />
+                <col style="width: 17%" />
+                <col style="width: 13%" />
+                <col style="width: 22%" />
+                <col style="width: 6%" />
             </colgroup>
             <thead>
                 <tr>
@@ -142,49 +150,83 @@
                     <th scope="col">소속</th>
                     <th scope="col">역할</th>
                     <th scope="col">지정 방식</th>
+                    <th scope="col">삭제</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-member-row>
+                <tr data-member-row data-member-id="kim-cs">
                     <td class="center">김철수</td>
                     <td>kim.cs@hanaro.com</td>
                     <td class="center">하나로소프트</td>
                     <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
                     <td class="center">생성자 자동 지정</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="김철수 삭제">
+                            <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_delete.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </td>
                 </tr>
-                <tr data-member-row>
+                <tr data-member-row data-member-id="lee-sh">
                     <td class="center">이순희</td>
                     <td>lee.sh@kt.com</td>
                     <td class="center">KT</td>
                     <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
                     <td class="center">KT Service PO 자동 지정</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="이순희 삭제">
+                            <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_delete.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </td>
                 </tr>
-                <tr data-member-row>
+                <tr data-member-row data-member-id="park-je">
                     <td class="center">박지은</td>
                     <td>park.je@hanaro.com</td>
                     <td class="center">하나로소프트</td>
                     <td class="center"><span class="kt-badge">Member</span></td>
                     <td class="center">Owner 초대</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="박지은 삭제">
+                            <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_delete.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </td>
                 </tr>
-                <tr data-member-row>
+                <tr data-member-row data-member-id="kang-dh">
                     <td class="center">강다희</td>
                     <td>kang.dh@hanaro.com</td>
                     <td class="center">기술개발팀</td>
                     <td class="center"><span class="kt-badge">Member</span></td>
                     <td class="center">Owner 초대</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="강다희 삭제">
+                            <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_delete.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </td>
                 </tr>
-                <tr data-member-row>
+                <tr data-member-row data-member-id="choi-mj">
                     <td class="center">최민준</td>
                     <td>choi.mj@hanaro.com</td>
                     <td class="center">하나로소프트</td>
                     <td class="center"><span class="kt-badge">Member</span></td>
                     <td class="center">Manager 초대</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="최민준 삭제">
+                            <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_delete.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </td>
                 </tr>
                 <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-empty hidden>
-                    <td colspan="5">
+                    <td colspan="6">
                         <div class="kt-table-empty-result">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
                             <p>검색 결과가 없습니다.</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-no-data-empty hidden>
+                    <td colspan="6">
+                        <div class="kt-table-empty-result">
+                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                            <p>등록된 Members가 없습니다.</p>
                         </div>
                     </td>
                 </tr>

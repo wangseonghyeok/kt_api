@@ -8,6 +8,17 @@
     const getEditTemplate = section => Array.from(section.children).find(child => child.classList.contains('kt-edit-template'));
     const getControlValue = control => (control.value || '').trim();
 
+    const closePrompt = prompt => {
+        if (!prompt) {
+            return;
+        }
+
+        prompt.classList.remove('is-open');
+        prompt.querySelectorAll('[data-prompt_trg]').forEach(trigger => {
+            trigger.setAttribute('aria-expanded', 'false');
+        });
+    };
+
     const resetBasicEditFields = section => {
         section.querySelectorAll('[data-basic-field]').forEach(control => {
             const valueCell = section.querySelector(`[data-basic-value="${control.dataset.basicField}"]`);
@@ -65,8 +76,42 @@
         }
     };
 
+    const syncMemberSection = section => {
+        const rows = Array.from(section.querySelectorAll('.kt-data-table--members-edit [data-member-row]'));
+        const total = rows.length;
+        const count = section.querySelector('.kt-ws-section__count strong');
+        const readEmptyRow = section.querySelector('[data-member-read-empty]');
+        const noDataRow = section.querySelector('[data-member-no-data-empty]');
+        const searchEmptyRow = section.querySelector('[data-member-empty]');
+
+        if (count) {
+            count.textContent = String(total);
+        }
+
+        if (readEmptyRow) {
+            readEmptyRow.hidden = total !== 0;
+        }
+
+        if (total === 0) {
+            if (searchEmptyRow) {
+                searchEmptyRow.hidden = true;
+            }
+
+            if (noDataRow) {
+                noDataRow.hidden = false;
+            }
+
+            return;
+        }
+
+        if (noDataRow) {
+            noDataRow.hidden = true;
+        }
+    };
+
     const filterMemberRows = input => {
         const template = input.closest('.kt-edit-template');
+        const section = input.closest('.kt-ldap-section-members');
 
         if (!template) {
             return;
@@ -75,8 +120,29 @@
         const query = input.value.trim().toLowerCase();
         const rows = Array.from(template.querySelectorAll('[data-member-row]'));
         const emptyRow = template.querySelector('[data-member-empty]');
+        const noDataRow = template.querySelector('[data-member-no-data-empty]');
         const count = template.querySelector('[data-member-filter-count]');
         let visibleCount = 0;
+
+        if (!rows.length) {
+            if (emptyRow) {
+                emptyRow.hidden = true;
+            }
+
+            if (noDataRow) {
+                noDataRow.hidden = false;
+            }
+
+            if (section) {
+                syncMemberSection(section);
+            }
+
+            return;
+        }
+
+        if (noDataRow) {
+            noDataRow.hidden = true;
+        }
 
         rows.forEach(row => {
             const isMatched = !query || row.textContent.toLowerCase().includes(query);
@@ -94,6 +160,10 @@
 
         if (count) {
             count.textContent = String(visibleCount);
+        }
+
+        if (section) {
+            syncMemberSection(section);
         }
     };
 
@@ -159,6 +229,7 @@
     };
 
     workspaceRoot.querySelectorAll('[data-ldap-member-search]').forEach(filterMemberRows);
+    workspaceRoot.querySelectorAll('.kt-ldap-section-members').forEach(syncMemberSection);
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
 
     workspaceRoot.addEventListener('input', e => {
@@ -178,6 +249,50 @@
         const actionButton = e.target.closest('[data-edit-cancel], [data-edit-save]');
         const accordionButton = e.target.closest('.kt-row-toggle[data-api-accordion]');
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
+        const memberDeleteButton = e.target.closest('[data-member-delete]');
+
+        if (memberDeleteButton) {
+            const row = memberDeleteButton.closest('[data-member-row]');
+            const section = memberDeleteButton.closest('.kt-ldap-section-members');
+            const memberId = row?.dataset.memberId;
+
+            if (!row || !section) {
+                return;
+            }
+
+            e.preventDefault();
+
+            row.remove();
+
+            if (memberId) {
+                section.querySelectorAll('[data-member-read-row]').forEach(readRow => {
+                    if (readRow.dataset.memberId === memberId) {
+                        readRow.remove();
+                    }
+                });
+
+                section.querySelectorAll('[role="option"][data-member-id]').forEach(option => {
+                    if (option.dataset.memberId === memberId) {
+                        option.hidden = true;
+                        option.setAttribute('aria-hidden', 'true');
+                        option.setAttribute('aria-selected', 'false');
+                        option.setAttribute('data-prompt-disabled', 'true');
+                        option.tabIndex = -1;
+                    }
+                });
+            }
+
+            const input = section.querySelector('[data-ldap-member-search]');
+
+            if (input) {
+                filterMemberRows(input);
+                closePrompt(input.closest('[data-prompt]'));
+            } else {
+                syncMemberSection(section);
+            }
+
+            return;
+        }
 
         if (actionButton) {
             const section = actionButton.closest('.kt-ws-section');

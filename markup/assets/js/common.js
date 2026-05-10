@@ -617,7 +617,8 @@ const ui = {
             const hasKeyword = () => getKeyword().length > 0;
             const canSearch = () => !input || minLength <= 0 || getKeyword().length >= minLength;
             const shouldShowAllOptions = () => input && prompt.hasAttribute('data-prompt-show-all') && !hasKeyword();
-            const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden);
+            const isOptionDisabled = option => option.hasAttribute('data-prompt-disabled') || option.getAttribute('aria-disabled') === 'true';
+            const getVisibleOptions = () => Array.from(options).filter(option => !option.hidden && !isOptionDisabled(option));
             const getSelectedOption = () => getVisibleOptions().find(option => option.classList.contains('is-selected'));
             const getActiveOption = () => getSelectedOption() || getVisibleOptions()[0];
             const ignoreSyncKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Meta'];
@@ -740,6 +741,15 @@ const ui = {
                 }
 
                 options.forEach(option => {
+                    if (isOptionDisabled(option)) {
+                        option.hidden = true;
+                        option.setAttribute('aria-hidden', 'true');
+                        option.classList.remove('is-selected');
+                        option.setAttribute('aria-selected', 'false');
+                        option.tabIndex = -1;
+                        return;
+                    }
+
                     const optionText = option.dataset.searchKeywords || option.textContent;
                     const isMatched = showAllOptions || (keyword.length > 0 && optionText.trim().toLowerCase().includes(keyword));
 
