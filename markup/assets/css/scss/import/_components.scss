@@ -6638,7 +6638,8 @@
     text-align: center;
 }
 
-.kt-data-table--api-edit {
+.kt-data-table--api-edit,
+.kt-data-table--api-scroll {
     display: block;
 
     thead,
@@ -6800,7 +6801,7 @@
 .kt-key-card__empty {
     @include flex(center, center);
     flex-direction: column;
-    height: 80px;
+    padding: 20px 0 30px;
     color: #191a1b;
     text-align: center;
 
@@ -7008,12 +7009,13 @@
     text-align: center;
     white-space: nowrap;
     box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 4px 4px rgba(19, 20, 21, 0.1);
+    pointer-events: none;
 
     &::after {
         content: '';
         position: absolute;
         bottom: -6px;
-        left: 24px;
+        left: var(--kt-tooltip-caret-left, 24px);
         width: 12px;
         height: 6px;
         background: #3d3f43;
@@ -7022,8 +7024,8 @@
 }
 
 .kt-tooltip.is-visible,
-.kt-api-name:hover .kt-tooltip,
-.kt-api-name:focus-within .kt-tooltip {
+.kt-api-name.is-tooltip-visible .kt-tooltip {
+    position: fixed;
     display: block;
 }
 

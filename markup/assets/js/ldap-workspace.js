@@ -8,6 +8,96 @@
     const getEditTemplate = section => Array.from(section.children).find(child => child.classList.contains('kt-edit-template'));
     const getControlValue = control => (control.value || '').trim();
     const toastTimers = new WeakMap();
+    const apiTooltipTextMap = {
+        checkAppSSOBasedTokenId: 'SSO 기반 토큰 ID를 확인합니다.',
+        'UserProperty (LDAP)': 'LDAP 사용자 속성 정보를 조회합니다.',
+        'CouponPkgSearch (CUPI)': 'CUPI 시스템에서 쿠폰 패키지를 조회합니다.',
+        'CouponIssue (CUPI)': 'CUPI 시스템에서 사용자에게 쿠폰을 발급합니다.',
+        'CouponStatus (CUPI)': 'CUPI 시스템에서 쿠폰 상태를 조회합니다.',
+    };
+    let apiTooltipId = 0;
+
+    const getApiTooltipText = apiName => apiTooltipTextMap[apiName] || `${apiName} API 상세 정보를 확인합니다.`;
+
+    const createApiTooltip = text => {
+        const tooltip = document.createElement('span');
+
+        tooltip.className = 'kt-tooltip';
+        tooltip.setAttribute('role', 'tooltip');
+        tooltip.textContent = text;
+
+        return tooltip;
+    };
+
+    const ensureApiNameTooltip = nameWrap => {
+        const link = nameWrap?.querySelector('.kt-api-name__text .is-link');
+
+        if (!link) {
+            return;
+        }
+
+        const tooltipText = link.dataset.tooltip || getApiTooltipText(link.textContent.trim());
+        let tooltip = nameWrap.querySelector('.kt-tooltip');
+
+        if (!tooltip) {
+            tooltip = createApiTooltip(tooltipText);
+            nameWrap.appendChild(tooltip);
+        } else {
+            tooltip.classList.remove('is-visible');
+            tooltip.setAttribute('role', 'tooltip');
+            tooltip.textContent = tooltipText;
+        }
+
+        if (!tooltip.id) {
+            apiTooltipId += 1;
+            tooltip.id = `kt-api-tooltip-${apiTooltipId}`;
+        }
+
+        link.setAttribute('aria-describedby', tooltip.id);
+    };
+
+    const positionApiTooltip = link => {
+        const tooltip = link?.closest('.kt-api-name')?.querySelector('.kt-tooltip');
+
+        if (!link || !tooltip) {
+            return;
+        }
+
+        const linkRect = link.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const viewportGap = 8;
+        let left = linkRect.left - 16;
+        const top = Math.max(viewportGap, linkRect.top - tooltipRect.height - 12);
+
+        if (left + tooltipRect.width > window.innerWidth - viewportGap) {
+            left = window.innerWidth - tooltipRect.width - viewportGap;
+        }
+
+        left = Math.max(viewportGap, left);
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+        tooltip.style.setProperty('--kt-tooltip-caret-left', `${Math.max(12, Math.min(tooltipRect.width - 12, linkRect.left + 24 - left))}px`);
+    };
+
+    const setApiTooltipVisible = (link, isVisible) => {
+        const nameWrap = link?.closest('.kt-api-name');
+        const tooltip = nameWrap?.querySelector('.kt-tooltip');
+
+        if (!nameWrap || !tooltip) {
+            return;
+        }
+
+        nameWrap.classList.toggle('is-tooltip-visible', isVisible);
+
+        if (isVisible) {
+            positionApiTooltip(link);
+        } else {
+            tooltip.style.removeProperty('left');
+            tooltip.style.removeProperty('top');
+            tooltip.style.removeProperty('--kt-tooltip-caret-left');
+        }
+    };
 
     const showToast = (toast, message, duration = 1800) => {
         if (!toast) {
@@ -969,6 +1059,7 @@
         link.textContent = api.name;
         text.appendChild(link);
         nameWrap.append(toggle, text);
+        ensureApiNameTooltip(nameWrap);
         cell.appendChild(nameWrap);
 
         return cell;
@@ -1125,11 +1216,14 @@
         const body = getApiReadTableBody(section);
         const selectedOptions = getAddedApiOptions(section);
         const count = section.querySelector('.kt-ws-section__count strong');
+        const table = body?.closest('.kt-data-table--api');
 
         if (!body) {
             return;
         }
 
+        section.classList.toggle('has-many-api-rows', selectedOptions.length >= 5);
+        table?.classList.toggle('kt-data-table--api-scroll', selectedOptions.length >= 5);
         body.replaceChildren();
 
         if (!selectedOptions.length) {
@@ -1193,6 +1287,7 @@
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncSelectedApiSection);
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncApiEditTable);
+    workspaceRoot.querySelectorAll('.kt-api-name').forEach(ensureApiNameTooltip);
 
     workspaceRoot.addEventListener('input', e => {
         const memberInput = e.target.closest('[data-ldap-member-search]');
@@ -1204,6 +1299,38 @@
 
         if (apiInput) {
             filterApiRows(apiInput);
+        }
+    });
+
+    workspaceRoot.addEventListener('mouseover', e => {
+        const apiNameLink = e.target.closest('.kt-api-name .is-link');
+
+        if (apiNameLink) {
+            setApiTooltipVisible(apiNameLink, true);
+        }
+    });
+
+    workspaceRoot.addEventListener('mouseout', e => {
+        const apiNameLink = e.target.closest('.kt-api-name .is-link');
+
+        if (apiNameLink && !apiNameLink.contains(e.relatedTarget)) {
+            setApiTooltipVisible(apiNameLink, false);
+        }
+    });
+
+    workspaceRoot.addEventListener('focusin', e => {
+        const apiNameLink = e.target.closest('.kt-api-name .is-link');
+
+        if (apiNameLink) {
+            setApiTooltipVisible(apiNameLink, true);
+        }
+    });
+
+    workspaceRoot.addEventListener('focusout', e => {
+        const apiNameLink = e.target.closest('.kt-api-name .is-link');
+
+        if (apiNameLink) {
+            setApiTooltipVisible(apiNameLink, false);
         }
     });
 

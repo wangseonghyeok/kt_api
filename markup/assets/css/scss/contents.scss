@@ -2992,9 +2992,13 @@
 //     height: 288px;
 // }
 
-.kt-ldap-section-api-empty {
-    position: relative;
-    height: 288px;
+// .kt-ldap-section-api-empty {
+//     position: relative;
+//     height: 288px;
+// }
+
+.kt-ldap-section-api-empty.has-many-api-rows:not(.is-editing) {
+    min-height: 360px;
 }
 
 .kt-ldap-section-api-filled {
@@ -3434,7 +3438,7 @@
     margin-bottom: 15px;
     color: #191a1b;
     font-size: 15px;
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-Bold);
     line-height: 1.48;
 }
 
