@@ -1008,26 +1008,24 @@
         return readWrap?.querySelector('.kt-data-table--api:not(.kt-data-table--api-edit) tbody') || null;
     };
 
-    const createApiBadge = (text, context) => {
+    const apiBadgeClassMap = {
+        재신청: 'kt-badge--blue',
+        상용: 'kt-badge--prod',
+        승인: 'kt-badge--green',
+        호출제한: 'kt-badge--danger',
+        대기: 'kt-badge--warning',
+        반려: 'kt-badge--danger',
+    };
+
+    const createApiBadge = text => {
         const badge = document.createElement('span');
+        const badgeClass = apiBadgeClassMap[text];
 
         badge.className = 'kt-badge';
         badge.textContent = text;
 
-        if (context === 'approval' && text === '승인') {
-            badge.classList.add('kt-badge--green');
-        }
-
-        if (context === 'approval' && text === '대기') {
-            badge.classList.add('kt-badge--warning');
-        }
-
-        if (context === 'approval' && text === '반려') {
-            badge.classList.add('kt-badge--danger');
-        }
-
-        if (context === 'status' && text === '상용') {
-            badge.classList.add('kt-badge--prod');
+        if (badgeClass) {
+            badge.classList.add(badgeClass);
         }
 
         return badge;
@@ -1258,27 +1256,104 @@
         }
     };
 
-    const createIpRow = value => {
-        const row = document.createElement('div');
-        const input = document.createElement('input');
-        const button = document.createElement('button');
-        const img = document.createElement('img');
+    const getIpReadGrid = section => Array.from(section.children).find(child => child.classList.contains('kt-panel-grid'));
 
-        row.className = 'kt-env-card__item kt-ldap-ip-editor__row';
-        input.type = 'text';
-        input.className = 'kt-input kt-input--32';
-        input.value = value;
-        button.type = 'button';
-        button.className = 'kt-ldap-ip-editor__button';
-        button.setAttribute('aria-label', 'IP 삭제');
-        img.className = 'kt-svg-icon kt-svg-icon--20';
-        img.src = '/assets/img/auth/ico_auth_close.svg';
-        img.alt = '';
-        img.setAttribute('aria-hidden', 'true');
-        button.appendChild(img);
-        row.append(input, button);
+    const getIpReadCard = (section, env) => getIpReadGrid(section)?.querySelector(`[data-ip-env="${env}"]`) || null;
 
-        return row;
+    const createIpReadItem = value => {
+        const item = document.createElement('div');
+        const text = document.createElement('span');
+        const badge = document.createElement('span');
+
+        item.className = 'kt-env-card__item';
+        text.textContent = value;
+        badge.className = 'kt-badge kt-badge--warning';
+        badge.textContent = '대기';
+        item.append(text, badge);
+
+        return item;
+    };
+
+    const ensureIpReadList = card => {
+        let body = card?.querySelector(':scope > .kt-env-card__body');
+        let list = body?.querySelector('.kt-env-card__list');
+
+        if (!card) {
+            return null;
+        }
+
+        if (!body) {
+            body = document.createElement('div');
+            body.className = 'kt-env-card__body';
+            card.appendChild(body);
+        }
+
+        if (!list) {
+            list = document.createElement('div');
+            list.className = 'kt-env-card__list';
+            body.appendChild(list);
+        }
+
+        return list;
+    };
+
+    const syncIpReadCardState = card => {
+        const empty = card?.querySelector(':scope > .kt-env-card__empty');
+        const body = card?.querySelector(':scope > .kt-env-card__body');
+        const list = body?.querySelector('.kt-env-card__list');
+        const hasItems = Boolean(list?.querySelector('.kt-env-card__item'));
+
+        if (empty) {
+            empty.hidden = hasItems;
+        }
+
+        if (body) {
+            body.hidden = !hasItems;
+        }
+    };
+
+    const addIpToReadCard = (section, env, value) => {
+        const ip = value.trim();
+        const card = getIpReadCard(section, env);
+        const list = ensureIpReadList(card);
+        const exists = Array.from(list?.querySelectorAll('.kt-env-card__item > span:first-child') || []).some(item => item.textContent.trim() === ip);
+
+        if (!section || !env || !ip || !card || !list || exists) {
+            return false;
+        }
+
+        list.appendChild(createIpReadItem(ip));
+        syncIpReadCardState(card);
+
+        return true;
+    };
+
+    const addIpEditorValue = editor => {
+        const section = editor.closest('.kt-ws-section');
+        const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;
+        const input = editor.querySelector('.kt-ldap-ip-editor__row input');
+        const value = input?.value.trim() || '';
+        const isAdded = addIpToReadCard(section, env, value);
+
+        if (isAdded && input) {
+            input.value = '';
+        }
+
+        return isAdded;
+    };
+
+    const syncIpWhitelist = section => {
+        section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor').forEach(editor => {
+            addIpEditorValue(editor);
+        });
+
+        getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(syncIpReadCardState);
+    };
+
+    const resetIpEditors = section => {
+        section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor input').forEach(input => {
+            input.value = '';
+        });
     };
 
     workspaceRoot.querySelectorAll('[data-ldap-search]').forEach(setupLdapSearch);
@@ -1460,6 +1535,14 @@
                     syncApiReadTable(section);
                 }
 
+                if (section.classList.contains('kt-ldap-section-ip-empty') || section.classList.contains('kt-ldap-section-ip-filled')) {
+                    if (actionButton.matches('[data-edit-save]')) {
+                        syncIpWhitelist(section);
+                    } else {
+                        resetIpEditors(section);
+                    }
+                }
+
                 setEditMode(section, false);
             }
 
@@ -1522,20 +1605,17 @@
 
             if (ipButton.classList.contains('kt-ldap-ip-editor__button--add')) {
                 const input = row.querySelector('input');
-                const value = input.value.trim();
+                const isAdded = addIpEditorValue(editor);
 
-                if (!value) {
+                if (!isAdded) {
                     input.focus({ preventScroll: true });
                     return;
                 }
 
-                editor.insertBefore(createIpRow(value), row);
-                input.value = '';
                 input.focus({ preventScroll: true });
                 return;
             }
 
-            row.remove();
             return;
         }
 
@@ -1562,6 +1642,14 @@
 
         if (!isEditing && section.classList.contains('kt-ldap-section-api')) {
             syncApiReadTable(section);
+        }
+
+        if (isEditing && (section.classList.contains('kt-ldap-section-ip-empty') || section.classList.contains('kt-ldap-section-ip-filled'))) {
+            resetIpEditors(section);
+        }
+
+        if (!isEditing && (section.classList.contains('kt-ldap-section-ip-empty') || section.classList.contains('kt-ldap-section-ip-filled'))) {
+            syncIpWhitelist(section);
         }
 
         setEditMode(section, isEditing);

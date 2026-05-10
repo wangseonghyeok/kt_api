@@ -4,14 +4,14 @@
         <button type="button" class="kt-btn kt-btn--popup">편집</button>
     </div>
     <div class="kt-panel-grid">
-        <div class="kt-env-card">
+        <div class="kt-env-card" data-ip-env="dev">
             <div class="kt-env-card__title">DEV 환경</div>
             <div class="kt-env-card__empty">
                 <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
                 <p>등록된 IP가 없습니다.</p>
             </div>
         </div>
-        <div class="kt-env-card">
+        <div class="kt-env-card" data-ip-env="prd">
             <div class="kt-env-card__title">PRD 환경</div>
             <div class="kt-env-card__empty">
                 <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
@@ -23,54 +23,30 @@
     <div class="kt-edit-template kt-edit-box">
         <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
         <div class="kt-panel-grid">
-            <div class="kt-env-card">
+            <div class="kt-env-card" data-ip-env="dev">
                 <div class="kt-env-card__title">DEV 환경</div>
                 <div class="kt-env-card__body">
-                    <div class="kt-ldap-ip-editor">
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" value="211.45.67.89" />
-                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
-                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </div>
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" value="211.45.67.90" />
-                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
-                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </div>
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" placeholder="예) 211.11.10.92" />
+                    <ul class="kt-ldap-ip-editor" data-ip-env="dev">
+                        <li class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
                             <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
                                 <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
                             </button>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="kt-env-card">
+            <div class="kt-env-card" data-ip-env="prd">
                 <div class="kt-env-card__title">PRD 환경</div>
                 <div class="kt-env-card__body">
-                    <div class="kt-ldap-ip-editor">
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" value="211.45.67.89" />
-                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
-                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </div>
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" value="211.45.67.90" />
-                            <button type="button" class="kt-ldap-ip-editor__button" aria-label="IP 삭제">
-                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </div>
-                        <div class="kt-ldap-ip-editor__row">
-                            <input type="text" class="kt-input kt-input--32" placeholder="예) 211.11.10.92" />
+                    <ul class="kt-ldap-ip-editor" data-ip-env="prd">
+                        <li class="kt-ldap-ip-editor__row">
+                            <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
                             <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
                                 <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
                             </button>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -97,7 +97,7 @@
                                         data-api-approval="대기"
                                         data-api-status="미상용"
                                         data-api-params="token_id:민감 1|expires_in"
-                                        data-search="OIF_311 checkAppSSOBasedTokenId cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1"
+                                        data-search="OIF_311 checkAppSSOBasedTokenId cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 대기 미상용"
                                     >
                                         <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
                                         <strong>OIF_311</strong>
@@ -120,9 +120,9 @@
                                         data-api-sensitivity="-"
                                         data-api-self-testing="Unfinished"
                                         data-api-approval="승인"
-                                        data-api-status="미상용"
+                                        data-api-status="상용"
                                         data-api-params="member_id|point_balance"
-                                        data-search="OIF_312 UserProperty LDAP cus-in.api.kt.com cus-in.tbapi.kt.com"
+                                        data-search="OIF_312 UserProperty LDAP cus-in.api.kt.com cus-in.tbapi.kt.com 승인 상용"
                                     >
                                         <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
                                         <strong>OIF_312</strong>
@@ -145,9 +145,9 @@
                                         data-api-sensitivity="민감 1"
                                         data-api-self-testing="Completed"
                                         data-api-approval="승인"
-                                        data-api-status="상용"
+                                        data-api-status="호출제한"
                                         data-api-params="member_id:민감 1|point_balance"
-                                        data-search="OIF_313 CouponPkgSearch CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1"
+                                        data-search="OIF_313 CouponPkgSearch CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 승인 호출제한"
                                     >
                                         <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
                                         <strong>OIF_313</strong>
@@ -172,7 +172,7 @@
                                         data-api-approval="반려"
                                         data-api-status="미상용"
                                         data-api-params="user_id:민감 1|coupon_id"
-                                        data-search="OIF_314 CouponIssue CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 반려"
+                                        data-search="OIF_314 CouponIssue CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 반려 미상용"
                                     >
                                         <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
                                         <strong>OIF_314</strong>
@@ -194,10 +194,10 @@
                                         data-api-dev-domain="cus-in.tbapi.kt.com"
                                         data-api-sensitivity="-"
                                         data-api-self-testing="Completed"
-                                        data-api-approval="승인"
+                                        data-api-approval="재신청"
                                         data-api-status="상용"
                                         data-api-params="coupon_status|issued_at"
-                                        data-search="OIF_315 CouponStatus CUPI cus-in.api.kt.com cus-in.tbapi.kt.com"
+                                        data-search="OIF_315 CouponStatus CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 재신청 상용"
                                     >
                                         <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
                                         <strong>OIF_315</strong>
@@ -338,7 +338,7 @@
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
-                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge">미상용</span></div>
+                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
                             </div>
                         </td>
                     </tr>
@@ -381,7 +381,7 @@
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-danger">민감 1</div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
-                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
+                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--danger">호출제한</span></div>
                             </div>
                         </td>
                     </tr>
@@ -453,7 +453,7 @@
                         </td>
                         <td class="center is-muted">-</td>
                         <td class="center"><a href="#" class="is-link">Completed</a></td>
-                        <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                        <td class="center"><span class="kt-badge kt-badge--blue">재신청</span></td>
                         <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
                     </tr>
                     <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-315" hidden>
@@ -474,7 +474,7 @@
                                 </div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
-                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
+                                <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--blue">재신청</span></div>
                                 <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
                             </div>
                         </td>
