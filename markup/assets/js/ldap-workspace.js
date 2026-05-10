@@ -109,6 +109,145 @@
         }
     };
 
+    const getMemberData = option => ({
+        id: option.dataset.memberId || '',
+        name: option.dataset.memberName || option.querySelector('strong')?.textContent.trim() || '',
+        email: option.dataset.memberEmail || option.querySelector('span:last-child')?.textContent.trim() || '',
+        company: option.dataset.memberCompany || '',
+        role: option.dataset.memberRole || 'Member',
+        method: option.dataset.memberMethod || 'Owner 초대',
+    });
+
+    const createCell = (text, isCenter = true) => {
+        const cell = document.createElement('td');
+
+        if (isCenter) {
+            cell.className = 'center';
+        }
+
+        cell.textContent = text;
+
+        return cell;
+    };
+
+    const createRoleBadge = role => {
+        const badge = document.createElement('span');
+        const roleName = role || 'Member';
+
+        badge.className = 'kt-badge';
+
+        if (roleName === 'Owner') {
+            badge.classList.add('kt-badge--role-owner');
+        }
+
+        if (roleName === 'Manager') {
+            badge.classList.add('kt-badge--role-manager');
+        }
+
+        badge.textContent = roleName;
+
+        return badge;
+    };
+
+    const insertBeforeEmptyRow = (tbody, row) => {
+        const emptyRow = tbody.querySelector('.kt-data-table__empty');
+
+        tbody.insertBefore(row, emptyRow || null);
+    };
+
+    const createMemberReadRow = member => {
+        const row = document.createElement('tr');
+        const roleCell = document.createElement('td');
+
+        row.dataset.memberReadRow = '';
+        row.dataset.memberId = member.id;
+        roleCell.className = 'center';
+        roleCell.appendChild(createRoleBadge(member.role));
+        row.append(createCell(member.name), createCell(member.email, false), createCell(member.company), roleCell, createCell(member.method));
+
+        return row;
+    };
+
+    const createMemberEditRow = member => {
+        const row = document.createElement('tr');
+        const roleCell = document.createElement('td');
+        const actionCell = document.createElement('td');
+        const deleteButton = document.createElement('button');
+
+        row.dataset.memberRow = '';
+        row.dataset.memberId = member.id;
+        roleCell.className = 'center';
+        roleCell.appendChild(createRoleBadge(member.role));
+        actionCell.className = 'center';
+        deleteButton.type = 'button';
+        deleteButton.className = 'kt-member-delete-button';
+        deleteButton.dataset.memberDelete = '';
+        deleteButton.setAttribute('aria-label', `${member.name} 삭제`);
+        deleteButton.textContent = '삭제';
+        actionCell.appendChild(deleteButton);
+        row.append(createCell(member.name), createCell(member.email, false), createCell(member.company), roleCell, createCell(member.method), actionCell);
+
+        return row;
+    };
+
+    const setMemberOptionRegistered = (option, isRegistered) => {
+        option.hidden = isRegistered;
+        option.setAttribute('aria-hidden', String(isRegistered));
+        option.setAttribute('aria-selected', 'false');
+        option.classList.remove('is-selected');
+        option.tabIndex = isRegistered ? -1 : 0;
+
+        if (isRegistered) {
+            option.setAttribute('aria-disabled', 'true');
+            option.setAttribute('data-prompt-disabled', 'true');
+        } else {
+            option.removeAttribute('aria-disabled');
+            option.removeAttribute('data-prompt-disabled');
+        }
+    };
+
+    const clearMemberSearch = section => {
+        const input = section.querySelector('[data-ldap-member-search]');
+
+        if (!input) {
+            return;
+        }
+
+        input.value = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        closePrompt(input.closest('[data-prompt]'));
+        input.focus({ preventScroll: true });
+    };
+
+    const registerMember = option => {
+        const section = option.closest('.kt-ldap-section-members');
+        const editTableBody = section?.querySelector('.kt-data-table--members-edit tbody');
+        const readTableBody = section?.querySelector('.kt-data-table--members:not(.kt-data-table--members-edit) tbody');
+        const member = getMemberData(option);
+
+        if (!section || !editTableBody || !readTableBody || !member.id || !member.name || option.hasAttribute('data-prompt-disabled')) {
+            return;
+        }
+
+        if (section.querySelector(`.kt-data-table--members-edit [data-member-row][data-member-id="${member.id}"]`)) {
+            clearMemberSearch(section);
+            return;
+        }
+
+        insertBeforeEmptyRow(readTableBody, createMemberReadRow(member));
+        insertBeforeEmptyRow(editTableBody, createMemberEditRow(member));
+        setMemberOptionRegistered(option, true);
+        syncMemberSection(section);
+        clearMemberSearch(section);
+    };
+
+    const getSelectedMemberOption = prompt =>
+        Array.from(prompt?.querySelectorAll('[role="option"][data-member-id]') || []).find(option => {
+            const isSelected = option.classList.contains('is-selected') || option.getAttribute('aria-selected') === 'true';
+
+            return isSelected && !option.hidden && !option.hasAttribute('data-prompt-disabled');
+        });
+
     const filterMemberRows = input => {
         const template = input.closest('.kt-edit-template');
         const section = input.closest('.kt-ldap-section-members');
@@ -245,11 +384,35 @@
         }
     });
 
+    workspaceRoot.addEventListener('keydown', e => {
+        const memberOption = e.target.closest('[role="option"][data-member-id]');
+        const memberInput = e.target.closest('[data-ldap-member-search]');
+
+        if (memberOption && memberOption.closest('.kt-ldap-section-members') && (e.key === 'Enter' || e.key === ' ')) {
+            window.setTimeout(() => registerMember(memberOption), 0);
+            return;
+        }
+
+        if (memberInput && e.key === 'Enter') {
+            const option = getSelectedMemberOption(memberInput.closest('[data-prompt]'));
+
+            if (option) {
+                window.setTimeout(() => registerMember(option), 0);
+            }
+        }
+    });
+
     workspaceRoot.addEventListener('click', e => {
         const actionButton = e.target.closest('[data-edit-cancel], [data-edit-save]');
         const accordionButton = e.target.closest('.kt-row-toggle[data-api-accordion]');
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
+        const memberOption = e.target.closest('[role="option"][data-member-id]');
         const memberDeleteButton = e.target.closest('[data-member-delete]');
+
+        if (memberOption && memberOption.closest('.kt-ldap-section-members')) {
+            registerMember(memberOption);
+            return;
+        }
 
         if (memberDeleteButton) {
             const row = memberDeleteButton.closest('[data-member-row]');
@@ -273,11 +436,7 @@
 
                 section.querySelectorAll('[role="option"][data-member-id]').forEach(option => {
                     if (option.dataset.memberId === memberId) {
-                        option.hidden = true;
-                        option.setAttribute('aria-hidden', 'true');
-                        option.setAttribute('aria-selected', 'false');
-                        option.setAttribute('data-prompt-disabled', 'true');
-                        option.tabIndex = -1;
+                        setMemberOptionRegistered(option, false);
                     }
                 });
             }

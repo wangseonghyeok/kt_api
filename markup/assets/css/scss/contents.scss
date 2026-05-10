@@ -2914,15 +2914,6 @@
 /* ==============================
     LDAP workspace detail popup pages
 ============================== */
-.kt-ldap-popup-page {
-    margin: 0;
-    overflow-x: hidden;
-    background: #292929;
-
-    #wrap {
-        min-height: 100vh;
-    }
-}
 
 .kt-ldap-modal {
     position: relative;
@@ -2931,6 +2922,9 @@
 }
 
 .kt-ldap-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
     min-width: 1280px;
