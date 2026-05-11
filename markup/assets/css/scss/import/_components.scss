@@ -6498,6 +6498,8 @@
     .is-link {
         color: #005ccc;
         text-decoration: underline;
+        text-decoration-color: #005ccc;
+        text-underline-offset: 2px;
     }
 }
 
@@ -6973,13 +6975,31 @@
 
     .kt-input {
         height: 52px;
+        background: #f3f4f6;
+    }
+
+    .kt-input[readonly] {
+        border-width: 0;
         border-color: #8b8f97;
         background: #f3f4f6;
-        color: #191a1b;
+        color: var(--kt-disabled);
+        -webkit-text-fill-color: var(--kt-disabled);
+        &:focus {
+            box-shadow: unset;
+        }
     }
 }
 
-.kt-key-field__copy {
+.kt-key-field__control {
+    position: relative;
+
+    .kt-input {
+        padding-right: 52px;
+    }
+}
+
+.kt-key-field__copy,
+.kt-key-field__visibility {
     @include flex(center, center);
     width: 52px;
     height: 52px;
@@ -6987,6 +7007,12 @@
     border-radius: 4px;
     background: transparent;
     color: #191a1b;
+}
+
+.kt-key-field__visibility {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .kt-toast {

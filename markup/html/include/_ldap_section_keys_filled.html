@@ -22,11 +22,13 @@
                 <div class="kt-key-field">
                     <div class="kt-key-field__input">
                         <label for="dev-key-pw">Key Pw</label>
-                        <input id="dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                        <div class="kt-key-field__control">
+                            <input id="dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <button type="button" class="kt-key-field__visibility" aria-label="Key Password 보기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
                     </div>
-                    <button type="button" class="kt-key-field__copy" aria-label="Key Password 보기">
-                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
-                    </button>
                     <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                     </button>
@@ -62,11 +64,13 @@
                     <div class="kt-key-field">
                         <div class="kt-key-field__input">
                             <label for="edit-dev-key-pw">Key Pw</label>
-                            <input id="edit-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <div class="kt-key-field__control">
+                                <input id="edit-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                                <button type="button" class="kt-key-field__visibility" aria-label="Key Password 보기">
+                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                                </button>
+                            </div>
                         </div>
-                        <button type="button" class="kt-key-field__copy" aria-label="Key Password 보기">
-                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
-                        </button>
                         <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                         </button>
@@ -81,6 +85,23 @@
                             <label for="edit-prd-key-id">Key ID</label>
                             <input id="edit-prd-key-id" type="text" class="kt-input" placeholder="PRD 전환 후 발급됩니다." readonly />
                         </div>
+                        <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
+                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </div>
+                    <div class="kt-key-field kt-key-field--password">
+                        <div class="kt-key-field__input">
+                            <label for="edit-prd-key-pw">Key Pw</label>
+                            <div class="kt-key-field__control">
+                                <input id="edit-prd-key-pw" type="password" class="kt-input" placeholder="PRD 전환 후 발급됩니다." readonly />
+                                <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
+                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="kt-key-field__copy" aria-label="PRD Key Password 복사">
+                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                        </button>
                     </div>
                 </div>
             </div>

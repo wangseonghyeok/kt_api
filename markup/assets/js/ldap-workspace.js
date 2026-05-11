@@ -1092,6 +1092,20 @@
         return cell;
     };
 
+    const createSelfTestingContent = text => {
+        if (text !== 'Completed') {
+            return text;
+        }
+
+        const link = document.createElement('a');
+
+        link.href = '#';
+        link.className = 'is-link';
+        link.textContent = text;
+
+        return link;
+    };
+
     const createApiDetailRow = (api, group) => {
         const row = document.createElement('tr');
         const cell = document.createElement('td');
@@ -1239,7 +1253,7 @@
                     createApiNameCell(api, group),
                     createDomainCell(api),
                     createCenterCell(api.sensitivity, api.sensitivity === '-' ? 'is-muted' : 'is-danger'),
-                    createCenterCell(api.selfTesting, api.selfTesting === 'Completed' ? '' : 'is-muted'),
+                    createCenterCell(createSelfTestingContent(api.selfTesting), api.selfTesting === 'Completed' ? '' : 'is-muted'),
                     createCenterCell(createApiBadge(api.approval, 'approval')),
                     createCenterCell(createApiBadge(api.status, 'status')),
                 );
