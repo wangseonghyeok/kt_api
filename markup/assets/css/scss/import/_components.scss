@@ -6948,6 +6948,7 @@
     font-size: 14px;
     font-weight: var(--fw-Regular);
     line-height: 1.58;
+    white-space: nowrap;
 }
 
 .kt-key-field {
@@ -6979,7 +6980,7 @@
     }
 
     .kt-input[readonly] {
-        border-width: 0;
+        border-width: 1px;
         border-color: #8b8f97;
         background: #f3f4f6;
         color: var(--kt-disabled);

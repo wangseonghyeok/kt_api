@@ -36,10 +36,34 @@
             </div>
         </div>
         <div class="kt-key-card">
-            <div class="kt-key-card__title">PRDKey</div>
-            <div class="kt-key-card__empty">
-                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_ldap_key.svg" alt="" aria-hidden="true" />
-                <p>PRD 전환 후 PRD Key가 발급됩니다.</p>
+            <div class="kt-key-card__title">
+                <span>PRDKey</span>
+                <span class="kt-key-card__expiry">만료 : 2027.05.10 (D-187)</span>
+            </div>
+            <div class="kt-key-card__body">
+                <div class="kt-key-field">
+                    <div class="kt-key-field__input">
+                        <label for="prd-key-id">Key ID</label>
+                        <input id="prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                <div class="kt-key-field">
+                    <div class="kt-key-field__input">
+                        <label for="prd-key-pw">Key Pw</label>
+                        <div class="kt-key-field__control">
+                            <input id="prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="PRD Key Password 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -78,12 +102,15 @@
                 </div>
             </div>
             <div class="kt-key-card">
-                <div class="kt-key-card__title">PRDKey</div>
+                <div class="kt-key-card__title">
+                    <span>PRDKey</span>
+                    <span class="kt-key-card__expiry">만료 : 2027.05.10 (D-187)</span>
+                </div>
                 <div class="kt-key-card__body">
                     <div class="kt-key-field">
                         <div class="kt-key-field__input">
                             <label for="edit-prd-key-id">Key ID</label>
-                            <input id="edit-prd-key-id" type="text" class="kt-input" placeholder="PRD 전환 후 발급됩니다." readonly />
+                            <input id="edit-prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
                         </div>
                         <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
@@ -93,7 +120,7 @@
                         <div class="kt-key-field__input">
                             <label for="edit-prd-key-pw">Key Pw</label>
                             <div class="kt-key-field__control">
-                                <input id="edit-prd-key-pw" type="password" class="kt-input" placeholder="PRD 전환 후 발급됩니다." readonly />
+                                <input id="edit-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
                                 <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
                                     <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
                                 </button>
