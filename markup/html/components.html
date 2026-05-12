@@ -1609,19 +1609,63 @@ KT API Link 연동 설명을 입력합니다.
                         </div>
                     </section>
 
-                    <section class="kt-component-section" id="ldap-workspace">
+                    <section class="kt-component-section" id="ldap-workspace" data-ldap-components>
                         <h2>LDAP Workspace Detail</h2>
                         <p class="kt-component-desc">
-                            워크스페이스 상세 팝업에서 반복 사용하는 기본정보, Members, 구독 API, IP Whitelist, API Keys 섹션입니다. 실제 LDAP 화면과 같은 include를 사용합니다.
+                            works-ldap-01.html과 works-ldap-02.html에서 쓰는 워크스페이스 상세 팝업 조합입니다. 신규 화면에서는 상태별 include 조합을 그대로 가져오고 데이터만 교체합니다.
                         </p>
-                        <div class="kt-component-demo kt-component-demo--wide" data-ldap-components>
+                        <div class="kt-component-demo kt-component-demo--column">
+                            <div class="kt-component-card">
+                                <h3>works-ldap-01 / Draft</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- Draft 상태 --&gt;
+&lt;!--#include file="./include/_ldap_section_members.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_empty.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_empty.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_empty.html"--&gt;</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>works-ldap-02 / DEV</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- DEV 상태 --&gt;
+&lt;!--#include file="./include/_ldap_section_members_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_filled.html"--&gt;</code></pre>
+                            </div>
+                        </div>
+                        <div class="kt-component-demo kt-component-demo--wide">
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API 승인요청 버튼</h3>
+                                <div class="kt-component-popup-actions">
+                                    <button type="button" class="kt-btn kt-btn--popup-line" data-api-approval-request>API 승인요청 <strong>민감 0</strong></button>
+                                    <button type="button" class="kt-btn kt-btn--popup-line kt-btn--popup-line-danger" data-api-approval-request>API 승인요청 <strong>민감 1</strong></button>
+                                </div>
+                                <pre class="kt-component-code"><code>&lt;button type="button" class="kt-btn kt-btn--popup-line" data-api-approval-request&gt;
+    API 승인요청 &lt;strong&gt;민감 0&lt;/strong&gt;
+&lt;/button&gt;
+
+&lt;button type="button" class="kt-btn kt-btn--popup-line kt-btn--popup-line-danger" data-api-approval-request&gt;
+    API 승인요청 &lt;strong&gt;민감 1&lt;/strong&gt;
+&lt;/button&gt;</code></pre>
+                            </div>
+                        </div>
+                        <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>기본정보</h3>
                                 <!--#include file="./include/_ldap_section_basic.html"-->
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
-                                <h3>Members</h3>
+                                <h3>Members - Empty</h3>
                                 <!--#include file="./include/_ldap_section_members.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>Members - Filled</h3>
+                                <!--#include file="./include/_ldap_section_members_filled.html"-->
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>구독 API - Empty</h3>

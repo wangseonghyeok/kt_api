@@ -129,6 +129,21 @@
         );
     };
 
+    const getApiApprovalSensitiveCount = button => {
+        const text = button?.querySelector('strong')?.textContent || button?.textContent || '';
+        const match = text.match(/민감\s*(\d+)/);
+
+        return match ? Number(match[1]) : 0;
+    };
+
+    const syncApiApprovalButton = button => {
+        const sensitiveCount = getApiApprovalSensitiveCount(button);
+
+        button?.classList.toggle('kt-btn--popup-line-danger', sensitiveCount > 0);
+
+        return sensitiveCount;
+    };
+
     const closePrompt = prompt => {
         if (!prompt) {
             return;
@@ -1650,6 +1665,7 @@
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncApiEditTable);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api-filled').forEach(syncApiReadTable);
+    workspaceRoot.querySelectorAll('[data-api-approval-request]').forEach(syncApiApprovalButton);
     workspaceRoot.querySelectorAll('.kt-api-name').forEach(ensureApiNameTooltip);
     workspaceRoot.querySelectorAll('.kt-ldap-section-ip-empty, .kt-ldap-section-ip-filled').forEach(section => {
         getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(sortIpReadCard);
@@ -1814,8 +1830,14 @@
 
         if (apiApprovalButton) {
             const section = apiApprovalButton.closest('.kt-ldap-section-api');
+            const sensitiveCount = syncApiApprovalButton(apiApprovalButton);
 
             e.preventDefault();
+
+            if (sensitiveCount < 1) {
+                return;
+            }
+
             showToast(section?.querySelector('.kt-ldap-toast-api'), 'API 추가 승인이 완료되었습니다.');
             return;
         }
