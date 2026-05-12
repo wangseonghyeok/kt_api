@@ -1,3 +1,8 @@
+<!--
+    개발 전달: LDAP Draft 화면의 구독 API 빈 상태 + 편집 샘플입니다.
+    API 검색 후보의 data-api-* 속성은 화면 데모에서 선택 카드, 편집 테이블, 읽기 테이블을 만드는 원본 데이터로 쓰입니다.
+    백엔드 연동 시 후보 목록을 서버 데이터로 바꾸되 data-api-id/code/name/domain/sensitivity/self-testing/approval/status/params 형식은 유지하면 됩니다.
+-->
 <section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-empty">
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">
@@ -56,6 +61,10 @@
         <strong class="kt-edit-box__title">구독 API 편집모드</strong>
         <div class="kt-ldap-api-table-wrap kt-ldap-api-edit-flow">
             <div class="kt-toast kt-toast--inside kt-ldap-toast-api-edit" role="status" hidden>선택하신 API가 목록에 추가되었습니다.</div>
+            <!--
+                사용법: 왼쪽 검색 후보를 체크하면 data-api-selected-list에 선택 카드가 생깁니다.
+                "목록에 추가"를 누르면 선택된 후보에 data-api-added=true가 붙고, 아래 편집 테이블의 같은 data-api-id 행이 노출됩니다.
+            -->
             <div class="kt-ldap-api-picker">
                 <section class="kt-ldap-api-picker__search" aria-label="API 검색">
                     <h3 class="kt-ldap-api-picker__title">API 검색</h3>
@@ -256,6 +265,7 @@
                             </div>
                         </td>
                     </tr>
+                    <!-- 편집 테이블 행: data-api-accordion="edit-{data-api-id}" 값으로 검색 후보와 매칭됩니다. -->
                     <tr class="kt-api-row" data-api-row data-api-accordion="edit-oif-311" hidden>
                         <td>
                             <div class="kt-api-name">

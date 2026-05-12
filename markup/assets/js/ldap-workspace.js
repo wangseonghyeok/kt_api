@@ -5,6 +5,7 @@
         return;
     }
 
+    // 개발 전달: LDAP 상세 퍼블리싱 데모 전용 스크립트입니다. fetch/form submit 없이 DOM 상태만 바꾸므로 백엔드 호출에는 영향이 없습니다.
     const getEditTemplate = section => Array.from(section.children).find(child => child.classList.contains('kt-edit-template'));
     const getControlValue = control => (control.value || '').trim();
     const toastTimers = new WeakMap();
@@ -705,6 +706,7 @@
                 return { name, sensitivity: sensitivity || '' };
             });
 
+    // API 검색 후보의 data-api-* 속성을 화면용 객체로 변환합니다. 서버 연동 시에도 HTML 속성명만 유지하면 아래 UI 생성 로직을 그대로 재사용할 수 있습니다.
     const getApiData = option => ({
         id: option.dataset.apiId || '',
         code: option.dataset.apiCode || option.querySelector('strong')?.textContent.trim() || '',
@@ -1591,6 +1593,7 @@
         return true;
     };
 
+    // IP 편집 모드의 입력 목록을 읽기 카드로 복사합니다. 현재는 화면 확인용이며, 저장 API 연결 시 이 함수 호출 지점에 서버 저장을 붙이면 됩니다.
     const syncIpWhitelist = section => {
         section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor').forEach(editor => {
             const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;

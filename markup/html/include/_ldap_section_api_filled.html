@@ -1,3 +1,8 @@
+<!--
+    개발 전달: LDAP DEV 화면의 구독 API 등록 상태 샘플입니다.
+    상단 읽기 테이블은 현재 구독 목록, 하단 kt-edit-template은 편집 모드에서 재사용되는 후보/선택/편집 목록입니다.
+    data-api-added="true"가 붙은 후보가 현재 등록된 API로 간주되며, 백엔드 연동 전까지는 화면 상태만 갱신합니다.
+-->
 <section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-filled">
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">
@@ -133,6 +138,10 @@
         <strong class="kt-edit-box__title">구독 API 편집모드</strong>
         <div class="kt-ldap-api-table-wrap kt-ldap-api-edit-flow">
             <div class="kt-toast kt-toast--inside kt-ldap-toast-api-edit" role="status" hidden>선택하신 API가 목록에 추가되었습니다.</div>
+            <!--
+                사용법: 검색 후보의 data-api-added=true는 "이미 추가됨" 상태입니다.
+                새 후보를 추가하거나 삭제할 때 ldap-workspace.js가 이 속성과 편집 테이블 노출 여부를 같이 맞춥니다.
+            -->
             <div class="kt-ldap-api-picker">
                 <section class="kt-ldap-api-picker__search" aria-label="API 검색">
                     <h3 class="kt-ldap-api-picker__title">API 검색</h3>
