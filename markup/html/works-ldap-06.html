@@ -8,7 +8,7 @@
     <body>
         <div id="wrap">
             <div class="kt-ldap-modal">
-                <main class="kt-ldap-stage kt-ldap-stage--expired" aria-label="워크스페이스 상세 LDAP Expired 반려">
+                <main class="kt-ldap-stage kt-ldap-stage--expired kt-ldap-stage--renew-rejected" aria-label="워크스페이스 상세 LDAP Expired 반려">
                     <article class="kt-ws-popup">
                         <header class="kt-ws-popup__header">
                             <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
@@ -27,7 +27,6 @@
                                                 <span class="kt-ws-summary__badges">
                                                     <span class="kt-badge kt-badge--xs">API</span>
                                                     <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--danger">반려</span>
                                                 </span>
                                             </div>
                                             <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
@@ -50,8 +49,14 @@
                                         </div>
                                     </div>
                                     <div class="kt-ws-status-note kt-ws-status-note--rejected">
-                                        <span class="kt-tag kt-tag--dot kt-tag--critical">반려</span>
-                                        <p>Key 갱신 승인 요청이 반려되었습니다. 반려 사유 확인 후 다시 신청해 주세요.</p>
+                                        <div class="kt-ws-status-note__message">
+                                            <span class="kt-ws-status-note__icon" aria-hidden="true"></span>
+                                            <p>Key 갱신 요청이 반려되었으니 사유를 확인 후 재신청하세요.</p>
+                                        </div>
+                                        <div class="kt-ws-status-note__reason">
+                                            <span class="kt-reject-reason__tag">반려 사유</span>
+                                            <p>구체적인 트래픽 규모와 보안 검토 결과서를 포함하여 재신청해 주세요.</p>
+                                        </div>
                                     </div>
                                 </section>
 
@@ -67,9 +72,16 @@
                             </div>
                         </div>
 
-                        <footer class="kt-ws-popup__footer">
-                            <button type="button" class="kt-btn kt-btn--popup-cta kt-btn--popup-cta-secondary">Key 연장</button>
-                            <button type="button" class="kt-btn kt-btn--popup-cta">Key 발급</button>
+                        <footer class="kt-ws-popup__footer kt-ws-popup__footer--renew-rejected">
+                            <div class="kt-reject-footer-note">
+                                <span class="kt-reject-footer-note__status">
+                                    <span class="kt-reject-footer-note__icon" aria-hidden="true"></span>
+                                    반려됨
+                                </span>
+                                <p>반려 사유 확인 후 수정하여 재신청하세요.</p>
+                            </div>
+                            <button type="button" class="kt-btn kt-btn--popup-cta">Key 갱신 재신청</button>
+                            <span class="kt-ws-popup__footer-spacer" aria-hidden="true"></span>
                         </footer>
                     </article>
                 </main>

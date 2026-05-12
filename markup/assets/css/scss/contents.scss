@@ -2985,51 +2985,42 @@
     height: 177px;
 }
 
-.kt-ldap-section-basic {
-    height: 253px;
+.kt-ldap-stage--renew-rejected {
+    .kt-ldap-status-group {
+        height: 203px;
+    }
 }
 
-// .kt-ldap-section-members {
-//     height: 288px;
-// }
+.kt-ldap-stage {
+    .kt-key-field__input .kt-input[readonly] {
+        color: #191a1b;
+        -webkit-text-fill-color: #191a1b;
+    }
 
-// .kt-ldap-section-members.is-editing.has-many-members {
-//     height: 288px;
-// }
+    // works-ldap-06: Figma 반려 PRD Key ID 취소선입니다. 필요 없으면 이 블록을 주석 처리하세요.
+    .kt-key-field__input .kt-input--key-line[readonly] {
+        text-decoration-line: line-through;
+        text-decoration-style: solid;
+        text-decoration-color: #191a1b;
+        text-decoration-thickness: 1.5px;
+        text-decoration-skip-ink: none;
+    }
 
-// .kt-ldap-section-api-empty {
-//     position: relative;
-//     height: 288px;
-// }
+    .kt-key-field__control .kt-input[type='password'][readonly] {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: var(--fw-Bold);
+        letter-spacing: 2px;
+        line-height: 1;
+    }
 
-// .kt-ldap-section-api-empty.has-many-api-rows:not(.is-editing) {
-//     min-height: 360px;
-// }
-
-// .kt-ldap-section-api-filled {
-//     height: 244px;
-// }
-
-// .kt-ldap-section-ip-empty,
-// .kt-ldap-section-keys-empty {
-//     height: 236px;
-// }
-
-// .kt-ldap-section-ip-filled {
-//     height: 222px;
-// }
-
-// .kt-ldap-section-keys-filled {
-//     height: 330px;
-// }
-
-// .kt-ldap-section-api-edit {
-//     height: 558px;
-// }
-
-// .kt-ldap-section-ip-edit {
-//     height: 268px;
-// }
+    .kt-key-field__copy:hover,
+    .kt-key-field__copy.is-hover,
+    .kt-key-field__copy:active,
+    .kt-key-field__copy.is-pressed {
+        background: transparent;
+    }
+}
 
 .kt-ldap-toast-api {
     bottom: 100px;

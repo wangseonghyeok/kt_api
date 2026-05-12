@@ -800,7 +800,8 @@
         border-color: #d5d8dd;
         background-color: #f3f4f6;
         color: var(--kt-disabled);
-        border-width: 0;
+        border-width: 1px;
+        box-shadow: unset;
     }
 }
 
@@ -5879,8 +5880,13 @@
 
 .kt-badge--rejected,
 .kt-badge--danger {
-    // background: #e02830;
-    // color: #fff;
+    background: #fce9e9;
+    color: #bb1b21;
+}
+
+.kt-badge--renew-rejected {
+    background: #bb1b21;
+    color: #fff3e5;
 }
 
 .kt-badge--warning {
@@ -6332,6 +6338,56 @@
     padding-bottom: 28px;
 }
 
+.kt-ws-popup__footer--renew-rejected {
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 24px 28px;
+}
+
+.kt-ws-popup__footer-spacer {
+    flex: 0 0 345px;
+    width: 345px;
+    height: 56px;
+}
+
+.kt-reject-footer-note {
+    @include flex(center, null);
+    gap: 16px;
+    height: 56px;
+    min-width: 0;
+}
+
+.kt-reject-footer-note__status {
+    @include inline-flex(center, null);
+    flex: 0 0 auto;
+    gap: 4px;
+    color: #e0282f;
+    font-size: 16px;
+    font-weight: var(--fw-SemiBold);
+    line-height: 1.48;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.kt-reject-footer-note__icon {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    background: currentColor;
+    -webkit-mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+    mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+}
+
+.kt-reject-footer-note p {
+    margin: 0;
+    color: #000;
+    font-size: 16px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+    white-space: nowrap;
+}
+
 .kt-ws-summary {
     display: flex;
     flex-direction: column;
@@ -6432,7 +6488,49 @@
 }
 
 .kt-ws-status-note--rejected {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    height: auto;
+    min-height: 66px;
+    padding: 8px 12px;
     background: #fce9e9;
+}
+
+.kt-ws-status-note__message,
+.kt-ws-status-note__reason {
+    @include flex(center, null);
+}
+
+.kt-ws-status-note__message {
+    gap: 4px;
+    color: #e0282f;
+    font-size: 12px;
+    font-weight: var(--fw-SemiBold);
+    line-height: 1.48;
+}
+
+.kt-ws-status-note__reason {
+    gap: 8px;
+    color: #191a1b;
+    font-size: 15px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+}
+
+.kt-ws-status-note__message p,
+.kt-ws-status-note__reason p {
+    margin: 0;
+}
+
+.kt-ws-status-note__icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    background: currentColor;
+    -webkit-mask: url('/assets/img/contents/ico_alert_warning.svg') 50% 50% / 16px 16px no-repeat;
+    mask: url('/assets/img/contents/ico_alert_warning.svg') 50% 50% / 16px 16px no-repeat;
 }
 
 .kt-ldap-stage--expired {
@@ -7097,6 +7195,13 @@
     color: #e0282f;
 }
 
+.kt-key-card__expiry--renew-rejected {
+    color: #bb1b21;
+    font-size: 13px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+}
+
 .kt-key-card__state-text {
     color: #e0282f;
     font-size: 14px;
@@ -7121,6 +7226,10 @@
         min-height: 22px;
         padding: 3px 6px;
     }
+}
+
+.kt-key-card__meta--renew-rejected {
+    gap: 10px;
 }
 
 .kt-key-card__title-note {
