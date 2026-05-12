@@ -245,6 +245,15 @@
         const clear = search.querySelector('[data-ldap-search-clear]');
         const options = getLdapSearchOptions(search);
         const searchType = search.dataset.ldapSearchType;
+        const searchLabel = searchType === 'api' ? 'API 검색' : '멤버 검색';
+
+        search.closest('.kt-ldap-filter')?.setAttribute('aria-label', searchLabel);
+
+        if (clear && !clear.hasAttribute('aria-label')) {
+            clear.setAttribute('aria-label', '검색어 삭제');
+        }
+
+        search.querySelector('.kt-newwork-search__submit:not([aria-label])')?.setAttribute('aria-label', searchLabel);
 
         if (!input || !options.length) {
             return;
@@ -414,6 +423,15 @@
         const noDataRow = section.querySelector('[data-member-no-data-empty]');
         const searchEmptyRow = section.querySelector('[data-member-empty]');
 
+        rows.forEach(row => {
+            const deleteButton = row.querySelector('[data-member-delete]');
+            const name = row.querySelector('td')?.textContent.trim();
+
+            if (deleteButton && name && !deleteButton.hasAttribute('aria-label')) {
+                deleteButton.setAttribute('aria-label', `${name} 삭제`);
+            }
+        });
+
         if (count) {
             count.textContent = String(total);
         }
@@ -523,8 +541,12 @@
     };
 
     const setMemberOptionRegistered = (option, isRegistered) => {
+        const item = option.closest('li');
+
         option.hidden = isRegistered;
-        option.closest('li').hidden = isRegistered;
+        if (item) {
+            item.hidden = isRegistered;
+        }
         option.setAttribute('aria-hidden', String(isRegistered));
         option.setAttribute('aria-selected', 'false');
         option.classList.remove('is-selected');
@@ -533,9 +555,76 @@
         if (isRegistered) {
             option.setAttribute('aria-disabled', 'true');
             option.setAttribute('data-prompt-disabled', 'true');
+            option.setAttribute('data-member-registered', 'true');
         } else {
             option.removeAttribute('aria-disabled');
             option.removeAttribute('data-prompt-disabled');
+            option.removeAttribute('data-member-registered');
+        }
+    };
+
+    const renderMemberSearchOptionLabel = (option, member) => {
+        let icon = option.querySelector(':scope > .kt-newwork-search-icon');
+        let name = option.querySelector(':scope > strong');
+        let email = Array.from(option.children).find(child => child.tagName === 'SPAN' && !child.classList.contains('kt-newwork-search-icon'));
+
+        if (!icon) {
+            icon = document.createElement('span');
+            icon.className = 'kt-newwork-search-icon';
+            icon.setAttribute('aria-hidden', 'true');
+            option.prepend(icon);
+        }
+
+        if (!name) {
+            name = document.createElement('strong');
+            icon.after(name);
+        }
+
+        if (!email) {
+            email = document.createElement('span');
+            name.after(email);
+        }
+
+        name.textContent = member.name;
+        email.textContent = member.email;
+    };
+
+    const normalizeMemberSearchOption = option => {
+        const compactMember = option.dataset.member;
+        const memberFields = ['memberId', 'memberName', 'memberEmail', 'memberCompany', 'memberRole', 'memberMethod'];
+
+        if (compactMember) {
+            compactMember.split('|').forEach((value, index) => {
+                const field = memberFields[index];
+                const normalizedValue = value.trim();
+
+                if (field && normalizedValue && !option.dataset[field]) {
+                    option.dataset[field] = normalizedValue;
+                }
+            });
+        }
+
+        const member = getMemberData(option);
+        renderMemberSearchOptionLabel(option, member);
+
+        if (!option.hasAttribute('role')) {
+            option.setAttribute('role', 'option');
+        }
+
+        if (!option.hasAttribute('tabindex')) {
+            option.tabIndex = -1;
+        }
+
+        if (!option.hasAttribute('aria-selected')) {
+            option.setAttribute('aria-selected', 'false');
+        }
+
+        if (!option.dataset.search) {
+            option.dataset.search = [member.name, member.email, member.company, member.role, member.method].filter(Boolean).join(' ');
+        }
+
+        if (option.hasAttribute('data-member-registered')) {
+            setMemberOptionRegistered(option, true);
         }
     };
 
@@ -717,6 +806,72 @@
         status: option.dataset.apiStatus || '미상용',
         params: parseApiParams(option.dataset.apiParams),
     });
+
+    const renderApiSearchOptionLabel = (option, api) => {
+        const wasChecked = Boolean(option.querySelector('[data-api-option-checkbox]')?.checked);
+        const check = document.createElement('span');
+        const input = document.createElement('input');
+        const blind = document.createElement('span');
+        const code = document.createElement('strong');
+        const name = document.createElement('a');
+        const sensitivity = document.createElement('em');
+
+        check.className = 'kt-check';
+        input.type = 'checkbox';
+        input.dataset.apiOptionCheckbox = '';
+        input.checked = wasChecked;
+        blind.className = 'blind';
+        blind.textContent = '선택';
+        code.textContent = api.code;
+        name.textContent = api.name;
+        sensitivity.textContent = api.sensitivity;
+        check.append(input, blind);
+        option.replaceChildren(check, code, name, sensitivity);
+    };
+
+    const normalizeApiSearchOption = option => {
+        const compactApi = option.dataset.api;
+        const apiFields = ['apiId', 'apiCode', 'apiName', 'apiProdDomain', 'apiDevDomain', 'apiSensitivity', 'apiSelfTesting', 'apiApproval', 'apiStatus', 'apiParams'];
+
+        if (compactApi) {
+            compactApi.split('||').forEach((value, index) => {
+                const field = apiFields[index];
+                const normalizedValue = value.trim();
+
+                if (field && normalizedValue && !option.dataset[field]) {
+                    option.dataset[field] = normalizedValue;
+                }
+            });
+        }
+
+        if (option.hasAttribute('data-api-added') && option.dataset.apiAdded !== 'true') {
+            option.dataset.apiAdded = 'true';
+        }
+
+        const api = getApiData(option);
+
+        option.classList.add('kt-ldap-api-search-option');
+
+        if (!option.hasAttribute('role')) {
+            option.setAttribute('role', 'option');
+        }
+
+        if (!option.hasAttribute('tabindex')) {
+            option.tabIndex = 0;
+        }
+
+        if (!option.hasAttribute('aria-selected')) {
+            option.setAttribute('aria-selected', 'false');
+        }
+
+        if (!option.dataset.search) {
+            option.dataset.search = [api.code, api.name, api.prodDomain, api.devDomain, api.sensitivity, api.selfTesting, api.approval, api.status].filter(Boolean).join(' ');
+        }
+
+        if (compactApi || !option.querySelector('[data-api-option-checkbox]')) {
+            renderApiSearchOptionLabel(option, api);
+        }
+    };
 
     const createSelectedApiParam = param => {
         const row = document.createElement('div');
@@ -1640,6 +1795,8 @@
         });
     };
 
+    workspaceRoot.querySelectorAll('[data-ldap-search-option][data-member], [data-ldap-search-option][data-member-id]').forEach(normalizeMemberSearchOption);
+    workspaceRoot.querySelectorAll('[data-ldap-search-option][data-api], [data-ldap-search-option][data-api-id]').forEach(normalizeApiSearchOption);
     workspaceRoot.querySelectorAll('[data-ldap-search]').forEach(setupLdapSearch);
     workspaceRoot.querySelectorAll('[data-ldap-member-search]').forEach(filterMemberRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-members').forEach(syncMemberSection);

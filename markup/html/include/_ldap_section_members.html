@@ -39,7 +39,7 @@
     </table>
     <div class="kt-edit-template kt-edit-box">
         <strong class="kt-edit-box__title">멤버 편집모드</strong>
-        <section class="kt-ldap-filter" aria-label="멤버 검색">
+        <section class="kt-ldap-filter">
             <div class="kt-ldap-member-filter">
                 <div class="kt-newwork-search kt-ldap-newwork-search" data-ldap-search data-ldap-search-type="member" data-min-length="1">
                     <div class="kt-newwork-search__field">
@@ -53,10 +53,10 @@
                             aria-expanded="false"
                             autocomplete="off"
                         />
-                        <button type="button" class="kt-newwork-search__clear" data-ldap-search-clear aria-controls="ldapMemberKeyword" aria-label="검색어 삭제" hidden>
+                        <button type="button" class="kt-newwork-search__clear" data-ldap-search-clear aria-controls="ldapMemberKeyword" hidden>
                             <span class="blind">검색어 삭제</span>
                         </button>
-                        <button type="button" class="kt-newwork-search__submit" aria-label="멤버 검색">
+                        <button type="button" class="kt-newwork-search__submit">
                             <span class="blind">검색</span>
                         </button>
                     </div>
@@ -70,102 +70,37 @@
                             <li>
                                 <button
                                     type="button"
-                                    role="option"
-                                    tabindex="-1"
-                                    aria-selected="false"
                                     data-ldap-search-option
-                                    data-member-id="kim-cs"
-                                    data-member-name="김철수"
-                                    data-member-email="kim.cs@hanaro.com"
-                                    data-member-company="하나로소프트"
-                                    data-member-role="Owner"
-                                    data-member-method="생성자 자동 지정"
-                                    data-search="김철수 kim.cs@hanaro.com 하나로소프트 Owner"
-                                >
-                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                    <strong>김철수</strong>
-                                    <span>kim.cs@hanaro.com</span>
-                                </button>
+                                    data-member="kim-cs|김철수|kim.cs@hanaro.com|하나로소프트|Owner|생성자 자동 지정"
+                                ></button>
                             </li>
                             <li>
                                 <button
                                     type="button"
-                                    role="option"
-                                    tabindex="-1"
-                                    aria-selected="false"
                                     data-ldap-search-option
-                                    data-member-id="lee-sh"
-                                    data-member-name="이순희"
-                                    data-member-email="lee.sh@kt.com"
-                                    data-member-company="KT"
-                                    data-member-role="Manager"
-                                    data-member-method="KT Service PO 자동 지정"
-                                    data-search="이순희 lee.sh@kt.com KT Manager"
-                                >
-                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                    <strong>이순희</strong>
-                                    <span>lee.sh@kt.com</span>
-                                </button>
+                                    data-member="lee-sh|이순희|lee.sh@kt.com|KT|Manager|KT Service PO 자동 지정"
+                                ></button>
                             </li>
                             <li>
                                 <button
                                     type="button"
-                                    role="option"
-                                    tabindex="-1"
-                                    aria-selected="false"
                                     data-ldap-search-option
-                                    data-member-id="park-je"
-                                    data-member-name="박지은"
-                                    data-member-email="park.je@hanaro.com"
-                                    data-member-company="하나로소프트"
-                                    data-member-role="Member"
-                                    data-member-method="Owner 초대"
-                                    data-search="박지은 park.je@hanaro.com 하나로소프트 Member"
-                                >
-                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                    <strong>박지은</strong>
-                                    <span>park.je@hanaro.com</span>
-                                </button>
+                                    data-member="park-je|박지은|park.je@hanaro.com|하나로소프트|Member|Owner 초대"
+                                ></button>
                             </li>
                             <li>
                                 <button
                                     type="button"
-                                    role="option"
-                                    tabindex="-1"
-                                    aria-selected="false"
                                     data-ldap-search-option
-                                    data-member-id="kang-dh"
-                                    data-member-name="강다희"
-                                    data-member-email="kang.dh@hanaro.com"
-                                    data-member-company="기술개발팀"
-                                    data-member-role="Member"
-                                    data-member-method="Owner 초대"
-                                    data-search="강다희 kang.dh@hanaro.com 기술개발팀 Member"
-                                >
-                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                    <strong>강다희</strong>
-                                    <span>kang.dh@hanaro.com</span>
-                                </button>
+                                    data-member="kang-dh|강다희|kang.dh@hanaro.com|기술개발팀|Member|Owner 초대"
+                                ></button>
                             </li>
                             <li>
                                 <button
                                     type="button"
-                                    role="option"
-                                    tabindex="-1"
-                                    aria-selected="false"
                                     data-ldap-search-option
-                                    data-member-id="choi-mj"
-                                    data-member-name="최민준"
-                                    data-member-email="choi.mj@hanaro.com"
-                                    data-member-company="하나로소프트"
-                                    data-member-role="Member"
-                                    data-member-method="Manager 초대"
-                                    data-search="최민준 choi.mj@hanaro.com 하나로소프트 Member"
-                                >
-                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                    <strong>최민준</strong>
-                                    <span>choi.mj@hanaro.com</span>
-                                </button>
+                                    data-member="choi-mj|최민준|choi.mj@hanaro.com|하나로소프트|Member|Manager 초대"
+                                ></button>
                             </li>
                         </ul>
                     </div>

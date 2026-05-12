@@ -1595,6 +1595,67 @@ const ui = {
             return { label, meta };
         };
 
+        const renderServiceOption = option => {
+            const check = option.querySelector('.kt-newwork-check') || document.createElement('i');
+            const serviceWrap = document.createElement('span');
+            const icon = document.createElement('span');
+            const service = document.createElement('strong');
+            const code = document.createElement('span');
+            const owner = document.createElement('span');
+            const ownerTag = document.createElement('em');
+            const email = document.createElement('span');
+
+            check.className = 'kt-newwork-check';
+            check.setAttribute('aria-hidden', 'true');
+            serviceWrap.className = 'kt-newwork-search-menu__service';
+            icon.className = 'kt-newwork-search-icon';
+            icon.setAttribute('aria-hidden', 'true');
+            service.textContent = option.dataset.service || option.dataset.label || '';
+            code.className = 'kt-newwork-search-menu__code';
+            code.textContent = option.dataset.code || option.dataset.meta || '';
+            owner.className = 'kt-newwork-search-menu__owner';
+            ownerTag.className = 'kt-newwork-tag kt-newwork-tag--po';
+            ownerTag.textContent = 'PO';
+            owner.append(ownerTag, ` ${option.dataset.po || ''}`);
+            email.className = 'kt-newwork-search-menu__email';
+            email.textContent = option.dataset.email || '';
+            serviceWrap.append(icon, service);
+            option.replaceChildren(serviceWrap, code, owner, email);
+
+            if (option.classList.contains('is-selected')) {
+                option.appendChild(check);
+            }
+        };
+
+        const normalizeServiceOption = option => {
+            const compactService = option.dataset.service;
+
+            if (compactService?.includes('|')) {
+                const [service, code, po, email] = compactService.split('|').map(value => value.trim());
+
+                option.dataset.service = service || '';
+                option.dataset.code = code || '';
+                option.dataset.po = po || '';
+                option.dataset.email = email || '';
+            }
+
+            if (!option.dataset.label) {
+                option.dataset.label = option.dataset.service || '';
+            }
+
+            if (!option.dataset.meta) {
+                option.dataset.meta = option.dataset.code || '';
+            }
+
+            if (!option.dataset.search) {
+                option.dataset.search = [option.dataset.service, option.dataset.code, option.dataset.po, option.dataset.email].filter(Boolean).join(' ');
+            }
+
+            if (option.closest('.kt-newwork-search-menu--service')) {
+                renderServiceOption(option);
+            }
+        };
+
         // 선택한 멤버 행 생성
         const createMemberRow = (label, meta) => {
             const item = document.createElement('li');
@@ -1767,6 +1828,8 @@ const ui = {
             const clear = search.querySelector('[data-newwork-clear]');
             const menu = search.querySelector('[data-newwork-menu]');
             const options = menu ? Array.from(menu.querySelectorAll('[data-newwork-option]')) : [];
+
+            options.forEach(normalizeServiceOption);
 
             if (!input || !menu) {
                 return;
