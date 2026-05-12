@@ -827,7 +827,31 @@
         return item;
     };
 
+    const syncAddedApiSelections = section => {
+        const list = section?.querySelector('[data-api-selected-list]');
+
+        if (!list) {
+            return;
+        }
+
+        getAddedApiOptions(section).forEach(option => {
+            const api = getApiData(option);
+
+            if (!api.id) {
+                return;
+            }
+
+            setApiOptionSelected(option, true);
+
+            if (!list.querySelector(`[data-selected-api][data-api-id="${api.id}"]`)) {
+                list.appendChild(createSelectedApi(api));
+            }
+        });
+    };
+
     const syncSelectedApiSection = section => {
+        syncAddedApiSelections(section);
+
         const selectedItems = Array.from(section.querySelectorAll('[data-selected-api]'));
         const empty = section.querySelector('[data-api-selected-empty]');
         const notice = section.querySelector('[data-api-sensitive-notice]');
@@ -1412,20 +1436,59 @@
         return list;
     };
 
+    const ensureIpEmptyState = card => {
+        let empty = card?.querySelector(':scope > .kt-env-card__empty');
+        const title = card?.querySelector(':scope > .kt-env-card__title');
+
+        if (!card) {
+            return null;
+        }
+
+        if (!empty) {
+            const icon = document.createElement('img');
+            const text = document.createElement('p');
+
+            empty = document.createElement('div');
+            empty.className = 'kt-env-card__empty';
+            icon.className = 'kt-svg-icon kt-svg-icon--24';
+            icon.src = '/assets/img/contents/ico_none_empty.svg';
+            icon.alt = '';
+            icon.setAttribute('aria-hidden', 'true');
+            text.textContent = '등록된 IP가 없습니다.';
+            empty.append(icon, text);
+            card.insertBefore(empty, title?.nextSibling || card.firstChild);
+        }
+
+        return empty;
+    };
+
     const syncIpReadCardState = card => {
-        const empty = card?.querySelector(':scope > .kt-env-card__empty');
+        const empty = ensureIpEmptyState(card);
         const body = card?.querySelector(':scope > .kt-env-card__body');
         const list = body?.querySelector('.kt-env-card__list');
         const hasItems = Boolean(list?.querySelector('.kt-env-card__item'));
 
-        if (empty) {
-            empty.hidden = hasItems;
-            empty.style.display = hasItems ? 'none' : 'flex';
+        if (hasItems) {
+            if (empty) {
+                empty.hidden = true;
+                empty.style.display = 'none';
+            }
+
+            if (body) {
+                body.hidden = false;
+                body.style.display = '';
+            }
+
+            return;
         }
 
         if (body) {
-            body.hidden = !hasItems;
-            body.style.display = hasItems ? '' : 'none';
+            body.remove();
+        }
+
+        if (empty) {
+            empty.hidden = false;
+            empty.style.display = 'flex';
         }
     };
 
@@ -1583,6 +1646,7 @@
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncSelectedApiSection);
     workspaceRoot.querySelectorAll('[data-ldap-api-search]').forEach(filterApiRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-api').forEach(syncApiEditTable);
+    workspaceRoot.querySelectorAll('.kt-ldap-section-api-filled').forEach(syncApiReadTable);
     workspaceRoot.querySelectorAll('.kt-api-name').forEach(ensureApiNameTooltip);
     workspaceRoot.querySelectorAll('.kt-ldap-section-ip-empty, .kt-ldap-section-ip-filled').forEach(section => {
         getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(sortIpReadCard);

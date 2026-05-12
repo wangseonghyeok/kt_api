@@ -3068,6 +3068,18 @@
     background: #f8f9fa;
 }
 
+.kt-ldap-section-api-filled .kt-data-table--api-edit {
+    thead {
+        padding-right: 0;
+    }
+
+    tbody {
+        max-height: none;
+        overflow-y: visible;
+        scrollbar-gutter: auto;
+    }
+}
+
 .kt-reject-reason--ip {
     // margin-top: 12px;
 }

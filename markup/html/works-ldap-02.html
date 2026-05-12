@@ -5,28 +5,10 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-ldap-popup-page">
+    <body>
         <div id="wrap">
             <div class="kt-ldap-modal">
                 <main class="kt-ldap-stage kt-ldap-stage--dev" aria-label="워크스페이스 상세 LDAP DEV">
-                    <!-- badge samples: role badges shown next to the popup in Figma -->
-                    <div class="kt-ldap-badge-samples kt-ldap-badge-samples--roles" aria-label="역할 뱃지 샘플">
-                        <span class="kt-badge kt-badge--role-owner">Owner</span>
-                        <span class="kt-badge kt-badge--role-manager">Manager</span>
-                        <span class="kt-badge">Member</span>
-                    </div>
-
-                    <!-- badge samples: 재신청 / 상용 / 승인 / 호출제한 / 대기 / 미상용 / 반려 -->
-                    <div class="kt-ldap-badge-samples kt-ldap-badge-samples--statuses" aria-label="상태 뱃지 샘플">
-                        <span class="kt-badge kt-badge--blue">재신청</span>
-                        <span class="kt-badge kt-badge--prod">상용</span>
-                        <span class="kt-badge kt-badge--green">승인</span>
-                        <span class="kt-badge kt-badge--danger">호출제한</span>
-                        <span class="kt-badge kt-badge--warning">대기</span>
-                        <span class="kt-badge">미상용</span>
-                        <span class="kt-badge kt-badge--danger">반려</span>
-                    </div>
-
                     <article class="kt-ws-popup">
                         <header class="kt-ws-popup__header">
                             <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
@@ -42,15 +24,9 @@
                                         <div>
                                             <div class="kt-ws-summary__title">
                                                 <strong>하나로소프트_쿠폰서비스</strong>
-                                                <!-- badge composition: API / MCP / OAUTH / DRAFT / DEV / Prod / Expired -->
                                                 <span class="kt-ws-summary__badges">
                                                     <span class="kt-badge kt-badge--xs">API</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--dark">MCP</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--oauth">OAUTH</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--green">DRAFT</span>
                                                     <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--prod">Prod</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
                                                 </span>
                                             </div>
                                             <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
@@ -80,7 +56,7 @@
 
                                 <!--#include file="./include/_ldap_section_basic.html"-->
 
-                                <!--#include file="./include/_ldap_section_members.html"-->
+                                <!--#include file="./include/_ldap_section_members_filled.html"-->
 
                                 <!--#include file="./include/_ldap_section_api_filled.html"-->
 
@@ -98,6 +74,6 @@
             </div>
             <div id="dim"></div>
         </div>
-        <script src="/assets/js/ldap-workspace.js"></script>
     </body>
+    <script src="/assets/js/ldap-workspace.js"></script>
 </html>

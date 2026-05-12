@@ -6815,12 +6815,19 @@
     }
 }
 
-.kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card {
+.kt-env-card__empty[hidden],
+.kt-key-card__empty[hidden] {
+    display: none !important;
+}
+
+.kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card,
+.kt-ldap-section-ip-filled > .kt-panel-grid .kt-env-card {
     display: flex;
     flex-direction: column;
 }
 
-.kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card__empty {
+.kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card__empty,
+.kt-ldap-section-ip-filled > .kt-panel-grid .kt-env-card__empty {
     flex: 1 1 auto;
     padding: 30px 0 20px;
 }
