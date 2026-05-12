@@ -49,6 +49,8 @@ module.exports = {
     '[works-ldap-02] LDAP - 워크스페이스 상세(Dev)': null,
     '[works-ldap-03] LDAP - 워크스페이스 상세(Prod)': null,
     '[works-ldap-04] LDAP - 워크스페이스 상세(Expired)': null,
+    '[works-ldap-05] LDAP - 워크스페이스 상세(Expired)': null,
+    '[works-ldap-06] LDAP - 워크스페이스 상세(Expired)': null,
     '[works-entra-01] Entra ID - 워크스페이스 상세 LDAP 다른부분 체크': null,
     '[works-pop-01] 민감 API 승인신청 팝업': null,
     '[works-pop-02] 민감 API 재신청 팝업': null,

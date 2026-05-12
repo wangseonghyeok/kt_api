@@ -1612,7 +1612,7 @@ KT API Link 연동 설명을 입력합니다.
                     <section class="kt-component-section" id="ldap-workspace" data-ldap-components>
                         <h2>LDAP Workspace Detail</h2>
                         <p class="kt-component-desc">
-                            works-ldap-01.html과 works-ldap-02.html에서 쓰는 워크스페이스 상세 팝업 조합입니다. 신규 화면에서는 상태별 include 조합을 그대로 가져오고 데이터만 교체합니다.
+                            works-ldap-01.html부터 works-ldap-06.html까지 쓰는 워크스페이스 상세 팝업 조합입니다. 신규 화면에서는 상태별 include 조합을 그대로 가져오고 데이터만 교체합니다.
                         </p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card">
@@ -1637,6 +1637,51 @@ KT API Link 연동 설명을 입력합니다.
 &lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
 &lt;!--#include file="./include/_ldap_section_keys_filled.html"--&gt;</code></pre>
                             </div>
+                            <div class="kt-component-card">
+                                <h3>works-ldap-03 / PROD</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- PROD 상태 --&gt;
+&lt;!--#include file="./include/_ldap_section_call_statistics.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_members_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_prod.html"--&gt;</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>works-ldap-04 / Expired</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- Expired 상태 --&gt;
+&lt;!--#include file="./include/_ldap_section_members_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_expired.html"--&gt;</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>works-ldap-05 / Expired</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- Expired + Key Pw 안내 --&gt;
+&lt;!--#include file="./include/_ldap_section_members_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_expired_pw_note.html"--&gt;</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>works-ldap-06 / Expired Rejected</h3>
+                                <pre class="kt-component-code"><code>&lt;!-- 공통 상세 섹션 --&gt;
+&lt;!--#include file="./include/_ldap_section_basic.html"--&gt;
+
+&lt;!-- Expired + 반려 상태 --&gt;
+&lt;!--#include file="./include/_ldap_section_members_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_api_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_ip_filled.html"--&gt;
+&lt;!--#include file="./include/_ldap_section_keys_expired_rejected.html"--&gt;</code></pre>
+                            </div>
                         </div>
                         <div class="kt-component-demo kt-component-demo--wide">
                             <div class="kt-component-card kt-component-card--wide">
@@ -1658,6 +1703,10 @@ KT API Link 연동 설명을 입력합니다.
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>기본정보</h3>
                                 <!--#include file="./include/_ldap_section_basic.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Call Statistics</h3>
+                                <!--#include file="./include/_ldap_section_call_statistics.html"-->
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>Members - Empty</h3>
@@ -1690,6 +1739,22 @@ KT API Link 연동 설명을 입력합니다.
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>API Keys - Filled</h3>
                                 <!--#include file="./include/_ldap_section_keys_filled.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - PROD</h3>
+                                <!--#include file="./include/_ldap_section_keys_prod.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - Expired</h3>
+                                <!--#include file="./include/_ldap_section_keys_expired.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - Expired / Key Pw Note</h3>
+                                <!--#include file="./include/_ldap_section_keys_expired_pw_note.html"-->
+                            </div>
+                            <div class="kt-component-card kt-component-card--wide">
+                                <h3>API Keys - Expired / Rejected</h3>
+                                <!--#include file="./include/_ldap_section_keys_expired_rejected.html"-->
                             </div>
                         </div>
                     </section>

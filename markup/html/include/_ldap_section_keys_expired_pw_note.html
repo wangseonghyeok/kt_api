@@ -1,0 +1,78 @@
+<!-- LDAP Expired Renew Pending API Keys -->
+<section class="kt-ws-section kt-ldap-section-keys-filled kt-ldap-section-keys-expired">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">API Keys</h2>
+    </div>
+    <div class="kt-panel-grid">
+        <div class="kt-key-card">
+            <div class="kt-key-card__title">
+                <span>DEVKey</span>
+                <span class="kt-key-card__expiry">만료일 : 2027.05.06</span>
+            </div>
+            <div class="kt-key-card__body">
+                <div class="kt-key-field">
+                    <div class="kt-key-field__input">
+                        <label for="expired-note-dev-key-id">Key ID</label>
+                        <input id="expired-note-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="DEV Key ID 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                <div class="kt-key-field">
+                    <div class="kt-key-field__input">
+                        <label for="expired-note-dev-key-pw">Key Pw</label>
+                        <div class="kt-key-field__control">
+                            <input id="expired-note-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <button type="button" class="kt-key-field__visibility" aria-label="DEV Key Password 보기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="DEV Key Password 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="kt-key-card">
+            <div class="kt-key-card__title">
+                <span>PRDKey</span>
+                <span class="kt-key-card__meta">
+                    <span class="kt-key-card__expiry kt-key-card__expiry--danger">만료 : 2025.05.10</span>
+                    <span class="kt-key-card__state-text">운영호출불가</span>
+                    <span class="kt-badge kt-badge--warning">갱신대기</span>
+                </span>
+            </div>
+            <div class="kt-key-card__body">
+                <div class="kt-key-field">
+                    <div class="kt-key-field__input">
+                        <label for="expired-note-prd-key-id">Key ID</label>
+                        <input id="expired-note-prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                <div class="kt-key-field kt-key-field--with-helper">
+                    <div class="kt-key-field__input">
+                        <label for="expired-note-prd-key-pw">Key Pw</label>
+                        <div class="kt-key-field__control">
+                            <input id="expired-note-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </div>
+                        <p class="kt-key-field__helper kt-key-field__helper--icon">
+                            <img class="kt-svg-icon kt-svg-icon--16" src="/assets/img/contents/ico_alert_warning.svg" alt="" aria-hidden="true" />
+                            <span>승인 완료 전까지 현재 Key로 계속 사용 가능합니다.</span>
+                        </p>
+                    </div>
+                    <button type="button" class="kt-key-field__copy" aria-label="PRD Key Password 복사">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

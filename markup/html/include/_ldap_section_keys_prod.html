@@ -1,8 +1,8 @@
 <!--
-    개발 전달: LDAP DEV 화면의 API Keys 발급 상태 샘플입니다.
-    DEV/PRD 카드의 input value가 노출/복사 대상이며 현재 값은 퍼블리싱 확인용 더미입니다.
+    개발 전달: LDAP PROD 화면의 API Keys 발급 상태 샘플입니다.
+    API Call Statistics는 기본정보 위 별도 섹션에서 표시합니다.
 -->
-<section class="kt-ws-section kt-ldap-section-keys-filled">
+<section class="kt-ws-section kt-ldap-section-keys-filled kt-ldap-section-keys-prod">
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">API Keys</h2>
         <button type="button" class="kt-btn kt-btn--popup">편집</button>
@@ -16,24 +16,24 @@
             <div class="kt-key-card__body">
                 <div class="kt-key-field">
                     <div class="kt-key-field__input">
-                        <label for="dev-key-id">Key ID</label>
-                        <input id="dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
+                        <label for="prod-dev-key-id">Key ID</label>
+                        <input id="prod-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
                     </div>
-                    <button type="button" class="kt-key-field__copy" aria-label="Key ID 복사">
+                    <button type="button" class="kt-key-field__copy" aria-label="DEV Key ID 복사">
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                     </button>
                 </div>
                 <div class="kt-key-field">
                     <div class="kt-key-field__input">
-                        <label for="dev-key-pw">Key Pw</label>
+                        <label for="prod-dev-key-pw">Key Pw</label>
                         <div class="kt-key-field__control">
-                            <input id="dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
-                            <button type="button" class="kt-key-field__visibility" aria-label="Key Password 보기">
+                            <input id="prod-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <button type="button" class="kt-key-field__visibility" aria-label="DEV Key Password 보기">
                                 <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
                             </button>
                         </div>
                     </div>
-                    <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
+                    <button type="button" class="kt-key-field__copy" aria-label="DEV Key Password 복사">
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                     </button>
                 </div>
@@ -47,8 +47,8 @@
             <div class="kt-key-card__body">
                 <div class="kt-key-field">
                     <div class="kt-key-field__input">
-                        <label for="prd-key-id">Key ID</label>
-                        <input id="prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
+                        <label for="prod-prd-key-id">Key ID</label>
+                        <input id="prod-prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
                     </div>
                     <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
@@ -56,9 +56,9 @@
                 </div>
                 <div class="kt-key-field">
                     <div class="kt-key-field__input">
-                        <label for="prd-key-pw">Key Pw</label>
+                        <label for="prod-prd-key-pw">Key Pw</label>
                         <div class="kt-key-field__control">
-                            <input id="prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                            <input id="prod-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
                             <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
                                 <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
                             </button>
@@ -82,24 +82,24 @@
                 <div class="kt-key-card__body">
                     <div class="kt-key-field">
                         <div class="kt-key-field__input">
-                            <label for="edit-dev-key-id">Key ID</label>
-                            <input id="edit-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
+                            <label for="prod-edit-dev-key-id">Key ID</label>
+                            <input id="prod-edit-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
                         </div>
-                        <button type="button" class="kt-key-field__copy" aria-label="Key ID 복사">
+                        <button type="button" class="kt-key-field__copy" aria-label="DEV Key ID 복사">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                         </button>
                     </div>
                     <div class="kt-key-field">
                         <div class="kt-key-field__input">
-                            <label for="edit-dev-key-pw">Key Pw</label>
+                            <label for="prod-edit-dev-key-pw">Key Pw</label>
                             <div class="kt-key-field__control">
-                                <input id="edit-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
-                                <button type="button" class="kt-key-field__visibility" aria-label="Key Password 보기">
+                                <input id="prod-edit-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                                <button type="button" class="kt-key-field__visibility" aria-label="DEV Key Password 보기">
                                     <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
                                 </button>
                             </div>
                         </div>
-                        <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
+                        <button type="button" class="kt-key-field__copy" aria-label="DEV Key Password 복사">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                         </button>
                     </div>
@@ -113,8 +113,8 @@
                 <div class="kt-key-card__body">
                     <div class="kt-key-field">
                         <div class="kt-key-field__input">
-                            <label for="edit-prd-key-id">Key ID</label>
-                            <input id="edit-prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
+                            <label for="prod-edit-prd-key-id">Key ID</label>
+                            <input id="prod-edit-prd-key-id" type="text" class="kt-input" value="PRD-KT-HNR-20260401-001" readonly />
                         </div>
                         <button type="button" class="kt-key-field__copy" aria-label="PRD Key ID 복사">
                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
@@ -122,9 +122,9 @@
                     </div>
                     <div class="kt-key-field kt-key-field--password">
                         <div class="kt-key-field__input">
-                            <label for="edit-prd-key-pw">Key Pw</label>
+                            <label for="prod-edit-prd-key-pw">Key Pw</label>
                             <div class="kt-key-field__control">
-                                <input id="edit-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                                <input id="prod-edit-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
                                 <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
                                     <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
                                 </button>

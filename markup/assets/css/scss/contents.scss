@@ -2946,6 +2946,11 @@
     min-height: 100vh;
 }
 
+.kt-ldap-stage--prod,
+.kt-ldap-stage--expired {
+    min-height: 100vh;
+}
+
 .kt-ldap-badge-samples {
     position: absolute;
     z-index: 2;
