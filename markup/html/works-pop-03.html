@@ -13,7 +13,7 @@
                         <header class="kt-work-pop__header">
                             <h1 class="kt-work-pop__title">테스트 이력정보</h1>
                             <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
-                                <img src="/assets/img/works/ico_work_close.svg" alt="" aria-hidden="true" />
+                                <img src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
                             </button>
                         </header>
                         <div class="kt-work-pop__body">
@@ -22,35 +22,87 @@
                                     <strong class="kt-work-pop-filter__title">API 명 : UserProperty (LDAP)</strong>
                                     <div class="kt-work-pop-filter__row">
                                         <div class="kt-work-pop-filter__date">
-                                            <span class="kt-work-pop-filter__datebox">2026.03.18<img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" /></span>
+                                            <label class="kt-work-pop-filter__datebox">
+                                                <input type="text" class="kt-work-pop-filter__date-input" value="2026.03.18" readonly data-work-pop-datepicker aria-label="시작일" />
+                                                <img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" />
+                                            </label>
                                             <span class="kt-work-pop-filter__dash">~</span>
-                                            <span class="kt-work-pop-filter__datebox">2026.03.18<img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" /></span>
+                                            <label class="kt-work-pop-filter__datebox">
+                                                <input type="text" class="kt-work-pop-filter__date-input" value="2026.03.18" readonly data-work-pop-datepicker aria-label="종료일" />
+                                                <img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" />
+                                            </label>
                                         </div>
                                         <button type="button" class="kt-work-pop-filter__button">Self Testing 결과확인</button>
                                     </div>
                                 </div>
                                 <div class="kt-work-pop-table-wrap">
                                     <table class="kt-work-pop-table">
-                                        <caption class="blind">테스트 이력정보</caption>
+                                        <caption class="blind">
+                                            테스트 이력정보
+                                        </caption>
                                         <colgroup>
                                             <col style="width: 100px" />
                                             <col />
                                             <col style="width: 120px" />
                                         </colgroup>
                                         <thead>
-                                            <tr><th scope="col">No.</th><th scope="col">일시</th><th scope="col">검증여부</th></tr>
+                                            <tr>
+                                                <th scope="col">No.</th>
+                                                <th scope="col">일시</th>
+                                                <th scope="col">검증여부</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                            <tr><td>10</td><td>2026.03.19 15:59:37</td><td>성공</td></tr>
-                                            <tr><td>9</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>8</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>7</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>6</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>5</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>4</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>3</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>2</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
-                                            <tr><td>1</td><td>2026.03.19 15:59:22</td><td>실패</td></tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>2026.03.19 15:59:37</td>
+                                                <td>성공</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2026.03.19 15:59:22</td>
+                                                <td>실패</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -80,11 +132,31 @@
                                 </nav>
                             </div>
                         </div>
-
                     </article>
                 </main>
             </div>
             <div id="dim"></div>
         </div>
+        <script>
+            $(() => {
+                const datepickerOptions = {
+                    dateFormat: 'yy.mm.dd',
+                    showMonthAfterYear: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                    onSelect(dateText) {
+                        this.value = dateText;
+                    },
+                };
+
+                $('[data-work-pop-datepicker]').datepicker(datepickerOptions);
+
+                $('.kt-work-pop-filter__datebox').on('click', function () {
+                    $(this).find('[data-work-pop-datepicker]').datepicker('show');
+                });
+            });
+        </script>
     </body>
 </html>
