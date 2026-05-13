@@ -26,17 +26,7 @@
                 <div class="kt-tool-body">
                     <aside class="kt-tool-sidebar" aria-label="API 탐색">
                         <div class="kt-tool-search" data-api-tree-search>
-                            <div class="kt-search-field" data-search_field>
-                                <input type="text" id="toolApiSearch" class="kt-input" placeholder="API 검색" aria-label="API 검색" />
-                                <span class="kt-search-field__actions">
-                                    <button type="button" class="kt-input-field__clear kt-search-field__clear" data-clear_input aria-controls="toolApiSearch" aria-label="검색어 삭제" hidden>
-                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                    </button>
-                                    <button type="button" class="kt-search-field__submit" aria-label="검색">
-                                        <img src="/assets/img/components/ico_search.svg" alt="" />
-                                    </button>
-                                </span>
-                            </div>
+                            <button type="button" class="kt-btn kt-btn--line kt-tool-search__button"><span class="kt-btn__svg kt-btn__svg--search"></span>API 검색</button>
                         </div>
                         <div class="kt-tool-tabs" role="tablist" aria-label="API 유형">
                             <button type="button" class="is-active" role="tab" aria-selected="true" data-api-tree-tab="all">전체</button>
@@ -597,64 +587,6 @@
                                 </tbody>
                             </table>
                         </section>
-
-                        <section class="kt-tool-data kt-tool-data--response" aria-labelledby="apiResponseBodyTitle">
-                            <h2 id="apiResponseBodyTitle">Response body</h2>
-                            <table class="kt-tool-table kt-tool-table--response">
-                                <caption>
-                                    Response body table
-                                </caption>
-                                <colgroup>
-                                    <col style="width: 200px" />
-                                    <col style="width: 150px" />
-                                    <col />
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>field</th>
-                                        <th>type</th>
-                                        <th>description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>success</td>
-                                        <td>boolean</td>
-                                        <td>처리 성공 여부</td>
-                                    </tr>
-                                    <tr>
-                                        <td>data.coupon_id</td>
-                                        <td>string</td>
-                                        <td>발급된 쿠폰 ID</td>
-                                    </tr>
-                                    <tr>
-                                        <td>data.coupon_type</td>
-                                        <td>string</td>
-                                        <td>쿠폰 유형</td>
-                                    </tr>
-                                    <tr>
-                                        <td>data.discount_rate</td>
-                                        <td>integer</td>
-                                        <td>할인율 (%)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>data.expire_at</td>
-                                        <td>date</td>
-                                        <td>쿠폰 만료일</td>
-                                    </tr>
-                                    <tr>
-                                        <td>data.issued_at</td>
-                                        <td>datetime</td>
-                                        <td>발급 일시 (ISO 8601)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>error_code</td>
-                                        <td>string</td>
-                                        <td>에러 발생 시 에러 코드 반환, 성공인 경우 0 반환</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
                     </section>
 
                     <aside class="kt-tool-playground" aria-label="API 테스트" data-code-snippet>
@@ -751,12 +683,12 @@
                                 role="tabpanel"
                                 data-snippet-panel="shell"
                                 data-code="curl --request POST \&#10;  --url https://api.kt.com/api/v1/coupon/issue \&#10;  --header 'X-API-Key-ID: your_key_id' \&#10;  --header 'X-API-Key: your_key_pw' \&#10;  --header 'Content-Type: application/json' \&#10;  --data '{&quot;user_id&quot;: &quot;value&quot;, &quot;coupon_type&quot;: &quot;value&quot;}'"
-                            ><code class="language-bash">curl --request POST \
-  --url https://api.kt.com/api/v1/coupon/issue \
-  --header 'X-API-Key-ID: your_key_id' \
-  --header 'X-API-Key: your_key_pw' \
-  --header 'Content-Type: application/json' \
-  --data '{"user_id": "value", "coupon_type": "value"}'</code></pre>
+                            ><code class="no-highlight"><span class="kt-code-command">curl</span> <span class="kt-code-flag">--request</span> <span class="kt-code-method">POST</span> \
+  <span class="kt-code-flag">--url</span> <span class="kt-code-url">https://api.kt.com/api/v1/coupon/issue</span> \
+  <span class="kt-code-flag">--header</span> <span class="kt-code-string">'X-API-Key-ID: your_key_id'</span> \
+  <span class="kt-code-flag">--header</span> <span class="kt-code-string">'X-API-Key: your_key_pw'</span> \
+  <span class="kt-code-flag">--header</span> <span class="kt-code-string">'Content-Type: application/json'</span> \
+  <span class="kt-code-flag">--data</span> <span class="kt-code-string">'{"user_id": "value", "coupon_type": "value"}'</span></code></pre>
                             <pre
                                 id="snippetNode"
                                 class="kt-tool-code"
@@ -796,6 +728,7 @@ response = requests.post(
     json={"user_id": "value", "coupon_type": "value"},
     headers=headers,
 )</code></pre>
+                            <button type="button" class="kt-btn kt-btn--line kt-tool-try">Try it</button>
                         </section>
 
                         <section class="kt-tool-snippet kt-tool-snippet--response" aria-labelledby="snippetResponseTitle">
@@ -803,7 +736,7 @@ response = requests.post(
                                 <h2 id="snippetResponseTitle">Response</h2>
                                 <span class="kt-tool-status"><i aria-hidden="true"></i>200 OK</span>
                             </div>
-                            <pre class="kt-tool-code kt-tool-code--response"><code class="language-javascript">// 200 OK — 오후 3:16:43
+                            <pre class="kt-tool-code kt-tool-code--response"><code class="no-highlight">// 200 OK — 오후 3:16:43
 { "success": true, "data": { "coupon_id": "CPR_20260330_001", "coupon_type": "DISCOUNT_10", "discount_rate": 10, "expire_at": "2026-12-31", "issued_at": "2026-03-30T15:42:00Z" }, "error_code": "0" }</code></pre>
                         </section>
                     </aside>
