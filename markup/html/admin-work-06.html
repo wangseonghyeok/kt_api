@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-work-pop-page">
+        <div id="wrap">
+            <div class="kt-work-pop-modal">
+                <main class="kt-work-pop-stage" aria-label="KEY 재발급 승인처리">
+                    <article class="kt-work-pop kt-admin-pop kt-admin-pop--h828">
+                        <header class="kt-work-pop__header">
+                            <h1 class="kt-work-pop__title">KEY 재발급 승인처리</h1>
+                            <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
+                                <img src="/assets/img/works/ico_work_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </header>
+                        <div class="kt-work-pop__body">
+                            <div class="kt-admin-pop__content">
+                                <div class="kt-admin-pop__status-card kt-admin-pop__status-card--critical">PRD Key 재발급</div>
+                                <div class="kt-admin-pop__info-card kt-admin-pop__info-card--short">
+                                    <strong>Key 재발급 정보</strong>
+                                    <dl>
+                                        <div><dt>현재 상태</dt><dd>만료됨</dd></div>
+                                        <div><dt>만료일</dt><dd>2026.03.01</dd></div>
+                                    </dl>
+                                </div>
+                                <div class="kt-admin-pop__field kt-admin-pop__field--textarea">
+                                    <p class="kt-admin-pop__label">신청 사유</p>
+                                    <div class="kt-admin-pop__textarea kt-admin-pop__textarea--readonly">
+                                        <p>서비스 운영 지속을 위한 PRD Key 유효기간 연장 요청드립니다.</p>
+                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="kt-admin-pop__result">
+                                    <p class="kt-admin-pop__label">처리 결과 선택</p>
+                                    <div class="kt-admin-pop__radio-list">
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork06Result" checked /><span>반려</span></label>
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork06Result" /><span>승인</span></label>
+                                    </div>
+                                </div>
+                                <div class="kt-admin-pop__field kt-admin-pop__field--reject">
+                                    <p class="kt-admin-pop__label">반려시 반려사유 입력</p>
+                                    <div class="kt-admin-pop__textarea kt-admin-pop__textarea--reject">
+                                        <p>반려사유를 구체적으로 입력해 주세요.</p>
+                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                        <span class="kt-admin-pop__count">0/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="kt-work-pop__footer">
+                            <button type="button" class="kt-work-pop__button kt-work-pop__button--secondary popup__close">취소</button>
+                            <button type="button" class="kt-work-pop__button">확인</button>
+                        </footer>
+                    </article>
+                </main>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>

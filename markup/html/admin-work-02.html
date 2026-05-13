@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body class="kt-work-pop-page">
+        <div id="wrap">
+            <div class="kt-work-pop-modal">
+                <main class="kt-work-pop-stage" aria-label="API 승인처리">
+                    <article class="kt-work-pop kt-admin-pop kt-admin-pop--h871">
+                        <header class="kt-work-pop__header">
+                            <h1 class="kt-work-pop__title">API 승인처리</h1>
+                            <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
+                                <img src="/assets/img/works/ico_work_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </header>
+                        <div class="kt-work-pop__body">
+                            <div class="kt-admin-pop__content">
+                                <div class="kt-admin-pop__field">
+                                    <p class="kt-admin-pop__label">신청 API</p>
+                                    <div class="kt-admin-pop__readonly">IF_199&nbsp; authenticateUserByAppInfo (SCAP) <span class="kt-admin-pop__danger">민감1</span></div>
+                                </div>
+                                <div class="kt-admin-pop__table-wrap">
+                                    <table class="kt-admin-pop__table">
+                                        <caption class="blind">민감 파라미터 목록</caption>
+                                        <colgroup>
+                                            <col />
+                                            <col style="width: 100px" />
+                                            <col />
+                                        </colgroup>
+                                        <thead>
+                                            <tr><th scope="col">민감 파라미터명</th><th scope="col">등급</th><th scope="col">설명</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td class="left muted">user_toke</td><td>1등급</td><td class="left">SSO 인증 토큰</td></tr>
+                                            <tr><td class="left muted">member_id</td><td>1등급</td><td class="left">회원 식별 ID</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="kt-admin-pop__field kt-admin-pop__field--textarea">
+                                    <p class="kt-admin-pop__label">신청 사유</p>
+                                    <div class="kt-admin-pop__textarea kt-admin-pop__textarea--readonly">
+                                        <p>myK 앱 SSO 기반 토큰 인증 연동 요청드립니다.</p>
+                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="kt-admin-pop__result">
+                                    <p class="kt-admin-pop__label">처리 결과 선택</p>
+                                    <div class="kt-admin-pop__radio-list">
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork02Result" checked /><span>반려</span></label>
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork02Result" /><span>승인</span></label>
+                                    </div>
+                                </div>
+                                <div class="kt-admin-pop__field kt-admin-pop__field--reject">
+                                    <p class="kt-admin-pop__label">반려시 반려사유 입력</p>
+                                    <div class="kt-admin-pop__textarea kt-admin-pop__textarea--reject">
+                                        <p>반려사유를 구체적으로 입력해 주세요.</p>
+                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                        <span class="kt-admin-pop__count">0/200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="kt-work-pop__footer">
+                            <button type="button" class="kt-work-pop__button kt-work-pop__button--secondary popup__close">취소</button>
+                            <button type="button" class="kt-work-pop__button">확인</button>
+                        </footer>
+                    </article>
+                </main>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>
