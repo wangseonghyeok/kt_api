@@ -19,13 +19,22 @@
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                     </button>
                 </div>
-                <div class="kt-key-field">
+                <div class="kt-key-field kt-key-field--password">
                     <div class="kt-key-field__input">
                         <label for="expired-note-dev-key-pw">Key Pw</label>
                         <div class="kt-key-field__control">
                             <input id="expired-note-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
-                            <button type="button" class="kt-key-field__visibility" aria-label="DEV Key Password 보기">
-                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            <button
+                                type="button"
+                                class="kt-key-field__visibility"
+                                data-password_toggle
+                                data-icon-show="/assets/img/components/ico_eye.svg"
+                                data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                aria-controls="expired-note-dev-key-pw"
+                                aria-pressed="false"
+                                aria-label="DEV Key Password 보기"
+                            >
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye.svg" alt="" aria-hidden="true" />
                             </button>
                         </div>
                     </div>
@@ -54,13 +63,22 @@
                         <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
                     </button>
                 </div>
-                <div class="kt-key-field kt-key-field--with-helper">
+                <div class="kt-key-field kt-key-field--password kt-key-field--with-helper">
                     <div class="kt-key-field__input">
                         <label for="expired-note-prd-key-pw">Key Pw</label>
                         <div class="kt-key-field__control">
                             <input id="expired-note-prd-key-pw" type="password" class="kt-input" value="12345678" readonly />
-                            <button type="button" class="kt-key-field__visibility" aria-label="PRD Key Password 보기">
-                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye_off.svg" alt="" aria-hidden="true" />
+                            <button
+                                type="button"
+                                class="kt-key-field__visibility"
+                                data-password_toggle
+                                data-icon-show="/assets/img/components/ico_eye.svg"
+                                data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                aria-controls="expired-note-prd-key-pw"
+                                aria-pressed="false"
+                                aria-label="PRD Key Password 보기"
+                            >
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye.svg" alt="" aria-hidden="true" />
                             </button>
                         </div>
                         <p class="kt-key-field__helper kt-key-field__helper--icon">

@@ -7470,7 +7470,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
     .kt-input {
         height: 52px;
-        background: #f3f4f6;
+        // background: #f3f4f6;
     }
 
     .kt-input[readonly] {
@@ -7518,6 +7518,44 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+.kt-key-field--password {
+    .kt-key-field__control {
+        .kt-input {
+            padding-right: 56px;
+            color: #191a1b;
+            -webkit-text-fill-color: #191a1b;
+
+            &::placeholder {
+                color: #6f737b;
+                -webkit-text-fill-color: #6f737b;
+                opacity: 1;
+            }
+        }
+
+        .kt-input[type='password']:not(:placeholder-shown) {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: var(--fw-Bold);
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+    }
+
+    .kt-key-field__visibility {
+        top: 6px;
+        right: 4px;
+        bottom: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 
 .kt-key-field--with-helper {
