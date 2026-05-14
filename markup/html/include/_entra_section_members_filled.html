@@ -1,224 +1,307 @@
+<!--
+    개발 전달: Entra ID 워크스페이스 상세의 Members 등록 상태입니다.
+    data-member-read-row는 읽기 테이블, data-member-row는 편집 테이블의 현재 등록 행으로 사용됩니다.
+-->
 <section class="kt-ws-section kt-ldap-section-members kt-entra-section-members">
     <div class="kt-ws-section__head">
-        <div>
-            <span class="kt-ws-section__kicker">Step 2</span>
-            <h2>워크스페이스 구성원</h2>
-        </div>
-        <div class="kt-ws-section__actions">
-            <span class="kt-ws-count">총 <strong data-member-count>5</strong>명</span>
-            <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm kt-ldap-edit-trigger">편집</button>
-        </div>
+        <h2 class="kt-ws-section__title">
+            Members
+            <span class="kt-ws-section__count"><strong>4</strong><span>명</span></span>
+        </h2>
+        <button type="button" class="kt-btn kt-btn--popup">편집</button>
     </div>
-
-    <div class="kt-ldap-read-view">
-        <table class="kt-data-table kt-data-table--members">
-            <caption>
-                워크스페이스 구성원
-            </caption>
-            <thead>
-                <tr>
-                    <th scope="col">이름</th>
-                    <th scope="col">이메일</th>
-                    <th scope="col">소속</th>
-                    <th scope="col">권한</th>
-                    <th scope="col">지정 방식</th>
-                </tr>
-            </thead>
-            <tbody data-member-read-body>
-                <tr
-                    data-member-id="entra-owner-01"
-                    data-member-name="한수지"
-                    data-member-email="suji.han@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Owner"
-                    data-member-source="Domain PO 자동 지정"
-                >
-                    <td>한수지</td>
-                    <td>suji.han@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--owner">Owner</span></td>
-                    <td>Domain PO 자동 지정</td>
-                </tr>
-                <tr
-                    data-member-id="entra-owner-02"
-                    data-member-name="최지훈"
-                    data-member-email="jihun.choi@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Owner"
-                    data-member-source="Domain BA 자동 지정"
-                >
-                    <td>최지훈</td>
-                    <td>jihun.choi@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--owner">Owner</span></td>
-                    <td>Domain BA 자동 지정</td>
-                </tr>
-                <tr
-                    data-member-id="entra-member-01"
-                    data-member-name="윤서연"
-                    data-member-email="yoon.sy@kt.com"
-                    data-member-team="myK서비스팀"
-                    data-member-role="Member"
-                    data-member-source="Owner 초대"
-                >
-                    <td>윤서연</td>
-                    <td>yoon.sy@kt.com</td>
-                    <td>myK서비스팀</td>
-                    <td><span class="kt-tag kt-tag--member">Member</span></td>
-                    <td>Owner 초대</td>
-                </tr>
-                <tr
-                    data-member-id="entra-member-02"
-                    data-member-name="이상훈"
-                    data-member-email="90000007@ktpartners.com"
-                    data-member-team="KT Partners"
-                    data-member-role="Member"
-                    data-member-source="Owner 초대"
-                >
-                    <td>이상훈</td>
-                    <td>90000007@ktpartners.com</td>
-                    <td>KT Partners</td>
-                    <td><span class="kt-tag kt-tag--member">Member</span></td>
-                    <td>Owner 초대</td>
-                </tr>
-                <tr
-                    data-member-id="entra-manager-01"
-                    data-member-name="이지훈"
-                    data-member-email="jihoon.lee@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Manager"
-                    data-member-source="관리자 지정"
-                >
-                    <td>이지훈</td>
-                    <td>jihoon.lee@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--manager">Manager</span></td>
-                    <td>관리자 지정</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="kt-ldap-edit-view" hidden>
-        <div class="kt-ldap-toolbar">
-            <div class="kt-ldap-search" data-ldap-search="member">
-                <label for="entraMemberKeywordFilled" class="sr-only">구성원 검색</label>
-                <input
-                    type="text"
-                    id="entraMemberKeywordFilled"
-                    placeholder="이름 또는 이메일 검색"
-                    autocomplete="off"
-                    data-ldap-member-search
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                    aria-controls="entraMemberFilledSearchMenu"
-                />
-                <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm" data-ldap-search-button>검색</button>
-                <div class="kt-ldap-search__menu" id="entraMemberFilledSearchMenu" role="listbox" hidden>
-                    <button type="button" role="option" data-ldap-search-option data-id="entra-member-03" data-name="박민재" data-email="minjae.park@kt.com" data-team="myK서비스팀" data-role="Member">
-                        박민재 · minjae.park@kt.com
-                    </button>
-                    <button type="button" role="option" data-ldap-search-option data-id="entra-member-04" data-name="정다은" data-email="daeun.jeong@ktds.co.kr" data-team="KT DS" data-role="Member">
-                        정다은 · daeun.jeong@ktds.co.kr
-                    </button>
+    <table class="kt-data-table kt-data-table--members kt-data-table--members-entra">
+        <caption class="blind">
+            멤버 목록
+        </caption>
+        <colgroup>
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">이메일</th>
+                <th scope="col">역할</th>
+                <th scope="col">지정 방식</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-member-read-row data-member-id="kim-cs" data-member-chip="PO">
+                <td class="center">
+                    <span class="kt-entra-member-name">김철수 <span class="kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--po">PO</span></span>
+                </td>
+                <td>kim.cs@hanaro.com</td>
+                <td class="center"><span class="kt-badge kt-badge--xs kt-badge--role-owner">Owner</span></td>
+                <td class="center">자동 지정 (IDMS)</td>
+            </tr>
+            <tr data-member-read-row data-member-id="lee-sh" data-member-chip="BA">
+                <td class="center">
+                    <span class="kt-entra-member-name">이순희 <span class="kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--ba">BA</span></span>
+                </td>
+                <td>lee.sh@kt.com</td>
+                <td class="center"><span class="kt-badge kt-badge--xs kt-badge--role-owner">Owner</span></td>
+                <td class="center">자동 지정 (IDMS)</td>
+            </tr>
+            <tr data-member-read-row data-member-id="park-je">
+                <td class="center">박지은</td>
+                <td>park.je@hanaro.com</td>
+                <td class="center"><span class="kt-badge kt-badge--xs kt-badge--member">Member</span></td>
+                <td class="center">Owner 초대</td>
+            </tr>
+            <tr data-member-read-row data-member-id="kang-dh">
+                <td class="center">강다희</td>
+                <td>kang.dh@hanaro.com</td>
+                <td class="center"><span class="kt-badge kt-badge--xs kt-badge--member">Member</span></td>
+                <td class="center">Owner 초대</td>
+            </tr>
+            <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-read-empty hidden>
+                <td colspan="4">
+                    <div class="kt-table-empty-result">
+                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                        <p>등록된 Members가 없습니다.</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">멤버 편집모드</strong>
+        <section class="kt-ldap-filter" aria-label="멤버 검색">
+            <div class="kt-ldap-member-filter">
+                <div class="kt-newwork-search kt-ldap-newwork-search" data-ldap-search data-ldap-search-type="member" data-min-length="1">
+                    <div class="kt-newwork-search__field">
+                        <input
+                            type="text"
+                            id="entraMemberKeywordFilled"
+                            class="kt-input kt-input--40"
+                            placeholder="이름 또는 이메일을 입력하세요"
+                            data-ldap-member-search
+                            aria-controls="entraMemberFilledSearchMenu"
+                            aria-expanded="false"
+                            autocomplete="off"
+                        />
+                        <button type="button" class="kt-newwork-search__clear" data-ldap-search-clear aria-controls="entraMemberKeywordFilled" aria-label="검색어 삭제" hidden>
+                            <span class="blind">검색어 삭제</span>
+                        </button>
+                        <button type="button" class="kt-newwork-search__submit" aria-label="멤버 검색">
+                            <span class="blind">검색</span>
+                        </button>
+                    </div>
+                    <div class="kt-newwork-search-menu kt-newwork-search-menu--member" id="entraMemberFilledSearchMenu" data-ldap-search-menu role="listbox">
+                        <div class="kt-newwork-search-menu__head">
+                            <span>검색 결과</span>
+                            <strong data-ldap-search-count>0</strong>
+                            <span>건</span>
+                        </div>
+                        <ul class="kt-newwork-search-menu__list kt-scrollbar">
+                            <li hidden>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="-1"
+                                    aria-selected="false"
+                                    aria-hidden="true"
+                                    aria-disabled="true"
+                                    data-prompt-disabled="true"
+                                    data-ldap-search-option
+                                    data-member-id="kim-cs"
+                                    data-member-name="김철수"
+                                    data-member-email="kim.cs@hanaro.com"
+                                    data-member-role="Owner"
+                                    data-member-method="자동 지정 (IDMS)"
+                                    data-member-chip="PO"
+                                    data-search="김철수 kim.cs@hanaro.com Owner PO"
+                                    hidden
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>김철수</strong>
+                                    <span>kim.cs@hanaro.com</span>
+                                </button>
+                            </li>
+                            <li hidden>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="-1"
+                                    aria-selected="false"
+                                    aria-hidden="true"
+                                    aria-disabled="true"
+                                    data-prompt-disabled="true"
+                                    data-ldap-search-option
+                                    data-member-id="lee-sh"
+                                    data-member-name="이순희"
+                                    data-member-email="lee.sh@kt.com"
+                                    data-member-role="Owner"
+                                    data-member-method="자동 지정 (IDMS)"
+                                    data-member-chip="BA"
+                                    data-search="이순희 lee.sh@kt.com Owner BA"
+                                    hidden
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>이순희</strong>
+                                    <span>lee.sh@kt.com</span>
+                                </button>
+                            </li>
+                            <li hidden>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="-1"
+                                    aria-selected="false"
+                                    aria-hidden="true"
+                                    aria-disabled="true"
+                                    data-prompt-disabled="true"
+                                    data-ldap-search-option
+                                    data-member-id="park-je"
+                                    data-member-name="박지은"
+                                    data-member-email="park.je@hanaro.com"
+                                    data-member-role="Member"
+                                    data-member-method="Owner 초대"
+                                    data-search="박지은 park.je@hanaro.com Member"
+                                    hidden
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>박지은</strong>
+                                    <span>park.je@hanaro.com</span>
+                                </button>
+                            </li>
+                            <li hidden>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="-1"
+                                    aria-selected="false"
+                                    aria-hidden="true"
+                                    aria-disabled="true"
+                                    data-prompt-disabled="true"
+                                    data-ldap-search-option
+                                    data-member-id="kang-dh"
+                                    data-member-name="강다희"
+                                    data-member-email="kang.dh@hanaro.com"
+                                    data-member-role="Member"
+                                    data-member-method="Owner 초대"
+                                    data-search="강다희 kang.dh@hanaro.com Member"
+                                    hidden
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>강다희</strong>
+                                    <span>kang.dh@hanaro.com</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="0"
+                                    aria-selected="false"
+                                    data-ldap-search-option
+                                    data-member-id="choi-mj"
+                                    data-member-name="최민준"
+                                    data-member-email="choi.mj@hanaro.com"
+                                    data-member-role="Member"
+                                    data-member-method="Owner 초대"
+                                    data-search="최민준 choi.mj@hanaro.com Member"
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>최민준</strong>
+                                    <span>choi.mj@hanaro.com</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    role="option"
+                                    tabindex="0"
+                                    aria-selected="false"
+                                    data-ldap-search-option
+                                    data-member-id="jung-hr"
+                                    data-member-name="정하린"
+                                    data-member-email="jung.hr@hanaro.com"
+                                    data-member-role="Member"
+                                    data-member-method="Owner 초대"
+                                    data-search="정하린 jung.hr@hanaro.com Member"
+                                >
+                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                    <strong>정하린</strong>
+                                    <span>jung.hr@hanaro.com</span>
+                                </button>
+                            </li>
+                            <li data-member-empty hidden>
+                                <div class="kt-newwork-search-menu__empty">검색 결과가 없습니다.</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <table class="kt-data-table kt-data-table--members">
-            <caption>
-                워크스페이스 구성원 편집
+        </section>
+        <table class="kt-data-table kt-data-table--members kt-data-table--members-edit kt-data-table--members-entra-edit">
+            <caption class="blind">
+                멤버 편집 목록
             </caption>
+            <colgroup>
+                <col style="width: calc((100% - 120px) / 4)" />
+                <col style="width: calc((100% - 120px) / 4)" />
+                <col style="width: calc((100% - 120px) / 4)" />
+                <col style="width: calc((100% - 120px) / 4)" />
+                <col style="width: 120px" />
+            </colgroup>
             <thead>
                 <tr>
                     <th scope="col">이름</th>
                     <th scope="col">이메일</th>
-                    <th scope="col">소속</th>
-                    <th scope="col">권한</th>
+                    <th scope="col">역할</th>
+                    <th scope="col">지정 방식</th>
                     <th scope="col">관리</th>
                 </tr>
             </thead>
-            <tbody data-member-edit-body>
-                <tr
-                    data-member-row
-                    data-member-id="entra-owner-01"
-                    data-member-name="한수지"
-                    data-member-email="suji.han@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Owner"
-                    data-member-source="Domain PO 자동 지정"
-                >
-                    <td>한수지</td>
-                    <td>suji.han@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--owner">Owner</span></td>
-                    <td><span class="kt-helper-text">자동 지정</span></td>
+            <tbody>
+                <tr data-member-row data-member-id="kim-cs" data-member-chip="PO">
+                    <td class="center">
+                        <span class="kt-entra-member-name">김철수 <span class="kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--po">PO</span></span>
+                    </td>
+                    <td>kim.cs@hanaro.com</td>
+                    <td class="center"><span class="kt-badge kt-badge--xs kt-badge--role-owner">Owner</span></td>
+                    <td class="center">자동 지정 (IDMS)</td>
+                    <td class="center"><span class="kt-helper-text">자동 지정</span></td>
                 </tr>
-                <tr
-                    data-member-row
-                    data-member-id="entra-owner-02"
-                    data-member-name="최지훈"
-                    data-member-email="jihun.choi@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Owner"
-                    data-member-source="Domain BA 자동 지정"
-                >
-                    <td>최지훈</td>
-                    <td>jihun.choi@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--owner">Owner</span></td>
-                    <td><span class="kt-helper-text">자동 지정</span></td>
+                <tr data-member-row data-member-id="lee-sh" data-member-chip="BA">
+                    <td class="center">
+                        <span class="kt-entra-member-name">이순희 <span class="kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--ba">BA</span></span>
+                    </td>
+                    <td>lee.sh@kt.com</td>
+                    <td class="center"><span class="kt-badge kt-badge--xs kt-badge--role-owner">Owner</span></td>
+                    <td class="center">자동 지정 (IDMS)</td>
+                    <td class="center"><span class="kt-helper-text">자동 지정</span></td>
                 </tr>
-                <tr
-                    data-member-row
-                    data-member-id="entra-member-01"
-                    data-member-name="윤서연"
-                    data-member-email="yoon.sy@kt.com"
-                    data-member-team="myK서비스팀"
-                    data-member-role="Member"
-                    data-member-source="Owner 초대"
-                >
-                    <td>윤서연</td>
-                    <td>yoon.sy@kt.com</td>
-                    <td>myK서비스팀</td>
-                    <td><span class="kt-tag kt-tag--member">Member</span></td>
-                    <td><button type="button" class="kt-btn kt-btn--text kt-member-remove">삭제</button></td>
+                <tr data-member-row data-member-id="park-je">
+                    <td class="center">박지은</td>
+                    <td>park.je@hanaro.com</td>
+                    <td class="center"><span class="kt-badge kt-badge--xs kt-badge--member">Member</span></td>
+                    <td class="center">Owner 초대</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="박지은 삭제">삭제</button>
+                    </td>
                 </tr>
-                <tr
-                    data-member-row
-                    data-member-id="entra-member-02"
-                    data-member-name="이상훈"
-                    data-member-email="90000007@ktpartners.com"
-                    data-member-team="KT Partners"
-                    data-member-role="Member"
-                    data-member-source="Owner 초대"
-                >
-                    <td>이상훈</td>
-                    <td>90000007@ktpartners.com</td>
-                    <td>KT Partners</td>
-                    <td><span class="kt-tag kt-tag--member">Member</span></td>
-                    <td><button type="button" class="kt-btn kt-btn--text kt-member-remove">삭제</button></td>
+                <tr data-member-row data-member-id="kang-dh">
+                    <td class="center">강다희</td>
+                    <td>kang.dh@hanaro.com</td>
+                    <td class="center"><span class="kt-badge kt-badge--xs kt-badge--member">Member</span></td>
+                    <td class="center">Owner 초대</td>
+                    <td class="center">
+                        <button type="button" class="kt-member-delete-button" data-member-delete aria-label="강다희 삭제">삭제</button>
+                    </td>
                 </tr>
-                <tr
-                    data-member-row
-                    data-member-id="entra-manager-01"
-                    data-member-name="이지훈"
-                    data-member-email="jihoon.lee@kt.com"
-                    data-member-team="API플랫폼팀"
-                    data-member-role="Manager"
-                    data-member-source="관리자 지정"
-                >
-                    <td>이지훈</td>
-                    <td>jihoon.lee@kt.com</td>
-                    <td>API플랫폼팀</td>
-                    <td><span class="kt-tag kt-tag--manager">Manager</span></td>
-                    <td><button type="button" class="kt-btn kt-btn--text kt-member-remove">삭제</button></td>
+                <tr class="kt-data-table__empty" data-member-no-data-empty hidden>
+                    <td colspan="5">등록된 Members가 없습니다.</td>
                 </tr>
             </tbody>
         </table>
-        <p class="kt-helper-text">Entra ID 계정(@kt.com, @ktds.co.kr 등 KT 그룹사)만 초대 가능합니다.</p>
         <div class="kt-ldap-edit-actions">
-            <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm kt-ldap-edit-cancel">취소</button>
-            <button type="button" class="kt-btn kt-btn--primary kt-btn--sm kt-ldap-edit-save">저장</button>
+            <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
+            <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
         </div>
     </div>
 </section>

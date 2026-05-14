@@ -4,74 +4,77 @@
         <!--#include file="./include/_head.html"-->
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
+
     <body>
         <div id="wrap">
-            <div id="dim"></div>
-
             <div class="kt-ldap-modal">
-                <main class="kt-ldap-stage kt-ldap-stage--dev kt-entra-stage" aria-label="워크스페이스 상세 Entra ID DEV">
+                <main class="kt-ldap-stage kt-ldap-stage--dev kt-entra-stage" aria-label="워크스페이스 상세 Entra ID">
                     <article class="kt-ws-popup">
                         <header class="kt-ws-popup__header">
-                            <div>
-                                <span class="kt-ws-popup__eyebrow">Workspace Detail</span>
-                                <h1 class="kt-ws-popup__title">워크스페이스 상세</h1>
-                            </div>
+                            <h1 class="kt-ws-popup__title">myK_쿠폰서비스</h1>
                             <button type="button" class="kt-ws-popup__close popup__close" aria-label="닫기">
-                                <img src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
                             </button>
                         </header>
 
                         <div class="kt-ws-popup__body">
-                            <section class="kt-ldap-status-group">
-                                <div class="kt-ws-summary">
-                                    <div class="kt-ws-summary__top">
+                            <span class="kt-ws-popup__scroll" aria-hidden="true"></span>
+                            <div class="kt-ws-popup__content">
+                                <section class="kt-ldap-status-group">
+                                    <div class="kt-ws-summary">
                                         <div>
-                                            <div class="kt-ws-summary__badges">
-                                                <span class="kt-badge kt-badge--xs kt-badge--dark">API</span>
-                                                <span class="kt-badge kt-badge--xs kt-badge--entra">Entra ID</span>
-                                                <span class="kt-badge kt-badge--xs kt-badge--dev">DEV</span>
+                                            <div class="kt-ws-summary__title">
+                                                <strong>myK_쿠폰서비스</strong>
+                                                <span class="kt-ws-summary__badges">
+                                                    <span class="kt-badge kt-badge--xs">API</span>
+                                                    <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
+                                                </span>
                                             </div>
-                                            <h2>myK 사내직원인증</h2>
-                                            <p>Entra ID 기반으로 KT 그룹사 임직원 계정을 초대하고 API를 검증하는 워크스페이스입니다.</p>
+                                            <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
                                         </div>
-                                        <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm kt-ws-basic-edit">기본 정보 편집</button>
+                                        <div class="kt-ws-meta">
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
+                                                <strong>2026.03.28</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
+                                                <strong>김철수</strong>
+                                            </div>
+                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                            <div class="kt-ws-meta__item">
+                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
+                                                <strong>하나로소프트</strong>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <dl class="kt-ws-summary__meta">
-                                        <div>
-                                            <dt>생성일</dt>
-                                            <dd>2026.03.28</dd>
-                                        </div>
-                                        <div>
-                                            <dt>생성자</dt>
-                                            <dd>한수지</dd>
-                                        </div>
-                                        <div>
-                                            <dt>소속</dt>
-                                            <dd>디지털혁신본부 › API플랫폼팀</dd>
-                                        </div>
-                                    </dl>
-                                </div>
+                                    <div class="kt-ws-status-note kt-ws-status-note--dev">
+                                        <span class="kt-tag kt-tag--dot kt-tag--info">DEV</span>
+                                        <p>환경이 활성화되었으며, 민감 API는 승인 후 호출 가능하고 전체 승인 완료 시 운영 전환이 활성화됩니다.</p>
+                                    </div>
+                                </section>
 
-                                <div class="kt-ws-status-note kt-ws-status-note--dev">
-                                    <span class="kt-tag kt-tag--dot kt-tag--info">DEV</span>
-                                    <p>Entra ID 계정 정보가 자동 매핑되었으며, DEV 환경에서 API 호출과 인증 권한을 검증할 수 있습니다.</p>
-                                </div>
-                            </section>
+                                <!--#include file="./include/_entra_section_basic.html"-->
 
-                            <!--#include file="./include/_entra_section_basic.html"-->
-                            <!--#include file="./include/_entra_section_members_filled.html"-->
-                            <!--#include file="./include/_ldap_section_api_filled.html"-->
-                            <!--#include file="./include/_ldap_section_ip_filled.html"-->
-                            <!--#include file="./include/_ldap_section_keys_filled.html"-->
+                                <!--#include file="./include/_entra_section_members_filled.html"-->
+
+                                <!--#include file="./include/_ldap_section_api_empty.html"-->
+
+                                <!--#include file="./include/_ldap_section_ip_empty.html"-->
+
+                                <!--#include file="./include/_entra_section_keys_empty.html"-->
+                            </div>
                         </div>
 
                         <footer class="kt-ws-popup__footer">
-                            <button type="button" class="kt-btn kt-btn--tertiary kt-ws-popup__footer-btn">취소</button>
-                            <button type="button" class="kt-btn kt-btn--primary kt-ws-popup__footer-btn">PRD 반영신청</button>
+                            <button type="button" class="kt-btn kt-btn--popup-cta">DEV 전환</button>
                         </footer>
                     </article>
                 </main>
             </div>
+            <div id="dim"></div>
         </div>
     </body>
+    <script src="/assets/js/ldap-workspace.js"></script>
 </html>

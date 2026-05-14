@@ -464,6 +464,7 @@
         company: option.dataset.memberCompany || '',
         role: option.dataset.memberRole || 'Member',
         method: option.dataset.memberMethod || 'Owner 초대',
+        chip: option.dataset.memberChip || '',
     });
 
     const createCell = (text, isCenter = true) => {
@@ -497,26 +498,60 @@
         return badge;
     };
 
+    const isEntraMemberSection = section => section?.classList.contains('kt-entra-section-members');
+
+    const createMemberNameCell = member => {
+        const cell = createCell(member.name);
+
+        if (member.chip) {
+            const wrap = document.createElement('span');
+            const chip = document.createElement('span');
+            const modifier = member.chip.toLowerCase();
+
+            wrap.className = 'kt-entra-member-name';
+            chip.className = `kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--${modifier}`;
+            chip.textContent = member.chip;
+            wrap.append(document.createTextNode(`${member.name} `), chip);
+            cell.textContent = '';
+            cell.appendChild(wrap);
+        }
+
+        return cell;
+    };
+
     const insertBeforeEmptyRow = (tbody, row) => {
         const emptyRow = tbody.querySelector('.kt-data-table__empty');
 
         tbody.insertBefore(row, emptyRow || null);
     };
 
-    const createMemberReadRow = member => {
+    const createMemberReadRow = (member, section) => {
         const row = document.createElement('tr');
         const roleCell = document.createElement('td');
 
         row.dataset.memberReadRow = '';
         row.dataset.memberId = member.id;
+        if (member.chip) {
+            row.dataset.memberChip = member.chip;
+        }
         roleCell.className = 'center';
         roleCell.appendChild(createRoleBadge(member.role));
+
+        if (isEntraMemberSection(section)) {
+            roleCell.firstElementChild?.classList.add('kt-badge--xs');
+            if ((member.role || 'Member') === 'Member') {
+                roleCell.firstElementChild?.classList.add('kt-badge--member');
+            }
+            row.append(createMemberNameCell(member), createCell(member.email, false), roleCell, createCell(member.method));
+            return row;
+        }
+
         row.append(createCell(member.name), createCell(member.email, false), createCell(member.company), roleCell, createCell(member.method));
 
         return row;
     };
 
-    const createMemberEditRow = member => {
+    const createMemberEditRow = (member, section) => {
         const row = document.createElement('tr');
         const roleCell = document.createElement('td');
         const actionCell = document.createElement('td');
@@ -524,6 +559,9 @@
 
         row.dataset.memberRow = '';
         row.dataset.memberId = member.id;
+        if (member.chip) {
+            row.dataset.memberChip = member.chip;
+        }
         roleCell.className = 'center';
         roleCell.appendChild(createRoleBadge(member.role));
         actionCell.className = 'center';
@@ -533,6 +571,16 @@
         deleteButton.setAttribute('aria-label', `${member.name} 삭제`);
         deleteButton.textContent = '삭제';
         actionCell.appendChild(deleteButton);
+
+        if (isEntraMemberSection(section)) {
+            roleCell.firstElementChild?.classList.add('kt-badge--xs');
+            if ((member.role || 'Member') === 'Member') {
+                roleCell.firstElementChild?.classList.add('kt-badge--member');
+            }
+            row.append(createMemberNameCell(member), createCell(member.email, false), roleCell, createCell(member.method), actionCell);
+            return row;
+        }
+
         row.append(createCell(member.name), createCell(member.email, false), createCell(member.company), roleCell, createCell(member.method), actionCell);
 
         return row;
@@ -585,8 +633,8 @@
             return;
         }
 
-        insertBeforeEmptyRow(readTableBody, createMemberReadRow(member));
-        insertBeforeEmptyRow(editTableBody, createMemberEditRow(member));
+        insertBeforeEmptyRow(readTableBody, createMemberReadRow(member, section));
+        insertBeforeEmptyRow(editTableBody, createMemberEditRow(member, section));
         setMemberOptionRegistered(option, true);
         syncMemberSection(section);
         clearMemberSearch(section);

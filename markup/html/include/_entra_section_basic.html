@@ -1,87 +1,67 @@
+<!--
+    개발 전달: Entra ID 워크스페이스 상세의 기본 정보 섹션입니다.
+    data-basic-value와 data-basic-field 값이 같은 항목끼리 읽기/편집 모드가 동기화됩니다.
+-->
 <section class="kt-ws-section kt-ldap-section-basic kt-entra-section-basic">
     <div class="kt-ws-section__head">
-        <div>
-            <span class="kt-ws-section__kicker">Step 1</span>
-            <h2>워크스페이스 기본 정보</h2>
+        <h2 class="kt-ws-section__title">기본 정보</h2>
+        <div class="kt-ws-section__actions">
+            <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
+            <span class="kt-edit-actions" aria-label="기본 정보 편집 액션">
+                <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
+                <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
+            </span>
         </div>
-        <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm kt-ldap-edit-trigger">편집</button>
     </div>
-
-    <div class="kt-ldap-read-view">
-        <div class="kt-entra-account-map">
-            <h3>Entra ID 계정 정보 자동 매핑</h3>
-            <dl>
-                <div>
-                    <dt>Domain</dt>
-                    <dd>myK (myK.kt.com)</dd>
-                </div>
-                <div>
-                    <dt>소속 부서</dt>
-                    <dd>디지털혁신본부 › API플랫폼팀</dd>
-                </div>
-                <div>
-                    <dt>계정</dt>
-                    <dd>한수지 (suji.han@kt.com) · PO</dd>
-                </div>
-            </dl>
-            <p>Entra ID 계정(@kt.com, @ktds.co.kr 등 KT 그룹사)만 초대 가능합니다.</p>
-        </div>
-
-        <table class="kt-info-table kt-info-table--fixed">
-            <caption>
-                워크스페이스 기본 정보
-            </caption>
+    <table class="kt-read-mode kt-info-table kt-info-table--entra" aria-label="기본 정보">
+        <colgroup>
+            <col style="width: 140px" />
+            <col />
+            <col style="width: 140px" />
+            <col />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th id="entra-basic-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                <td headers="entra-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">myK_쿠폰서비스_WS</td>
+                <th id="entra-basic-type" scope="row" class="kt-info-table__label">타입</th>
+                <td headers="entra-basic-type" class="kt-info-table__value">Api Workspace</td>
+            </tr>
+            <tr>
+                <th id="entra-basic-domain" scope="row" class="kt-info-table__label">Domain</th>
+                <td headers="entra-basic-domain" class="kt-info-table__value">myK EntraID 소속 자동 매핑</td>
+                <th id="entra-basic-desc" scope="row" class="kt-info-table__label">설명</th>
+                <td headers="entra-basic-desc" class="kt-info-table__value" data-basic-value="description">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="kt-edit-template kt-edit-box">
+        <strong class="kt-edit-box__title">기본정보 편집모드</strong>
+        <table class="kt-info-table kt-info-table--edit kt-info-table--entra" aria-label="기본 정보 편집">
+            <colgroup>
+                <col style="width: 140px" />
+                <col />
+                <col style="width: 140px" />
+                <col />
+            </colgroup>
             <tbody>
                 <tr>
-                    <th scope="row">워크스페이스명</th>
-                    <td data-basic-name>myK 사내직원인증</td>
+                    <th id="entra-basic-edit-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                    <td headers="entra-basic-edit-workspace-name" class="kt-info-table__value">
+                        <input type="text" class="kt-input kt-input--36" value="myK_쿠폰서비스_WS" data-basic-field="workspaceName" />
+                    </td>
+                    <th id="entra-basic-edit-type" scope="row" class="kt-info-table__label">타입</th>
+                    <td headers="entra-basic-edit-type" class="kt-info-table__value">Api Workspace</td>
                 </tr>
                 <tr>
-                    <th scope="row">타입</th>
-                    <td>Api Workspace</td>
-                </tr>
-                <tr>
-                    <th scope="row">설명</th>
-                    <td data-basic-desc>Entra ID 기반으로 KT 그룹사 임직원 계정을 초대하고 API를 검증하는 워크스페이스입니다.</td>
-                </tr>
-                <tr>
-                    <th scope="row">Partner KT Service</th>
-                    <td>myK (MYK_AUTH_001)</td>
-                </tr>
-                <tr>
-                    <th scope="row">회사 / 부서</th>
-                    <td>디지털혁신본부 › API플랫폼팀</td>
-                </tr>
-                <tr>
-                    <th scope="row">KT 사업담당자</th>
-                    <td>한수지 (suji.han@kt.com)</td>
+                    <th id="entra-basic-edit-domain" scope="row" class="kt-info-table__label">Domain</th>
+                    <td headers="entra-basic-edit-domain" class="kt-info-table__value">myK EntraID 소속 자동 매핑</td>
+                    <th id="entra-basic-edit-desc" scope="row" class="kt-info-table__label">설명</th>
+                    <td headers="entra-basic-edit-desc" class="kt-info-table__value">
+                        <input type="text" class="kt-input kt-input--36" value="쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스" data-basic-field="description" />
+                    </td>
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <div class="kt-ldap-edit-view" hidden>
-        <div class="kt-form-grid">
-            <label class="kt-form-field">
-                <span>워크스페이스명</span>
-                <input type="text" value="myK 사내직원인증" data-basic-name-input />
-            </label>
-            <label class="kt-form-field">
-                <span>설명</span>
-                <textarea rows="3" data-basic-desc-input>Entra ID 기반으로 KT 그룹사 임직원 계정을 초대하고 API를 검증하는 워크스페이스입니다.</textarea>
-            </label>
-            <label class="kt-form-field">
-                <span>Partner KT Service</span>
-                <input type="text" value="myK (MYK_AUTH_001)" />
-            </label>
-            <label class="kt-form-field">
-                <span>KT 사업담당자</span>
-                <input type="text" value="한수지 (suji.han@kt.com)" />
-            </label>
-        </div>
-        <div class="kt-ldap-edit-actions">
-            <button type="button" class="kt-btn kt-btn--tertiary kt-btn--sm kt-ldap-edit-cancel">취소</button>
-            <button type="button" class="kt-btn kt-btn--primary kt-btn--sm kt-ldap-edit-save">저장</button>
-        </div>
     </div>
 </section>

@@ -6469,6 +6469,42 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     display: none;
 }
 
+.kt-ldap-stage.kt-entra-stage {
+    background: #2b2b2b;
+}
+
+.kt-entra-stage {
+    .kt-ws-popup {
+        --kt-ws-popup-max-height: none;
+        min-height: 1606px;
+    }
+
+    .kt-ws-popup__body {
+        position: relative;
+        overflow: visible;
+    }
+
+    .kt-ws-popup__scroll {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        bottom: 24px;
+        display: flex;
+        justify-content: center;
+        width: 24px;
+        padding-top: 4px;
+        pointer-events: none;
+
+        &::before {
+            content: '';
+            width: 4px;
+            height: 80px;
+            border-radius: 999px;
+            background: #8b8f97;
+        }
+    }
+}
+
 .kt-ws-popup__footer {
     @include flex(flex-start, center);
     flex: 0 0 84px;
@@ -7190,6 +7226,85 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 .kt-env-card__empty[hidden],
 .kt-key-card__empty[hidden] {
     display: none !important;
+}
+
+.kt-entra-stage {
+    .kt-info-table--entra {
+        .kt-info-table__label,
+        .kt-info-table__value {
+            height: 48px;
+        }
+    }
+
+    .kt-data-table--members-entra {
+        --kt-member-table-columns: repeat(4, minmax(0, 1fr));
+
+        thead {
+            padding-right: 0;
+        }
+
+        tbody {
+            max-height: none;
+            overflow: visible;
+            scrollbar-gutter: auto;
+        }
+    }
+
+    .kt-data-table--members-entra-edit {
+        --kt-member-table-columns: repeat(4, minmax(0, 1fr)) 120px;
+
+        tbody {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-gutter: stable;
+        }
+    }
+
+    .kt-entra-member-name {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    .kt-entra-member-chip--po {
+        background: #fce9e9;
+        color: #bb1b21;
+    }
+
+    .kt-entra-member-chip--ba {
+        background: #e1f5f5;
+        color: #005e66;
+    }
+
+    .kt-ldap-section-api-empty {
+        tr.kt-data-table__empty--result td {
+            height: 156px;
+            background: #f8f9fa;
+        }
+
+        .kt-table-empty-result {
+            min-height: 156px;
+        }
+
+        .kt-api-empty-guide {
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+    }
+
+    .kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card,
+    .kt-entra-section-keys-empty > .kt-panel-grid .kt-key-card {
+        height: 148px;
+    }
+
+    .kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card__empty,
+    .kt-entra-section-keys-empty > .kt-panel-grid .kt-key-card__empty {
+        height: 80px;
+        min-height: 80px;
+        margin-top: 8px;
+        padding: 0;
+    }
 }
 
 .kt-ldap-section-ip-empty > .kt-panel-grid .kt-env-card,
