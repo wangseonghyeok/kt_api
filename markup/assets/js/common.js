@@ -1398,6 +1398,7 @@ const ui = {
         trees.forEach(tree => {
             const sidebar = tree.closest('.kt-tool-sidebar') || document;
             const searchInput = sidebar.querySelector('[data-api-tree-search] input');
+            const searchSubmit = sidebar.querySelector('[data-api-tree-search-submit]');
             const tabButtons = sidebar.querySelectorAll('[data-api-tree-tab]');
             const empty = tree.querySelector('.kt-tool-tree__empty');
             let activeProtocol = 'all';
@@ -1429,19 +1430,18 @@ const ui = {
                 branches.forEach(branch => {
                     const protocol = branch.dataset.protocol || 'rest';
                     const protocolMatched = activeProtocol === 'all' || activeProtocol === protocol;
-                    let branchMatched = !keyword || branch.textContent.toLowerCase().includes(keyword);
+                    const branchButton = Array.from(branch.children).find(child => child.classList?.contains('kt-tool-tree__branch-btn'));
+                    const branchTextMatched = !keyword || branchButton?.textContent.toLowerCase().includes(keyword);
+                    let branchMatched = false;
 
-                    branch.querySelectorAll('[data-api-leaf]').forEach(leaf => {
-                        const item = leaf.closest('li');
-                        const terms = [leaf.textContent, leaf.dataset.apiName, leaf.dataset.apiCode, leaf.dataset.apiMethod, leaf.dataset.apiPath].filter(Boolean).join(' ').toLowerCase();
-                        const leafMatched = !keyword || terms.includes(keyword);
-
-                        if (item) {
-                            item.hidden = protocolMatched && !leafMatched;
-                        }
-
-                        branchMatched = branchMatched || leafMatched;
-                    });
+                    if (!protocolMatched) {
+                        branch.querySelectorAll('[data-api-leaf]').forEach(leaf => {
+                            const item = leaf.closest('li');
+                            if (item) {
+                                item.hidden = true;
+                            }
+                        });
+                    }
 
                     branch.querySelectorAll('.kt-tool-tree__children > li').forEach(group => {
                         const groupButton = Array.from(group.children).find(child => child.classList?.contains('kt-tool-tree__group-btn'));
@@ -1451,19 +1451,34 @@ const ui = {
                         }
 
                         const groupTextMatched = !keyword || groupButton.textContent.toLowerCase().includes(keyword);
-                        const visibleChild = Array.from(group.querySelectorAll('li')).some(item => !item.hidden);
-                        const groupMatched = groupTextMatched || visibleChild;
+                        let groupMatched = false;
 
-                        group.hidden = protocolMatched && !groupMatched;
+                        group.querySelectorAll('[data-api-leaf]').forEach(leaf => {
+                            const item = leaf.closest('li');
+                            const terms = [leaf.textContent, leaf.dataset.apiName, leaf.dataset.apiCode, leaf.dataset.apiMethod, leaf.dataset.apiPath, leaf.dataset.apiProtocol]
+                                .filter(Boolean)
+                                .join(' ')
+                                .toLowerCase();
+                            const leafMatched = !keyword || branchTextMatched || groupTextMatched || terms.includes(keyword);
 
-                        if (keyword && groupMatched) {
+                            if (item) {
+                                item.hidden = !protocolMatched || !leafMatched;
+                            }
+
+                            groupMatched = groupMatched || leafMatched;
+                        });
+
+                        group.hidden = !protocolMatched || !groupMatched;
+                        branchMatched = branchMatched || groupMatched;
+
+                        if (keyword && protocolMatched && groupMatched) {
                             setOpen(group, true);
                         }
                     });
 
                     const visibleLeaf = Array.from(branch.querySelectorAll('[data-api-leaf]')).some(leaf => !leaf.closest('li')?.hidden);
                     const visibleGroup = Array.from(branch.querySelectorAll('.kt-tool-tree__children > li')).some(item => !item.hidden);
-                    const branchVisible = protocolMatched && (branchMatched || visibleLeaf || visibleGroup);
+                    const branchVisible = protocolMatched && (branchTextMatched || branchMatched || visibleLeaf || visibleGroup);
 
                     branch.hidden = !branchVisible;
 
@@ -1525,6 +1540,10 @@ const ui = {
             });
 
             searchInput?.addEventListener('input', applyFilter);
+            searchSubmit?.addEventListener('click', () => {
+                searchInput?.focus();
+                applyFilter();
+            });
             applyFilter();
         });
     },

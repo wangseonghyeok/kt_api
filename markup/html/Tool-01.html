@@ -26,7 +26,26 @@
                 <div class="kt-tool-body">
                     <aside class="kt-tool-sidebar" aria-label="API 탐색">
                         <div class="kt-tool-search" data-api-tree-search>
-                            <button type="button" class="kt-btn kt-btn--line kt-tool-search__button"><span class="kt-btn__svg kt-btn__svg--search"></span>API 검색</button>
+                            <div class="kt-search-field kt-search-field--tool" data-search_field>
+                                <input type="search" id="toolApiSearch" class="kt-input" placeholder="API 검색" aria-label="API 검색어" autocomplete="off" />
+                                <span class="kt-search-field__actions">
+                                    <button
+                                        type="button"
+                                        class="kt-input-field__clear kt-search-field__clear"
+                                        data-clear_input
+                                        aria-controls="toolApiSearch"
+                                        aria-label="검색어 삭제"
+                                        hidden
+                                        aria-hidden="true"
+                                        tabindex="-1"
+                                    >
+                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                    </button>
+                                    <button type="button" class="kt-search-field__submit" aria-label="검색" data-api-tree-search-submit>
+                                        <img src="/assets/img/components/ico_search.svg" alt="" />
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                         <div class="kt-tool-tabs" role="tablist" aria-label="API 유형">
                             <button type="button" class="is-active" role="tab" aria-selected="true" data-api-tree-tab="all">전체</button>

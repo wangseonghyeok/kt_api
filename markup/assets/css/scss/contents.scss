@@ -1798,7 +1798,7 @@
 }
 
 .kt-tool-page {
-    min-width: 0;
+    min-width: 1480px;
 }
 
 .kt-api-intro-page,
@@ -1821,14 +1821,9 @@
 
     #wrap {
         justify-content: flex-start;
+        min-width: 1480px;
         min-height: auto;
         background: $kt-bg;
-    }
-}
-
-@media (min-width: 1480px) and (min-height: 900px) {
-    body.kt-tool-page {
-        overflow-y: hidden;
     }
 }
 
@@ -2272,6 +2267,12 @@
         }
     }
 
+    .kt-search-field.is-focused .kt-input,
+    .kt-search-field.is-typing .kt-input {
+        padding-left: 15px;
+        border-width: 2px;
+    }
+
     .kt-search-field:not(.has-value) .kt-input {
         padding-right: 48px;
     }
@@ -2328,7 +2329,7 @@
     @include kt-scrollbar(12px, #8b8f97, transparent, 4px);
     width: 292px;
     flex: 0 0 auto;
-    height: 554px;
+    height: calc(100% - 92px);
     min-height: 0;
     margin: 16px 0 0;
     padding-right: 0;
