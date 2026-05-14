@@ -7822,7 +7822,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 /* Works popup pages */
 body.kt-work-pop-page {
     min-width: 0;
-    background: #fff;
+    background: #555;
 }
 
 body.kt-work-pop-page,
@@ -8429,33 +8429,11 @@ body.kt-work-pop-page #wrap {
     font-size: 15px;
     font-weight: var(--fw-Medium);
     line-height: 1.48;
-    cursor: pointer;
 }
 
 .kt-work-pop-filter__datebox img {
     width: 18px;
     height: 18px;
-}
-
-.kt-work-pop-filter__datebox:focus-within {
-    border-color: #191a1b;
-    box-shadow: 0 0 0 3px rgba(25, 26, 27, 0.08);
-}
-
-.kt-work-pop-filter__date-input {
-    flex: 1 1 auto;
-    min-width: 0;
-    border: 0;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: inherit;
-    outline: 0;
-    cursor: pointer;
-}
-
-#ui-datepicker-div {
-    z-index: 1100 !important;
 }
 
 .kt-work-pop-filter__dash {
