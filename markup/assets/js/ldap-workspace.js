@@ -500,6 +500,16 @@
 
     const isEntraMemberSection = section => section?.classList.contains('kt-entra-section-members');
 
+    const setEntraRoleBadgeStyle = badge => {
+        const roleName = badge?.textContent?.trim();
+
+        if (!badge) {
+            return;
+        }
+
+        badge.className = roleName === 'Owner' || roleName === 'Manager' ? 'kt-badge kt-badge--blue' : 'kt-badge';
+    };
+
     const createMemberNameCell = member => {
         const cell = createCell(member.name);
 
@@ -509,7 +519,13 @@
             const modifier = member.chip.toLowerCase();
 
             wrap.className = 'kt-entra-member-name';
-            chip.className = `kt-badge kt-badge--xs kt-entra-member-chip kt-entra-member-chip--${modifier}`;
+            chip.className = `kt-badge kt-entra-member-chip kt-entra-member-chip--${modifier}`;
+            if (modifier === 'po') {
+                chip.classList.add('kt-badge--danger');
+            }
+            if (modifier === 'ba') {
+                chip.classList.add('kt-badge--cyan');
+            }
             chip.textContent = member.chip;
             wrap.append(document.createTextNode(`${member.name} `), chip);
             cell.textContent = '';
@@ -538,10 +554,7 @@
         roleCell.appendChild(createRoleBadge(member.role));
 
         if (isEntraMemberSection(section)) {
-            roleCell.firstElementChild?.classList.add('kt-badge--xs');
-            if ((member.role || 'Member') === 'Member') {
-                roleCell.firstElementChild?.classList.add('kt-badge--member');
-            }
+            setEntraRoleBadgeStyle(roleCell.firstElementChild);
             row.append(createMemberNameCell(member), createCell(member.email, false), roleCell, createCell(member.method));
             return row;
         }
@@ -573,10 +586,7 @@
         actionCell.appendChild(deleteButton);
 
         if (isEntraMemberSection(section)) {
-            roleCell.firstElementChild?.classList.add('kt-badge--xs');
-            if ((member.role || 'Member') === 'Member') {
-                roleCell.firstElementChild?.classList.add('kt-badge--member');
-            }
+            setEntraRoleBadgeStyle(roleCell.firstElementChild);
             row.append(createMemberNameCell(member), createCell(member.email, false), roleCell, createCell(member.method), actionCell);
             return row;
         }
