@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-work-pop-page">
+    <body>
         <div id="wrap">
             <div class="kt-work-pop-modal">
                 <main class="kt-work-pop-stage" aria-label="운영전환 승인처리">
@@ -22,8 +22,9 @@
                                 <div class="kt-admin-pop__field kt-admin-pop__field--textarea">
                                     <p class="kt-admin-pop__label">신청 사유</p>
                                     <div class="kt-admin-pop__textarea kt-admin-pop__textarea--readonly">
-                                        <p>DEV 환경 테스트 완료 후 상용 전환 신청합니다. QA 검증 완료, 배포 예정일 2026.04.15</p>
-                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                        <textarea class="kt-admin-pop__textarea-control" readonly aria-label="신청 사유">
+DEV 환경 테스트 완료 후 상용 전환 신청합니다. QA 검증 완료, 배포 예정일 2026.04.15</textarea
+                                        >
                                     </div>
                                 </div>
                                 <div class="kt-admin-pop__result">
@@ -36,8 +37,12 @@
                                 <div class="kt-admin-pop__field kt-admin-pop__field--reject">
                                     <p class="kt-admin-pop__label">반려시 반려사유 입력</p>
                                     <div class="kt-admin-pop__textarea kt-admin-pop__textarea--reject">
-                                        <p>반려사유를 구체적으로 입력해 주세요.</p>
-                                        <span class="kt-admin-pop__fake-scroll" aria-hidden="true"></span>
+                                        <textarea
+                                            class="kt-admin-pop__textarea-control"
+                                            maxlength="200"
+                                            placeholder="반려사유를 구체적으로 입력해 주세요."
+                                            aria-label="반려시 반려사유 입력"
+                                        ></textarea>
                                         <span class="kt-admin-pop__count">0/200</span>
                                     </div>
                                 </div>

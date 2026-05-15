@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
-    <body class="kt-work-pop-page">
+    <body>
         <div id="wrap">
             <div class="kt-work-pop-modal">
                 <main class="kt-work-pop-stage" aria-label="PRD IP 승인요청">
@@ -33,9 +33,8 @@
                                 </div>
                                 <div class="kt-work-pop__field kt-work-pop__field--large">
                                     <p class="kt-work-pop__label">신청사유 <span class="kt-work-pop__required">*</span></p>
-                                    <div class="kt-work-pop__textarea-box" role="textbox" aria-label="신청사유">
-                                        <p>필요한 사유를 입력해 주세요.</p>
-                                        <span class="kt-work-pop__fake-scroll" aria-hidden="true"></span>
+                                    <div class="kt-work-pop__textarea-box">
+                                        <textarea class="kt-work-pop__textarea" maxlength="200" placeholder="필요한 사유를 입력해 주세요." aria-label="신청사유"></textarea>
                                         <span class="kt-work-pop__textarea-count">0/200</span>
                                     </div>
                                 </div>

@@ -131,8 +131,8 @@ function getTextareaCountTarget(textarea) {
     }
 
     return textarea
-        .closest('.kt-textarea-wrap, .kt-inquiry-textarea, .kt-newwork-field--textarea, .kt-field')
-        ?.querySelector('[data-textarea-count-output], .kt-textarea__count, .kt-inquiry-textarea__count, i');
+        .closest('.kt-textarea-wrap, .kt-inquiry-textarea, .kt-newwork-field--textarea, .kt-field, .kt-work-pop__textarea-box, .kt-admin-pop__textarea')
+        ?.querySelector('[data-textarea-count-output], .kt-textarea__count, .kt-inquiry-textarea__count, .kt-work-pop__textarea-count, .kt-admin-pop__count, i');
 }
 
 function syncTextareaCount(textarea) {
