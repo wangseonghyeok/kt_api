@@ -22,9 +22,17 @@
                                     <strong class="kt-work-pop-filter__title">API 명 : UserProperty (LDAP)</strong>
                                     <div class="kt-work-pop-filter__row">
                                         <div class="kt-work-pop-filter__date">
-                                            <span class="kt-work-pop-filter__datebox">2026.03.18<img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" /></span>
+                                            <label class="kt-work-pop-filter__datebox">
+                                                <span class="blind">시작일</span>
+                                                <input type="text" class="kt-work-pop-filter__date-input js-datepicker" value="2026.03.18" readonly />
+                                                <img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" />
+                                            </label>
                                             <span class="kt-work-pop-filter__dash">~</span>
-                                            <span class="kt-work-pop-filter__datebox">2026.03.18<img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" /></span>
+                                            <label class="kt-work-pop-filter__datebox">
+                                                <span class="blind">종료일</span>
+                                                <input type="text" class="kt-work-pop-filter__date-input js-datepicker" value="2026.03.18" readonly />
+                                                <img src="/assets/img/works/ico_work_calendar.svg" alt="" aria-hidden="true" />
+                                            </label>
                                         </div>
                                         <button type="button" class="kt-work-pop-filter__button">Self Testing 결과확인</button>
                                     </div>
@@ -100,30 +108,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav class="kt-pagination kt-pagination--list" aria-label="페이지">
-                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--first" aria-label="처음 페이지">
-                                        <i class="kt-pagination__icon kt-pagination__icon--first" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--prev" aria-label="이전 페이지">
-                                        <i class="kt-pagination__icon kt-pagination__icon--prev" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" aria-current="true">1</a>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <a href="#">6</a>
-                                    <a href="#">7</a>
-                                    <a href="#">8</a>
-                                    <a href="#">9</a>
-                                    <a href="#">10</a>
-                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--next" aria-label="다음 페이지">
-                                        <i class="kt-pagination__icon kt-pagination__icon--next" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" class="kt-pagination__nav kt-pagination__nav--last" aria-label="마지막 페이지">
-                                        <i class="kt-pagination__icon kt-pagination__icon--last" aria-hidden="true"></i>
-                                    </a>
-                                </nav>
+                                <!--#include file="./include/_works_pagination_full.html"-->
                             </div>
                         </div>
                     </article>

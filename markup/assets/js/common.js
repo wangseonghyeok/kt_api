@@ -298,6 +298,26 @@ const ui = {
             syncTextareaCount(textarea);
         });
     },
+    datepicker: () => {
+        if (!window.jQuery || !$.fn.datepicker) {
+            return;
+        }
+
+        $('.js-datepicker').datepicker({
+            dateFormat: 'yy.mm.dd',
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            beforeShow: () => {
+                setTimeout(() => {
+                    $('#ui-datepicker-div').addClass('kt-work-pop-datepicker');
+                }, 0);
+            },
+        });
+    },
     // Support inquiry file, answer, and table states
     supportInquiry: () => {
         document.querySelectorAll('.kt-inquiry-form').forEach(form => {
@@ -1979,6 +1999,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.accordion();
     ui.supportTabs();
     ui.textareaCounter();
+    ui.datepicker();
     ui.supportInquiry();
     ui.pagination();
     ui.popup();

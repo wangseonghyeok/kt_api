@@ -910,7 +910,14 @@
                                 <label class="kt-field">
                                     <span class="kt-field__label">설명</span>
                                     <span class="kt-textarea-wrap">
-                                        <textarea id="componentTextareaSample" class="kt-textarea" maxlength="1000" placeholder="설명을 입력하세요" data-textarea-count="componentTextareaSampleCount">
+                                        <textarea
+                                            id="componentTextareaSample"
+                                            class="kt-textarea"
+                                            maxlength="1000"
+                                            placeholder="설명을 입력하세요"
+                                            spellcheck="false"
+                                            data-textarea-count="componentTextareaSampleCount"
+                                        >
 KT API Link 연동 설명을 입력합니다.
 텍스트가 길어지면 textarea 내부에 공통 스크롤바가 노출됩니다.
 스크롤바 디자인은 모든 페이지의 스크롤 영역과 동일하게 적용됩니다.
@@ -1812,6 +1819,7 @@ KT API Link 연동 설명을 입력합니다.
                                                 class="kt-textarea"
                                                 maxlength="1000"
                                                 placeholder="워크스페이스의 목적과 사용할 API를 설명해 주세요."
+                                                spellcheck="false"
                                                 data-textarea-count="componentWorkspaceDescriptionCount"
                                             ></textarea>
                                             <i id="componentWorkspaceDescriptionCount" data-textarea-count-output>0/1000</i>
