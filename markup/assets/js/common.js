@@ -303,6 +303,23 @@ const ui = {
             return;
         }
 
+        const alignDatepicker = input => {
+            const $input = $(input);
+            const $datebox = $input.closest('.kt-work-pop-filter__datebox');
+            const $datepicker = $('#ui-datepicker-div').addClass('kt-work-pop-datepicker');
+
+            if (!$datebox.length) {
+                return;
+            }
+
+            const offset = $datebox.offset();
+
+            $datepicker.css({
+                left: offset.left,
+                top: offset.top + $datebox.outerHeight(),
+            });
+        };
+
         $('.js-datepicker').datepicker({
             dateFormat: 'yy.mm.dd',
             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
@@ -311,9 +328,19 @@ const ui = {
             selectOtherMonths: true,
             changeMonth: true,
             changeYear: true,
-            beforeShow: () => {
+            beforeShow: input => {
                 setTimeout(() => {
-                    $('#ui-datepicker-div').addClass('kt-work-pop-datepicker');
+                    alignDatepicker(input);
+                }, 0);
+            },
+            onChangeMonthYear: (year, month, instance) => {
+                setTimeout(() => {
+                    alignDatepicker(instance.input[0]);
+                }, 0);
+            },
+            onUpdateDatepicker: instance => {
+                setTimeout(() => {
+                    alignDatepicker(instance.input[0]);
                 }, 0);
             },
         });

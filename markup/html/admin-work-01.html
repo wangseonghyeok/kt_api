@@ -22,29 +22,7 @@
                     </nav>
                 </section>
 
-                <section class="kt-admin-work-search" aria-label="관리자 워크스페이스 검색">
-                    <div class="kt-admin-work-search__row">
-                        <label for="adminWorkspaceSearch">워크스페이스 이름, ID, 설명</label>
-                        <div class="kt-admin-work-search__main">
-                            <div class="kt-admin-work-search__field">
-                                <input type="text" id="adminWorkspaceSearch" value="워크스페이스 이름으로 검색하세요" readonly />
-                                <button type="button" class="kt-admin-work-search__icon" aria-label="검색"></button>
-                            </div>
-                            <div class="kt-admin-work-filter">
-                                <button type="button">All Status</button>
-                                <button type="button">All Type</button>
-                                <button type="button">All Issue</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="kt-admin-work-search__row">
-                        <label for="adminApiSearch">API 검색(OIF_숫자)</label>
-                        <div class="kt-admin-work-search__field kt-admin-work-search__field--wide">
-                            <input type="text" id="adminApiSearch" value="구독중인 API를 사용하는 워크스페이스 찾기 - OIF_숫자 3자 이상 입력하세요." readonly />
-                            <button type="button" class="kt-admin-work-search__icon" aria-label="검색"></button>
-                        </div>
-                    </div>
-                </section>
+                <!--#include file="./include/_works_search_default.html"-->
 
                 <section class="kt-works-list kt-admin-work-list" aria-label="관리자 모드 워크스페이스 목록">
                     <div class="kt-works-title kt-admin-work-title">
@@ -53,6 +31,7 @@
                         </div>
                         <div class="kt-admin-work-title__right">
                             <label class="kt-check kt-admin-work-check"><input type="checkbox" /><span>승인대기만 보기</span></label>
+                            <label class="kt-check kt-admin-work-check"><input type="checkbox" /><span>Review만 보기</span></label>
                             <a href="#" class="kt-btn kt-btn--works-create">
                                 <span class="kt-btn__svg kt-btn__svg--plus" aria-hidden="true"></span>
                                 Create Workspace
@@ -60,137 +39,214 @@
                         </div>
                     </div>
                     <div class="kt-works-table-area kt-admin-work-table-area">
-                        <div class="kt-table-scroll--works kt-table-scroll--result kt-admin-work-table-scroll">
-                            <table class="kt-table kt-table--works kt-admin-work-table" aria-label="관리자 모드 워크스페이스 목록">
-                                <caption class="blind">관리자 모드 워크스페이스 목록</caption>
+                        <div class="kt-table-scroll kt-table-scroll--works kt-scrollbar kt-admin-work-table-scroll">
+                            <table class="kt-table kt-table--works kt-table--works-result kt-admin-work-table" aria-label="관리자 모드 워크스페이스 목록">
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                </colgroup>
                                 <thead>
                                     <tr>
-                                        <th scope="col">Workspace ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Organization</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">My Role</th>
-                                        <th scope="col">Issue</th>
+                                        <th scope="col" class="center">Workspace ID</th>
+                                        <th scope="col" class="center">Name</th>
+                                        <th scope="col" class="center">Type</th>
+                                        <th scope="col" class="center">Organization</th>
+                                        <th scope="col" class="center">Status</th>
+                                        <th scope="col" class="center">My Role</th>
+                                        <th scope="col" class="center">Issue</th>
+                                        <th scope="col" class="center">Review</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="left">A0001</td>
-                                        <td class="left"><span class="kt-table__name">LG유플러스_쿠폰<span class="kt-table-tooltip">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</span></span></td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">LG유플러스_쿠폰</span>
+                                            <span class="kt-table-tooltip" role="tooltip">쿠폰 발급 및 조회 서비스를<br />위한 API 연동 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">LG유플러스</td>
-                                        <td class="left">Draft</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--draft">Draft</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--owner">Owner</span></td>
                                         <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0002</td>
-                                        <td class="left">카카오_OAuth</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">카카오_OAuth</span>
+                                            <span class="kt-table-tooltip" role="tooltip"></span>
+                                        </td>
                                         <td class="center">OAuth</td>
                                         <td class="left">카카오</td>
-                                        <td class="left">Dev</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--dev">Dev</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
                                         <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
-                                    <tr class="is-hover">
+                                    <tr>
                                         <td class="left">M0001</td>
-                                        <td class="left">하나로소프트_쿠폰서비스</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">하나로소프트_쿠폰서비스</span>
+                                            <span class="kt-table-tooltip" role="tooltip">쿠폰 발급 및 조회 서비스를<br />위한 API 연동 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">하나로소프트</td>
-                                        <td class="left">Draft</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--draft">Draft</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--owner">Owner</span></td>
                                         <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0003</td>
-                                        <td class="left">카카오_메시지연동</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">카카오_메시지연동</span>
+                                            <span class="kt-table-tooltip" role="tooltip">메시지 발송 API를<br />연동하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">카카오</td>
-                                        <td class="left">Dev</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--dev">Dev</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
                                         <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0004</td>
-                                        <td class="left">넥슨_인증서비스</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">엠넷_인증서비스</span>
+                                            <span class="kt-table-tooltip" role="tooltip">인증 서비스 API를<br />연동하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
-                                        <td class="left">넥슨</td>
-                                        <td class="left">Dev</td>
-                                        <td class="center"><span class="kt-badge kt-badge--member">Member</span></td>
+                                        <td class="left">엠넷</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--dev">Dev</span></td>
+                                        <td class="center"><span class="kt-badge">Member</span></td>
                                         <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">M0002</td>
-                                        <td class="left">하나로소프트_포인트</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">하나로소프트_사인</span>
+                                            <span class="kt-table-tooltip" role="tooltip">전자서명 API 연동을<br />관리하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">하나로소프트</td>
-                                        <td class="left">Prod</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--owner">Owner</span></td>
-                                        <td class="left">API 추가 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span></td>
+                                        <td class="left">
+                                            API 추가
+                                            <span>[<span class="kt-works-issue kt-works-issue--pending">승인대기</span> <span class="kt-works-issue kt-works-issue--elapsed">3일경과</span>]</span>
+                                        </td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0005</td>
-                                        <td class="left">넥슨_결제서비스</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">엠넷_결제서비스</span>
+                                            <span class="kt-table-tooltip" role="tooltip">결제 서비스 API를<br />연동하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
-                                        <td class="left">넥슨</td>
-                                        <td class="left">Prod</td>
+                                        <td class="left">엠넷</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--owner">Owner</span></td>
-                                        <td class="left">KEY 만료 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span></td>
+                                        <td class="left">
+                                            KEY 만료
+                                            <span>[<span class="kt-works-issue kt-works-issue--pending">승인대기</span> <span class="kt-works-issue kt-works-issue--elapsed">7일경과</span>]</span>
+                                        </td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">O0001</td>
-                                        <td class="left">카카오_페이먼트</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">카카오_페이먼트</span>
+                                            <span class="kt-table-tooltip" role="tooltip">페이먼트 API 상태를<br />관리하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">카카오</td>
-                                        <td class="left">Prod</td>
-                                        <td class="center"><span class="kt-badge kt-badge--member">Member</span></td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
+                                        <td class="center"><span class="kt-badge">Member</span></td>
                                         <td class="left">IP 추가/삭제 <span class="kt-works-issue kt-works-issue--rejected">[반려]</span></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0003</td>
-                                        <td class="left">하나로소프트_운영</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">하나로소프트_운영</span>
+                                            <span class="kt-table-tooltip" role="tooltip">운영 API 설정을<br />관리하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">하나로소프트</td>
-                                        <td class="left">Prod</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--owner">Owner</span></td>
                                         <td class="left">IP 추가 <span class="kt-works-issue kt-works-issue--rejected">[반려]</span></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0004</td>
-                                        <td class="left">LG유플러스_알림</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">LG유플러스_알림</span>
+                                            <span class="kt-table-tooltip" role="tooltip">알림 서비스 API를<br />연동하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
                                         <td class="left">LG유플러스</td>
-                                        <td class="left">Prod</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
-                                        <td class="left">IP 삭제 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span></td>
+                                        <td class="left">
+                                            IP 삭제
+                                            <span>[<span class="kt-works-issue kt-works-issue--pending">승인대기</span> <span class="kt-works-issue kt-works-issue--elapsed">3일경과</span>]</span>
+                                        </td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">M0002</td>
-                                        <td class="left">LG유플러스_MCP</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">LG유플러스_MCP</span>
+                                            <span class="kt-table-tooltip" role="tooltip">MCP 연동 및 API 관리를<br />위한 워크스페이스</span>
+                                        </td>
                                         <td class="center">MCP</td>
                                         <td class="left">LG유플러스</td>
-                                        <td class="left">Prod</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
-                                        <td class="left">API 추가 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span> IP 추가 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span> KEY 연장 <span class="kt-works-issue kt-works-issue--rejected">[반려]</span></td>
+                                        <td class="left">
+                                            API 추가
+                                            <span>[<span class="kt-works-issue kt-works-issue--pending">승인대기</span> <span class="kt-works-issue kt-works-issue--elapsed">3일경과</span>]</span>
+                                            IP 추가
+                                            <span>[<span class="kt-works-issue kt-works-issue--pending">승인대기</span> <span class="kt-works-issue kt-works-issue--elapsed">3일경과</span>]</span>
+                                            KEY 연장
+                                            <span class="kt-works-issue kt-works-issue--rejected">[반려]</span>
+                                        </td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0005</td>
-                                        <td class="left">하나로소프트_MCP서비스</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">하나로소프트_MCP서비스</span>
+                                            <span class="kt-table-tooltip" role="tooltip">MCP 서비스 운영 상태를<br />확인하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">MCP</td>
                                         <td class="left">하나로소프트</td>
-                                        <td class="left">Expired &rsaquo; Renew Rejected</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--expired-renew">Expired › Renew Rejected</span></td>
                                         <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
                                         <td class="left">KEY 재발급 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                     <tr>
                                         <td class="left">A0006</td>
-                                        <td class="left">하나로소프트_정산</td>
+                                        <td class="kt-table__name left">
+                                            <span class="kt-table__name-text" tabindex="0">KT커머스_쿠폰관리</span>
+                                            <span class="kt-table-tooltip" role="tooltip">쿠폰 관리 업무를<br />연동하는 워크스페이스</span>
+                                        </td>
                                         <td class="center">API</td>
-                                        <td class="left">하나로소프트</td>
-                                        <td class="left">Prod</td>
-                                        <td class="center"><span class="kt-badge kt-badge--manager">Manager</span></td>
-                                        <td class="left">API 추가 <span class="kt-works-issue kt-works-issue--pending">[승인대기]</span></td>
+                                        <td class="left">KT커머스</td>
+                                        <td class="left"><span class="kt-works-status kt-works-status--prod">Prod</span></td>
+                                        <td class="center"><span class="kt-badge">Member</span></td>
+                                        <td class="left"></td>
+                                        <td class="center"><span class="kt-admin-work-review">자동승인</span></td>
                                     </tr>
                                 </tbody>
                             </table>
