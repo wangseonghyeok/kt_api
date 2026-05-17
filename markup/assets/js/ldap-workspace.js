@@ -1050,6 +1050,19 @@
             return;
         }
 
+        getAddedApiOptions(section).forEach(option => {
+            const api = getApiData(option);
+            const group = `edit-${api.id}`;
+
+            if (!body.querySelector(`[data-api-row][data-api-accordion="${group}"]`)) {
+                body.append(createApiEditRow(api, group), createApiDetailRow(api, group));
+
+                if (api.approval === '반려') {
+                    body.appendChild(createApiRejectRow(group));
+                }
+            }
+        });
+
         body.querySelectorAll('[data-api-row]').forEach(row => {
             const apiId = getEditApiId(row.dataset.apiAccordion);
             const isVisible = addedIds.has(apiId);
@@ -1323,6 +1336,29 @@
         return row;
     };
 
+    const createApiEditRow = (api, group) => {
+        const row = document.createElement('tr');
+        const deleteButton = document.createElement('button');
+
+        row.className = 'kt-api-row';
+        row.dataset.apiRow = '';
+        row.dataset.apiAccordion = group;
+        deleteButton.type = 'button';
+        deleteButton.className = 'kt-member-delete-button';
+        deleteButton.dataset.apiEditDelete = '';
+        deleteButton.textContent = '삭제';
+        row.append(
+            createApiNameCell(api, group),
+            createDomainCell(api),
+            createCenterCell(api.sensitivity, api.sensitivity === '-' ? 'is-muted' : 'is-danger'),
+            createCenterCell(createSelfTestingContent(api.selfTesting), api.selfTesting === 'Completed' ? '' : 'is-muted'),
+            createCenterCell(createApiBadge(api.approval, 'approval')),
+            createCenterCell(deleteButton),
+        );
+
+        return row;
+    };
+
     const syncApiReadTable = section => {
         const body = getApiReadTableBody(section);
         const selectedOptions = getAddedApiOptions(section);
@@ -1427,6 +1463,34 @@
         item.append(text, createIpBadge(status));
 
         return item;
+    };
+
+    const decorateAdminIpActions = section => {
+        const prdCard = section?.closest('.kt-admin-work-detail') ? getIpReadCard(section, 'prd') : null;
+
+        prdCard?.querySelectorAll('.kt-env-card__item').forEach(item => {
+            const status = item.dataset.ipStatus || item.querySelector('.kt-badge')?.textContent.trim() || '';
+
+            if (status !== '대기' || item.querySelector(':scope > .kt-ws-inline-actions')) {
+                return;
+            }
+
+            const badge = item.querySelector('.kt-badge');
+            const button = document.createElement('button');
+            const actions = document.createElement('span');
+
+            button.type = 'button';
+            button.className = 'kt-btn kt-btn--popup-process';
+            button.textContent = '처리';
+            actions.className = 'kt-ws-inline-actions';
+
+            if (badge) {
+                actions.appendChild(badge);
+            }
+
+            actions.appendChild(button);
+            item.appendChild(actions);
+        });
     };
 
     const createIpRemoveButton = value => {
@@ -1684,6 +1748,7 @@
                 sortIpReadCard(card);
                 syncIpReadCardState(card);
             });
+        decorateAdminIpActions(section);
     };
 
     const resetIpEditors = section => {
@@ -1727,6 +1792,7 @@
     workspaceRoot.querySelectorAll('.kt-api-name').forEach(ensureApiNameTooltip);
     workspaceRoot.querySelectorAll('.kt-ldap-section-ip-empty, .kt-ldap-section-ip-filled').forEach(section => {
         getIpReadGrid(section)?.querySelectorAll('[data-ip-env]').forEach(sortIpReadCard);
+        decorateAdminIpActions(section);
     });
 
     workspaceRoot.addEventListener('input', e => {
