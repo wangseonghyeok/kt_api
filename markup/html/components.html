@@ -12,19 +12,61 @@
             <main id="contents" class="kt-component-main">
                 <div class="kt-component-shell">
                     <section class="kt-component-hero">
-                        <h1>KT API Link 공통 컴포넌트</h1>
-                        <p>
-                            Figma 퍼블 작업 화면에서 반복되는 Button, Badge, Tag, Input, Select, Dropdown, Checkbox, Radio, Switch, Grid, Tab, Indicator, Prompt, Scrollbar, Icon, Chart 후보를 공통
-                            사용 기준으로 정리했습니다.
-                        </p>
+                        <h1>KT API Link 컴포넌트 시스템</h1>
+                        <p>현재 HTML, include, SCSS, 공통 JS에서 실제 반복 사용되는 UI를 기준으로 Layout, Control, Feedback, Data, Domain 컴포넌트의 사용 기준과 유지보수 규칙을 정리했습니다.</p>
                     </section>
 
                     <ul class="kt-component-summary">
-                        <li><strong>Layout</strong><span>Page Header, Popup, Path, Line Tab, Actions</span></li>
-                        <li><strong>Control</strong><span>Input, Select, Dropdown, Search Prompt</span></li>
-                        <li><strong>Data</strong><span>Grid, Pagination, Indicator, Badge, Tag, Chart</span></li>
-                        <li><strong>Asset</strong><span>Icon, Button, Tab, Scrollbar</span></li>
+                        <li><strong>Foundation</strong><span>Token, Badge, Tag, Scrollbar</span></li>
+                        <li><strong>Control</strong><span>Button, Input, Select, Dropdown, Prompt</span></li>
+                        <li><strong>Pattern</strong><span>Page Header, Tab, Popup, Table, Pagination</span></li>
+                        <li><strong>Domain</strong><span>Works, LDAP Workspace, Create Workspace, User Account</span></li>
                     </ul>
+
+                    <section class="kt-component-section" id="system-guide">
+                        <h2>System Guide</h2>
+                        <p class="kt-component-desc">
+                            새 화면은 아래 계층을 기준으로 조립합니다. 기존 폴더 구조는 유지하고, 화면별 마크업을 만들기 전에 이 페이지의 공통 클래스와 include 조합을 먼저 확인합니다.
+                        </p>
+                        <div class="kt-component-demo kt-component-demo--column">
+                            <div class="kt-component-card">
+                                <h3>1. Foundation</h3>
+                                <p class="kt-component-desc">색상, 간격, 서체, 아이콘, 상태 색상처럼 모든 UI가 공유하는 최소 단위입니다.</p>
+                                <pre class="kt-component-code"><code>사용 기준
+- 상태 색상은 kt-badge / kt-tag modifier 우선 사용
+- 아이콘은 /assets/img/components 우선 사용
+- 숨김 텍스트는 .blind 사용
+- 스크롤 영역은 .kt-scrollbar 사용</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>2. Control</h3>
+                                <p class="kt-component-desc">사용자가 직접 조작하는 버튼, 입력, 선택, 검색 UI입니다.</p>
+                                <pre class="kt-component-code"><code>사용 기준
+- button에는 type="button" 명시
+- input 삭제는 data-clear_input + aria-controls 사용
+- 비밀번호 토글은 data-password_toggle 사용
+- 검색 자동완성은 data-prompt 구조 사용</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>3. Pattern</h3>
+                                <p class="kt-component-desc">여러 control을 묶어 화면에서 반복되는 완성형 UI입니다.</p>
+                                <pre class="kt-component-code"><code>사용 기준
+- 페이지 상단은 .kt-page-header + .kt-path
+- 하단 액션은 .kt-actions
+- 목록은 kt-table / kt-data-table 계열
+- 페이지 이동은 .kt-pagination 계열</code></pre>
+                            </div>
+                            <div class="kt-component-card">
+                                <h3>4. Domain</h3>
+                                <p class="kt-component-desc">Works, LDAP, Create Workspace, User처럼 특정 업무 화면에서 반복되는 조합입니다.</p>
+                                <pre class="kt-component-code"><code>사용 기준
+- include 조합은 상태별 화면에서 재사용
+- 도메인 전용 class는 kt-works / kt-ldap / kt-newwork / kt-user prefix 유지
+- JS 동작은 data-* hook으로 연결
+- 디자인 수정 없이 상태와 데이터만 교체</code></pre>
+                            </div>
+                        </div>
+                    </section>
 
                     <section class="kt-component-section" id="page-layout">
                         <h2>Page Layout</h2>
@@ -240,15 +282,6 @@
                             </div>
                         </div>
                         <div class="kt-component-demo">
-                            <button type="button" class="kt-btn kt-btn--primary"><span class="kt-btn__svg kt-btn__svg--search"></span>레이블</button>
-                            <button type="button" class="kt-btn kt-btn--primary">레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span></button>
-                            <button type="button" class="kt-btn kt-btn--primary">
-                                <span class="kt-btn__svg kt-btn__svg--search"></span>레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span>
-                            </button>
-                            <button type="button" class="kt-btn kt-btn--accent kt-btn--xs">레이블<span class="kt-btn__svg kt-btn__svg--chevron-right"></span></button>
-                            <button type="button" class="kt-btn kt-btn--tertiary kt-btn--icon" aria-label="추가">
-                                <span class="kt-btn__svg kt-btn__svg--plus"></span>
-                            </button>
                             <button type="button" class="kt-btn kt-btn--secondary kt-btn--cta">Previous</button>
                             <button type="button" class="kt-btn kt-btn--primary kt-btn--cta">Next</button>
                         </div>
@@ -273,302 +306,6 @@
                             <span class="kt-badge kt-badge--line">기업회원</span>
                             <span class="kt-badge kt-badge--disabled">Disabled</span>
                         </div>
-                    </section>
-
-                    <section class="kt-component-section" id="tags">
-                        <h2>Tag</h2>
-                        <p class="kt-component-desc">상태성 정보는 Fill, Dot, Text 세 가지 타입으로 맞추고 상태 색상은 같은 토큰을 공유합니다.</p>
-                        <div class="kt-component-demo kt-component-demo--wide">
-                            <div class="kt-tag-matrix">
-                                <span></span>
-                                <span class="kt-tag-matrix__head">Fill</span>
-                                <span class="kt-tag-matrix__head">Dot</span>
-                                <span class="kt-tag-matrix__head">Text</span>
-
-                                <span class="kt-tag-matrix__label">Critical</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--critical">Critical</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--critical">Critical</span>
-                                <span class="kt-tag kt-tag--text kt-tag--critical">Critical</span>
-
-                                <span class="kt-tag-matrix__label">Info</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--info">Info</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--info">Info</span>
-                                <span class="kt-tag kt-tag--text kt-tag--info">Info</span>
-
-                                <span class="kt-tag-matrix__label">Warning</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--warning">Warning</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--warning">Warning</span>
-                                <span class="kt-tag kt-tag--text kt-tag--warning">Warning</span>
-
-                                <span class="kt-tag-matrix__label">Positive</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--positive">Positive</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--positive">Positive</span>
-                                <span class="kt-tag kt-tag--text kt-tag--positive">Positive</span>
-
-                                <span class="kt-tag-matrix__label">In progress</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--progress">In progress</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--progress">In progress</span>
-                                <span class="kt-tag kt-tag--text kt-tag--progress">In progress</span>
-
-                                <span class="kt-tag-matrix__label">Default</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--default">Default</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--default">Default</span>
-                                <span class="kt-tag kt-tag--text kt-tag--default">Default</span>
-
-                                <span class="kt-tag-matrix__label">Complete</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--complete">Complete</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--complete">Complete</span>
-                                <span class="kt-tag kt-tag--text kt-tag--complete">Complete</span>
-
-                                <span class="kt-tag-matrix__label">Disabled</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--disabled">Disabled</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--disabled">Disabled</span>
-                                <span class="kt-tag kt-tag--text kt-tag--disabled">Disabled</span>
-
-                                <span class="kt-tag-matrix__label">Custom A</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--custom-a">Custom A</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--custom-a">Custom A</span>
-                                <span class="kt-tag kt-tag--text kt-tag--custom-a">Custom A</span>
-
-                                <span class="kt-tag-matrix__label">Custom B</span>
-                                <span class="kt-tag kt-tag--fill kt-tag--custom-b">Custom B</span>
-                                <span class="kt-tag kt-tag--dot kt-tag--custom-b">Custom B</span>
-                                <span class="kt-tag kt-tag--text kt-tag--custom-b">Custom B</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="kt-component-section" id="icons">
-                        <h2>Icon</h2>
-                        <p class="kt-component-desc">현재 페이지에서 사용하는 SVG 파일 기준으로 정리했습니다.</p>
-                        <h3 class="kt-icon-gallery__title">Components</h3>
-                        <ul class="kt-icon-gallery">
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_search_figma_16.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_search_figma_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_delete.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_delete.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_check.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_check.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview kt-icon-gallery__preview--dark"><img src="/assets/img/components/ico_check_white.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_check_white.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_plus.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_plus.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_eye_off.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_eye_off.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_home.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_home.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_user.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_logout.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_download_16.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_download_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_attach_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_attach_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_calendar.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_calendar.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_left.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_left.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_right.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_right.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_down.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_down_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_down_16_gray.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_chevron_down_20.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_down_20.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_first.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_pagination_first.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_prev.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_pagination_prev.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_next.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_pagination_next.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/components/ico_pagination_last.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_pagination_last.svg</span>
-                            </li>
-                        </ul>
-                        <h3 class="kt-icon-gallery__title">Auth / Common</h3>
-                        <ul class="kt-icon-gallery">
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_close.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_close.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_done.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_done.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_entra.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_entra.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_id_find.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_id_find.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_kt_logo.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_kt_logo.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_mail.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_mail.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_otp.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_otp.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_find.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_auth_password_find.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_password_reset.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_auth_password_reset.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_shield.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_shield.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_signup.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_signup.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/auth/ico_auth_users.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_auth_users.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview kt-icon-gallery__preview--dark"><img src="/assets/img/auth/ico_auth_check_white.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_auth_check_white.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_login.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_login.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_logout.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_logout.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/common/ico_hd_sign.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_hd_sign.svg</span>
-                            </li>
-                        </ul>
-                        <h3 class="kt-icon-gallery__title">Contents / Main</h3>
-                        <ul class="kt-icon-gallery">
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alarm_empty.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_alarm_empty.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expired.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_alert_expired.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_expiring.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_alert_expiring.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_alert_pending.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_alert_pending.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_chevron_right.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_chevron_right.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_none_empty.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_none_empty.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_search_16.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_search_16.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/contents/ico_warning_empty.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_warning_empty.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_api.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_api.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_arrow.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_arrow.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_dev.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_dev.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_space.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_space.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_step_user.svg" alt="" /></span><span class="kt-icon-gallery__name">ico_step_user.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/main/ico_workspace_arrow.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_workspace_arrow.svg</span>
-                            </li>
-                        </ul>
-                        <h3 class="kt-icon-gallery__title">Support</h3>
-                        <ul class="kt-icon-gallery">
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_answer.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_answer.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_calendar.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_calendar.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_close.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_close.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_lock.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_lock.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_user.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_user.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_view.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_view.svg</span>
-                            </li>
-                            <li>
-                                <span class="kt-icon-gallery__preview"><img src="/assets/img/support/ico_inquiry_write.svg" alt="" /></span
-                                ><span class="kt-icon-gallery__name">ico_inquiry_write.svg</span>
-                            </li>
-                        </ul>
                     </section>
 
                     <section class="kt-component-section" id="inputs">
@@ -996,7 +733,7 @@ KT API Link 연동 설명을 입력합니다.
                     </section>
 
                     <section class="kt-component-section" id="checks">
-                        <h2>Checkbox / Radio / Switch</h2>
+                        <h2>Checkbox / Radio</h2>
                         <p class="kt-component-desc">Figma 서비스 선택 화면 기준으로 checkbox는 20px 원형 체크, radio는 20px 원형 dot 형태로 맞춥니다.</p>
                         <div class="kt-component-demo kt-component-demo--column">
                             <div class="kt-component-card kt-component-card--wide">
@@ -1033,229 +770,6 @@ KT API Link 연동 설명을 입력합니다.
                                     <label class="kt-radio"
                                         ><input type="radio" name="componentRadioSelectedDisabled" checked disabled class="is-selected-disabled" /><span>Selected Disabled</span></label
                                     >
-                                </div>
-                            </div>
-                            <div class="kt-component-card kt-component-card--wide">
-                                <h3>Switch</h3>
-                                <div class="kt-switch-state-row">
-                                    <label class="kt-switch"><input type="checkbox" /><span>Off</span></label>
-                                    <label class="kt-switch"><input type="checkbox" checked /><span>On</span></label>
-                                    <label class="kt-switch"><input type="checkbox" disabled /><span>Disabled</span></label>
-                                    <label class="kt-switch"><input type="checkbox" checked disabled /><span>On Disabled</span></label>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="kt-component-section" id="prompt">
-                        <h2>Dropdown Prompt</h2>
-                        <p class="kt-component-desc">Figma의 API 검색 prompt와 KT Service 선택 prompt를 별도 컴포넌트로 분리했습니다.</p>
-                        <div class="kt-component-demo kt-component-demo--wide">
-                            <div class="kt-workspace-filter">
-                                <p>워크스페이스 이름, ID, 설명</p>
-                                <div class="kt-search">
-                                    <input type="text" id="workspaceNameSearch" class="kt-input" placeholder="검색어 입력" />
-                                    <button
-                                        type="button"
-                                        class="kt-input-field__clear kt-search__clear"
-                                        data-clear_input
-                                        aria-controls="workspaceNameSearch"
-                                        aria-label="검색어 삭제"
-                                        hidden
-                                        aria-hidden="true"
-                                        tabindex="-1"
-                                    >
-                                        <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                    </button>
-                                    <button type="button" class="kt-search__submit">
-                                        <span class="blind">검색</span>
-                                    </button>
-                                </div>
-                                <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Status</button>
-                                    <div data-dropdown_menu role="listbox">
-                                        <ol>
-                                            <li><button type="button" aria-current="true">All Status</button></li>
-                                            <li><button type="button">Active</button></li>
-                                            <li><button type="button">Inactive</button></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Type</button>
-                                    <div data-dropdown_menu role="listbox">
-                                        <ol>
-                                            <li><button type="button" aria-current="true">All Type</button></li>
-                                            <li><button type="button">LDAP</button></li>
-                                            <li><button type="button">API</button></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div data-dropdown_wrap class="kt-dropdown kt-dropdown--compact selectbox">
-                                    <button type="button" data-dropdown_trg role="combobox" aria-haspopup="true" aria-selected="false" aria-expanded="false">All Issue</button>
-                                    <div data-dropdown_menu role="listbox">
-                                        <ol>
-                                            <li><button type="button" aria-current="true">All Issue</button></li>
-                                            <li><button type="button">None</button></li>
-                                            <li><button type="button">Pending</button></li>
-                                        </ol>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="kt-workspace-filter kt-workspace-filter--single">
-                                <label for="apiPromptSearch">API 검색어(_조건)</label>
-                                <div class="kt-prompt kt-prompt--wide" data-prompt>
-                                    <div class="kt-prompt__field">
-                                        <input
-                                            type="text"
-                                            id="apiPromptSearch"
-                                            class="kt-input"
-                                            data-prompt_trg
-                                            role="combobox"
-                                            aria-expanded="false"
-                                            aria-controls="apiPromptMenu"
-                                            autocomplete="off"
-                                        />
-                                        <div class="kt-prompt__actions">
-                                            <button
-                                                type="button"
-                                                class="kt-input-field__clear kt-icon-btn"
-                                                data-clear_input
-                                                aria-controls="apiPromptSearch"
-                                                hidden
-                                                aria-hidden="true"
-                                                tabindex="-1"
-                                                aria-label="검색어 삭제"
-                                            >
-                                                <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                            </button>
-                                            <button type="button" class="kt-icon-btn" data-prompt_trg aria-controls="apiPromptMenu" aria-expanded="false" aria-label="검색">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="kt-prompt__menu" id="apiPromptMenu" data-prompt_menu role="listbox">
-                                        <ul class="kt-prompt__api-list kt-scrollbar">
-                                            <li role="option" tabindex="0"><strong>OIF_113</strong><span>쿠폰발급</span></li>
-                                            <li role="option" tabindex="0"><strong>OIF_1130</strong><span>쿠폰상태조회</span></li>
-                                            <li role="option" tabindex="0"><strong>OIF_1131</strong><span>쿠폰목록조회</span></li>
-                                            <li role="option" tabindex="0"><strong>OIF_1132</strong><span>쿠폰 패키지 조회</span></li>
-                                            <li role="option" tabindex="0"><strong>OIF_1133</strong><span>쿠폰 사용 이력 조회</span></li>
-                                            <li role="option" tabindex="0"><strong>OIF_1000</strong><span>쿠폰 6개 이상 테스트</span></li>
-                                        </ul>
-                                        <p class="kt-prompt__foot" data-prompt_foot hidden aria-hidden="true">검색어를 더 입력해 결과를 줄여보세요 (5개 더 있음)</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kt-component-demo kt-component-demo--wide kt-component-demo--service">
-                            <div class="kt-stepper" aria-label="워크스페이스 생성 단계">
-                                <span class="kt-stepper__item is-done"><i>완료</i>기본정보</span>
-                                <span class="kt-stepper__item is-active"><i>01</i>KT Service 선택</span>
-                                <span class="kt-stepper__item"><i>02</i>멤버 초대</span>
-                            </div>
-                            <div class="kt-prompt" data-prompt>
-                                <label class="kt-field">
-                                    <span class="kt-field__label">KTService 검색 <em class="text-red">*</em></span>
-                                    <span class="kt-prompt__field">
-                                        <input
-                                            type="text"
-                                            id="servicePromptSearch"
-                                            class="kt-input"
-                                            data-prompt_trg
-                                            role="combobox"
-                                            aria-expanded="false"
-                                            aria-controls="servicePromptMenu"
-                                            autocomplete="off"
-                                        />
-                                        <span class="kt-prompt__actions">
-                                            <button
-                                                type="button"
-                                                class="kt-input-field__clear kt-icon-btn"
-                                                data-clear_input
-                                                aria-controls="servicePromptSearch"
-                                                hidden
-                                                aria-hidden="true"
-                                                tabindex="-1"
-                                                aria-label="검색어 삭제"
-                                            >
-                                                <img src="/assets/img/components/ico_delete.svg" alt="" />
-                                            </button>
-                                            <button type="button" class="kt-icon-btn" data-prompt_trg aria-controls="servicePromptMenu" aria-expanded="false" aria-label="검색">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                            </button>
-                                        </span>
-                                    </span>
-                                </label>
-                                <div class="kt-prompt__menu" id="servicePromptMenu" data-prompt_menu role="listbox">
-                                    <ul class="kt-prompt__list kt-scrollbar">
-                                        <li class="is-selected" role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT멤버십</strong><span>BG007301</span><span class="kt-badge kt-badge--danger">PO</span><span>한수지</span><span>suji.han@kt.com</span
-                                                ><img src="/assets/img/components/ico_check.svg" alt="" />
-                                            </span>
-                                        </li>
-                                        <li role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>쿠폰 플랫폼</strong><span>KT_COUPON_002</span><span class="kt-badge kt-badge--danger">PO</span><span>박상현</span><span>park.sh@kt.com</span
-                                                ><span></span>
-                                            </span>
-                                        </li>
-                                        <li role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
-                                                ><span></span>
-                                            </span>
-                                        </li>
-                                        <li role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
-                                                ><span></span>
-                                            </span>
-                                        </li>
-                                        <li role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
-                                                ><span></span>
-                                            </span>
-                                        </li>
-                                        <li role="option" tabindex="0">
-                                            <span class="kt-prompt__row">
-                                                <img src="/assets/img/components/ico_search.svg" alt="" />
-                                                <strong>KT 메시지 서비스</strong><span>KT_SMS_003</span><span class="kt-badge kt-badge--danger">PO</span><span>최지훈</span><span>choi.jh@kt.com</span
-                                                ><span></span>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="kt-service-card">
-                                    <dl class="kt-service-card__grid">
-                                        <div>
-                                            <dt>KT Service명</dt>
-                                            <dd>KT멤버십</dd>
-                                        </div>
-                                        <div>
-                                            <dt>KT Service Code</dt>
-                                            <dd>BG007301</dd>
-                                        </div>
-                                        <div>
-                                            <dt>PO</dt>
-                                            <dd>한수지</dd>
-                                        </div>
-                                        <div>
-                                            <dt>PO 이메일</dt>
-                                            <dd>suji.han@kt.com</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="kt-component-demo">
-                                    <button type="button" class="kt-btn kt-btn--secondary kt-btn--lg">Previous</button>
-                                    <button type="button" class="kt-btn kt-btn--primary kt-btn--lg">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -1522,98 +1036,6 @@ KT API Link 연동 설명을 입력합니다.
                                 </div>
                             </div>
                         </div>
-                        <div class="kt-component-demo kt-component-demo--wide">
-                            <div class="kt-table kt-table--figma kt-scrollbar" role="table">
-                                <ul role="rowgroup">
-                                    <li class="kt-table__row" role="row">
-                                        <div role="columnheader" class="left">Workspace</div>
-                                        <div role="columnheader" class="left">ID</div>
-                                        <div role="columnheader" class="left">Status</div>
-                                        <div role="columnheader" class="center">Type</div>
-                                        <div role="columnheader" class="left">Issue</div>
-                                        <div role="columnheader" class="center">Owner</div>
-                                        <div role="columnheader" class="left">Description</div>
-                                    </li>
-                                </ul>
-                                <ul role="rowgroup">
-                                    <li class="kt-table__row" role="row">
-                                        <div role="cell" class="left">KT멤버십</div>
-                                        <div role="cell" class="left">BG007301</div>
-                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--dev">DEV</span></div>
-                                        <div role="cell" class="center">LDAP</div>
-                                        <div role="cell" class="left">None</div>
-                                        <div role="cell" class="center">한수지</div>
-                                        <div role="cell" class="left">멤버십 API 연동</div>
-                                    </li>
-                                    <li class="kt-table__row" role="row">
-                                        <div role="cell" class="left">쿠폰 플랫폼</div>
-                                        <div role="cell" class="left">KT_COUPON_002</div>
-                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--prod">PROD</span></div>
-                                        <div role="cell" class="center">API</div>
-                                        <div role="cell" class="left">Pending</div>
-                                        <div role="cell" class="center">박상현</div>
-                                        <div role="cell" class="left">쿠폰 발급 및 조회</div>
-                                    </li>
-                                    <li class="kt-table__row" role="row">
-                                        <div role="cell" class="left">KT 메시지 서비스</div>
-                                        <div role="cell" class="left">KT_SMS_003</div>
-                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--draft">DRAFT</span></div>
-                                        <div role="cell" class="center">API</div>
-                                        <div role="cell" class="left">None</div>
-                                        <div role="cell" class="center">최지훈</div>
-                                        <div role="cell" class="left">SMS 발송 연동</div>
-                                    </li>
-                                    <li class="kt-table__row" role="row">
-                                        <div role="cell" class="left">정산 서비스</div>
-                                        <div role="cell" class="left">KT_PAY_004</div>
-                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--dev">DEV</span></div>
-                                        <div role="cell" class="center">OAuth</div>
-                                        <div role="cell" class="left">None</div>
-                                        <div role="cell" class="center">김민정</div>
-                                        <div role="cell" class="left">정산 데이터 연계</div>
-                                    </li>
-                                    <li class="kt-table__row" role="row">
-                                        <div role="cell" class="left">고객 인증</div>
-                                        <div role="cell" class="left">KT_AUTH_005</div>
-                                        <div role="cell" class="center"><span class="kt-works-status kt-works-status--prod">PROD</span></div>
-                                        <div role="cell" class="center">LDAP</div>
-                                        <div role="cell" class="left">Expired</div>
-                                        <div role="cell" class="center">이준호</div>
-                                        <div role="cell" class="left">인증 토큰 관리</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <nav class="kt-pagination" aria-label="목록 페이지">
-                                <button type="button" aria-label="이전">
-                                    <img src="/assets/img/components/ico_chevron_left.svg" alt="" />
-                                </button>
-                                <a href="javascript:;" aria-current="true">1</a>
-                                <a href="javascript:;">2</a>
-                                <a href="javascript:;">3</a>
-                                <button type="button" aria-label="다음">
-                                    <img src="/assets/img/components/ico_chevron_right.svg" alt="" />
-                                </button>
-                            </nav>
-                            <div class="kt-figma-controls">
-                                <div>
-                                    <strong>Indicator</strong>
-                                    <span class="kt-indicator" aria-label="carousel indicator">
-                                        <i class="kt-indicator__dot is-active"></i>
-                                        <i class="kt-indicator__dot"></i>
-                                        <i class="kt-indicator__dot"></i>
-                                        <i class="kt-indicator__dot"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <strong>Paging Pill</strong>
-                                    <span class="kt-page-pill">1 / 6</span>
-                                    <button type="button" class="kt-page-pill kt-page-pill--button" aria-label="다음 배너">
-                                        <span>1 / 6</span>
-                                        <img src="/assets/img/components/ico_chevron_right.svg" alt="" />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </section>
 
                     <section class="kt-component-section" id="ldap-workspace" data-ldap-components>
@@ -1713,10 +1135,6 @@ KT API Link 연동 설명을 입력합니다.
                                 <!--#include file="./include/_ldap_section_basic.html"-->
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
-                                <h3>API Call Statistics</h3>
-                                <!--#include file="./include/_ldap_section_call_statistics.html"-->
-                            </div>
-                            <div class="kt-component-card kt-component-card--wide">
                                 <h3>Members - Empty</h3>
                                 <!--#include file="./include/_ldap_section_members.html"-->
                             </div>
@@ -1731,14 +1149,6 @@ KT API Link 연동 설명을 입력합니다.
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>구독 API - Filled</h3>
                                 <!--#include file="./include/_ldap_section_api_filled.html"-->
-                            </div>
-                            <div class="kt-component-card kt-component-card--wide">
-                                <h3>IP Whitelist - Empty</h3>
-                                <!--#include file="./include/_ldap_section_ip_empty.html"-->
-                            </div>
-                            <div class="kt-component-card kt-component-card--wide">
-                                <h3>IP Whitelist - Filled</h3>
-                                <!--#include file="./include/_ldap_section_ip_filled.html"-->
                             </div>
                             <div class="kt-component-card kt-component-card--wide">
                                 <h3>API Keys - Empty (Draft)</h3>
@@ -2013,52 +1423,6 @@ KT API Link 연동 설명을 입력합니다.
                             </div>
                         </div>
                     </section>
-
-                    <section class="kt-component-section" id="chart">
-                        <h2>Chart</h2>
-                        <p class="kt-component-desc">차트는 무료 사용 가능한 Apache-2.0 라이선스 ECharts를 기준 후보로 둡니다.</p>
-                        <div class="kt-license-note">
-                            <span class="kt-badge kt-badge--line">Apache-2.0</span>
-                            <span>jQuery, jQuery UI, Swiper는 MIT 계열, ECharts는 Apache-2.0 라이선스로 사용할 수 있습니다.</span>
-                        </div>
-                        <div class="kt-component-demo kt-component-demo--wide">
-                            <article class="kt-chart-card">
-                                <div>
-                                    <div class="kt-chart-card__head">
-                                        <h3>API 호출 추이</h3>
-                                        <span class="kt-badge kt-badge--blue">ECharts</span>
-                                    </div>
-                                    <div class="kt-chart-canvas">
-                                        <div id="componentApiChart" class="kt-chart-echarts" role="img" aria-label="API 호출 추이 차트"></div>
-                                        <div class="kt-chart-fallback" aria-hidden="true">
-                                            <span style="height: 48%"></span><span style="height: 66%"></span><span style="height: 54%"></span><span style="height: 82%"></span
-                                            ><span style="height: 72%"></span><span style="height: 92%"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="kt-chart-legend">
-                                    <li>
-                                        <span><i></i>성공 호출</span><strong>12,530</strong>
-                                    </li>
-                                    <li>
-                                        <span><i style="background: var(--kt-green)"></i>오류 호출</span><strong>317</strong>
-                                    </li>
-                                    <li>
-                                        <span><i style="background: var(--kt-red)"></i>장애</span><strong>2</strong>
-                                    </li>
-                                </ul>
-                            </article>
-                        </div>
-                    </section>
-
-                    <section class="kt-component-section" id="alerts">
-                        <h2>Alert / Notice</h2>
-                        <p class="kt-component-desc">페이지 안 안내문과 에러성 안내문은 alert 패턴으로 통일합니다.</p>
-                        <div class="kt-component-demo kt-component-demo--column">
-                            <div class="kt-alert">승인 요청이 정상적으로 접수되었습니다.</div>
-                            <div class="kt-alert kt-alert--danger">필수 항목을 확인한 뒤 다시 시도해 주세요.</div>
-                        </div>
-                    </section>
                 </div>
             </main>
             <!--#include file="./include/_footer.html"-->
@@ -2069,78 +1433,5 @@ KT API Link 연동 설명을 입력합니다.
         </div>
 
         <script src="/assets/js/ldap-workspace.js"></script>
-        <script>
-            // document.addEventListener('DOMContentLoaded', () => {
-            //     const chartEl = document.getElementById('componentApiChart');
-            //     const fallback = document.querySelector('.kt-chart-fallback');
-
-            //     if (!chartEl || !window.echarts) {
-            //         return;
-            //     }
-
-            //     fallback.style.display = 'none';
-
-            //     const apiChart = echarts.init(chartEl, null, { renderer: 'svg' });
-            //     apiChart.setOption({
-            //         grid: {
-            //             top: 18,
-            //             right: 14,
-            //             bottom: 28,
-            //             left: 40,
-            //         },
-            //         tooltip: {
-            //             trigger: 'axis',
-            //         },
-            //         xAxis: {
-            //             type: 'category',
-            //             boundaryGap: false,
-            //             data: ['월', '화', '수', '목', '금', '토'],
-            //             axisLine: { lineStyle: { color: '#d5d8dd' } },
-            //             axisTick: { show: false },
-            //             axisLabel: { color: '#6f737b' },
-            //         },
-            //         yAxis: {
-            //             type: 'value',
-            //             min: 0,
-            //             splitNumber: 3,
-            //             axisLabel: { color: '#6f737b' },
-            //             splitLine: { lineStyle: { color: '#e9eaee' } },
-            //         },
-            //         series: [
-            //             {
-            //                 name: 'API 호출',
-            //                 type: 'line',
-            //                 smooth: true,
-            //                 symbolSize: 7,
-            //                 data: [640, 860, 710, 1120, 940, 1280],
-            //                 lineStyle: {
-            //                     width: 3,
-            //                     color: '#148aff',
-            //                 },
-            //                 itemStyle: {
-            //                     color: '#148aff',
-            //                 },
-            //                 areaStyle: {
-            //                     color: {
-            //                         type: 'linear',
-            //                         x: 0,
-            //                         y: 0,
-            //                         x2: 0,
-            //                         y2: 1,
-            //                         colorStops: [
-            //                             { offset: 0, color: 'rgba(20, 138, 255, 0.22)' },
-            //                             { offset: 1, color: 'rgba(20, 138, 255, 0.02)' },
-            //                         ],
-            //                     },
-            //                 },
-            //             },
-            //         ],
-            //     });
-
-            //     window.addEventListener('resize', () => {
-            //         apiChart.resize();
-            //     });
-            // });
-        </script>
     </body>
 </html>

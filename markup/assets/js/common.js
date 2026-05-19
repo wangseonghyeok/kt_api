@@ -1,4 +1,4 @@
-let scrollY;
+﻿let scrollY;
 let wrap;
 let scrollP;
 
@@ -433,10 +433,22 @@ const ui = {
     },
     // 페이지네이션 현재 페이지 표시
     pagination: () => {
-        $('[data-pagination] ul > li > a').on('click', function () {
-            $('[data-pagination] ul > li > a').removeAttr('aria-current');
-            $(this).attr('aria-current', 'true');
-        });
+        const pageLinkSelector = [
+            '[data-pagination] ul > li > a',
+            '.kt-pagination > a:not(.kt-pagination__nav)',
+        ].join(', ');
+
+        $(document)
+            .off('click.pagination', pageLinkSelector)
+            .on('click.pagination', pageLinkSelector, function () {
+                const $pagination = $(this).closest('[data-pagination], .kt-pagination');
+                const $pageLinks = $pagination.hasClass('kt-pagination')
+                    ? $pagination.children('a:not(.kt-pagination__nav)')
+                    : $pagination.find('ul > li > a');
+
+                $pageLinks.removeAttr('aria-current');
+                $(this).attr('aria-current', 'true');
+            });
     },
     popupContent: root => {
         if (!root) {
