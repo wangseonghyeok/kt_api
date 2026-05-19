@@ -18,6 +18,7 @@
     };
     let apiTooltipId = 0;
 
+    // API 툴팁 문구/위치 처리
     const getApiTooltipText = apiName => apiTooltipTextMap[apiName] || `${apiName} API 상세 정보를 확인합니다.`;
 
     const createApiTooltip = text => {
@@ -100,6 +101,7 @@
         }
     };
 
+    // 저장/추가 완료 토스트 표시
     const showToast = (toast, message, duration = 1800) => {
         if (!toast) {
             return;
@@ -129,6 +131,7 @@
         );
     };
 
+    // 민감 API 개수 확인
     const getApiApprovalSensitiveCount = button => {
         const text = button?.querySelector('strong')?.textContent || button?.textContent || '';
         const match = text.match(/민감\s*(\d+)/);
@@ -187,6 +190,7 @@
 
     const isLdapSearchOptionDisabled = option => option.hasAttribute('data-prompt-disabled') || option.getAttribute('aria-disabled') === 'true';
 
+    // LDAP 멤버/API 후보 필터링
     const filterLdapSearch = search => {
         const input = search.querySelector('input');
         const count = search.querySelector('[data-ldap-search-count]');
@@ -256,6 +260,7 @@
         option.scrollIntoView({ block: 'nearest' });
     };
 
+    // 검색 input/clear/키보드 이벤트 연결
     const setupLdapSearch = search => {
         const input = search.querySelector('input');
         const clear = search.querySelector('[data-ldap-search-clear]');
@@ -365,6 +370,7 @@
         syncLdapSearchClear(search);
     };
 
+    // 기본 정보 편집값 초기화
     const resetBasicEditFields = section => {
         section.querySelectorAll('[data-basic-field]').forEach(control => {
             const valueCell = section.querySelector(`[data-basic-value="${control.dataset.basicField}"]`);
@@ -381,6 +387,7 @@
         });
     };
 
+    // 기본 정보 저장값 반영
     const saveBasicInfo = section => {
         const values = {};
 
@@ -406,6 +413,7 @@
         }
     };
 
+    // 섹션 편집 모드 전환
     const setEditMode = (section, isEditing) => {
         const button = section.querySelector('.kt-ws-section__head .kt-btn--popup');
         const hasEditActions = Boolean(section.querySelector('[data-edit-cancel], [data-edit-save]'));
@@ -428,6 +436,7 @@
         }
     };
 
+    // Members 개수/빈 상태 동기화
     const syncMemberSection = section => {
         const rows = Array.from(section.querySelectorAll('.kt-data-table--members-edit [data-member-row]'));
         const total = rows.length;
@@ -473,6 +482,7 @@
         chip: option.dataset.memberChip || '',
     });
 
+    // Members 테이블 셀/행 생성
     const createCell = (text, isCenter = true) => {
         const cell = document.createElement('td');
 
@@ -619,6 +629,7 @@
         }
     };
 
+    // 멤버 등록 후 검색창 초기화
     const clearMemberSearch = section => {
         const input = section.querySelector('[data-ldap-member-search]');
         const search = input?.closest('[data-ldap-search]');
@@ -634,6 +645,7 @@
         input.focus({ preventScroll: true });
     };
 
+    // 검색 후보를 Members 테이블에 추가
     const registerMember = option => {
         const section = option.closest('.kt-ldap-section-members');
         const editTableBody = section?.querySelector('.kt-data-table--members-edit tbody');
@@ -663,6 +675,7 @@
             return isSelected && !option.hidden && !option.closest('li')?.hidden && !option.hasAttribute('data-prompt-disabled');
         });
 
+    // Members 편집 테이블 검색
     const filterMemberRows = input => {
         const template = input.closest('.kt-edit-template');
         const section = input.closest('.kt-ldap-section-members');
@@ -736,6 +749,7 @@
         }
     };
 
+    // API 편집 테이블 검색
     const filterApiRows = input => {
         const template = input.closest('.kt-edit-template');
 
@@ -785,7 +799,7 @@
                 return { name, sensitivity: sensitivity || '' };
             });
 
-    // API 검색 후보의 data-api-* 속성을 화면용 객체로 변환합니다. 서버 연동 시에도 HTML 속성명만 유지하면 아래 UI 생성 로직을 그대로 재사용할 수 있습니다.
+    // API 후보 data 속성을 화면용 객체로 변환
     const getApiData = option => ({
         id: option.dataset.apiId || '',
         code: option.dataset.apiCode || option.querySelector('strong')?.textContent.trim() || '',
@@ -930,6 +944,7 @@
         });
     };
 
+    // 선택 API 목록/빈 상태/추가 버튼 동기화
     const syncSelectedApiSection = section => {
         syncAddedApiSelections(section);
 
@@ -1047,6 +1062,7 @@
 
     const getEditApiId = value => (value || '').replace(/^edit-/, '');
 
+    // API 편집 테이블 동기화
     const syncApiEditTable = section => {
         const body = getApiEditTableBody(section);
         const addedIds = new Set(getAddedApiOptions(section).map(option => option.dataset.apiId));
@@ -1096,6 +1112,7 @@
         }
     };
 
+    // 선택 API를 편집 테이블에 추가
     const addSelectedApisToList = button => {
         const section = button.closest('.kt-ldap-section-api');
         const selectedOptions = section ? getSelectedApiOptions(section) : [];
@@ -1365,6 +1382,7 @@
         return row;
     };
 
+    // API 읽기 테이블에 편집 결과 반영
     const syncApiReadTable = section => {
         const body = getApiReadTableBody(section);
         const selectedOptions = getAddedApiOptions(section);
@@ -1425,7 +1443,7 @@
         승인: 1,
         반려: 2,
     };
-    // 임시: 기획 확정 전 행 추가 시 상태 배지를 대기 -> 승인 -> 반려 순서로 순환 노출합니다.
+    // IP 편집 데모 상태 순환
     const temporaryIpStatusCycle = ['대기', '승인', '반려'];
     const getTemporaryIpStatus = editor => temporaryIpStatusCycle[editor.querySelectorAll('[data-ip-editor-item]').length % temporaryIpStatusCycle.length];
 
@@ -1448,7 +1466,7 @@
         const tag = document.createElement('span');
         const paragraph = document.createElement('p');
 
-        // 임시: 반려 시 편집완료 디자인에서 반려 사유가 포함된 반려 디자인으로도 전환됩니다.
+        // 반려 사유 UI 전환
         reason.className = 'kt-reject-reason kt-reject-reason--ip';
         tag.className = 'kt-reject-reason__tag';
         tag.textContent = '반려 사유';
@@ -1736,7 +1754,7 @@
         return true;
     };
 
-    // IP 편집 모드의 입력 목록을 읽기 카드로 복사합니다. 현재는 화면 확인용이며, 저장 API 연결 시 이 함수 호출 지점에 서버 저장을 붙이면 됩니다.
+    // IP 편집 목록을 읽기 카드에 반영
     const syncIpWhitelist = section => {
         section.querySelectorAll('.kt-edit-template .kt-ldap-ip-editor').forEach(editor => {
             const env = editor.dataset.ipEnv || editor.closest('[data-ip-env]')?.dataset.ipEnv;
@@ -1787,6 +1805,7 @@
         });
     };
 
+    // 초기 화면 상태 세팅
     workspaceRoot.querySelectorAll('[data-ldap-search]').forEach(setupLdapSearch);
     workspaceRoot.querySelectorAll('[data-ldap-member-search]').forEach(filterMemberRows);
     workspaceRoot.querySelectorAll('.kt-ldap-section-members').forEach(syncMemberSection);
@@ -1801,6 +1820,7 @@
         decorateAdminIpActions(section);
     });
 
+    // 입력 이벤트 위임
     workspaceRoot.addEventListener('input', e => {
         const memberInput = e.target.closest('[data-ldap-member-search]');
         const apiInput = e.target.closest('[data-ldap-api-search]');
@@ -1826,6 +1846,7 @@
         }
     });
 
+    // API 툴팁 hover/focus 이벤트
     workspaceRoot.addEventListener('mouseover', e => {
         const apiNameLink = e.target.closest('.kt-api-name .is-link');
 
@@ -1858,6 +1879,7 @@
         }
     });
 
+    // 키보드 멤버 후보 선택
     workspaceRoot.addEventListener('keydown', e => {
         const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberInput = e.target.closest('[data-ldap-member-search]');
@@ -1876,6 +1898,7 @@
         }
     });
 
+    // 클릭 이벤트 위임
     workspaceRoot.addEventListener('click', e => {
         const actionButton = e.target.closest('[data-edit-cancel], [data-edit-save]');
         const accordionButton = e.target.closest('.kt-row-toggle[data-api-accordion]');
@@ -2120,6 +2143,7 @@
         }
     });
 
+    // 외부 클릭 시 검색 메뉴 닫기
     document.addEventListener('click', event => {
         workspaceRoot.querySelectorAll('[data-ldap-search].is-open').forEach(search => {
             if (!search.contains(event.target)) {
