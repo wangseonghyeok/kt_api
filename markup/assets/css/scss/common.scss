@@ -27,15 +27,17 @@
 // html.is-locked,
 html {
     letter-spacing: -0.4px;
-    &.is-locked {
-        body {
-            height: calc(var(--window-inner-height) - 1px);
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-        #wrap {
-            @include fixed();
-        }
+}
+
+html.is-locked {
+    body {
+        height: calc(var(--window-inner-height) - 1px);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    #wrap {
+        @include fixed();
     }
 }
 #dim {
@@ -59,11 +61,12 @@ html {
     &.pc-only {
         min-width: 1480px;
         width: 100%;
-        #header {
-            min-width: 1480px;
-            width: 100%;
-            // position: absolute;
-        }
+    }
+
+    &.pc-only #header {
+        min-width: 1480px;
+        width: 100%;
+        // position: absolute;
     }
 }
 #contents {
@@ -249,10 +252,8 @@ html {
             display: block;
         }
 
-        .gnb {
-            .depth2 {
-                display: block;
-            }
+        .gnb .depth2 {
+            display: block;
         }
     }
     > .btn-home {
@@ -288,29 +289,36 @@ html {
     }
     .l-right {
         @include absolute(top 30px right 24px);
+
         .user-menu {
             @include flex(center, null);
             margin-top: 0;
+
             &--before {
                 @include flex(null, null);
             }
+
             &--after {
                 display: none;
             }
+
             > li {
                 & + li {
                     margin-left: 24px;
                 }
+
                 > a {
                     @include flex(center, center);
                     gap: 8px;
                     min-height: 21px;
                 }
+
                 img {
                     width: 16px;
                     height: 16px;
                     flex: 0 0 auto;
                 }
+
                 span {
                     display: block;
                     width: 50px;
@@ -323,6 +331,7 @@ html {
             }
         }
     }
+
     &.__logged-in {
         .user-menu--before {
             display: none;

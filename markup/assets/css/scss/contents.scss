@@ -3030,10 +3030,7 @@
     min-height: 100vh;
 }
 
-.kt-ldap-stage--dev {
-    min-height: 100vh;
-}
-
+.kt-ldap-stage--dev,
 .kt-ldap-stage--prod,
 .kt-ldap-stage--expired {
     min-height: 100vh;
@@ -3110,10 +3107,7 @@
     }
 }
 
-.kt-ldap-toast-api {
-    bottom: 100px;
-}
-
+.kt-ldap-toast-api,
 .kt-ldap-toast-api-edit {
     bottom: 100px;
 }
@@ -3229,8 +3223,6 @@
 
         .kt-newwork-search-menu {
             display: flex;
-            .kt-newwork-search-menu__head {
-            }
         }
     }
 
@@ -3413,7 +3405,8 @@
     }
 }
 
-.kt-ldap-newwork-search[data-ldap-search-type='member'] {
+.kt-ldap-newwork-search[data-ldap-search-type='member'],
+.kt-ldap-newwork-search--api {
     .kt-newwork-search__field {
         height: 40px;
         padding: 4px 4px 4px 12px;
@@ -3436,24 +3429,7 @@
 }
 
 .kt-ldap-newwork-search--api {
-    .kt-newwork-search__field {
-        height: 40px;
-        padding: 4px 4px 4px 12px;
-    }
-
-    .kt-newwork-search__clear,
-    .kt-newwork-search__submit {
-        width: 32px;
-        height: 32px;
-        flex-basis: 32px;
-
-        &::before {
-            margin: 6px;
-        }
-    }
-
     .kt-newwork-search-menu {
-        top: 48px;
         padding: 8px;
     }
 

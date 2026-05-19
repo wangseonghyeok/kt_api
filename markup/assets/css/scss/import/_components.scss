@@ -2309,11 +2309,12 @@
 
     &--dot::before {
         content: '';
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background: var(--kt-tag-dot);
         flex: 0 0 auto;
+        margin-bottom: 2px;
     }
 
     &--text {
@@ -7892,9 +7893,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop-stage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
     width: 100%;
     min-width: 480px;
     min-height: 100vh;
@@ -7969,10 +7968,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop__header {
-    display: flex;
+    @include flex(flex-start, space-between);
     flex: 0 0 64px;
-    align-items: flex-start;
-    justify-content: space-between;
     gap: 8px;
     height: 64px;
     padding: 32px 16px 0 24px;
@@ -7992,10 +7989,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop__close {
-    display: flex;
+    @include flex(center, center);
     flex: 0 0 32px;
-    align-items: center;
-    justify-content: center;
     width: 32px;
     height: 32px;
     padding: 0;
@@ -8062,22 +8057,10 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     padding-top: 24px;
 }
 
-.kt-work-pop--h660 .kt-work-pop__footer {
-    padding-top: 24px;
-}
-
-.kt-work-pop--h780 .kt-work-pop__footer {
-    padding-top: 24px;
-}
-
-.kt-work-pop--h820 .kt-work-pop__footer {
-    padding-top: 24px;
-}
-
-.kt-work-pop--h913 .kt-work-pop__footer {
-    padding-top: 24px;
-}
-
+.kt-work-pop--h660 .kt-work-pop__footer,
+.kt-work-pop--h780 .kt-work-pop__footer,
+.kt-work-pop--h820 .kt-work-pop__footer,
+.kt-work-pop--h913 .kt-work-pop__footer,
 .kt-work-pop--h575 .kt-work-pop__footer {
     padding-top: 24px;
 }
@@ -8087,9 +8070,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex(center, center);
     width: 180px;
     min-width: 180px;
     min-height: 56px;
@@ -8576,21 +8557,16 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop-filter__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     width: 100%;
 }
 
 .kt-work-pop-filter__date {
-    display: flex;
-    align-items: center;
+    @include flex(center, null);
 }
 
 .kt-work-pop-filter__datebox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     width: 130px;
     height: 32px;
     padding: 0 12px;
@@ -8768,9 +8744,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop-filter__dash {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
     width: 22px;
     height: 30px;
     color: #000;
@@ -8780,9 +8754,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 
 .kt-work-pop-filter__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex(center, center);
     min-width: 48px;
     min-height: 32px;
     padding: 4px 12px;
