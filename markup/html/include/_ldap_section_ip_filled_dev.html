@@ -1,8 +1,8 @@
 <!--
-    개발 전달: LDAP 운영/만료 화면의 IP Whitelist 등록 상태 샘플입니다.
-    DEV 환경은 등록 IP만 표시하고, PRD 환경은 승인 상태 배지를 함께 표시합니다.
+    개발 전달: LDAP DEV 화면의 IP Whitelist 등록 상태 샘플입니다.
+    DEV 환경은 등록 IP만 표시하고, PRD 환경은 승인 대기/완료 상태를 함께 표시합니다.
 -->
-<section class="kt-ws-section kt-ldap-section-ip-filled">
+<section class="kt-ws-section kt-ldap-section-ip-filled kt-ldap-section-ip-filled--dev">
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">IP Whitelist</h2>
         <div class="kt-ws-section__actions">
@@ -15,16 +15,6 @@
     <div class="kt-panel-grid">
         <div class="kt-env-card" data-ip-env="dev">
             <div class="kt-env-card__title">DEV 환경</div>
-            <div class="kt-env-card__empty" hidden>
-                <div class="kt-env-card__empty-message">
-                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
-                    <p>등록된 IP가 없습니다.</p>
-                </div>
-                <button type="button" class="kt-btn kt-btn--detail-line kt-ip-empty-add" data-ip-empty-add>
-                    <span class="kt-btn__icon kt-btn__icon--plus" aria-hidden="true"></span>
-                    <span>Add API</span>
-                </button>
-            </div>
             <div class="kt-env-card__body">
                 <ul class="kt-env-card__list">
                     <li class="kt-env-card__item kt-env-card__item--plain" data-ip-value="211.45.67.89"><span>211.45.67.89</span></li>
@@ -34,25 +24,18 @@
         </div>
         <div class="kt-env-card" data-ip-env="prd">
             <div class="kt-env-card__title">PRD 환경</div>
-            <div class="kt-env-card__empty" hidden>
-                <div class="kt-env-card__empty-message">
-                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_none_empty.svg" alt="" aria-hidden="true" />
-                    <p>등록된 IP가 없습니다.</p>
-                </div>
-                <button type="button" class="kt-btn kt-btn--detail-line kt-ip-empty-add" data-ip-empty-add>
-                    <span class="kt-btn__icon kt-btn__icon--plus" aria-hidden="true"></span>
-                    <span>Add API</span>
-                </button>
-            </div>
             <div class="kt-env-card__body">
                 <ul class="kt-env-card__list">
-                    <li class="kt-env-card__item" data-ip-value="211.45.67.89" data-ip-status="승인"><span>211.45.67.89</span><span class="kt-badge kt-badge--green">승인</span></li>
-                    <li class="kt-env-card__item" data-ip-value="211.45.67.90" data-ip-status="승인"><span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span></li>
+                    <li class="kt-env-card__item" data-ip-value="211.45.67.89" data-ip-status="대기"><span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span></li>
+                    <li class="kt-env-card__item" data-ip-value="211.45.67.90" data-ip-status="반려"><span>211.45.67.90</span><span class="kt-badge kt-badge--danger">반려</span></li>
+                    <li class="kt-reject-reason kt-reject-reason--ip">
+                        <span class="kt-reject-reason__tag">반려 사유</span>
+                        <p>등록 요청 IP 대역이 보안 정책에 부합하지 않습니다.</p>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <!-- edit mode: IP Whitelist 편집모드, DEV/PRD 입력 및 추가 행이 세로 레이아웃 구조 -->
     <div class="kt-edit-template kt-edit-box">
         <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
         <div class="kt-panel-grid">

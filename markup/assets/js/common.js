@@ -298,6 +298,37 @@ const ui = {
             syncTextareaCount(textarea);
         });
     },
+    adminWorkResult: () => {
+        document.querySelectorAll('.kt-admin-pop__result').forEach(result => {
+            const rejectField = result.nextElementSibling?.classList.contains('kt-admin-pop__field--reject')
+                ? result.nextElementSibling
+                : result.closest('.kt-admin-pop__content')?.querySelector('.kt-admin-pop__field--reject');
+            const radios = Array.from(result.querySelectorAll('input[type="radio"]'));
+
+            if (!rejectField || !radios.length) {
+                return;
+            }
+
+            const rejectTextarea = rejectField.querySelector('textarea');
+            const syncRejectField = () => {
+                const checkedRadio = radios.find(radio => radio.checked);
+                const checkedLabel = checkedRadio?.closest('label')?.textContent.trim() || '';
+                const isReject = checkedRadio?.value === 'reject' || ((!checkedRadio?.value || checkedRadio.value === 'on') && checkedLabel.includes('반려'));
+
+                rejectField.hidden = !isReject;
+                rejectField.setAttribute('aria-hidden', String(!isReject));
+
+                if (rejectTextarea) {
+                    rejectTextarea.disabled = !isReject;
+                }
+            };
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', syncRejectField);
+            });
+            syncRejectField();
+        });
+    },
     datepicker: () => {
         if (!window.jQuery || !$.fn.datepicker) {
             return;
@@ -433,18 +464,13 @@ const ui = {
     },
     // 페이지네이션 현재 페이지 표시
     pagination: () => {
-        const pageLinkSelector = [
-            '[data-pagination] ul > li > a',
-            '.kt-pagination > a:not(.kt-pagination__nav)',
-        ].join(', ');
+        const pageLinkSelector = ['[data-pagination] ul > li > a', '.kt-pagination > a:not(.kt-pagination__nav)'].join(', ');
 
         $(document)
             .off('click.pagination', pageLinkSelector)
             .on('click.pagination', pageLinkSelector, function () {
                 const $pagination = $(this).closest('[data-pagination], .kt-pagination');
-                const $pageLinks = $pagination.hasClass('kt-pagination')
-                    ? $pagination.children('a:not(.kt-pagination__nav)')
-                    : $pagination.find('ul > li > a');
+                const $pageLinks = $pagination.hasClass('kt-pagination') ? $pagination.children('a:not(.kt-pagination__nav)') : $pagination.find('ul > li > a');
 
                 $pageLinks.removeAttr('aria-current');
                 $(this).attr('aria-current', 'true');
@@ -649,7 +675,33 @@ const ui = {
             }
         };
 
+        const openWindowPopup = trigger => {
+            const url = trigger.dataset.popupWindowUrl;
+
+            if (!url) {
+                return;
+            }
+
+            const width = Number(trigger.dataset.popupWindowWidth) || 1440;
+            const height = Number(trigger.dataset.popupWindowHeight) || 900;
+            const left = window.screenX + Math.max((window.outerWidth - width) / 2, 0);
+            const top = window.screenY + Math.max((window.outerHeight - height) / 2, 0);
+            const name = trigger.dataset.popupWindowName || `popup_${url.replace(/[^a-zA-Z0-9]/g, '_')}`;
+            const features = ['popup=yes', `width=${width}`, `height=${height}`, `left=${Math.round(left)}`, `top=${Math.round(top)}`, 'scrollbars=yes', 'resizable=yes'].join(',');
+            const popupWindow = window.open(url, name, features);
+
+            popupWindow?.focus();
+        };
+
         document.addEventListener('click', event => {
+            const windowPopupButton = event.target.closest('[data-popup-window-url]');
+
+            if (windowPopupButton) {
+                event.preventDefault();
+                openWindowPopup(windowPopupButton);
+                return;
+            }
+
             const openButton = event.target.closest('[data-popup-open]');
 
             if (openButton) {
@@ -2038,6 +2090,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.accordion();
     ui.supportTabs();
     ui.textareaCounter();
+    ui.adminWorkResult();
     ui.datepicker();
     ui.supportInquiry();
     ui.pagination();

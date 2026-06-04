@@ -9,7 +9,7 @@
         <div id="wrap">
             <div class="kt-work-pop-modal">
                 <main class="kt-work-pop-stage" aria-label="PRD IP 승인처리">
-                    <article class="kt-work-pop kt-admin-pop kt-admin-pop--h727">
+                    <article class="kt-work-pop kt-admin-pop">
                         <header class="kt-work-pop__header">
                             <h1 class="kt-work-pop__title">PRD IP 승인처리</h1>
                             <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
@@ -20,26 +20,26 @@
                             <div class="kt-admin-pop__content">
                                 <div class="kt-admin-pop__field">
                                     <p class="kt-admin-pop__label">추가 PRD IP</p>
-                                    <div class="kt-admin-pop__readonly">211.11.2.34</div>
+                                    <input type="text" class="kt-input kt-input--52 kt-admin-pop__readonly" value="211.11.2.34" readonly aria-label="추가 PRD IP" />
                                 </div>
                                 <div class="kt-admin-pop__field kt-admin-pop__field--textarea">
                                     <p class="kt-admin-pop__label">신청 사유</p>
-                                    <div class="kt-admin-pop__textarea kt-admin-pop__textarea--readonly">
-                                        <textarea class="kt-admin-pop__textarea-control" readonly aria-label="신청 사유">Ip 추가 승인 요청입니다.</textarea>
+                                    <div class="kt-admin-pop__textarea">
+                                        <textarea class="kt-textarea kt-admin-pop__textarea-control" readonly aria-label="신청 사유">Ip 추가 승인 요청입니다.</textarea>
                                     </div>
                                 </div>
                                 <div class="kt-admin-pop__result">
                                     <p class="kt-admin-pop__label">처리 결과 선택</p>
                                     <div class="kt-admin-pop__radio-list">
-                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork03Result" checked /><span>반려</span></label>
-                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork03Result" /><span>승인</span></label>
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork03Result" value="reject" checked /><span>반려</span></label>
+                                        <label class="kt-radio kt-admin-pop__radio"><input type="radio" name="adminWork03Result" value="approve" /><span>승인</span></label>
                                     </div>
                                 </div>
                                 <div class="kt-admin-pop__field kt-admin-pop__field--reject">
                                     <p class="kt-admin-pop__label">반려시 반려사유 입력</p>
                                     <div class="kt-admin-pop__textarea kt-admin-pop__textarea--reject">
                                         <textarea
-                                            class="kt-admin-pop__textarea-control"
+                                            class="kt-textarea kt-admin-pop__textarea-control"
                                             maxlength="200"
                                             placeholder="반려사유를 구체적으로 입력해 주세요."
                                             aria-label="반려시 반려사유 입력"
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="kt-admin-pop__field">
                                     <p class="kt-admin-pop__label">승인자</p>
-                                    <div class="kt-admin-pop__readonly">최재혁</div>
+                                    <input type="text" class="kt-input kt-input--52 kt-admin-pop__readonly" value="최재혁" readonly aria-label="승인자" />
                                 </div>
                             </div>
                         </div>

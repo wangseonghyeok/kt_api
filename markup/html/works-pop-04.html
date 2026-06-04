@@ -9,7 +9,7 @@
         <div id="wrap">
             <div class="kt-work-pop-modal">
                 <main class="kt-work-pop-stage" aria-label="API 승인이력">
-                    <article class="kt-work-pop kt-work-pop--h620 kt-work-pop--no-footer">
+                    <article class="kt-work-pop kt-work-pop--no-footer kt-work-pop--w680 kt-work-pop--h600 kt-work-pop--history-api">
                         <header class="kt-work-pop__header">
                             <h1 class="kt-work-pop__title">API 승인이력</h1>
                             <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
@@ -28,20 +28,23 @@
                                             <col style="width: 120px" />
                                             <col style="width: 80px" />
                                             <col style="width: 80px" />
+                                            <col style="width: 80px" />
                                         </colgroup>
                                         <thead>
                                             <tr>
                                                 <th scope="col">API</th>
                                                 <th scope="col">처리일</th>
                                                 <th scope="col" class="status">결과</th>
+                                                <th scope="col">신청자</th>
                                                 <th scope="col">승인자</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="left muted">OIF_311&nbsp; heckAppSSOBasedTokenId&nbsp; <span class="red">민감 1</span></td>
+                                                <td class="left muted">OIF_311&nbsp; heckAppSSOBasedTokenId</td>
                                                 <td>2026.03.04</td>
                                                 <td class="status"><span class="kt-work-pop-table__status kt-work-pop-table__status--approve">승인</span></td>
+                                                <td>홍길동</td>
                                                 <td>최재혁</td>
                                             </tr>
                                             <tr>
@@ -49,11 +52,13 @@
                                                 <td>2026.03.04</td>
                                                 <td class="status"><span class="kt-work-pop-table__status kt-work-pop-table__status--auto">자동승인</span></td>
                                                 <td>-</td>
+                                                <td>-</td>
                                             </tr>
                                             <tr>
                                                 <td class="left muted">OIF_312&nbsp; UserProperty (LDAP) <span class="red">민감 1</span></td>
                                                 <td>2026.03.01</td>
                                                 <td class="status"><span class="kt-work-pop-table__status kt-work-pop-table__status--reject">반려</span></td>
+                                                <td>홍길동</td>
                                                 <td>최재혁</td>
                                             </tr>
                                             <tr>
@@ -61,11 +66,12 @@
                                                 <td>2026.02.02</td>
                                                 <td class="status"><span class="kt-work-pop-table__status kt-work-pop-table__status--delete">삭제</span></td>
                                                 <td>-</td>
+                                                <td>-</td>
                                             </tr>
 
                                             <!-- 데이터가 없을 때-->
                                             <!-- <tr class="kt-work-pop-table__empty-row">
-                                                <td colspan="4">
+                                                <td colspan="5">
                                                     <div class="kt-work-pop__empty">
                                                         <img src="/assets/img/works/ico_work_none.svg" alt="" aria-hidden="true" />
                                                         <p>API 승인 이력이 없습니다.</p>

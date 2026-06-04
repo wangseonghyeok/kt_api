@@ -5,88 +5,77 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
-    <body>
+    <body class="kt-works-page kt-workspace-detail-page">
         <div id="wrap">
-            <div class="kt-ldap-modal">
-                <main class="kt-ldap-stage kt-ldap-stage--expired kt-ldap-stage--renew-rejected" aria-label="워크스페이스 상세 LDAP Expired 반려">
-                    <article class="kt-ws-popup">
-                        <header class="kt-ws-popup__header">
-                            <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
-                            <button type="button" class="kt-ws-popup__close" aria-label="닫기">
-                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </header>
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-works-main kt-ldap-page-main">
+                <!--#include file="./include/_ldap_page_header.html"-->
+                <div class="kt-ldap-view">
+                    <div class="kt-ldap-stage kt-ldap-stage--expired kt-ldap-stage--renew-rejected" aria-label="워크스페이스 상세 LDAP Expired Renew Rejected">
+                        <article class="kt-ws-detail">
+                            <div class="kt-ws-detail__body">
+                                <div class="kt-ws-detail__content">
+                                    <header class="kt-ws-detail__header">
+                                        <h1 class="kt-ws-detail__title">하나로소프트_쿠폰서비스</h1>
+                                    </header>
 
-                        <div class="kt-ws-popup__body">
-                            <div class="kt-ws-popup__content">
-                                <section class="kt-ldap-status-group">
-                                    <div class="kt-ws-summary">
-                                        <div>
-                                            <div class="kt-ws-summary__title">
-                                                <strong>하나로소프트_쿠폰서비스</strong>
-                                                <span class="kt-ws-summary__badges">
-                                                    <span class="kt-badge kt-badge--xs">API</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
-                                                </span>
+                                    <section class="kt-ldap-status-group">
+                                        <div class="kt-ws-summary">
+                                            <div>
+                                                <div class="kt-ws-summary__title">
+                                                    <strong>하나로소프트_쿠폰서비스</strong>
+                                                    <span class="kt-ws-summary__badges">
+                                                        <span class="kt-badge kt-badge--xs">API</span>
+                                                        <span class="kt-badge kt-badge--xs kt-badge--expired">Expired</span>
+                                                    </span>
+                                                </div>
+                                                <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
                                             </div>
-                                            <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
-                                        </div>
-                                        <div class="kt-ws-meta">
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
-                                                <strong>2026.03.28</strong>
+                                            <div class="kt-ws-meta">
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
+                                                    <strong>2026.03.28</strong>
+                                                </div>
+                                                <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
+                                                    <strong>김철수</strong>
+                                                </div>
+                                                <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
+                                                    <strong>하나로소프트</strong>
+                                                </div>
                                             </div>
-                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
-                                                <strong>김철수</strong>
+                                        </div>
+                                        <div class="kt-ws-status-note kt-ws-status-note--rejected">
+                                            <div class="kt-ws-status-note__message">
+                                                <span class="kt-ws-status-note__icon" aria-hidden="true"></span>
+                                                <p>Key 갱신 요청이 반려되었으니 사유를 확인 후 재신청하세요.</p>
                                             </div>
-                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
-                                                <strong>하나로소프트</strong>
+                                            <div class="kt-ws-status-note__reason">
+                                                <span class="kt-reject-reason__tag">반려 사유</span>
+                                                <p>구체적인 트래픽 규모와 보안 검토 결과서를 포함하여 재신청해 주세요.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="kt-ws-status-note kt-ws-status-note--rejected">
-                                        <div class="kt-ws-status-note__message">
-                                            <span class="kt-ws-status-note__icon" aria-hidden="true"></span>
-                                            <p>Key 갱신 요청이 반려되었으니 사유를 확인 후 재신청하세요.</p>
-                                        </div>
-                                        <div class="kt-ws-status-note__reason">
-                                            <span class="kt-reject-reason__tag">반려 사유</span>
-                                            <p>구체적인 트래픽 규모와 보안 검토 결과서를 포함하여 재신청해 주세요.</p>
-                                        </div>
-                                    </div>
-                                </section>
+                                    </section>
 
-                                <!--#include file="./include/_ldap_section_basic.html"-->
+                                    <!--#include file="./include/_ldap_section_basic.html"-->
 
-                                <!--#include file="./include/_ldap_section_members_filled.html"-->
+                                    <!--#include file="./include/_ldap_section_members_filled.html"-->
 
-                                <!--#include file="./include/_ldap_section_api_filled.html"-->
+                                    <!--#include file="./include/_ldap_section_api_filled.html"-->
 
-                                <!--#include file="./include/_ldap_section_ip_filled.html"-->
+                                    <!--#include file="./include/_ldap_section_ip_filled.html"-->
 
-                                <!--#include file="./include/_ldap_section_keys_expired_rejected.html"-->
+                                    <!--#include file="./include/_ldap_section_keys_expired_rejected.html"-->
+                                </div>
                             </div>
-                        </div>
-
-                        <footer class="kt-ws-popup__footer kt-ws-popup__footer--renew-rejected">
-                            <div class="kt-reject-footer-note">
-                                <span class="kt-reject-footer-note__status">
-                                    <span class="kt-reject-footer-note__icon" aria-hidden="true"></span>
-                                    반려됨
-                                </span>
-                                <p>반려 사유 확인 후 수정하여 재신청하세요.</p>
-                            </div>
-                            <button type="button" class="kt-btn kt-btn--popup-cta">Key 갱신 재신청</button>
-                            <span class="kt-ws-popup__footer-spacer" aria-hidden="true"></span>
-                        </footer>
-                    </article>
-                </main>
-            </div>
-            <div id="dim"></div>
+                        </article>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
     <script src="/assets/js/ldap-workspace.js"></script>

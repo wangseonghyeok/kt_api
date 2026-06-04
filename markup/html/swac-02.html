@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div class="kt-auth-modal kt-swac-modal kt-swac-modal--login">
+                <div class="kt-auth-main">
+                    <div class="kt-auth-header">
+                        <h1 class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </div>
+                    <div class="kt-auth-content kt-swac-content">
+                        <div class="kt-swac-headline">
+                            <h2>PSSO 로그인</h2>
+                            <p>
+                                기존 PSSO 계정으로 로그인해 주세요.<br />
+                                로그인 완료 후 기존 Workspace를 연결할 수 있습니다.
+                            </p>
+                        </div>
+                        <form class="kt-swac-form">
+                            <div class="kt-field kt-swac-field error">
+                                <label class="kt-field__label" for="swacPssoId">PSSO 아이디 <span class="is-required">*</span></label>
+                                <span class="kt-input-field">
+                                    <input type="text" id="swacPssoId" class="kt-input kt-input--52" placeholder="기존 PSSO 아이디 입력" aria-invalid="true" autocomplete="username" />
+                                    <span class="kt-input-field__actions">
+                                        <button
+                                            type="button"
+                                            class="kt-input-field__clear"
+                                            data-clear_input
+                                            aria-controls="swacPssoId"
+                                            aria-label="입력값 삭제"
+                                            hidden
+                                            aria-hidden="true"
+                                            tabindex="-1"
+                                        >
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
+                                <p class="kt-field__message">사용자 아이디를 입력해주세요.</p>
+                            </div>
+                            <div class="kt-field kt-swac-field error">
+                                <label class="kt-field__label" for="swacPssoPassword">PSSO 비밀번호 <span class="is-required">*</span></label>
+                                <span class="kt-password">
+                                    <input
+                                        type="password"
+                                        id="swacPssoPassword"
+                                        class="kt-input kt-input--52"
+                                        placeholder="기존 PSSO 비밀번호 입력"
+                                        aria-invalid="true"
+                                        autocomplete="current-password"
+                                    />
+                                    <span class="kt-password__actions">
+                                        <button
+                                            type="button"
+                                            class="kt-input-field__clear kt-password__clear"
+                                            data-clear_input
+                                            aria-controls="swacPssoPassword"
+                                            aria-label="비밀번호 삭제"
+                                            hidden
+                                            aria-hidden="true"
+                                            tabindex="-1"
+                                        >
+                                            <img src="/assets/img/components/ico_delete.svg" alt="" />
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="kt-password__toggle"
+                                            data-password_toggle
+                                            aria-controls="swacPssoPassword"
+                                            aria-label="비밀번호 보기"
+                                            data-icon-show="/assets/img/components/ico_eye.svg"
+                                            data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                        >
+                                            <img src="/assets/img/components/ico_eye_off.svg" alt="" />
+                                        </button>
+                                    </span>
+                                </span>
+                                <p class="kt-field__message">비밀번호가 맞지 않습니다.</p>
+                            </div>
+                            <div class="kt-swac-actions">
+                                <button type="button" class="kt-btn kt-btn--primary kt-btn--xl kt-swac-button">PSSO 로그인</button>
+                                <a href="#" class="kt-swac-text-button">이전으로</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>

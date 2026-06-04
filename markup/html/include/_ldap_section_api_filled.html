@@ -3,18 +3,18 @@
     상단 읽기 테이블은 현재 구독 목록, 하단 kt-edit-template은 편집 모드에서 재사용되는 후보/선택/편집 목록입니다.
     data-api-added="true"가 붙은 후보가 현재 등록된 API로 간주되며, 백엔드 연동 전까지는 화면 상태만 갱신합니다.
 -->
-<section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-filled">
+<section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-filled" data-api-added-ids="oif-312,oif-313">
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">
             구독 API
-            <span class="kt-ws-section__count"><strong>5</strong><span>개</span></span>
+            <span class="kt-ws-section__count"><strong>2</strong><span>개</span></span>
         </h2>
         <div class="kt-ws-section__actions">
-            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
+            <button type="button" class="kt-btn kt-btn--detail-icon" aria-label="승인 이력">
                 <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
             </button>
-            <button type="button" class="kt-btn kt-btn--popup-line" data-api-approval-request>API 승인요청 <strong>민감 0</strong></button>
-            <button type="button" class="kt-btn kt-btn--popup">편집</button>
+            <button type="button" class="kt-btn kt-btn--detail-line kt-btn--detail-line-danger" data-api-approval-request>API 승인요청 <strong>민감 1</strong></button>
+            <button type="button" class="kt-btn kt-btn--detail">편집</button>
         </div>
     </div>
     <div class="kt-ldap-api-table-wrap">
@@ -173,7 +173,6 @@
                                         tabindex="0"
                                         aria-selected="false"
                                         data-ldap-search-option
-                                        data-api-added="true"
                                         data-api-id="oif-311"
                                         data-api-code="OIF_311"
                                         data-api-name="checkAppSSOBasedTokenId"
@@ -251,7 +250,6 @@
                                         tabindex="0"
                                         aria-selected="false"
                                         data-ldap-search-option
-                                        data-api-added="true"
                                         data-api-id="oif-314"
                                         data-api-code="OIF_314"
                                         data-api-name="CouponIssue (CUPI)"
@@ -277,7 +275,6 @@
                                         tabindex="0"
                                         aria-selected="false"
                                         data-ldap-search-option
-                                        data-api-added="true"
                                         data-api-id="oif-315"
                                         data-api-code="OIF_315"
                                         data-api-name="CouponStatus (CUPI)"

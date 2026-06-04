@@ -6,32 +6,38 @@
     <div class="kt-ws-section__head">
         <h2 class="kt-ws-section__title">기본 정보</h2>
         <div class="kt-ws-section__actions">
-            <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
+            <button type="button" class="kt-btn kt-btn--detail kt-edit-start">편집</button>
             <span class="kt-edit-actions" aria-label="기본 정보 편집 액션">
-                <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
-                <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
+                <button type="button" class="kt-btn kt-btn--detail" data-edit-cancel>취소</button>
+                <button type="button" class="kt-btn kt-btn--detail kt-btn--detail-primary" data-edit-save>저장</button>
             </span>
         </div>
     </div>
     <table class="kt-read-mode kt-info-table kt-info-table--entra" aria-label="기본 정보">
         <colgroup>
-            <col style="width: 140px" />
-            <col />
-            <col style="width: 140px" />
-            <col />
+            <col class="kt-info-table__label-col" style="width: 200px" />
+            <col class="kt-info-table__value-col" />
+            <col class="kt-info-table__label-col kt-info-table__label-col--manager" style="width: 200px" />
+            <col class="kt-info-table__value-col kt-info-table__value-col--manager" />
         </colgroup>
         <tbody>
             <tr>
                 <th id="entra-basic-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
-                <td headers="entra-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">myK 사내직원인증</td>
+                <td headers="entra-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">하나로소프트_쿠폰서비스</td>
                 <th id="entra-basic-type" scope="row" class="kt-info-table__label">타입</th>
                 <td headers="entra-basic-type" class="kt-info-table__value">Api Workspace</td>
             </tr>
             <tr>
-                <th id="entra-basic-domain" scope="row" class="kt-info-table__label">Domain</th>
-                <td headers="entra-basic-domain" class="kt-info-table__value">myK (myK.kt.com)</td>
+                <th id="entra-basic-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                <td headers="entra-basic-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                <th id="entra-basic-manager" scope="row" class="kt-info-table__label kt-info-table__label--nowrap">KT 사업담당자 (Manager)</th>
+                <td headers="entra-basic-manager" class="kt-info-table__value">조민호 (minho.jo@kt.com)</td>
+            </tr>
+            <tr>
+                <th id="entra-basic-company" scope="row" class="kt-info-table__label">Company</th>
+                <td headers="entra-basic-company" class="kt-info-table__value">하나로소프트</td>
                 <th id="entra-basic-desc" scope="row" class="kt-info-table__label">설명</th>
-                <td headers="entra-basic-desc" class="kt-info-table__value" data-basic-value="description">Entra ID 기반으로 KT 그룹사 임직원 계정을 초대하고 API를 검증하는 워크스페이스입니다.</td>
+                <td headers="entra-basic-desc" class="kt-info-table__value" data-basic-value="description">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</td>
             </tr>
         </tbody>
     </table>
@@ -39,26 +45,32 @@
         <strong class="kt-edit-box__title">기본정보 편집모드</strong>
         <table class="kt-info-table kt-info-table--edit kt-info-table--entra" aria-label="기본 정보 편집">
             <colgroup>
-                <col style="width: 140px" />
-                <col />
-                <col style="width: 140px" />
-                <col />
+                <col class="kt-info-table__label-col" style="width: 200px" />
+                <col class="kt-info-table__value-col" />
+                <col class="kt-info-table__label-col kt-info-table__label-col--manager" style="width: 200px" />
+                <col class="kt-info-table__value-col kt-info-table__value-col--manager" />
             </colgroup>
             <tbody>
                 <tr>
                     <th id="entra-basic-edit-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
                     <td headers="entra-basic-edit-workspace-name" class="kt-info-table__value">
-                        <input type="text" class="kt-input kt-input--36" value="myK 사내직원인증" data-basic-field="workspaceName" />
+                        <input type="text" class="kt-input kt-input--36" value="하나로소프트_쿠폰서비스" data-basic-field="workspaceName" />
                     </td>
                     <th id="entra-basic-edit-type" scope="row" class="kt-info-table__label">타입</th>
                     <td headers="entra-basic-edit-type" class="kt-info-table__value">Api Workspace</td>
                 </tr>
                 <tr>
-                    <th id="entra-basic-edit-domain" scope="row" class="kt-info-table__label">Domain</th>
-                    <td headers="entra-basic-edit-domain" class="kt-info-table__value">myK (myK.kt.com)</td>
+                    <th id="entra-basic-edit-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                    <td headers="entra-basic-edit-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                    <th id="entra-basic-edit-manager" scope="row" class="kt-info-table__label kt-info-table__label--nowrap">KT 사업담당자 (Manager)</th>
+                    <td headers="entra-basic-edit-manager" class="kt-info-table__value">조민호 (minho.jo@kt.com)</td>
+                </tr>
+                <tr>
+                    <th id="entra-basic-edit-company" scope="row" class="kt-info-table__label">Company</th>
+                    <td headers="entra-basic-edit-company" class="kt-info-table__value">하나로소프트</td>
                     <th id="entra-basic-edit-desc" scope="row" class="kt-info-table__label">설명</th>
                     <td headers="entra-basic-edit-desc" class="kt-info-table__value">
-                        <input type="text" class="kt-input kt-input--36" value="Entra ID 기반으로 KT 그룹사 임직원 계정을 초대하고 API를 검증하는 워크스페이스입니다." data-basic-field="description" />
+                        <input type="text" class="kt-input kt-input--36" value="쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스" data-basic-field="description" />
                     </td>
                 </tr>
             </tbody>

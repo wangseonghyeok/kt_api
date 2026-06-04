@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div class="kt-auth-modal kt-swac-modal kt-swac-modal--intro">
+                <div class="kt-auth-main">
+                    <div class="kt-auth-header">
+                        <h1 class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </div>
+                    <div class="kt-auth-content kt-swac-content">
+                        <div class="kt-swac-headline">
+                            <h2>기존 PSSO 계정이 있으신가요?</h2>
+                            <p>
+                                LDAP 또는 Entra ID 사용자 최초 연동 단계입니다.<br />
+                                기존 PSSO 계정으로 로그인하면<br />
+                                Workspace를 간편하게 연결할 수 있습니다.
+                            </p>
+                        </div>
+                        <p class="kt-swac-note">계정 연결은 최초 1회만 진행되며, 이후에는 별도 연결 없이 바로 메인 화면으로 이동합니다.</p>
+                        <div class="kt-swac-actions">
+                            <button type="button" class="kt-btn kt-btn--primary kt-btn--xl kt-swac-button">기존 PSSO 계정이 있습니다</button>
+                            <a href="#" class="kt-swac-text-button">아니요, PSSO 계정이 없습니다</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>

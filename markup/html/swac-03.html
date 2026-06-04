@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div class="kt-auth-modal kt-swac-modal kt-swac-modal--connect">
+                <div class="kt-auth-main">
+                    <div class="kt-auth-header">
+                        <h1 class="kt-auth-title">KT API Link</h1>
+                        <button type="button" class="kt-auth-close"><span class="blind">닫기</span></button>
+                    </div>
+                    <div class="kt-auth-content kt-swac-content">
+                        <div class="kt-swac-headline">
+                            <h2>기존 Workspace 연결</h2>
+                            <p>
+                                PSSO 로그인이 완료되었습니다.<br />
+                                기존 서비스와 Workspace를 현재 로그인한 LDAP/Entra ID 계정에 연결합니다.
+                            </p>
+                        </div>
+
+                        <section class="kt-swac-account" aria-labelledby="swacAccountTitle">
+                            <h3 id="swacAccountTitle">기존 PSSO 계정 정보</h3>
+                            <div class="kt-swac-account-box">
+                                <dl>
+                                    <dt>사용자 ID</dt>
+                                    <dd>kt_user_****</dd>
+                                </dl>
+                                <dl>
+                                    <dt>보유 서비스(워크스페이스)</dt>
+                                    <dd>2개</dd>
+                                </dl>
+                                <dl>
+                                    <dt>API Key</dt>
+                                    <dd>DEV 1개 · PRD 1개</dd>
+                                </dl>
+                            </div>
+                        </section>
+
+                        <p class="kt-swac-note">맵핑 완료 후에는 기존 ID/PW 대신 LDAP 또는 Entra ID 계정으로 로그인할 수 있습니다.</p>
+                        <div class="kt-swac-actions">
+                            <button type="button" class="kt-btn kt-btn--primary kt-btn--xl kt-swac-button">기존 서비스 연결하기</button>
+                            <a href="#" class="kt-swac-text-button" data-popup-open="#swacCancelPopup">취소하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup kt-swac-confirm-popup" id="swacCancelPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="swacCancelTitle" hidden>
+                <article class="kt-swac-confirm" role="document">
+                    <header class="kt-swac-confirm__header">
+                        <h2>Workspace 맵핑 취소</h2>
+                        <button type="button" class="kt-auth-close popup__close"><span class="blind">닫기</span></button>
+                    </header>
+                    <div class="kt-swac-confirm__body">
+                        <span class="kt-swac-confirm__icon" aria-hidden="true"></span>
+                        <h3 id="swacCancelTitle">기존 Workspace, API Key 및 권한 정보를 사용할 수 없습니다.</h3>
+                        <p>
+                            기존 서비스 연결은 최초 로그인 시에만 가능합니다.<br />
+                            연결 없이 계속 진행하시겠습니까?
+                        </p>
+                    </div>
+                    <footer class="kt-swac-confirm__actions">
+                        <button type="button" class="kt-btn kt-btn--secondary kt-btn--xl kt-swac-confirm__button">연결 없이 계속</button>
+                        <button type="button" class="kt-btn kt-btn--primary kt-btn--xl kt-swac-confirm__button">기존 서비스 연결하기</button>
+                    </footer>
+                </article>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>

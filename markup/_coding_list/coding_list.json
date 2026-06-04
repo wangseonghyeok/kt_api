@@ -16,6 +16,12 @@
             "[login-02] LDAP": ["/login-02.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/6~5/7"],
             "[login-03] ID/PW 방식": ["/login-03.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/6~5/7"]
         },
+        "로그인(계정전환)": {
+            "[swac-01] 기존 PSSO 계정 확인": ["/swac-01.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/26"],
+            "[swac-02] PSSO 로그인": ["/swac-02.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/26"],
+            "[swac-03] 기존 Workspace 연결": ["/swac-03.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/26"],
+            "[swac-pop-01] Workspace 맵핑 취소 팝업": ["/swac-pop-01.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/27"]
+        },
         "OTP 인증": {
             "[otp-01] OTP 인증": ["/otp-01.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌완료 / 퍼블: 5/6~5/7"]
         },
@@ -113,6 +119,14 @@
                 "[user-05] 비밀번호 확인": ["/user-05.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 05/14 ~5/15"],
                 "[user-06] 회원탈퇴": ["/user-06.html", "mainframe", "완료", "기획: 컨펌완료 / 디자인: 컨펌대기 / 퍼블: 05/14 ~5/15"]
             }
+        },
+        "추가": {
+            "[ouath-01]": ["/ouath-01.html", "mainframe", "완료", ""],
+            "[ouath-02]": ["/ouath-02.html", "mainframe", "완료", ""],
+            "[ouath-03]": ["/ouath-03.html", "mainframe", "완료", ""],
+            "[works-oauth-01]": ["/works-oauth-01.html", "mainframe", "완료", ""],
+            "[works-oauth-02]": ["/works-oauth-02.html", "mainframe", "완료", ""],
+            "[works-oauth-03]": ["/works-oauth-03.html", "mainframe", "완료", ""]
         }
     },
     "templete": {

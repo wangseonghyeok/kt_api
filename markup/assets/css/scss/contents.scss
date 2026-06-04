@@ -1035,6 +1035,273 @@
 }
 
 /* ==============================
+    Switch account login pages
+============================== */
+.kt-swac-modal {
+    .kt-auth-main {
+        width: 610px;
+        border-radius: 12px;
+    }
+
+    .kt-auth-header {
+        z-index: 2;
+    }
+
+    .kt-swac-content {
+        gap: 0;
+        padding: 24px 24px 28px;
+    }
+
+    .kt-swac-headline {
+        text-align: center;
+
+        h2 {
+            color: $kt-primary;
+            font-size: 18px;
+            font-weight: var(--fw-Bold);
+            line-height: 1.48;
+        }
+
+        p {
+            margin-top: 8px;
+            color: $kt-tertiary;
+            font-size: 14px;
+            font-weight: var(--fw-Medium);
+            line-height: 1.5;
+        }
+    }
+
+    .kt-swac-note {
+        @include flex(flex-start, null);
+        gap: 4px;
+        margin-top: 28px;
+        color: $kt-primary;
+        font-size: 13px;
+        font-weight: var(--fw-Medium);
+        line-height: 1.48;
+
+        &::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            margin-top: 2px;
+            background: url('/assets/img/auth/ico_swac_info.svg') 50% 50% / 16px 16px no-repeat;
+        }
+    }
+
+    .kt-swac-actions {
+        @include flex(center, null);
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 24px;
+    }
+
+    .kt-swac-button {
+        width: 100%;
+    }
+
+    .kt-swac-text-button {
+        @include inline-flex(center, center);
+        min-width: 96px;
+        min-height: 48px;
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: $kt-primary;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: var(--fw-Medium);
+        line-height: 1.48;
+        text-decoration: none;
+
+        &:focus-visible {
+            box-shadow: 0 0 0 3px var(--kt-focus);
+            outline: 0;
+        }
+    }
+
+    .kt-swac-form {
+        @include flex(null, null);
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 40px;
+
+        > .kt-swac-actions {
+            margin-top: 0;
+        }
+    }
+
+    .kt-swac-field {
+        .kt-field__label {
+            color: $kt-tertiary;
+            font-size: 13px;
+            font-weight: var(--fw-Medium);
+        }
+
+        .kt-field__message {
+            padding-left: 4px;
+            font-size: 12px;
+            font-weight: var(--fw-Medium);
+        }
+
+        .kt-password {
+            width: 100%;
+        }
+    }
+
+    .kt-swac-account {
+        margin-top: 40px;
+
+        h3 {
+            color: $kt-primary;
+            font-size: 13px;
+            font-weight: var(--fw-Bold);
+            line-height: 1.48;
+        }
+    }
+
+    .kt-swac-account-box {
+        margin-top: 8px;
+        padding: 16px 12px;
+        border: 1px solid #eeeff2;
+        border-radius: 8px;
+        background: #f8f9fa;
+
+        dl {
+            @include flex(center, null);
+            gap: 24px;
+            min-height: 24px;
+
+            & + dl {
+                margin-top: 4px;
+            }
+        }
+
+        dt {
+            width: 160px;
+            flex: 0 0 160px;
+            color: $kt-tertiary;
+            font-size: 15px;
+            font-weight: var(--fw-Medium);
+            line-height: 1.48;
+        }
+
+        dd {
+            color: $kt-primary;
+            font-size: 16px;
+            font-weight: var(--fw-Bold);
+            line-height: 1.48;
+        }
+    }
+
+    .kt-swac-account + .kt-swac-note {
+        margin-top: 12px;
+    }
+
+    &--intro {
+        .kt-auth-main {
+            min-height: 394px;
+        }
+    }
+
+    &--login {
+        .kt-auth-main {
+            min-height: 550px;
+        }
+    }
+
+    &--connect {
+        .kt-auth-main {
+            min-height: 540px;
+        }
+    }
+}
+
+.kt-swac-confirm-popup {
+    z-index: 1100;
+}
+
+.kt-swac-confirm {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    width: min(100%, 610px);
+    min-height: 337px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 40px rgba(20, 20, 20, 0.05), 0 20px 40px rgba(19, 20, 21, 0.1);
+    text-align: left;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+.kt-swac-confirm__header {
+    @include flex(flex-start, space-between);
+    height: 64px;
+    padding: 32px 16px 0 24px;
+
+    h2 {
+        color: $kt-primary;
+        font-size: 20px;
+        font-weight: var(--fw-Bold);
+        line-height: 1.48;
+    }
+
+    .kt-auth-close {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        background: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 24px 24px no-repeat;
+    }
+}
+
+.kt-swac-confirm__body {
+    @include flex(center, null);
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 26px 24px 0;
+    text-align: center;
+
+    h3 {
+        margin-top: 16px;
+        color: $kt-primary;
+        font-size: 18px;
+        font-weight: var(--fw-Bold);
+        line-height: 1.48;
+    }
+
+    p {
+        margin-top: 8px;
+        color: $kt-tertiary;
+        font-size: 14px;
+        font-weight: var(--fw-Medium);
+        line-height: 1.5;
+    }
+}
+
+.kt-swac-confirm__icon {
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    background: url('/assets/img/auth/ico_swac_cancel.svg') 50% 50% / 36px 36px no-repeat;
+}
+
+.kt-swac-confirm__actions {
+    @include flex(center, center);
+    gap: 8px;
+    padding: 24px 24px 28px;
+}
+
+.kt-swac-confirm__button {
+    width: 180px;
+}
+
+/* ==============================
     Support inquiry pages
 ============================== */
 .kt-support-page--inquiry {
@@ -2265,10 +2532,14 @@
             color: $kt-primary;
             opacity: 1;
         }
+
+        &:focus:not(:disabled):not([readonly]) {
+            border-width: 2px;
+        }
     }
 
-    .kt-search-field.is-focused .kt-input,
-    .kt-search-field.is-typing .kt-input {
+    .kt-search-field.is-focused .kt-input:not(:disabled):not([readonly]),
+    .kt-search-field.is-typing .kt-input:not(:disabled):not([readonly]) {
         padding-left: 15px;
         border-width: 2px;
     }
@@ -3000,29 +3271,50 @@
 }
 
 /* ==============================
-    LDAP workspace detail popup pages
+    LDAP workspace detail pages
 ============================== */
 
-.kt-ldap-modal {
+.kt-ldap-modal,
+.kt-ldap-view {
     position: relative;
     z-index: 1000;
     min-height: 100vh;
+    background: #fff;
 }
 
 .kt-ldap-stage {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
     position: relative;
     width: 100%;
     min-width: 1280px;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 0;
     background: transparent;
 
-    .kt-ws-popup {
-        margin: 0 auto;
+    .kt-ws-popup,
+    .kt-ws-detail {
+        width: 100%;
+        min-width: 1280px;
+        min-height: 100vh;
+        max-height: none;
+        margin: 0;
+        overflow: visible;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .kt-ws-popup__body,
+    .kt-ws-detail__body {
+        flex: 0 0 auto;
+        overflow: visible;
+    }
+
+    .kt-ws-popup__close,
+    .kt-ws-detail__close {
+        display: none;
     }
 }
 
@@ -3034,6 +3326,11 @@
 .kt-ldap-stage--prod,
 .kt-ldap-stage--expired {
     min-height: 100vh;
+}
+
+.kt-ldap-stage--prod .kt-ws-status-note--prod {
+    // width: fit-content;
+    // max-width: 100%;
 }
 
 .kt-ldap-badge-samples {
@@ -3109,7 +3406,17 @@
 
 .kt-ldap-toast-api,
 .kt-ldap-toast-api-edit {
-    bottom: 100px;
+    top: 100px;
+}
+
+.kt-ldap-toast-page {
+    position: fixed;
+    z-index: 1200;
+    bottom: 400px;
+}
+
+.kt-ldap-section-api {
+    position: relative;
 }
 
 .kt-ldap-api-table-wrap {
@@ -3226,7 +3533,7 @@
         }
     }
 
-    &:focus-within .kt-newwork-search__field {
+    &:has(input:not(:disabled):not([readonly]):focus) .kt-newwork-search__field {
         border-width: 2px;
         border-color: #191a1b;
         box-shadow: 0 0 2px rgba(19, 20, 21, 0.05), 0 2px 4px rgba(19, 20, 21, 0.1);
@@ -3262,7 +3569,7 @@
             }
 
             &:hover:not(:disabled):not([readonly]),
-            &:focus {
+            &:focus:not(:disabled):not([readonly]) {
                 border: 0;
                 box-shadow: none;
             }
@@ -3701,7 +4008,8 @@
         margin-top: -8px;
     }
 
-    .kt-btn--popup-line {
+    .kt-btn--popup-line,
+    .kt-btn--detail-line {
         gap: 4px;
         min-width: 76px;
         height: 32px;
@@ -3717,4 +4025,152 @@
     background: currentColor;
     -webkit-mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 16px 16px no-repeat;
     mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 16px 16px no-repeat;
+}
+
+.kt-btn__icon--plus {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    background: currentColor;
+    -webkit-mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 16px 16px no-repeat;
+    mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 16px 16px no-repeat;
+}
+
+.kt-workspace-detail-page {
+    #header .gnb > ul > li:first-child > a {
+        color: #00a39c;
+    }
+
+    #footer {
+        margin-top: 0;
+    }
+
+    .kt-ldap-modal,
+    .kt-ldap-view {
+        z-index: auto;
+        min-height: auto;
+    }
+
+    .kt-ldap-stage,
+    .kt-ldap-stage--draft,
+    .kt-ldap-stage--dev,
+    .kt-ldap-stage--prod,
+    .kt-ldap-stage--expired {
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .kt-ldap-stage .kt-ws-popup,
+    .kt-ldap-stage .kt-ws-detail {
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .kt-ldap-page-main {
+        padding-bottom: 96px;
+    }
+
+    .kt-ws-popup__body,
+    .kt-ws-detail__body {
+        width: 100%;
+    }
+
+    .kt-ws-popup__content > .kt-ws-popup__header,
+    .kt-ws-detail__content > .kt-ws-detail__header {
+        margin-bottom: 24px;
+    }
+
+    .kt-ws-popup__footer,
+    .kt-ws-detail__footer {
+        justify-content: flex-end;
+        height: auto;
+        flex-basis: auto;
+        padding: 32px 24px 0;
+    }
+
+    .kt-ws-popup__footer--request-action,
+    .kt-ws-detail__footer--request-action {
+        justify-content: center;
+        padding-top: 32px;
+    }
+
+    .kt-ws-detail__actions {
+        @include flex(center, flex-end);
+        padding-top: 32px;
+    }
+
+    .kt-ldap-stage--expired {
+        .kt-ldap-section-keys-expired .kt-ws-section__actions {
+            display: flex;
+        }
+    }
+}
+
+.kt-ldap-section-ready {
+    .kt-ws-section__head {
+        align-items: flex-end;
+    }
+}
+
+.kt-ready-approver {
+    margin: 0;
+    color: #191a1b;
+    font-size: 14px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+}
+
+.kt-ready-table {
+    table-layout: fixed;
+}
+
+.kt-ldap-section-ready--not-completed {
+    .kt-ready-status {
+        color: #55585d;
+    }
+}
+
+.kt-ready-status {
+    @include inline-flex(center, null);
+    gap: 8px;
+    color: #55585d;
+    font-size: 14px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
+    margin-top: 3px;
+}
+
+.kt-ready-status__icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+
+.kt-ready-status--complete {
+    .kt-ready-status__icon {
+        background-image: url('/assets/img/contents/ico_ready_completed.svg');
+    }
+}
+
+.kt-ready-status--not-completed,
+.kt-ready-status--incomplete {
+    color: #55585d;
+
+    .kt-ready-status__icon {
+        background-image: url('/assets/img/contents/ico_ready_not_completed.svg');
+    }
+}
+
+.kt-ip-empty-add {
+    width: 84px;
+    min-width: 84px;
+    height: 32px;
+    margin-top: 0;
+    padding: 0 12px 0 8px;
+    white-space: nowrap;
 }

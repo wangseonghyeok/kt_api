@@ -5,373 +5,161 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
-    <body>
+    <body class="kt-works-page kt-workspace-detail-page kt-admin-work-detail-page">
         <div id="wrap">
-            <div class="kt-ldap-modal">
-                <main class="kt-ldap-stage kt-ldap-stage--dev" aria-label="관리자 모드 워크스페이스 상세 API 승인처리">
-                    <article class="kt-ws-popup kt-admin-work-detail">
-                        <header class="kt-ws-popup__header">
-                            <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
-                            <button type="button" class="kt-ws-popup__close" aria-label="닫기">
-                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
-                            </button>
-                        </header>
+            <!--#include file="./include/_header.html"-->
+            <main id="contents" class="kt-works-main kt-ldap-page-main">
+                <!--#include file="./include/_ldap_page_header.html"-->
+                <div class="kt-ldap-modal">
+                    <div class="kt-ldap-stage kt-ldap-stage--dev kt-ldap-stage--admin" aria-label="관리자 모드 워크스페이스 상세 API 승인처리">
+                        <article class="kt-ws-popup kt-admin-work-detail">
+                            <header class="kt-ws-popup__header">
+                                <h1 class="kt-ws-popup__title">하나로소프트_쿠폰서비스</h1>
+                                <button type="button" class="kt-ws-popup__close" aria-label="닫기">
+                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/auth/ico_auth_close.svg" alt="" aria-hidden="true" />
+                                </button>
+                            </header>
 
-                        <div class="kt-ws-popup__body">
-                            <div class="kt-ws-popup__content">
-                                <section class="kt-ldap-status-group">
-                                    <div class="kt-ws-summary">
-                                        <div>
-                                            <div class="kt-ws-summary__title">
-                                                <strong>하나로소프트_쿠폰서비스</strong>
-                                                <span class="kt-ws-summary__badges">
-                                                    <span class="kt-badge kt-badge--xs">API</span>
-                                                    <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
+                            <div class="kt-ws-popup__body">
+                                <div class="kt-ws-popup__content">
+                                    <section class="kt-ldap-status-group">
+                                        <div class="kt-ws-summary">
+                                            <div>
+                                                <div class="kt-ws-summary__title">
+                                                    <strong>하나로소프트_쿠폰서비스</strong>
+                                                    <span class="kt-ws-summary__badges">
+                                                        <span class="kt-badge kt-badge--xs">API</span>
+                                                        <span class="kt-badge kt-badge--xs kt-badge--cyan">DEV</span>
+                                                    </span>
+                                                </div>
+                                                <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
+                                            </div>
+                                            <div class="kt-ws-meta">
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
+                                                    <strong>2026.03.28</strong>
+                                                </div>
+                                                <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
+                                                    <strong>김철수</strong>
+                                                </div>
+                                                <span class="kt-ws-meta__divider" aria-hidden="true"></span>
+                                                <div class="kt-ws-meta__item">
+                                                    <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
+                                                    <strong>하나로소프트</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kt-ws-status-note kt-ws-status-note--dev">
+                                            <span class="kt-tag kt-tag--dot kt-tag--info">DEV</span>
+                                            <p>환경이 활성화되었으며, 민감 API는 승인 후 호출 가능하고 전체 승인 완료 시 운영 전환이 활성화됩니다.</p>
+                                        </div>
+                                    </section>
+
+                                    <section class="kt-ws-section kt-ldap-section-basic">
+                                        <div class="kt-ws-section__head">
+                                            <h2 class="kt-ws-section__title">기본 정보</h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
+                                                <span class="kt-edit-actions" aria-label="기본 정보 편집 액션">
+                                                    <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
                                                 </span>
                                             </div>
-                                            <p class="kt-ws-summary__desc">쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스</p>
                                         </div>
-                                        <div class="kt-ws-meta">
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_time.svg" alt="" aria-hidden="true" />생성일</span>
-                                                <strong>2026.03.28</strong>
-                                            </div>
-                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/components/ico_user.svg" alt="" aria-hidden="true" />생성자</span>
-                                                <strong>김철수</strong>
-                                            </div>
-                                            <span class="kt-ws-meta__divider" aria-hidden="true"></span>
-                                            <div class="kt-ws-meta__item">
-                                                <span class="kt-ws-meta__label"><img class="kt-svg-icon" src="/assets/img/contents/ico_ldap_building.svg" alt="" aria-hidden="true" />소속</span>
-                                                <strong>하나로소프트</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="kt-ws-status-note kt-ws-status-note--dev">
-                                        <span class="kt-tag kt-tag--dot kt-tag--info">DEV</span>
-                                        <p>환경이 활성화되었으며, 민감 API는 승인 후 호출 가능하고 전체 승인 완료 시 운영 전환이 활성화됩니다.</p>
-                                    </div>
-                                </section>
-
-                                <section class="kt-ws-section kt-ldap-section-basic">
-                                    <div class="kt-ws-section__head">
-                                        <h2 class="kt-ws-section__title">기본 정보</h2>
-                                        <div class="kt-ws-section__actions">
-                                            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
-                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
-                                            </button>
-                                            <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
-                                            <span class="kt-edit-actions" aria-label="기본 정보 편집 액션">
-                                                <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
-                                                <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <table class="kt-read-mode kt-info-table" aria-label="기본 정보">
-                                        <colgroup>
-                                            <col class="kt-info-table__label-col" />
-                                            <col class="kt-info-table__value-col" />
-                                            <col class="kt-info-table__label-col" />
-                                            <col class="kt-info-table__value-col" />
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <th id="admin-work-basic-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
-                                                <td headers="admin-work-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">하나로소프트_쿠폰서비스</td>
-                                                <th id="admin-work-basic-type" scope="row" class="kt-info-table__label">타입</th>
-                                                <td headers="admin-work-basic-type" class="kt-info-table__value">Api Workspace</td>
-                                            </tr>
-                                            <tr>
-                                                <th id="admin-work-basic-desc" scope="row" class="kt-info-table__label">설명</th>
-                                                <td headers="admin-work-basic-desc" class="kt-info-table__value" data-basic-value="description">
-                                                    쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스
-                                                </td>
-                                                <th id="admin-work-basic-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
-                                                <td headers="admin-work-basic-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
-                                            </tr>
-                                            <tr>
-                                                <th id="admin-work-basic-company" scope="row" class="kt-info-table__label kt-info-table__label--tall">회사</th>
-                                                <td headers="admin-work-basic-company" class="kt-info-table__value kt-info-table__value--tall">하나로소프트</td>
-                                                <th id="admin-work-basic-manager" scope="row" class="kt-info-table__label kt-info-table__label--tall">KT 사업담당자<br />(Manager)</th>
-                                                <td headers="admin-work-basic-manager" class="kt-info-table__value kt-info-table__value--tall">조민호 (minho.jo@kt.com)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="kt-edit-template kt-edit-box">
-                                        <strong class="kt-edit-box__title">기본정보 편집모드</strong>
-                                        <table class="kt-info-table kt-info-table--edit" aria-label="기본 정보 편집">
+                                        <table class="kt-read-mode kt-info-table" aria-label="기본 정보">
                                             <colgroup>
-                                                <col class="kt-info-table__label-col" />
+                                                <col class="kt-info-table__label-col" style="width: 200px" />
                                                 <col class="kt-info-table__value-col" />
-                                                <col class="kt-info-table__label-col" />
-                                                <col class="kt-info-table__value-col" />
+                                                <col class="kt-info-table__label-col kt-info-table__label-col--manager" style="width: 200px" />
+                                                <col class="kt-info-table__value-col kt-info-table__value-col--manager" />
                                             </colgroup>
                                             <tbody>
                                                 <tr>
-                                                    <th id="admin-work-basic-edit-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
-                                                    <td headers="admin-work-basic-edit-workspace-name" class="kt-info-table__value">
-                                                        <input type="text" class="kt-input kt-input--36" value="하나로소프트_쿠폰서비스" data-basic-field="workspaceName" />
-                                                    </td>
-                                                    <th id="admin-work-basic-edit-type" scope="row" class="kt-info-table__label">타입</th>
-                                                    <td headers="admin-work-basic-edit-type" class="kt-info-table__value">Api Workspace</td>
+                                                    <th id="admin-work-basic-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                                                    <td headers="admin-work-basic-workspace-name" class="kt-info-table__value" data-basic-value="workspaceName">하나로소프트_쿠폰서비스</td>
+                                                    <th id="admin-work-basic-type" scope="row" class="kt-info-table__label">타입</th>
+                                                    <td headers="admin-work-basic-type" class="kt-info-table__value">Api Workspace</td>
                                                 </tr>
                                                 <tr>
-                                                    <th id="admin-work-basic-edit-desc" scope="row" class="kt-info-table__label">설명</th>
-                                                    <td headers="admin-work-basic-edit-desc" class="kt-info-table__value">
-                                                        <input type="text" class="kt-input kt-input--36" value="쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스" data-basic-field="description" />
-                                                    </td>
-                                                    <th id="admin-work-basic-edit-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
-                                                    <td headers="admin-work-basic-edit-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                                                    <th id="admin-work-basic-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                                                    <td headers="admin-work-basic-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                                                    <th id="admin-work-basic-manager" scope="row" class="kt-info-table__label kt-info-table__label--nowrap">KT 사업담당자 (Manager)</th>
+                                                    <td headers="admin-work-basic-manager" class="kt-info-table__value">조민호 (minho.jo@kt.com)</td>
                                                 </tr>
                                                 <tr>
-                                                    <th id="admin-work-basic-edit-company" scope="row" class="kt-info-table__label kt-info-table__label--tall">회사</th>
-                                                    <td headers="admin-work-basic-edit-company" class="kt-info-table__value kt-info-table__value--tall">하나로소프트</td>
-                                                    <th id="admin-work-basic-edit-manager" scope="row" class="kt-info-table__label kt-info-table__label--tall">KT 사업담당자<br />(Manager)</th>
-                                                    <td headers="admin-work-basic-edit-manager" class="kt-info-table__value kt-info-table__value--tall">조민호 (minho.jo@kt.com)</td>
+                                                    <th id="admin-work-basic-company" scope="row" class="kt-info-table__label">Company</th>
+                                                    <td headers="admin-work-basic-company" class="kt-info-table__value">하나로소프트</td>
+                                                    <th id="admin-work-basic-desc" scope="row" class="kt-info-table__label">설명</th>
+                                                    <td headers="admin-work-basic-desc" class="kt-info-table__value" data-basic-value="description">
+                                                        쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
-                                </section>
-
-                                <section class="kt-ws-section kt-ldap-section-members">
-                                    <div class="kt-ws-section__head">
-                                        <h2 class="kt-ws-section__title">
-                                            Members
-                                            <span class="kt-ws-section__count"><strong>4</strong><span>명</span></span>
-                                        </h2>
-                                        <div class="kt-ws-section__actions">
-                                            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
-                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
-                                            </button>
-                                            <button type="button" class="kt-btn kt-btn--popup">편집</button>
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">기본정보 편집모드</strong>
+                                            <table class="kt-info-table kt-info-table--edit" aria-label="기본 정보 편집">
+                                                <colgroup>
+                                                    <col class="kt-info-table__label-col" style="width: 200px" />
+                                                    <col class="kt-info-table__value-col" />
+                                                    <col class="kt-info-table__label-col kt-info-table__label-col--manager" style="width: 200px" />
+                                                    <col class="kt-info-table__value-col kt-info-table__value-col--manager" />
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th id="admin-work-basic-edit-workspace-name" scope="row" class="kt-info-table__label">워크스페이스명</th>
+                                                        <td headers="admin-work-basic-edit-workspace-name" class="kt-info-table__value">
+                                                            <input type="text" class="kt-input kt-input--36" value="하나로소프트_쿠폰서비스" data-basic-field="workspaceName" />
+                                                        </td>
+                                                        <th id="admin-work-basic-edit-type" scope="row" class="kt-info-table__label">타입</th>
+                                                        <td headers="admin-work-basic-edit-type" class="kt-info-table__value">Api Workspace</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th id="admin-work-basic-edit-partner-service" scope="row" class="kt-info-table__label">Partner KT Service</th>
+                                                        <td headers="admin-work-basic-edit-partner-service" class="kt-info-table__value">KT 멤버십 서비스 (KT_MBR_001)</td>
+                                                        <th id="admin-work-basic-edit-manager" scope="row" class="kt-info-table__label kt-info-table__label--nowrap">KT 사업담당자 (Manager)</th>
+                                                        <td headers="admin-work-basic-edit-manager" class="kt-info-table__value">조민호 (minho.jo@kt.com)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th id="admin-work-basic-edit-company" scope="row" class="kt-info-table__label">Company</th>
+                                                        <td headers="admin-work-basic-edit-company" class="kt-info-table__value">하나로소프트</td>
+                                                        <th id="admin-work-basic-edit-desc" scope="row" class="kt-info-table__label">설명</th>
+                                                        <td headers="admin-work-basic-edit-desc" class="kt-info-table__value">
+                                                            <input
+                                                                type="text"
+                                                                class="kt-input kt-input--36"
+                                                                value="쿠폰 발급 및 조회 서비스를 위한 API 연동 워크스페이스"
+                                                                data-basic-field="description"
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </div>
-                                    <table class="kt-data-table kt-data-table--members">
-                                        <caption class="blind">
-                                            멤버 목록
-                                        </caption>
-                                        <colgroup>
-                                            <col style="width: 20%" />
-                                            <col style="width: 20%" />
-                                            <col style="width: 20%" />
-                                            <col style="width: 20%" />
-                                            <col style="width: 20%" />
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">이름</th>
-                                                <th scope="col">이메일</th>
-                                                <th scope="col">소속</th>
-                                                <th scope="col">역할</th>
-                                                <th scope="col">지정 방식</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-member-read-row data-member-id="kim-cs">
-                                                <td class="center">김철수</td>
-                                                <td>kim.cs@hanaro.com</td>
-                                                <td class="center">하나로소프트</td>
-                                                <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
-                                                <td class="center">생성자 자동 지정</td>
-                                            </tr>
-                                            <tr data-member-read-row data-member-id="lee-sh">
-                                                <td class="center">이순희</td>
-                                                <td>lee.sh@kt.com</td>
-                                                <td class="center">KT</td>
-                                                <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
-                                                <td class="center">KT Service PO 자동 지정</td>
-                                            </tr>
-                                            <tr data-member-read-row data-member-id="park-je">
-                                                <td class="center">박지은</td>
-                                                <td>park.je@hanaro.com</td>
-                                                <td class="center">하나로소프트</td>
-                                                <td class="center"><span class="kt-badge">Member</span></td>
-                                                <td class="center">Owner 초대</td>
-                                            </tr>
-                                            <tr data-member-read-row data-member-id="kang-dh">
-                                                <td class="center">강다희</td>
-                                                <td>kang.dh@hanaro.com</td>
-                                                <td class="center">기술개발팀</td>
-                                                <td class="center"><span class="kt-badge">Member</span></td>
-                                                <td class="center">Owner 초대</td>
-                                            </tr>
-                                            <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-read-empty hidden>
-                                                <td colspan="5">
-                                                    <div class="kt-table-empty-result">
-                                                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
-                                                        <p>등록된 Members가 없습니다.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="kt-edit-template kt-edit-box">
-                                        <strong class="kt-edit-box__title">멤버 편집모드</strong>
-                                        <section class="kt-ldap-filter" aria-label="멤버 검색">
-                                            <div class="kt-ldap-member-filter">
-                                                <div class="kt-newwork-search kt-ldap-newwork-search" data-ldap-search data-ldap-search-type="member" data-min-length="1">
-                                                    <div class="kt-newwork-search__field">
-                                                        <input
-                                                            type="text"
-                                                            id="adminWorkMemberKeyword"
-                                                            class="kt-input kt-input--40"
-                                                            placeholder="이름 또는 이메일을 입력하세요"
-                                                            data-ldap-member-search
-                                                            aria-controls="adminWorkMemberSearchMenu"
-                                                            aria-expanded="false"
-                                                            autocomplete="off"
-                                                        />
-                                                        <button type="button" class="kt-newwork-search__clear" data-ldap-search-clear aria-controls="adminWorkMemberKeyword" aria-label="검색어 삭제" hidden>
-                                                            <span class="blind">검색어 삭제</span>
-                                                        </button>
-                                                        <button type="button" class="kt-newwork-search__submit" aria-label="멤버 검색">
-                                                            <span class="blind">검색</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="kt-newwork-search-menu kt-newwork-search-menu--member" id="adminWorkMemberSearchMenu" data-ldap-search-menu role="listbox">
-                                                        <div class="kt-newwork-search-menu__head">
-                                                            <span>검색 결과</span>
-                                                            <strong data-ldap-search-count>0</strong>
-                                                            <span>건</span>
-                                                        </div>
-                                                        <ul class="kt-newwork-search-menu__list kt-scrollbar">
-                                                            <li hidden>
-                                                                <button
-                                                                    type="button"
-                                                                    role="option"
-                                                                    tabindex="-1"
-                                                                    aria-selected="false"
-                                                                    aria-hidden="true"
-                                                                    aria-disabled="true"
-                                                                    data-prompt-disabled="true"
-                                                                    data-ldap-search-option
-                                                                    data-member-id="kim-cs"
-                                                                    data-member-name="김철수"
-                                                                    data-member-email="kim.cs@hanaro.com"
-                                                                    data-member-company="하나로소프트"
-                                                                    data-member-role="Owner"
-                                                                    data-member-method="생성자 자동 지정"
-                                                                    data-search="김철수 kim.cs@hanaro.com 하나로소프트 Owner"
-                                                                    hidden
-                                                                >
-                                                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                                                    <strong>김철수</strong>
-                                                                    <span>kim.cs@hanaro.com</span>
-                                                                </button>
-                                                            </li>
-                                                            <li hidden>
-                                                                <button
-                                                                    type="button"
-                                                                    role="option"
-                                                                    tabindex="-1"
-                                                                    aria-selected="false"
-                                                                    aria-hidden="true"
-                                                                    aria-disabled="true"
-                                                                    data-prompt-disabled="true"
-                                                                    data-ldap-search-option
-                                                                    data-member-id="lee-sh"
-                                                                    data-member-name="이순희"
-                                                                    data-member-email="lee.sh@kt.com"
-                                                                    data-member-company="KT"
-                                                                    data-member-role="Manager"
-                                                                    data-member-method="KT Service PO 자동 지정"
-                                                                    data-search="이순희 lee.sh@kt.com KT Manager"
-                                                                    hidden
-                                                                >
-                                                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                                                    <strong>이순희</strong>
-                                                                    <span>lee.sh@kt.com</span>
-                                                                </button>
-                                                            </li>
-                                                            <li hidden>
-                                                                <button
-                                                                    type="button"
-                                                                    role="option"
-                                                                    tabindex="-1"
-                                                                    aria-selected="false"
-                                                                    aria-hidden="true"
-                                                                    aria-disabled="true"
-                                                                    data-prompt-disabled="true"
-                                                                    data-ldap-search-option
-                                                                    data-member-id="park-je"
-                                                                    data-member-name="박지은"
-                                                                    data-member-email="park.je@hanaro.com"
-                                                                    data-member-company="하나로소프트"
-                                                                    data-member-role="Member"
-                                                                    data-member-method="Owner 초대"
-                                                                    data-search="박지은 park.je@hanaro.com 하나로소프트 Member"
-                                                                    hidden
-                                                                >
-                                                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                                                    <strong>박지은</strong>
-                                                                    <span>park.je@hanaro.com</span>
-                                                                </button>
-                                                            </li>
-                                                            <li hidden>
-                                                                <button
-                                                                    type="button"
-                                                                    role="option"
-                                                                    tabindex="-1"
-                                                                    aria-selected="false"
-                                                                    aria-hidden="true"
-                                                                    aria-disabled="true"
-                                                                    data-prompt-disabled="true"
-                                                                    data-ldap-search-option
-                                                                    data-member-id="kang-dh"
-                                                                    data-member-name="강다희"
-                                                                    data-member-email="kang.dh@hanaro.com"
-                                                                    data-member-company="기술개발팀"
-                                                                    data-member-role="Member"
-                                                                    data-member-method="Owner 초대"
-                                                                    data-search="강다희 kang.dh@hanaro.com 기술개발팀 Member"
-                                                                    hidden
-                                                                >
-                                                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                                                    <strong>강다희</strong>
-                                                                    <span>kang.dh@hanaro.com</span>
-                                                                </button>
-                                                            </li>
-                                                            <li>
-                                                                <button
-                                                                    type="button"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-member-id="choi-mj"
-                                                                    data-member-name="최민준"
-                                                                    data-member-email="choi.mj@hanaro.com"
-                                                                    data-member-company="하나로소프트"
-                                                                    data-member-role="Member"
-                                                                    data-member-method="Manager 초대"
-                                                                    data-search="최민준 choi.mj@hanaro.com 하나로소프트 Member"
-                                                                >
-                                                                    <span class="kt-newwork-search-icon" aria-hidden="true"></span>
-                                                                    <strong>최민준</strong>
-                                                                    <span>choi.mj@hanaro.com</span>
-                                                                </button>
-                                                            </li>
-                                                            <li data-member-empty hidden>
-                                                                <div class="kt-newwork-search-menu__empty">검색 결과가 없습니다.</div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                    </section>
+
+                                    <section class="kt-ws-section kt-ldap-section-members">
+                                        <div class="kt-ws-section__head">
+                                            <h2 class="kt-ws-section__title">
+                                                Members
+                                                <span class="kt-ws-section__count"><strong>4</strong><span>명</span></span>
+                                            </h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--popup">편집</button>
                                             </div>
-                                        </section>
-                                        <table class="kt-data-table kt-data-table--members kt-data-table--members-edit">
+                                        </div>
+                                        <table class="kt-data-table kt-data-table--members">
                                             <caption class="blind">
-                                                멤버 편집 목록
+                                                멤버 목록
                                             </caption>
                                             <colgroup>
-                                                <col style="width: calc((100% - 120px) / 5)" />
-                                                <col style="width: calc((100% - 120px) / 5)" />
-                                                <col style="width: calc((100% - 120px) / 5)" />
-                                                <col style="width: calc((100% - 120px) / 5)" />
-                                                <col style="width: calc((100% - 120px) / 5)" />
-                                                <col style="width: 120px" />
+                                                <col style="width: 20%" />
+                                                <col style="width: 20%" />
+                                                <col style="width: 20%" />
+                                                <col style="width: 20%" />
+                                                <col style="width: 20%" />
                                             </colgroup>
                                             <thead>
                                                 <tr>
@@ -380,52 +168,39 @@
                                                     <th scope="col">소속</th>
                                                     <th scope="col">역할</th>
                                                     <th scope="col">지정 방식</th>
-                                                    <th scope="col">관리</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr data-member-row data-member-id="kim-cs">
+                                                <tr data-member-read-row data-member-id="kim-cs">
                                                     <td class="center">김철수</td>
                                                     <td>kim.cs@hanaro.com</td>
                                                     <td class="center">하나로소프트</td>
                                                     <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
                                                     <td class="center">생성자 자동 지정</td>
-                                                    <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="김철수 삭제">삭제</button></td>
                                                 </tr>
-                                                <tr data-member-row data-member-id="lee-sh">
+                                                <tr data-member-read-row data-member-id="lee-sh">
                                                     <td class="center">이순희</td>
                                                     <td>lee.sh@kt.com</td>
                                                     <td class="center">KT</td>
                                                     <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
                                                     <td class="center">KT Service PO 자동 지정</td>
-                                                    <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="이순희 삭제">삭제</button></td>
                                                 </tr>
-                                                <tr data-member-row data-member-id="park-je">
+                                                <tr data-member-read-row data-member-id="park-je">
                                                     <td class="center">박지은</td>
                                                     <td>park.je@hanaro.com</td>
                                                     <td class="center">하나로소프트</td>
                                                     <td class="center"><span class="kt-badge">Member</span></td>
                                                     <td class="center">Owner 초대</td>
-                                                    <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="박지은 삭제">삭제</button></td>
                                                 </tr>
-                                                <tr data-member-row data-member-id="kang-dh">
+                                                <tr data-member-read-row data-member-id="kang-dh">
                                                     <td class="center">강다희</td>
                                                     <td>kang.dh@hanaro.com</td>
                                                     <td class="center">기술개발팀</td>
                                                     <td class="center"><span class="kt-badge">Member</span></td>
                                                     <td class="center">Owner 초대</td>
-                                                    <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="강다희 삭제">삭제</button></td>
                                                 </tr>
-                                                <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-empty hidden>
-                                                    <td colspan="6">
-                                                        <div class="kt-table-empty-result">
-                                                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
-                                                            <p>검색 결과가 없습니다.</p>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-no-data-empty hidden>
-                                                    <td colspan="6">
+                                                <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-read-empty hidden>
+                                                    <td colspan="5">
                                                         <div class="kt-table-empty-result">
                                                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
                                                             <p>등록된 Members가 없습니다.</p>
@@ -434,314 +209,263 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
-                                </section>
-
-                                <section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-filled">
-                                    <div class="kt-ws-section__head">
-                                        <h2 class="kt-ws-section__title">
-                                            구독 API
-                                            <span class="kt-ws-section__count"><strong>2</strong><span>개</span></span>
-                                        </h2>
-                                        <div class="kt-ws-section__actions">
-                                            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
-                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
-                                            </button>
-                                            <button type="button" class="kt-btn kt-btn--popup-line" data-api-approval-request>API 승인요청 <strong>민감 0</strong></button>
-                                            <button type="button" class="kt-btn kt-btn--popup">편집</button>
-                                        </div>
-                                    </div>
-                                    <div class="kt-ldap-api-table-wrap">
-                                        <table class="kt-data-table kt-data-table--api">
-                                            <caption class="blind">
-                                                구독 API 목록
-                                            </caption>
-                                            <colgroup>
-                                                <col />
-                                                <col />
-                                                <col />
-                                                <col />
-                                                <col />
-                                                <col />
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">API명</th>
-                                                    <th scope="col">호출 도메인</th>
-                                                    <th scope="col">민감도</th>
-                                                    <th scope="col">Self Testing</th>
-                                                    <th scope="col">승인</th>
-                                                    <th scope="col">상태</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="kt-api-row" data-api-row data-api-accordion="admin-user-property">
-                                                    <td>
-                                                        <div class="kt-api-name">
-                                                            <button type="button" class="kt-row-toggle" data-api-accordion="admin-user-property" aria-expanded="false" aria-label="API 상세 열기">
-                                                                <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">멤버 편집모드</strong>
+                                            <section class="kt-ldap-filter" aria-label="멤버 검색">
+                                                <div class="kt-ldap-member-filter">
+                                                    <div class="kt-newwork-search kt-ldap-newwork-search" data-ldap-search data-ldap-search-type="member" data-min-length="1">
+                                                        <div class="kt-newwork-search__field">
+                                                            <input
+                                                                type="text"
+                                                                id="adminWorkMemberKeyword"
+                                                                class="kt-input kt-input--40"
+                                                                placeholder="이름 또는 이메일을 입력하세요"
+                                                                data-ldap-member-search
+                                                                aria-controls="adminWorkMemberSearchMenu"
+                                                                aria-expanded="false"
+                                                                autocomplete="off"
+                                                            />
+                                                            <button
+                                                                type="button"
+                                                                class="kt-newwork-search__clear"
+                                                                data-ldap-search-clear
+                                                                aria-controls="adminWorkMemberKeyword"
+                                                                aria-label="검색어 삭제"
+                                                                hidden
+                                                            >
+                                                                <span class="blind">검색어 삭제</span>
                                                             </button>
-                                                            <span class="kt-api-name__text">OIF_312 <a href="#" class="is-link">UserProperty (LDAP)</a></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="kt-domain-lines">
-                                                            <span>상용 cus-in.api.kt.com</span>
-                                                            <span>개발 cus-in.tbapi.kt.com</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="center is-muted">-</td>
-                                                    <td class="center"><a href="#" class="is-link">Completed</a></td>
-                                                    <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                                                    <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
-                                                </tr>
-                                                <tr class="kt-api-detail-row" data-api-accordion-panel="admin-user-property" hidden>
-                                                    <td colspan="6">
-                                                        <div class="kt-api-detail-card">
-                                                            <div class="kt-api-detail-card__cell">
-                                                                <div class="kt-api-params">
-                                                                    <strong>Return Parameters</strong>
-                                                                    <span>member_id</span>
-                                                                    <span>point_balance</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="kt-api-detail-card__cell">
-                                                                <div class="kt-domain-lines">
-                                                                    <span>상용 cus-in.api.kt.com</span>
-                                                                    <span>개발 cus-in.tbapi.kt.com</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="kt-api-row" data-api-row data-api-accordion="admin-coupon-read">
-                                                    <td>
-                                                        <div class="kt-api-name">
-                                                            <button type="button" class="kt-row-toggle" data-api-accordion="admin-coupon-read" aria-expanded="false" aria-label="API 상세 열기">
-                                                                <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                                            <button type="button" class="kt-newwork-search__submit" aria-label="멤버 검색">
+                                                                <span class="blind">검색</span>
                                                             </button>
-                                                            <span class="kt-api-name__text">OIF_313 <a href="#" class="is-link">CouponPkgSearch (CUPI)</a></span>
-                                                            <span class="kt-tooltip" role="tooltip">CUPI 시스템에서 사용자에게 쿠폰을 발급합니다.</span>
                                                         </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="kt-domain-lines">
-                                                            <span>상용 cus-in.api.kt.com</span>
-                                                            <span>개발 cus-in.tbapi.kt.com</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="center is-danger">민감 1</td>
-                                                    <td class="center"><a href="#" class="is-link">Completed</a></td>
-                                                    <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                                                    <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
-                                                </tr>
-                                                <tr class="kt-api-detail-row" data-api-accordion-panel="admin-coupon-read" hidden>
-                                                    <td colspan="6">
-                                                        <div class="kt-api-detail-card">
-                                                            <div class="kt-api-detail-card__cell">
-                                                                <div class="kt-api-params">
-                                                                    <strong>Return Parameters</strong>
-                                                                    <span class="kt-api-params__row">member_id <em class="kt-api-params__sensitive">민감 1</em></span>
-                                                                    <span>point_balance</span>
-                                                                </div>
+                                                        <div class="kt-newwork-search-menu kt-newwork-search-menu--member" id="adminWorkMemberSearchMenu" data-ldap-search-menu role="listbox">
+                                                            <div class="kt-newwork-search-menu__head">
+                                                                <span>검색 결과</span>
+                                                                <strong data-ldap-search-count>0</strong>
+                                                                <span>건</span>
                                                             </div>
-                                                            <div class="kt-api-detail-card__cell">
-                                                                <div class="kt-domain-lines">
-                                                                    <span>상용 cus-in.api.kt.com</span>
-                                                                    <span>개발 cus-in.tbapi.kt.com</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-danger">민감 1</div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
-                                                            <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
+                                                            <ul class="kt-newwork-search-menu__list kt-scrollbar">
+                                                                <li hidden>
+                                                                    <button
+                                                                        type="button"
+                                                                        role="option"
+                                                                        tabindex="-1"
+                                                                        aria-selected="false"
+                                                                        aria-hidden="true"
+                                                                        aria-disabled="true"
+                                                                        data-prompt-disabled="true"
+                                                                        data-ldap-search-option
+                                                                        data-member-id="kim-cs"
+                                                                        data-member-name="김철수"
+                                                                        data-member-email="kim.cs@hanaro.com"
+                                                                        data-member-company="하나로소프트"
+                                                                        data-member-role="Owner"
+                                                                        data-member-method="생성자 자동 지정"
+                                                                        data-search="김철수 kim.cs@hanaro.com 하나로소프트 Owner"
+                                                                        hidden
+                                                                    >
+                                                                        <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                                        <strong>김철수</strong>
+                                                                        <span>kim.cs@hanaro.com</span>
+                                                                    </button>
+                                                                </li>
+                                                                <li hidden>
+                                                                    <button
+                                                                        type="button"
+                                                                        role="option"
+                                                                        tabindex="-1"
+                                                                        aria-selected="false"
+                                                                        aria-hidden="true"
+                                                                        aria-disabled="true"
+                                                                        data-prompt-disabled="true"
+                                                                        data-ldap-search-option
+                                                                        data-member-id="lee-sh"
+                                                                        data-member-name="이순희"
+                                                                        data-member-email="lee.sh@kt.com"
+                                                                        data-member-company="KT"
+                                                                        data-member-role="Manager"
+                                                                        data-member-method="KT Service PO 자동 지정"
+                                                                        data-search="이순희 lee.sh@kt.com KT Manager"
+                                                                        hidden
+                                                                    >
+                                                                        <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                                        <strong>이순희</strong>
+                                                                        <span>lee.sh@kt.com</span>
+                                                                    </button>
+                                                                </li>
+                                                                <li hidden>
+                                                                    <button
+                                                                        type="button"
+                                                                        role="option"
+                                                                        tabindex="-1"
+                                                                        aria-selected="false"
+                                                                        aria-hidden="true"
+                                                                        aria-disabled="true"
+                                                                        data-prompt-disabled="true"
+                                                                        data-ldap-search-option
+                                                                        data-member-id="park-je"
+                                                                        data-member-name="박지은"
+                                                                        data-member-email="park.je@hanaro.com"
+                                                                        data-member-company="하나로소프트"
+                                                                        data-member-role="Member"
+                                                                        data-member-method="Owner 초대"
+                                                                        data-search="박지은 park.je@hanaro.com 하나로소프트 Member"
+                                                                        hidden
+                                                                    >
+                                                                        <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                                        <strong>박지은</strong>
+                                                                        <span>park.je@hanaro.com</span>
+                                                                    </button>
+                                                                </li>
+                                                                <li hidden>
+                                                                    <button
+                                                                        type="button"
+                                                                        role="option"
+                                                                        tabindex="-1"
+                                                                        aria-selected="false"
+                                                                        aria-hidden="true"
+                                                                        aria-disabled="true"
+                                                                        data-prompt-disabled="true"
+                                                                        data-ldap-search-option
+                                                                        data-member-id="kang-dh"
+                                                                        data-member-name="강다희"
+                                                                        data-member-email="kang.dh@hanaro.com"
+                                                                        data-member-company="기술개발팀"
+                                                                        data-member-role="Member"
+                                                                        data-member-method="Owner 초대"
+                                                                        data-search="강다희 kang.dh@hanaro.com 기술개발팀 Member"
+                                                                        hidden
+                                                                    >
+                                                                        <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                                        <strong>강다희</strong>
+                                                                        <span>kang.dh@hanaro.com</span>
+                                                                    </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button
+                                                                        type="button"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-member-id="choi-mj"
+                                                                        data-member-name="최민준"
+                                                                        data-member-email="choi.mj@hanaro.com"
+                                                                        data-member-company="하나로소프트"
+                                                                        data-member-role="Member"
+                                                                        data-member-method="Manager 초대"
+                                                                        data-search="최민준 choi.mj@hanaro.com 하나로소프트 Member"
+                                                                    >
+                                                                        <span class="kt-newwork-search-icon" aria-hidden="true"></span>
+                                                                        <strong>최민준</strong>
+                                                                        <span>choi.mj@hanaro.com</span>
+                                                                    </button>
+                                                                </li>
+                                                                <li data-member-empty hidden>
+                                                                    <div class="kt-newwork-search-menu__empty">검색 결과가 없습니다.</div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="kt-edit-template kt-edit-box">
-                                        <strong class="kt-edit-box__title">구독 API 편집모드</strong>
-                                        <div class="kt-ldap-api-picker">
-                                            <section class="kt-ldap-api-picker__search" aria-label="API 검색">
-                                                <h3 class="kt-ldap-api-picker__title">API 검색</h3>
-                                                <div class="kt-newwork-search kt-ldap-newwork-search kt-ldap-newwork-search--api" data-ldap-search data-ldap-search-type="api" data-min-length="1">
-                                                    <div class="kt-newwork-search__field">
-                                                        <input
-                                                            type="text"
-                                                            id="adminApiKeyword"
-                                                            class="kt-input kt-input--48"
-                                                            placeholder="API이름, 코드, 시스템으로 검색"
-                                                            data-ldap-api-picker-search
-                                                            aria-controls="adminApiSearchMenu"
-                                                            aria-expanded="false"
-                                                            autocomplete="off"
-                                                        />
-                                                        <button type="button" class="kt-newwork-search__clear" data-ldap-search-clear aria-controls="adminApiKeyword" aria-label="검색어 삭제" hidden>
-                                                            <span class="blind">검색어 삭제</span>
-                                                        </button>
-                                                        <button type="button" class="kt-newwork-search__submit" aria-label="API 검색">
-                                                            <span class="blind">검색</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="kt-newwork-search-menu kt-newwork-search-menu--api" id="adminApiSearchMenu" data-ldap-search-menu role="listbox">
-                                                        <ul class="kt-newwork-search-menu__list kt-scrollbar">
-                                                            <li>
-                                                                <label
-                                                                    class="kt-ldap-api-search-option"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-api-id="oif-311"
-                                                                    data-api-code="OIF_311"
-                                                                    data-api-name="checkAppSSOBasedTokenId"
-                                                                    data-api-prod-domain="cus-in.api.kt.com"
-                                                                    data-api-dev-domain="cus-in.tbapi.kt.com"
-                                                                    data-api-sensitivity="민감 1"
-                                                                    data-api-self-testing="Unfinished"
-                                                                    data-api-approval="대기"
-                                                                    data-api-status="미상용"
-                                                                    data-api-params="token_id:민감 1|expires_in"
-                                                                    data-search="OIF_311 checkAppSSOBasedTokenId cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 대기 미상용"
-                                                                >
-                                                                    <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
-                                                                    <strong>OIF_311</strong>
-                                                                    <a>checkAppSSOBasedTokenId</a>
-                                                                    <em>민감 1</em>
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <label
-                                                                    class="kt-ldap-api-search-option"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-api-added="true"
-                                                                    data-api-id="oif-312"
-                                                                    data-api-code="OIF_312"
-                                                                    data-api-name="UserProperty (LDAP)"
-                                                                    data-api-prod-domain="cus-in.api.kt.com"
-                                                                    data-api-dev-domain="cus-in.tbapi.kt.com"
-                                                                    data-api-sensitivity="-"
-                                                                    data-api-self-testing="Completed"
-                                                                    data-api-approval="승인"
-                                                                    data-api-status="상용"
-                                                                    data-api-params="member_id|point_balance"
-                                                                    data-search="OIF_312 UserProperty LDAP cus-in.api.kt.com cus-in.tbapi.kt.com 승인 상용"
-                                                                >
-                                                                    <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
-                                                                    <strong>OIF_312</strong>
-                                                                    <a>UserProperty (LDAP)</a>
-                                                                    <em>-</em>
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <label
-                                                                    class="kt-ldap-api-search-option"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-api-added="true"
-                                                                    data-api-id="oif-313"
-                                                                    data-api-code="OIF_313"
-                                                                    data-api-name="CouponPkgSearch (CUPI)"
-                                                                    data-api-prod-domain="cus-in.api.kt.com"
-                                                                    data-api-dev-domain="cus-in.tbapi.kt.com"
-                                                                    data-api-sensitivity="민감 1"
-                                                                    data-api-self-testing="Completed"
-                                                                    data-api-approval="승인"
-                                                                    data-api-status="상용"
-                                                                    data-api-params="member_id:민감 1|point_balance"
-                                                                    data-search="OIF_313 CouponPkgSearch CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 승인 상용"
-                                                                >
-                                                                    <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
-                                                                    <strong>OIF_313</strong>
-                                                                    <a>CouponPkgSearch (CUPI)</a>
-                                                                    <em>민감 1</em>
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <label
-                                                                    class="kt-ldap-api-search-option"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-api-id="oif-314"
-                                                                    data-api-code="OIF_314"
-                                                                    data-api-name="CouponIssue (CUPI)"
-                                                                    data-api-prod-domain="cus-in.api.kt.com"
-                                                                    data-api-dev-domain="cus-in.tbapi.kt.com"
-                                                                    data-api-sensitivity="민감 1"
-                                                                    data-api-self-testing="Unfinished"
-                                                                    data-api-approval="반려"
-                                                                    data-api-status="미상용"
-                                                                    data-api-params="user_id:민감 1|coupon_id"
-                                                                    data-search="OIF_314 CouponIssue CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 반려 미상용"
-                                                                >
-                                                                    <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
-                                                                    <strong>OIF_314</strong>
-                                                                    <a>CouponIssue (CUPI)</a>
-                                                                    <em>민감 1</em>
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <label
-                                                                    class="kt-ldap-api-search-option"
-                                                                    role="option"
-                                                                    tabindex="0"
-                                                                    aria-selected="false"
-                                                                    data-ldap-search-option
-                                                                    data-api-id="oif-315"
-                                                                    data-api-code="OIF_315"
-                                                                    data-api-name="CouponStatus (CUPI)"
-                                                                    data-api-prod-domain="cus-in.api.kt.com"
-                                                                    data-api-dev-domain="cus-in.tbapi.kt.com"
-                                                                    data-api-sensitivity="-"
-                                                                    data-api-self-testing="Completed"
-                                                                    data-api-approval="재신청"
-                                                                    data-api-status="상용"
-                                                                    data-api-params="coupon_status|issued_at"
-                                                                    data-search="OIF_315 CouponStatus CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 재신청 상용"
-                                                                >
-                                                                    <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
-                                                                    <strong>OIF_315</strong>
-                                                                    <a>CouponStatus (CUPI)</a>
-                                                                    <em>-</em>
-                                                                </label>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </section>
-                                            <section class="kt-ldap-api-picker__selected" aria-label="선택된 API">
-                                                <h3 class="kt-ldap-api-picker__title">선택된 API</h3>
-                                                <ul class="kt-selected-api-list" data-api-selected-list>
-                                                    <li class="kt-selected-api-empty" data-api-selected-empty>
-                                                        <div class="kt-table-empty-result">
-                                                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
-                                                            <p>등록된 API가 없습니다.</p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </section>
+                                            <table class="kt-data-table kt-data-table--members kt-data-table--members-edit">
+                                                <caption class="blind">
+                                                    멤버 편집 목록
+                                                </caption>
+                                                <colgroup>
+                                                    <col style="width: calc((100% - 120px) / 5)" />
+                                                    <col style="width: calc((100% - 120px) / 5)" />
+                                                    <col style="width: calc((100% - 120px) / 5)" />
+                                                    <col style="width: calc((100% - 120px) / 5)" />
+                                                    <col style="width: calc((100% - 120px) / 5)" />
+                                                    <col style="width: 120px" />
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">이름</th>
+                                                        <th scope="col">이메일</th>
+                                                        <th scope="col">소속</th>
+                                                        <th scope="col">역할</th>
+                                                        <th scope="col">지정 방식</th>
+                                                        <th scope="col">관리</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr data-member-row data-member-id="kim-cs">
+                                                        <td class="center">김철수</td>
+                                                        <td>kim.cs@hanaro.com</td>
+                                                        <td class="center">하나로소프트</td>
+                                                        <td class="center"><span class="kt-badge kt-badge--role-owner">Owner</span></td>
+                                                        <td class="center">생성자 자동 지정</td>
+                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="김철수 삭제">삭제</button></td>
+                                                    </tr>
+                                                    <tr data-member-row data-member-id="lee-sh">
+                                                        <td class="center">이순희</td>
+                                                        <td>lee.sh@kt.com</td>
+                                                        <td class="center">KT</td>
+                                                        <td class="center"><span class="kt-badge kt-badge--role-manager">Manager</span></td>
+                                                        <td class="center">KT Service PO 자동 지정</td>
+                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="이순희 삭제">삭제</button></td>
+                                                    </tr>
+                                                    <tr data-member-row data-member-id="park-je">
+                                                        <td class="center">박지은</td>
+                                                        <td>park.je@hanaro.com</td>
+                                                        <td class="center">하나로소프트</td>
+                                                        <td class="center"><span class="kt-badge">Member</span></td>
+                                                        <td class="center">Owner 초대</td>
+                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="박지은 삭제">삭제</button></td>
+                                                    </tr>
+                                                    <tr data-member-row data-member-id="kang-dh">
+                                                        <td class="center">강다희</td>
+                                                        <td>kang.dh@hanaro.com</td>
+                                                        <td class="center">기술개발팀</td>
+                                                        <td class="center"><span class="kt-badge">Member</span></td>
+                                                        <td class="center">Owner 초대</td>
+                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-member-delete aria-label="강다희 삭제">삭제</button></td>
+                                                    </tr>
+                                                    <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-empty hidden>
+                                                        <td colspan="6">
+                                                            <div class="kt-table-empty-result">
+                                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                                                                <p>검색 결과가 없습니다.</p>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="kt-data-table__empty kt-data-table__empty--result" data-member-no-data-empty hidden>
+                                                        <td colspan="6">
+                                                            <div class="kt-table-empty-result">
+                                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                                                                <p>등록된 Members가 없습니다.</p>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="kt-ldap-api-edit-actions">
-                                            <p class="kt-selected-api-notice" data-api-sensitive-notice hidden>민감 파라미터 포함 API로 승인 요청이 필요합니다.</p>
-                                            <button type="button" class="kt-btn kt-btn--sm kt-btn--tertiary" data-api-add-to-list disabled>목록에 추가</button>
+                                    </section>
+
+                                    <section class="kt-ws-section kt-ldap-section-api kt-ldap-section-api-filled">
+                                        <div class="kt-ws-section__head">
+                                            <h2 class="kt-ws-section__title">
+                                                구독 API
+                                                <span class="kt-ws-section__count"><strong>2</strong><span>개</span></span>
+                                            </h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
+                                                    <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
+                                                </button>
+                                                <button type="button" class="kt-btn kt-btn--popup-line kt-btn--popup-line-danger" data-api-approval-request>
+                                                    API 승인요청 <strong>민감 1</strong>
+                                                </button>
+                                                <button type="button" class="kt-btn kt-btn--popup">편집</button>
+                                            </div>
                                         </div>
                                         <div class="kt-ldap-api-table-wrap">
-                                            <table class="kt-data-table kt-data-table--api kt-data-table--api-edit">
+                                            <table class="kt-data-table kt-data-table--api">
                                                 <caption class="blind">
-                                                    구독 API 편집 목록
+                                                    구독 API 목록
                                                 </caption>
                                                 <colgroup>
                                                     <col />
@@ -762,18 +486,10 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr class="kt-data-table__empty kt-data-table__empty--result" data-api-edit-empty hidden>
-                                                        <td colspan="6">
-                                                            <div class="kt-table-empty-result">
-                                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
-                                                                <p>등록된 API가 없습니다.</p>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="kt-api-row" data-api-row data-api-accordion="edit-oif-312">
+                                                    <tr class="kt-api-row" data-api-row data-api-accordion="admin-user-property">
                                                         <td>
                                                             <div class="kt-api-name">
-                                                                <button type="button" class="kt-row-toggle" data-api-accordion="edit-oif-312" aria-expanded="false" aria-label="API 상세 열기">
+                                                                <button type="button" class="kt-row-toggle" data-api-accordion="admin-user-property" aria-expanded="false" aria-label="API 상세 열기">
                                                                     <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
                                                                 </button>
                                                                 <span class="kt-api-name__text">OIF_312 <a href="#" class="is-link">UserProperty (LDAP)</a></span>
@@ -788,9 +504,9 @@
                                                         <td class="center is-muted">-</td>
                                                         <td class="center"><a href="#" class="is-link">Completed</a></td>
                                                         <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
+                                                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
                                                     </tr>
-                                                    <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-312" hidden>
+                                                    <tr class="kt-api-detail-row" data-api-accordion-panel="admin-user-property" hidden>
                                                         <td colspan="6">
                                                             <div class="kt-api-detail-card">
                                                                 <div class="kt-api-detail-card__cell">
@@ -813,13 +529,14 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr class="kt-api-row" data-api-row data-api-accordion="edit-oif-313">
+                                                    <tr class="kt-api-row" data-api-row data-api-accordion="admin-coupon-read">
                                                         <td>
                                                             <div class="kt-api-name">
-                                                                <button type="button" class="kt-row-toggle" data-api-accordion="edit-oif-313" aria-expanded="false" aria-label="API 상세 열기">
+                                                                <button type="button" class="kt-row-toggle" data-api-accordion="admin-coupon-read" aria-expanded="false" aria-label="API 상세 열기">
                                                                     <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
                                                                 </button>
                                                                 <span class="kt-api-name__text">OIF_313 <a href="#" class="is-link">CouponPkgSearch (CUPI)</a></span>
+                                                                <span class="kt-tooltip" role="tooltip">CUPI 시스템에서 사용자에게 쿠폰을 발급합니다.</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -831,9 +548,9 @@
                                                         <td class="center is-danger">민감 1</td>
                                                         <td class="center"><a href="#" class="is-link">Completed</a></td>
                                                         <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
-                                                        <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
+                                                        <td class="center"><span class="kt-badge kt-badge--prod">상용</span></td>
                                                     </tr>
-                                                    <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-313" hidden>
+                                                    <tr class="kt-api-detail-row" data-api-accordion-panel="admin-coupon-read" hidden>
                                                         <td colspan="6">
                                                             <div class="kt-api-detail-card">
                                                                 <div class="kt-api-detail-card__cell">
@@ -859,81 +576,330 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-                                </section>
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">구독 API 편집모드</strong>
+                                            <div class="kt-ldap-api-picker">
+                                                <section class="kt-ldap-api-picker__search" aria-label="API 검색">
+                                                    <h3 class="kt-ldap-api-picker__title">API 검색</h3>
+                                                    <div class="kt-newwork-search kt-ldap-newwork-search kt-ldap-newwork-search--api" data-ldap-search data-ldap-search-type="api" data-min-length="1">
+                                                        <div class="kt-newwork-search__field">
+                                                            <input
+                                                                type="text"
+                                                                id="adminApiKeyword"
+                                                                class="kt-input kt-input--48"
+                                                                placeholder="API이름, 코드, 시스템으로 검색"
+                                                                data-ldap-api-picker-search
+                                                                aria-controls="adminApiSearchMenu"
+                                                                aria-expanded="false"
+                                                                autocomplete="off"
+                                                            />
+                                                            <button
+                                                                type="button"
+                                                                class="kt-newwork-search__clear"
+                                                                data-ldap-search-clear
+                                                                aria-controls="adminApiKeyword"
+                                                                aria-label="검색어 삭제"
+                                                                hidden
+                                                            >
+                                                                <span class="blind">검색어 삭제</span>
+                                                            </button>
+                                                            <button type="button" class="kt-newwork-search__submit" aria-label="API 검색">
+                                                                <span class="blind">검색</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="kt-newwork-search-menu kt-newwork-search-menu--api" id="adminApiSearchMenu" data-ldap-search-menu role="listbox">
+                                                            <ul class="kt-newwork-search-menu__list kt-scrollbar">
+                                                                <li>
+                                                                    <label
+                                                                        class="kt-ldap-api-search-option"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-api-id="oif-311"
+                                                                        data-api-code="OIF_311"
+                                                                        data-api-name="checkAppSSOBasedTokenId"
+                                                                        data-api-prod-domain="cus-in.api.kt.com"
+                                                                        data-api-dev-domain="cus-in.tbapi.kt.com"
+                                                                        data-api-sensitivity="민감 1"
+                                                                        data-api-self-testing="Unfinished"
+                                                                        data-api-approval="대기"
+                                                                        data-api-status="미상용"
+                                                                        data-api-params="token_id:민감 1|expires_in"
+                                                                        data-search="OIF_311 checkAppSSOBasedTokenId cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 대기 미상용"
+                                                                    >
+                                                                        <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
+                                                                        <strong>OIF_311</strong>
+                                                                        <a>checkAppSSOBasedTokenId</a>
+                                                                        <em>민감 1</em>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label
+                                                                        class="kt-ldap-api-search-option"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-api-added="true"
+                                                                        data-api-id="oif-312"
+                                                                        data-api-code="OIF_312"
+                                                                        data-api-name="UserProperty (LDAP)"
+                                                                        data-api-prod-domain="cus-in.api.kt.com"
+                                                                        data-api-dev-domain="cus-in.tbapi.kt.com"
+                                                                        data-api-sensitivity="-"
+                                                                        data-api-self-testing="Completed"
+                                                                        data-api-approval="승인"
+                                                                        data-api-status="상용"
+                                                                        data-api-params="member_id|point_balance"
+                                                                        data-search="OIF_312 UserProperty LDAP cus-in.api.kt.com cus-in.tbapi.kt.com 승인 상용"
+                                                                    >
+                                                                        <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
+                                                                        <strong>OIF_312</strong>
+                                                                        <a>UserProperty (LDAP)</a>
+                                                                        <em>-</em>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label
+                                                                        class="kt-ldap-api-search-option"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-api-added="true"
+                                                                        data-api-id="oif-313"
+                                                                        data-api-code="OIF_313"
+                                                                        data-api-name="CouponPkgSearch (CUPI)"
+                                                                        data-api-prod-domain="cus-in.api.kt.com"
+                                                                        data-api-dev-domain="cus-in.tbapi.kt.com"
+                                                                        data-api-sensitivity="민감 1"
+                                                                        data-api-self-testing="Completed"
+                                                                        data-api-approval="승인"
+                                                                        data-api-status="상용"
+                                                                        data-api-params="member_id:민감 1|point_balance"
+                                                                        data-search="OIF_313 CouponPkgSearch CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 승인 상용"
+                                                                    >
+                                                                        <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
+                                                                        <strong>OIF_313</strong>
+                                                                        <a>CouponPkgSearch (CUPI)</a>
+                                                                        <em>민감 1</em>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label
+                                                                        class="kt-ldap-api-search-option"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-api-id="oif-314"
+                                                                        data-api-code="OIF_314"
+                                                                        data-api-name="CouponIssue (CUPI)"
+                                                                        data-api-prod-domain="cus-in.api.kt.com"
+                                                                        data-api-dev-domain="cus-in.tbapi.kt.com"
+                                                                        data-api-sensitivity="민감 1"
+                                                                        data-api-self-testing="Unfinished"
+                                                                        data-api-approval="반려"
+                                                                        data-api-status="미상용"
+                                                                        data-api-params="user_id:민감 1|coupon_id"
+                                                                        data-search="OIF_314 CouponIssue CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 민감 1 반려 미상용"
+                                                                    >
+                                                                        <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
+                                                                        <strong>OIF_314</strong>
+                                                                        <a>CouponIssue (CUPI)</a>
+                                                                        <em>민감 1</em>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label
+                                                                        class="kt-ldap-api-search-option"
+                                                                        role="option"
+                                                                        tabindex="0"
+                                                                        aria-selected="false"
+                                                                        data-ldap-search-option
+                                                                        data-api-id="oif-315"
+                                                                        data-api-code="OIF_315"
+                                                                        data-api-name="CouponStatus (CUPI)"
+                                                                        data-api-prod-domain="cus-in.api.kt.com"
+                                                                        data-api-dev-domain="cus-in.tbapi.kt.com"
+                                                                        data-api-sensitivity="-"
+                                                                        data-api-self-testing="Completed"
+                                                                        data-api-approval="재신청"
+                                                                        data-api-status="상용"
+                                                                        data-api-params="coupon_status|issued_at"
+                                                                        data-search="OIF_315 CouponStatus CUPI cus-in.api.kt.com cus-in.tbapi.kt.com 재신청 상용"
+                                                                    >
+                                                                        <span class="kt-check"><input type="checkbox" data-api-option-checkbox /><span class="blind">선택</span></span>
+                                                                        <strong>OIF_315</strong>
+                                                                        <a>CouponStatus (CUPI)</a>
+                                                                        <em>-</em>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section class="kt-ldap-api-picker__selected" aria-label="선택된 API">
+                                                    <h3 class="kt-ldap-api-picker__title">선택된 API</h3>
+                                                    <ul class="kt-selected-api-list" data-api-selected-list>
+                                                        <li class="kt-selected-api-empty" data-api-selected-empty>
+                                                            <div class="kt-table-empty-result">
+                                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                                                                <p>등록된 API가 없습니다.</p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="kt-ldap-api-edit-actions">
+                                                <p class="kt-selected-api-notice" data-api-sensitive-notice hidden>민감 파라미터 포함 API로 승인 요청이 필요합니다.</p>
+                                                <button type="button" class="kt-btn kt-btn--sm kt-btn--tertiary" data-api-add-to-list disabled>목록에 추가</button>
+                                            </div>
+                                            <div class="kt-ldap-api-table-wrap">
+                                                <table class="kt-data-table kt-data-table--api kt-data-table--api-edit">
+                                                    <caption class="blind">
+                                                        구독 API 편집 목록
+                                                    </caption>
+                                                    <colgroup>
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                        <col />
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">API명</th>
+                                                            <th scope="col">호출 도메인</th>
+                                                            <th scope="col">민감도</th>
+                                                            <th scope="col">Self Testing</th>
+                                                            <th scope="col">승인</th>
+                                                            <th scope="col">관리</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="kt-data-table__empty kt-data-table__empty--result" data-api-edit-empty hidden>
+                                                            <td colspan="6">
+                                                                <div class="kt-table-empty-result">
+                                                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_warning_empty.svg" alt="" aria-hidden="true" />
+                                                                    <p>등록된 API가 없습니다.</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="kt-api-row" data-api-row data-api-accordion="edit-oif-312">
+                                                            <td>
+                                                                <div class="kt-api-name">
+                                                                    <button type="button" class="kt-row-toggle" data-api-accordion="edit-oif-312" aria-expanded="false" aria-label="API 상세 열기">
+                                                                        <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                                                    </button>
+                                                                    <span class="kt-api-name__text">OIF_312 <a href="#" class="is-link">UserProperty (LDAP)</a></span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="kt-domain-lines">
+                                                                    <span>상용 cus-in.api.kt.com</span>
+                                                                    <span>개발 cus-in.tbapi.kt.com</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="center is-muted">-</td>
+                                                            <td class="center"><a href="#" class="is-link">Completed</a></td>
+                                                            <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                                                            <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
+                                                        </tr>
+                                                        <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-312" hidden>
+                                                            <td colspan="6">
+                                                                <div class="kt-api-detail-card">
+                                                                    <div class="kt-api-detail-card__cell">
+                                                                        <div class="kt-api-params">
+                                                                            <strong>Return Parameters</strong>
+                                                                            <span>member_id</span>
+                                                                            <span>point_balance</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="kt-api-detail-card__cell">
+                                                                        <div class="kt-domain-lines">
+                                                                            <span>상용 cus-in.api.kt.com</span>
+                                                                            <span>개발 cus-in.tbapi.kt.com</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="kt-api-row" data-api-row data-api-accordion="edit-oif-313">
+                                                            <td>
+                                                                <div class="kt-api-name">
+                                                                    <button type="button" class="kt-row-toggle" data-api-accordion="edit-oif-313" aria-expanded="false" aria-label="API 상세 열기">
+                                                                        <img class="kt-svg-icon" src="/assets/img/components/ico_chevron_down_16_gray.svg" alt="" aria-hidden="true" />
+                                                                    </button>
+                                                                    <span class="kt-api-name__text">OIF_313 <a href="#" class="is-link">CouponPkgSearch (CUPI)</a></span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="kt-domain-lines">
+                                                                    <span>상용 cus-in.api.kt.com</span>
+                                                                    <span>개발 cus-in.tbapi.kt.com</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="center is-danger">민감 1</td>
+                                                            <td class="center"><a href="#" class="is-link">Completed</a></td>
+                                                            <td class="center"><span class="kt-badge kt-badge--green">승인</span></td>
+                                                            <td class="center"><button type="button" class="kt-member-delete-button" data-api-edit-delete>삭제</button></td>
+                                                        </tr>
+                                                        <tr class="kt-api-detail-row" data-api-accordion-panel="edit-oif-313" hidden>
+                                                            <td colspan="6">
+                                                                <div class="kt-api-detail-card">
+                                                                    <div class="kt-api-detail-card__cell">
+                                                                        <div class="kt-api-params">
+                                                                            <strong>Return Parameters</strong>
+                                                                            <span class="kt-api-params__row">member_id <em class="kt-api-params__sensitive">민감 1</em></span>
+                                                                            <span>point_balance</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="kt-api-detail-card__cell">
+                                                                        <div class="kt-domain-lines">
+                                                                            <span>상용 cus-in.api.kt.com</span>
+                                                                            <span>개발 cus-in.tbapi.kt.com</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-danger">민감 1</div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center is-muted">-</div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--green">승인</span></div>
+                                                                    <div class="kt-api-detail-card__cell kt-api-detail-card__cell--center"><span class="kt-badge kt-badge--prod">상용</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </section>
 
-                                <section class="kt-ws-section kt-ldap-section-ip-filled">
-                                    <div class="kt-ws-section__head">
-                                        <h2 class="kt-ws-section__title">IP Whitelist</h2>
-                                        <div class="kt-ws-section__actions">
-                                            <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
-                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
-                                            </button>
-                                            <button type="button" class="kt-btn kt-btn--popup">편집</button>
-                                        </div>
-                                    </div>
-                                    <div class="kt-panel-grid">
-                                        <div class="kt-env-card" data-ip-env="dev">
-                                            <div class="kt-env-card__title">DEV 환경</div>
-                                            <div class="kt-env-card__body">
-                                                <ul class="kt-env-card__list">
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.89" data-ip-status="대기">
-                                                        <span>211.45.67.89</span><span class="kt-badge kt-badge--warning">대기</span>
-                                                    </li>
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.90" data-ip-status="승인">
-                                                        <span>211.45.67.90</span><span class="kt-badge kt-badge--green">승인</span>
-                                                    </li>
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.99" data-ip-status="반려">
-                                                        <span>211.45.67.99</span><span class="kt-badge kt-badge--danger">반려</span>
-                                                    </li>
-                                                    <li class="kt-reject-reason kt-reject-reason--ip">
-                                                        <span class="kt-reject-reason__tag">반려 사유</span>
-                                                        <p>등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.</p>
-                                                    </li>
-                                                </ul>
+                                    <section class="kt-ws-section kt-ldap-section-ip-filled">
+                                        <div class="kt-ws-section__head">
+                                            <h2 class="kt-ws-section__title">IP Whitelist</h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--popup-icon" aria-label="승인 이력">
+                                                    <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
+                                                </button>
+                                                <button type="button" class="kt-btn kt-btn--popup">편집</button>
                                             </div>
                                         </div>
-                                        <div class="kt-env-card" data-ip-env="prd">
-                                            <div class="kt-env-card__title">PRD 환경</div>
-                                            <div class="kt-env-card__body">
-                                                <ul class="kt-env-card__list">
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.89" data-ip-status="대기">
-                                                        <span>211.45.67.89</span>
-                                                        <span class="kt-ws-inline-actions">
-                                                            <span class="kt-badge kt-badge--warning">대기</span>
-                                                            <button type="button" class="kt-btn kt-btn--popup-process">처리</button>
-                                                        </span>
-                                                    </li>
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.90" data-ip-status="대기">
-                                                        <span>211.45.67.90</span>
-                                                        <span class="kt-ws-inline-actions">
-                                                            <span class="kt-badge kt-badge--warning">대기</span>
-                                                            <button type="button" class="kt-btn kt-btn--popup-process">처리</button>
-                                                        </span>
-                                                    </li>
-                                                    <li class="kt-env-card__item" data-ip-value="211.45.67.99" data-ip-status="반려">
-                                                        <span>211.45.67.99</span><span class="kt-badge kt-badge--danger">반려</span>
-                                                    </li>
-                                                    <li class="kt-reject-reason kt-reject-reason--ip">
-                                                        <span class="kt-reject-reason__tag">반려 사유</span>
-                                                        <p>등록 요청 IP 대역이 내부 보안 정책에 부합하지 않습니다.</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="kt-edit-template kt-edit-box">
-                                        <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
                                         <div class="kt-panel-grid">
                                             <div class="kt-env-card" data-ip-env="dev">
                                                 <div class="kt-env-card__title">DEV 환경</div>
                                                 <div class="kt-env-card__body">
-                                                    <ul class="kt-ldap-ip-editor" data-ip-env="dev">
-                                                        <li class="kt-ldap-ip-editor__row">
-                                                            <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
-                                                            <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
-                                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
-                                                            </button>
+                                                    <ul class="kt-env-card__list">
+                                                        <li class="kt-env-card__item kt-env-card__item--plain" data-ip-value="211.45.67.89">
+                                                            <span>211.45.67.89</span>
+                                                        </li>
+                                                        <li class="kt-env-card__item kt-env-card__item--plain" data-ip-value="211.45.67.90">
+                                                            <span>211.45.67.90</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -941,88 +907,128 @@
                                             <div class="kt-env-card" data-ip-env="prd">
                                                 <div class="kt-env-card__title">PRD 환경</div>
                                                 <div class="kt-env-card__body">
-                                                    <ul class="kt-ldap-ip-editor" data-ip-env="prd">
-                                                        <li class="kt-ldap-ip-editor__row">
-                                                            <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
-                                                            <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
-                                                                <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
-                                                            </button>
+                                                    <ul class="kt-env-card__list">
+                                                        <li class="kt-env-card__item" data-ip-value="211.45.67.89" data-ip-status="대기">
+                                                            <span>211.45.67.89</span>
+                                                            <span class="kt-ws-inline-actions">
+                                                                <span class="kt-badge kt-badge--warning">대기</span>
+                                                                <button type="button" class="kt-btn kt-btn--detail-process">처리</button>
+                                                            </span>
+                                                        </li>
+                                                        <li class="kt-env-card__item" data-ip-value="211.45.67.90" data-ip-status="대기">
+                                                            <span>211.45.67.90</span>
+                                                            <span class="kt-ws-inline-actions">
+                                                                <span class="kt-badge kt-badge--warning">대기</span>
+                                                                <button type="button" class="kt-btn kt-btn--detail-process">처리</button>
+                                                            </span>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </section>
-
-                                <section class="kt-ws-section kt-ldap-section-keys-filled">
-                                    <div class="kt-ws-section__head">
-                                        <h2 class="kt-ws-section__title">API Keys</h2>
-                                    </div>
-                                    <div class="kt-panel-grid">
-                                        <div class="kt-key-card">
-                                            <div class="kt-key-card__title">
-                                                <span>DEVKey</span>
-                                                <span class="kt-key-card__expiry">만료일 : 2027.05.06</span>
-                                            </div>
-                                            <div class="kt-key-card__body">
-                                                <div class="kt-key-field">
-                                                    <div class="kt-key-field__input">
-                                                        <label for="admin-dev-key-id">Key ID</label>
-                                                        <input id="admin-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">IP Whitelist 편집모드</strong>
+                                            <div class="kt-panel-grid">
+                                                <div class="kt-env-card" data-ip-env="dev">
+                                                    <div class="kt-env-card__title">DEV 환경</div>
+                                                    <div class="kt-env-card__body">
+                                                        <ul class="kt-ldap-ip-editor" data-ip-env="dev">
+                                                            <li class="kt-ldap-ip-editor__row">
+                                                                <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
+                                                                <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
+                                                                    <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
                                                     </div>
-                                                    <button type="button" class="kt-key-field__copy" aria-label="Key ID 복사">
-                                                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
-                                                    </button>
                                                 </div>
-                                                <div class="kt-key-field kt-key-field--password">
-                                                    <div class="kt-key-field__input">
-                                                        <label for="admin-dev-key-pw">Key Pw</label>
-                                                        <div class="kt-key-field__control">
-                                                            <input id="admin-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
-                                                            <button
-                                                                type="button"
-                                                                class="kt-key-field__visibility"
-                                                                data-password_toggle
-                                                                data-icon-show="/assets/img/components/ico_eye.svg"
-                                                                data-icon-hide="/assets/img/components/ico_eye_off.svg"
-                                                                aria-controls="admin-dev-key-pw"
-                                                                aria-pressed="false"
-                                                                aria-label="Key Password 보기"
-                                                            >
-                                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye.svg" alt="" aria-hidden="true" />
-                                                            </button>
+                                                <div class="kt-env-card" data-ip-env="prd">
+                                                    <div class="kt-env-card__title">PRD 환경</div>
+                                                    <div class="kt-env-card__body">
+                                                        <ul class="kt-ldap-ip-editor" data-ip-env="prd">
+                                                            <li class="kt-ldap-ip-editor__row">
+                                                                <input type="text" class="kt-input kt-input--32" inputmode="decimal" placeholder="예) 211.11.10.92" />
+                                                                <button type="button" class="kt-ldap-ip-editor__button kt-ldap-ip-editor__button--add" aria-label="IP 추가">
+                                                                    <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/components/ico_plus.svg" alt="" aria-hidden="true" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section class="kt-ws-section kt-ldap-section-keys-filled">
+                                        <div class="kt-ws-section__head">
+                                            <h2 class="kt-ws-section__title">API Keys</h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--popup kt-edit-start">편집</button>
+                                                <span class="kt-edit-actions" aria-label="API Keys 편집 액션">
+                                                    <button type="button" class="kt-btn kt-btn--popup" data-edit-cancel>취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--popup kt-btn--popup-primary" data-edit-save>저장</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="kt-panel-grid">
+                                            <div class="kt-key-card">
+                                                <div class="kt-key-card__title">
+                                                    <span>DEVKey</span>
+                                                    <span class="kt-key-card__expiry">만료일 : 2027.05.06</span>
+                                                </div>
+                                                <div class="kt-key-card__body">
+                                                    <div class="kt-key-field">
+                                                        <div class="kt-key-field__input">
+                                                            <label for="admin-dev-key-id">Key ID</label>
+                                                            <input id="admin-dev-key-id" type="text" class="kt-input" value="DEV-KT-HNR-20260401-001" readonly />
                                                         </div>
+                                                        <button type="button" class="kt-key-field__copy" aria-label="Key ID 복사">
+                                                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                                                        </button>
                                                     </div>
-                                                    <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
-                                                        <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
-                                                    </button>
+                                                    <div class="kt-key-field kt-key-field--password">
+                                                        <div class="kt-key-field__input">
+                                                            <label for="admin-dev-key-pw">Key Pw</label>
+                                                            <div class="kt-key-field__control">
+                                                                <input id="admin-dev-key-pw" type="password" class="kt-input" value="12345678" readonly />
+                                                                <button
+                                                                    type="button"
+                                                                    class="kt-key-field__visibility"
+                                                                    data-password_toggle
+                                                                    data-icon-show="/assets/img/components/ico_eye.svg"
+                                                                    data-icon-hide="/assets/img/components/ico_eye_off.svg"
+                                                                    aria-controls="admin-dev-key-pw"
+                                                                    aria-pressed="false"
+                                                                    aria-label="Key Password 보기"
+                                                                >
+                                                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/components/ico_eye.svg" alt="" aria-hidden="true" />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="kt-key-field__copy" aria-label="Key Password 복사">
+                                                            <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="kt-key-card">
+                                                <div class="kt-key-card__title">
+                                                    <span>PRDKey</span>
+                                                </div>
+                                                <div class="kt-key-card__empty kt-key-card__empty--stretch">
+                                                    <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_ldap_key.svg" alt="" aria-hidden="true" />
+                                                    <p>Dev 전환 후 DEV Key가 발급됩니다</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="kt-key-card">
-                                            <div class="kt-key-card__title">
-                                                <span>PRDKey</span>
-                                            </div>
-                                            <div class="kt-key-card__empty kt-key-card__empty--stretch">
-                                                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_ldap_key.svg" alt="" aria-hidden="true" />
-                                                <p>Dev 전환 후 DEV Key가 발급됩니다</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
-
-                        <footer class="kt-ws-popup__footer kt-ws-popup__footer--request-action">
-                            <span class="kt-ws-popup__footer-label">운영전환신청</span>
-                            <button type="button" class="kt-btn kt-btn--popup-cta">처리</button>
-                            <span class="kt-ws-popup__footer-blank" aria-hidden="true"></span>
-                        </footer>
-                    </article>
-                </main>
-            </div>
-            <div id="dim"></div>
+                        </article>
+                    </div>
+                </div>
+            </main>
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
     <script src="/assets/js/ldap-workspace.js"></script>
