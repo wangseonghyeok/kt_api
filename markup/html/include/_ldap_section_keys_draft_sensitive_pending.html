@@ -1,0 +1,30 @@
+<!--
+    개발 전달: LDAP Draft 화면에서 민감 API 구독 신청 후 미승인 상태인 API Keys 케이스입니다.
+    DEV Key는 민감 API 승인 완료 후 자동 발급되고, PRD Key는 기존 Draft 안내 상태를 유지합니다.
+-->
+<section class="kt-ws-section kt-ldap-section-keys-empty kt-ldap-section-keys-draft-sensitive-pending">
+    <div class="kt-ws-section__head">
+        <h2 class="kt-ws-section__title">API Keys</h2>
+    </div>
+    <div class="kt-panel-grid">
+        <div class="kt-key-card">
+            <div class="kt-key-card__title">
+                <span>DEVKey</span>
+            </div>
+            <div class="kt-key-card__empty">
+                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_ldap_key.svg" alt="" aria-hidden="true" />
+                <h2>민감 API 추가 승인 대기</h2>
+                <p>구독 신청한 민감 API 승인 완료 후 DEV Key가 자동 발급됩니다</p>
+            </div>
+        </div>
+        <div class="kt-key-card">
+            <div class="kt-key-card__title">
+                <span>PRDKey</span>
+            </div>
+            <div class="kt-key-card__empty">
+                <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_ldap_key.svg" alt="" aria-hidden="true" />
+                <p>PRD 전환 후 PRD Key가 발급됩니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
