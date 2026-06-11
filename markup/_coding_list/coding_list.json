@@ -122,11 +122,17 @@
         },
         "추가": {
             "[ouath-01]": ["/ouath-01.html", "mainframe", "완료", ""],
+            "[ouath-01_]": ["/ouath-01_.html", "mainframe", "완료", ""],
             "[ouath-02]": ["/ouath-02.html", "mainframe", "완료", ""],
+            "[ouath-02_]": ["/ouath-02_.html", "mainframe", "완료", ""],
             "[ouath-03]": ["/ouath-03.html", "mainframe", "완료", ""],
+            "[ouath-03_]": ["/ouath-03_.html", "mainframe", "완료", ""],
             "[works-oauth-01]": ["/works-oauth-01.html", "mainframe", "완료", ""],
+            "[works-oauth-01_]": ["/works-oauth-01_.html", "mainframe", "완료", ""],
             "[works-oauth-02]": ["/works-oauth-02.html", "mainframe", "완료", ""],
-            "[works-oauth-03]": ["/works-oauth-03.html", "mainframe", "완료", ""]
+            "[works-oauth-02_]": ["/works-oauth-02_.html", "mainframe", "완료", ""],
+            "[works-oauth-03]": ["/works-oauth-03.html", "mainframe", "완료", ""],
+            "[works-oauth-03_]": ["/works-oauth-03_.html", "mainframe", "완료", ""]
         }
     },
     "templete": {

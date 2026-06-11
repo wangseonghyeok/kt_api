@@ -7462,6 +7462,9 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
     h2 {
         margin-top: 8px;
+        + p {
+            font-size: 14px;
+        }
     }
     &:has(h2) {
         p {

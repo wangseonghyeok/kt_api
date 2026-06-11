@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+        <meta http-equiv="X-UA-compatible" content="IE=edge" />
+        <meta name="author" content="KT API Link" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/lib/jquery-ui.css?t=1779885394882" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/lib/highlight-github-dark.min.css?t=1779885394882" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/common.min.css?t=1779885394882" />
+        <link rel="stylesheet" type="text/css" href="/assets/css/components.min.css?t=1779885394882" />
+        <script src="/assets/js/lib/jquery-3.6.0.min.js?t=1779885394882"></script>
+        <script src="/assets/js/lib/jquery-ui.js?t=1779885394882"></script>
+        <script src="/assets/js/lib/echarts.min.js?t=1779885394882"></script>
+        <script src="/assets/js/lib/highlight.min.js?t=1779885394882"></script>
+        <script src="/assets/js/common.js?t=1779885394882"></script>
+        <title>KT API Link</title>
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css?t=1779885394882" />
+        <style>
+            /* Redirect URI rows */
+            .kt-newwork-uri-row {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+            .kt-newwork-uri-row .kt-newwork-input-control {
+                flex: 1;
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+            .kt-newwork-uri-row .kt-newwork-input-control input {
+                width: 100%;
+            }
+            .kt-newwork-uri-delete {
+                flex-shrink: 0;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: none;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 16px;
+                color: #666;
+                transition: background 0.15s, color 0.15s;
+            }
+            .kt-newwork-uri-delete:hover {
+                background: #fee2e2;
+                border-color: #f87171;
+                color: #dc2626;
+            }
+            /* Scope grid: 3 per row */
+            .kt-newwork-scope-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-top: 12px;
+            }
+            .kt-newwork-scope-grid li {
+                list-style: none;
+            }
+            .kt-newwork-scope-grid li .kt-check {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 16px;
+                border: 1px solid #d1d5db;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 0.95rem;
+                transition: border-color 0.15s, background 0.15s;
+            }
+            .kt-newwork-scope-grid li .kt-check:hover {
+                border-color: #6b7280;
+                background: #f9fafb;
+            }
+            /* guide text size */
+            .kt-newwork-notice p,
+            .kt-newwork-field__desc,
+            .kt-newwork-domain__box li {
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+
+    <body class="kt-newwork-page">
+        <div id="wrap">
+            <!-- header -->
+            <header id="header">
+                <a class="btn-home" href="Ma-001.html">
+                    <span class="blind">KT API Link 홈</span>
+                </a>
+                <nav class="gnb" id="navigation" aria-label="주요 메뉴">
+                    <ul>
+                        <li>
+                            <a href="#">My Workspaces</a>
+                            <div class="depth2">
+                                <ul>
+                                    <li><a href="#">My Workspaces</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Workspaces</a>
+                            <div class="depth2">
+                                <ul>
+                                    <li><a href="#">API Workspace</a></li>
+                                    <li><a href="#">OAuth Workspace</a></li>
+                                    <li><a href="#">MCP Workspace</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Tools</a>
+                            <div class="depth2">
+                                <ul>
+                                    <li><a href="#">API Playground</a></li>
+                                    <li><a href="#">MCP Playground</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="Support-01.html">Support</a>
+                            <div class="depth2">
+                                <ul>
+                                    <li><a href="Support-01.html">공지사항</a></li>
+                                    <li><a href="Support-02.html">FAQ</a></li>
+                                    <li><a href="#">문의하기</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="l-right">
+                    <ul class="user-menu user-menu--after">
+                        <li class="login">
+                            <a href="#"><img src="/assets/img/common/ico_hd_login.svg" alt="" /><span>Sign Up</span></a>
+                        </li>
+                        <li class="signup">
+                            <a href="#"><img src="/assets/img/common/ico_hd_sign.svg" alt="" /><span>Sign In</span></a>
+                        </li>
+                    </ul>
+                    <ul class="user-menu user-menu--before">
+                        <li class="login">
+                            <a href="#"><img src="/assets/img/common/ico_hd_sign.svg" alt="" /><span>홍길동</span></a>
+                        </li>
+                        <li class="signup">
+                            <a href="#"><img src="/assets/img/common/ico_hd_logout.svg" alt="" /><span>Log out</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!--// header -->
+
+            <main id="contents" class="kt-newwork-main">
+                <section class="kt-page-header">
+                    <div class="kt-page-header__title">
+                        <h1>새 워크스페이스 만들기</h1>
+                        <p>외부 파트너 (LDAP)</p>
+                    </div>
+                    <nav class="kt-path" aria-label="현재 위치">
+                        <a href="Ma-001.html" class="kt-path__home"><span class="blind">Home</span></a>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <p>My Workspaces</p>
+                        <span class="kt-path__separator" aria-hidden="true"></span>
+                        <strong>Create Workspace</strong>
+                    </nav>
+                </section>
+
+                <div class="kt-newwork-shell">
+                    <ol class="kt-newwork-stepper" aria-label="워크스페이스 생성 단계">
+                        <li class="is-done"><span>01</span><strong>기본 정보 입력</strong></li>
+                        <li class="is-active"><span>02</span><strong>OAuth 앱 설정</strong></li>
+                        <li><span>03</span><strong>확인 및 저장</strong></li>
+                    </ol>
+
+                    <section class="kt-newwork-form">
+                        <div class="kt-newwork-title">
+                            <h2>OAuth 앱 설정</h2>
+                            <p>KT 계정 연동에 필요한 OAuth 2.0 앱 정보를 설정하세요.</p>
+                        </div>
+
+                        <!-- Redirect URI -->
+                        <section class="kt-newwork-section">
+                            <h3>Redirect URI <em>*</em></h3>
+                            <div class="kt-newwork-notice">
+                                <p>인증 완료 후 리디렉션할 URI입니다. 최대 5개까지 등록 가능합니다.</p>
+                            </div>
+                            <div id="uriList" class="kt-newwork-uri-list">
+                                <!-- 첫 번째 URI 행 (샘플) -->
+                                <div class="kt-newwork-uri-row">
+                                    <div class="kt-newwork-input-control">
+                                        <input type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 입력" value="https://hanaroapp.com/auth/callback" />
+                                    </div>
+                                    <button type="button" class="kt-newwork-uri-delete" aria-label="URI 삭제" title="삭제">🗑</button>
+                                </div>
+                            </div>
+                            <button type="button" class="kt-btn kt-btn--secondary" id="btnUriAdd" style="margin-top: 8px">추가</button>
+                        </section>
+
+                        <!-- Scope -->
+                        <section class="kt-newwork-section">
+                            <h3>제공 정보 선택 (Scope) <em>*</em></h3>
+                            <div class="kt-newwork-notice">
+                                <p>💡 로그인 시 사용자에게 동의 요청할 정보 항목을 선택하세요.</p>
+                            </div>
+                            <ul class="kt-newwork-scope-grid">
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="name" />
+                                        <span>회원이름</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="email" />
+                                        <span>이메일 주소</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="mobile" />
+                                        <span>휴대전화번호</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="tel" />
+                                        <span>직장전화번호</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="birthyear" />
+                                        <span>출생년도</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="kt-check">
+                                        <input type="checkbox" name="scope" value="nickname" />
+                                        <span>별칭</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                    <div class="kt-newwork-domain__box" style="margin-bottom: 24px">
+                        <ul>
+                            <li>KT OAuth 서비스는 <strong>Authorization Code</strong> 방식으로 고정 제공됩니다.</li>
+                        </ul>
+                    </div>
+
+                    <div class="kt-actions">
+                        <button type="button" class="kt-btn kt-btn--secondary kt-btn--form">이전</button>
+                        <button type="button" class="kt-btn kt-btn--primary kt-btn--form">다음</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- footer -->
+            <footer id="footer">
+                <div class="footer-menu">
+                    <a href="#" class="footer-menu-item">회사소개</a>
+                    <a href="#" class="footer-menu-item">이용약관</a>
+                    <a href="#" class="footer-menu-item privacy">개인정보처리방침</a>
+                    <a href="#" class="footer-menu-item">불법스팸대응</a>
+                    <a href="#" class="footer-menu-item">명의도용방지서비스</a>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-info-text">
+                        <ul class="footer-info-line">
+                            <li>(주)케이티 대표이사 : 박윤영</li>
+                            <li>사업자등록번호 : 102-81-42945</li>
+                            <li>통신판매업신고 : 2002-경기성남-0048</li>
+                            <li>경기도 성남시 분당구 불정로 90 (정자동)</li>
+                        </ul>
+                        <p class="footer-copyright">Copyright ⓒ 2026 KT corp. All rights reserved</p>
+                    </div>
+                    <div class="footer-logo">
+                        <img src="/assets/img/common/img_logo_ft.svg" alt="KT API Link" width="154" height="40" />
+                    </div>
+                </div>
+            </footer>
+            <!--// footer -->
+        </div>
+
+        <script>
+            (function () {
+                const MAX_URI = 5;
+                const uriList = document.getElementById('uriList');
+                const btnAdd = document.getElementById('btnUriAdd');
+
+                function getRowCount() {
+                    return uriList.querySelectorAll('.kt-newwork-uri-row').length;
+                }
+
+                function updateAddButton() {
+                    btnAdd.disabled = getRowCount() >= MAX_URI;
+                }
+
+                function createRow(value) {
+                    const row = document.createElement('div');
+                    row.className = 'kt-newwork-uri-row';
+
+                    const ctrl = document.createElement('div');
+                    ctrl.className = 'kt-newwork-input-control';
+
+                    const input = document.createElement('input');
+                    input.type = 'url';
+                    input.className = 'kt-input kt-input--48';
+                    input.placeholder = 'https://';
+                    input.setAttribute('aria-label', 'Redirect URI 입력');
+                    if (value) input.value = value;
+
+                    ctrl.appendChild(input);
+
+                    const delBtn = document.createElement('button');
+                    delBtn.type = 'button';
+                    delBtn.className = 'kt-newwork-uri-delete';
+                    delBtn.setAttribute('aria-label', 'URI 삭제');
+                    delBtn.title = '삭제';
+                    delBtn.textContent = '🗑';
+                    delBtn.addEventListener('click', () => {
+                        row.remove();
+                        updateAddButton();
+                    });
+
+                    row.appendChild(ctrl);
+                    row.appendChild(delBtn);
+                    return row;
+                }
+
+                // 기존 첫 번째 행의 삭제 버튼에도 이벤트 연결
+                uriList.querySelectorAll('.kt-newwork-uri-delete').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        btn.closest('.kt-newwork-uri-row').remove();
+                        updateAddButton();
+                    });
+                });
+
+                // 추가 버튼
+                btnAdd.addEventListener('click', () => {
+                    if (getRowCount() >= MAX_URI) return;
+                    uriList.appendChild(createRow(''));
+                    updateAddButton();
+                    // 새 행의 input에 포커스
+                    const inputs = uriList.querySelectorAll('input');
+                    inputs[inputs.length - 1].focus();
+                });
+
+                updateAddButton();
+            })();
+        </script>
+    </body>
+</html>
