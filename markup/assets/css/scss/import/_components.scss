@@ -4929,6 +4929,47 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
         }
     }
 
+    .kt-newwork-uri-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .kt-newwork-scope-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .kt-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 11px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            transition: border-color 0.15s ease, background-color 0.15s ease;
+
+            &:hover {
+                border-color: #8b8f98;
+                background: #f8f9fa;
+            }
+        }
+    }
+
+    .kt-newwork-fixed-notice {
+        margin-top: -8px;
+
+        ul {
+            margin: 0;
+        }
+    }
+
     .kt-newwork-member-list-section {
         display: flex;
         flex-direction: column;
@@ -6800,6 +6841,14 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     background: #fce9e9;
 }
 
+.kt-ws-status-note--warning {
+    background: #fff5d6;
+}
+
+.kt-ws-status-note--danger {
+    background: #fce9e9;
+}
+
 .kt-ws-status-note__message,
 .kt-ws-status-note__reason {
     @include flex(center, null);
@@ -7368,6 +7417,10 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     gap: 24px;
 }
 
+.kt-panel-grid--single {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .kt-env-card,
 .kt-key-card {
     overflow: hidden;
@@ -7502,6 +7555,118 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     color: #55585d;
     font-size: 15px;
     line-height: 1.58;
+}
+
+.kt-env-card__item--scope {
+    gap: 12px;
+
+    > span:first-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
+.kt-oauth-uri-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .kt-newwork-input-control,
+    .kt-input {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
+.kt-oauth-uri-remove {
+    @include inline-flex(center, center);
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    color: #6f737b;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: currentColor;
+        -webkit-mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 16px 16px no-repeat;
+        mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 16px 16px no-repeat;
+    }
+
+    &:hover,
+    &:focus-visible {
+        border-color: #e02830;
+        background: #fce9e9;
+        color: #bb1b21;
+    }
+}
+
+.kt-oauth-uri-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kt-oauth-uri-add {
+    align-self: flex-start;
+    min-width: 72px;
+    height: 36px;
+    padding: 0 16px;
+}
+
+.kt-oauth-client-card {
+    .kt-ws-status-note {
+        height: auto;
+        min-height: 40px;
+        margin: 12px 24px 0;
+    }
+}
+
+.kt-oauth-client-actions {
+    margin: 12px 24px 16px;
+}
+
+.kt-oauth-scope-edit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .kt-check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 11px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+
+        &:hover {
+            border-color: #8b8f98;
+            background: #f8f9fa;
+        }
+
+        .kt-badge {
+            margin-left: auto;
+        }
+    }
+}
+
+.kt-oauth-scope-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
 }
 
 .kt-ws-inline-actions {

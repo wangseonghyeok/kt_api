@@ -1,114 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-        <meta http-equiv="X-UA-compatible" content="IE=edge" />
-        <meta name="author" content="KT API Link" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/lib/jquery-ui.css?t=1779885394882" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/lib/highlight-github-dark.min.css?t=1779885394882" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/common.min.css?t=1779885394882" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/components.min.css?t=1779885394882" />
-        <script src="./assets/js/lib/jquery-3.6.0.min.js?t=1779885394882"></script>
-        <script src="./assets/js/lib/jquery-ui.js?t=1779885394882"></script>
-        <script src="./assets/js/lib/echarts.min.js?t=1779885394882"></script>
-        <script src="./assets/js/lib/highlight.min.js?t=1779885394882"></script>
-        <script src="./assets/js/common.js?t=1779885394882"></script>
-        <title>KT API Link</title>
-
-        <link rel="stylesheet" type="text/css" href="./assets/css/contents.min.css?t=1779885394882" />
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
     </head>
 
     <body class="kt-newwork-page">
         <div id="wrap">
-            <!-- header -->
-            <header id="header">
-                <a class="btn-home" href="Ma-001.html">
-                    <span class="blind">KT API Link 홈</span>
-                </a>
-                <nav class="gnb" id="navigation" aria-label="주요 메뉴">
-                    <ul>
-                        <li>
-                            <a href="#">My Workspaces</a>
-                            <div class="depth2">
-                                <ul>
-                                    <li><a href="#">My Workspaces</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Workspaces</a>
-                            <div class="depth2">
-                                <ul>
-                                    <li><a href="#">API Workspace</a></li>
-                                    <li><a href="#">OAuth Workspace</a></li>
-                                    <li><a href="#">MCP Workspace</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">Tools</a>
-                            <div class="depth2">
-                                <ul>
-                                    <li><a href="#">API Playground</a></li>
-                                    <li><a href="#">MCP Playground</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="Support-01.html">Support</a>
-                            <div class="depth2">
-                                <ul>
-                                    <li><a href="Support-01.html">공지사항</a></li>
-                                    <li><a href="Support-02.html">FAQ</a></li>
-                                    <li><a href="#">문의하기</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div class="l-right">
-                    <ul class="user-menu user-menu--after">
-                        <li class="login">
-                            <a href="#"><img src="./assets/img/common/ico_hd_login.svg" alt="" /><span>Sign Up</span></a>
-                        </li>
-                        <li class="signup">
-                            <a href="#"><img src="./assets/img/common/ico_hd_sign.svg" alt="" /><span>Sign In</span></a>
-                        </li>
-                    </ul>
-
-                    <ul class="user-menu user-menu--before">
-                        <li class="login">
-                            <a href="#"><img src="./assets/img/common/ico_hd_sign.svg" alt="" /><span>홍길동</span></a>
-                        </li>
-                        <li class="signup">
-                            <a href="#"><img src="./assets/img/common/ico_hd_logout.svg" alt="" /><span>Log out</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-            <!--// header -->
-
+            <!--#include file="./include/_header.html"-->
             <main id="contents" class="kt-newwork-main">
                 <section class="kt-page-header">
                     <div class="kt-page-header__title">
-                        <h1>새 워크스페이스 만들기</h1>
+                        <h1>OAUTH 워크스페이스 만들기</h1>
                         <p>외부 파트너 (LDAP)</p>
                     </div>
-                    <nav class="kt-path" aria-label="현재 위치">
-                        <a href="Ma-001.html" class="kt-path__home"><span class="blind">Home</span></a>
-                        <span class="kt-path__separator" aria-hidden="true"></span>
-                        <p>My Workspaces</p>
-                        <span class="kt-path__separator" aria-hidden="true"></span>
-                        <strong>Create Workspace</strong>
-                    </nav>
+                    <!--#include file="./include/_newwork_path_create.html"-->
                 </section>
 
                 <div class="kt-newwork-shell">
-                    <ol class="kt-newwork-stepper" aria-label="워크스페이스 생성 단계">
+                    <ol class="kt-newwork-stepper" aria-label="OAuth 워크스페이스 생성 단계">
                         <li class="is-active"><span>01</span><strong>기본 정보 입력</strong></li>
                         <li><span>02</span><strong>OAuth 앱 설정</strong></li>
                         <li><span>03</span><strong>확인 및 저장</strong></li>
@@ -120,18 +30,6 @@
                             <p>워크스페이스 이름과 설명을 입력하세요.</p>
                         </div>
 
-                        <!-- LDAP 계정 정보 자동 매핑 -->
-                        <section class="kt-newwork-info">
-                            <h3>LDAP 계정 소속 Company 자동 매핑</h3>
-                            <dl>
-                                <div>
-                                    <dt>Company</dt>
-                                    <dd>하나로소프트</dd>
-                                </div>
-                            </dl>
-                        </section>
-
-                        <!-- Workspace Name -->
                         <div class="kt-newwork-field" data-newwork-input>
                             <label for="oauthWorkspaceName">Workspace Name <em>*</em></label>
                             <div class="kt-newwork-input-control">
@@ -142,7 +40,6 @@
                             </div>
                         </div>
 
-                        <!-- Description -->
                         <label class="kt-newwork-field kt-newwork-field--textarea">
                             <span>Description <em>*</em></span>
                             <textarea
@@ -155,7 +52,6 @@
                             <i id="oauthWorkspaceDescriptionCount" data-textarea-count-output>0/200</i>
                         </label>
 
-                        <!-- Service URL -->
                         <div class="kt-newwork-field" data-newwork-input>
                             <label for="oauthServiceUrl">서비스 URL <em>*</em></label>
                             <div class="kt-newwork-input-control">
@@ -167,16 +63,11 @@
                             <p class="kt-newwork-field__desc">실제 서비스가 운영되는 URL을 입력하세요.</p>
                         </div>
 
-                        <!-- 서비스 이용약관 동의 -->
-                        <section class="kt-newwork-domain">
-                            <h3>서비스 이용약관 동의</h3>
-                            <div class="kt-newwork-domain__box">
-                                <label class="kt-check">
-                                    <input type="checkbox" />
-                                    <span>OAUTH 서비스 이용약관 <a href="#">보기</a></span>
-                                </label>
-                            </div>
-                        </section>
+                        <label class="kt-newwork-field kt-newwork-field--disabled-map">
+                            <span>Company</span>
+                            <input type="text" class="kt-input kt-input--52 kt-input--disabled-map" value="하나로소프트" disabled />
+                            <small class="kt-newwork-field__help">LDAP 계정 소속 Company가 자동으로 매핑됩니다</small>
+                        </label>
                     </section>
 
                     <div class="kt-actions">
@@ -185,32 +76,7 @@
                     </div>
                 </div>
             </main>
-
-            <!-- footer -->
-            <footer id="footer">
-                <div class="footer-menu">
-                    <a href="#" class="footer-menu-item">회사소개</a>
-                    <a href="#" class="footer-menu-item">이용약관</a>
-                    <a href="#" class="footer-menu-item privacy">개인정보처리방침</a>
-                    <a href="#" class="footer-menu-item">불법스팸대응</a>
-                    <a href="#" class="footer-menu-item">명의도용방지서비스</a>
-                </div>
-                <div class="footer-info">
-                    <div class="footer-info-text">
-                        <ul class="footer-info-line">
-                            <li>(주)케이티 대표이사 : 박윤영</li>
-                            <li>사업자등록번호 : 102-81-42945</li>
-                            <li>통신판매업신고 : 2002-경기성남-0048</li>
-                            <li>경기도 성남시 분당구 불정로 90 (정자동)</li>
-                        </ul>
-                        <p class="footer-copyright">Copyright ⓒ 2026 KT corp. All rights reserved</p>
-                    </div>
-                    <div class="footer-logo">
-                        <img src="./assets/img/common/img_logo_ft.svg" alt="KT API Link" width="154" height="40" />
-                    </div>
-                </div>
-            </footer>
-            <!--// footer -->
+            <!--#include file="./include/_footer.html"-->
         </div>
     </body>
 </html>
