@@ -37,15 +37,18 @@
                             </div>
                             <div id="oauthCreateUriList" class="kt-newwork-uri-list" data-oauth-uri-list data-oauth-uri-max="5">
                                 <div class="kt-oauth-uri-row" data-oauth-uri-row>
-                                    <div class="kt-newwork-input-control">
+                                    <div class="kt-newwork-input-control" data-newwork-input>
                                         <input type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 입력" value="https://hanaroapp.com/auth/callback" />
+                                        <button type="button" class="kt-newwork-input-clear" data-newwork-input-clear hidden>
+                                            <span class="blind">입력값 삭제</span>
+                                        </button>
                                     </div>
                                     <button type="button" class="kt-oauth-uri-remove" data-oauth-uri-remove aria-label="Redirect URI 삭제">
                                         <span class="blind">삭제</span>
                                     </button>
                                 </div>
                             </div>
-                            <button type="button" class="kt-btn kt-btn--secondary kt-oauth-uri-add" data-oauth-uri-add="oauthCreateUriList">추가</button>
+                            <button type="button" class="kt-btn kt-btn--secondary kt-oauth-uri-add kt-oauth-uri-add--form" data-oauth-uri-add="oauthCreateUriList">추가</button>
                         </section>
 
                         <section class="kt-newwork-section">
@@ -96,7 +99,6 @@
                         <div class="kt-newwork-domain__box kt-newwork-fixed-notice">
                             <ul>
                                 <li>KT OAuth 서비스는 <strong>Authorization Code</strong> 방식으로 고정 제공됩니다.</li>
-                                <li>선택한 모든 Scope는 워크스페이스 승인 시 함께 승인 처리됩니다.</li>
                             </ul>
                         </div>
                     </section>
