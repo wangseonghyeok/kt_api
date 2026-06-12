@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!--#include file="./include/_head.html"-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/contents.min.css" />
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div class="kt-work-pop-modal">
+                <main class="kt-work-pop-stage" aria-label="Scope 승인요청">
+                    <article class="kt-work-pop kt-work-pop--side-count">
+                        <header class="kt-work-pop__header">
+                            <h1 class="kt-work-pop__title">Scope 승인요청</h1>
+                            <button type="button" class="kt-work-pop__close popup__close" aria-label="닫기">
+                                <img src="/assets/img/works/ico_work_close.svg" alt="" aria-hidden="true" />
+                            </button>
+                        </header>
+                        <div class="kt-work-pop__body">
+                            <div class="kt-work-pop__content">
+                                <div class="kt-work-pop__section kt-work-pop__section--scope">
+                                    <div class="kt-work-pop__field kt-work-pop__field--scope">
+                                        <p class="kt-work-pop__label">신청 Scope</p>
+                                        <div class="kt-work-pop__scope-list" role="radiogroup" aria-label="신청 Scope">
+                                            <label class="kt-radio kt-work-pop__scope-radio"><input type="radio" name="worksOauthScopeRequest" value="name" checked /><span>회원이름</span></label>
+                                            <label class="kt-radio kt-work-pop__scope-radio"><input type="radio" name="worksOauthScopeRequest" value="email" /><span>이메일 주소</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="kt-work-pop__field kt-work-pop__field--medium">
+                                        <p class="kt-work-pop__label">신청사유 <span class="kt-work-pop__required">*</span></p>
+                                        <div class="kt-textarea-wrap kt-work-pop__textarea-box">
+                                            <textarea
+                                                class="kt-textarea kt-work-pop__textarea"
+                                                maxlength="200"
+                                                placeholder="사용해야 하는 이유를 구체적으로 입력해주세요"
+                                                aria-label="신청사유"
+                                                data-textarea-count="worksOauthScopeReasonCount"
+                                            ></textarea>
+                                            <span class="kt-textarea__count kt-work-pop__textarea-count" id="worksOauthScopeReasonCount" data-textarea-count-output>0/200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="kt-work-pop__footer">
+                            <button type="button" class="kt-work-pop__button kt-work-pop__button--secondary popup__close">취소</button>
+                            <button type="button" class="kt-work-pop__button">Scope 승인요청</button>
+                        </footer>
+                    </article>
+                </main>
+            </div>
+            <div id="dim"></div>
+        </div>
+    </body>
+</html>

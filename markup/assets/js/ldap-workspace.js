@@ -528,7 +528,7 @@
     const setEditMode = (section, isEditing) => {
         const button = section.querySelector('.kt-ws-section__head .kt-btn--detail, .kt-ws-section__head .kt-btn--popup');
         const hasEditActions = Boolean(section.querySelector('[data-edit-cancel], [data-edit-save]'));
-        const shouldKeepHeight = section.classList.contains('kt-ldap-section-basic');
+        const shouldKeepHeight = section.classList.contains('kt-ldap-section-basic') && !section.classList.contains('kt-ldap-section-basic--fluid');
         const prevHeight = shouldKeepHeight ? section.offsetHeight : 0;
 
         section.classList.toggle('is-editing', isEditing);

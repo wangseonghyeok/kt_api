@@ -56,8 +56,8 @@
         syncInputClear(control);
     };
 
-    const createUriRow = () => {
-        const row = document.createElement('div');
+    const createUriRow = (value, list) => {
+        const row = document.createElement(list?.tagName === 'UL' ? 'li' : 'div');
         const control = document.createElement('div');
         const input = document.createElement('input');
         const clear = document.createElement('button');
@@ -74,6 +74,7 @@
         input.type = 'url';
         input.className = 'kt-input kt-input--48';
         input.placeholder = 'https://';
+        input.value = value || '';
         input.setAttribute('aria-label', 'Redirect URI 입력');
 
         clear.type = 'button';
@@ -117,18 +118,163 @@
 
         button.addEventListener('click', () => {
             const max = Number(list.dataset.oauthUriMax || maxDefault);
+            const addInput = button.dataset.oauthUriInput ? document.getElementById(button.dataset.oauthUriInput) : null;
 
             if (list.querySelectorAll('[data-oauth-uri-row]').length >= max) {
                 return;
             }
 
-            const row = createUriRow();
+            const row = createUriRow(addInput?.value.trim() || '', list);
 
             list.appendChild(row);
             bindRemove(row, list, button);
             bindInputClear(row);
             updateAddButton(list, button);
-            row.querySelector('input')?.focus();
+
+            if (addInput) {
+                addInput.value = '';
+                addInput.focus();
+            } else {
+                row.querySelector('input')?.focus();
+            }
         });
+    });
+
+    const syncUriReadList = section => {
+        const readList = section?.querySelector('[data-oauth-uri-read]');
+        const editRows = Array.from(section?.querySelectorAll('[data-oauth-uri-row]') || []);
+
+        if (!readList || !editRows.length) {
+            return;
+        }
+
+        readList.replaceChildren();
+
+        editRows.forEach(row => {
+            const value = row.querySelector('input')?.value.trim();
+
+            if (!value) {
+                return;
+            }
+
+            const item = document.createElement('li');
+            const text = document.createElement('span');
+
+            item.className = 'kt-env-card__item kt-env-card__item--plain';
+            text.textContent = value;
+            item.appendChild(text);
+            readList.appendChild(item);
+        });
+    };
+
+    const getScopeItemData = item => {
+        const input = item?.querySelector('input[type="checkbox"]');
+        const labelText = item?.dataset.scopeLabel || item?.querySelector('.kt-check span:not(.kt-badge)')?.textContent.trim() || '';
+
+        return {
+            input,
+            labelText,
+            state: item?.dataset.scopeState || 'available',
+            value: input?.value || '',
+        };
+    };
+
+    const createScopeBadge = state => {
+        const badge = document.createElement('span');
+
+        badge.className = 'kt-badge';
+
+        if (state === 'current') {
+            badge.classList.add('kt-badge--green');
+            badge.textContent = '사용중';
+            return badge;
+        }
+
+        if (state === 'rejected') {
+            badge.classList.add('kt-badge--danger');
+            badge.textContent = '반려';
+            return badge;
+        }
+
+        badge.textContent = '추가';
+
+        return badge;
+    };
+
+    const createScopeReadItem = (section, item) => {
+        const { labelText, state, value } = getScopeItemData(item);
+        const li = document.createElement('li');
+        const label = document.createElement('span');
+
+        li.className = 'kt-env-card__item kt-env-card__item--scope';
+        li.dataset.scopeValue = value;
+        label.textContent = labelText;
+        li.appendChild(label);
+
+        li.appendChild(createScopeBadge(state));
+
+        return li;
+    };
+
+    const syncScopeReadList = section => {
+        const readList = section?.querySelector('[data-oauth-scope-read]');
+        const editItems = Array.from(section?.querySelectorAll('.kt-oauth-scope-edit-grid > li') || []);
+
+        if (!readList || !editItems.length) {
+            return;
+        }
+
+        readList.replaceChildren();
+
+        editItems.forEach(item => {
+            const { input } = getScopeItemData(item);
+
+            if (!input?.checked) {
+                return;
+            }
+
+            readList.appendChild(createScopeReadItem(section, item));
+        });
+    };
+
+    document.querySelectorAll('.kt-oauth-scope-edit-grid .kt-check').forEach(label => {
+        label.classList.add('kt-check--box');
+    });
+
+    document.addEventListener('click', e => {
+        const editDeleteButton = e.target.closest('[data-oauth-scope-delete]');
+        const readDeleteButton = e.target.closest('[data-oauth-scope-read-delete]');
+        const saveButton = e.target.closest('[data-edit-save]');
+
+        if (editDeleteButton) {
+            const item = editDeleteButton.closest('.kt-oauth-scope-edit-grid > li');
+
+            if (item) {
+                e.preventDefault();
+                item.remove();
+            }
+
+            return;
+        }
+
+        if (readDeleteButton) {
+            const section = readDeleteButton.closest('.kt-oauth-section-scope');
+            const value = readDeleteButton.dataset.scopeValue;
+            const input = value ? section?.querySelector(`.kt-oauth-scope-edit-grid input[value="${value}"]`) : null;
+
+            e.preventDefault();
+            readDeleteButton.closest('.kt-env-card__item')?.remove();
+
+            if (input) {
+                input.checked = false;
+            }
+
+            return;
+        }
+
+        if (saveButton) {
+            syncUriReadList(saveButton.closest('.kt-ws-section'));
+            syncScopeReadList(saveButton.closest('.kt-oauth-section-scope'));
+        }
     });
 })();

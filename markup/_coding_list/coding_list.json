@@ -121,18 +121,16 @@
             }
         },
         "추가": {
-            "[ouath-01]": ["/ouath-01.html", "mainframe", "완료", ""],
-            "[ouath-01_]": ["/ouath-01_.html", "mainframe", "완료", ""],
-            "[ouath-02]": ["/ouath-02.html", "mainframe", "완료", ""],
-            "[ouath-02_]": ["/ouath-02_.html", "mainframe", "완료", ""],
-            "[ouath-03]": ["/ouath-03.html", "mainframe", "완료", ""],
-            "[ouath-03_]": ["/ouath-03_.html", "mainframe", "완료", ""],
-            "[works-oauth-01]": ["/works-oauth-01.html", "mainframe", "완료", ""],
-            "[works-oauth-01_]": ["/works-oauth-01_.html", "mainframe", "완료", ""],
-            "[works-oauth-02]": ["/works-oauth-02.html", "mainframe", "완료", ""],
-            "[works-oauth-02_]": ["/works-oauth-02_.html", "mainframe", "완료", ""],
-            "[works-oauth-03]": ["/works-oauth-03.html", "mainframe", "완료", ""],
-            "[works-oauth-03_]": ["/works-oauth-03_.html", "mainframe", "완료", ""]
+            "[ouath-01] 기본 정보 입력": ["/ouath-01.html", "mainframe", "완료", ""],
+            "[ouath-02] OAuth 앱 설정": ["/ouath-02.html", "mainframe", "완료", ""],
+            "[ouath-03] 확인 및 저장": ["/ouath-03.html", "mainframe", "완료", ""],
+            "[works-oauth-01] 상세_생성신청 후 반려": ["/works-oauth-01.html", "mainframe", "완료", ""],
+            "[works-oauth-02] 상세_비활성": ["/works-oauth-02.html", "mainframe", "완료", ""],
+            "[works-oauth-03] 상세_활성": ["/works-oauth-03.html", "mainframe", "완료", ""],
+            "[works-oauth-04] 상세_Scope변경_반려": ["/works-oauth-04.html", "mainframe", "완료", ""],
+            "[works-oauth-pop-01] Scope 승인이력 팝업": ["/works-oauth-pop-01.html", "mainframe", "완료", ""],
+            "[works-oauth-pop-02] Scope 승인요청 팝업": ["/works-oauth-pop-02.html", "mainframe", "완료", ""],
+            "[works-oauth-pop-03] Scope 승인재신청 팝업": ["/works-oauth-pop-03.html", "mainframe", "완료", ""]
         }
     },
     "templete": {

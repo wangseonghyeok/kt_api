@@ -7463,7 +7463,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-env-card__body,
 .kt-key-card__body {
-    padding: 8px 24px 16px;
+    padding: 8px 24px 8px;
 }
 
 .kt-env-card__empty,
@@ -7594,6 +7594,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     display: flex;
     align-items: center;
     gap: 8px;
+    list-style: none;
 
     .kt-newwork-input-control {
         flex: 1 1 auto;
@@ -7660,6 +7661,40 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kt-oauth-uri-add-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+
+    .kt-input {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .kt-oauth-uri-add {
+        flex: 0 0 48px;
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        margin-top: 0;
+        padding: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: currentColor;
+            -webkit-mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 20px 20px no-repeat;
+            mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 20px 20px no-repeat;
+        }
+    }
 }
 
 .kt-oauth-uri-add {
@@ -7685,14 +7720,32 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-oauth-client-card {
     .kt-ws-status-note {
+        align-items: flex-start;
         height: auto;
         min-height: 40px;
         margin: 12px 24px 0;
+        background: #fce9e9;
+
+        .kt-newwork-security__icon {
+            flex: 0 0 16px;
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            background: #e0282f;
+            -webkit-mask: url('/assets/img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
+            mask: url('/assets/img/contents/ico_warning_empty.svg') 50% 50% / 16px 16px no-repeat;
+        }
+
+        p {
+            margin: 0;
+        }
     }
 }
 
-.kt-oauth-client-actions {
-    margin: 12px 24px 16px;
+.kt-oauth-section-scope.is-editing {
+    .kt-oauth-scope-request-button {
+        display: none;
+    }
 }
 
 .kt-oauth-scope-edit-grid {
@@ -7703,10 +7756,19 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     padding: 0;
     list-style: none;
 
+    > li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+    }
+
     .kt-check {
+        flex: 1 1 auto;
         display: flex;
         align-items: center;
         gap: 10px;
+        min-width: 0;
         min-height: 48px;
         padding: 11px 14px;
         border: 1px solid #d1d5db;
@@ -7723,7 +7785,28 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
         .kt-badge {
             margin-left: auto;
         }
+
+        input[type='checkbox'] {
+            border-radius: 5px;
+        }
+
+        input[type='checkbox']:not(:checked)::after {
+            content: none;
+        }
     }
+}
+
+.kt-oauth-scope-delete {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #52565d;
+    font-size: 13px;
+    font-weight: var(--fw-Medium);
+    line-height: 1;
 }
 
 .kt-oauth-scope-actions {
@@ -7731,6 +7814,24 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     align-items: center;
     gap: 8px;
     margin-left: auto;
+}
+
+.kt-work-pop__scope-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    min-height: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.kt-work-pop__scope-radio {
+    min-height: 22px;
+    color: #191a1b;
+    font-size: 15px;
+    font-weight: var(--fw-Medium);
+    line-height: 1.48;
 }
 
 .kt-ws-inline-actions {
@@ -8654,6 +8755,15 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 }
 .kt-work-pop__field--form {
     height: 283px;
+}
+.kt-work-pop__field--scope {
+    height: auto;
+}
+
+.kt-work-pop__section--scope {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .kt-work-pop__label {

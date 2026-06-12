@@ -11,7 +11,7 @@
             <main id="contents" class="kt-works-main kt-ldap-page-main">
                 <!--#include file="./include/_ldap_page_header.html"-->
                 <div class="kt-ldap-view">
-                    <div class="kt-ldap-stage kt-ldap-stage--dev" aria-label="OAuth 워크스페이스 상세 Scope 변경 반려">
+                    <div class="kt-ldap-stage kt-ldap-stage--dev" aria-label="OAuth 워크스페이스 상세 활성">
                         <article class="kt-ws-detail">
                             <div class="kt-ws-detail__body">
                                 <div class="kt-ws-detail__content">
@@ -48,25 +48,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="kt-ws-status-note kt-ws-status-note--danger">
-                                            <span class="kt-tag kt-tag--dot kt-tag--danger">반려</span>
-                                            <p>반려 사유를 확인하고 재신청하세요.</p>
+                                        <div class="kt-ws-status-note kt-ws-status-note--dev">
+                                            <span class="kt-tag kt-tag--dot kt-tag--success">활성</span>
+                                            <p>모든 설정이 완료되었습니다. 정상 운영 중입니다.</p>
                                         </div>
                                     </section>
-
-                                    <div class="kt-reject-reason">
-                                        <span class="kt-reject-reason__tag">반려 사유</span>
-                                        <p>추가 신청하신 Scope 중 "휴대전화번호"는 정책변경으로 현재 외부 파트너에게 제공되지 않습니다. 삭제 후 다시 신청하세요.</p>
-                                    </div>
 
                                     <section class="kt-ws-section kt-ldap-section-basic">
                                         <div class="kt-ws-section__head">
                                             <h2 class="kt-ws-section__title">기본 정보</h2>
                                             <div class="kt-ws-section__actions">
-                                                <button type="button" class="kt-btn kt-btn--detail">편집</button>
+                                                <button type="button" class="kt-btn kt-btn--detail kt-edit-start">편집</button>
+                                                <span class="kt-edit-actions">
+                                                    <button type="button" class="kt-btn kt-btn--detail" data-edit-cancel>취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--detail kt-btn--detail-primary" data-edit-save>저장</button>
+                                                </span>
                                             </div>
                                         </div>
-                                        <table class="kt-info-table" aria-label="기본 정보">
+                                        <table class="kt-read-mode kt-info-table" aria-label="기본 정보">
                                             <colgroup>
                                                 <col class="kt-info-table__label-col" />
                                                 <col class="kt-info-table__value-col" />
@@ -76,13 +75,13 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row" class="kt-info-table__label">워크스페이스명</th>
-                                                    <td class="kt-info-table__value">하나로앱 KT 로그인 연동</td>
+                                                    <td class="kt-info-table__value" data-basic-value="workspaceName">하나로앱 KT 로그인 연동</td>
                                                     <th scope="row" class="kt-info-table__label">타입</th>
                                                     <td class="kt-info-table__value">OAuth Workspace</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row" class="kt-info-table__label">서비스 URL</th>
-                                                    <td class="kt-info-table__value">https://hanaroapp.com</td>
+                                                    <td class="kt-info-table__value" data-basic-value="serviceUrl">https://hanaroapp.com</td>
                                                     <th scope="row" class="kt-info-table__label">Grant Type</th>
                                                     <td class="kt-info-table__value">Authorization Code</td>
                                                 </tr>
@@ -90,15 +89,51 @@
                                                     <th scope="row" class="kt-info-table__label">Company</th>
                                                     <td class="kt-info-table__value">하나로소프트</td>
                                                     <th scope="row" class="kt-info-table__label">설명</th>
-                                                    <td class="kt-info-table__value">하나로 앱에서 KT 계정(KTID)을 통한 소셜 로그인 연동 서비스</td>
+                                                    <td class="kt-info-table__value" data-basic-value="description">하나로 앱에서 KT 계정(KTID)을 통한 소셜 로그인 연동 서비스</td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">기본정보 편집모드</strong>
+                                            <table class="kt-info-table kt-info-table--edit" aria-label="기본 정보 편집">
+                                                <colgroup>
+                                                    <col class="kt-info-table__label-col" />
+                                                    <col class="kt-info-table__value-col" />
+                                                    <col class="kt-info-table__label-col" />
+                                                    <col class="kt-info-table__value-col" />
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" class="kt-info-table__label">워크스페이스명</th>
+                                                        <td class="kt-info-table__value"><input type="text" class="kt-input kt-input--36" value="하나로앱 KT 로그인 연동" data-basic-field="workspaceName" /></td>
+                                                        <th scope="row" class="kt-info-table__label">타입</th>
+                                                        <td class="kt-info-table__value">OAuth Workspace</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="kt-info-table__label">서비스 URL</th>
+                                                        <td class="kt-info-table__value"><input type="url" class="kt-input kt-input--36" value="https://hanaroapp.com" data-basic-field="serviceUrl" /></td>
+                                                        <th scope="row" class="kt-info-table__label">Grant Type</th>
+                                                        <td class="kt-info-table__value">Authorization Code</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="kt-info-table__label">Company</th>
+                                                        <td class="kt-info-table__value">하나로소프트</td>
+                                                        <th scope="row" class="kt-info-table__label">설명</th>
+                                                        <td class="kt-info-table__value"><input type="text" class="kt-input kt-input--36" value="하나로 앱에서 KT 계정(KTID)을 통한 소셜 로그인 연동 서비스" data-basic-field="description" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </section>
+
+                                    <!--#include file="./include/_ldap_section_call_statistics.html"-->
 
                                     <section class="kt-ws-section">
                                         <div class="kt-ws-section__head">
                                             <h2 class="kt-ws-section__title">Client 정보</h2>
+                                            <div class="kt-ws-section__actions">
+                                                <button type="button" class="kt-btn kt-btn--detail-line">Client Secret 재발급</button>
+                                            </div>
                                         </div>
                                         <div class="kt-panel-grid kt-panel-grid--single">
                                             <div class="kt-key-card kt-oauth-client-card">
@@ -106,8 +141,8 @@
                                                 <div class="kt-key-card__body">
                                                     <div class="kt-key-field">
                                                         <div class="kt-key-field__input">
-                                                            <label for="oauth-client-id-r">Client ID</label>
-                                                            <input id="oauth-client-id-r" type="text" class="kt-input" value="kt-oauth-a1b2c3d4-e5f6-7890-abcd-ef1234567890" readonly />
+                                                            <label for="oauth-client-id">Client ID</label>
+                                                            <input id="oauth-client-id" type="text" class="kt-input" value="kt-oauth-a1b2c3d4-e5f6-7890-abcd-ef1234567890" readonly />
                                                         </div>
                                                         <button type="button" class="kt-key-field__copy" aria-label="Client ID 복사">
                                                             <img class="kt-svg-icon kt-svg-icon--24" src="/assets/img/contents/ico_tool_duplicate.svg" alt="" aria-hidden="true" />
@@ -115,16 +150,16 @@
                                                     </div>
                                                     <div class="kt-key-field kt-key-field--password">
                                                         <div class="kt-key-field__input">
-                                                            <label for="oauth-client-secret-r">Client Secret</label>
+                                                            <label for="oauth-client-secret">Client Secret</label>
                                                             <div class="kt-key-field__control">
-                                                                <input id="oauth-client-secret-r" type="password" class="kt-input" value="supersecretvalue1234" readonly />
+                                                                <input id="oauth-client-secret" type="password" class="kt-input" value="supersecretvalue1234" readonly />
                                                                 <button
                                                                     type="button"
                                                                     class="kt-key-field__visibility"
                                                                     data-password_toggle
                                                                     data-icon-show="/assets/img/components/ico_eye.svg"
                                                                     data-icon-hide="/assets/img/components/ico_eye_off.svg"
-                                                                    aria-controls="oauth-client-secret-r"
+                                                                    aria-controls="oauth-client-secret"
                                                                     aria-pressed="false"
                                                                     aria-label="Client Secret 보기"
                                                                 >
@@ -138,10 +173,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="kt-ws-status-note kt-ws-status-note--warning">
+                                                    <span class="kt-newwork-security__icon" aria-hidden="true"></span>
                                                     <p>Client ID / Secret은 서버에서만 사용하고, 브라우저나 앱 소스 코드에 포함하지 마세요. Secret을 분실한 경우 재발급 후 서비스에 적용해 주세요.</p>
-                                                </div>
-                                                <div class="kt-oauth-client-actions">
-                                                    <button type="button" class="kt-btn kt-btn--detail-line">Client Secret 재발급</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,52 +184,77 @@
                                         <div class="kt-ws-section__head">
                                             <h2 class="kt-ws-section__title">Redirect URI</h2>
                                             <div class="kt-ws-section__actions">
-                                                <button type="button" class="kt-btn kt-btn--detail">편집</button>
+                                                <button type="button" class="kt-btn kt-btn--detail kt-edit-start">편집</button>
+                                                <span class="kt-edit-actions">
+                                                    <button type="button" class="kt-btn kt-btn--detail" data-edit-cancel>취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--detail kt-btn--detail-primary" data-edit-save>편집완료</button>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="kt-panel-grid kt-panel-grid--single">
                                             <div class="kt-env-card">
                                                 <div class="kt-env-card__body">
-                                                    <ul class="kt-env-card__list">
+                                                    <ul class="kt-env-card__list" data-oauth-uri-read>
                                                         <li class="kt-env-card__item kt-env-card__item--plain"><span>https://hanaroapp.com/auth/callback</span></li>
                                                         <li class="kt-env-card__item kt-env-card__item--plain"><span>https://dev.hanaroapp.com/auth/callback</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">Redirect URI 편집모드</strong>
+                                            <ul id="oauthDetailUriList" class="kt-oauth-uri-list" data-oauth-uri-list data-oauth-uri-max="5">
+                                                <li class="kt-oauth-uri-row" data-oauth-uri-row>
+                                                    <input type="url" class="kt-input kt-input--48" value="https://hanaroapp.com/auth/callback" aria-label="Redirect URI 입력" />
+                                                    <button type="button" class="kt-oauth-uri-remove" data-oauth-uri-remove aria-label="Redirect URI 삭제"><span class="blind">삭제</span></button>
+                                                </li>
+                                                <li class="kt-oauth-uri-row" data-oauth-uri-row>
+                                                    <input type="url" class="kt-input kt-input--48" value="https://dev.hanaroapp.com/auth/callback" aria-label="Redirect URI 입력" />
+                                                    <button type="button" class="kt-oauth-uri-remove" data-oauth-uri-remove aria-label="Redirect URI 삭제"><span class="blind">삭제</span></button>
+                                                </li>
+                                            </ul>
+                                            <div class="kt-oauth-uri-add-row">
+                                                <input id="oauthDetailUriAddInput" type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 추가 입력" />
+                                                <button type="button" class="kt-btn kt-btn--secondary kt-oauth-uri-add" data-oauth-uri-add="oauthDetailUriList" data-oauth-uri-input="oauthDetailUriAddInput" aria-label="Redirect URI 추가"><span class="blind">추가</span></button>
+                                            </div>
+                                        </div>
                                     </section>
 
-                                    <section class="kt-ws-section">
+                                    <section class="kt-ws-section kt-oauth-section-scope">
                                         <div class="kt-ws-section__head">
                                             <h2 class="kt-ws-section__title">제공정보 (Scope)</h2>
                                             <div class="kt-ws-section__actions">
                                                 <button type="button" class="kt-btn kt-btn--detail-icon" aria-label="승인 이력">
                                                     <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
                                                 </button>
-                                                <button type="button" class="kt-btn kt-btn--detail">편집</button>
-                                                <button type="button" class="kt-btn kt-btn--detail-line kt-btn--detail-line-danger">Scope 재신청</button>
+                                                <button type="button" class="kt-btn kt-btn--detail kt-edit-start">편집</button>
+                                                <span class="kt-edit-actions">
+                                                    <button type="button" class="kt-btn kt-btn--detail" data-edit-cancel>취소</button>
+                                                    <button type="button" class="kt-btn kt-btn--detail kt-btn--detail-primary" data-edit-save>편집완료</button>
+                                                    <button type="button" class="kt-btn kt-btn--detail-line kt-btn--detail-line-danger">Scope 승인요청</button>
+                                                </span>
                                             </div>
-                                        </div>
-                                        <div class="kt-reject-reason kt-reject-reason--ip">
-                                            <span class="kt-reject-reason__tag">반려됨</span>
-                                            <p>반려 사유를 확인하고 수정하여 재신청하세요.</p>
                                         </div>
                                         <div class="kt-panel-grid kt-panel-grid--single">
                                             <div class="kt-env-card">
                                                 <div class="kt-env-card__body">
-                                                    <ul class="kt-env-card__list">
-                                                        <li class="kt-env-card__item kt-env-card__item--scope"><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></li>
-                                                        <li class="kt-env-card__item kt-env-card__item--scope"><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></li>
-                                                        <li class="kt-env-card__item kt-env-card__item--scope">
-                                                            <span>휴대전화번호</span>
-                                                            <span class="kt-oauth-scope-actions">
-                                                                <span class="kt-badge kt-badge--danger">반려</span>
-                                                                <button type="button" class="kt-btn kt-btn--sm kt-btn--detail-line">재신청</button>
-                                                            </span>
-                                                        </li>
+                                                    <ul class="kt-env-card__list" data-oauth-scope-read>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="name"><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></li>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="email"><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="kt-edit-template kt-edit-box">
+                                            <strong class="kt-edit-box__title">Scope 편집모드</strong>
+                                            <ul class="kt-oauth-scope-edit-grid">
+                                                <li data-scope-state="current" data-scope-label="회원이름"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="회원이름 삭제">삭제</button></li>
+                                                <li data-scope-state="current" data-scope-label="이메일 주소"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="이메일 주소 삭제">삭제</button></li>
+                                                <li data-scope-state="available" data-scope-label="휴대전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="mobile" checked /><span>휴대전화번호</span></label></li>
+                                                <li data-scope-state="available" data-scope-label="별칭"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="nickname" checked /><span>별칭</span></label></li>
+                                                <li data-scope-state="available" data-scope-label="직장전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="officePhone" /><span>직장전화번호</span></label></li>
+                                                <li data-scope-state="available" data-scope-label="출생년도"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="birthyear" /><span>출생년도</span></label></li>
+                                            </ul>
                                         </div>
                                     </section>
                                 </div>
@@ -207,6 +265,7 @@
             </main>
             <!--#include file="./include/_footer.html"-->
         </div>
+        <script src="/assets/js/oauth-workspace.js"></script>
         <script src="/assets/js/ldap-workspace.js"></script>
     </body>
 </html>
