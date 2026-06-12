@@ -3355,8 +3355,7 @@
     th,
     td {
         box-sizing: border-box;
-        height: 40px;
-        padding: 0 20px;
+        padding: 9px 20px;
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         background: #fff;
@@ -6985,8 +6984,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 .kt-info-table__label,
 .kt-info-table__value {
     min-width: 0;
-    height: 48px;
-    padding: 0 16px;
+    padding: 13px 16px;
     border-bottom: 1px solid #d5d8dd;
     font-size: 15px;
     text-align: left;
@@ -7018,7 +7016,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-info-table__value--tall,
 .kt-info-table__label--tall {
-    height: 68px;
+    padding-top: 23px;
+    padding-bottom: 23px;
 }
 
 .kt-info-table--edit .kt-info-table__value {
@@ -7052,8 +7051,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
     th,
     td {
-        height: 40px;
-        padding: 0 20px;
+        padding: 9px 20px;
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         font-size: 14px;
@@ -7076,14 +7074,14 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
     .kt-data-table__empty td,
     tr.kt-data-table__empty td {
-        height: 56px;
+        padding-top: 17px;
+        padding-bottom: 17px;
         color: #8b8f98;
         text-align: center;
     }
 
     tr.kt-data-table__empty--result td {
-        height: 120px;
-        padding: 0;
+        padding: 49px 0;
         background: #fff;
         color: #191a1b;
     }
@@ -7218,7 +7216,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     --kt-api-table-columns: minmax(0, 1fr) minmax(0, 1fr) 100px 140px 100px 100px;
 
     td {
-        height: 58px;
+        padding-top: 18px;
+        padding-bottom: 18px;
     }
 
     .kt-api-row.is-open td {
@@ -9277,8 +9276,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-work-pop-table th,
 .kt-work-pop-table td {
-    height: 40px;
-    padding: 8px 20px;
+    padding: 9px 20px;
     border-right: 1px solid #e9eaee;
     border-bottom: 1px solid #c7cad1;
     color: #4a4c50;
@@ -9558,8 +9556,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
     th,
     td {
-        height: 40px;
-        padding: 8px 20px;
+        padding: 9px 20px;
         border-right: 1px solid #e9eaee;
         border-bottom: 1px solid #e9eaee;
         color: #4a4c50;

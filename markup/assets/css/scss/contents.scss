@@ -1553,7 +1553,8 @@
         }
 
         th {
-            height: 56px;
+            padding-top: 17px;
+            padding-bottom: 17px;
             border-top: 0;
             color: $kt-secondary;
             font-weight: var(--fw-SemiBold);
@@ -1561,8 +1562,7 @@
         }
 
         td {
-            height: 56px;
-            padding: 6px 20px;
+            padding: 17px 20px;
             font-weight: var(--fw-Medium);
             text-align: center;
         }
@@ -2894,7 +2894,6 @@
 
     th,
     td {
-        height: 40px;
         padding: 9.5px 20px;
         border-bottom: 1px solid #e9eaee;
         border-right: 1px solid #e9eaee;
@@ -2936,11 +2935,13 @@
 
 .kt-tool-table--request {
     tbody tr:nth-child(2) td {
-        height: 80px;
+        padding-top: 29.5px;
+        padding-bottom: 29.5px;
     }
 
     tbody tr:nth-child(4) td {
-        height: 56px;
+        padding-top: 17.5px;
+        padding-bottom: 17.5px;
     }
 }
 
