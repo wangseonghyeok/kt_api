@@ -230,6 +230,7 @@ html.is-locked {
     overflow: hidden;
     // border-bottom: 1px solid #e9eaee;
     letter-spacing: 0;
+    box-shadow: none;
     @include fixed(top 0 left 0);
     @include flex(null, space-between);
     transition: 0.2s all;
@@ -255,6 +256,9 @@ html.is-locked {
         .gnb .depth2 {
             display: block;
         }
+    }
+    &.__scrolled {
+        box-shadow: 0 2px 10px rgba(19, 20, 21, 0.08);
     }
     > .btn-home {
         display: block;

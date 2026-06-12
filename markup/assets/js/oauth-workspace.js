@@ -8,8 +8,14 @@
 
         const max = Number(list.dataset.oauthUriMax || maxDefault);
         const count = list.querySelectorAll('[data-oauth-uri-row]').length;
+        const addRow = button.closest('.kt-oauth-uri-add-row');
+        const isMax = count >= max;
 
-        button.disabled = count >= max;
+        button.disabled = isMax;
+
+        if (addRow) {
+            addRow.hidden = isMax;
+        }
     };
 
     const bindRemove = (row, list, button) => {
@@ -120,7 +126,7 @@
             const max = Number(list.dataset.oauthUriMax || maxDefault);
             const addInput = button.dataset.oauthUriInput ? document.getElementById(button.dataset.oauthUriInput) : null;
 
-            if (list.querySelectorAll('[data-oauth-uri-row]').length >= max) {
+            if (button.disabled || list.querySelectorAll('[data-oauth-uri-row]').length >= max) {
                 return;
             }
 
@@ -240,6 +246,8 @@
     document.querySelectorAll('.kt-oauth-scope-edit-grid .kt-check').forEach(label => {
         label.classList.add('kt-check--box');
     });
+
+    document.querySelectorAll('.kt-oauth-section-scope').forEach(syncScopeReadList);
 
     document.addEventListener('click', e => {
         const editDeleteButton = e.target.closest('[data-oauth-scope-delete]');

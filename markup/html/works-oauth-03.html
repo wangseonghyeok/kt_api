@@ -227,11 +227,11 @@
                                                 <button type="button" class="kt-btn kt-btn--detail-icon" aria-label="승인 이력">
                                                     <img class="kt-svg-icon kt-svg-icon--20" src="/assets/img/contents/ico_ldap_history.svg" alt="" aria-hidden="true" />
                                                 </button>
+                                                <button type="button" class="kt-btn kt-btn--detail-line kt-btn--detail-line-danger kt-oauth-scope-request-button">Scope 승인요청</button>
                                                 <button type="button" class="kt-btn kt-btn--detail kt-edit-start">편집</button>
                                                 <span class="kt-edit-actions">
                                                     <button type="button" class="kt-btn kt-btn--detail" data-edit-cancel>취소</button>
                                                     <button type="button" class="kt-btn kt-btn--detail kt-btn--detail-primary" data-edit-save>편집완료</button>
-                                                    <button type="button" class="kt-btn kt-btn--detail-line kt-btn--detail-line-danger">Scope 승인요청</button>
                                                 </span>
                                             </div>
                                         </div>
@@ -241,6 +241,8 @@
                                                     <ul class="kt-env-card__list" data-oauth-scope-read>
                                                         <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="name"><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></li>
                                                         <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="email"><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></li>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="mobile"><span>휴대전화번호</span><span class="kt-badge">추가</span></li>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="nickname"><span>별칭</span><span class="kt-badge">추가</span></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -248,8 +250,8 @@
                                         <div class="kt-edit-template kt-edit-box">
                                             <strong class="kt-edit-box__title">Scope 편집모드</strong>
                                             <ul class="kt-oauth-scope-edit-grid">
-                                                <li data-scope-state="current" data-scope-label="회원이름"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="회원이름 삭제">삭제</button></li>
-                                                <li data-scope-state="current" data-scope-label="이메일 주소"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="이메일 주소 삭제">삭제</button></li>
+                                                <li data-scope-state="current" data-scope-label="회원이름"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="회원이름 삭제"></button></li>
+                                                <li data-scope-state="current" data-scope-label="이메일 주소"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="이메일 주소 삭제"></button></li>
                                                 <li data-scope-state="available" data-scope-label="휴대전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="mobile" checked /><span>휴대전화번호</span></label></li>
                                                 <li data-scope-state="available" data-scope-label="별칭"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="nickname" checked /><span>별칭</span></label></li>
                                                 <li data-scope-state="available" data-scope-label="직장전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="officePhone" /><span>직장전화번호</span></label></li>
