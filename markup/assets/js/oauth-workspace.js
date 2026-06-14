@@ -116,21 +116,30 @@
             return;
         }
 
+        const addControl = button.closest('.kt-oauth-uri-add-row')?.querySelector('[data-newwork-input]');
+
         list.querySelectorAll('[data-oauth-uri-row]').forEach(row => {
             bindRemove(row, list, button);
             bindInputClear(row);
         });
+        bindInputClear(addControl?.closest('.kt-oauth-uri-add-row') || addControl);
         updateAddButton(list, button);
 
         button.addEventListener('click', () => {
             const max = Number(list.dataset.oauthUriMax || maxDefault);
             const addInput = button.dataset.oauthUriInput ? document.getElementById(button.dataset.oauthUriInput) : null;
+            const nextValue = addInput?.value.trim() || '';
 
             if (button.disabled || list.querySelectorAll('[data-oauth-uri-row]').length >= max) {
                 return;
             }
 
-            const row = createUriRow(addInput?.value.trim() || '', list);
+            if (addInput && !nextValue) {
+                addInput.focus();
+                return;
+            }
+
+            const row = createUriRow(nextValue, list);
 
             list.appendChild(row);
             bindRemove(row, list, button);
@@ -139,6 +148,7 @@
 
             if (addInput) {
                 addInput.value = '';
+                syncInputClear(addControl);
                 addInput.focus();
             } else {
                 row.querySelector('input')?.focus();

@@ -35,20 +35,24 @@
                             <div class="kt-newwork-notice">
                                 <p>인증 완료 후 리디렉션할 URI입니다. 최대 5개까지 등록 가능합니다.</p>
                             </div>
-                            <div id="oauthCreateUriList" class="kt-newwork-uri-list" data-oauth-uri-list data-oauth-uri-max="5">
-                                <div class="kt-oauth-uri-row" data-oauth-uri-row>
-                                    <div class="kt-newwork-input-control" data-newwork-input>
-                                        <input type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 입력" value="https://hanaroapp.com/auth/callback" />
-                                        <button type="button" class="kt-newwork-input-clear" data-newwork-input-clear hidden>
-                                            <span class="blind">입력값 삭제</span>
-                                        </button>
-                                    </div>
-                                    <button type="button" class="kt-oauth-uri-remove" data-oauth-uri-remove aria-label="Redirect URI 삭제">
-                                        <span class="blind">삭제</span>
+                            <div id="oauthCreateUriList" class="kt-oauth-uri-list" data-oauth-uri-list data-oauth-uri-max="5"></div>
+                            <div class="kt-oauth-uri-add-row">
+                                <div class="kt-newwork-input-control" data-newwork-input>
+                                    <input id="oauthCreateUriAddInput" type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 추가 입력" />
+                                    <button type="button" class="kt-newwork-input-clear" data-newwork-input-clear hidden>
+                                        <span class="blind">입력값 삭제</span>
                                     </button>
                                 </div>
+                                <button
+                                    type="button"
+                                    class="kt-btn kt-btn--secondary kt-oauth-uri-add"
+                                    data-oauth-uri-add="oauthCreateUriList"
+                                    data-oauth-uri-input="oauthCreateUriAddInput"
+                                    aria-label="Redirect URI 추가"
+                                >
+                                    <span class="blind">추가</span>
+                                </button>
                             </div>
-                            <button type="button" class="kt-btn kt-btn--secondary kt-oauth-uri-add kt-oauth-uri-add--form" data-oauth-uri-add="oauthCreateUriList">추가</button>
                         </section>
 
                         <section class="kt-newwork-section">

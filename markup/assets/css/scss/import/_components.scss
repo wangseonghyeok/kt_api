@@ -7652,8 +7652,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
         width: 20px;
         height: 20px;
         background: currentColor;
-        -webkit-mask: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 20px 20px no-repeat;
-        mask: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 20px 20px no-repeat;
+        -webkit-mask: url('/assets/img/contents/ico_tool_minus.svg') 50% 50% / 20px 20px no-repeat;
+        mask: url('/assets/img/contents/ico_tool_minus.svg') 50% 50% / 20px 20px no-repeat;
     }
 }
 
@@ -7672,9 +7672,43 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     gap: 8px;
     margin-top: 8px;
 
+    .kt-newwork-input-control {
+        position: relative;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
     .kt-input {
         flex: 1 1 auto;
         min-width: 0;
+        padding-right: 56px;
+    }
+
+    .kt-newwork-input-clear {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: $kt-secondary;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+            background: currentColor;
+            -webkit-mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+            mask: url('/assets/img/components/ico_delete.svg') 50% 50% / 20px 20px no-repeat;
+        }
+
+        &[hidden] {
+            display: none;
+        }
     }
 
     .kt-oauth-uri-add {
@@ -7691,10 +7725,14 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
             width: 20px;
             height: 20px;
             background: currentColor;
-            -webkit-mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 20px 20px no-repeat;
-            mask: url('/assets/img/components/ico_plus.svg') 50% 50% / 20px 20px no-repeat;
+            -webkit-mask: url('/assets/img/contents/ico_tool_plus.svg') 50% 50% / 20px 20px no-repeat;
+            mask: url('/assets/img/contents/ico_tool_plus.svg') 50% 50% / 20px 20px no-repeat;
         }
     }
+}
+
+.kt-newwork-section > .kt-oauth-uri-add-row {
+    margin-top: -8px;
 }
 
 .kt-oauth-uri-add {
@@ -7833,7 +7871,7 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-oauth-reject-summary {
     margin-top: 12px;
-    
+
     .kt-ws-status-note {
         height: 40px;
         margin-top: 0;
