@@ -111,13 +111,17 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row" class="kt-info-table__label">워크스페이스명</th>
-                                                        <td class="kt-info-table__value"><input type="text" class="kt-input kt-input--36" value="하나로앱 KT 로그인 연동" data-basic-field="workspaceName" /></td>
+                                                        <td class="kt-info-table__value">
+                                                            <input type="text" class="kt-input kt-input--36" value="하나로앱 KT 로그인 연동" data-basic-field="workspaceName" />
+                                                        </td>
                                                         <th scope="row" class="kt-info-table__label">타입</th>
                                                         <td class="kt-info-table__value">OAuth Workspace</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row" class="kt-info-table__label">서비스 URL</th>
-                                                        <td class="kt-info-table__value"><input type="url" class="kt-input kt-input--36" value="https://hanaroapp.com" data-basic-field="serviceUrl" /></td>
+                                                        <td class="kt-info-table__value">
+                                                            <input type="url" class="kt-input kt-input--36" value="https://hanaroapp.com" data-basic-field="serviceUrl" />
+                                                        </td>
                                                         <th scope="row" class="kt-info-table__label">Grant Type</th>
                                                         <td class="kt-info-table__value">Authorization Code</td>
                                                     </tr>
@@ -125,7 +129,14 @@
                                                         <th scope="row" class="kt-info-table__label">Company</th>
                                                         <td class="kt-info-table__value">하나로소프트</td>
                                                         <th scope="row" class="kt-info-table__label">설명</th>
-                                                        <td class="kt-info-table__value"><input type="text" class="kt-input kt-input--36" value="하나로 앱에서 KT 계정(KTID)을 통한 소셜 로그인 연동 서비스" data-basic-field="description" /></td>
+                                                        <td class="kt-info-table__value">
+                                                            <input
+                                                                type="text"
+                                                                class="kt-input kt-input--36"
+                                                                value="하나로 앱에서 KT 계정(KTID)을 통한 소셜 로그인 연동 서비스"
+                                                                data-basic-field="description"
+                                                            />
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -182,7 +193,15 @@
                                             </ul>
                                             <div class="kt-oauth-uri-add-row">
                                                 <input id="oauthRejectedUriAddInput" type="url" class="kt-input kt-input--48" placeholder="https://" aria-label="Redirect URI 추가 입력" />
-                                                <button type="button" class="kt-btn kt-btn--secondary kt-oauth-uri-add" data-oauth-uri-add="oauthRejectedUriList" data-oauth-uri-input="oauthRejectedUriAddInput" aria-label="Redirect URI 추가"><span class="blind">추가</span></button>
+                                                <button
+                                                    type="button"
+                                                    class="kt-btn kt-btn--secondary kt-oauth-uri-add"
+                                                    data-oauth-uri-add="oauthRejectedUriList"
+                                                    data-oauth-uri-input="oauthRejectedUriAddInput"
+                                                    aria-label="Redirect URI 추가"
+                                                >
+                                                    <span class="blind">추가</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </section>
@@ -221,12 +240,28 @@
                                         <div class="kt-edit-template kt-edit-box">
                                             <strong class="kt-edit-box__title">Scope 편집모드</strong>
                                             <ul class="kt-oauth-scope-edit-grid">
-                                                <li data-scope-state="rejected" data-scope-label="회원이름"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--danger">반려</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="회원이름 삭제"></button></li>
-                                                <li data-scope-state="rejected" data-scope-label="이메일 주소"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--danger">반려</span></label><button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="이메일 주소 삭제"></button></li>
-                                                <li data-scope-state="available" data-scope-label="휴대전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="mobile" /><span>휴대전화번호</span></label></li>
-                                                <li data-scope-state="available" data-scope-label="직장전화번호"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="officePhone" /><span>직장전화번호</span></label></li>
-                                                <li data-scope-state="available" data-scope-label="출생년도"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="birthyear" /><span>출생년도</span></label></li>
-                                                <li data-scope-state="available" data-scope-label="별칭"><label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="nickname" /><span>별칭</span></label></li>
+                                                <li data-scope-state="rejected" data-scope-label="회원이름">
+                                                    <label class="kt-check kt-check--box"
+                                                        ><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--danger">반려</span></label
+                                                    >
+                                                </li>
+                                                <li data-scope-state="rejected" data-scope-label="이메일 주소">
+                                                    <label class="kt-check kt-check--box"
+                                                        ><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--danger">반려</span></label
+                                                    >
+                                                </li>
+                                                <li data-scope-state="available" data-scope-label="휴대전화번호">
+                                                    <label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="mobile" /><span>휴대전화번호</span></label>
+                                                </li>
+                                                <li data-scope-state="available" data-scope-label="직장전화번호">
+                                                    <label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="officePhone" /><span>직장전화번호</span></label>
+                                                </li>
+                                                <li data-scope-state="available" data-scope-label="출생년도">
+                                                    <label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="birthyear" /><span>출생년도</span></label>
+                                                </li>
+                                                <li data-scope-state="available" data-scope-label="별칭">
+                                                    <label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="nickname" /><span>별칭</span></label>
+                                                </li>
                                             </ul>
                                         </div>
                                     </section>

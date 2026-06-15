@@ -530,6 +530,11 @@
         const hasEditActions = Boolean(section.querySelector('[data-edit-cancel], [data-edit-save]'));
         const shouldKeepHeight = section.classList.contains('kt-ldap-section-basic') && !section.classList.contains('kt-ldap-section-basic--fluid');
         const prevHeight = shouldKeepHeight ? section.offsetHeight : 0;
+        const oauthScopeEditGrid = section.querySelector('.kt-oauth-scope-edit-grid');
+
+        if (isEditing && oauthScopeEditGrid) {
+            oauthScopeEditGrid.dataset.oauthScopeSnapshot = oauthScopeEditGrid.innerHTML;
+        }
 
         section.classList.toggle('is-editing', isEditing);
 
@@ -547,6 +552,75 @@
                 button.textContent = isEditing ? '편집완료' : '편집';
             }
         }
+    };
+
+    const createOauthScopeBadge = state => {
+        const badge = document.createElement('span');
+
+        badge.className = 'kt-badge';
+
+        if (state === 'current') {
+            badge.classList.add('kt-badge--green');
+            badge.textContent = '사용중';
+            return badge;
+        }
+
+        if (state === 'rejected') {
+            badge.classList.add('kt-badge--danger');
+            badge.textContent = '반려';
+            return badge;
+        }
+
+        if (state === 'pending') {
+            badge.classList.add('kt-badge--warning');
+            badge.textContent = '승인대기';
+            return badge;
+        }
+
+        badge.textContent = '추가';
+
+        return badge;
+    };
+
+    const syncOauthScopeSection = section => {
+        const readList = section?.querySelector('[data-oauth-scope-read]');
+        const editItems = Array.from(section?.querySelectorAll('.kt-oauth-scope-edit-grid > li') || []);
+
+        if (!readList || !editItems.length) {
+            return;
+        }
+
+        readList.replaceChildren();
+
+        editItems.forEach(item => {
+            const input = item.querySelector('input[type="checkbox"]');
+
+            if (!input?.checked) {
+                return;
+            }
+
+            const labelText = item.dataset.scopeLabel || item.querySelector('.kt-check span:not(.kt-badge)')?.textContent.trim() || '';
+            const li = document.createElement('li');
+            const label = document.createElement('span');
+
+            li.className = 'kt-env-card__item kt-env-card__item--scope';
+            li.dataset.scopeValue = input.value || '';
+            label.textContent = labelText;
+            li.appendChild(label);
+            li.appendChild(createOauthScopeBadge(item.dataset.scopeState || 'available'));
+            readList.appendChild(li);
+        });
+    };
+
+    const restoreOauthScopeSection = section => {
+        const editGrid = section?.querySelector('.kt-oauth-scope-edit-grid');
+
+        if (!editGrid?.dataset.oauthScopeSnapshot) {
+            return;
+        }
+
+        editGrid.innerHTML = editGrid.dataset.oauthScopeSnapshot;
+        delete editGrid.dataset.oauthScopeSnapshot;
     };
 
     // Members 상태 동기화
@@ -2305,6 +2379,20 @@
         const ipButton = e.target.closest('.kt-ldap-ip-editor__button');
         const memberOption = e.target.closest('[data-ldap-search-option][data-member-id], [role="option"][data-member-id]');
         const memberDeleteButton = e.target.closest('[data-member-delete]');
+        const oauthScopeDeleteButton = e.target.closest('[data-oauth-scope-delete]');
+
+        if (oauthScopeDeleteButton) {
+            const section = oauthScopeDeleteButton.closest('.kt-oauth-section-scope');
+            const item = oauthScopeDeleteButton.closest('.kt-oauth-scope-edit-grid > li');
+
+            if (item?.dataset.scopeState === 'current') {
+                e.preventDefault();
+                e.stopPropagation();
+                item.remove();
+            }
+
+            return;
+        }
 
         if (memberOption && memberOption.closest('.kt-ldap-section-members')) {
             registerMember(memberOption);
@@ -2456,6 +2544,14 @@
                     }
 
                     setIpEditingEnv(section, '');
+                }
+
+                if (section.classList.contains('kt-oauth-section-scope')) {
+                    if (actionButton.matches('[data-edit-save]')) {
+                        syncOauthScopeSection(section);
+                    } else {
+                        restoreOauthScopeSection(section);
+                    }
                 }
 
                 setEditMode(section, false);

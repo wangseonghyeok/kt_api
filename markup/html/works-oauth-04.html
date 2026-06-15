@@ -262,8 +262,12 @@
                                             <div class="kt-env-card">
                                                 <div class="kt-env-card__body">
                                                     <ul class="kt-env-card__list" data-oauth-scope-read>
-                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="name"><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></li>
-                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="email"><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></li>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="name">
+                                                            <span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span>
+                                                        </li>
+                                                        <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="email">
+                                                            <span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span>
+                                                        </li>
                                                         <li class="kt-env-card__item kt-env-card__item--scope" data-scope-value="mobile">
                                                             <span>휴대전화번호</span>
                                                             <span class="kt-badge kt-badge--danger">반려</span>
@@ -278,15 +282,13 @@
                                             <ul class="kt-oauth-scope-edit-grid">
                                                 <li data-scope-state="current" data-scope-label="회원이름">
                                                     <label class="kt-check kt-check--box"
-                                                        ><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span
-                                                        ><span class="kt-badge kt-badge--green">사용중</span></label
+                                                        ><input type="checkbox" name="scope" value="name" checked /><span>회원이름</span><span class="kt-badge kt-badge--green">사용중</span></label
                                                     >
                                                     <button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="회원이름 삭제"></button>
                                                 </li>
                                                 <li data-scope-state="current" data-scope-label="이메일 주소">
                                                     <label class="kt-check kt-check--box"
-                                                        ><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span
-                                                        ><span class="kt-badge kt-badge--green">사용중</span></label
+                                                        ><input type="checkbox" name="scope" value="email" checked /><span>이메일 주소</span><span class="kt-badge kt-badge--green">사용중</span></label
                                                     >
                                                     <button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="이메일 주소 삭제"></button>
                                                 </li>
@@ -295,7 +297,6 @@
                                                         ><input type="checkbox" name="scope" value="mobile" checked /><span>휴대전화번호</span
                                                         ><span class="kt-badge kt-badge--danger">반려</span></label
                                                     >
-                                                    <button type="button" class="kt-oauth-scope-delete" data-oauth-scope-delete aria-label="휴대전화번호 삭제"></button>
                                                 </li>
                                                 <li data-scope-state="available" data-scope-label="별칭">
                                                     <label class="kt-check kt-check--box"><input type="checkbox" name="scope" value="nickname" checked /><span>별칭</span></label>

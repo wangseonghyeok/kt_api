@@ -212,6 +212,12 @@
             return badge;
         }
 
+        if (state === 'pending') {
+            badge.classList.add('kt-badge--warning');
+            badge.textContent = '승인대기';
+            return badge;
+        }
+
         badge.textContent = '추가';
 
         return badge;

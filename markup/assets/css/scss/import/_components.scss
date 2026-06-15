@@ -7590,6 +7590,37 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
     }
 }
 
+.kt-oauth-section-scope {
+    .kt-env-card {
+        border: 0;
+        background: transparent;
+    }
+
+    .kt-env-card__body {
+        padding: 0;
+    }
+
+    .kt-env-card__list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 16px 24px;
+    }
+
+    .kt-env-card__item--scope {
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background: #fff;
+        color: #191a1b;
+        font-weight: var(--fw-SemiBold);
+
+        .kt-badge {
+            margin-left: auto;
+        }
+    }
+}
+
 .kt-oauth-uri-row {
     display: flex;
     align-items: center;
@@ -7796,8 +7827,8 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
 
 .kt-oauth-scope-edit-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px 24px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -7813,13 +7844,15 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
         flex: 1 1 auto;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
         min-width: 0;
         min-height: 48px;
-        padding: 11px 14px;
+        padding: 0 16px;
         border: 1px solid #d1d5db;
         border-radius: 8px;
         background: #fff;
+        color: #191a1b;
+        font-weight: var(--fw-SemiBold);
         cursor: pointer;
         transition: border-color 0.15s ease, background-color 0.15s ease;
 
@@ -7860,6 +7893,10 @@ body.kt-admin-work-page #header .gnb > ul > li:first-child > a {
         -webkit-mask: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 20px 20px no-repeat;
         mask: url('/assets/img/auth/ico_auth_close.svg') 50% 50% / 20px 20px no-repeat;
     }
+}
+
+.kt-oauth-scope-edit-grid > li:not([data-scope-state='current']) .kt-oauth-scope-delete {
+    display: none;
 }
 
 .kt-oauth-scope-actions {
